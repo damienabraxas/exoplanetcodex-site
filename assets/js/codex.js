@@ -102,3 +102,58 @@ document.addEventListener('DOMContentLoaded', function () {
   var n = document.getElementById('notify-email');
   if (n) n.addEventListener('keydown', function (e) { if (e.key === 'Enter') handleNotify(); });
 });
+
+/* Admin panel — inject on ?admin=true */
+(function () {
+  if (!window.location.search.includes('admin=true')) return;
+  var panel = document.createElement('div');
+  panel.id = 'admin-panel';
+  panel.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:var(--surface);border:1px solid var(--accent);padding:1.5rem;z-index:999;min-width:300px;box-shadow:0 4px 24px rgba(0,0,0,0.5);';
+  panel.innerHTML =
+    '<div style="font-family:var(--mono);font-size:0.75rem;color:var(--accent);margin-bottom:1rem;letter-spacing:0.1em;">ADMIN — NEWSLETTER</div>' +
+    '<input id="bd-api-key" type="password" placeholder="Buttondown API key" style="width:100%;padding:0.5rem;margin-bottom:1rem;background:var(--deep);border:1px solid var(--rim);color:var(--text-bright);font-family:var(--mono);font-size:0.8rem;box-sizing:border-box;">' +
+    '<button onclick="sendAsNewsletter()" style="width:100%;padding:0.75rem;background:var(--accent);color:var(--void);border:none;cursor:pointer;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.1em;">Send as Newsletter Draft</button>' +
+    '<div id="admin-msg" style="display:none;font-family:var(--mono);font-size:0.75rem;margin-top:0.9rem;padding:0.6rem;text-align:center;"></div>';
+  document.body.appendChild(panel);
+})();
+
+async function sendAsNewsletter() {
+  var apiKey = document.getElementById('bd-api-key').value.trim();
+  var msg = document.getElementById('admin-msg');
+  if (!apiKey) {
+    msg.style.color = 'var(--danger)';
+    msg.style.background = 'rgba(224,92,75,0.08)';
+    msg.textContent = '✗ Please enter your Buttondown API key.';
+    msg.style.display = 'block';
+    return;
+  }
+  msg.style.color = 'var(--text-dim)';
+  msg.style.background = 'none';
+  msg.textContent = 'Sending…';
+  msg.style.display = 'block';
+  try {
+    var title = document.querySelector('.page-title').textContent;
+    var body  = document.querySelector('.post-body').innerHTML;
+    var response = await fetch('https://api.buttondown.email/v1/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Token ' + apiKey,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ subject: title, body: body, status: 'draft' }),
+    });
+    if (response.ok) {
+      msg.style.color = 'var(--accent-green)';
+      msg.style.background = 'rgba(82,199,138,0.08)';
+      msg.textContent = '✓ Draft created — review in Buttondown dashboard.';
+    } else {
+      msg.style.color = 'var(--danger)';
+      msg.style.background = 'rgba(224,92,75,0.08)';
+      msg.textContent = '✗ Failed — check API key and try again.';
+    }
+  } catch (e) {
+    msg.style.color = 'var(--danger)';
+    msg.style.background = 'rgba(224,92,75,0.08)';
+    msg.textContent = '✗ Network error — check your connection.';
+  }
+}
