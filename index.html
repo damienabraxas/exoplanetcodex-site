@@ -269,6 +269,32 @@
     @keyframes glow-pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
     .progress-text { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); letter-spacing: 0.08em; white-space: nowrap; }
 
+    /* ── ROADMAP ── */
+    .roadmap-section {
+      padding: 3rem 0 4rem;
+      opacity: 0;
+      animation: fade-in 1s ease 1.9s forwards;
+    }
+    .roadmap-container {
+      border: 1px solid var(--rim);
+      padding: 0;
+      overflow: hidden;
+    }
+    .roadmap-img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid var(--rim);
+    }
+    .roadmap-caption {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      padding: 0.9rem 1.4rem;
+      margin: 0;
+      background: var(--deep);
+    }
+
     /* ── PILLARS ── */
     .pillars-section { padding: 2rem 0 4rem; opacity: 0; animation: fade-in 1s ease 2s forwards; }
     .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--rim); border: 1px solid var(--rim); }
@@ -347,6 +373,7 @@
     <div class="wordmark">The Exoplanet <span>Codex</span></div>
     <ul class="nav-links">
       <li><a href="#systems">Systems</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
       <li><a href="#method">Method</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
@@ -481,6 +508,22 @@
         <p class="card-desc">Researcher with a system you'd like analyzed? Collaboration welcome. Contact us with your target and scientific rationale.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ── ROADMAP ── -->
+  <section class="roadmap-section" id="roadmap">
+    <div class="section-label">Project roadmap</div>
+    <div class="roadmap-container">
+      <img
+        src="assets/images/roadmap_website.png"
+        alt="The Exoplanet Codex project roadmap showing 5 phases from Foundation through Scale Up"
+        class="roadmap-img"
+      >
+      <p class="roadmap-caption">
+        Five phases. ~20 weeks to Beta Release: Copernicus.
+        All code open. All data public. All results reproducible.
+      </p>
     </div>
   </section>
 
