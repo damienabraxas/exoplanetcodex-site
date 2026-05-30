@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Methodology · The Exoplanet Codex</title>
-  <meta name="description" content="A step-by-step account of how we measure elemental abundances — from raw HARPS spectra to calibrated [X/H] ratios with formal uncertainties.">
+  <title>Spectral Analysis Methodology · The Exoplanet Codex</title>
+  <meta name="description" content="How The Exoplanet Codex derives photospheric elemental abundances from high-resolution stellar spectra — every step documented and reproducible.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -12,22 +12,143 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/codex.css">
   <style>
-    .coming-soon { padding:5rem 0; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
-    .cs-status { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:1.4rem; display:block; }
-    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
-    .coming-soon p { font-size:1.05rem; color:var(--text-dim); max-width:640px; line-height:1.8; margin-bottom:1rem; }
-    .coming-soon p strong { color:var(--text-bright); font-weight:400; }
-    .step-list { list-style:none; margin:2.5rem 0; display:flex; flex-direction:column; gap:1px; background:var(--rim); border:1px solid var(--rim); }
-    .step-item { background:var(--deep); padding:1.4rem 1.8rem; display:flex; gap:1.5rem; align-items:baseline; }
-    .step-num  { font-family:var(--mono); font-size:0.65rem; color:var(--accent); letter-spacing:0.1em; flex-shrink:0; min-width:2.5rem; }
-    .step-body { flex:1; }
-    .step-name { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-bright); margin-bottom:0.4rem; }
-    .step-desc { font-size:0.95rem; color:var(--text-dim); line-height:1.6; }
+    .btn-download {
+      display: inline-block; margin-top: 1.5rem;
+      padding: 0.7em 1.6em;
+      border: 1px solid var(--accent); color: var(--accent);
+      font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-download:hover { background: var(--accent); color: var(--void); }
+
+    .jump-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.8rem; }
+    .jump-links a {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      border: 1px solid var(--rim); padding: 0.35em 0.85em;
+      text-decoration: none; transition: border-color 0.2s, background 0.2s;
+    }
+    .jump-links a:hover { border-color: var(--accent); background: rgba(79,195,247,0.06); }
+
+    .method-section { padding: 3.5rem 0 0.5rem; }
+    .method-section + .method-section { border-top: 1px solid var(--rim); }
+    .method-section-header { margin-bottom: 2.2rem; }
+    .method-eyebrow {
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.5rem;
+    }
+    .method-section-title {
+      font-family: var(--serif); font-size: clamp(1.5rem, 2.2vw, 2rem);
+      font-weight: 300; color: var(--text-bright); line-height: 1.2; margin-bottom: 0.7rem;
+    }
+    .method-intro {
+      font-size: 0.97rem; color: var(--text-mid); line-height: 1.75; max-width: 680px;
+    }
+
+    .method-subsection { margin: 2.5rem 0; }
+    .method-subsection-title {
+      font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--text-bright);
+      border-left: 3px solid var(--accent); padding-left: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .method-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+    .method-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; font-family: var(--mono); }
+    .method-table th {
+      background: var(--surface); color: var(--accent);
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.6rem 0.9rem; text-align: left; border-bottom: 2px solid var(--rim);
+    }
+    .method-table td {
+      padding: 0.55rem 0.9rem; color: var(--text);
+      border-bottom: 1px solid rgba(26,38,64,0.6); vertical-align: top;
+    }
+    .method-table tr:last-child td { border-bottom: none; }
+    .method-table tr:hover td { background: rgba(79,195,247,0.03); }
+    .method-table td em { color: var(--text-dim); font-style: normal; font-size: 0.8rem; }
+
+    .method-code {
+      background: var(--deep); border: 1px solid var(--rim);
+      padding: 1.2rem 1.4rem; margin: 1.5rem 0;
+      font-family: var(--mono); font-size: 0.78rem; line-height: 1.7;
+      color: var(--text-mid); overflow-x: auto; white-space: pre;
+    }
+
+    .method-callout {
+      border-left: 3px solid var(--accent-warm);
+      background: rgba(232,162,74,0.05);
+      padding: 1.2rem 1.4rem; margin: 1.5rem 0;
+    }
+    .method-callout-title {
+      font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.6rem;
+    }
+    .method-callout p { font-size: 0.9rem; color: var(--text); line-height: 1.7; margin: 0.4rem 0; }
+
+    .method-figure { margin: 2rem 0; border: 1px solid var(--rim); background: var(--deep); }
+    .method-figure img { width: 100%; display: block; }
+    .method-figure figcaption {
+      padding: 0.8rem 1.2rem; font-size: 0.78rem; color: var(--text-dim);
+      border-top: 1px solid var(--rim); line-height: 1.6; font-family: var(--mono);
+    }
+    .method-figure figcaption strong { color: var(--accent); font-weight: normal; }
+
+    .method-steps { list-style: none; padding: 0; margin: 1.2rem 0; }
+    .method-steps li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 0.7rem 0; border-bottom: 1px solid rgba(26,38,64,0.5);
+      font-size: 0.9rem; color: var(--text); line-height: 1.6;
+    }
+    .method-steps li:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--mono); font-size: 0.75rem; color: var(--accent);
+      background: var(--surface); border: 1px solid var(--rim);
+      min-width: 1.8rem; height: 1.8rem; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; margin-top: 0.1rem;
+    }
+
+    .priority-1 { color: var(--accent); }
+    .priority-2 { color: var(--accent-warm); }
+    .priority-3 { color: var(--accent-green); }
+
+    .method-eq {
+      background: var(--deep); border: 1px solid var(--rim);
+      padding: 1rem 1.4rem; margin: 1.2rem 0;
+      font-family: var(--mono); font-size: 0.85rem; color: var(--text-bright); text-align: center;
+    }
+
+    code { font-family: var(--mono); font-size: 0.85em; color: var(--accent-warm); }
+
+    .pipeline-flow {
+      font-family: var(--mono); font-size: 0.78rem; color: var(--text);
+      background: var(--deep); border: 1px solid var(--rim);
+      padding: 1.5rem; margin: 1.5rem 0; line-height: 2; white-space: pre;
+    }
+    .pipeline-flow .flow-step { color: var(--accent); }
+    .pipeline-flow .flow-io { color: var(--text-dim); }
+    .pipeline-flow .flow-arrow { color: var(--accent-warm); }
+
+    .comparison-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--rim); border: 1px solid var(--rim); margin: 1.5rem 0;
+    }
+    .comparison-grid > div { background: var(--deep); padding: 1.2rem 1.4rem; }
+    .comparison-title {
+      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.15em;
+      text-transform: uppercase; margin-bottom: 0.7rem;
+    }
+    .comparison-title.old { color: var(--text-dim); }
+    .comparison-title.new { color: var(--accent-green); }
+    .comparison-grid p { font-size: 0.85rem; color: var(--text); line-height: 1.6; margin: 0.3rem 0; }
+
+    @media (max-width: 640px) { .comparison-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-<canvas id="starfield"></canvas>
-<div class="page">
+  <canvas id="starfield"></canvas>
+
   <nav class="codex-nav">
     <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
     <ul class="nav-links">
@@ -39,29 +160,661 @@
       <li><a href="/about/">About</a></li>
       <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
     </ul>
-    <div class="breadcrumb"><a href="/">Home</a> / <span>Method</span></div>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Methodology</span></div>
   </nav>
 
   <header class="page-hero">
-    <div class="page-eyebrow">Science // Spectral analysis pipeline</div>
-    <h1 class="page-title">The <em>Method</em></h1>
-    <p class="page-subtitle">A step-by-step account of how we measure elemental abundances — from raw HARPS spectra to calibrated [X/H] ratios with formal Type A and Type B uncertainties.</p>
+    <div class="container">
+      <div class="section-label">Methodology</div>
+      <h1 class="page-title">Spectral Analysis Methodology</h1>
+      <p class="page-subtitle">How we measure the chemistry of stars — every step documented and reproducible</p>
+      <a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf" class="btn-download" download>
+        ↓ Download Methodology PDF (v1.2)
+      </a>
+      <nav class="jump-links" aria-label="Page sections">
+        <a href="#data-acquisition">Data Acquisition</a>
+        <a href="#stellar-model">Stellar Model</a>
+        <a href="#atomic-data">Atomic Data</a>
+        <a href="#spectral-analysis">Spectral Analysis</a>
+        <a href="#line-profiles">Line Profiles</a>
+        <a href="#abundance">Abundance Derivation</a>
+        <a href="#uncertainty">Uncertainty</a>
+        <a href="#pipeline">Data Model</a>
+        <a href="#validation">Solar Validation</a>
+        <a href="#references">References</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="coming-soon">
-    <span class="cs-status">○ Full methodology doc in preparation — RYA-74</span>
-    <h2>Six-step pipeline overview</h2>
-    <p>The Codex uses a reproducible, open-source Python pipeline built around <strong>ATLAS9/Castelli-Kurucz model atmospheres</strong> and HARPS high-resolution spectroscopy. The methodology PDF will document every decision with citation-level precision.</p>
-    <ul class="step-list">
-      <li class="step-item"><span class="step-num">01</span><div class="step-body"><div class="step-name">Spectrum acquisition &amp; normalization</div><div class="step-desc">HARPS archive retrieval, continuum normalization using iterative sigma-clipping spline fit, S/N assessment per order.</div></div></li>
-      <li class="step-item"><span class="step-num">02</span><div class="step-body"><div class="step-name">Stellar parameters</div><div class="step-desc">Teff from excitation equilibrium, log g from ionization equilibrium (Fe I/II), microturbulence from EW vs. abundance trend. Iterated to convergence.</div></div></li>
-      <li class="step-item"><span class="step-num">03</span><div class="step-body"><div class="step-name">Line list loading</div><div class="step-desc">VALD3 + NIST master CSV, filtered by quality grade (A+/A preferred). Blend-flagged lines excluded from abundance determination.</div></div></li>
-      <li class="step-item"><span class="step-num">04</span><div class="step-body"><div class="step-name">Equivalent width measurement</div><div class="step-desc">Gaussian fitting to absorption profiles. Profiles with χ²/ν &gt; 2 flagged. EW range 20–200 mÅ retained for curve-of-growth analysis.</div></div></li>
-      <li class="step-item"><span class="step-num">05</span><div class="step-body"><div class="step-name">Abundance derivation</div><div class="step-desc">MOOG-style curve of growth analysis. NLTE corrections applied for Fe, O, Na, Mg following Amarsi et al. (2020). Solar reference: Asplund et al. (2021).</div></div></li>
-      <li class="step-item"><span class="step-num">06</span><div class="step-body"><div class="step-name">Uncertainty budget &amp; ratios</div><div class="step-desc">Type A: line-to-line scatter (σ/√N). Type B: stellar parameter sensitivity (ΔTeff=50K, Δlog g=0.1, Δξ=0.1 km/s). C/O, Mg/Si, and alpha/Fe ratios with propagated uncertainties.</div></div></li>
-    </ul>
-    <a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf" class="btn-ghost">Download methodology PDF ↗</a>
-  </div>
+  <main class="page-content">
+    <div class="container">
+
+      <!-- 1. DATA ACQUISITION -->
+      <section class="method-section" id="data-acquisition">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 01</p>
+          <h2 class="method-section-title">Data Acquisition</h2>
+          <p class="method-intro">All spectra are retrieved from the ESO Science Archive, which provides public access to reduced data products after a 12-month proprietary period.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Primary Instrument: HARPS</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Telescope</td><td>ESO 3.6m, La Silla</td><td>Chile</td></tr>
+                <tr><td>Spectral Resolution</td><td>R ~ 115,000</td><td>vs. R ~ 42,000 in Schmitt (2010)</td></tr>
+                <tr><td>Wavelength Coverage</td><td>3780 – 6910 Å</td><td>Two arms: blue + red</td></tr>
+                <tr><td>Mode</td><td>HAM</td><td>High Accuracy Mode</td></tr>
+                <tr><td>Data Product</td><td>S1D</td><td>1D merged, wavelength-calibrated, barycentric-corrected</td></tr>
+                <tr><td>Archive Epochs (55 Cnc A)</td><td>88 spectra</td><td>All used after quality inspection</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Target Selection Criteria</h3>
+          <ol class="method-steps">
+            <li><span class="step-num">1</span>Confirmed exoplanet host (NASA Exoplanet Archive)</li>
+            <li><span class="step-num">2</span>FGK spectral type (T<sub>eff</sub> 4000–7000 K) — ensures ATLAS9 model validity</li>
+            <li><span class="step-num">3</span>Main sequence dwarf (log&thinsp;g &gt; 3.8) — plane-parallel atmosphere valid</li>
+            <li><span class="step-num">4</span>V &lt; 9 mag — sufficient HARPS S/N achievable</li>
+            <li><span class="step-num">5</span>Multiple HARPS epochs available for co-adding</li>
+            <li><span class="step-num">6</span>Not a spectroscopic binary</li>
+          </ol>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Spectrum Co-Adding (55 Cnc A — 88 Epochs)</h3>
+          <div class="method-eq">S/N<sub>coadd</sub> ≈ √88 × 100 ≈ 940 per pixel at 6000 Å</div>
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem;">This makes phosphorus (P I 6034 Å, EW ~ 12 mÅ) and lithium (Li I 6707 Å, EW ~ 3 mÅ) accessible — both invisible in a single exposure.</p>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Element</th><th>Line EW</th><th>Single epoch S/N 100</th><th>Co-add S/N 940</th></tr></thead>
+              <tbody>
+                <tr><td>Fe I</td><td>~80 mÅ</td><td>Yes (40σ)</td><td>Yes (400σ)</td></tr>
+                <tr><td>Ca I</td><td>~40 mÅ</td><td>Yes (20σ)</td><td>Yes (200σ)</td></tr>
+                <tr><td>P I</td><td>~12 mÅ</td><td>No (6σ — marginal)</td><td>Yes (60σ)</td></tr>
+                <tr><td>Li I</td><td>~3 mÅ</td><td>No (1.5σ)</td><td>Yes (15σ)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="method-callout">
+            <p class="method-callout-title">Radial Velocity Correction</p>
+            <p>Each spectrum is shifted to the stellar rest frame before co-adding: <code>λ_rest = λ_obs / (1 + v_r / c)</code>. 55 Cnc A hosts 5 planets with total RV variation up to ±100 m/s — equivalent to ~0.002 Å at 6000 Å. Uncorrected co-adding blurs line profiles at the 0.2-pixel level.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. STELLAR MODEL -->
+      <section class="method-section" id="stellar-model">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 02</p>
+          <h2 class="method-section-title">Stellar Model Atmosphere</h2>
+          <p class="method-intro">We use the ATLAS9 one-dimensional, plane-parallel, LTE model atmosphere grid of Castelli &amp; Kurucz (2003) — the current standard for FGK main-sequence dwarfs.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">ATLAS9 Model Assumptions</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Assumption</th><th>Plain English</th><th>Valid For</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>1D plane-parallel geometry</td>
+                  <td>Atmosphere modeled as flat parallel layers</td>
+                  <td>Main-sequence dwarfs (log&thinsp;g &gt; 3.5)</td>
+                </tr>
+                <tr>
+                  <td>LTE</td>
+                  <td>Each layer in thermal equilibrium — Boltzmann/Saha distributions</td>
+                  <td>Dense collision-dominated FGK photospheres</td>
+                </tr>
+                <tr>
+                  <td>Opacity Distribution Functions</td>
+                  <td>Millions of line opacities treated statistically for efficiency</td>
+                  <td>All spectral types</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;">Cross-validation: key results also run through MARCS grid (Gustafsson et al. 2008). ATLAS9 vs. MARCS differences are typically &lt; 0.03 dex for FGK dwarfs and are included in the systematic uncertainty budget.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">55 Cancri A Model Parameters</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Parameter</th><th>Symbol</th><th>Value</th><th>Uncertainty</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>Effective temperature</td><td>T<sub>eff</sub></td><td>5196 K</td><td>± 24 K</td><td><em>CHARA interferometry — von Braun et al. 2011, ApJ 740, 49</em></td></tr>
+                <tr><td>Surface gravity</td><td>log&thinsp;g</td><td>4.41</td><td>± 0.02</td><td><em>CHARA interferometry — von Braun et al. 2011</em></td></tr>
+                <tr><td>Metallicity</td><td>[Fe/H]</td><td>+0.32</td><td>± 0.02</td><td><em>Spectroscopic self-consistency (§4)</em></td></tr>
+                <tr><td>Microturbulence</td><td>ξ</td><td>~0.9 km/s</td><td>± 0.1 km/s</td><td><em>Fe I EW self-consistency (§4)</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ATOMIC DATA -->
+      <section class="method-section" id="atomic-data">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 03</p>
+          <h2 class="method-section-title">Atomic Data: Line List</h2>
+          <p class="method-intro">All atomic line data are loaded from external, version-controlled CSV files. No wavelengths or log&thinsp;gf values are hardcoded in pipeline software — ensuring full traceability.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">VALD3 Query Settings</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Setting</th><th>Value</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Query type</td><td>Extract Stellar</td><td>Filters by predicted line depth for given stellar parameters</td></tr>
+                <tr><td>Wavelength range</td><td>3780 – 6910 Å</td><td>Matches HARPS coverage</td></tr>
+                <tr><td>Depth threshold</td><td>≥ 1% of continuum</td><td>Removes lines too weak to measure</td></tr>
+                <tr><td>Access method</td><td>FTP (required)</td><td>HTTP truncates large requests — use vald.astro.uu.se FTP</td></tr>
+                <tr><td>Format</td><td>Long format</td><td>Includes broadening parameters (γ<sub>vdW</sub>)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="method-callout">
+            <p class="method-callout-title">⚠ FTP Required for Full Line List</p>
+            <p>The VALD3 web interface truncates output for large requests. Queries covering the full HARPS range with 25 elements require FTP access to retrieve the complete line list. Register at vald.astro.uu.se for a free academic FTP account.</p>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">NIST Quality Grades</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Grade</th><th>log gf Uncertainty</th><th>Usage Policy</th></tr></thead>
+              <tbody>
+                <tr><td>A+</td><td>&lt; 1%</td><td>Full science use</td></tr>
+                <tr><td>A</td><td>&lt; 3%</td><td>Full science use</td></tr>
+                <tr><td>B</td><td>&lt; 10%</td><td>Science use, flagged in uncertainty budget</td></tr>
+                <tr><td>C</td><td>&lt; 25%</td><td>Excluded from primary results</td></tr>
+                <tr><td>D</td><td>&gt; 25%</td><td>Excluded entirely</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Target Element List — 25 Elements</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Priority</th><th>Element</th><th>Symbol</th><th>Group</th><th>Scientific Significance</th></tr></thead>
+              <tbody>
+                <tr><td class="priority-1">1</td><td>Iron I</td><td>Fe I</td><td>Iron peak</td><td>[Fe/H] calibration, T<sub>eff</sub> constraint</td></tr>
+                <tr><td class="priority-1">1</td><td>Iron II</td><td>Fe II</td><td>Iron peak</td><td>log&thinsp;g constraint via ionization equilibrium</td></tr>
+                <tr><td class="priority-1">1</td><td>Carbon</td><td>C</td><td>CHNOPS</td><td>C/O ratio — carbon vs. oxygen-rich planet mineralogy</td></tr>
+                <tr><td class="priority-1">1</td><td>Oxygen</td><td>O</td><td>CHNOPS</td><td>C/O ratio; most abundant metal in rocky planets</td></tr>
+                <tr><td class="priority-1">1</td><td>Magnesium</td><td>Mg</td><td>Alpha</td><td>Mg/Si ratio — mantle mineralogy (olivine vs. pyroxene)</td></tr>
+                <tr><td class="priority-1">1</td><td>Silicon</td><td>Si</td><td>Alpha</td><td>Primary rocky planet building block</td></tr>
+                <tr><td class="priority-1">1</td><td>Calcium</td><td>Ca</td><td>Alpha</td><td>Alpha element tracer; strong optical lines</td></tr>
+                <tr><td class="priority-1">1</td><td>Titanium</td><td>Ti</td><td>Alpha</td><td>Galactic chemical evolution tracer; perovskite in mantles</td></tr>
+                <tr><td class="priority-1">1</td><td>Nickel</td><td>Ni</td><td>Iron peak</td><td>Rocky planet core composition; Fe/Ni ratio</td></tr>
+                <tr><td class="priority-1">1</td><td>Sodium</td><td>Na</td><td>Bio-significant</td><td>Biological tracer; Na D doublet</td></tr>
+                <tr><td class="priority-1">1</td><td>Phosphorus</td><td>P</td><td>CHNOPS</td><td>Limiting nutrient for life; varies 10× across FGK stars</td></tr>
+                <tr><td class="priority-1">1</td><td>Sulfur</td><td>S</td><td>CHNOPS/Alpha</td><td>Life-essential volatile; disk chemistry tracer</td></tr>
+                <tr><td class="priority-2">2</td><td>Nitrogen</td><td>N</td><td>CHNOPS</td><td>Life-essential; difficult optical lines</td></tr>
+                <tr><td class="priority-2">2</td><td>Cobalt</td><td>Co</td><td>Iron peak</td><td>Fe peak nucleosynthesis tracer</td></tr>
+                <tr><td class="priority-2">2</td><td>Chromium</td><td>Cr</td><td>Iron peak</td><td>Type Ia vs. Type II SNe tracer via Cr/Fe</td></tr>
+                <tr><td class="priority-2">2</td><td>Aluminum</td><td>Al</td><td>Rocky planet</td><td>Refractory element; crustal composition</td></tr>
+                <tr><td class="priority-2">2</td><td>Potassium</td><td>K</td><td>Bio-significant</td><td>Life-essential; difficult lines</td></tr>
+                <tr><td class="priority-2">2</td><td>Barium</td><td>Ba</td><td>s-process</td><td>AGB star enrichment history</td></tr>
+                <tr><td class="priority-2">2</td><td>Yttrium</td><td>Y</td><td>s-process</td><td>Stellar age chemical clock (Y/Mg ratio)</td></tr>
+                <tr><td class="priority-2">2</td><td>Vanadium</td><td>V</td><td>Iron peak</td><td>Enzyme cofactor; nucleosynthesis tracer</td></tr>
+                <tr><td class="priority-3">3</td><td>Manganese</td><td>Mn</td><td>Iron peak</td><td>Odd-Z nucleosynthesis; metallicity-dependent</td></tr>
+                <tr><td class="priority-3">3</td><td>Scandium</td><td>Sc</td><td>Light iron peak</td><td>Odd-even nucleosynthesis effect</td></tr>
+                <tr><td class="priority-3">3</td><td>Lithium</td><td>Li</td><td>Age indicator</td><td>Stellar age constraint; depletes with time</td></tr>
+                <tr><td class="priority-3">3</td><td>Europium</td><td>Eu</td><td>r-process</td><td>Neutron star merger enrichment history</td></tr>
+                <tr><td class="priority-3">3</td><td>Zirconium</td><td>Zr</td><td>s-process</td><td>Refractory s-process tracer</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Special Line Handling</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Line</th><th>Issue</th><th>Treatment</th></tr></thead>
+              <tbody>
+                <tr><td>[O I] 6300.304 Å</td><td>Blended with Fe I + Ni I 6300.336 Å</td><td>Ni blend subtracted using measured Ni abundance; no NLTE correction (forbidden line)</td></tr>
+                <tr><td>O I 7771–7775 Å triplet</td><td>Large NLTE corrections (−0.2 to −0.4 dex)</td><td>Amarsi et al. (2021) grid; cross-checked against [O I] 6300 Å</td></tr>
+                <tr><td>Na I D 5890/5896 Å</td><td>Strong — damping wings + NLTE</td><td>Voigt profile fit; Lind et al. (2011) correction (~−0.07 dex)</td></tr>
+                <tr><td>P I 6034/6043 Å</td><td>Very weak — requires S/N &gt; 300</td><td>Only accessible in co-added spectrum; upper limit if &lt; 3σ</td></tr>
+                <tr><td>C I 5380 Å</td><td>High χ (7.7 eV) — T<sub>eff</sub> sensitive</td><td>Cross-validated against C I 5052 Å; Amarsi et al. (2019) NLTE correction</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SPECTRAL ANALYSIS -->
+      <section class="method-section" id="spectral-analysis">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 04</p>
+          <h2 class="method-section-title">Spectral Analysis</h2>
+          <p class="method-intro">Before measuring elemental abundances, the spectrum is continuum-normalized and stellar parameters (T<sub>eff</sub>, log&thinsp;g, ξ) are verified through self-consistency checks on Fe I and Fe II lines.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Continuum Normalization</h3>
+          <ol class="method-steps">
+            <li><span class="step-num">1</span>Identify continuum anchor windows — regions free of significant absorption for the target's stellar parameters (Barklem &amp; Aspelund-Johansson 2005).</li>
+            <li><span class="step-num">2</span>For metal-rich stars ([Fe/H] &gt; +0.2), use the ATLAS9 model continuum as additional reference in crowded regions (5000–5400 Å).</li>
+            <li><span class="step-num">3</span>Fit a Chebyshev polynomial (degree 3) through anchor points with iterative 3σ sigma-clipping.</li>
+            <li><span class="step-num">4</span>Divide observed spectrum by the fitted continuum.</li>
+            <li><span class="step-num">5</span>Verify: σ &lt; 0.005 (0.5% of continuum) in clean windows before proceeding.</li>
+          </ol>
+          <div class="method-callout">
+            <p class="method-callout-title">Challenge for 55 Cancri A</p>
+            <p>At [Fe/H] = +0.32, the spectrum is significantly more crowded than solar. The 5000–5400 Å region has very high Fe I line density. The ATLAS9 model continuum is weighted more heavily here to avoid over-fitting through shallow absorption features.</p>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Stellar Parameter Self-Consistency</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Parameter</th><th>Diagnostic</th><th>Convergence Criterion</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>T<sub>eff</sub></td>
+                  <td>Fe I abundance vs. excitation potential χ</td>
+                  <td>|∂[Fe/H]/∂χ| &lt; 0.01 dex/eV — requires ≥ 20 Fe I lines spanning χ = 0.5–5.0 eV</td>
+                </tr>
+                <tr>
+                  <td>ξ (microturbulence)</td>
+                  <td>Fe I abundance vs. reduced EW log(EW/λ)</td>
+                  <td>|∂[Fe/H]/∂log(EW/λ)| &lt; 0.01 dex per unit</td>
+                </tr>
+                <tr>
+                  <td>log&thinsp;g</td>
+                  <td>Ionization equilibrium: A(Fe I) vs. A(Fe II)</td>
+                  <td>|A(Fe I) − A(Fe II)| &lt; 0.05 dex</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-dim);margin:0.8rem 0 1.5rem;">All three constraints must be simultaneously satisfied. Convergence typically takes 3–5 iterations starting from interferometric values.</p>
+
+          <figure class="method-figure">
+            <img src="/assets/images/methodology/fig5_self_consistency.png"
+                 alt="Three self-consistency diagnostic plots for 55 Cancri A"
+                 onerror="this.closest('figure').style.display='none'">
+            <figcaption><strong>Figure 5.</strong> Self-consistency diagnostics for 55 Cancri A. Left: Fe I abundance vs. χ — zero slope confirms T<sub>eff</sub>. Centre: Fe I vs. log(EW/λ) — zero slope confirms ξ. Right: Fe I vs. Fe II agreement confirms log&thinsp;g.</figcaption>
+          </figure>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">EW Measurement Quality Thresholds</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Criterion</th><th>Requirement</th><th>Action if Failed</th></tr></thead>
+              <tbody>
+                <tr><td>EW minimum</td><td>&gt; 5 mÅ</td><td>Below detection — report upper limit</td></tr>
+                <tr><td>EW maximum</td><td>&lt; 300 mÅ</td><td>Saturated — exclude from LTE analysis</td></tr>
+                <tr><td>Fit quality (χ²<sub>red</sub>)</td><td>&lt; 2.0</td><td>Refit or exclude</td></tr>
+                <tr><td>Line S/N</td><td>&gt; 5</td><td>Exclude</td></tr>
+                <tr><td>Center shift</td><td>&lt; 0.05 Å from VALD/NIST</td><td>Flag — possible misidentification</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. LINE PROFILES -->
+      <section class="method-section" id="line-profiles">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 05</p>
+          <h2 class="method-section-title">Line Profiles</h2>
+          <p class="method-intro">The correct line profile model depends on line strength. Gaussian fits work well for weak lines; strong lines with pressure-broadened wings require Voigt profiles.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Gaussian vs. Lorentzian vs. Voigt</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Profile</th><th>Appropriate For</th><th>Physics</th><th>EW Rule</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td>Gaussian</td>
+                  <td>Weak lines EW &lt; 80 mÅ</td>
+                  <td>Thermal + instrumental broadening</td>
+                  <td>≈ Voigt (&lt; 1% difference) in this regime</td>
+                </tr>
+                <tr>
+                  <td>Lorentzian</td>
+                  <td>Theoretical damping wings only</td>
+                  <td>Pressure broadening (van der Waals)</td>
+                  <td>Overestimates core depth — not used alone</td>
+                </tr>
+                <tr>
+                  <td><strong>Voigt</strong></td>
+                  <td><strong>All line strengths</strong></td>
+                  <td>Gaussian core convolved with Lorentzian wings</td>
+                  <td><strong>Required for EW &gt; 150 mÅ</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;">Always fitted with Voigt profiles: Na D doublet, Mg b triplet (5167–5184 Å), Ba II 5853 Å, Ca H&amp;K (3934/3968 Å).</p>
+
+          <figure class="method-figure">
+            <img src="/assets/images/methodology/fig1_voigt_comparison.png"
+                 alt="Ca I 6162 Å profile showing Gaussian vs Voigt fit comparison"
+                 onerror="this.closest('figure').style.display='none'">
+            <figcaption><strong>Figure 1.</strong> Ca I 6162.17 Å profile — Gaussian (dashed) vs. Voigt (solid) fit. The Gaussian underestimates pressure-broadened wings, leading to ~15% EW error for this line.</figcaption>
+          </figure>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Worked Example: Na I D1 (5895.92 Å)</h3>
+          <p style="font-size:0.9rem;color:var(--text);line-height:1.7;margin-bottom:1.2rem;">The Na I D doublet was first observed in the Sun by Fraunhofer (1814) and identified as sodium by Kirchhoff &amp; Bunsen (1859). For 55 Cnc A ([Fe/H] = +0.32), the lines are especially deep due to enhanced sodium abundance.</p>
+
+          <ol class="method-steps">
+            <li><span class="step-num">1</span><strong>Locate:</strong> Extract ±5 Å around 5895.92 Å after RV correction. D1 and D2 are separated by ~6 Å, well-resolved at R~115,000.</li>
+            <li><span class="step-num">2</span><strong>Choose profile:</strong> Na D EW ~ 450–550 mÅ → damping regime → <strong>Voigt required.</strong> Gaussian would underestimate EW by ~25%, causing ~0.2 dex error in [Na/H] — larger than the entire uncertainty budget.</li>
+            <li><span class="step-num">3</span><strong>Measure EW:</strong> Numerical integration over fitted Voigt profile. EW = ∫(1 − F(λ)/F<sub>c</sub>) dλ, expressed in mÅ.</li>
+            <li><span class="step-num">4</span><strong>Uncertainty:</strong> Primary limit is continuum placement, not photon noise. σ<sub>EW</sub> ≈ σ<sub>cont</sub> × window × 1000 ≈ 0.005 × 6.0 × 1000 ≈ 30 mÅ (~6% relative).</li>
+            <li><span class="step-num">5</span><strong>Atomic data:</strong> λ = 5895.924 Å (NIST A+), χ = 0.000 eV (ground state), log&thinsp;gf = −0.184 (NIST A), γ<sub>vdW</sub> = −7.530 (Barklem 2000). Input to iSpec/MOOG.</li>
+            <li><span class="step-num">6</span><strong>NLTE correction:</strong> −0.07 ± 0.02 dex (Lind et al. 2011) for these parameters. Expected result: [Na/H] ≈ +0.34 to +0.44, [Na/Fe] ≈ +0.02 to +0.12 (near-solar ratio).</li>
+          </ol>
+
+          <figure class="method-figure">
+            <img src="/assets/images/methodology/fig2_sodium_example.png"
+                 alt="Na I D1 5895.92 Å profile in 55 Cancri A with Voigt fit"
+                 onerror="this.closest('figure').style.display='none'">
+            <figcaption><strong>Figure 2.</strong> Na I D1 5895.92 Å in 55 Cnc A co-added spectrum. Solid: Voigt fit (EW ~ 500 mÅ). Dashed: Gaussian fit for comparison — note the wing underestimate. Bottom: residuals.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 6. ABUNDANCE DERIVATION -->
+      <section class="method-section" id="abundance">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 06</p>
+          <h2 class="method-section-title">Abundance Derivation</h2>
+          <p class="method-intro">From equivalent width to photospheric abundance — via the curve of growth, iSpec/MOOG radiative transfer, and solar normalization to Asplund et al. (2021).</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">The Curve of Growth</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Regime</th><th>EW Range</th><th>Behavior</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Linear</td><td>&lt; ~50 mÅ</td><td>EW ∝ N (number of absorbing atoms)</td><td>Direct proportionality — preferred</td></tr>
+                <tr><td>Flat (saturation)</td><td>~50–150 mÅ</td><td>EW grows slowly with abundance</td><td>Sensitive to microturbulence ξ</td></tr>
+                <tr><td>Damping</td><td>&gt; ~150 mÅ</td><td>EW ∝ √N (pressure-broadened wings)</td><td>Requires accurate γ<sub>vdW</sub>; Voigt fit only</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Solar Normalization</h3>
+          <div class="method-eq">[X/H] = A(X)<sub>star</sub> − A(X)<sub>sun</sub>&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;[X/Fe] = [X/H] − [Fe/H]</div>
+          <div class="comparison-grid">
+            <div>
+              <p class="comparison-title old">Schmitt (2010) — Predecessor Study</p>
+              <p>Solar reference: Lodders (2003)</p>
+              <p>A(Fe)☉ = 7.50</p>
+              <p>Instrument: ELODIE (R ~ 42,000)</p>
+            </div>
+            <div>
+              <p class="comparison-title new">The Exoplanet Codex (2026)</p>
+              <p>Solar reference: Asplund et al. (2021)</p>
+              <p>A(Fe)☉ = 7.46 (−0.04 dex revision)</p>
+              <p>Instrument: HARPS (R ~ 115,000)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Key Science Ratios</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Ratio</th><th>Threshold</th><th>Interpretation</th><th>Solar Value</th></tr></thead>
+              <tbody>
+                <tr><td>C/O</td><td>0.8</td><td>Below: silicate/oxide minerals (Earth-like). Above: SiC, graphite — possible diamond interior</td><td>0.55</td></tr>
+                <tr><td>Mg/Si</td><td>1.0</td><td>Above: olivine-dominated mantle (Mg₂SiO₄). Below: pyroxene-dominated (MgSiO₃)</td><td>1.05</td></tr>
+                <tr><td>Fe/Si</td><td>—</td><td>Iron core mass fraction predictor for rocky planets</td><td>0.86 (mass)</td></tr>
+                <tr><td>[α/Fe]</td><td>—</td><td>High at low [Fe/H] = old star formed before Type Ia SNe Fe enrichment</td><td>~0.0</td></tr>
+                <tr><td>CHNOPS Index</td><td>vs. Redfield ratio</td><td>C:N:O:P:S ratios vs. marine organism composition — habitability indicator</td><td>1.0 (reference)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. UNCERTAINTY -->
+      <section class="method-section" id="uncertainty">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 07</p>
+          <h2 class="method-section-title">Uncertainty Analysis</h2>
+          <p class="method-intro">The uncertainty budget follows the Type A / Type B framework of the JCGM Guide to the Expression of Uncertainty in Measurement (GUM) — consistent with precision metrology practice.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Type A — Statistical (Random)</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Source</th><th>Estimation Method</th><th>Typical Magnitude</th></tr></thead>
+              <tbody>
+                <tr><td>Photon noise on EW</td><td>Covariance matrix of Gaussian/Voigt fit</td><td>σ<sub>EW</sub> ≈ 1.5 × FWHM / S/N</td></tr>
+                <tr><td>Line-to-line scatter</td><td>σ / √N for N lines of same element</td><td>~0.02 – 0.05 dex</td></tr>
+                <tr><td>Continuum placement</td><td>Repeat normalization, vary anchor points</td><td>~0.01 – 0.03 dex</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Type B — Systematic (Non-Random)</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Source</th><th>Estimation Method</th><th>Typical Magnitude</th></tr></thead>
+              <tbody>
+                <tr><td>ΔT<sub>eff</sub> = ±50 K</td><td>Re-run abundances at T<sub>eff</sub> ± 50 K</td><td>±0.05 – 0.10 dex</td></tr>
+                <tr><td>Δlog&thinsp;g = ±0.1</td><td>Re-run at log&thinsp;g ± 0.1</td><td>±0.02 – 0.05 dex</td></tr>
+                <tr><td>Δξ = ±0.1 km/s</td><td>Re-run at ξ ± 0.1</td><td>±0.03 – 0.06 dex</td></tr>
+                <tr><td>log&thinsp;gf uncertainty</td><td>NIST grade (A: 3%, B: 10%)</td><td>~0.02 – 0.05 dex</td></tr>
+                <tr><td>NLTE corrections</td><td>Uncertainty on correction grids</td><td>~0.02 – 0.08 dex</td></tr>
+                <tr><td>1D vs. 3D models</td><td>Compare ATLAS9 vs. MARCS</td><td>~0.03 – 0.10 dex (C, O)</td></tr>
+                <tr><td>Continuum (systematic)</td><td>Model-based vs. polynomial normalization</td><td>~0.02 – 0.05 dex</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="method-eq">σ<sub>total</sub> = √(σ<sub>A</sub>² + σ<sub>Teff</sub>² + σ<sub>logg</sub>² + σ<sub>ξ</sub>² + σ<sub>loggf</sub>² + σ<sub>NLTE</sub>²)</div>
+          <div class="method-callout">
+            <p class="method-callout-title">O I / Ni I Blend at 6300 Å</p>
+            <p>The dominant source of published C/O ratio discrepancies for 55 Cnc A (Teske et al. 2013). The Ni I 6300.336 Å contribution is calculated from our measured Ni abundance and subtracted. Its uncertainty propagates into σ(C/O) as a correlated term.</p>
+          </div>
+        </div>
+
+        <figure class="method-figure">
+          <img src="/assets/images/methodology/fig4_uncertainty_budget.png"
+               alt="Tornado chart showing uncertainty contribution per source for priority-1 elements"
+               onerror="this.closest('figure').style.display='none'">
+          <figcaption><strong>Figure 4.</strong> Uncertainty budget tornado chart for 55 Cnc A. Each bar shows the contribution of one source to σ<sub>total</sub>. T<sub>eff</sub> dominates for most elements; NLTE corrections dominate for C and O.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 8. DATA MODEL -->
+      <section class="method-section" id="pipeline">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 08</p>
+          <h2 class="method-section-title">Data Model</h2>
+          <p class="method-intro">The pipeline processes each star from raw ESO archive FITS files to final abundance tables through six sequential stages, each with well-defined input and output schemas.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Pipeline Data Flow</h3>
+          <figure class="method-figure">
+            <img src="/assets/images/methodology/fig3_pipeline_flow.png"
+                 alt="Pipeline flow diagram from ESO archive to science outputs"
+                 onerror="this.closest('figure').style.display='none'">
+            <figcaption><strong>Figure 3.</strong> Pipeline data flow. Each stage reads from a defined input format and writes versioned output files. All intermediate products are preserved.</figcaption>
+          </figure>
+          <div class="pipeline-flow">ESO Archive (FITS)
+    │
+    ▼
+pipeline/spectra_acquire.py
+    Input:   ESO archive FITS files
+    Output:  data/processed/{star}_coadded.fits
+             Normalized flux, rest-frame wavelength, S/N map
+    │
+    ▼
+pipeline/spectra_normalize.py
+    Input:   {star}_coadded.fits
+    Output:  {star}_normalized.fits  —  continuum = 1.0 ± 0.005
+    │
+    ▼
+pipeline/params_solve.py
+    Input:   normalized spectrum + Fe I/II line list
+    Output:  results/tables/{star}_stellar_params.csv
+    │
+    ▼
+pipeline/lines_measure.py
+    Input:   normalized spectrum + linelist_master.csv
+    Output:  results/tables/{star}_ew_measurements.csv
+             Per-line EW, uncertainty, quality flags
+    │
+    ▼
+pipeline/abundances_derive.py + uncertainty_budget.py
+    Input:   EW table + stellar params + ATLAS9 model
+    Output:  {star}_abundances_final.csv
+             [X/H], [X/Fe] with full uncertainty budget, NLTE applied
+    │
+    ▼
+pipeline/ratios_interpret.py
+    Input:   final abundances
+    Output:  {star}_science_outputs.csv
+             C/O, Mg/Si, Fe/Si, [α/Fe], CHNOPS index</div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Key File Schemas</h3>
+          <div class="method-code"># results/tables/{star}_ew_measurements.csv
+element, ion, wavelength_air_A, excitation_potential_eV, log_gf,
+nist_grade, EW_mA, EW_err_mA, center_fitted_A, sigma_A,
+chi2_reduced, blend_flag, quality_flag, notes
+
+# results/tables/{star}_abundances_final.csv
+element, ion, n_lines, A_X_mean, A_X_scatter, A_X_solar_A2021,
+XH, XH_err_typeA, XH_err_typeB, XH_err_total,
+XFe, XFe_err_total, nlte_correction, nlte_source
+
+# results/tables/{star}_science_outputs.csv
+star_id, teff_K, logg, feh, age_gyr,
+CO_ratio, CO_err, MgSi_ratio, MgSi_err,
+FeSi_ratio, FeSi_err, alpha_Fe_mean, alpha_Fe_err,
+CHNOPS_index, CHNOPS_err, notes</div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Future Integrations</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Integration</th><th>Purpose</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>JWST atmospheric spectra</td><td>Cross-correlate host star abundances with exoplanet atmospheric composition</td><td>Planned — Milestone C</td></tr>
+                <tr><td>Hypatia Catalog</td><td>Automated ingestion for literature comparison per star</td><td>Planned — Milestone C</td></tr>
+                <tr><td>NASA Exoplanet Archive API</td><td>Live planet parameter cross-matching</td><td>In design</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. SOLAR VALIDATION -->
+      <section class="method-section" id="validation">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 09</p>
+          <h2 class="method-section-title">Solar Validation</h2>
+          <p class="method-intro">Before analyzing any exoplanet host star, the pipeline is validated against the Sun using reflected sunlight from an asteroid observed with HARPS — processed identically to the science targets.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Asteroid Calibration Criteria</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Quantity</th><th>Required Result</th><th>If Failed</th></tr></thead>
+              <tbody>
+                <tr><td>A(Fe)☉ recovery</td><td>7.46 ± 0.05 (Asplund et al. 2021)</td><td>Systematic pipeline error — must identify and correct before any science results</td></tr>
+                <tr><td>C/O☉ recovery</td><td>0.55 ± 0.05</td><td>Systematic oxygen measurement error</td></tr>
+                <tr><td>Calibrator targets</td><td>Asteroid Vesta or Ceres (HARPS archive)</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Literature Comparison for 55 Cancri A</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Reference</th><th>Method</th><th>Key Result</th></tr></thead>
+              <tbody>
+                <tr><td>Fischer &amp; Valenti (2005)</td><td>HIRES/Keck spectral synthesis</td><td>[Fe/H] = +0.33 ± 0.04</td></tr>
+                <tr><td>Valenti &amp; Fischer (2005)</td><td>Spectral synthesis (SME)</td><td>Full atmospheric parameters</td></tr>
+                <tr><td>Teske et al. (2013)</td><td>EW method — dedicated C/O study</td><td>C/O = 0.78 ± 0.08 (ApJ 778, 132)</td></tr>
+                <tr><td>Hypatia Catalog (HIP 43587)</td><td>Weighted mean of all literature values</td><td>Reference for systematic offsets</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. REFERENCES -->
+      <section class="method-section" id="references">
+        <div class="method-section-header">
+          <p class="method-eyebrow">Section 10</p>
+          <h2 class="method-section-title">References</h2>
+        </div>
+
+        <div class="method-table-wrap">
+          <table class="method-table">
+            <tbody>
+              <tr><td>Amarsi et al. (2019)</td><td><em>A&amp;A 630, A104</em> — Carbon NLTE corrections</td></tr>
+              <tr><td>Amarsi et al. (2021)</td><td><em>A&amp;A 656, A113</em> — Oxygen NLTE corrections</td></tr>
+              <tr><td>Amarsi et al. (2022)</td><td><em>A&amp;A 668, A68</em> — Iron NLTE corrections</td></tr>
+              <tr><td>Asplund et al. (2021)</td><td><em>A&amp;A 653, A141</em> — Solar photospheric abundances (current standard)</td></tr>
+              <tr><td>Barklem &amp; Aspelund-Johansson (2005)</td><td><em>A&amp;A 435, 373</em> — Van der Waals damping constants</td></tr>
+              <tr><td>Blackwell et al. (1979)</td><td><em>MNRAS 186, 657</em> — Microturbulence / equivalent width method</td></tr>
+              <tr><td>Blanco-Cuaresma et al. (2014)</td><td><em>A&amp;A 569, A111</em> — iSpec spectral analysis framework</td></tr>
+              <tr><td>Castelli &amp; Kurucz (2003)</td><td><em>Proc. IAU Symp. 210</em> — ATLAS9 model atmosphere grid</td></tr>
+              <tr><td>Fischer &amp; Valenti (2005)</td><td><em>ApJ 622, 1102</em> — 55 Cnc A parameters, [Fe/H] = +0.33</td></tr>
+              <tr><td>Gustafsson et al. (2008)</td><td><em>A&amp;A 486, 951</em> — MARCS model atmosphere grid</td></tr>
+              <tr><td>Kramida et al. (2023)</td><td>NIST Atomic Spectra Database — physics.nist.gov/asd</td></tr>
+              <tr><td>Lind et al. (2011)</td><td><em>A&amp;A 528, A103</em> — Sodium NLTE corrections</td></tr>
+              <tr><td>Lodders (2003)</td><td><em>ApJ 591, 1220</em> — Solar abundances (used in Schmitt 2010)</td></tr>
+              <tr><td>Osorio et al. (2015)</td><td><em>A&amp;A 579, A53</em> — Magnesium NLTE corrections</td></tr>
+              <tr><td>Ryabchikova et al. (2015)</td><td><em>PhyS 90, 054005</em> — VALD3 atomic line database</td></tr>
+              <tr><td>Schmitt (2010)</td><td>Senior Thesis, University of Montana — predecessor 55 Cnc abundance study</td></tr>
+              <tr><td>Sneden (1973)</td><td><em>ApJ 184, 839</em> — MOOG line analysis code</td></tr>
+              <tr><td>Teske et al. (2013)</td><td><em>ApJ 778, 132</em> — 55 Cnc C/O ratio (dedicated study)</td></tr>
+              <tr><td>Valenti &amp; Fischer (2005)</td><td><em>ApJS 159, 141</em> — Spectral synthesis method (SME)</td></tr>
+              <tr><td>von Braun et al. (2011)</td><td><em>ApJ 740, 49</em> — 55 Cnc A interferometric parameters (CHARA)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-top:2rem;font-family:var(--mono);">
+          Version 1.2 · May 2026 ·
+          <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--accent);">github.com/damienabraxas/exoplanetcodex</a>
+        </p>
+      </section>
+
+    </div>
+  </main>
 
   <footer class="codex-footer">
     <div class="footer-grid">
@@ -72,8 +825,8 @@
     </div>
     <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
   </footer>
-</div>
-<script src="/assets/js/starfield.js"></script>
-<script src="/assets/js/codex.js"></script>
+
+  <script src="/assets/js/starfield.js"></script>
+  <script src="/assets/js/codex.js"></script>
 </body>
 </html>
