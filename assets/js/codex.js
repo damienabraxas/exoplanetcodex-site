@@ -149,8 +149,8 @@ function htmlToMarkdown(node) {
     case 'h4': return '\n\n#### ' + node.textContent.trim() + '\n\n';
     case 'p':  return walk(kids).trim() + '\n\n';
     case 'br': return '\n';
-    case 'strong': case 'b': return '**' + node.textContent.trim() + '**';
-    case 'em':     case 'i': return '*'  + node.textContent.trim() + '*';
+    case 'strong': case 'b': { var sb = walk(kids).replace(/\s+/g, ' ').trim(); return sb ? '**' + sb + '**' : ''; }
+    case 'em':     case 'i': { var ei = walk(kids).replace(/\s+/g, ' ').trim(); return ei ? '*'  + ei + '*'  : ''; }
     case 'a': {
       var href = node.getAttribute('href') || '';
       var text = walk(kids).trim();
