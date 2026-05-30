@@ -14,353 +14,95 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
   <style>
-    :root {
-      --void:        #04060d;
-      --deep:        #080e1a;
-      --surface:     #0d1526;
-      --rim:         #1a2640;
-      --muted:       #3a4f6e;
-      --text-dim:    #6b8aad;
-      --text-mid:    #a8c0d8;
-      --text-bright: #ddeeff;
-      --accent:      #4fc3f7;
-      --accent-warm: #e8a24a;
-      --danger:      #e05c4b;
-      --serif:       'Crimson Pro', Georgia, serif;
-      --mono:        'Space Mono', 'Courier New', monospace;
-      --max-width:   1100px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 18px; }
-    body {
-      background: var(--void);
-      color: var(--text-mid);
-      font-family: var(--serif);
-      line-height: 1.7;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    #starfield { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-    body::after {
-      content: '';
-      position: fixed; inset: 0;
-      background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px);
-      pointer-events: none; z-index: 1;
-    }
-    .page { position: relative; z-index: 2; max-width: var(--max-width); margin: 0 auto; padding: 0 2.5rem; }
-
-    /* ── NAV ── */
-    nav {
-      padding: 2.2rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--rim);
-      opacity: 0;
-      animation: fade-in 1s ease 0.2s forwards;
-    }
-    .wordmark {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--text-bright);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-    .wordmark span { color: var(--accent); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .status-pill {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-warm);
-      border: 1px solid rgba(232,162,74,0.35);
-      padding: 0.3em 0.85em;
-      border-radius: 2px;
-    }
-    .status-pill::before { content: '● '; font-size: 0.5rem; vertical-align: middle; animation: blink 2s ease-in-out infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
     /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 94vh;
-      display: flex;
-      align-items: flex-end;
-      margin: 0 -2.5rem;
-      overflow: hidden;
-    }
-    .hero-image {
-      position: absolute; inset: 0;
-      background-image: url('assets/images/janssen-jwst-concept.png');
-      background-size: cover;
-      background-position: center 30%;
-      filter: brightness(0.5) saturate(0.85);
-      transition: transform 10s ease;
-    }
-    .hero-image:hover { transform: scale(1.025); }
-    .hero-vignette {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(4,6,13,0.15) 0%,
-        rgba(4,6,13,0.0)  25%,
-        rgba(4,6,13,0.0)  50%,
-        rgba(4,6,13,0.88) 82%,
-        rgba(4,6,13,1.0)  100%
-      );
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 4rem 5rem;
-      max-width: 820px;
-      opacity: 0;
-      animation: slide-up 1.2s ease 0.8s forwards;
-    }
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.4rem;
-    }
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(3.2rem, 6vw, 6rem);
-      font-weight: 300;
-      line-height: 1.02;
-      color: var(--text-bright);
-      letter-spacing: -0.02em;
-      margin-bottom: 1.4rem;
-      text-shadow: 0 2px 40px rgba(0,0,0,0.8);
-    }
-    h1 em { font-style: italic; color: var(--accent); }
-    .hero-sub {
-      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-      font-weight: 300;
-      color: var(--text-mid);
-      max-width: 560px;
-      line-height: 1.8;
-      margin-bottom: 2.2rem;
-      text-shadow: 0 1px 20px rgba(0,0,0,0.9);
-    }
-    .hero-sub strong { color: var(--text-bright); font-weight: 400; }
-    .hero-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--void);
-      background: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 0.9em 1.8em;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-primary:hover { background: transparent; color: var(--accent); }
-    .btn-ghost {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      background: transparent;
-      border: 1px solid var(--rim);
-      padding: 0.9em 1.8em;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    .hero-credit {
-      position: absolute;
-      bottom: 1.2rem; right: 2rem;
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      color: rgba(168,192,216,0.4);
-      letter-spacing: 0.08em;
-      z-index: 3;
-    }
-
+    .hero { position:relative; min-height:94vh; display:flex; align-items:flex-end; margin:0 -2.5rem; overflow:hidden; }
+    .hero-image { position:absolute; inset:0; background-image:url('assets/images/janssen-jwst-concept.png'); background-size:cover; background-position:center 30%; filter:brightness(0.5) saturate(0.85); transition:transform 10s ease; }
+    .hero-image:hover { transform:scale(1.025); }
+    .hero-vignette { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(4,6,13,0.15) 0%,rgba(4,6,13,0.0) 25%,rgba(4,6,13,0.0) 50%,rgba(4,6,13,0.88) 82%,rgba(4,6,13,1.0) 100%); }
+    .hero-content { position:relative; z-index:2; padding:4rem 5rem; max-width:820px; opacity:0; animation:slide-up 1.2s ease 0.8s forwards; }
+    .hero-eyebrow { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent); margin-bottom:1.4rem; }
+    h1 { font-family:var(--serif); font-size:clamp(3.2rem,6vw,6rem); font-weight:300; line-height:1.02; color:var(--text-bright); letter-spacing:-0.02em; margin-bottom:1.4rem; text-shadow:0 2px 40px rgba(0,0,0,0.8); }
+    h1 em { font-style:italic; color:var(--accent); }
+    .hero-sub { font-size:clamp(1.05rem,1.4vw,1.25rem); font-weight:300; color:var(--text-mid); max-width:560px; line-height:1.8; margin-bottom:2.2rem; text-shadow:0 1px 20px rgba(0,0,0,0.9); }
+    .hero-sub strong { color:var(--text-bright); font-weight:400; }
+    .hero-cta-group { display:flex; gap:1rem; flex-wrap:wrap; }
+    .hero-credit { position:absolute; bottom:1.2rem; right:2rem; font-family:var(--mono); font-size:0.58rem; color:rgba(168,192,216,0.4); letter-spacing:0.08em; z-index:3; }
     /* ── DATA STRIP ── */
-    .data-strip {
-      display: flex;
-      border: 1px solid var(--rim);
-      border-top: none;
-      overflow-x: auto;
-      opacity: 0;
-      animation: fade-in 1s ease 1.4s forwards;
-    }
-    .data-cell { flex: 1; min-width: 130px; padding: 1.1rem 1.6rem; border-right: 1px solid var(--rim); }
-    .data-cell:last-child { border-right: none; }
-    .data-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.35rem; }
-    .data-value { font-family: var(--mono); font-size: 1.05rem; color: var(--accent); letter-spacing: 0.04em; }
-    .data-value.warm { color: var(--accent-warm); }
-    .data-value.dim  { color: var(--text-mid); font-size: 0.85rem; }
-
+    .data-strip { display:flex; border:1px solid var(--rim); border-top:none; overflow-x:auto; opacity:0; animation:fade-in 1s ease 1.4s forwards; }
+    .data-cell { flex:1; min-width:130px; padding:1.1rem 1.6rem; border-right:1px solid var(--rim); }
+    .data-cell:last-child { border-right:none; }
+    .data-label { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.35rem; }
+    .data-value { font-family:var(--mono); font-size:1.05rem; color:var(--accent); letter-spacing:0.04em; }
+    .data-value.warm { color:var(--accent-warm); }
+    .data-value.dim  { color:var(--text-mid); font-size:0.85rem; }
     /* ── SEARCH ── */
-    .search-section { padding: 4rem 0 2.5rem; opacity: 0; animation: fade-in 1s ease 1.6s forwards; }
-    .search-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.9rem; }
-    .search-bar { display: flex; border: 1px solid var(--rim); transition: border-color 0.2s; }
-    .search-bar:focus-within { border-color: var(--accent); }
-    .search-input {
-      flex: 1; background: var(--deep); border: none;
-      color: var(--text-bright); font-family: var(--mono);
-      font-size: 0.9rem; padding: 1rem 1.3rem; outline: none; letter-spacing: 0.04em;
-    }
-    .search-input::placeholder { color: var(--muted); }
-    .search-btn {
-      background: var(--surface); border: none; border-left: 1px solid var(--rim);
-      color: var(--text-dim); font-family: var(--mono); font-size: 0.72rem;
-      letter-spacing: 0.14em; text-transform: uppercase; padding: 0 1.6rem;
-      cursor: pointer; transition: background 0.2s, color 0.2s;
-    }
-    .search-btn:hover { background: var(--accent); color: var(--void); }
-    .search-hint { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); margin-top: 0.65rem; letter-spacing: 0.08em; }
-    .search-hint span { color: var(--text-dim); }
-
-    /* ── SECTION LABEL ── */
-    .section-label {
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.24em;
-      text-transform: uppercase; color: var(--text-dim);
-      margin-bottom: 1.4rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--rim);
-    }
-
+    .search-section { padding:4rem 0 2.5rem; opacity:0; animation:fade-in 1s ease 1.6s forwards; }
+    .search-label { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.9rem; }
+    .search-bar { display:flex; border:1px solid var(--rim); transition:border-color 0.2s; }
+    .search-bar:focus-within { border-color:var(--accent); }
+    .search-input { flex:1; background:var(--deep); border:none; color:var(--text-bright); font-family:var(--mono); font-size:0.9rem; padding:1rem 1.3rem; outline:none; letter-spacing:0.04em; }
+    .search-input::placeholder { color:var(--muted); }
+    .search-btn { background:var(--surface); border:none; border-left:1px solid var(--rim); color:var(--text-dim); font-family:var(--mono); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; padding:0 1.6rem; cursor:pointer; transition:background 0.2s,color 0.2s; }
+    .search-btn:hover { background:var(--accent); color:var(--void); }
+    .search-hint { font-family:var(--mono); font-size:0.62rem; color:var(--muted); margin-top:0.65rem; letter-spacing:0.08em; }
+    .search-hint span { color:var(--text-dim); }
     /* ── SYSTEMS GRID ── */
-    .systems-section { padding: 2rem 0 4rem; opacity: 0; animation: fade-in 1s ease 1.8s forwards; }
-    .system-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px; background: var(--rim); }
-    .system-card {
-      background: var(--deep); padding: 2rem;
-      cursor: pointer; transition: background 0.2s;
-      text-decoration: none; display: block;
-    }
-    .system-card:hover { background: var(--surface); }
-    .system-card.active { border-top: 2px solid var(--accent); }
-    .system-card.coming { opacity: 0.4; cursor: default; }
-    .system-card.coming:hover { background: var(--deep); }
-    .card-tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.6rem; }
-    .card-tag.live { color: var(--accent); }
-    .card-tag.soon { color: var(--muted); }
-    .card-name { font-family: var(--serif); font-size: 1.7rem; font-weight: 300; color: var(--text-bright); margin-bottom: 0.2rem; }
-    .card-iau { font-family: var(--mono); font-size: 0.7rem; color: var(--accent-warm); letter-spacing: 0.08em; margin-bottom: 0.9rem; }
-    .card-desc { font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; }
-    .card-params { display: flex; gap: 1.4rem; margin-top: 1.4rem; flex-wrap: wrap; }
-    .cp { font-family: var(--mono); font-size: 0.65rem; }
-    .cp-k { display: block; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.58rem; margin-bottom: 0.2rem; }
-    .cp-v { color: var(--text-bright); }
-    .card-progress { margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--rim); }
-    .progress-row { display: flex; align-items: center; gap: 0.9rem; }
-    .progress-track { flex: 1; height: 2px; background: var(--rim); border-radius: 1px; }
-    .progress-fill { height: 100%; border-radius: 1px; animation: glow-pulse 3s ease-in-out infinite; }
-    .pf-18 { width: 18%; background: var(--accent); }
-    @keyframes glow-pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
-    .progress-text { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); letter-spacing: 0.08em; white-space: nowrap; }
-
+    .systems-section { padding:2rem 0 4rem; opacity:0; animation:fade-in 1s ease 1.8s forwards; }
+    .system-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:var(--rim); }
+    .system-card { background:var(--deep); padding:2rem; cursor:pointer; transition:background 0.2s; text-decoration:none; display:block; }
+    .system-card:hover { background:var(--surface); }
+    .system-card.active { border-top:2px solid var(--accent); }
+    .system-card.coming { opacity:0.4; cursor:default; }
+    .system-card.coming:hover { background:var(--deep); }
+    .card-tag { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.6rem; }
+    .card-tag.live { color:var(--accent); }
+    .card-tag.soon { color:var(--muted); }
+    .card-name { font-family:var(--serif); font-size:1.7rem; font-weight:300; color:var(--text-bright); margin-bottom:0.2rem; }
+    .card-iau  { font-family:var(--mono); font-size:0.7rem; color:var(--accent-warm); letter-spacing:0.08em; margin-bottom:0.9rem; }
+    .card-desc { font-size:0.95rem; color:var(--text-dim); line-height:1.65; }
+    .card-params { display:flex; gap:1.4rem; margin-top:1.4rem; flex-wrap:wrap; }
+    .cp { font-family:var(--mono); font-size:0.65rem; }
+    .cp-k { display:block; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; font-size:0.58rem; margin-bottom:0.2rem; }
+    .cp-v { color:var(--text-bright); }
+    .card-progress { margin-top:1.4rem; padding-top:1.1rem; border-top:1px solid var(--rim); }
+    .progress-row { display:flex; align-items:center; gap:0.9rem; }
+    .progress-track { flex:1; height:2px; background:var(--rim); border-radius:1px; }
+    .progress-fill { height:100%; border-radius:1px; animation:glow-pulse 3s ease-in-out infinite; }
+    .pf-18 { width:18%; background:var(--accent); }
+    .progress-text { font-family:var(--mono); font-size:0.6rem; color:var(--text-dim); letter-spacing:0.08em; white-space:nowrap; }
     /* ── ROADMAP ── */
-    .roadmap-section {
-      padding: 3rem 0 4rem;
-      opacity: 0;
-      animation: fade-in 1s ease 1.9s forwards;
-    }
-    .roadmap-container {
-      border: 1px solid var(--rim);
-      padding: 0;
-      overflow: hidden;
-    }
-    .roadmap-img {
-      width: 100%;
-      display: block;
-      border-bottom: 1px solid var(--rim);
-    }
-    .roadmap-caption {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      letter-spacing: 0.1em;
-      padding: 0.9rem 1.4rem;
-      margin: 0;
-      background: var(--deep);
-    }
-
+    .roadmap-section { padding:3rem 0 4rem; opacity:0; animation:fade-in 1s ease 1.9s forwards; }
+    .roadmap-container { border:1px solid var(--rim); padding:0; overflow:hidden; }
+    .roadmap-img { width:100%; display:block; border-bottom:1px solid var(--rim); }
+    .roadmap-caption { font-family:var(--mono); font-size:0.72rem; color:var(--text-dim); letter-spacing:0.1em; padding:0.9rem 1.4rem; margin:0; background:var(--deep); }
     /* ── PILLARS ── */
-    .pillars-section { padding: 2rem 0 4rem; opacity: 0; animation: fade-in 1s ease 2s forwards; }
-    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--rim); border: 1px solid var(--rim); }
-    .pillar { background: var(--deep); padding: 1.8rem; }
-    .pillar-icon { font-family: var(--mono); font-size: 1.1rem; color: var(--accent); margin-bottom: 0.8rem; display: block; }
-    .pillar-title { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-bright); margin-bottom: 0.6rem; }
-    .pillar-body { font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; }
-
-    /* ── ORIGIN ── */
-    .origin-section { padding: 3.5rem 0; border-top: 1px solid var(--rim); opacity: 0; animation: fade-in 1s ease 2.1s forwards; }
-    blockquote {
-      font-family: var(--serif); font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-      font-style: italic; font-weight: 300; color: var(--text-bright);
-      line-height: 1.75; border-left: 2px solid var(--accent);
-      padding-left: 1.8rem; max-width: 720px;
-    }
-    blockquote footer { margin-top: 1rem; font-style: normal; font-size: 0.82rem; color: var(--text-dim); font-family: var(--mono); letter-spacing: 0.05em; }
-
+    .pillars-section { padding:2rem 0 4rem; opacity:0; animation:fade-in 1s ease 2s forwards; }
+    .pillars { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px; background:var(--rim); border:1px solid var(--rim); }
+    .pillar { background:var(--deep); padding:1.8rem; }
+    .pillar-icon  { font-family:var(--mono); font-size:1.1rem; color:var(--accent); margin-bottom:0.8rem; display:block; }
+    .pillar-title { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-bright); margin-bottom:0.6rem; }
+    .pillar-body  { font-size:0.95rem; color:var(--text-dim); line-height:1.65; }
+    /* ── ORIGIN QUOTE ── */
+    .origin-section { padding:3.5rem 0; border-top:1px solid var(--rim); opacity:0; animation:fade-in 1s ease 2.1s forwards; }
+    blockquote { font-family:var(--serif); font-size:clamp(1.15rem,1.6vw,1.4rem); font-style:italic; font-weight:300; color:var(--text-bright); line-height:1.75; border-left:2px solid var(--accent); padding-left:1.8rem; max-width:720px; }
+    blockquote footer { margin-top:1rem; font-style:normal; font-size:0.82rem; color:var(--text-dim); font-family:var(--mono); letter-spacing:0.05em; }
     /* ── NOTIFY ── */
-    .notify-section {
-      background: var(--surface); border: 1px solid var(--rim);
-      padding: 3rem; margin: 3rem 0; text-align: center;
-      opacity: 0; animation: fade-in 1s ease 2.2s forwards;
-    }
-    .notify-section h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--text-bright); margin-bottom: 0.5rem; }
-    .notify-section p { font-size: 1rem; color: var(--text-dim); margin-bottom: 1.6rem; }
-    .notify-form { display: flex; max-width: 460px; margin: 0 auto; }
-    .notify-input {
-      flex: 1; background: var(--deep); border: 1px solid var(--muted); border-right: none;
-      color: var(--text-bright); font-family: var(--mono); font-size: 0.82rem;
-      padding: 0.85rem 1.1rem; outline: none; transition: border-color 0.2s;
-    }
-    .notify-input:focus { border-color: var(--accent); }
-    .notify-input::placeholder { color: var(--muted); }
-    .notify-btn {
-      background: var(--accent); color: var(--void); border: 1px solid var(--accent);
-      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 0.85rem 1.4rem; cursor: pointer;
-      transition: background 0.2s, color 0.2s; white-space: nowrap;
-    }
-    .notify-btn:hover { background: var(--void); color: var(--accent); }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 2.8rem 0; border-top: 1px solid var(--rim);
-      display: flex; justify-content: space-between; align-items: flex-end;
-      flex-wrap: wrap; gap: 1rem;
-      opacity: 0; animation: fade-in 1s ease 2.3s forwards;
-    }
-    .footer-left { font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.08em; line-height: 2.1; }
-    .footer-right { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); text-align: right; line-height: 2.1; }
-    .footer-right a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
-    .footer-right a:hover { color: var(--accent); }
-
-    @keyframes fade-in  { from{opacity:0} to{opacity:1} }
-    @keyframes slide-up { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-
-    @media (max-width: 700px) {
-      .hero-content { padding: 2rem; }
-      h1 { font-size: 2.6rem; }
-      nav { flex-wrap: wrap; gap: 0.8rem; }
-      .nav-links { display: none; }
-      .notify-form { flex-direction: column; }
-      .notify-input { border-right: 1px solid var(--muted); border-bottom: none; }
-      footer { flex-direction: column; }
-      .footer-right { text-align: left; }
+    .notify-section { background:var(--surface); border:1px solid var(--rim); padding:3rem; margin:3rem 0; text-align:center; opacity:0; animation:fade-in 1s ease 2.2s forwards; }
+    .notify-section h2 { font-family:var(--serif); font-size:1.6rem; font-weight:400; color:var(--text-bright); margin-bottom:0.5rem; }
+    .notify-section p { font-size:1rem; color:var(--text-dim); margin-bottom:1.6rem; }
+    .notify-form { display:flex; max-width:460px; margin:0 auto; }
+    .notify-input { flex:1; background:var(--deep); border:1px solid var(--muted); border-right:none; color:var(--text-bright); font-family:var(--mono); font-size:0.82rem; padding:0.85rem 1.1rem; outline:none; transition:border-color 0.2s; }
+    .notify-input:focus { border-color:var(--accent); }
+    .notify-input::placeholder { color:var(--muted); }
+    .notify-btn { background:var(--accent); color:var(--void); border:1px solid var(--accent); font-family:var(--mono); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.85rem 1.4rem; cursor:pointer; transition:background 0.2s,color 0.2s; white-space:nowrap; }
+    .notify-btn:hover { background:var(--void); color:var(--accent); }
+    @media (max-width:700px) {
+      .hero-content { padding:2rem; }
+      h1 { font-size:2.6rem; }
+      .notify-form { flex-direction:column; }
+      .notify-input { border-right:1px solid var(--muted); border-bottom:none; }
     }
   </style>
 </head>
@@ -369,13 +111,15 @@
 <canvas id="starfield"></canvas>
 
 <div class="page">
-  <nav>
-    <div class="wordmark">The Exoplanet <span>Codex</span></div>
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
     <ul class="nav-links">
-      <li><a href="#systems">Systems</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#method">Method</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
       <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
     </ul>
     <div class="status-pill">Pipeline active</div>
@@ -392,64 +136,38 @@
       <strong>A systematic archive documenting the elemental chemistry of exoplanetary systems</strong> — measuring what stars are made of, and using that chemistry to understand what their planets are made of too.
     </p>
     <div class="hero-cta-group">
-      <a href="#systems" class="btn-primary">Browse the codex</a>
+      <a href="/systems/" class="btn-primary">Browse the codex</a>
       <a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank" class="btn-ghost">View the pipeline</a>
     </div>
   </div>
-  <div class="hero-credit">Janssen (55 Cnc e) artist's concept — NASA, ESA, CSA, J. Olmsted (STScI) · JWST 2024</div>
+  <div class="hero-credit">Janssen (55 Cnc e) artist’s concept — NASA, ESA, CSA, J. Olmsted (STScI) · JWST 2024</div>
 </section>
 
 <div class="page">
 
   <div class="data-strip">
-    <div class="data-cell">
-      <div class="data-label">First target</div>
-      <div class="data-value">55 Cancri A</div>
-    </div>
-    <div class="data-cell">
-      <div class="data-label">IAU name</div>
-      <div class="data-value warm">Copernicus</div>
-    </div>
-    <div class="data-cell">
-      <div class="data-label">Distance</div>
-      <div class="data-value">40.9 ly</div>
-    </div>
-    <div class="data-cell">
-      <div class="data-label">T<sub>eff</sub></div>
-      <div class="data-value">5196 K</div>
-    </div>
-    <div class="data-cell">
-      <div class="data-label">Planets</div>
-      <div class="data-value">5</div>
-    </div>
-    <div class="data-cell">
-      <div class="data-label">Spectrograph</div>
-      <div class="data-value dim">HARPS R~115k</div>
-    </div>
-    <div class="data-cell">
-      <div class="data-label">Model</div>
-      <div class="data-value dim">ATLAS9 / Kurucz</div>
-    </div>
+    <div class="data-cell"><div class="data-label">First target</div><div class="data-value">55 Cancri A</div></div>
+    <div class="data-cell"><div class="data-label">IAU name</div><div class="data-value warm">Copernicus</div></div>
+    <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">40.9 ly</div></div>
+    <div class="data-cell"><div class="data-label">T<sub>eff</sub></div><div class="data-value">5196 K</div></div>
+    <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">5</div></div>
+    <div class="data-cell"><div class="data-label">Spectrograph</div><div class="data-value dim">HARPS R~115k</div></div>
+    <div class="data-cell"><div class="data-label">Model</div><div class="data-value dim">ATLAS9 / Kurucz</div></div>
   </div>
 
   <section class="search-section" id="systems">
     <div class="search-label">Search the codex</div>
     <div class="search-bar">
-      <input class="search-input" type="text" id="search-input"
-             placeholder="Star name, HD number, or planet — e.g. 55 Cancri, Copernicus, Janssen...">
+      <input class="search-input" type="text" id="search-input" placeholder="Star name, HD number, or planet — e.g. 55 Cancri, Copernicus, Janssen...">
       <button class="search-btn" onclick="handleSearch()">Search</button>
     </div>
-    <p class="search-hint">
-      Currently indexed: <span>1 system (55 Cancri / Copernicus)</span> ·
-      More systems added as analysis completes
-    </p>
+    <p class="search-hint">Currently indexed: <span>1 system (55 Cancri / Copernicus)</span> · More systems added as analysis completes</p>
   </section>
 
   <section class="systems-section">
     <div class="section-label">Codex entries</div>
     <div class="system-grid">
-
-      <a class="system-card active" href="systems/55-cancri/">
+      <a class="system-card active" href="/systems/55-cancri/">
         <div class="card-tag live">● Entry 001 — Analysis in progress</div>
         <div class="card-name">Copernicus</div>
         <div class="card-iau">55 Cancri A · HD 75732 · HIP 43587</div>
@@ -467,8 +185,7 @@
           </div>
         </div>
       </a>
-
-      <a class="system-card active" href="systems/sol/">
+      <a class="system-card active" href="/systems/sol/">
         <div class="card-tag live">● Entry 000 — Reference system</div>
         <div class="card-name">The Sun</div>
         <div class="card-iau">Sol · Our solar system · 8 planets</div>
@@ -486,186 +203,75 @@
           </div>
         </div>
       </a>
-
       <div class="system-card coming">
         <div class="card-tag soon">○ Queued — Thesis revisit</div>
         <div class="card-name">HD 89307</div>
         <div class="card-iau">G0V · Solar analog</div>
         <p class="card-desc">The most solar-like exoplanet host star known. First analyzed in the 2010 thesis that started this project. Now revisited with HARPS at 3× the resolution.</p>
       </div>
-
       <div class="system-card coming">
         <div class="card-tag soon">○ Queued — Thesis revisit</div>
         <div class="card-name">Gliese 581</div>
         <div class="card-iau">M3 dwarf · Habitable zone planets</div>
         <p class="card-desc">Two planets in the habitable zone. Analyzed in 2010 with poor model fit — M-class stars are hard. The 2026 pipeline will settle whether the anomalous Ni, Co, Si were real or an artifact.</p>
       </div>
-
       <div class="system-card coming">
         <div class="card-tag soon">○ Future</div>
         <div class="card-name">Submit a system</div>
         <div class="card-iau">Suggest a target</div>
-        <p class="card-desc">Researcher with a system you'd like analyzed? Collaboration welcome. Contact us with your target and scientific rationale.</p>
+        <p class="card-desc">Researcher with a system you’d like analyzed? Collaboration welcome. Contact us with your target and scientific rationale.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- ── ROADMAP ── -->
   <section class="roadmap-section" id="roadmap">
     <div class="section-label">Project roadmap</div>
     <div class="roadmap-container">
-      <img
-        src="assets/images/roadmap_website.png"
-        alt="The Exoplanet Codex project roadmap showing 5 phases from Foundation through Scale Up"
-        class="roadmap-img"
-      >
-      <p class="roadmap-caption">
-        Five phases. ~20 weeks to Beta Release: Copernicus.
-        All code open. All data public. All results reproducible.
-      </p>
+      <img src="/assets/images/roadmap_website.png" alt="The Exoplanet Codex project roadmap showing 5 phases from Foundation through Scale Up" class="roadmap-img">
+      <p class="roadmap-caption">Five phases. ~20 weeks to Beta Release: Copernicus. All code open. All data public. All results reproducible.</p>
     </div>
   </section>
 
   <section class="pillars-section" id="method">
     <div class="section-label">Our method</div>
     <div class="pillars">
-      <div class="pillar">
-        <span class="pillar-icon">[λ]</span>
-        <div class="pillar-title">High-res spectroscopy</div>
-        <p class="pillar-body">HARPS spectra at R~115,000. Each absorption line in the stellar photosphere is a fingerprint of one element at one temperature and pressure.</p>
-      </div>
-      <div class="pillar">
-        <span class="pillar-icon">[∫]</span>
-        <div class="pillar-title">Equivalent widths</div>
-        <p class="pillar-body">Gaussian fitting to absorption lines yields equivalent widths — the area of each line — which map directly to elemental column densities.</p>
-      </div>
-      <div class="pillar">
-        <span class="pillar-icon">[K]</span>
-        <div class="pillar-title">Kurucz model atmospheres</div>
-        <p class="pillar-body">ATLAS9/Castelli-Kurucz 1D LTE model atmospheres parameterized by Teff, log g, [Fe/H], and microturbulence. The same workhorse used since 1979.</p>
-      </div>
-      <div class="pillar">
-        <span class="pillar-icon">[σ]</span>
-        <div class="pillar-title">Metrology-grade errors</div>
-        <p class="pillar-body">Type A (random) and Type B (systematic) uncertainties documented for every measurement. Error bars are not optional — they are the science.</p>
-      </div>
+      <div class="pillar"><span class="pillar-icon">[λ]</span><div class="pillar-title">High-res spectroscopy</div><p class="pillar-body">HARPS spectra at R~115,000. Each absorption line in the stellar photosphere is a fingerprint of one element at one temperature and pressure.</p></div>
+      <div class="pillar"><span class="pillar-icon">[∫]</span><div class="pillar-title">Equivalent widths</div><p class="pillar-body">Gaussian fitting to absorption lines yields equivalent widths — the area of each line — which map directly to elemental column densities.</p></div>
+      <div class="pillar"><span class="pillar-icon">[K]</span><div class="pillar-title">Kurucz model atmospheres</div><p class="pillar-body">ATLAS9/Castelli-Kurucz 1D LTE model atmospheres parameterized by Teff, log g, [Fe/H], and microturbulence. The same workhorse used since 1979.</p></div>
+      <div class="pillar"><span class="pillar-icon">[σ]</span><div class="pillar-title">Metrology-grade errors</div><p class="pillar-body">Type A (random) and Type B (systematic) uncertainties documented for every measurement. Error bars are not optional — they are the science.</p></div>
     </div>
   </section>
 
   <section class="origin-section" id="about">
     <div class="section-label">Origin</div>
     <blockquote>
-      "This started as a senior astrophysics thesis in 2010 — three star systems, hand-fitted Gaussians, and a question: can you read the chemistry of a star and know what its planets are made of? I spent fifteen years building lasers and consulting on AI. The question never went away."
+      “This started as a senior astrophysics thesis in 2010 — three star systems, hand-fitted Gaussians, and a question: can you read the chemistry of a star and know what its planets are made of? I spent fifteen years building lasers and consulting on AI. The question never went away.”
       <footer>— Ryan Schmitt, founder &nbsp;·&nbsp; Montana, 2026</footer>
     </blockquote>
   </section>
 
   <div class="notify-section">
     <h2>First results coming soon</h2>
-    <p>We're measuring 55 Cancri A now. Get notified when the first Codex entry publishes.</p>
+    <p>We’re measuring 55 Cancri A now. Get notified when the first Codex entry publishes.</p>
     <div class="notify-form">
       <input class="notify-input" type="email" id="notify-email" placeholder="your@email.com">
       <button class="notify-btn" onclick="handleNotify()">Notify me</button>
     </div>
   </div>
 
-  <footer>
-    <div class="footer-left">
-      THE EXOPLANET CODEX · exoplanetcodex.org<br>
-      Open science · Montana, USA · Est. 2026<br>
-      Data: ESO/HARPS · Hypatia Catalog · NASA Exoplanet Archive
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
     </div>
-    <div class="footer-right">
-      <a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a><br>
-      All code &amp; data open access<br>
-      <a href="/images/credits.md">Image credits</a> · NASA/ESA/JPL public domain
-    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
   </footer>
 
 </div>
 
-<script>
-/* ── Starfield ── */
-const canvas = document.getElementById('starfield');
-const ctx = canvas.getContext('2d');
-let stars = [], W, H;
-
-function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-
-function initStars(n) {
-  stars = [];
-  for (let i = 0; i < n; i++) {
-    const m = Math.random();
-    stars.push({
-      x: Math.random()*W, y: Math.random()*H,
-      r: m < 0.7 ? 0.4 : m < 0.92 ? 0.8 : 1.4,
-      o: 0.12 + Math.random()*0.65,
-      tw: Math.random()*Math.PI*2,
-      sp: 0.004 + Math.random()*0.012,
-      c: m > 0.97 ? `hsl(${200+Math.random()*40},75%,85%)` : m > 0.93 ? `hsl(${30+Math.random()*20},55%,88%)` : '#c0d8ef',
-    });
-  }
-}
-
-function draw(t) {
-  ctx.clearRect(0,0,W,H);
-  for (const s of stars) {
-    ctx.globalAlpha = Math.max(0, Math.min(1, s.o + Math.sin(t*s.sp+s.tw)*0.18));
-    ctx.fillStyle = s.c;
-    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
-  }
-  ctx.globalAlpha = 1;
-}
-
-let mx=0, my=0, ox=0, oy=0;
-document.addEventListener('mousemove', e => { mx=(e.clientX/W-0.5)*0.4; my=(e.clientY/H-0.5)*0.4; });
-
-function animate(t) {
-  ox+=(mx-ox)*0.04; oy+=(my-oy)*0.04;
-  ctx.save(); ctx.translate(ox*10, oy*10); draw(t*0.001); ctx.restore();
-  requestAnimationFrame(animate);
-}
-
-window.addEventListener('resize', () => { resize(); initStars(320); });
-resize(); initStars(320); requestAnimationFrame(animate);
-
-/* ── Search ── */
-function handleSearch() {
-  const q = document.getElementById('search-input').value.trim().toLowerCase();
-  if (!q) return;
-  const systems = {
-    '55 cancri': 'systems/55-cancri/', 'copernicus': 'systems/55-cancri/',
-    'hd 75732': 'systems/55-cancri/', 'janssen': 'systems/55-cancri/',
-    '55 cnc': 'systems/55-cancri/', 'sol': 'systems/sol/',
-    'sun': 'systems/sol/', 'solar': 'systems/sol/', 'terra': 'systems/sol/',
-    'earth': 'systems/sol/', 'hd 89307': 'systems/hd-89307/',
-    'gliese 581': 'systems/gliese-581/', 'gl 581': 'systems/gliese-581/',
-  };
-  for (const [key, url] of Object.entries(systems)) {
-    if (q.includes(key) || key.includes(q)) { window.location.href = url; return; }
-  }
-  const hint = document.querySelector('.search-hint');
-  const orig = hint.innerHTML;
-  hint.innerHTML = `<span style="color:var(--accent-warm)">No entry found for "${q}" yet — check back as new systems are added.</span>`;
-  setTimeout(() => hint.innerHTML = orig, 3000);
-}
-
-document.getElementById('search-input').addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleSearch();
-});
-
-/* ── Notify ── */
-function handleNotify() {
-  const input = document.getElementById('notify-email');
-  if (input.value && input.value.includes('@')) {
-    document.querySelector('.notify-section').innerHTML =
-      `<p style="font-family:var(--mono);font-size:0.85rem;color:var(--accent);letter-spacing:0.1em;text-align:center;padding:1rem 0;">✓ &nbsp; Logged. We'll reach out when the first entry publishes.</p>`;
-  } else {
-    input.style.borderColor = 'var(--danger)';
-    setTimeout(() => input.style.borderColor = '', 1500);
-  }
-}
-</script>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
 </body>
 </html>
