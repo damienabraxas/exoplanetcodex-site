@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why We Started With 55 Cancri A · Mission Log · The Exoplanet Codex</title>
+  <meta name="description" content="A metal-rich K dwarf, 5 planets, and one contested C/O ratio. Why Copernicus was the right first star for The Exoplanet Codex.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .post-meta-hero {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;
+    }
+    .post-tag {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent-warm);
+    }
+    .post-meta-hero time {
+      font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim);
+    }
+
+    .post-body {
+      max-width: 720px; margin: 0 auto;
+      font-family: var(--serif); font-size: 1.05rem;
+      color: var(--text); line-height: 1.85;
+    }
+    .post-body h2 {
+      font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      border-left: 3px solid var(--accent); padding-left: 0.75rem;
+      margin: 2.5rem 0 1rem;
+    }
+    .post-body p { margin: 0 0 1.2rem; }
+    .post-body strong { color: var(--text-bright); font-weight: 600; }
+    .post-body em { font-style: italic; color: var(--text-mid); }
+
+    .post-data-table {
+      width: 100%; border-collapse: collapse;
+      font-family: var(--mono); font-size: 0.82rem;
+      margin: 1.5rem 0;
+    }
+    .post-data-table th {
+      background: var(--surface); color: var(--accent);
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.55rem 0.9rem; text-align: left;
+      border-bottom: 2px solid var(--rim);
+    }
+    .post-data-table td {
+      padding: 0.5rem 0.9rem; color: var(--text);
+      border-bottom: 1px solid rgba(26,38,64,0.6);
+    }
+    .post-data-table tr:last-child td { border-bottom: none; }
+
+    .post-callout {
+      border-left: 3px solid var(--accent-warm);
+      background: rgba(232,162,74,0.05);
+      padding: 1.1rem 1.4rem; margin: 1.5rem 0;
+      font-family: var(--serif); font-size: 0.97rem;
+      color: var(--text); line-height: 1.7;
+    }
+    .post-callout strong {
+      display: block; font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent-warm); margin-bottom: 0.5rem; font-weight: normal;
+    }
+
+    .post-nav {
+      max-width: 720px; margin: 3rem auto 0;
+      padding-top: 2rem; border-top: 1px solid var(--rim);
+    }
+    .post-nav a {
+      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em;
+      color: var(--accent); text-decoration: none;
+    }
+    .post-nav a:hover { color: var(--text-bright); }
+
+    #admin-panel {
+      max-width: 720px; margin: 1.5rem auto;
+      padding: 1rem 1.4rem;
+      background: var(--surface); border: 1px dashed var(--accent-warm);
+      font-family: var(--mono); font-size: 0.78rem; color: var(--text-dim);
+    }
+    .btn-newsletter {
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em;
+      text-transform: uppercase; background: var(--accent-warm); color: var(--void);
+      border: none; padding: 0.65em 1.3em; cursor: pointer; margin-left: 1rem;
+      transition: opacity 0.2s;
+    }
+    .btn-newsletter:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/" class="active">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/mission-log/">Mission Log</a> / <span>Why 55 Cancri A</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="post-meta-hero">
+        <span class="post-tag">Milestone</span>
+        <time datetime="2026-05-30">May 30, 2026</time>
+      </div>
+      <h1 class="page-title">Why We Started With 55 Cancri A</h1>
+      <p class="page-subtitle">A metal-rich K dwarf, 5 planets, and one contested C/O ratio</p>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <article class="post-body">
+
+        <p>Every measurement project needs a first target. The first target shapes everything — the pipeline, the error budget, the science questions you learn to ask. We chose 55 Cancri A, and we didn't choose it lightly.</p>
+
+        <h2>The Star</h2>
+
+        <p>55 Cancri A — designated HD 75732, catalogued as HIP 43587, named <strong>Copernicus</strong> by the IAU — is a K0 main-sequence dwarf sitting 40.9 light years away in the constellation Cancer. It's metal-rich: <strong>[Fe/H] = +0.32</strong>, meaning its photosphere contains roughly twice the iron abundance of the Sun. At T<sub>eff</sub> = 5196 K it's slightly cooler than the Sun, surface gravity log g = 4.41 places it squarely on the main sequence, and at an estimated age of ~10 Gyr it's one of the older systems we'll study.</p>
+
+        <p>None of that, by itself, makes it unusual. What makes it extraordinary is what orbits it.</p>
+
+        <table class="post-data-table">
+          <thead>
+            <tr><th>Parameter</th><th>Value</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>T<sub>eff</sub></td><td>5196 ± 24 K</td><td>CHARA interferometry (von Braun et al. 2011)</td></tr>
+            <tr><td>log g</td><td>4.41 ± 0.02</td><td>CHARA interferometry</td></tr>
+            <tr><td>[Fe/H]</td><td>+0.32 ± 0.02</td><td>Spectroscopic self-consistency</td></tr>
+            <tr><td>Distance</td><td>40.9 ly (12.5 pc)</td><td>Hipparcos</td></tr>
+            <tr><td>Age</td><td>~10.2 Gyr</td><td>Gyrochronology</td></tr>
+            <tr><td>Planets</td><td>5 confirmed</td><td>NASA Exoplanet Archive</td></tr>
+          </tbody>
+        </table>
+
+        <h2>The Planets</h2>
+
+        <p>55 Cancri A hosts five confirmed planets — one of the richest multi-planet systems known around a nearby star. The innermost, <strong>55 Cnc e (Janssen)</strong>, is a super-Earth with a mass of ~8 M⊕ and an orbital period of just 17.7 hours. It orbits so close to its star that its surface is almost certainly molten. JWST detected CO₂ and possible volcanic outgassing in its atmosphere in 2024, making it one of the best-characterized rocky exoplanets in existence.</p>
+
+        <p>The outermost planet, 55 Cnc d, has an orbital period of over 14 years — longer than Jupiter's. This system spans four orders of magnitude in orbital distance, from a lava world that completes a year in less than a day to a gas giant taking more than a decade to orbit once.</p>
+
+        <h2>The Contested C/O Ratio</h2>
+
+        <p>Here's where it gets scientifically interesting. The carbon-to-oxygen ratio of a stellar host predicts the mineralogy of its planets:</p>
+
+        <div class="post-callout">
+          <strong>Why C/O matters</strong>
+          C/O &lt; 0.8: Oxygen-rich chemistry → silicate and oxide minerals → Earth-like rocky interior<br>
+          C/O &gt; 0.8: Carbon-rich chemistry → SiC, graphite, possibly diamond interior<br>
+          Solar C/O = 0.55 (Asplund et al. 2021)
+        </div>
+
+        <p>Teske et al. (2013) measured C/O = 0.78 ± 0.08 for 55 Cancri A — just below the carbon-rich threshold, but within error of it. Other studies have found lower values. The disagreement comes down to how you treat the oxygen measurement: the primary oxygen indicator at 6300 Å is blended with a nickel line that must be carefully subtracted, and different groups handle this differently.</p>
+
+        <p>The result matters enormously. If Janssen has a carbon-rich bulk composition, its interior could contain layers of diamond under crushing pressure. If it's oxygen-rich, we're looking at a silicate world not unlike a scaled-up version of Earth's mantle. The two scenarios predict completely different internal structures, heat flows, and long-term habitability prospects for any outer planets in the system.</p>
+
+        <p><strong>We are going to settle this.</strong> With 88 HARPS spectra co-added to S/N ~ 940, our oxygen measurement will have the precision to distinguish between the published values. And we'll publish the full uncertainty budget — every assumption, every correction, every line — so anyone can check our work.</p>
+
+        <h2>Why HARPS Makes This Possible</h2>
+
+        <p>55 Cancri A has been observed extensively with HARPS over the years of planet-hunting campaigns. The ESO archive contains 88 public S1D spectra. Co-added, they achieve S/N ~ 940 per pixel at 6000 Å — high enough to detect phosphorus (P I 6034 Å, EW ~ 12 mÅ) at 60σ significance. That's a detection that would be completely invisible in a single HARPS exposure.</p>
+
+        <p>This is the first time the full CHNOPS suite — carbon, hydrogen, nitrogen, oxygen, phosphorus, and sulfur — will be measured simultaneously for this star at this precision. For a system where one planet may have a CO₂ atmosphere and another may be made of diamond, that matters.</p>
+
+        <h2>The 2010 Connection</h2>
+
+        <p>There's a personal dimension here too. The Exoplanet Codex started as a senior astrophysics thesis at the University of Montana in 2010. That thesis analyzed three systems, including 55 Cancri A, using ELODIE spectra at R ~ 42,000 — about 3× lower resolution than HARPS. The results were published, the thesis was filed, and the questions didn't go away.</p>
+
+        <p>Fifteen years later, with better instruments, better atomic data, better solar abundances, and a proper uncertainty framework, we're going back. The 2010 measurement used Lodders (2003) solar abundances; we're now on Asplund et al. (2021), which revised the solar iron abundance by −0.04 dex. Every result from 2010 will be recomputed and compared. Some will change. Some won't. All of it will be documented.</p>
+
+        <h2>What Comes Next</h2>
+
+        <p>The pipeline is in active development. Step 1 — spectrum acquisition and co-adding — is underway. The next Mission Log entry will cover the solar calibration: before we touch 55 Cancri A, we'll run the pipeline on asteroid Vesta (a HARPS-observed reflector of sunlight) and verify that we recover A(Fe)☉ = 7.46 ± 0.05 and C/O☉ = 0.55 ± 0.05. If we don't, the pipeline has a systematic error that has to be found and fixed before any science results mean anything.</p>
+
+        <p>We're building this in public. All code is at <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--accent);">github.com/damienabraxas/exoplanetcodex</a>. Sign up for updates below — the first Codex entry for Copernicus will be the result.</p>
+
+      </article>
+
+      <aside class="post-nav">
+        <a href="/mission-log/">← Back to Mission Log</a>
+      </aside>
+
+      <div id="admin-panel" style="display:none">
+        <span>Admin:</span>
+        <button class="btn-newsletter" onclick="sendAsNewsletter()">Send as Newsletter Draft</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+
+  <script src="/assets/js/starfield.js"></script>
+  <script src="/assets/js/codex.js"></script>
+  <script>
+    if (window.location.search.includes('admin=true')) {
+      document.getElementById('admin-panel').style.display = 'block';
+    }
+
+    async function sendAsNewsletter() {
+      var btn = document.querySelector('.btn-newsletter');
+      btn.textContent = 'Creating draft...';
+      btn.disabled = true;
+      try {
+        var title = document.querySelector('.page-title').textContent;
+        var body  = document.querySelector('.post-body').innerHTML;
+        var response = await fetch('https://api.buttondown.email/v1/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Token b5dbb32c-5c7c-4ae3-9cc0-01180f2d0a5c',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ subject: title, body: body, status: 'draft' }),
+        });
+        if (response.ok) {
+          btn.textContent = '✓ Draft created in Buttondown';
+        } else {
+          throw new Error('failed');
+        }
+      } catch (e) {
+        btn.textContent = 'Error — check console';
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
