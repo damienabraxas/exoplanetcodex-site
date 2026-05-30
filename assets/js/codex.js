@@ -117,6 +117,60 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.appendChild(panel);
 })();
 
+function tableToMarkdown(table) {
+  var rows = Array.from(table.querySelectorAll('tr'));
+  if (!rows.length) return '';
+  var lines = [];
+  rows.forEach(function (row, i) {
+    var cells = Array.from(row.querySelectorAll('th, td'));
+    lines.push('| ' + cells.map(function (c) { return c.textContent.trim(); }).join(' | ') + ' |');
+    if (i === 0) {
+      lines.push('| ' + cells.map(function () { return '---'; }).join(' | ') + ' |');
+    }
+  });
+  return lines.join('\n');
+}
+
+function htmlToMarkdown(node) {
+  if (node.nodeType === 3) return node.textContent.replace(/\s+/g, ' ');
+  if (node.nodeType !== 1) return '';
+  var tag = node.tagName.toLowerCase();
+  var kids = Array.from(node.childNodes);
+  var walk = function (nodes) { return nodes.map(htmlToMarkdown).join(''); };
+
+  var skipClasses = ['coming-soon-box','progress-inline','progress-track','progress-fill','progress-text'];
+  if (node.classList && skipClasses.some(function (c) { return node.classList.contains(c); })) return '';
+
+  switch (tag) {
+    case 'h1': return '# '   + node.textContent.trim() + '\n\n';
+    case 'h2': return '## '  + node.textContent.trim() + '\n\n';
+    case 'h3': return '### ' + node.textContent.trim() + '\n\n';
+    case 'h4': return '#### '+ node.textContent.trim() + '\n\n';
+    case 'p':  return walk(kids).trim() + '\n\n';
+    case 'br': return '\n';
+    case 'strong': case 'b': return '**' + walk(kids).trim() + '**';
+    case 'em':     case 'i': return '*'  + walk(kids).trim() + '*';
+    case 'a': {
+      var href = node.getAttribute('href') || '';
+      var text = walk(kids).trim();
+      return href ? '[' + text + '](' + href + ')' : text;
+    }
+    case 'sub': case 'sup': return node.textContent;
+    case 'table': return tableToMarkdown(node) + '\n\n';
+    case 'thead': case 'tbody': case 'tfoot':
+    case 'tr': case 'th': case 'td': return '';
+    case 'ul': return Array.from(node.querySelectorAll('li')).map(function (li) {
+      return '- ' + li.textContent.trim();
+    }).join('\n') + '\n\n';
+    case 'ol': return Array.from(node.querySelectorAll('li')).map(function (li, i) {
+      return (i + 1) + '. ' + li.textContent.trim();
+    }).join('\n') + '\n\n';
+    case 'blockquote': return walk(kids).trim().split('\n').map(function (l) { return '> ' + l; }).join('\n') + '\n\n';
+    case 'script': case 'style': return '';
+    default: return walk(kids);
+  }
+}
+
 async function sendAsNewsletter() {
   var apiKey = document.getElementById('bd-api-key').value.trim();
   var msg = document.getElementById('admin-msg');
@@ -132,11 +186,9 @@ async function sendAsNewsletter() {
   msg.textContent = 'Sending…';
   msg.style.display = 'block';
   try {
-    var title = document.querySelector('.page-title').textContent;
-    var clone = document.querySelector('.post-body').cloneNode(true);
-    clone.querySelectorAll('[class]').forEach(function(el) { el.removeAttribute('class'); });
-    clone.querySelectorAll('[style]').forEach(function(el) { el.removeAttribute('style'); });
-    var body  = clone.innerHTML;
+    var title = document.querySelector('.page-title').textContent.trim();
+    var postBody = document.querySelector('.post-body');
+    var body = htmlToMarkdown(postBody).replace(/\n{3,}/g, '\n\n').trim();
     var response = await fetch('https://api.buttondown.email/v1/emails', {
       method: 'POST',
       headers: {
