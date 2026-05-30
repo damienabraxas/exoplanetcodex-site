@@ -143,7 +143,7 @@ async function sendAsNewsletter() {
         'Authorization': 'Token ' + apiKey,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ subject: title, body: body, status: 'draft', email_type: 'html' }),
+      body: JSON.stringify({ subject: title, body: body, status: 'draft' }),
     });
     if (response.ok) {
       msg.style.color = 'var(--accent-green)';
