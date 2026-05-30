@@ -133,7 +133,10 @@ async function sendAsNewsletter() {
   msg.style.display = 'block';
   try {
     var title = document.querySelector('.page-title').textContent;
-    var body  = document.querySelector('.post-body').innerHTML;
+    var clone = document.querySelector('.post-body').cloneNode(true);
+    clone.querySelectorAll('[class]').forEach(function(el) { el.removeAttribute('class'); });
+    clone.querySelectorAll('[style]').forEach(function(el) { el.removeAttribute('style'); });
+    var body  = clone.innerHTML;
     var response = await fetch('https://api.buttondown.email/v1/emails', {
       method: 'POST',
       headers: {
