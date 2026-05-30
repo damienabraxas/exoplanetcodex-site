@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology · The Exoplanet Codex</title>
+  <meta name="description" content="A step-by-step account of how we measure elemental abundances — from raw HARPS spectra to calibrated [X/H] ratios with formal uncertainties.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .coming-soon { padding:5rem 0; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .cs-status { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:1.4rem; display:block; }
+    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
+    .coming-soon p { font-size:1.05rem; color:var(--text-dim); max-width:640px; line-height:1.8; margin-bottom:1rem; }
+    .coming-soon p strong { color:var(--text-bright); font-weight:400; }
+    .step-list { list-style:none; margin:2.5rem 0; display:flex; flex-direction:column; gap:1px; background:var(--rim); border:1px solid var(--rim); }
+    .step-item { background:var(--deep); padding:1.4rem 1.8rem; display:flex; gap:1.5rem; align-items:baseline; }
+    .step-num  { font-family:var(--mono); font-size:0.65rem; color:var(--accent); letter-spacing:0.1em; flex-shrink:0; min-width:2.5rem; }
+    .step-body { flex:1; }
+    .step-name { font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-bright); margin-bottom:0.4rem; }
+    .step-desc { font-size:0.95rem; color:var(--text-dim); line-height:1.6; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/" class="active">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Method</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">Science // Spectral analysis pipeline</div>
+    <h1 class="page-title">The <em>Method</em></h1>
+    <p class="page-subtitle">A step-by-step account of how we measure elemental abundances — from raw HARPS spectra to calibrated [X/H] ratios with formal Type A and Type B uncertainties.</p>
+  </header>
+
+  <div class="coming-soon">
+    <span class="cs-status">○ Full methodology doc in preparation — RYA-74</span>
+    <h2>Six-step pipeline overview</h2>
+    <p>The Codex uses a reproducible, open-source Python pipeline built around <strong>ATLAS9/Castelli-Kurucz model atmospheres</strong> and HARPS high-resolution spectroscopy. The methodology PDF will document every decision with citation-level precision.</p>
+    <ul class="step-list">
+      <li class="step-item"><span class="step-num">01</span><div class="step-body"><div class="step-name">Spectrum acquisition &amp; normalization</div><div class="step-desc">HARPS archive retrieval, continuum normalization using iterative sigma-clipping spline fit, S/N assessment per order.</div></div></li>
+      <li class="step-item"><span class="step-num">02</span><div class="step-body"><div class="step-name">Stellar parameters</div><div class="step-desc">Teff from excitation equilibrium, log g from ionization equilibrium (Fe I/II), microturbulence from EW vs. abundance trend. Iterated to convergence.</div></div></li>
+      <li class="step-item"><span class="step-num">03</span><div class="step-body"><div class="step-name">Line list loading</div><div class="step-desc">VALD3 + NIST master CSV, filtered by quality grade (A+/A preferred). Blend-flagged lines excluded from abundance determination.</div></div></li>
+      <li class="step-item"><span class="step-num">04</span><div class="step-body"><div class="step-name">Equivalent width measurement</div><div class="step-desc">Gaussian fitting to absorption profiles. Profiles with χ²/ν &gt; 2 flagged. EW range 20–200 mÅ retained for curve-of-growth analysis.</div></div></li>
+      <li class="step-item"><span class="step-num">05</span><div class="step-body"><div class="step-name">Abundance derivation</div><div class="step-desc">MOOG-style curve of growth analysis. NLTE corrections applied for Fe, O, Na, Mg following Amarsi et al. (2020). Solar reference: Asplund et al. (2021).</div></div></li>
+      <li class="step-item"><span class="step-num">06</span><div class="step-body"><div class="step-name">Uncertainty budget &amp; ratios</div><div class="step-desc">Type A: line-to-line scatter (σ/√N). Type B: stellar parameter sensitivity (ΔTeff=50K, Δlog g=0.1, Δξ=0.1 km/s). C/O, Mg/Si, and alpha/Fe ratios with propagated uncertainties.</div></div></li>
+    </ul>
+    <a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf" class="btn-ghost">Download methodology PDF ↗</a>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

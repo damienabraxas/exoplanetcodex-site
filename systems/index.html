@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systems · The Exoplanet Codex</title>
+  <meta name="description" content="Every stellar system in the Exoplanet Codex — measured, referenced, and open.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .system-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:var(--rim); margin-top:2rem; }
+    .system-card { background:var(--deep); padding:2rem; cursor:pointer; transition:background 0.2s; text-decoration:none; display:block; }
+    .system-card:hover { background:var(--surface); }
+    .system-card.active { border-top:2px solid var(--accent); }
+    .system-card.coming { opacity:0.4; cursor:default; }
+    .system-card.coming:hover { background:var(--deep); }
+    .card-tag  { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.6rem; }
+    .card-tag.live { color:var(--accent); }
+    .card-tag.soon { color:var(--muted); }
+    .card-name { font-family:var(--serif); font-size:1.7rem; font-weight:300; color:var(--text-bright); margin-bottom:0.2rem; }
+    .card-iau  { font-family:var(--mono); font-size:0.7rem; color:var(--accent-warm); letter-spacing:0.08em; margin-bottom:0.9rem; }
+    .card-desc { font-size:0.95rem; color:var(--text-dim); line-height:1.65; }
+    .card-params { display:flex; gap:1.4rem; margin-top:1.4rem; flex-wrap:wrap; }
+    .cp   { font-family:var(--mono); font-size:0.65rem; }
+    .cp-k { display:block; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; font-size:0.58rem; margin-bottom:0.2rem; }
+    .cp-v { color:var(--text-bright); }
+    .card-progress { margin-top:1.4rem; padding-top:1.1rem; border-top:1px solid var(--rim); }
+    .progress-row  { display:flex; align-items:center; gap:0.9rem; }
+    .progress-track { flex:1; height:2px; background:var(--rim); border-radius:1px; }
+    .progress-fill  { height:100%; border-radius:1px; animation:glow-pulse 3s ease-in-out infinite; }
+    .pf-18 { width:18%; background:var(--accent); }
+    .progress-text { font-family:var(--mono); font-size:0.6rem; color:var(--text-dim); letter-spacing:0.08em; white-space:nowrap; }
+    .catalog-section { padding:3rem 0 5rem; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/" class="active">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Systems</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">Catalog // Stellar systems archive</div>
+    <h1 class="page-title">The <em>Systems</em></h1>
+    <p class="page-subtitle">Every star in the Exoplanet Codex — measured, referenced, and open. Elemental abundances from high-resolution spectroscopy, tied to the planets they host.</p>
+  </header>
+
+  <section class="catalog-section">
+    <div class="section-label">Codex entries</div>
+    <div class="system-grid">
+      <a class="system-card active" href="/systems/55-cancri/">
+        <div class="card-tag live">● Entry 001 — Analysis in progress</div>
+        <div class="card-name">Copernicus</div>
+        <div class="card-iau">55 Cancri A · HD 75732 · HIP 43587</div>
+        <p class="card-desc">A metal-rich K dwarf 40.9 light years away hosting five planets, including Janssen — a lava-covered super-Earth with a possible CO₂ atmosphere detected by JWST. The C/O ratio of this star remains scientifically contested. We are measuring it.</p>
+        <div class="card-params">
+          <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">5196 K</span></div>
+          <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">+0.32</span></div>
+          <div class="cp"><span class="cp-k">Planets</span><span class="cp-v">5</span></div>
+          <div class="cp"><span class="cp-k">Age</span><span class="cp-v">10.2 Gyr</span></div>
+        </div>
+        <div class="card-progress">
+          <div class="progress-row">
+            <div class="progress-track"><div class="progress-fill pf-18"></div></div>
+            <div class="progress-text">Step 1 / 6 — Spectrum acquisition</div>
+          </div>
+        </div>
+      </a>
+      <a class="system-card active" href="/systems/sol/">
+        <div class="card-tag live">● Entry 000 — Reference system</div>
+        <div class="card-name">The Sun</div>
+        <div class="card-iau">Sol · Our solar system · 8 planets</div>
+        <p class="card-desc">The calibration anchor for all Codex measurements. Every [X/H] abundance is measured relative to the Sun. Includes Terra, the reference case for all CHNOPS and habitability assessments.</p>
+        <div class="card-params">
+          <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">5778 K</span></div>
+          <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">0.00</span></div>
+          <div class="cp"><span class="cp-k">Planets</span><span class="cp-v">8</span></div>
+          <div class="cp"><span class="cp-k">Age</span><span class="cp-v">4.6 Gyr</span></div>
+        </div>
+        <div class="card-progress">
+          <div class="progress-row">
+            <div class="progress-track"><div class="progress-fill" style="width:100%;background:var(--accent-warm)"></div></div>
+            <div class="progress-text">Reference data — Lodders 2003 / Asplund 2021</div>
+          </div>
+        </div>
+      </a>
+      <div class="system-card coming">
+        <div class="card-tag soon">○ Queued — Thesis revisit</div>
+        <div class="card-name">HD 89307</div>
+        <div class="card-iau">G0V · Solar analog</div>
+        <p class="card-desc">The most solar-like exoplanet host star known. First analyzed in the 2010 thesis. Revisited with HARPS at 3× the resolution.</p>
+      </div>
+      <div class="system-card coming">
+        <div class="card-tag soon">○ Queued — Thesis revisit</div>
+        <div class="card-name">Gliese 581</div>
+        <div class="card-iau">M3 dwarf · Habitable zone planets</div>
+        <p class="card-desc">Two planets in the habitable zone. Analyzed in 2010 with poor model fit. The 2026 pipeline will settle whether the anomalous Ni, Co, Si were real or an artifact.</p>
+      </div>
+      <div class="system-card coming">
+        <div class="card-tag soon">○ Future</div>
+        <div class="card-name">Submit a system</div>
+        <div class="card-iau">Suggest a target</div>
+        <p class="card-desc">Researcher with a system you’d like analyzed? Collaboration welcome. Contact us with your target and scientific rationale.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

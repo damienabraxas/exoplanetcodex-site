@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary · The Exoplanet Codex</title>
+  <meta name="description" content="Definitions for every term in the Exoplanet Codex — spectroscopy, stellar physics, planetary chemistry, and statistical methods.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .coming-soon { padding:6rem 0; text-align:center; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .cs-icon { font-family:var(--mono); font-size:2rem; color:var(--accent); margin-bottom:1.8rem; display:block; letter-spacing:0.1em; }
+    .cs-status { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:1.2rem; display:block; }
+    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.6rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
+    .coming-soon > p { font-size:1.05rem; color:var(--text-dim); max-width:560px; margin:0 auto 2rem; line-height:1.8; }
+    .term-preview { display:flex; flex-direction:column; gap:1px; background:var(--rim); border:1px solid var(--rim); max-width:700px; margin:3rem auto 0; text-align:left; }
+    .term-row { background:var(--deep); padding:1.2rem 1.6rem; display:flex; gap:2rem; align-items:baseline; }
+    .term-name { font-family:var(--mono); font-size:0.72rem; color:var(--accent); letter-spacing:0.08em; min-width:200px; flex-shrink:0; }
+    .term-def  { font-size:0.95rem; color:var(--text-dim); line-height:1.6; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/" class="active">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Glossary</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">Reference // Scientific vocabulary</div>
+    <h1 class="page-title">The <em>Glossary</em></h1>
+    <p class="page-subtitle">Definitions for every term in the Exoplanet Codex — spectroscopy, stellar physics, planetary chemistry, and statistical methods. ~120 entries.</p>
+  </header>
+
+  <div class="coming-soon">
+    <span class="cs-icon">[G]</span>
+    <span class="cs-status">○ In preparation — RYA-73</span>
+    <h2>Glossary in preparation</h2>
+    <p>The Codex Glossary will cover ~120 terms across stellar spectroscopy, LTE line formation, equivalent width analysis, stellar atmosphere modeling, and exoplanet interior structure. A subset of key terms:</p>
+    <div class="term-preview">
+      <div class="term-row"><span class="term-name">Equivalent width</span><span class="term-def">The width of a rectangular strip of the continuum that has the same total absorption as an observed spectral line. Measured in mÅ or pm.</span></div>
+      <div class="term-row"><span class="term-name">[Fe/H]</span><span class="term-def">Iron abundance relative to solar, in dex. [Fe/H] = log(N₟ₑ/N₂)★ − log(N₟ₑ/N₂)☉. The primary metallicity indicator.</span></div>
+      <div class="term-row"><span class="term-name">C/O ratio</span><span class="term-def">The ratio of carbon to oxygen number densities in the stellar photosphere. A C/O &gt; 0.8 has implications for rocky planet mineralogy.</span></div>
+      <div class="term-row"><span class="term-name">Excitation equilibrium</span><span class="term-def">The condition where Fe I abundances show no trend with excitation potential. Used to constrain Tₛₑₑ.</span></div>
+    </div>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

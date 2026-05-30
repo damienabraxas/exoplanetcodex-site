@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copernicus · The Exoplanet Codex</title>
+  <meta name="description" content="55 Cancri A (Copernicus) — Entry 001. Analysis in progress. Metal-rich K dwarf hosting five planets including Janssen, the JWST super-Earth.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
+    .data-cell { flex:1; min-width:120px; padding:1rem 1.4rem; border-right:1px solid var(--rim); }
+    .data-cell:last-child { border-right:none; }
+    .data-label { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.3rem; }
+    .data-value { font-family:var(--mono); font-size:1rem; color:var(--accent); }
+    .data-value.warm { color:var(--accent-warm); }
+    .pipeline-status { margin:3rem 0; padding:2rem; border:1px solid var(--rim); background:var(--deep); opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .ps-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:1.4rem; padding-bottom:0.7rem; border-bottom:1px solid var(--rim); }
+    .ps-steps { list-style:none; }
+    .ps-step { display:flex; align-items:center; gap:1.2rem; padding:0.85rem 0; border-bottom:1px solid rgba(26,38,64,0.5); font-family:var(--mono); font-size:0.7rem; }
+    .ps-step:last-child { border-bottom:none; }
+    .ps-num { color:var(--muted); min-width:2rem; }
+    .ps-name { flex:1; color:var(--text-mid); }
+    .ps-step.current .ps-name { color:var(--text-bright); }
+    .ps-step.done .ps-name { color:var(--text-dim); }
+    .ps-badge { font-size:0.6rem; letter-spacing:0.12em; padding:0.2em 0.7em; border:1px solid; }
+    .ps-badge.active { color:var(--accent); border-color:rgba(79,195,247,0.4); }
+    .ps-badge.done   { color:var(--accent-green); border-color:rgba(82,199,138,0.3); }
+    .ps-badge.queued { color:var(--muted); border-color:rgba(58,79,110,0.5); }
+    .coming-soon { padding:3rem 0 5rem; opacity:0; animation:fade-in 1s ease 1s forwards; }
+    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
+    .coming-soon p { font-size:1.05rem; color:var(--text-dim); max-width:640px; line-height:1.8; margin-bottom:1rem; }
+    .coming-soon p strong { color:var(--text-bright); font-weight:400; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/" class="active">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/systems/">Systems</a> / <span>Copernicus</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">System // Entry 001 — Analysis in progress</div>
+    <h1 class="page-title"><em>Copernicus</em></h1>
+    <p class="page-subtitle">55 Cancri A · HD 75732 · HIP 43587 · 40.9 light-years · 5 planets · The first full Codex entry. We are measuring its C/O ratio.</p>
+  </header>
+
+  <div class="data-strip">
+    <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">K0 IV-V</div></div>
+    <div class="data-cell"><div class="data-label">Tₛₑₑ</div><div class="data-value">5196 K</div></div>
+    <div class="data-cell"><div class="data-label">log g</div><div class="data-value">4.41</div></div>
+    <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">+0.32 dex</div></div>
+    <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">40.9 ly</div></div>
+    <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">5</div></div>
+    <div class="data-cell"><div class="data-label">Spectrograph</div><div class="data-value" style="color:var(--text-dim);font-size:0.8rem">HARPS R~115k</div></div>
+  </div>
+
+  <div class="pipeline-status">
+    <div class="ps-label">Pipeline status — 6-step analysis</div>
+    <ul class="ps-steps">
+      <li class="ps-step current"><span class="ps-num">01</span><span class="ps-name">Spectrum acquisition &amp; normalization</span><span class="ps-badge active">● Active</span></li>
+      <li class="ps-step"><span class="ps-num">02</span><span class="ps-name">Stellar parameter determination (Teff, log g, ξturb)</span><span class="ps-badge queued">Queued</span></li>
+      <li class="ps-step"><span class="ps-num">03</span><span class="ps-name">Line list loading &amp; quality filtering</span><span class="ps-badge queued">Queued</span></li>
+      <li class="ps-step"><span class="ps-num">04</span><span class="ps-name">Equivalent width measurement &amp; Gaussian fitting</span><span class="ps-badge queued">Queued</span></li>
+      <li class="ps-step"><span class="ps-num">05</span><span class="ps-name">Abundance derivation via curve of growth</span><span class="ps-badge queued">Queued</span></li>
+      <li class="ps-step"><span class="ps-num">06</span><span class="ps-name">Uncertainty budget &amp; ratio interpretation</span><span class="ps-badge queued">Queued</span></li>
+    </ul>
+  </div>
+
+  <div class="coming-soon">
+    <div class="section-label">About this system</div>
+    <h2>Why 55 Cancri A?</h2>
+    <p>55 Cancri A is the most scientifically interesting nearby exoplanet host star available. Its innermost planet, <strong>Janssen (55 Cnc e)</strong>, was observed by JWST in 2024 and showed a possible CO₂-rich atmosphere — the first direct atmospheric detection of a rocky super-Earth. What that atmosphere is made of depends partly on what the star itself is made of.</p>
+    <p>The <strong>C/O ratio</strong> of 55 Cancri A remains contested in the literature. Some teams find it elevated above solar (suggesting carbon-rich interior models for the planets). We intend to resolve this with HARPS spectra at R~115,000 and a formal Type A + Type B uncertainty budget.</p>
+    <p>Full abundance table will publish here when the analysis completes. All raw data and pipeline code are open on <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--accent);text-decoration:none">GitHub</a>.</p>
+    <a href="/systems/" class="btn-ghost">← Back to Systems</a>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol · The Exoplanet Codex</title>
+  <meta name="description" content="The Sun — calibration anchor for all Codex measurements. Reference abundances from Lodders 2003 and Asplund 2021.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
+    .data-cell { flex:1; min-width:120px; padding:1rem 1.4rem; border-right:1px solid var(--rim); }
+    .data-cell:last-child { border-right:none; }
+    .data-label { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.3rem; }
+    .data-value { font-family:var(--mono); font-size:1rem; color:var(--accent); }
+    .data-value.warm { color:var(--accent-warm); }
+    .coming-soon { padding:5rem 0; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .cs-status { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:1.4rem; display:block; }
+    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
+    .coming-soon p { font-size:1.05rem; color:var(--text-dim); max-width:620px; line-height:1.8; margin-bottom:1.4rem; }
+    .coming-soon p strong { color:var(--text-bright); font-weight:400; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/" class="active">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/systems/">Systems</a> / <span>Sol</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">System // Entry 000 — Reference</div>
+    <h1 class="page-title">The <em>Sun</em></h1>
+    <p class="page-subtitle">Sol · G2V main sequence · The calibration anchor for all Codex measurements. Every [X/H] ratio is defined relative to solar photospheric abundances.</p>
+  </header>
+
+  <div class="data-strip">
+    <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">G2 V</div></div>
+    <div class="data-cell"><div class="data-label">Tₛₑₑ</div><div class="data-value">5778 K</div></div>
+    <div class="data-cell"><div class="data-label">log g</div><div class="data-value">4.44</div></div>
+    <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">0.00 dex</div></div>
+    <div class="data-cell"><div class="data-label">Age</div><div class="data-value">4.6 Gyr</div></div>
+    <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">8</div></div>
+    <div class="data-cell"><div class="data-label">Reference</div><div class="data-value" style="color:var(--text-dim);font-size:0.75rem">Asplund 2021</div></div>
+  </div>
+
+  <div class="coming-soon">
+    <span class="cs-status">● Reference system — RYA-53 in progress</span>
+    <h2>Solar abundance page in preparation</h2>
+    <p>This page will present the full solar reference dataset used in all Codex measurements — photospheric abundances for 25 elements from <strong>Asplund et al. (2021)</strong>, with NLTE corrections and comparison to Lodders (2003) and Grevesse &amp; Sauval (1998).</p>
+    <p>The Sun is not a target — it’s the ruler. Every abundance in the Codex is expressed as [X/H] = log(Nₓ/N₂)★ − log(Nₓ/N₂)☉, which means getting the solar reference right is the single most important calibration decision in the entire pipeline.</p>
+    <a href="/systems/" class="btn-ghost">← Back to Systems</a>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

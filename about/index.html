@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · The Exoplanet Codex</title>
+  <meta name="description" content="An open science archive measuring the elemental chemistry of exoplanetary systems — built in Montana by a spectroscopist who spent fifteen years building lasers before coming back to the stars.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .about-content { padding:4rem 0 6rem; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .about-content h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1.2rem; margin-top:3rem; line-height:1.25; }
+    .about-content h2:first-child { margin-top:0; }
+    .about-content p  { font-size:1.05rem; color:var(--text-mid); max-width:700px; line-height:1.9; margin-bottom:1.2rem; }
+    .about-content p strong { color:var(--text-bright); font-weight:400; }
+    .about-content a  { color:var(--accent); text-decoration:none; transition:opacity 0.2s; }
+    .about-content a:hover { opacity:0.75; }
+    .cs-status { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:2rem; display:block; }
+    blockquote { font-family:var(--serif); font-size:clamp(1.1rem,1.5vw,1.3rem); font-style:italic; font-weight:300; color:var(--text-bright); line-height:1.8; border-left:2px solid var(--accent); padding-left:1.8rem; max-width:660px; margin:2rem 0; }
+    blockquote footer { padding:0; border:none; animation:none; opacity:1; margin-top:0.8rem; font-style:normal; font-size:0.8rem; color:var(--text-dim); font-family:var(--mono); letter-spacing:0.05em; }
+    .contact-card { margin-top:3rem; padding:2rem; border:1px solid var(--rim); background:var(--deep); display:inline-block; }
+    .cc-label { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.8rem; }
+    .cc-links { display:flex; gap:1.4rem; flex-wrap:wrap; }
+    .cc-link { font-family:var(--mono); font-size:0.72rem; color:var(--accent); text-decoration:none; letter-spacing:0.06em; transition:opacity 0.2s; }
+    .cc-link:hover { opacity:0.7; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/" class="active">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>About</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">About // The project and its founder</div>
+    <h1 class="page-title">About the <em>Codex</em></h1>
+    <p class="page-subtitle">An open science archive measuring the elemental chemistry of exoplanetary systems — built in Montana by a spectroscopist who spent fifteen years building lasers before coming back to the stars.</p>
+  </header>
+
+  <div class="about-content">
+    <span class="cs-status">○ Full about page — RYA-61</span>
+
+    <h2>The project</h2>
+    <p>The Exoplanet Codex is an <strong>open science stellar abundance archive</strong>. We measure the elemental chemistry of exoplanet host stars using high-resolution spectroscopy and publish the full results — data, code, and methodology — under open licenses. No paywalls. No closed pipelines.</p>
+    <p>The goal is to build a systematic record of what nearby exoplanetary systems are made of, starting with the star. A star’s [Fe/H], [Mg/Fe], [Si/Fe], C/O ratio, and Mg/Si ratio place constraints on the internal structure, mineralogy, and volatile budget of the planets that formed from the same disk.</p>
+
+    <h2>The founder</h2>
+    <blockquote>
+      “I measured three exoplanet host stars in 2010 as an undergraduate thesis. The question — can you read the chemistry of a star and know what its planets are made of? — never went away. I spent fifteen years building laser systems and consulting on AI. In 2026, I came back to it.”
+      <footer>— Ryan Schmitt · Montana, 2026</footer>
+    </blockquote>
+    <p>Ryan holds a B.S. in Astrophysics (2010) and brings fifteen years of applied physics and systems engineering experience to the precision measurement side of the problem. The Exoplanet Codex is independent, unfunded, and entirely open.</p>
+
+    <h2>Open science commitment</h2>
+    <p>Every analysis in the Codex is <strong>fully reproducible</strong>. All spectra are from public archives (ESO/HARPS). All pipeline code is <a href="https://github.com/damienabraxas/exoplanetcodex">open on GitHub</a>. All results will be posted to arXiv and submitted to RNAAS. The line lists, model atmospheres, and solar reference data are all cited and version-controlled.</p>
+
+    <div class="contact-card">
+      <div class="cc-label">Contact &amp; links</div>
+      <div class="cc-links">
+        <a class="cc-link" href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a>
+        <a class="cc-link" href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a>
+        <a class="cc-link" href="/origin/">Origin / 2010 thesis</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>
