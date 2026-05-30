@@ -229,28 +229,43 @@
     }
 
     async function sendAsNewsletter() {
-      var btn = document.querySelector('.btn-newsletter');
-      btn.textContent = 'Creating draft...';
-      btn.disabled = true;
+      var apiKey = document.getElementById('bd-api-key').value.trim();
+      var msg = document.getElementById('admin-msg');
+      if (!apiKey) {
+        msg.style.color = 'var(--danger)';
+        msg.style.background = 'rgba(224,92,75,0.08)';
+        msg.textContent = '✗ Please enter your Buttondown API key.';
+        msg.style.display = 'block';
+        return;
+      }
+      msg.style.color = 'var(--text-dim)';
+      msg.style.background = 'none';
+      msg.textContent = 'Sending…';
+      msg.style.display = 'block';
       try {
         var title = document.querySelector('.page-title').textContent;
         var body  = document.querySelector('.post-body').innerHTML;
         var response = await fetch('https://api.buttondown.email/v1/emails', {
           method: 'POST',
           headers: {
-            'Authorization': 'Token b5dbb32c-5c7c-4ae3-9cc0-01180f2d0a5c',
+            'Authorization': 'Token ' + apiKey,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ subject: title, body: body, status: 'draft' }),
         });
         if (response.ok) {
-          btn.textContent = '✓ Draft created in Buttondown';
+          msg.style.color = 'var(--accent-green)';
+          msg.style.background = 'rgba(82,199,138,0.08)';
+          msg.textContent = '✓ Draft created — review in Buttondown dashboard.';
         } else {
-          throw new Error('failed');
+          msg.style.color = 'var(--danger)';
+          msg.style.background = 'rgba(224,92,75,0.08)';
+          msg.textContent = '✗ Failed — check API key and try again.';
         }
       } catch (e) {
-        btn.textContent = 'Error — check console';
-        btn.disabled = false;
+        msg.style.color = 'var(--danger)';
+        msg.style.background = 'rgba(224,92,75,0.08)';
+        msg.textContent = '✗ Network error — check your connection.';
       }
     }
   </script>
