@@ -118,15 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 function tableToMarkdown(table) {
-  var rows = Array.from(table.querySelectorAll('tr'));
-  if (!rows.length) return '';
   var lines = [];
-  rows.forEach(function (row, i) {
-    var cells = Array.from(row.querySelectorAll('th, td'));
+  var headerRow = table.querySelector('thead tr');
+  if (headerRow) {
+    var headers = Array.from(headerRow.querySelectorAll('th'));
+    lines.push('| ' + headers.map(function (c) { return c.textContent.trim(); }).join(' | ') + ' |');
+    lines.push('|' + headers.map(function () { return '---|'; }).join(''));
+  }
+  Array.from(table.querySelectorAll('tbody tr')).forEach(function (row) {
+    var cells = Array.from(row.querySelectorAll('td'));
     lines.push('| ' + cells.map(function (c) { return c.textContent.trim(); }).join(' | ') + ' |');
-    if (i === 0) {
-      lines.push('| ' + cells.map(function () { return '---'; }).join(' | ') + ' |');
-    }
   });
   return lines.join('\n');
 }
