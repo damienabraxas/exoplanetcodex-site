@@ -142,14 +142,14 @@ function htmlToMarkdown(node) {
   if (node.classList && skipClasses.some(function (c) { return node.classList.contains(c); })) return '';
 
   switch (tag) {
-    case 'h1': return '# '   + node.textContent.trim() + '\n\n';
-    case 'h2': return '## '  + node.textContent.trim() + '\n\n';
-    case 'h3': return '### ' + node.textContent.trim() + '\n\n';
-    case 'h4': return '#### '+ node.textContent.trim() + '\n\n';
+    case 'h1': return '\n\n# '    + node.textContent.trim() + '\n\n';
+    case 'h2': return '\n\n## '   + node.textContent.trim() + '\n\n';
+    case 'h3': return '\n\n### '  + node.textContent.trim() + '\n\n';
+    case 'h4': return '\n\n#### ' + node.textContent.trim() + '\n\n';
     case 'p':  return walk(kids).trim() + '\n\n';
     case 'br': return '\n';
-    case 'strong': case 'b': return '**' + walk(kids).trim() + '**';
-    case 'em':     case 'i': return '*'  + walk(kids).trim() + '*';
+    case 'strong': case 'b': return '**' + node.textContent.trim() + '**';
+    case 'em':     case 'i': return '*'  + node.textContent.trim() + '*';
     case 'a': {
       var href = node.getAttribute('href') || '';
       var text = walk(kids).trim();
