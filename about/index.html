@@ -27,6 +27,10 @@
     .cc-links { display:flex; gap:1.4rem; flex-wrap:wrap; }
     .cc-link { font-family:var(--mono); font-size:0.72rem; color:var(--accent); text-decoration:none; letter-spacing:0.06em; transition:opacity 0.2s; }
     .cc-link:hover { opacity:0.7; }
+    .founder-profile { display:grid; grid-template-columns:180px 1fr; gap:2.5rem; align-items:start; margin:2rem 0 1rem; }
+    .founder-photo { width:100%; aspect-ratio:1; object-fit:cover; object-position:center top; border:1px solid var(--rim); filter:grayscale(15%); }
+    .founder-photo-fallback { width:100%; aspect-ratio:1; background:var(--surface); border:1px solid var(--rim); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:0.65rem; color:var(--text-dim); letter-spacing:0.1em; text-align:center; padding:1rem; }
+    @media (max-width:600px) { .founder-profile { grid-template-columns:1fr; } .founder-photo { max-width:160px; } }
   </style>
 </head>
 <body>
@@ -53,18 +57,26 @@
   </header>
 
   <div class="about-content">
-    <span class="cs-status">○ Full about page — RYA-61</span>
-
     <h2>The project</h2>
     <p>The Exoplanet Codex is an <strong>open science stellar abundance archive</strong>. We measure the elemental chemistry of exoplanet host stars using high-resolution spectroscopy and publish the full results — data, code, and methodology — under open licenses. No paywalls. No closed pipelines.</p>
     <p>The goal is to build a systematic record of what nearby exoplanetary systems are made of, starting with the star. A star’s [Fe/H], [Mg/Fe], [Si/Fe], C/O ratio, and Mg/Si ratio place constraints on the internal structure, mineralogy, and volatile budget of the planets that formed from the same disk.</p>
 
     <h2>The founder</h2>
-    <blockquote>
-      “I measured three exoplanet host stars in 2010 as an undergraduate thesis. The question — can you read the chemistry of a star and know what its planets are made of? — never went away. I spent fifteen years building laser systems and consulting on AI. In 2026, I came back to it.”
-      <footer>— Ryan Schmitt · Montana, 2026</footer>
-    </blockquote>
-    <p>Ryan holds a B.S. in Astrophysics (2010) and brings fifteen years of applied physics and systems engineering experience to the precision measurement side of the problem. The Exoplanet Codex is independent, unfunded, and entirely open.</p>
+    <div class=”founder-profile”>
+      <img src=”/assets/images/ryan-schmitt.jpg”
+           alt=”Ryan Schmitt — founder of The Exoplanet Codex”
+           class=”founder-photo”
+           onerror=”this.outerHTML=’<div class=\’founder-photo-fallback\’>Photo<br>coming<br>soon</div>’”>
+      <div>
+        <blockquote>
+          “I measured three exoplanet host stars in 2010 as an undergraduate thesis. The question — can you read the chemistry of a star and know what its planets are made of? — never went away. I spent fifteen years building laser systems and consulting on AI. In 2026, I came back to it.”
+          <footer>— Ryan Schmitt · Montana, 2026</footer>
+        </blockquote>
+        <p>Ryan holds a <strong>B.S. in Astrophysics</strong> from the University of Montana (2010), where his senior thesis measured elemental abundances for three exoplanet host stars — 55 Cancri A, HD 89307, and Gliese 581 — using ELODIE spectra at R~42,000.</p>
+        <p>After graduating he spent fifteen years as a <strong>laser engineer</strong> and <strong>Salesforce AI consultant</strong>, working on precision optical systems and enterprise AI strategy. The same instinct for metrology-grade measurement that made him a good engineer kept pulling him back to the unsettled questions from 2010.</p>
+        <p>Based in <strong>Missoula, Montana</strong>. The Exoplanet Codex is independent, unfunded, and entirely open — built to answer a question that never went away.</p>
+      </div>
+    </div>
 
     <h2>Open science commitment</h2>
     <p>Every analysis in the Codex is <strong>fully reproducible</strong>. All spectra are from public archives (ESO/HARPS). All pipeline code is <a href="https://github.com/damienabraxas/exoplanetcodex">open on GitHub</a>. All results will be posted to arXiv and submitted to RNAAS. The line lists, model atmospheres, and solar reference data are all cited and version-controlled.</p>
