@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solar Calibration · Mission Log · The Exoplanet Codex</title>
-  <meta name="description" content="Before we analyze any exoplanet host star, we prove the pipeline recovers the right answer for the Sun. Solar calibration via asteroid Vesta — coming soon.">
+  <meta name="description" content="Before we analyze any exoplanet host star, we prove the pipeline recovers the right answer for the Sun. Solar calibration via direct solar observations — Dumusque HARPS dataset, ESO 1102.D-0954(A).">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -99,14 +99,14 @@
         <div class="coming-soon-box">
           <p class="cs-label">Entry in progress</p>
           <p class="cs-title">Coming June 2026</p>
-          <p>This entry will document the solar calibration run — using asteroid Vesta observed with HARPS as a sunlight reflector, processed through the full pipeline identically to science targets.</p>
+          <p>This entry will document the solar calibration run — using direct solar observations from the HARPS spectrograph (ESO Program 1102.D-0954(A), PI: Xavier Dumusque, University of Geneva), processed through the full pipeline identically to science targets. These are direct solar feed observations, not reflected sunlight from an asteroid.</p>
           <div class="progress-inline">
             <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
             <div class="progress-text">Pipeline step 2 / 6</div>
           </div>
         </div>
 
-        <p>The calibration criterion: our pipeline must recover <strong>A(Fe)☉ = 7.46 ± 0.05</strong> (Asplund et al. 2021) and <strong>C/O☉ = 0.55 ± 0.05</strong> from the asteroid spectrum. If it doesn't, there's a systematic error somewhere in the chain — continuum normalization, line list, model atmosphere, or abundance solver — and we go hunting before touching 55 Cancri A.</p>
+        <p>The calibration criterion: our pipeline must recover <strong>A(Fe)☉ = 7.46 ± 0.05</strong> (Asplund et al. 2021) and <strong>C/O☉ = 0.55 ± 0.05</strong> from the solar spectrum. The dataset consists of 10 HARPS S1D solar exposures (ESO Program 1102.D-0954(A), PI: Dumusque) acquired as a <strong>direct solar feed</strong> — the Sun itself, not reflected sunlight from Ceres or Vesta — with SNR 306–309 per exposure. If the pipeline doesn't recover the reference values, there's a systematic error somewhere in the chain — continuum normalization, line list, model atmosphere, or abundance solver — and we go hunting before touching 55 Cancri A.</p>
 
         <p>This entry will publish when the calibration run is complete and the numbers are in.</p>
 
