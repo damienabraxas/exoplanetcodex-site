@@ -368,31 +368,75 @@
         feed, not asteroid-reflected sunlight — with SNR 306–309 per exposure.
       </p>
 
-      <!-- Science plots placeholder — awaiting EW CSV from Ryan -->
-      <div class="plots-placeholder" id="science-plots-placeholder">
-        <div class="pp-label">⏳ Awaiting solar EW data</div>
-        <p>
-          Elemental abundance charts (27 elements, [X/H] vs Asplund 2021), C/O ratio panel,
-          alpha elements panel, and problem-lines explainer (O I 6300, Li I 6707) will render
-          here once the finalized solar EW output CSV is provided.
+      <!-- ── Chart 1: Elemental Abundance Bar Chart ── -->
+      <div style="margin:2rem 0;">
+        <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">Solar Calibration Results</p>
+        <p style="font-family:var(--serif);font-size:0.95rem;color:var(--text-dim);max-width:680px;line-height:1.7;margin-bottom:1.2rem;">
+          A(X)_ours − A(X)_Asplund2021 for 15 measurable elements. Fe I recovers 0.00 dex by construction — the calibration anchor. Many elements show large systematic offsets driven by nonlinear line exclusions; these are actively under investigation before science targets are touched.
         </p>
-        <!-- Chart.js charts will be injected here by JS once CSV is available -->
-        <div id="chart-abundance"  style="display:none;max-width:780px;margin:2rem auto;"><canvas></canvas></div>
-        <div id="chart-co-ratio"   style="display:none;max-width:520px;margin:2rem auto;"><canvas></canvas></div>
-        <div id="chart-alpha"      style="display:none;max-width:520px;margin:2rem auto;"><canvas></canvas></div>
+        <div style="background:#0a1128;border:1px solid var(--rim);padding:1rem;position:relative;">
+          <canvas id="chart-abundance" height="340"></canvas>
+        </div>
+        <p style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);margin-top:0.5rem;">
+          ⚠ = hard_warning flag (systematic offset or high nonlinear fraction). Error bars = σ_total (stat ⊕ sys).
+          Elements not shown (Ba, Co, Eu, K, Li, N, Na, O, Sc): not yet measurable with current optical HARPS coverage.
+        </p>
       </div>
 
-      <!-- EW CSV download (disabled until Ryan provides the file) -->
+      <!-- ── Charts 2+3: Alpha panel + C/O panel ── -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;">
+        <div>
+          <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">Alpha Elements [X/Fe]</p>
+          <div style="background:#0a1128;border:1px solid var(--rim);padding:1rem;">
+            <canvas id="chart-alpha" height="260"></canvas>
+          </div>
+          <p style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);margin-top:0.4rem;">[X/Fe] = δ(X) − δ(Fe). Reference line: 0.0 dex.</p>
+        </div>
+        <div>
+          <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">C/O Ratio</p>
+          <div style="background:#0a1128;border:1px solid var(--rim);padding:1.2rem 1.4rem;">
+            <p style="font-family:var(--mono);font-size:0.75rem;color:var(--accent);margin-bottom:0.7rem;">// C/O STATUS //</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-family:var(--mono);font-size:0.78rem;">
+              <div style="padding:0.7rem;border:1px solid var(--rim);background:var(--deep);">
+                <div style="font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:0.3rem;">C I (5380 Å)</div>
+                <div style="color:#4fc3f7;font-size:1.1rem;">+2.20 dex</div>
+                <div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.2rem;">⚠ nonlinear issues</div>
+              </div>
+              <div style="padding:0.7rem;border:1px solid var(--rim);background:var(--deep);">
+                <div style="font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:0.3rem;">O I (6300 Å)</div>
+                <div style="color:var(--text-dim);font-size:1.1rem;">— N/M —</div>
+                <div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.2rem;">No usable lines found</div>
+              </div>
+            </div>
+            <div style="margin-top:1rem;padding:0.8rem;border-left:3px solid var(--accent-warm);background:rgba(232,162,74,0.05);">
+              <p style="font-size:0.78rem;color:var(--text);line-height:1.6;margin:0;">C/O cannot be computed until O I is recovered. The [O I] 6300.304 Å line requires Ni blend subtraction; Li I 6707 Å requires CN deblending. Both are in active development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Chart 4: Problem Lines explainer ── -->
+      <div style="margin:2rem 0;">
+        <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">Problem Lines — Active Development</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rim);border:1px solid var(--rim);">
+          <div style="background:var(--deep);padding:1.2rem 1.4rem;">
+            <p style="font-family:var(--mono);font-size:0.72rem;color:#4fc3f7;letter-spacing:0.12em;margin-bottom:0.8rem;">[O I] 6300.304 Å — Ni I Blend</p>
+            <p style="font-size:0.88rem;color:var(--text);line-height:1.7;">The forbidden oxygen line at 6300.304 Å is blended with Ni I at 6300.336 Å (Δλ = 0.032 Å). At HARPS resolution (R~115,000) they are marginally resolved but the Ni contribution must be computed from the measured Ni abundance and subtracted analytically. Until Ni is cleanly measured in the solar calibration run, this blend correction propagates uncertainty into C/O. Currently: O I has no usable lines returned by the pipeline.</p>
+          </div>
+          <div style="background:var(--deep);padding:1.2rem 1.4rem;">
+            <p style="font-family:var(--mono);font-size:0.72rem;color:#4fc3f7;letter-spacing:0.12em;margin-bottom:0.8rem;">Li I 6707.76 Å — CN Blend</p>
+            <p style="font-size:0.88rem;color:var(--text);line-height:1.7;">The lithium doublet at 6707.76 + 6707.91 Å is contaminated by CN molecular lines in cool, metal-rich stars. In the Sun this is a minor issue, but in 55 Cancri A ([Fe/H] = +0.32) CN blending becomes significant. The pipeline currently flags all Li I measurements in the solar run as nonlinear-excluded. Accurate Li requires an updated CN linelist and deblending step — planned for Milestone B.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EW CSV download (active) ── -->
       <p style="margin-top:1.5rem;">
-        <a href="/assets/data/sol_ew_results_v1.csv"
-           class="btn-download"
-           id="ew-download-btn"
-           download
-           title="Available once sol_ew_results_v1.csv is published">
+        <a href="/assets/data/sol_ew_results_v1.csv" class="btn-download ready" download>
           ⬇ Download Raw EW Data (CSV)
         </a>
-        <span id="ew-download-note" style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);display:block;margin-top:0.5rem;">
-          File pending — will activate when solar EW results are published
+        <span style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);display:block;margin-top:0.5rem;">
+          806 lines · 22 elements · HARPS 3780–6910 Å · ESO 1102.D-0954(A)
         </span>
       </p>
     </section>
@@ -446,6 +490,190 @@
     <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
   </footer>
 </div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Abundance data (A_X_ours − A_X_Asplund2021) ──
+  // Source: results/Solar/2026-05-31/solar_abundances.csv
+  // delta = 0.0 for Fe I by pipeline construction (calibration anchor)
+  var ABUND = [
+    {el:'C',  group:'cno',   delta: 2.200, sigma:0.351, n:  3, warn:true},
+    {el:'P',  group:'cno',   delta:-2.030, sigma:0.358, n:  2, warn:true},
+    {el:'S',  group:'cno',   delta: 2.224, sigma:0.484, n:  6, warn:true},
+    {el:'Ca', group:'alpha', delta:-0.417, sigma:0.627, n: 18, warn:true},
+    {el:'Mg', group:'alpha', delta: 1.003, sigma:0.924, n:  3, warn:true},
+    {el:'Si', group:'alpha', delta: 1.090, sigma:0.634, n: 55, warn:true},
+    {el:'Ti', group:'alpha', delta:-0.447, sigma:0.772, n: 51, warn:true},
+    {el:'Cr', group:'irpk',  delta: 0.526, sigma:0.592, n: 44, warn:true},
+    {el:'Fe', group:'irpk',  delta: 0.000, sigma:0.716, n:269, warn:false},
+    {el:'Mn', group:'irpk',  delta: 0.940, sigma:0.402, n:  8, warn:true},
+    {el:'Ni', group:'irpk',  delta: 0.892, sigma:0.749, n: 18, warn:true},
+    {el:'V',  group:'irpk',  delta: 0.435, sigma:0.186, n:  5, warn:true},
+    {el:'Y',  group:'sproc', delta:-0.179, sigma:0.626, n:  2, warn:true},
+    {el:'Zr', group:'sproc', delta:-0.238, sigma:null,  n:  1, warn:true},
+    {el:'Al', group:'other', delta: 0.237, sigma:0.114, n:  2, warn:true},
+  ];
+
+  var GC = {
+    cno:'#4fc3f7', alpha:'#81c784', irpk:'#ffb74d',
+    sproc:'#ce93d8', rproc:'#ef9a9a', other:'#90a4ae'
+  };
+  var DARK_BG   = '#0a1128';
+  var GRID_COL  = 'rgba(30,48,96,0.7)';
+  var TICK_COL  = '#8899bb';
+  var TITLE_COL = '#ccd6f0';
+
+  // Error bar plugin (draws ± sigma as vertical whiskers)
+  var errorBarPlugin = {
+    id: 'errorBar',
+    afterDatasetsDraw: function (chart) {
+      var ctx = chart.ctx;
+      chart.data.datasets.forEach(function (ds, di) {
+        if (!ds.errorBars) return;
+        var meta = chart.getDatasetMeta(di);
+        meta.data.forEach(function (el, i) {
+          var err = ds.errorBars[i];
+          if (err == null || err === 0) return;
+          var props = el.getProps(['x', 'y'], true);
+          var yPlus  = chart.scales.y.getPixelForValue(ds.data[i] + err);
+          var yMinus = chart.scales.y.getPixelForValue(ds.data[i] - err);
+          var hw = 3;
+          ctx.save();
+          ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(props.x, yPlus);  ctx.lineTo(props.x, yMinus);
+          ctx.moveTo(props.x - hw, yPlus);  ctx.lineTo(props.x + hw, yPlus);
+          ctx.moveTo(props.x - hw, yMinus); ctx.lineTo(props.x + hw, yMinus);
+          ctx.stroke();
+          ctx.restore();
+        });
+      });
+    }
+  };
+  Chart.register(errorBarPlugin);
+
+  // ── Chart 1: Abundance bar chart ──
+  (function () {
+    var ctx = document.getElementById('chart-abundance');
+    if (!ctx) return;
+    var labels    = ABUND.map(function (d) { return d.warn ? d.el + ' ⚠' : d.el; });
+    var values    = ABUND.map(function (d) { return d.delta; });
+    var colors    = ABUND.map(function (d) { return GC[d.group] || '#90a4ae'; });
+    var errBars   = ABUND.map(function (d) { return d.sigma || 0; });
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'A(X)_ours − A(X)_Asplund2021  (dex)',
+          data: values,
+          backgroundColor: colors.map(function (c) { return c + 'bb'; }),
+          borderColor: colors,
+          borderWidth: 1,
+          errorBars: errBars
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Solar Calibration — [X/H] = A(X)_ours − A(X)_Asplund (2021)',
+            color: TITLE_COL,
+            font: { family: "'Space Mono', monospace", size: 11 },
+            padding: { bottom: 12 }
+          },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                var d = ABUND[ctx.dataIndex];
+                return [
+                  'Δ = ' + d.delta.toFixed(3) + ' dex',
+                  'σ = ±' + (d.sigma != null ? d.sigma.toFixed(3) : 'N/A') + ' dex',
+                  'n lines = ' + d.n
+                ];
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: TICK_COL, font: { family: "'Space Mono', monospace", size: 9 } },
+            grid: { color: GRID_COL }
+          },
+          y: {
+            title: { display: true, text: 'Δ A(X)  (dex)', color: TICK_COL, font: { size: 10 } },
+            ticks: { color: TICK_COL, font: { family: "'Space Mono', monospace", size: 9 } },
+            grid: { color: GRID_COL },
+            suggestedMin: -3,
+            suggestedMax: 3
+          }
+        }
+      }
+    });
+  })();
+
+  // ── Chart 2: Alpha elements [X/Fe] ──
+  (function () {
+    var ctx = document.getElementById('chart-alpha');
+    if (!ctx) return;
+    var alphas = ABUND.filter(function (d) { return d.group === 'alpha'; });
+    var feDelta = 0.000;
+    var labels  = alphas.map(function (d) { return d.el; });
+    var values  = alphas.map(function (d) { return +(d.delta - feDelta).toFixed(3); });
+    var errBars = alphas.map(function (d) { return d.sigma || 0; });
+    var color   = GC.alpha;
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '[X/Fe] (dex)',
+          data: values,
+          backgroundColor: color + 'bb',
+          borderColor: color,
+          borderWidth: 1,
+          errorBars: errBars
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Alpha Elements  [X/Fe]  vs solar reference',
+            color: TITLE_COL,
+            font: { family: "'Space Mono', monospace", size: 10 },
+            padding: { bottom: 10 }
+          }
+        },
+        scales: {
+          x: { ticks: { color: TICK_COL }, grid: { color: GRID_COL } },
+          y: {
+            title: { display: true, text: '[X/Fe]  (dex)', color: TICK_COL, font: {size:9} },
+            ticks: { color: TICK_COL, font: { family: "'Space Mono', monospace", size: 9 } },
+            grid: { color: GRID_COL },
+            suggestedMin: -2,
+            suggestedMax: 2
+          }
+        }
+      }
+    });
+  })();
+})();
+</script>
 
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
@@ -526,18 +754,6 @@
   closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
-
-  // Check if EW CSV exists and enable download button
-  fetch('/assets/data/sol_ew_results_v1.csv', { method: 'HEAD' })
-    .then(function (r) {
-      if (r.ok) {
-        var btn  = document.getElementById('ew-download-btn');
-        var note = document.getElementById('ew-download-note');
-        if (btn)  btn.classList.add('ready');
-        if (note) note.style.display = 'none';
-      }
-    })
-    .catch(function () {});
 })();
 </script>
 </body>
