@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Centauri A · The Exoplanet Codex</title>
+  <meta name="description" content="Alpha Centauri A — Entry #002. Nearest stellar neighbor. Abundances in progress — JWST follow-up observation August 2026.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
+    .data-cell { flex:1; min-width:120px; padding:1rem 1.4rem; border-right:1px solid var(--rim); }
+    .data-cell:last-child { border-right:none; }
+    .data-label { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.3rem; }
+    .data-value { font-family:var(--mono); font-size:1rem; color:var(--accent); }
+    .data-value.warm { color:var(--accent-warm); }
+
+    .status-banner { margin:2rem 0; padding:1.4rem 1.8rem; border:1px solid rgba(232,162,74,0.5); background:rgba(232,162,74,0.05); }
+    .status-banner-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.5rem; }
+    .status-banner p { font-size:0.95rem; color:var(--text); line-height:1.7; margin:0; }
+
+    .system-section { padding:2.5rem 0 0.5rem; border-top:1px solid var(--rim); opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .system-section:first-of-type { border-top:none; }
+    .section-eyebrow { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.5rem; }
+    .section-title { font-family:var(--serif); font-size:clamp(1.4rem,2vw,1.8rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
+
+    .param-table { width:100%; border-collapse:collapse; font-size:0.85rem; font-family:var(--mono); margin:1rem 0; }
+    .param-table th { background:var(--surface); color:var(--accent); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 0.9rem; text-align:left; border-bottom:2px solid var(--rim); }
+    .param-table td { padding:0.5rem 0.9rem; color:var(--text); border-bottom:1px solid rgba(26,38,64,0.6); }
+    .param-table tr:last-child td { border-bottom:none; }
+    .param-table td em { color:var(--text-dim); font-style:normal; font-size:0.78rem; }
+
+    .data-status-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:var(--rim); border:1px solid var(--rim); margin:1.2rem 0; }
+    .ds-cell { background:var(--deep); padding:1.2rem 1.4rem; }
+    .ds-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.5rem; }
+    .ds-value { font-family:var(--mono); font-size:0.85rem; color:var(--text-bright); margin-bottom:0.3rem; }
+    .ds-status { font-family:var(--mono); font-size:0.68rem; }
+    .ds-status.ok { color:var(--accent-green); }
+    .ds-status.progress { color:var(--accent-warm); }
+
+    .placeholder-section { margin:2rem 0; padding:1.8rem; border:1px dashed var(--rim); background:rgba(26,38,64,0.3); text-align:center; }
+    .placeholder-section p { font-family:var(--mono); font-size:0.72rem; color:var(--text-dim); letter-spacing:0.1em; margin:0; }
+
+    .jwst-callout { border-left:3px solid var(--accent-warm); background:rgba(232,162,74,0.05); padding:1.2rem 1.4rem; margin:1.5rem 0; }
+    .jwst-callout-title { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.6rem; }
+    .jwst-callout p { font-size:0.9rem; color:var(--text); line-height:1.7; margin:0.3rem 0; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/" class="active">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/systems/">Systems</a> / <span>Alpha Centauri A</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">System // Entry #002 — Abundances in progress</div>
+    <h1 class="page-title"><em>Alpha Centauri A</em></h1>
+    <p class="page-subtitle">HD 128620 · Our nearest stellar neighbor · 1.34 pc · G2V · JWST follow-up observation August 2026</p>
+  </header>
+
+  <div class="data-strip">
+    <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">G2V</div></div>
+    <div class="data-cell"><div class="data-label">T<sub>eff</sub></div><div class="data-value">~5790 K</div></div>
+    <div class="data-cell"><div class="data-label">log g</div><div class="data-value">~4.31</div></div>
+    <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">+0.20 dex</div></div>
+    <div class="data-cell"><div class="data-label">Mass</div><div class="data-value">~1.10 M☉</div></div>
+    <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">1.34 pc</div></div>
+    <div class="data-cell"><div class="data-label">Catalog</div><div class="data-value" style="color:var(--accent-warm)">#002</div></div>
+  </div>
+
+  <div class="status-banner">
+    <div class="status-banner-label">⚡ Status</div>
+    <p>Abundances in progress — JWST follow-up observation August 2026. HARPS data complete (75 files SNR&gt;1000 ✅). HST/MAST data downloading 🔄.</p>
+  </div>
+
+  <!-- JWST CONTEXT -->
+  <div class="jwst-callout">
+    <div class="jwst-callout-title">JWST Context — August 2026 Re-Observation</div>
+    <p>A candidate Saturn-mass planet around Alpha Cen A was detected by the JWST MIRI coronagraph. A follow-up observation is scheduled for August 2026 to confirm the detection. The Codex is measuring Alpha Cen A's stellar abundances in parallel to provide host-star chemistry context for any confirmed planet.</p>
+    <p>Stellar abundances from this pipeline will constrain the planet's likely bulk composition and volatile inventory — the same analysis being performed for 55 Cnc A, but with JWST time pressure driving urgency.</p>
+  </div>
+
+  <!-- STELLAR PARAMETERS -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 01</p>
+    <h2 class="section-title">Stellar Parameters</h2>
+    <table class="param-table">
+      <thead><tr><th>Parameter</th><th>Symbol</th><th>Value</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Effective temperature</td><td>T<sub>eff</sub></td><td>~5790 K</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Surface gravity</td><td>log g</td><td>~4.31</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Metallicity</td><td>[Fe/H]</td><td>~+0.20 dex</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Mass</td><td>M★</td><td>~1.10 M☉</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Spectral type</td><td>—</td><td>G2V</td><td><em>Nearly identical to the Sun</em></td></tr>
+        <tr><td>Distance</td><td>d</td><td>1.34 pc (4.37 ly)</td><td><em>Hipparcos / Gaia</em></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;">Codex spectroscopic self-consistency check (Teff, log g, ξ) pending pipeline completion.</p>
+  </section>
+
+  <!-- DATA STATUS -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 02</p>
+    <h2 class="section-title">Data Status</h2>
+    <div class="data-status-grid">
+      <div class="ds-cell">
+        <div class="ds-label">HARPS (optical)</div>
+        <div class="ds-value">75 S1D files</div>
+        <div class="ds-status ok">✅ Complete — SNR &gt; 1000</div>
+      </div>
+      <div class="ds-cell">
+        <div class="ds-label">HST/MAST (UV)</div>
+        <div class="ds-value">~111 observations</div>
+        <div class="ds-status progress">🔄 Downloading</div>
+      </div>
+      <div class="ds-cell">
+        <div class="ds-label">Continuum normalization</div>
+        <div class="ds-value">HARPS pipeline</div>
+        <div class="ds-status progress">🔄 In progress</div>
+      </div>
+      <div class="ds-cell">
+        <div class="ds-label">Elemental abundances</div>
+        <div class="ds-value">27 elements</div>
+        <div class="ds-status progress">🔄 Pending HST data</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELEMENTAL ABUNDANCES PLACEHOLDER -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 03</p>
+    <h2 class="section-title">Elemental Abundances</h2>
+    <div class="placeholder-section">
+      <p>COMING SOON — Abundance table will appear here once the pipeline completes for Alpha Cen A.</p>
+    </div>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;">When published, this section will contain [X/H] and [X/Fe] abundances for all 27 target elements with full Type A + Type B uncertainty budgets, NLTE corrections applied, and literature cross-checks.</p>
+  </section>
+
+  <!-- PLANETS PLACEHOLDER -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 04</p>
+    <h2 class="section-title">Planets</h2>
+    <div class="placeholder-section">
+      <p>PENDING CONFIRMATION — Candidate planet status subject to JWST August 2026 re-observation.</p>
+    </div>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;">A Saturn-mass planet candidate detected by JWST MIRI coronagraph. Confirmation and orbital parameters pending the August 2026 follow-up observation. Planet composition modeling will be published once both stellar abundances and confirmed planet parameters are available.</p>
+  </section>
+
+  <!-- REFERENCES PLACEHOLDER -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 05</p>
+    <h2 class="section-title">References</h2>
+    <div class="placeholder-section">
+      <p>COMING SOON — Full reference list will be added when the Codex entry publishes.</p>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;font-family:var(--mono);">Key anticipated references: Pourbaix et al. (2016) — Alpha Cen binary orbit; Thévenin et al. (2002) — stellar parameters; JWST MIRI coronagraph detection paper (in preparation).</p>
+  </section>
+
+  <div style="padding:2rem 0;">
+    <a href="/systems/" class="btn-ghost">← Back to Systems</a>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tau Ceti · The Exoplanet Codex</title>
+  <meta name="description" content="Tau Ceti — Entry #003. Metal-poor G8V dwarf with candidate habitable-zone planets. Coming soon — VALD extraction pending.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
+    .data-cell { flex:1; min-width:120px; padding:1rem 1.4rem; border-right:1px solid var(--rim); }
+    .data-cell:last-child { border-right:none; }
+    .data-label { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.3rem; }
+    .data-value { font-family:var(--mono); font-size:1rem; color:var(--accent); }
+    .data-value.warm { color:var(--accent-warm); }
+
+    .status-banner { margin:2rem 0; padding:1.4rem 1.8rem; border:1px solid var(--rim); background:rgba(26,38,64,0.5); }
+    .status-banner-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.5rem; }
+    .status-banner p { font-size:0.95rem; color:var(--text-mid); line-height:1.7; margin:0; }
+
+    .system-section { padding:2.5rem 0 0.5rem; border-top:1px solid var(--rim); opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+    .system-section:first-of-type { border-top:none; }
+    .section-eyebrow { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.5rem; }
+    .section-title { font-family:var(--serif); font-size:clamp(1.4rem,2vw,1.8rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
+
+    .param-table { width:100%; border-collapse:collapse; font-size:0.85rem; font-family:var(--mono); margin:1rem 0; }
+    .param-table th { background:var(--surface); color:var(--accent); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 0.9rem; text-align:left; border-bottom:2px solid var(--rim); }
+    .param-table td { padding:0.5rem 0.9rem; color:var(--text); border-bottom:1px solid rgba(26,38,64,0.6); }
+    .param-table tr:last-child td { border-bottom:none; }
+    .param-table td em { color:var(--text-dim); font-style:normal; font-size:0.78rem; }
+
+    .placeholder-section { margin:2rem 0; padding:1.8rem; border:1px dashed var(--rim); background:rgba(26,38,64,0.3); text-align:center; }
+    .placeholder-section p { font-family:var(--mono); font-size:0.72rem; color:var(--text-dim); letter-spacing:0.1em; margin:0; }
+
+    .science-callout { border-left:3px solid var(--accent); background:rgba(79,195,247,0.04); padding:1.2rem 1.4rem; margin:1.5rem 0; }
+    .science-callout-title { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem; }
+    .science-callout p { font-size:0.9rem; color:var(--text); line-height:1.7; margin:0.3rem 0; }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/" class="active">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/systems/">Systems</a> / <span>Tau Ceti</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-eyebrow">System // Entry #003 — Coming Soon</div>
+    <h1 class="page-title"><em>Tau Ceti</em></h1>
+    <p class="page-subtitle">τ Ceti · HD 10700 · G8V · 3.65 pc · 4–5 candidate planets including two near the habitable zone</p>
+  </header>
+
+  <div class="data-strip">
+    <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">G8V</div></div>
+    <div class="data-cell"><div class="data-label">T<sub>eff</sub></div><div class="data-value">~5344 K</div></div>
+    <div class="data-cell"><div class="data-label">log g</div><div class="data-value">~4.49</div></div>
+    <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value">−0.50 dex</div></div>
+    <div class="data-cell"><div class="data-label">Mass</div><div class="data-value">~0.78 M☉</div></div>
+    <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">3.65 pc</div></div>
+    <div class="data-cell"><div class="data-label">Catalog</div><div class="data-value warm">#003</div></div>
+  </div>
+
+  <div class="status-banner">
+    <div class="status-banner-label">Status</div>
+    <p>Coming Soon — VALD extraction pending. This entry will be activated once the line list query and spectral data acquisition are complete.</p>
+  </div>
+
+  <!-- SCIENCE CONTEXT -->
+  <div class="science-callout">
+    <div class="science-callout-title">Science Context</div>
+    <p>Tau Ceti is a metal-poor counterpoint to 55 Cancri A. At [Fe/H] ≈ −0.50, it sits at the low-metallicity end of the FGK target list — roughly 3× less iron than the Sun and 6× less than 55 Cnc A. This makes it a valuable anchor point for tracking how CHNOPS ratios, C/O, and Mg/Si vary with stellar metallicity.</p>
+    <p>4–5 candidate planets have been identified from radial velocity studies, with planets e and f falling near the habitable zone. Whether the system's low metallicity translates to depleted rocky planet building blocks — or more volatile-rich planets — is a key science question this entry will address.</p>
+  </div>
+
+  <!-- STELLAR PARAMETERS -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 01</p>
+    <h2 class="section-title">Stellar Parameters</h2>
+    <table class="param-table">
+      <thead><tr><th>Parameter</th><th>Symbol</th><th>Value</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Effective temperature</td><td>T<sub>eff</sub></td><td>~5344 K</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Surface gravity</td><td>log g</td><td>~4.49</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Metallicity</td><td>[Fe/H]</td><td>~−0.50 dex</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Mass</td><td>M★</td><td>~0.78 M☉</td><td><em>Literature consensus</em></td></tr>
+        <tr><td>Spectral type</td><td>—</td><td>G8V</td><td><em>Cooler and less massive than the Sun</em></td></tr>
+        <tr><td>Distance</td><td>d</td><td>3.65 pc (11.9 ly)</td><td><em>Hipparcos / Gaia</em></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;">Codex spectroscopic self-consistency check (Teff, log g, ξ) pending pipeline activation for this target.</p>
+  </section>
+
+  <!-- ELEMENTAL ABUNDANCES PLACEHOLDER -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 02</p>
+    <h2 class="section-title">Elemental Abundances</h2>
+    <div class="placeholder-section">
+      <p>COMING SOON — Abundance table will appear here once the pipeline runs for Tau Ceti.</p>
+    </div>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;">When published, this section will contain [X/H] and [X/Fe] abundances for all 27 target elements. The low metallicity ([Fe/H] ≈ −0.50) means all abundance lines will be considerably weaker than for 55 Cnc A — requiring careful SNR management and line selection.</p>
+  </section>
+
+  <!-- PLANETS PLACEHOLDER -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 03</p>
+    <h2 class="section-title">Planets</h2>
+    <div class="placeholder-section">
+      <p>COMING SOON — Planet parameter table will appear here when this entry activates.</p>
+    </div>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;">4–5 candidate planets identified via radial velocity (Feng et al. 2017). Planets e and f are candidates for the habitable zone. All are super-Earth to mini-Neptune class. Planet candidates remain unconfirmed by transit or direct imaging as of May 2026.</p>
+  </section>
+
+  <!-- REFERENCES PLACEHOLDER -->
+  <section class="system-section">
+    <p class="section-eyebrow">Section 04</p>
+    <h2 class="section-title">References</h2>
+    <div class="placeholder-section">
+      <p>COMING SOON — Full reference list will be added when the Codex entry publishes.</p>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;font-family:var(--mono);">Key anticipated references: Feng et al. (2017) — planet candidates; Sousa et al. (2008) — stellar parameters; Pagano et al. (2004) — UV spectra (HST/STIS).</p>
+  </section>
+
+  <div style="padding:2rem 0;">
+    <a href="/systems/" class="btn-ghost">← Back to Systems</a>
+  </div>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v1.0.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/codex.js"></script>
+</body>
+</html>

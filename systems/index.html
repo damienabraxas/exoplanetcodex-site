@@ -16,10 +16,12 @@
     .system-card { background:var(--deep); padding:2rem; cursor:pointer; transition:background 0.2s; text-decoration:none; display:block; }
     .system-card:hover { background:var(--surface); }
     .system-card.active { border-top:2px solid var(--accent); }
+    .system-card.urgent { border-top:2px solid var(--accent-warm); }
     .system-card.coming { opacity:0.4; cursor:default; }
     .system-card.coming:hover { background:var(--deep); }
     .card-tag  { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.6rem; }
     .card-tag.live { color:var(--accent); }
+    .card-tag.warn { color:var(--accent-warm); }
     .card-tag.soon { color:var(--muted); }
     .card-name { font-family:var(--serif); font-size:1.7rem; font-weight:300; color:var(--text-bright); margin-bottom:0.2rem; }
     .card-iau  { font-family:var(--mono); font-size:0.7rem; color:var(--accent-warm); letter-spacing:0.08em; margin-bottom:0.9rem; }
@@ -28,6 +30,12 @@
     .cp   { font-family:var(--mono); font-size:0.65rem; }
     .cp-k { display:block; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; font-size:0.58rem; margin-bottom:0.2rem; }
     .cp-v { color:var(--text-bright); }
+    .card-status { margin-top:1.4rem; padding-top:1.1rem; border-top:1px solid var(--rim); }
+    .status-badge { display:inline-block; font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; padding:0.25em 0.75em; border:1px solid; }
+    .status-badge.calibration { color:var(--text-dim); border-color:var(--rim); }
+    .status-badge.science { color:var(--accent); border-color:rgba(79,195,247,0.4); }
+    .status-badge.urgent { color:var(--accent-warm); border-color:rgba(232,162,74,0.5); }
+    .status-badge.soon { color:var(--muted); border-color:rgba(58,79,110,0.5); }
     .card-progress { margin-top:1.4rem; padding-top:1.1rem; border-top:1px solid var(--rim); }
     .progress-row  { display:flex; align-items:center; gap:0.9rem; }
     .progress-track { flex:1; height:2px; background:var(--rim); border-radius:1px; }
@@ -63,60 +71,70 @@
   <section class="catalog-section">
     <div class="section-label">Codex entries</div>
     <div class="system-grid">
-      <a class="system-card active" href="/systems/55-cancri/">
-        <div class="card-tag live">● Entry 001 — Analysis in progress</div>
-        <div class="card-name">Copernicus</div>
-        <div class="card-iau">55 Cancri A · HD 75732 · HIP 43587</div>
-        <p class="card-desc">A metal-rich K dwarf 40.9 light years away hosting five planets, including Janssen — a lava-covered super-Earth with a possible CO₂ atmosphere detected by JWST. The C/O ratio of this star remains scientifically contested. We are measuring it.</p>
-        <div class="card-params">
-          <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">5196 K</span></div>
-          <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">+0.32</span></div>
-          <div class="cp"><span class="cp-k">Planets</span><span class="cp-v">5</span></div>
-          <div class="cp"><span class="cp-k">Age</span><span class="cp-v">10.2 Gyr</span></div>
-        </div>
-        <div class="card-progress">
-          <div class="progress-row">
-            <div class="progress-track"><div class="progress-fill pf-18"></div></div>
-            <div class="progress-text">Step 1 / 6 — Spectrum acquisition</div>
-          </div>
-        </div>
-      </a>
+      <!-- #000 Sol -->
       <a class="system-card active" href="/systems/sol/">
-        <div class="card-tag live">● Entry 000 — Reference system</div>
+        <div class="card-tag live">● #000 — Calibration Reference</div>
         <div class="card-name">The Sun</div>
         <div class="card-iau">Sol · Our solar system · 8 planets</div>
         <p class="card-desc">The calibration anchor for all Codex measurements. Every [X/H] abundance is measured relative to the Sun. Includes Terra, the reference case for all CHNOPS and habitability assessments.</p>
         <div class="card-params">
+          <div class="cp"><span class="cp-k">Spectral type</span><span class="cp-v">G2V</span></div>
           <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">5778 K</span></div>
           <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">0.00</span></div>
           <div class="cp"><span class="cp-k">Planets</span><span class="cp-v">8</span></div>
-          <div class="cp"><span class="cp-k">Age</span><span class="cp-v">4.6 Gyr</span></div>
         </div>
-        <div class="card-progress">
-          <div class="progress-row">
-            <div class="progress-track"><div class="progress-fill" style="width:100%;background:var(--accent-warm)"></div></div>
-            <div class="progress-text">Reference data — Lodders 2003 / Asplund 2021</div>
-          </div>
+        <div class="card-status">
+          <span class="status-badge calibration">Calibration — In Progress</span>
         </div>
       </a>
-      <div class="system-card coming">
-        <div class="card-tag soon">○ Queued — Thesis revisit</div>
-        <div class="card-name">HD 89307</div>
-        <div class="card-iau">G0V · Solar analog</div>
-        <p class="card-desc">The most solar-like exoplanet host star known. First analyzed in the 2010 thesis. Revisited with HARPS at 3× the resolution.</p>
-      </div>
-      <div class="system-card coming">
-        <div class="card-tag soon">○ Queued — Thesis revisit</div>
-        <div class="card-name">Gliese 581</div>
-        <div class="card-iau">M3 dwarf · Habitable zone planets</div>
-        <p class="card-desc">Two planets in the habitable zone. Analyzed in 2010 with poor model fit. The 2026 pipeline will settle whether the anomalous Ni, Co, Si were real or an artifact.</p>
-      </div>
-      <div class="system-card coming">
-        <div class="card-tag soon">○ Future</div>
-        <div class="card-name">Submit a system</div>
-        <div class="card-iau">Suggest a target</div>
-        <p class="card-desc">Researcher with a system you’d like analyzed? Collaboration welcome. Contact us with your target and scientific rationale.</p>
-      </div>
+      <!-- #001 55 Cancri A -->
+      <a class="system-card active" href="/systems/55-cancri/">
+        <div class="card-tag live">● #001 — Active Science Target</div>
+        <div class="card-name">Copernicus</div>
+        <div class="card-iau">55 Cancri A · HD 75732 · HIP 43587</div>
+        <p class="card-desc">A metal-rich K dwarf 40.9 light years away hosting five planets, including Janssen — a lava-covered super-Earth with a possible CO₂ atmosphere detected by JWST. The C/O ratio of this star remains scientifically contested. We are measuring it.</p>
+        <div class="card-params">
+          <div class="cp"><span class="cp-k">Spectral type</span><span class="cp-v">K0 IV-V</span></div>
+          <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">5196 K</span></div>
+          <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">+0.32</span></div>
+          <div class="cp"><span class="cp-k">Planets</span><span class="cp-v">5</span></div>
+        </div>
+        <div class="card-status">
+          <span class="status-badge science">Active Science Target</span>
+        </div>
+      </a>
+      <!-- #002 Alpha Centauri A -->
+      <a class="system-card urgent" href="/systems/alpha-centauri-a/">
+        <div class="card-tag warn">⚡ #002 — JWST Aug 2026</div>
+        <div class="card-name">Alpha Centauri A</div>
+        <div class="card-iau">Alpha Cen A · HD 128620 · 1.34 pc</div>
+        <p class="card-desc">Our nearest stellar neighbor at 1.34 pc. A candidate Saturn-mass planet detected by JWST MIRI coronagraph; re-observation planned August 2026. Abundances in progress — HARPS 75 files SNR&gt;1000, HST/MAST downloading.</p>
+        <div class="card-params">
+          <div class="cp"><span class="cp-k">Spectral type</span><span class="cp-v">G2V</span></div>
+          <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">~5790 K</span></div>
+          <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">+0.20</span></div>
+          <div class="cp"><span class="cp-k">Distance</span><span class="cp-v">1.34 pc</span></div>
+        </div>
+        <div class="card-status">
+          <span class="status-badge urgent">⚡ Urgent — JWST Aug 2026</span>
+        </div>
+      </a>
+      <!-- #003 Tau Ceti -->
+      <a class="system-card coming" href="/systems/tau-ceti/" style="opacity:0.6;">
+        <div class="card-tag soon">○ #003 — Coming Soon</div>
+        <div class="card-name">Tau Ceti</div>
+        <div class="card-iau">τ Ceti · HD 10700 · 3.65 pc</div>
+        <p class="card-desc">A metal-poor G8 dwarf with 4–5 candidate planets including two near the habitable zone. A metal-poor counterpoint to 55 Cnc A. VALD extraction pending.</p>
+        <div class="card-params">
+          <div class="cp"><span class="cp-k">Spectral type</span><span class="cp-v">G8V</span></div>
+          <div class="cp"><span class="cp-k">Teff</span><span class="cp-v">~5344 K</span></div>
+          <div class="cp"><span class="cp-k">[Fe/H]</span><span class="cp-v">−0.50</span></div>
+          <div class="cp"><span class="cp-k">Distance</span><span class="cp-v">3.65 pc</span></div>
+        </div>
+        <div class="card-status">
+          <span class="status-badge soon">Coming Soon</span>
+        </div>
+      </a>
     </div>
   </section>
 
