@@ -12,13 +12,175 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/codex.css">
   <style>
+    /* --- data strip --- */
     .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
     .data-cell { flex:1; min-width:120px; padding:1rem 1.4rem; border-right:1px solid var(--rim); }
     .data-cell:last-child { border-right:none; }
     .data-label { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.3rem; }
     .data-value { font-family:var(--mono); font-size:1rem; color:var(--accent); }
     .data-value.warm { color:var(--accent-warm); }
-    .pipeline-status { margin:3rem 0; padding:2rem; border:1px solid var(--rim); background:var(--deep); opacity:0; animation:fade-in 1s ease 0.8s forwards; }
+
+    /* --- section headings --- */
+    .sys-section { padding: 3rem 0 0.5rem; }
+    .sys-section + .sys-section { border-top: 1px solid var(--rim); }
+    .sys-section-label {
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.5rem;
+    }
+    .sys-section-title {
+      font-family: var(--serif); font-size: clamp(1.4rem,2vw,1.9rem);
+      font-weight: 300; color: var(--text-bright); margin-bottom: 1.2rem;
+    }
+
+    /* --- DSS image --- */
+    .star-image-wrap {
+      position: relative; margin: 1.5rem 0; border: 1px solid var(--rim);
+      background: var(--deep); overflow: hidden;
+    }
+    .star-image-wrap img { width: 100%; display: block; filter: contrast(1.1) brightness(1.05); }
+    .star-image-caption {
+      padding: 0.6rem 1rem; font-family: var(--mono); font-size: 0.7rem;
+      color: var(--text-dim); border-top: 1px solid var(--rim); line-height: 1.5;
+    }
+
+    /* --- HUD panel --- */
+    @keyframes corner-pulse {
+      0%,100% { opacity: 1; } 50% { opacity: 0.5; }
+    }
+    @keyframes scanline-scroll {
+      0% { transform: translateY(0); } 100% { transform: translateY(4px); }
+    }
+
+    .hud-outer {
+      position: relative; margin: 2rem 0;
+      border: 1px solid #00d4ff;
+      box-shadow: 0 0 18px rgba(0,212,255,0.18), inset 0 0 18px rgba(0,212,255,0.04);
+      background: rgba(10,17,40,0.95);
+      overflow: hidden;
+    }
+    /* scanline overlay */
+    .hud-outer::after {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 3px,
+        rgba(0,212,255,0.015) 3px, rgba(0,212,255,0.015) 4px
+      );
+      animation: scanline-scroll 0.15s linear infinite;
+      z-index: 1;
+    }
+    .hud-inner {
+      position: relative; z-index: 2;
+    }
+    /* corner brackets — top-left via hud-inner::before, bottom-right via hud-inner::after */
+    .hud-inner::before {
+      content: '';
+      position: absolute; top: -1px; left: -1px;
+      width: 18px; height: 18px;
+      border-top: 2px solid #00d4ff; border-left: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite;
+    }
+    .hud-inner::after {
+      content: '';
+      position: absolute; bottom: -1px; right: -1px;
+      width: 18px; height: 18px;
+      border-bottom: 2px solid #00d4ff; border-right: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite 1.25s;
+    }
+    /* top-right corner */
+    .hud-corner-tr {
+      position: absolute; top: -1px; right: -1px; z-index: 3;
+      width: 18px; height: 18px;
+      border-top: 2px solid #00d4ff; border-right: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite 0.6s;
+    }
+    /* bottom-left corner */
+    .hud-corner-bl {
+      position: absolute; bottom: -1px; left: -1px; z-index: 3;
+      width: 18px; height: 18px;
+      border-bottom: 2px solid #00d4ff; border-left: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite 1.8s;
+    }
+
+    .hud-header {
+      padding: 0.7rem 1.2rem;
+      border-bottom: 1px solid rgba(0,212,255,0.3);
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em;
+      color: #00d4ff; text-transform: uppercase;
+    }
+    .hud-body { padding: 1.8rem 2rem; text-align: center; }
+    .hud-title {
+      font-family: var(--serif); font-size: 1.4rem; font-weight: 300;
+      color: var(--text-bright); margin-bottom: 0.6rem;
+    }
+    .hud-desc {
+      font-family: var(--mono); font-size: 0.78rem; color: #00d4ff;
+      margin-bottom: 1.6rem; opacity: 0.8;
+    }
+    .hud-link {
+      display: inline-block;
+      border: 1px solid #00d4ff;
+      padding: 0.7em 2em;
+      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em;
+      color: #00d4ff; text-decoration: none; text-transform: uppercase;
+      box-shadow: 0 0 10px rgba(0,212,255,0.2);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .hud-link:hover {
+      background: rgba(0,212,255,0.12);
+      box-shadow: 0 0 22px rgba(0,212,255,0.4);
+    }
+    .hud-footer {
+      padding: 0.6rem 1.2rem;
+      border-top: 1px solid rgba(0,212,255,0.3);
+      font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em;
+      color: rgba(0,212,255,0.5); text-align: center; text-transform: uppercase;
+    }
+
+    /* --- Aladin HUD wrapper --- */
+    .aladin-hud {
+      position: relative; margin: 2rem 0;
+      border: 1px solid #00d4ff;
+      box-shadow: 0 0 18px rgba(0,212,255,0.15);
+    }
+    .aladin-hud::before {
+      content: '';
+      position: absolute; top: -1px; left: -1px; z-index: 2;
+      width: 16px; height: 16px;
+      border-top: 2px solid #00d4ff; border-left: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite;
+    }
+    .aladin-hud::after {
+      content: '';
+      position: absolute; bottom: -1px; right: -1px; z-index: 2;
+      width: 16px; height: 16px;
+      border-bottom: 2px solid #00d4ff; border-right: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite 1.25s;
+    }
+    .aladin-hud-tr {
+      position: absolute; top: -1px; right: -1px; z-index: 2;
+      width: 16px; height: 16px;
+      border-top: 2px solid #00d4ff; border-right: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite 0.6s;
+    }
+    .aladin-hud-bl {
+      position: absolute; bottom: -1px; left: -1px; z-index: 2;
+      width: 16px; height: 16px;
+      border-bottom: 2px solid #00d4ff; border-left: 2px solid #00d4ff;
+      animation: corner-pulse 2.5s ease-in-out infinite 1.8s;
+    }
+    .aladin-label {
+      padding: 0.6rem 1.2rem;
+      border-bottom: 1px solid rgba(0,212,255,0.3);
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em;
+      color: #00d4ff; text-transform: uppercase;
+      background: rgba(10,17,40,0.95);
+    }
+    #aladin-55cnc { width: 100%; height: 440px; display: block; }
+
+    /* --- pipeline status --- */
+    .pipeline-status { margin:2rem 0; padding:2rem; border:1px solid var(--rim); background:var(--deep); }
     .ps-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:1.4rem; padding-bottom:0.7rem; border-bottom:1px solid var(--rim); }
     .ps-steps { list-style:none; }
     .ps-step { display:flex; align-items:center; gap:1.2rem; padding:0.85rem 0; border-bottom:1px solid rgba(26,38,64,0.5); font-family:var(--mono); font-size:0.7rem; }
@@ -31,10 +193,21 @@
     .ps-badge.active { color:var(--accent); border-color:rgba(79,195,247,0.4); }
     .ps-badge.done   { color:var(--accent-green); border-color:rgba(82,199,138,0.3); }
     .ps-badge.queued { color:var(--muted); border-color:rgba(58,79,110,0.5); }
-    .coming-soon { padding:3rem 0 5rem; opacity:0; animation:fade-in 1s ease 1s forwards; }
-    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
-    .coming-soon p { font-size:1.05rem; color:var(--text-dim); max-width:640px; line-height:1.8; margin-bottom:1rem; }
-    .coming-soon p strong { color:var(--text-bright); font-weight:400; }
+
+    /* --- findings text --- */
+    .findings-body {
+      font-family: var(--serif); font-size: 1.05rem;
+      color: var(--text); line-height: 1.85; max-width: 720px;
+    }
+    .findings-body p { margin: 0 0 1.2rem; }
+    .findings-body strong { color: var(--text-bright); font-weight: 600; }
+
+    /* --- refs & credits --- */
+    .refs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rim); border: 1px solid var(--rim); margin: 1.5rem 0; }
+    .refs-grid > div { background: var(--deep); padding: 1rem 1.2rem; }
+    .refs-title { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+    .refs-grid p { font-size:0.85rem; color:var(--text-dim); line-height:1.6; margin:0.25rem 0; }
+    @media(max-width:600px) { .refs-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -60,36 +233,135 @@
     <p class="page-subtitle">55 Cancri A · HD 75732 · HIP 43587 · 40.9 light-years · 5 planets · The first full Codex entry. We are measuring its C/O ratio.</p>
   </header>
 
-  <div class="data-strip">
-    <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">K0 IV-V</div></div>
-    <div class="data-cell"><div class="data-label">Tₛₑₑ</div><div class="data-value">5196 K</div></div>
-    <div class="data-cell"><div class="data-label">log g</div><div class="data-value">4.41</div></div>
-    <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">+0.32 dex</div></div>
-    <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">40.9 ly</div></div>
-    <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">5</div></div>
-    <div class="data-cell"><div class="data-label">Spectrograph</div><div class="data-value" style="color:var(--text-dim);font-size:0.8rem">HARPS R~115k</div></div>
-  </div>
+  <div class="container">
 
-  <div class="pipeline-status">
-    <div class="ps-label">Pipeline status — 6-step analysis</div>
-    <ul class="ps-steps">
-      <li class="ps-step current"><span class="ps-num">01</span><span class="ps-name">Spectrum acquisition &amp; normalization</span><span class="ps-badge active">● Active</span></li>
-      <li class="ps-step"><span class="ps-num">02</span><span class="ps-name">Stellar parameter determination (Teff, log g, ξturb)</span><span class="ps-badge queued">Queued</span></li>
-      <li class="ps-step"><span class="ps-num">03</span><span class="ps-name">Line list loading &amp; quality filtering</span><span class="ps-badge queued">Queued</span></li>
-      <li class="ps-step"><span class="ps-num">04</span><span class="ps-name">Equivalent width measurement &amp; Gaussian fitting</span><span class="ps-badge queued">Queued</span></li>
-      <li class="ps-step"><span class="ps-num">05</span><span class="ps-name">Abundance derivation via curve of growth</span><span class="ps-badge queued">Queued</span></li>
-      <li class="ps-step"><span class="ps-num">06</span><span class="ps-name">Uncertainty budget &amp; ratio interpretation</span><span class="ps-badge queued">Queued</span></li>
-    </ul>
-  </div>
+    <!-- ============================================================
+         GENERAL INFO
+    ============================================================ -->
+    <section class="sys-section" id="general-info">
+      <p class="sys-section-label">Section 01</p>
+      <h2 class="sys-section-title">General Information</h2>
 
-  <div class="coming-soon">
-    <div class="section-label">About this system</div>
-    <h2>Why 55 Cancri A?</h2>
-    <p>55 Cancri A is the most scientifically interesting nearby exoplanet host star available. Its innermost planet, <strong>Janssen (55 Cnc e)</strong>, was observed by JWST in 2024 and showed a possible CO₂-rich atmosphere — the first direct atmospheric detection of a rocky super-Earth. What that atmosphere is made of depends partly on what the star itself is made of.</p>
-    <p>The <strong>C/O ratio</strong> of 55 Cancri A remains contested in the literature. Some teams find it elevated above solar (suggesting carbon-rich interior models for the planets). We intend to resolve this with HARPS spectra at R~115,000 and a formal Type A + Type B uncertainty budget.</p>
-    <p>Full abundance table will publish here when the analysis completes. All raw data and pipeline code are open on <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--accent);text-decoration:none">GitHub</a>.</p>
-    <a href="/systems/" class="btn-ghost">← Back to Systems</a>
-  </div>
+      <div class="data-strip">
+        <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">K0 IV-V</div></div>
+        <div class="data-cell"><div class="data-label">T<sub>eff</sub></div><div class="data-value">5196 K</div></div>
+        <div class="data-cell"><div class="data-label">log g</div><div class="data-value">4.41</div></div>
+        <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">+0.32 dex</div></div>
+        <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">40.9 ly</div></div>
+        <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">5</div></div>
+        <div class="data-cell"><div class="data-label">Spectrograph</div><div class="data-value" style="color:var(--text-dim);font-size:0.8rem">HARPS R~115k</div></div>
+      </div>
+
+      <!-- DSS field image -->
+      <figure class="star-image-wrap">
+        <img
+          src="https://skyview.gsfc.nasa.gov/cgi-bin/images?Survey=DSS2+Red&Position=133.1491%2C28.3308&Size=0.17&Pixels=600&Return=JPEG"
+          alt="Digitized Sky Survey field centred on 55 Cancri A (10′ × 10′, DSS2 Red)"
+          onerror="this.closest('figure').style.display='none'">
+        <figcaption class="star-image-caption">
+          55 Cancri A field · ~10′ × 10′ · DSS2 Red · RA 08h 52m 35.8s  Dec +28° 19′ 51″
+          <br>Image: STScI Digitized Sky Survey
+        </figcaption>
+      </figure>
+
+      <!-- NASA Exoplanet Archive HUD panel -->
+      <div class="hud-outer">
+        <div class="hud-corner-tr"></div>
+        <div class="hud-corner-bl"></div>
+        <div class="hud-inner">
+          <div class="hud-header">// SYSTEM SCAN — NASA EXOPLANET ARCHIVE //</div>
+          <div class="hud-body">
+            <div class="hud-title">55 Cancri (Copernicus) · 5-planet system</div>
+            <div class="hud-desc">
+              Confirmed planets: Janssen (e), Galileo (b), Brahe (c), Harriot (f), Lipperhey (d)
+              <br>Host: K0V · [Fe/H] +0.32 · 40.9 ly
+            </div>
+            <a class="hud-link"
+               href="https://exoplanetarchive.ipac.caltech.edu/overview/55%20Cnc"
+               target="_blank" rel="noopener">
+              Open NASA Exoplanet Archive ↗
+            </a>
+          </div>
+          <div class="hud-footer">// TAP TO EXPLORE //</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         OUR FINDINGS
+    ============================================================ -->
+    <section class="sys-section" id="our-findings">
+      <p class="sys-section-label">Section 02</p>
+      <h2 class="sys-section-title">Our Findings</h2>
+
+      <div class="pipeline-status">
+        <div class="ps-label">Pipeline status — 6-step analysis</div>
+        <ul class="ps-steps">
+          <li class="ps-step current"><span class="ps-num">01</span><span class="ps-name">Spectrum acquisition &amp; normalization</span><span class="ps-badge active">● Active</span></li>
+          <li class="ps-step"><span class="ps-num">02</span><span class="ps-name">Stellar parameter determination (T<sub>eff</sub>, log g, ξ<sub>turb</sub>)</span><span class="ps-badge queued">Queued</span></li>
+          <li class="ps-step"><span class="ps-num">03</span><span class="ps-name">Line list loading &amp; quality filtering</span><span class="ps-badge queued">Queued</span></li>
+          <li class="ps-step"><span class="ps-num">04</span><span class="ps-name">Equivalent width measurement &amp; Voigt fitting</span><span class="ps-badge queued">Queued</span></li>
+          <li class="ps-step"><span class="ps-num">05</span><span class="ps-name">Abundance derivation via curve of growth</span><span class="ps-badge queued">Queued</span></li>
+          <li class="ps-step"><span class="ps-num">06</span><span class="ps-name">Uncertainty budget &amp; ratio interpretation</span><span class="ps-badge queued">Queued</span></li>
+        </ul>
+      </div>
+
+      <div class="findings-body">
+        <p>55 Cancri A is the most scientifically interesting nearby exoplanet host star available. Its innermost planet, <strong>Janssen (55 Cnc e)</strong>, was observed by JWST in 2024 and showed a possible CO₂-rich atmosphere — the first direct atmospheric detection of a rocky super-Earth. What that atmosphere is made of depends partly on what the star itself is made of.</p>
+        <p>The <strong>C/O ratio</strong> of 55 Cancri A remains contested in the literature. Some teams find it elevated above solar (suggesting carbon-rich interior models for the planets). We intend to resolve this with HARPS spectra at R~115,000 and a formal Type A + Type B uncertainty budget.</p>
+        <p>Full abundance table will publish here when the analysis completes. All raw data and pipeline code are open on <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--accent);text-decoration:none">GitHub</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INTERACTIVE SKY VIEW (Aladin Lite)
+    ============================================================ -->
+    <section class="sys-section" id="sky-view">
+      <div class="aladin-hud">
+        <div class="aladin-hud-tr"></div>
+        <div class="aladin-hud-bl"></div>
+        <div class="aladin-label">// INTERACTIVE SKY VIEW — 55 CANCRI A //</div>
+        <div id="aladin-55cnc"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REFERENCES & CREDITS
+    ============================================================ -->
+    <section class="sys-section" id="references">
+      <p class="sys-section-label">Section 03</p>
+      <h2 class="sys-section-title">References &amp; Credits</h2>
+
+      <div class="refs-grid">
+        <div>
+          <p class="refs-title">Stellar Parameters</p>
+          <p>von Braun et al. (2011), ApJ 740, 49 — CHARA interferometry</p>
+          <p>Fischer &amp; Valenti (2005), ApJ 622, 1102 — [Fe/H] = +0.33</p>
+        </div>
+        <div>
+          <p class="refs-title">C/O Ratio</p>
+          <p>Teske et al. (2013), ApJ 778, 132 — C/O = 0.78 ± 0.08</p>
+          <p>Hypatia Catalog (HIP 43587) — literature weighted mean</p>
+        </div>
+        <div>
+          <p class="refs-title">Planet Characterisation</p>
+          <p>NASA Exoplanet Archive — planet parameters</p>
+          <p>JWST GO-1952 — Janssen (55 Cnc e) thermal emission</p>
+        </div>
+        <div>
+          <p class="refs-title">Image Credits</p>
+          <p>Sky field: STScI Digitized Sky Survey (DSS2)</p>
+          <p>Exoplanet data: NASA/IPAC Exoplanet Archive</p>
+          <p>Interactive sky: CDS Aladin Lite v3 / P/DSS2/color</p>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;">
+        <a href="/systems/" class="btn-ghost">← Back to Systems</a>
+      </p>
+    </section>
+
+  </div><!-- /.container -->
 
   <footer class="codex-footer">
     <div class="footer-grid">
@@ -101,7 +373,30 @@
     <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
   </footer>
 </div>
+
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
+
+<!-- Aladin Lite v3 -->
+<script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset="utf-8"></script>
+<script>
+  (function () {
+    if (typeof A === 'undefined') return;
+    A.init.then(function () {
+      A.aladin('#aladin-55cnc', {
+        survey: 'P/DSS2/color',
+        fov: 0.15,
+        target: '08 52 35.8 +28 19 51',
+        showReticle: true,
+        showZoomControl: true,
+        showFullscreenControl: true,
+        showLayersControl: true,
+        showGotoControl: true,
+        cooFrame: 'J2000',
+        backgroundColor: '#0d1b3e'
+      });
+    });
+  })();
+</script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sol · The Exoplanet Codex</title>
-  <meta name="description" content="The Sun — calibration anchor for all Codex measurements. Reference abundances from Lodders 2003 and Asplund 2021.">
+  <meta name="description" content="The Sun — solar calibration anchor for all Codex measurements. Direct HARPS observations, ESO 1102.D-0954(A). Photospheric abundances from Asplund et al. 2021.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -12,21 +12,169 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/codex.css">
   <style>
+    /* --- data strip --- */
     .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
     .data-cell { flex:1; min-width:120px; padding:1rem 1.4rem; border-right:1px solid var(--rim); }
     .data-cell:last-child { border-right:none; }
     .data-label { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.3rem; }
     .data-value { font-family:var(--mono); font-size:1rem; color:var(--accent); }
     .data-value.warm { color:var(--accent-warm); }
-    .coming-soon { padding:5rem 0; opacity:0; animation:fade-in 1s ease 0.8s forwards; }
-    .cs-status { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:1.4rem; display:block; }
-    .coming-soon h2 { font-family:var(--serif); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text-bright); margin-bottom:1rem; }
-    .coming-soon p { font-size:1.05rem; color:var(--text-dim); max-width:620px; line-height:1.8; margin-bottom:1.4rem; }
-    .coming-soon p strong { color:var(--text-bright); font-weight:400; }
+
+    /* --- sections --- */
+    .sys-section { padding:3rem 0 0.5rem; }
+    .sys-section + .sys-section { border-top:1px solid var(--rim); }
+    .sys-section-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.5rem; }
+    .sys-section-title { font-family:var(--serif); font-size:clamp(1.4rem,2vw,1.9rem); font-weight:300; color:var(--text-bright); margin-bottom:1.2rem; }
+
+    /* --- SDO image --- */
+    .sdo-wrap {
+      position:relative; margin:1.5rem 0; border:1px solid var(--rim);
+      background:var(--deep);
+    }
+    .sdo-wrap img { width:100%; display:block; filter:contrast(1.1) brightness(1.05); }
+    .sdo-caption {
+      padding:0.6rem 1rem; font-family:var(--mono); font-size:0.7rem;
+      color:var(--text-dim); border-top:1px solid var(--rim); line-height:1.5;
+    }
+    .sdo-placeholder {
+      padding:3rem; text-align:center;
+      font-family:var(--mono); font-size:0.75rem; color:var(--text-dim);
+      border:1px dashed var(--rim);
+    }
+
+    /* --- HUD panel (NASA / solar system) --- */
+    @keyframes corner-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+    @keyframes scanline-scroll { 0%{transform:translateY(0)} 100%{transform:translateY(4px)} }
+
+    .hud-outer {
+      position:relative; margin:2rem 0;
+      border:1px solid #00d4ff;
+      box-shadow:0 0 18px rgba(0,212,255,0.18), inset 0 0 18px rgba(0,212,255,0.04);
+      background:rgba(10,17,40,0.95); overflow:hidden;
+    }
+    .hud-outer::after {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,212,255,0.015) 3px,rgba(0,212,255,0.015) 4px);
+      animation:scanline-scroll 0.15s linear infinite; z-index:1;
+    }
+    .hud-inner { position:relative; z-index:2; }
+    .hud-inner::before { content:''; position:absolute; top:-1px; left:-1px; width:18px; height:18px; border-top:2px solid #00d4ff; border-left:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite; }
+    .hud-inner::after  { content:''; position:absolute; bottom:-1px; right:-1px; width:18px; height:18px; border-bottom:2px solid #00d4ff; border-right:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 1.25s; }
+    .hud-corner-tr { position:absolute; top:-1px; right:-1px; z-index:3; width:18px; height:18px; border-top:2px solid #00d4ff; border-right:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 0.6s; }
+    .hud-corner-bl { position:absolute; bottom:-1px; left:-1px; z-index:3; width:18px; height:18px; border-bottom:2px solid #00d4ff; border-left:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 1.8s; }
+    .hud-header { padding:0.7rem 1.2rem; border-bottom:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:#00d4ff; text-transform:uppercase; }
+    .hud-body { padding:1.8rem 2rem; text-align:center; }
+    .hud-title { font-family:var(--serif); font-size:1.4rem; font-weight:300; color:var(--text-bright); margin-bottom:0.6rem; }
+    .hud-desc { font-family:var(--mono); font-size:0.78rem; color:#00d4ff; margin-bottom:1.6rem; opacity:0.8; }
+    .hud-link { display:inline-block; border:1px solid #00d4ff; padding:0.7em 2em; font-family:var(--mono); font-size:0.75rem; letter-spacing:0.12em; color:#00d4ff; text-decoration:none; text-transform:uppercase; box-shadow:0 0 10px rgba(0,212,255,0.2); transition:background 0.2s,box-shadow 0.2s; }
+    .hud-link:hover { background:rgba(0,212,255,0.12); box-shadow:0 0 22px rgba(0,212,255,0.4); }
+    .hud-footer { padding:0.6rem 1.2rem; border-top:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.6rem; letter-spacing:0.18em; color:rgba(0,212,255,0.5); text-align:center; text-transform:uppercase; }
+
+    /* --- orbital map --- */
+    .orbital-map-wrap {
+      position:relative; margin:2rem 0;
+      border:1px solid #00d4ff;
+      box-shadow:0 0 18px rgba(0,212,255,0.15);
+      background:#060d1f;
+    }
+    .orbital-map-wrap::before { content:''; position:absolute; top:-1px; left:-1px; z-index:2; width:16px; height:16px; border-top:2px solid #00d4ff; border-left:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite; }
+    .orbital-map-wrap::after  { content:''; position:absolute; bottom:-1px; right:-1px; z-index:2; width:16px; height:16px; border-bottom:2px solid #00d4ff; border-right:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 1.25s; }
+    .orbital-corner-tr { position:absolute; top:-1px; right:-1px; z-index:2; width:16px; height:16px; border-top:2px solid #00d4ff; border-right:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 0.6s; }
+    .orbital-corner-bl { position:absolute; bottom:-1px; left:-1px; z-index:2; width:16px; height:16px; border-bottom:2px solid #00d4ff; border-left:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 1.8s; }
+    .orbital-label { padding:0.6rem 1.2rem; border-bottom:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:#00d4ff; text-transform:uppercase; background:rgba(10,17,40,0.95); position:relative; z-index:3; }
+    .orbital-svg-wrap { position:relative; overflow:hidden; }
+    #orbital-map { display:block; width:100%; max-width:680px; margin:0 auto; }
+    .orbital-note { padding:0.6rem 1.2rem; border-top:1px solid rgba(0,212,255,0.2); font-family:var(--mono); font-size:0.62rem; color:rgba(0,212,255,0.45); text-align:center; }
+
+    /* planet orbit animations */
+    @keyframes orbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    .orbit-group { transform-origin: 340px 340px; }
+    #p-mercury  { animation:orbit  12s linear infinite; }
+    #p-venus    { animation:orbit  20s linear infinite; }
+    #p-earth    { animation:orbit  30s linear infinite; }
+    #p-mars     { animation:orbit  50s linear infinite; }
+    #p-jupiter  { animation:orbit 150s linear infinite; }
+    #p-saturn   { animation:orbit 360s linear infinite; }
+    #p-uranus   { animation:orbit 700s linear infinite; }
+    #p-neptune  { animation:orbit 1200s linear infinite; }
+
+    /* asteroid belt slow rotation */
+    @keyframes belt-spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    #asteroid-belt { transform-origin:340px 340px; animation:belt-spin 400s linear infinite; }
+
+    /* planet clickable dots */
+    .planet-dot { cursor:pointer; }
+    .planet-dot:hover { filter:brightness(1.6); }
+
+    /* --- planet modal --- */
+    #planet-modal {
+      display:none; position:fixed; inset:0; z-index:1000;
+      background:rgba(0,0,0,0.75); align-items:center; justify-content:center;
+    }
+    #planet-modal.open { display:flex; }
+    .modal-box {
+      background:#0a1128; border:1px solid #00d4ff;
+      box-shadow:0 0 30px rgba(0,212,255,0.3);
+      padding:0; min-width:300px; max-width:420px; width:90%;
+      position:relative;
+    }
+    .modal-header { padding:0.7rem 1.2rem; border-bottom:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:#00d4ff; display:flex; justify-content:space-between; align-items:center; }
+    .modal-close { background:none; border:none; color:#00d4ff; cursor:pointer; font-family:var(--mono); font-size:1rem; padding:0; line-height:1; }
+    .modal-body { padding:1.5rem; }
+    .modal-planet-name { font-family:var(--serif); font-size:1.6rem; font-weight:300; color:var(--text-bright); margin-bottom:0.3rem; }
+    .modal-planet-type { font-family:var(--mono); font-size:0.7rem; color:var(--accent-warm); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1.2rem; }
+    .modal-row { display:flex; justify-content:space-between; padding:0.45rem 0; border-bottom:1px solid rgba(26,38,64,0.5); font-family:var(--mono); font-size:0.78rem; }
+    .modal-row:last-child { border-bottom:none; }
+    .modal-row .mlabel { color:var(--text-dim); }
+    .modal-row .mval { color:var(--accent); }
+    .modal-row .mval.hab { color:#52c78a; }
+    .modal-row .mval.nohab { color:var(--text-dim); }
+
+    /* --- science plots placeholder --- */
+    .plots-placeholder {
+      border:1px dashed var(--rim); background:var(--deep);
+      padding:2.5rem; text-align:center; margin:1.5rem 0;
+    }
+    .plots-placeholder .pp-label { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.8rem; }
+    .plots-placeholder p { font-size:0.9rem; color:var(--text-dim); max-width:500px; margin:0 auto; line-height:1.7; }
+
+    /* --- download button --- */
+    .btn-download {
+      display:inline-block; margin-top:1.2rem;
+      padding:0.7em 1.6em;
+      border:1px solid var(--accent); color:var(--accent);
+      font-family:var(--mono); font-size:0.78rem; letter-spacing:0.1em;
+      text-transform:uppercase; text-decoration:none;
+      transition:background 0.2s,color 0.2s;
+      opacity:0.4; pointer-events:none; cursor:default;
+    }
+    .btn-download.ready { opacity:1; pointer-events:auto; cursor:pointer; }
+    .btn-download.ready:hover { background:var(--accent); color:var(--void); }
+
+    /* --- refs --- */
+    .refs-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rim); border:1px solid var(--rim); margin:1.5rem 0; }
+    .refs-grid > div { background:var(--deep); padding:1rem 1.2rem; }
+    .refs-title { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+    .refs-grid p { font-size:0.85rem; color:var(--text-dim); line-height:1.6; margin:0.25rem 0; }
+    @media(max-width:600px) { .refs-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
 <canvas id="starfield"></canvas>
+<div id="planet-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span>// PLANETARY DATA //</span>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-planet-name" id="modal-name"></div>
+      <div class="modal-planet-type" id="modal-type"></div>
+      <div id="modal-rows"></div>
+    </div>
+  </div>
+</div>
+
 <div class="page">
   <nav class="codex-nav">
     <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
@@ -43,28 +191,250 @@
   </nav>
 
   <header class="page-hero">
-    <div class="page-eyebrow">System // Entry 000 — Reference</div>
+    <div class="page-eyebrow">System // Entry 000 — Calibration Reference</div>
     <h1 class="page-title">The <em>Sun</em></h1>
-    <p class="page-subtitle">Sol · G2V main sequence · The calibration anchor for all Codex measurements. Every [X/H] ratio is defined relative to solar photospheric abundances.</p>
+    <p class="page-subtitle">Sol · G2V main sequence · 10 direct HARPS S1D spectra · ESO 1102.D-0954(A) · PI: Dumusque · SNR 306–309</p>
   </header>
 
-  <div class="data-strip">
-    <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">G2 V</div></div>
-    <div class="data-cell"><div class="data-label">Tₛₑₑ</div><div class="data-value">5778 K</div></div>
-    <div class="data-cell"><div class="data-label">log g</div><div class="data-value">4.44</div></div>
-    <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">0.00 dex</div></div>
-    <div class="data-cell"><div class="data-label">Age</div><div class="data-value">4.6 Gyr</div></div>
-    <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">8</div></div>
-    <div class="data-cell"><div class="data-label">Reference</div><div class="data-value" style="color:var(--text-dim);font-size:0.75rem">Asplund 2021</div></div>
-  </div>
+  <div class="container">
 
-  <div class="coming-soon">
-    <span class="cs-status">● Reference system — RYA-53 in progress</span>
-    <h2>Solar abundance page in preparation</h2>
-    <p>This page will present the full solar reference dataset used in all Codex measurements — photospheric abundances for 27 elements from <strong>Asplund et al. (2021)</strong>, with NLTE corrections and comparison to Lodders (2003) and Grevesse &amp; Sauval (1998).</p>
-    <p>The Sun is not a target — it’s the ruler. Every abundance in the Codex is expressed as [X/H] = log(Nₓ/N₂)★ − log(Nₓ/N₂)☉, which means getting the solar reference right is the single most important calibration decision in the entire pipeline.</p>
-    <a href="/systems/" class="btn-ghost">← Back to Systems</a>
-  </div>
+    <!-- ============================================================
+         GENERAL INFO
+    ============================================================ -->
+    <section class="sys-section" id="general-info">
+      <p class="sys-section-label">Section 01</p>
+      <h2 class="sys-section-title">General Information</h2>
+
+      <div class="data-strip">
+        <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">G2 V</div></div>
+        <div class="data-cell"><div class="data-label">T<sub>eff</sub></div><div class="data-value">5778 K</div></div>
+        <div class="data-cell"><div class="data-label">log g</div><div class="data-value">4.44</div></div>
+        <div class="data-cell"><div class="data-label">[Fe/H]</div><div class="data-value warm">0.00 dex</div></div>
+        <div class="data-cell"><div class="data-label">Age</div><div class="data-value">4.6 Gyr</div></div>
+        <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">8</div></div>
+        <div class="data-cell"><div class="data-label">Reference</div><div class="data-value" style="color:var(--text-dim);font-size:0.75rem">Asplund 2021</div></div>
+      </div>
+
+      <!-- NASA/SDO solar image — Ryan will provide assets/images/sol/sol_sdo.jpg -->
+      <figure class="sdo-wrap" id="sdo-figure">
+        <img
+          src="/assets/images/sol/sol_sdo.jpg"
+          alt="NASA/SDO solar image showing the Sun's photosphere and active regions"
+          onerror="document.getElementById('sdo-figure').style.display='none'">
+        <figcaption class="sdo-caption">Credit: NASA/SDO</figcaption>
+      </figure>
+
+      <!-- NASA Solar System HUD -->
+      <div class="hud-outer">
+        <div class="hud-corner-tr"></div>
+        <div class="hud-corner-bl"></div>
+        <div class="hud-inner">
+          <div class="hud-header">// SYSTEM SCAN — NASA SOLAR SYSTEM EXPLORATION //</div>
+          <div class="hud-body">
+            <div class="hud-title">Sol · G2V · 8 planets · 1 AU reference</div>
+            <div class="hud-desc">
+              The calibration anchor for all Codex [X/H] measurements
+              <br>A(Fe)☉ = 7.46 · C/O☉ = 0.55 · Asplund et al. (2021)
+            </div>
+            <a class="hud-link"
+               href="https://solarsystem.nasa.gov/solar-system/our-solar-system/overview/"
+               target="_blank" rel="noopener">
+              Open NASA Solar System ↗
+            </a>
+          </div>
+          <div class="hud-footer">// TAP TO EXPLORE //</div>
+        </div>
+      </div>
+
+      <!-- Interactive Orbital Map -->
+      <div class="orbital-map-wrap" id="orbital-map-container">
+        <div class="orbital-corner-tr"></div>
+        <div class="orbital-corner-bl"></div>
+        <div class="orbital-label">// INTERACTIVE ORBITAL MAP — SOL SYSTEM //</div>
+        <div class="orbital-svg-wrap">
+          <svg id="orbital-map" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg" aria-label="Solar system orbital map">
+            <defs>
+              <filter id="sun-glow">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="planet-glow">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Habitable zone shading -->
+            <circle cx="340" cy="340" r="115" fill="none" stroke="rgba(82,199,138,0.12)" stroke-width="28"/>
+
+            <!-- Orbital rings -->
+            <circle cx="340" cy="340" r="45"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Mercury -->
+            <circle cx="340" cy="340" r="68"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Venus -->
+            <circle cx="340" cy="340" r="90"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Earth -->
+            <circle cx="340" cy="340" r="118" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Mars -->
+            <!-- asteroid belt: dashed ring -->
+            <circle cx="340" cy="340" r="148" fill="none" stroke="#1e3060" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.5"/>
+            <circle cx="340" cy="340" r="160" fill="none" stroke="#1e3060" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.3"/>
+            <circle cx="340" cy="340" r="200" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Jupiter -->
+            <circle cx="340" cy="340" r="248" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Saturn -->
+            <circle cx="340" cy="340" r="298" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Uranus -->
+            <circle cx="340" cy="340" r="330" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Neptune -->
+
+            <!-- Asteroid belt particles -->
+            <g id="asteroid-belt">
+              <circle cx="340" cy="192" r="1.2" fill="#334466" opacity="0.7"/>
+              <circle cx="430" cy="208" r="1.0" fill="#334466" opacity="0.6"/>
+              <circle cx="466" cy="252" r="1.4" fill="#334466" opacity="0.5"/>
+              <circle cx="472" cy="320" r="0.9" fill="#334466" opacity="0.7"/>
+              <circle cx="450" cy="388" r="1.1" fill="#334466" opacity="0.6"/>
+              <circle cx="400" cy="444" r="1.3" fill="#334466" opacity="0.7"/>
+              <circle cx="330" cy="464" r="1.0" fill="#334466" opacity="0.5"/>
+              <circle cx="258" cy="444" r="1.2" fill="#334466" opacity="0.6"/>
+              <circle cx="208" cy="396" r="1.4" fill="#334466" opacity="0.7"/>
+              <circle cx="196" cy="330" r="1.0" fill="#334466" opacity="0.5"/>
+              <circle cx="214" cy="262" r="1.1" fill="#334466" opacity="0.6"/>
+              <circle cx="268" cy="214" r="0.9" fill="#334466" opacity="0.7"/>
+            </g>
+
+            <!-- Sun -->
+            <circle cx="340" cy="340" r="14" fill="#ffe066" filter="url(#sun-glow)"/>
+            <circle cx="340" cy="340" r="10" fill="#fff4aa"/>
+
+            <!-- Mercury -->
+            <g id="p-mercury" class="orbit-group">
+              <circle class="planet-dot" cx="385" cy="340" r="3.5" fill="#8899bb" filter="url(#planet-glow)" data-planet="mercury"/>
+            </g>
+            <!-- Venus -->
+            <g id="p-venus" class="orbit-group">
+              <circle class="planet-dot" cx="408" cy="340" r="4.5" fill="#c0875a" filter="url(#planet-glow)" data-planet="venus"/>
+            </g>
+            <!-- Earth / Terra -->
+            <g id="p-earth" class="orbit-group">
+              <circle class="planet-dot" cx="430" cy="340" r="4.8" fill="#4fc3f7" filter="url(#planet-glow)" data-planet="earth"/>
+            </g>
+            <!-- Mars -->
+            <g id="p-mars" class="orbit-group">
+              <circle class="planet-dot" cx="458" cy="340" r="3.8" fill="#bf6060" filter="url(#planet-glow)" data-planet="mars"/>
+            </g>
+            <!-- Jupiter -->
+            <g id="p-jupiter" class="orbit-group">
+              <circle class="planet-dot" cx="540" cy="340" r="8.5" fill="#c8914a" filter="url(#planet-glow)" data-planet="jupiter"/>
+            </g>
+            <!-- Saturn -->
+            <g id="p-saturn" class="orbit-group">
+              <!-- rings -->
+              <ellipse cx="588" cy="340" rx="15" ry="5" fill="none" stroke="#b0925a" stroke-width="2" opacity="0.6"/>
+              <circle class="planet-dot" cx="588" cy="340" r="7" fill="#b0a060" filter="url(#planet-glow)" data-planet="saturn"/>
+            </g>
+            <!-- Uranus -->
+            <g id="p-uranus" class="orbit-group">
+              <circle class="planet-dot" cx="638" cy="340" r="6" fill="#7ab8c8" filter="url(#planet-glow)" data-planet="uranus"/>
+            </g>
+            <!-- Neptune -->
+            <g id="p-neptune" class="orbit-group">
+              <circle class="planet-dot" cx="670" cy="340" r="5.5" fill="#5575c8" filter="url(#planet-glow)" data-planet="neptune"/>
+            </g>
+
+            <!-- Hab zone label -->
+            <text x="424" y="256" font-family="Space Mono, monospace" font-size="7" fill="rgba(82,199,138,0.55)" letter-spacing="0.5">HZ</text>
+
+            <!-- Planet name labels (static, near orbit ring) -->
+            <text x="387" y="294" font-family="Space Mono, monospace" font-size="7" fill="#8899bb" opacity="0.7">Me</text>
+            <text x="404" y="277" font-family="Space Mono, monospace" font-size="7" fill="#c0875a" opacity="0.7">Ve</text>
+            <text x="422" y="261" font-family="Space Mono, monospace" font-size="7" fill="#4fc3f7" opacity="0.85">Terra</text>
+            <text x="447" y="243" font-family="Space Mono, monospace" font-size="7" fill="#bf6060" opacity="0.7">Ma</text>
+            <text x="507" y="211" font-family="Space Mono, monospace" font-size="7" fill="#c8914a" opacity="0.75">Jup</text>
+            <text x="556" y="166" font-family="Space Mono, monospace" font-size="7" fill="#b0a060" opacity="0.7">Sat</text>
+            <text x="597" y="118" font-family="Space Mono, monospace" font-size="7" fill="#7ab8c8" opacity="0.7">Ura</text>
+            <text x="626" y="87"  font-family="Space Mono, monospace" font-size="7" fill="#5575c8" opacity="0.7">Nep</text>
+          </svg>
+        </div>
+        <div class="orbital-note">Click any planet for mass, radius, type, and habitability zone status</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         OUR FINDINGS
+    ============================================================ -->
+    <section class="sys-section" id="our-findings">
+      <p class="sys-section-label">Section 02</p>
+      <h2 class="sys-section-title">Our Findings</h2>
+
+      <p style="font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.85;max-width:720px;margin-bottom:1.5rem;">
+        The Sun is not a target — it is the ruler. Every abundance in the Codex is expressed as
+        <strong style="color:var(--text-bright)">[X/H] = A(X)★ − A(X)☉</strong>, which means getting
+        the solar reference right is the single most important calibration decision in the pipeline.
+        We use 10 direct HARPS S1D exposures (ESO 1102.D-0954(A), PI: Dumusque) — a direct solar
+        feed, not asteroid-reflected sunlight — with SNR 306–309 per exposure.
+      </p>
+
+      <!-- Science plots placeholder — awaiting EW CSV from Ryan -->
+      <div class="plots-placeholder" id="science-plots-placeholder">
+        <div class="pp-label">⏳ Awaiting solar EW data</div>
+        <p>
+          Elemental abundance charts (27 elements, [X/H] vs Asplund 2021), C/O ratio panel,
+          alpha elements panel, and problem-lines explainer (O I 6300, Li I 6707) will render
+          here once the finalized solar EW output CSV is provided.
+        </p>
+        <!-- Chart.js charts will be injected here by JS once CSV is available -->
+        <div id="chart-abundance"  style="display:none;max-width:780px;margin:2rem auto;"><canvas></canvas></div>
+        <div id="chart-co-ratio"   style="display:none;max-width:520px;margin:2rem auto;"><canvas></canvas></div>
+        <div id="chart-alpha"      style="display:none;max-width:520px;margin:2rem auto;"><canvas></canvas></div>
+      </div>
+
+      <!-- EW CSV download (disabled until Ryan provides the file) -->
+      <p style="margin-top:1.5rem;">
+        <a href="/assets/data/sol_ew_results_v1.csv"
+           class="btn-download"
+           id="ew-download-btn"
+           download
+           title="Available once sol_ew_results_v1.csv is published">
+          ⬇ Download Raw EW Data (CSV)
+        </a>
+        <span id="ew-download-note" style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);display:block;margin-top:0.5rem;">
+          File pending — will activate when solar EW results are published
+        </span>
+      </p>
+    </section>
+
+    <!-- ============================================================
+         REFERENCES & CREDITS
+    ============================================================ -->
+    <section class="sys-section" id="references">
+      <p class="sys-section-label">Section 03</p>
+      <h2 class="sys-section-title">References &amp; Credits</h2>
+
+      <div class="refs-grid">
+        <div>
+          <p class="refs-title">Solar Abundance Reference</p>
+          <p>Asplund et al. (2021), A&amp;A 653, A141 — A(Fe)☉ = 7.46</p>
+          <p>Lodders (2003), ApJ 591, 1220 — predecessor reference</p>
+          <p>Grevesse &amp; Sauval (1998), Space Sci. Rev. 85, 161</p>
+        </div>
+        <div>
+          <p class="refs-title">Observational Dataset</p>
+          <p>ESO Program 1102.D-0954(A)</p>
+          <p>PI: Xavier Dumusque, University of Geneva</p>
+          <p>10 HARPS S1D spectra · direct solar feed · SNR 306–309</p>
+        </div>
+        <div>
+          <p class="refs-title">Image Credit</p>
+          <p>Solar image: Credit NASA/SDO</p>
+          <p>Orbital map: original illustration · Exoplanet Codex</p>
+        </div>
+        <div>
+          <p class="refs-title">Planetary Data</p>
+          <p>NASA Solar System Exploration</p>
+          <p>IAU 2006 planet definition · 8 planets</p>
+        </div>
+      </div>
+
+      <p style="margin-top:1.5rem;">
+        <a href="/systems/" class="btn-ghost">← Back to Systems</a>
+      </p>
+    </section>
+
+  </div><!-- /.container -->
 
   <footer class="codex-footer">
     <div class="footer-grid">
@@ -76,7 +446,99 @@
     <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
   </footer>
 </div>
+
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // Planet data for modal
+  var PLANETS = {
+    mercury: { name: 'Mercury', type: 'Terrestrial · Rocky',
+      mass: '0.055 M⊕', radius: '0.383 R⊕', distance: '0.387 AU', period: '87.97 d',
+      hab: 'No', habNote: 'Too close — surface T up to 430°C' },
+    venus: { name: 'Venus', type: 'Terrestrial · Rocky',
+      mass: '0.815 M⊕', radius: '0.949 R⊕', distance: '0.723 AU', period: '224.7 d',
+      hab: 'No', habNote: 'Runaway greenhouse — surface 464°C' },
+    earth: { name: 'Terra (Earth)', type: 'Terrestrial · Rocky · Habitable',
+      mass: '1.000 M⊕', radius: '1.000 R⊕', distance: '1.000 AU', period: '365.25 d',
+      hab: 'Yes', habNote: 'Reference habitable world' },
+    mars: { name: 'Mars', type: 'Terrestrial · Rocky',
+      mass: '0.107 M⊕', radius: '0.532 R⊕', distance: '1.524 AU', period: '686.97 d',
+      hab: 'Marginal', habNote: 'Edge of hab zone — thin CO₂ atmosphere' },
+    jupiter: { name: 'Jupiter', type: 'Gas Giant',
+      mass: '317.8 M⊕', radius: '11.21 R⊕', distance: '5.203 AU', period: '11.86 yr',
+      hab: 'No', habNote: 'Gas giant — no solid surface' },
+    saturn: { name: 'Saturn', type: 'Gas Giant',
+      mass: '95.16 M⊕', radius: '9.449 R⊕', distance: '9.537 AU', period: '29.46 yr',
+      hab: 'No', habNote: 'Gas giant with prominent ring system' },
+    uranus: { name: 'Uranus', type: 'Ice Giant',
+      mass: '14.54 M⊕', radius: '4.007 R⊕', distance: '19.19 AU', period: '84.01 yr',
+      hab: 'No', habNote: 'Ice giant — 97° axial tilt' },
+    neptune: { name: 'Neptune', type: 'Ice Giant',
+      mass: '17.15 M⊕', radius: '3.883 R⊕', distance: '30.07 AU', period: '164.8 yr',
+      hab: 'No', habNote: 'Ice giant — strongest winds in Solar System' }
+  };
+
+  var modal    = document.getElementById('planet-modal');
+  var modalName = document.getElementById('modal-name');
+  var modalType = document.getElementById('modal-type');
+  var modalRows = document.getElementById('modal-rows');
+  var closeBtn  = document.getElementById('modal-close-btn');
+
+  function openModal(planet) {
+    var d = PLANETS[planet];
+    if (!d) return;
+    modalName.textContent = d.name;
+    modalType.textContent = d.type;
+    var habClass = d.hab === 'Yes' ? 'hab' : (d.hab === 'Marginal' ? 'hab' : 'nohab');
+    modalRows.innerHTML =
+      row('Mass',     d.mass) +
+      row('Radius',   d.radius) +
+      row('Distance', d.distance) +
+      row('Period',   d.period) +
+      '<div class="modal-row"><span class="mlabel">Habitable zone</span><span class="mval ' + habClass + '">' + d.hab + '</span></div>' +
+      '<div class="modal-row" style="flex-direction:column;gap:0.2rem"><span class="mlabel" style="font-size:0.72rem">' + d.habNote + '</span></div>';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function row(label, val) {
+    return '<div class="modal-row"><span class="mlabel">' + label + '</span><span class="mval">' + val + '</span></div>';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Wire up planet clicks
+  document.querySelectorAll('.planet-dot').forEach(function (el) {
+    el.addEventListener('click', function () { openModal(el.dataset.planet); });
+    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') openModal(el.dataset.planet); });
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'View ' + (PLANETS[el.dataset.planet] || {name:el.dataset.planet}).name + ' data');
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  // Check if EW CSV exists and enable download button
+  fetch('/assets/data/sol_ew_results_v1.csv', { method: 'HEAD' })
+    .then(function (r) {
+      if (r.ok) {
+        var btn  = document.getElementById('ew-download-btn');
+        var note = document.getElementById('ew-download-note');
+        if (btn)  btn.classList.add('ready');
+        if (note) note.style.display = 'none';
+      }
+    })
+    .catch(function () {});
+})();
+</script>
 </body>
 </html>
