@@ -696,6 +696,50 @@
         </div>
 
         <div class="method-subsection">
+          <h3 class="method-subsection-title">Multi-Target Dataset Summary</h3>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead>
+                <tr>
+                  <th>Target</th>
+                  <th>HARPS S1D</th>
+                  <th>HST Observations</th>
+                  <th>HST Gratings</th>
+                  <th>Program / PI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Solar</strong> (calibrator)</td>
+                  <td>10 spectra</td>
+                  <td>—</td>
+                  <td>—</td>
+                  <td><em>ESO 1102.D-0954(A) · PI: Dumusque (U. Geneva) · Direct solar feed, SNR 306–309</em></td>
+                </tr>
+                <tr>
+                  <td><strong>55 Cancri A</strong></td>
+                  <td>88 spectra</td>
+                  <td>STIS</td>
+                  <td>G140M, G750L, G430L, E230M</td>
+                  <td><em>Multiple programs · MAST archive</em></td>
+                </tr>
+                <tr>
+                  <td><strong>Alpha Centauri A</strong></td>
+                  <td>75 spectra</td>
+                  <td>111 observations</td>
+                  <td>E140H, E140M, E230H, E230M</td>
+                  <td><em>Multiple programs · MAST archive</em></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="method-callout">
+            <p class="method-callout-title">Solar Dataset Note</p>
+            <p>The solar spectra are <strong>direct solar feed observations</strong> — the Sun itself, not asteroid-reflected sunlight. ESO Program 1102.D-0954(A), PI Xavier Dumusque (University of Geneva). The high SNR (306–309 per exposure) allows validation of weak lines including P I 6034 Å and Li I 6707 Å before touching science targets.</p>
+          </div>
+        </div>
+
+        <div class="method-subsection">
           <h3 class="method-subsection-title">Pipeline Data Flow</h3>
           <figure class="method-figure">
             <img src="/assets/images/methodology/fig3_pipeline_flow.png"
@@ -779,18 +823,18 @@ CHNOPS_index, CHNOPS_err, notes</div>
         <div class="method-section-header">
           <p class="method-eyebrow">Section 09</p>
           <h2 class="method-section-title">Solar Validation</h2>
-          <p class="method-intro">Before analyzing any exoplanet host star, the pipeline is validated against the Sun using reflected sunlight from an asteroid observed with HARPS — processed identically to the science targets.</p>
+          <p class="method-intro">Before analyzing any exoplanet host star, the pipeline is validated against the Sun using 10 direct solar HARPS S1D spectra (ESO 1102.D-0954(A), PI: Dumusque) — processed identically to the science targets.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Asteroid Calibration Criteria</h3>
+          <h3 class="method-subsection-title">Solar Calibration Criteria</h3>
           <div class="method-table-wrap">
             <table class="method-table">
               <thead><tr><th>Quantity</th><th>Required Result</th><th>If Failed</th></tr></thead>
               <tbody>
                 <tr><td>A(Fe)☉ recovery</td><td>7.46 ± 0.05 (Asplund et al. 2021)</td><td>Systematic pipeline error — must identify and correct before any science results</td></tr>
                 <tr><td>C/O☉ recovery</td><td>0.55 ± 0.05</td><td>Systematic oxygen measurement error</td></tr>
-                <tr><td>Calibrator targets</td><td>Asteroid Vesta or Ceres (HARPS archive)</td><td>—</td></tr>
+                <tr><td>Dataset</td><td>10 HARPS S1D, direct solar feed · SNR 306–309 per exposure</td><td>—</td></tr>
               </tbody>
             </table>
           </div>
