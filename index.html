@@ -45,6 +45,8 @@
     .search-input::placeholder { color:var(--muted); }
     .search-btn { background:var(--surface); border:none; border-left:1px solid var(--rim); color:var(--text-dim); font-family:var(--mono); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; padding:0 1.6rem; cursor:pointer; transition:background 0.2s,color 0.2s; }
     .search-btn:hover { background:var(--accent); color:var(--void); }
+    .search-hint { font-family:var(--mono); font-size:0.62rem; color:var(--muted); margin-top:0.65rem; letter-spacing:0.08em; }
+    .search-hint span { color:var(--text-dim); }
     /* ── SYSTEMS GRID ── */
     .systems-section { padding:2rem 0 4rem; opacity:0; animation:fade-in 1s ease 1.8s forwards; }
     .system-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:var(--rim); }
@@ -167,7 +169,8 @@
       <input class="search-input" type="text" id="search-input" placeholder="Star name, HD number, IAU name — e.g. 55 Cancri, Copernicus...">
       <button class="search-btn" onclick="handleSearch()">Search</button>
     </div>
-    <div class="system-grid" style="margin-top:1px;">
+    <p class="search-hint">Currently indexed: <span>12 systems</span> · More added as analysis completes</p>
+    <div class="system-grid" style="margin-top:1.5rem;">
       <!-- #000 Sol -->
       <a class="system-card active" href="/systems/sol/">
         <div class="card-tag live">● #000 — Calibration Reference</div>
@@ -218,7 +221,7 @@
       </a>
     </div>
     <div style="text-align:right; padding:0.6rem 0 0;">
-      <a href="/systems/" style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;color:var(--accent);text-decoration:none;">View all 12 entries →</a>
+      <a href="/systems/" style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;color:var(--accent);text-decoration:none;">View all 12 systems →</a>
     </div>
   </section>
 
