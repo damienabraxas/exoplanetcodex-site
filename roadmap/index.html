@@ -26,7 +26,7 @@
       --muted:   #666677;
       --sub:     #999aaa;
       --mono:    'Space Mono', monospace;
-    }                              /* FIX 1: missing closing brace */
+    }
 
     html, body {
       background: var(--bg);
@@ -36,14 +36,12 @@
       overflow-x: hidden;
     }
 
-    /* ── Page shell ── */
     .page {
       max-width: 1100px;
       margin: 0 auto;
       padding: 48px 24px 64px;
     }
 
-    /* ── Nav breadcrumb ── */
     .breadcrumb {
       font-size: 10px;
       letter-spacing: 2px;
@@ -54,7 +52,6 @@
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb span { color: var(--muted); }
 
-    /* ── Header ── */
     .roadmap-header {
       text-align: center;
       margin-bottom: 12px;
@@ -69,7 +66,6 @@
       border-color: var(--cyan);
       border-style: solid;
     }
-    /* FIX 2: garbled property → proper left corner rule */
     .roadmap-header::before { left: 0;  border-width: 1.5px 0 0 1.5px; }
     .roadmap-header::after  { right: 0; border-width: 1.5px 1.5px 0 0; }
 
@@ -87,7 +83,6 @@
       margin-bottom: 14px;
     }
 
-    /* ── Sync indicator ── */
     .sync-row {
       display: flex;
       align-items: center;
@@ -106,7 +101,6 @@
     .sync-dot.live    { background: var(--cyan);  animation: pulse 2.4s infinite; }
     .sync-dot.loading { background: var(--amber); animation: pulse 0.7s infinite; }
     .sync-dot.error   { background: var(--red); }
-    /* FIX 3: broken keyframe — missing opacity:1 and closing braces */
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
     .sync-text {
       font-size: 9px;
@@ -114,7 +108,6 @@
       color: var(--muted);
     }
 
-    /* ── Phase grid ── */
     .phase-grid-top {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -123,13 +116,12 @@
     }
     .phase-grid-bottom {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(5, 1fr);
       gap: 12px;
       margin-bottom: 12px;
     }
     .phase-grid-bottom .spacer { visibility: hidden; }
 
-    /* ── Phase card ── */
     .phase-card {
       border-radius: 3px;
       padding: 16px 14px 14px;
@@ -138,14 +130,10 @@
       transition: opacity 0.5s ease, transform 0.5s ease;
       position: relative;
     }
-    .phase-card.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .phase-card.visible { opacity: 1; transform: none; }
     .phase-card:hover { filter: brightness(1.08); }
 
     .card-phase  { font-size: 8px; letter-spacing: 2px; margin-bottom: 4px; font-weight: 700; }
-    /* FIX 5: broken letter-spacing property */
     .card-number { font-size: 8px; letter-spacing: 2px; margin-bottom: 8px; }
     .card-title  { font-size: clamp(14px, 2vw, 18px); font-weight: 700; color: var(--text); margin-bottom: 3px; line-height: 1.2; }
     .card-time   { font-size: 8px; color: var(--muted); letter-spacing: 1px; margin-bottom: 10px; }
@@ -165,7 +153,6 @@
     }
     .bar-label { font-size: 8px; letter-spacing: 0.5px; }
 
-    /* Card color themes */
     .card-p1 { background: #0a1a10; border: 1.5px solid var(--cyan); }
     .card-p1 .card-phase, .card-p1 .bar-label { color: var(--cyan); }
     .card-p1 .bar-track { background: #0d2a1a; }
@@ -191,8 +178,6 @@
     .card-p5 .bar-track { background: #2a0a0a; }
     .card-p5 .bar-fill  { background: var(--red); }
 
-    /* ── Timeline ── */
-    /* FIX 4: broken align-items value and missing semicolon */
     .timeline-row {
       display: flex;
       align-items: center;
@@ -213,7 +198,6 @@
     .tl-dot.visible { opacity: 1; transform: scale(1); }
     .tl-dot-inner { width: 5px; height: 5px; border-radius: 50%; }
 
-    /* ── Info panels ── */
     .info-panels {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -233,7 +217,6 @@
       margin-bottom: 10px;
       text-align: center;
     }
-    /* FIX 6: .info-li → .info-line (matches HTML class) */
     .info-line {
       font-size: 8.5px;
       color: var(--sub);
@@ -250,7 +233,6 @@
     .panel-open { background: #06080e; border: 1px solid #101830; }
     .panel-open .info-panel-title { color: var(--blue); }
 
-    /* ── Footer ── */
     .rm-footer {
       text-align: center;
       font-size: 9px;
@@ -262,12 +244,10 @@
     .rm-footer a { color: #444455; text-decoration: none; }
     .rm-footer a:hover { color: var(--cyan); }
 
-    /* ── Responsive ── */
     @media (max-width: 700px) {
       .phase-grid-top,
       .phase-grid-bottom { grid-template-columns: 1fr; }
       .phase-grid-bottom .spacer { display: none; }
-      /* FIX 7: truncated selector ".info-panels" */
       .info-panels { grid-template-columns: 1fr; }
       .timeline-row { display: none; }
       .roadmap-header::before,
@@ -320,7 +300,6 @@
         <div class="bar-label" id="label-2">— / — tasks</div>
       </div>
 
-      <!-- FIX 8: truncated PHASE 5 card number -->
       <div class="phase-card card-p5" id="card-4">
         <div class="card-phase">* FUTURE</div>
         <div class="card-number" style="color:var(--red)">PHASE 5</div>
@@ -348,7 +327,6 @@
         <div class="tl-dot-inner" style="background:var(--amber)"></div>
       </div>
       <div class="tl-line"></div>
-      <!-- FIX 9: border-color:--purple) → border-color:var(--purple) -->
       <div class="tl-dot" id="dot-3" style="border-color:var(--purple)">
         <div class="tl-dot-inner" style="background:var(--purple)"></div>
       </div>
@@ -359,7 +337,7 @@
       <div class="tl-line"></div>
     </div>
 
-    <!-- Bottom row: spacer, Phase 2, Phase 4, spacer -->
+    <!-- Bottom row: spacer | Solar Cal | spacer | Beta Release | spacer -->
     <div class="phase-grid-bottom">
       <div class="spacer"></div>
 
@@ -373,7 +351,8 @@
         <div class="bar-label" id="label-1">— / — tasks</div>
       </div>
 
-      <!-- FIX 11: clard-phase → class="card-phase" -->
+      <div class="spacer"></div>
+
       <div class="phase-card card-p4" id="card-3">
         <div class="card-phase">* PLANNED</div>
         <div class="card-number" style="color:var(--purple)">PHASE 4</div>
@@ -394,7 +373,6 @@
         <div class="info-line">&gt; C/O ratio — carbon-rich or oxygen-rich?</div>
         <div class="info-line">&gt; [Fe/H], Ni, Co — heavy metals &amp; rocky planets</div>
         <div class="info-line">&gt; [alpha/Fe] — galactic chemical evolution</div>
-        <!-- FIX 10: JWST/div> → JWST</div> -->
         <div class="info-line">&gt; Alpha Cen A abundances before Aug 2026 JWST</div>
       </div>
       <div class="info-panel panel-copernicus" id="panel-1">
@@ -409,7 +387,6 @@
         <div class="info-line">&gt; <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--sub)">github/damienabraxas/exoplanetcodex</a></div>
         <div class="info-line">&gt; Data: ESO Archive + Zenodo DOI</div>
         <div class="info-line">&gt; exoplanetcodex.org &nbsp; arXiv &nbsp; RNAAS &nbsp; OJAp</div>
-        <!-- FIX 12: &g → &gt; -->
         <div class="info-line">&gt; HARPS R~115,000 + HST/MAST UV data</div>
       </div>
     </div>
@@ -547,7 +524,6 @@ Return ONLY the JSON array. No markdown, no explanation, no backticks.`,
         if (stale) {
           setTimeout(async () => {
             setSyncState('loading', 'REFRESHING...');
-            /* FIX 13: fetcinear() → fetchLinear() */
             const fresh = await fetchLinear();
             if (fresh) {
               setSyncState('live', 'LINEAR — JUST NOW');
