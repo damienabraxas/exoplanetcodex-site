@@ -145,27 +145,32 @@
       <p class="sys-section-label">Section 02</p>
       <h2 class="sys-section-title">NASA Interactive Visualization</h2>
       <div class="hud-outer">
-          <div class="hud-corner-tr"></div>
-          <div class="hud-corner-bl"></div>
-          <div class="hud-inner">
-            <div class="hud-hdr">// SYSTEM SCAN — NASA EXOPLANET ARCHIVE //</div>
-            <div class="hud-iframe-wrap">
-              <iframe
-                src="https://eyes.nasa.gov/apps/exo/#/planet/55_Cnc_e?embed=true"
-                title="NASA interactive — 55 Cancri A"
-                width="100%" height="460"
-                frameborder="0"
-                allow="fullscreen"
-                loading="lazy"
-                style="display:block;background:#000;"
-              ></iframe>
-            </div>
-            <div class="hud-ftr">
-              <span>Interactive: NASA Eyes on Exoplanets / JPL</span>
-              <a href="https://science.nasa.gov/exoplanet-catalog/55-cancri-e/" target="_blank" rel="noopener">Open NASA page ↗</a>
+        <div class="hud-corner-tr"></div>
+        <div class="hud-corner-bl"></div>
+        <div class="hud-inner">
+          <div class="hud-hdr">// SYSTEM SCAN — NASA EXOPLANET ARCHIVE //</div>
+          <div class="hud-iframe-wrap">
+            <iframe
+              id="nasa-eyes-frame"
+              src="https://eyes.nasa.gov/apps/exo/#/planet/55_Cnc_e?embed=true"
+              title="55 Cancri A — Janssen (55 Cnc e)"
+              width="100%" height="460"
+              frameborder="0"
+              allow="fullscreen"
+              loading="lazy"
+              style="display:block;background:#000;"
+            ></iframe>
+            <div id="nasa-fallback" class="hud-fallback" style="display:none;">
+              <p>Interactive 3D visualization available on NASA&#39;s Eyes on Exoplanets</p>
+              <a href="https://science.nasa.gov/exoplanet-catalog/55-cancri-e/" target="_blank" rel="noopener" class="hud-cta-btn">// LAUNCH NASA VIEWER ↗ //</a>
             </div>
           </div>
+          <div class="hud-ftr">
+            <span>Interactive: NASA Eyes on Exoplanets / JPL</span>
+            <a href="https://science.nasa.gov/exoplanet-catalog/55-cancri-e/" target="_blank" rel="noopener">Open NASA page ↗</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ── SECTION 03: ALADIN SKY VIEW ── -->
@@ -237,5 +242,22 @@
     A.aladin('#aladin-55cnc',{survey:'P/DSS2/color',fov:.15,target:'08 52 35.8 +28 19 51',showReticle:true,showZoomControl:true,showFullscreenControl:true,showLayersControl:true,cooFrame:'J2000',backgroundColor:'#0d1b3e'});
   });
 })();</script>
+<script>
+(function(){
+  var frame=document.getElementById('nasa-eyes-frame');
+  if(!frame)return;
+  var fallback=document.getElementById('nasa-fallback');
+  function showFallback(){
+    frame.style.display='none';
+    if(fallback)fallback.style.display='block';
+  }
+  frame.addEventListener('load',function(){
+    try{
+      var loc=frame.contentWindow.location.href;
+      if(loc==='about:blank'||loc==='')showFallback();
+    }catch(e){/* cross-origin load — success */}
+  });
+})();
+</script>
 </body>
 </html>
