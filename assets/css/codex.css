@@ -65,6 +65,7 @@ body::after {
 nav, .codex-nav {
   padding: 2.2rem 0;
   display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap;          /* lets breadcrumb drop to its own row */
   border-bottom: 1px solid var(--rim);
   opacity: 0; animation: fade-in 1s ease 0.2s forwards;
 }
@@ -89,10 +90,15 @@ nav, .codex-nav {
   border: 1px solid rgba(232,162,74,0.35); padding: 0.3em 0.85em; border-radius: 2px;
 }
 .status-pill::before { content: '● '; font-size: 0.5rem; vertical-align: middle; animation: blink 2s ease-in-out infinite; }
-.breadcrumb { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.12em; }
+/* Breadcrumb: full-width row below logo + nav-links */
+.breadcrumb {
+  flex-basis: 100%;
+  font-family: var(--mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.12em;
+  padding-top: 0.6rem; margin-top: 0.35rem; border-top: 1px solid var(--rim);
+}
 .breadcrumb a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
 .breadcrumb a:hover { color: var(--accent); }
-.breadcrumb span { color: var(--accent-warm); }
+.breadcrumb span { color: var(--accent-warm); white-space: nowrap; } /* never break mid star name */
 
 /* ── SECTION LABEL ── */
 .section-label {
@@ -183,4 +189,19 @@ blockquote footer { padding: 0; border: none; animation: none; opacity: 1; displ
   .nav-links.open { display: flex; flex-direction: column; width: 100%; gap: 1rem; padding: 1rem 0; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-right { text-align: left; }
+
+  /* Mobile breadcrumb: collapse to "← Systems" back link only */
+  .breadcrumb {
+    font-size: 0;         /* hides text-node separators (" / ") */
+    border-top: none;
+    padding-top: 0.3rem;
+    margin-top: 0;
+  }
+  .breadcrumb a:first-child { display: none; }   /* hide "Home" */
+  .breadcrumb a:not(:first-child) {
+    font-size: 0.65rem;
+    display: inline-block;
+  }
+  .breadcrumb a:not(:first-child)::before { content: '← '; }
+  .breadcrumb span { display: none; }            /* hide star name */
 }
