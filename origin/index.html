@@ -85,6 +85,48 @@
     .li-dot.warm  { color:var(--accent-warm); }
     .narrative-body strong { color:var(--text-bright); font-weight:400; }
     @media (max-width:700px) { .page { padding:0 1.4rem; } }
+    /* ── METHODOLOGY EVOLUTION (RYA-168) ── */
+    .meth-eyebrow { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .meth-timeline { display:flex; margin:2.5rem 0 3rem; position:relative; overflow-x:auto; }
+    .meth-timeline::before { content:''; position:absolute; top:5px; left:0; right:0; height:1px; background:var(--rim); z-index:0; }
+    .meth-tl-item { flex:1; text-align:center; position:relative; min-width:90px; }
+    .meth-tl-dot { width:12px; height:12px; border-radius:50%; background:var(--accent); border:2px solid var(--bg); margin:0 auto 0.9rem; position:relative; z-index:1; }
+    .meth-tl-item.current .meth-tl-dot { width:18px; height:18px; margin-top:-3px; box-shadow:0 0 14px var(--accent); background:var(--accent); }
+    .meth-tl-item.future .meth-tl-dot { background:var(--rim); }
+    .meth-tl-label { font-family:var(--mono); font-size:0.6rem; color:var(--text-dim); letter-spacing:0.05em; line-height:1.5; }
+    .meth-tl-item.current .meth-tl-label { color:var(--text-bright); }
+    /* metric cards */
+    .meth-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rim); border:1px solid var(--rim); margin:2rem 0 3rem; }
+    .meth-metric { background:var(--deep); padding:2rem 1.8rem; }
+    .meth-metric-num { font-family:var(--mono); font-size:2.6rem; color:var(--accent); line-height:1; margin-bottom:0.6rem; }
+    .meth-metric.amber .meth-metric-num { color:var(--accent-warm); }
+    .meth-metric-desc { font-family:var(--mono); font-size:0.7rem; color:var(--text-dim); line-height:1.65; letter-spacing:0.04em; }
+    /* comparison grid */
+    .meth-compare-hdr { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--text-dim); margin:0 0 0.8rem; padding-bottom:0.8rem; border-bottom:1px solid var(--rim); }
+    .meth-compare { border:1px solid var(--rim); margin-bottom:3rem; }
+    .meth-col-row { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rim); border-bottom:2px solid var(--accent); }
+    .meth-col-head { padding:0.75rem 1.3rem; font-family:var(--mono); font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; background:var(--deep); }
+    .meth-col-head.thesis { color:var(--text-dim); }
+    .meth-col-head.codex  { color:var(--accent); }
+    .meth-cmp-row { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rim); border-bottom:1px solid var(--rim); }
+    .meth-cmp-row:last-child { border-bottom:none; }
+    .meth-cmp-left  { background:var(--deep); padding:1.2rem 1.4rem; }
+    .meth-cmp-right { background:var(--surface); padding:1.2rem 1.4rem; }
+    .meth-cmp-cat { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.45rem; }
+    .meth-cmp-left .meth-cmp-val  { font-family:var(--mono); font-size:0.76rem; color:var(--text-mid); line-height:1.65; }
+    .meth-cmp-right .meth-cmp-val { font-family:var(--mono); font-size:0.76rem; color:var(--text-bright); line-height:1.65; font-weight:700; }
+    .meth-badge { display:inline-block; margin-top:0.55rem; font-family:var(--mono); font-size:0.58rem; letter-spacing:0.06em; color:var(--bg); background:var(--accent); padding:0.18rem 0.55rem; border-radius:2px; }
+    /* quote */
+    .meth-quote { border-left:2px solid var(--accent); padding:1.8rem 2.2rem; margin:0 0 3rem; background:var(--deep); }
+    .meth-quote p { font-family:var(--serif); font-size:1.08rem; font-style:italic; color:var(--text-mid); line-height:1.85; margin:0 0 0.8rem; max-width:none; }
+    .meth-quote footer { font-family:var(--mono); font-size:0.66rem; color:var(--text-dim); letter-spacing:0.1em; }
+    /* rocky planet science */
+    .meth-rocky-hdr { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--text-dim); margin:0 0 1.2rem; padding-bottom:0.8rem; border-bottom:1px solid var(--rim); }
+    /* CTAs */
+    .meth-ctas { display:flex; gap:0.9rem; flex-wrap:wrap; margin-top:2.5rem; }
+    .meth-cta { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.06em; color:var(--text-bright); border:1px solid var(--rim); padding:0.65rem 1.3rem; text-decoration:none; border-radius:20px; transition:border-color 0.2s,color 0.2s; }
+    .meth-cta:hover { border-color:var(--accent); color:var(--accent); }
+    @media (max-width:750px) { .meth-metrics,.meth-col-row,.meth-cmp-row { grid-template-columns:1fr; } .meth-timeline { gap:0.5rem; } }
   </style>
 </head>
 <body>
@@ -156,24 +198,93 @@
 
   <section class="section">
     <div class="section-label">Methodology evolution</div>
-    <h2>2010 vs. 2026</h2>
-    <p>Sixteen years of instrument development, open-source tooling, and accumulated literature have transformed what’s possible. The core physics is the same — we’re still fitting Gaussians to absorption lines and comparing to model atmospheres. Everything else has changed.</p>
-    <div class="comparison-wrap">
-      <table>
-        <thead><tr><th>Aspect</th><th class="col-2010">2010 (thesis)</th><th class="col-2026">2026 (Codex)</th></tr></thead>
-        <tbody>
-          <tr><td class="aspect">Archive</td><td class="val-2010">ELODIE R~42,000</td><td class="val-2026">HARPS R~115,000<span class="upgrade">2.7× higher resolution</span></td></tr>
-          <tr><td class="aspect">Reduction tool</td><td class="val-2010">SPLAT-VO (manual GUI)</td><td class="val-2026">Python / scipy (automated)<span class="upgrade">Reproducible, version-controlled</span></td></tr>
-          <tr><td class="aspect">Atmosphere model</td><td class="val-2010">SPECTRUM / ATLAS9</td><td class="val-2026">iSpec / ATLAS9<span class="upgrade">Automated interpolation</span></td></tr>
-          <tr><td class="aspect">Fe lines used</td><td class="val-2010">~10 (Blackwell diagram)</td><td class="val-2026">50+ Fe I + Fe II<span class="upgrade">Better stellar parameter convergence</span></td></tr>
-          <tr><td class="aspect">Elements measured</td><td class="val-2010">13</td><td class="val-2026">25<span class="upgrade">Includes O, C, Na, Al, Ti, Cr, Co</span></td></tr>
-          <tr><td class="aspect">NLTE corrections</td><td class="val-2010">None</td><td class="val-2026">Amarsi et al. (2020)<span class="upgrade">For Fe, O, Na, Mg</span></td></tr>
-          <tr><td class="aspect">Uncertainty budget</td><td class="val-2010">Informal (scatter only)</td><td class="val-2026">Type A + Type B formal budget<span class="upgrade">Stellar parameter sensitivity included</span></td></tr>
-          <tr><td class="aspect">Solar reference</td><td class="val-2010">Lodders (2003)</td><td class="val-2026">Asplund et al. (2021)<span class="upgrade">A(Fe)☉ = 7.46 vs 7.54 in 2003</span></td></tr>
-          <tr><td class="aspect">Code availability</td><td class="val-2010">Closed (C++ / GUI)</td><td class="val-2026">Open Python on GitHub<span class="upgrade">Fully reproducible</span></td></tr>
-          <tr><td class="aspect">Targets</td><td class="val-2010">HD 89307, Gliese 581, Sun</td><td class="val-2026">55 Cancri A + growing codex<span class="upgrade">JWST-observed planet host</span></td></tr>
-        </tbody>
-      </table>
+    <div class="meth-eyebrow">EXOPLANET CODEX — METHODOLOGY</div>
+    <h2>From thesis to frontier:<br>15 years of pipeline evolution</h2>
+    <p>In 2010 Ryan measured stellar abundances using SPECTRUM and the ELODIE archive for his astrophysics thesis. The Exoplanet Codex rebuilds that work on a modern foundation — better data, better physics, open science.</p>
+
+    <!-- Timeline -->
+    <div class="meth-timeline">
+      <div class="meth-tl-item"><div class="meth-tl-dot"></div><div class="meth-tl-label">2010<br>Senior thesis</div></div>
+      <div class="meth-tl-item"><div class="meth-tl-dot"></div><div class="meth-tl-label">2014<br>iSpec + HARPS era</div></div>
+      <div class="meth-tl-item"><div class="meth-tl-dot"></div><div class="meth-tl-label">2021<br>Asplund 3D NLTE<br>solar scale</div></div>
+      <div class="meth-tl-item"><div class="meth-tl-dot"></div><div class="meth-tl-label">2024<br>JWST rocky<br>planets</div></div>
+      <div class="meth-tl-item current"><div class="meth-tl-dot"></div><div class="meth-tl-label">2026<br>Codex v1 ← now</div></div>
+      <div class="meth-tl-item future"><div class="meth-tl-dot"></div><div class="meth-tl-label">Future<br>3D NLTE + M dwarfs</div></div>
+    </div>
+
+    <!-- Impact metrics -->
+    <div class="meth-metrics">
+      <div class="meth-metric">
+        <div class="meth-metric-num">3×</div>
+        <div class="meth-metric-desc">higher spectral resolution<br>HARPS vs ELODIE</div>
+      </div>
+      <div class="meth-metric">
+        <div class="meth-metric-num">27</div>
+        <div class="meth-metric-desc">elements measured<br>vs a limited subset</div>
+      </div>
+      <div class="meth-metric amber">
+        <div class="meth-metric-num">0.05</div>
+        <div class="meth-metric-desc">dex target precision<br>vs ~0.1–0.2 dex typical</div>
+      </div>
+    </div>
+
+    <!-- Comparison grid -->
+    <div class="meth-compare-hdr">WHAT CHANGED AND WHY IT MATTERS</div>
+    <div class="meth-compare">
+      <div class="meth-col-row">
+        <div class="meth-col-head thesis">2010 THESIS</div>
+        <div class="meth-col-head codex">EXOPLANET CODEX (2026)</div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">Spectrograph</div><div class="meth-cmp-val">ELODIE R~42,000<br>Ceres/Vesta solar reference</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">Spectrograph</div><div class="meth-cmp-val">HARPS R~115,000<br>Direct solar feed (Dumusque 2021)</div><span class="meth-badge">eliminates asteroid systematics</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">Radiative transfer</div><div class="meth-cmp-val">SPECTRUM (Gray &amp; Corbally 1994)<br>No molecular lines</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">Radiative transfer</div><div class="meth-cmp-val">Turbospectrum (Plez 2012)<br>Native molecular + NLTE</div><span class="meth-badge">correct Mg/Si — 0.1–0.15 dex gain</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">Model atmospheres</div><div class="meth-cmp-val">ATLAS9 — FGK only<br>1D plane-parallel, LTE</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">Model atmospheres</div><div class="meth-cmp-val">iSpec + Turbospectrum / ATLAS9 + MARCS spherical<br>FGK through M5 dwarfs</div><span class="meth-badge">M dwarfs unlocked (LHS 3844)</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">NLTE corrections</div><div class="meth-cmp-val">Not applied</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">NLTE corrections</div><div class="meth-cmp-val">C, O, Na, Li, Mg, Ba<br>(Amarsi+2016/19; Lind+2009/11)</div><span class="meth-badge">C/O ratio science-grade</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">EW measurement</div><div class="meth-cmp-val">Gaussian profiles<br>Manual continuum<br>Binary blend flag</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">EW measurement</div><div class="meth-cmp-val">Voigt + Gaussian fallback<br>Adaptive windows + σ-clip<br>Continuous quality score 0–1</div><span class="meth-badge">Bayesian sampler for tricky lines</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">Uncertainty</div><div class="meth-cmp-val">Basic error propagation</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">Uncertainty</div><div class="meth-cmp-val">Type A + Type B solar zero-point<br>Full quadrature budget per element</div><span class="meth-badge">publishable error bars</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">Reproducibility</div><div class="meth-cmp-val">Manual, thesis only</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">Reproducibility</div><div class="meth-cmp-val">Git-versioned, automated pipeline<br>Open science at exoplanetcodex.org</div><span class="meth-badge">fully reproducible</span></div>
+      </div>
+      <div class="meth-cmp-row">
+        <div class="meth-cmp-left"><div class="meth-cmp-cat">Elements measured</div><div class="meth-cmp-val">13</div></div>
+        <div class="meth-cmp-right"><div class="meth-cmp-cat">Elements measured</div><div class="meth-cmp-val">27 (canonical list: Fe I/II, C, O, N, Mg, Si, S, Ca, Ti, Co, Ni, Na, Al, K, P, Ba, Y, Eu, Mn, Cr, V, Sc, Cu, Zr, Li, Sr)</div></div>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <blockquote class="meth-quote">
+      <p>"The same wall I hit in 2010 — optical HARPS can’t recover carbon well — is still there. The difference now is that we know exactly why, and we have Turbospectrum, UV composites, and NLTE corrections to work around it."</p>
+      <footer>— Ryan Schmitt, Exoplanet Codex</footer>
+    </blockquote>
+
+    <!-- Rocky planet science -->
+    <div class="meth-rocky-hdr">WHY THIS MATTERS FOR ROCKY PLANET SCIENCE</div>
+    <p>The C/O ratio of a host star sets the mineralogy of its planets. A star with C/O &gt; 0.8 builds carbon-rich worlds (graphite, SiC); below that threshold you get silicate-dominated planets like Earth. SPECTRUM-era pipelines had ~0.1–0.15 dex systematic errors on Mg and Si — large enough to shift a planet from "rocky like Earth" to "different composition" in the models.</p>
+    <p>Turbospectrum + NLTE corrections + astrophysical log gf calibration targets &lt;0.05 dex precision on the key elements. That’s the threshold where stellar chemistry becomes a reliable input to planetary interior models.</p>
+
+    <!-- CTAs -->
+    <div class="meth-ctas">
+      <a href="/method/" class="meth-cta">C/O ratio and rocky planets ↗</a>
+      <a href="/method/" class="meth-cta">Why Turbospectrum? ↗</a>
+      <a href="/glossary/" class="meth-cta">The 27 elements →</a>
     </div>
   </section>
 
