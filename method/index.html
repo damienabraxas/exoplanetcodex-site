@@ -256,7 +256,7 @@
           <h3 class="method-subsection-title">Target Selection Criteria</h3>
           <ol class="method-steps">
             <li><span class="step-num">1</span>Confirmed exoplanet host (NASA Exoplanet Archive)</li>
-            <li><span class="step-num">2</span>FGK spectral type (T<sub>eff</sub> 4000–7000 K) — ensures ATLAS9 model validity</li>
+            <li><span class="step-num">2</span>FGK spectral type (T<sub>eff</sub> 4000–7000 K) — ATLAS9 grid; M dwarfs (T<sub>eff</sub> &lt; 4000 K) use MARCS spherical grid</li>
             <li><span class="step-num">3</span>Main sequence dwarf (log&thinsp;g &gt; 3.8) — plane-parallel atmosphere valid</li>
             <li><span class="step-num">4</span>V &lt; 9 mag — sufficient HARPS S/N achievable</li>
             <li><span class="step-num">5</span>Multiple HARPS epochs available for co-adding</li>
@@ -564,7 +564,7 @@
             <li><span class="step-num">2</span><strong>Choose profile:</strong> Na D EW ~ 450–550 mÅ → damping regime → <strong>Voigt required.</strong> Gaussian would underestimate EW by ~25%, causing ~0.2 dex error in [Na/H] — larger than the entire uncertainty budget.</li>
             <li><span class="step-num">3</span><strong>Measure EW:</strong> Numerical integration over fitted Voigt profile. EW = ∫(1 − F(λ)/F<sub>c</sub>) dλ, expressed in mÅ.</li>
             <li><span class="step-num">4</span><strong>Uncertainty:</strong> Primary limit is continuum placement, not photon noise. σ<sub>EW</sub> ≈ σ<sub>cont</sub> × window × 1000 ≈ 0.005 × 6.0 × 1000 ≈ 30 mÅ (~6% relative).</li>
-            <li><span class="step-num">5</span><strong>Atomic data:</strong> λ = 5895.924 Å (NIST A+), χ = 0.000 eV (ground state), log&thinsp;gf = −0.184 (NIST A), γ<sub>vdW</sub> = −7.530 (Barklem 2000). Input to iSpec/MOOG.</li>
+            <li><span class="step-num">5</span><strong>Atomic data:</strong> λ = 5895.924 Å (NIST A+), χ = 0.000 eV (ground state), log&thinsp;gf = −0.184 (NIST A), γ<sub>vdW</sub> = −7.530 (Barklem 2000). Input to iSpec/Turbospectrum.</li>
             <li><span class="step-num">6</span><strong>NLTE correction:</strong> −0.07 ± 0.02 dex (Lind et al. 2011) for these parameters. Expected result: [Na/H] ≈ +0.34 to +0.44, [Na/Fe] ≈ +0.02 to +0.12 (near-solar ratio).</li>
           </ol>
 
@@ -582,7 +582,7 @@
         <div class="method-section-header">
           <p class="method-eyebrow">Section 06</p>
           <h2 class="method-section-title">Abundance Derivation</h2>
-          <p class="method-intro">From equivalent width to photospheric abundance — via the curve of growth, iSpec/MOOG radiative transfer, and solar normalization to Asplund et al. (2021).</p>
+          <p class="method-intro">From equivalent width to photospheric abundance — via the curve of growth, iSpec/Turbospectrum radiative transfer, and solar normalization to Asplund et al. (2021).</p>
         </div>
 
         <div class="method-subsection">
@@ -883,7 +883,8 @@ CHNOPS_index, CHNOPS_err, notes</div>
               <tr><td>Osorio et al. (2015)</td><td><em>A&amp;A 579, A53</em> — Magnesium NLTE corrections</td></tr>
               <tr><td>Ryabchikova et al. (2015)</td><td><em>PhyS 90, 054005</em> — VALD3 atomic line database</td></tr>
               <tr><td>Schmitt (2010)</td><td>Senior Thesis, University of Montana — predecessor 55 Cnc abundance study</td></tr>
-              <tr><td>Sneden (1973)</td><td><em>ApJ 184, 839</em> — MOOG line analysis code</td></tr>
+              <tr><td>Plez (2012)</td><td><em>Turbospectrum: Code for spectral synthesis</em> — radiative transfer, native molecular lines</td></tr>
+              <tr><td>Gerber et al. (2023)</td><td><em>A&amp;A 669, A43</em> — Turbospectrum NLTE radiative transfer</td></tr>
               <tr><td>Teske et al. (2013)</td><td><em>ApJ 778, 132</em> — 55 Cnc C/O ratio (dedicated study)</td></tr>
               <tr><td>Valenti &amp; Fischer (2005)</td><td><em>ApJS 159, 141</em> — Spectral synthesis method (SME)</td></tr>
               <tr><td>von Braun et al. (2011)</td><td><em>ApJ 740, 49</em> — 55 Cnc A interferometric parameters (CHARA)</td></tr>
