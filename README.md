@@ -3,11 +3,13 @@
 
 An open science archive measuring the elemental chemistry of exoplanetary systems — rigorously, openly, and without a PhD required.
 
+The Exoplanet Codex was founded by **Ryan Schmitt**. The GitHub username `damienabraxas` is Ryan Schmitt's account handle; it is not the founder's name or a separate project contributor.
+
 ## What this is
 
 This is the public-facing website and science communication home for The Exoplanet Codex project. We apply precision stellar spectroscopy to publicly available telescope data, build metrology-grade uncertainty budgets, and publish per-system "codex entries" — dossiers combining our measurements with NASA/ESA imagery, JWST findings, and astrobiology assessments.
 
-**Science pipeline code lives at:** [link TBD — same GitHub org]
+**Science pipeline code lives at:** [github.com/damienabraxas/exoplanetcodex](https://github.com/damienabraxas/exoplanetcodex), maintained by Ryan Schmitt.
 
 ## Site structure
 
