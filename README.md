@@ -36,6 +36,16 @@ python -m http.server 8000
 # then visit http://localhost:8000
 ```
 
+## Analytics and sitemap
+
+All pages load the shared GA4 integration from `assets/js/analytics.js`. The public measurement ID is single-sourced there because this is a static site without a server-side environment layer.
+
+After adding or removing an HTML page, regenerate the sitemap:
+
+```bash
+node scripts/generate-sitemap.mjs
+```
+
 ## Image credits & licensing
 
 All imagery is NASA/ESA/JPL public domain or Creative Commons.
