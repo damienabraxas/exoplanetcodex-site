@@ -90,9 +90,10 @@
     .orbital-source { padding:0 1.2rem 0.8rem; font-family:var(--mono); font-size:0.57rem; color:rgba(136,153,187,0.72); text-align:center; line-height:1.55; }
     .orbital-source a { color:rgba(79,195,247,0.82); }
     .orbit-callout { fill:none; stroke-width:1; opacity:0.8; vector-effect:non-scaling-stroke; }
-    .orbit-name { font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:0.4px; paint-order:stroke; stroke:#060d1f; stroke-width:3px; stroke-linejoin:round; }
-    .hz-name { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.8px; fill:#73e0a7; paint-order:stroke; stroke:#060d1f; stroke-width:3px; }
-    .hz-detail { font-family:var(--mono); font-size:8px; fill:rgba(115,224,167,0.9); paint-order:stroke; stroke:#060d1f; stroke-width:3px; }
+    .orbit-label-backplate { fill:rgba(6,13,31,0.88); }
+    .orbit-name { font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:0.4px; }
+    .hz-label-backplate { fill:rgba(6,32,34,0.9); }
+    .hz-name { font-family:var(--mono); font-size:9px; font-weight:700; letter-spacing:0.65px; fill:#73e0a7; }
 
     /* planet orbit animations */
     @keyframes orbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
@@ -744,14 +745,13 @@
       }));
     });
 
-    var hzPoint = polar((hzInner + hzOuter) / 2, 32);
-    var hzElbow = polar(hzOuter + 20, 32);
-    hzLayer.appendChild(svgNode('polyline', {
-      points:hzPoint.x + ',' + hzPoint.y + ' ' + hzElbow.x + ',' + hzElbow.y + ' ' + (hzElbow.x + 48) + ',' + hzElbow.y,
-      class:'orbit-callout', stroke:'#73e0a7'
+    var hzLabel = polar((hzInner + hzOuter) / 2, 138);
+    hzLayer.appendChild(svgNode('rect', {
+      x:hzLabel.x - 47, y:hzLabel.y - 10, width:94, height:17, rx:2, class:'hz-label-backplate'
     }));
-    hzLayer.appendChild(svgNode('text', { x:hzElbow.x + 52, y:hzElbow.y - 3, class:'hz-name' }, 'HABITABLE ZONE'));
-    hzLayer.appendChild(svgNode('text', { x:hzElbow.x + 52, y:hzElbow.y + 9, class:'hz-detail' }, 'CONSERVATIVE · 0.99–1.70 AU'));
+    hzLayer.appendChild(svgNode('text', {
+      x:hzLabel.x, y:hzLabel.y + 2, class:'hz-name', 'text-anchor':'middle'
+    }, 'CONSERVATIVE HZ'));
 
     ORBIT_GEOMETRY.forEach(function (planet, index) {
       var radius = radii[index];
@@ -776,9 +776,14 @@
       var elbow = polar(radius + 12, planet.labelAngle);
       var onRight = Math.cos(planet.labelAngle * Math.PI / 180) >= 0;
       var endX = elbow.x + (onRight ? 16 : -16);
+      var labelWidth = planet.name.length * 7.5 + 10;
       labelLayer.appendChild(svgNode('polyline', {
         points:attach.x + ',' + attach.y + ' ' + elbow.x + ',' + elbow.y + ' ' + endX + ',' + elbow.y,
         class:'orbit-callout', stroke:planet.color
+      }));
+      labelLayer.appendChild(svgNode('rect', {
+        x:onRight ? endX + 1 : endX - labelWidth - 1, y:elbow.y - 9,
+        width:labelWidth, height:18, rx:2, class:'orbit-label-backplate'
       }));
       labelLayer.appendChild(svgNode('text', {
         x:endX + (onRight ? 4 : -4), y:elbow.y + 4, class:'orbit-name', fill:planet.color,
