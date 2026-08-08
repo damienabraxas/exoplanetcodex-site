@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/assets/js/analytics.js"></script>
   <title>Glossary of Terms · The Exoplanet Codex</title>
-  <meta name="description" content="Complete glossary of stellar spectroscopy, elemental abundance notation, and exoplanetary chemistry terms used in The Exoplanet Codex. 43 entries across 8 sections.">
+  <meta name="description" content="Complete glossary of stellar spectroscopy, elemental abundance notation, exoplanetary chemistry, and Codex architecture terms. 72 entries across 9 sections.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -110,10 +110,11 @@
   <header class="page-hero">
     <div class="page-eyebrow">Reference // Stellar spectroscopy vocabulary</div>
     <h1 class="page-title">Glossary of <em>Terms</em></h1>
-    <p class="page-subtitle">Stellar Spectroscopy · Elemental Abundances · Exoplanetary Chemistry — 43 terms across 8 sections. Version 1.0, May 2026.</p>
+    <p class="page-subtitle">Stellar Spectroscopy · Elemental Abundances · Exoplanetary Chemistry · Science Architecture — 72 terms across 9 sections.</p>
     <a href="/assets/docs/exoplanet-codex-glossary-v2.0.pdf" class="btn-download" download>↓ Download Glossary PDF (v2.0)</a>
     <nav class="jump-links" aria-label="Jump to section">
       <a href="#spectrum">The Spectrum</a>
+      <a href="#architecture">Codex Architecture</a>
       <a href="#line-profiles">Line Profiles</a>
       <a href="#stellar-params">Stellar Parameters</a>
       <a href="#abundance">Abundance Notation</a>
@@ -189,10 +190,47 @@
     </figure>
   </section>
 
+  <section class="gloss-section" id="architecture">
+    <div class="gloss-section-header">
+      <p class="gloss-eyebrow">Section 2</p>
+      <h2 class="gloss-section-title">Codex Architecture</h2>
+      <p class="gloss-intro">These terms describe how the Codex checks results, freezes references, and keeps the scientific record honest. Entries are alphabetical.</p>
+    </div>
+    <div class="term-card"><div class="term-header"><span class="term-name">1D-NLTE vs 3D-NLTE Scale</span></div><div class="term-row"><span class="term-label">Definition</span><p>The distinction between abundances calculated with a one-dimensional atmosphere and non-local thermodynamic equilibrium corrections, and those calculated with a three-dimensional atmosphere and the same physics. The Codex applies a ratified 1D-to-3D correction to iron. Other metals remain on the 1D-NLTE scale until matching grids exist. Ratified by RYA-553; broader grid work is deferred to RYA-550.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Blank-Cause Honesty Tripwire</span></div><div class="term-row"><span class="term-label">Definition</span><p>A guard in <code>pipeline/provenance_honesty.py</code> that refuses to publish a “no independent-gf line survives” claim when a row has surviving lines or a measured value. The verdict emitter and gold-reference builder share the guard. It prevents a measured result from hiding behind a false blank cause. Ratified by RYA-596 and RYA-653.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">CODEX_STATE_REGISTER.md</span></div><div class="term-row"><span class="term-label">Definition</span><p>The mutable state ledger. Every state-changing pull request updates it. A register-freshness guard blocks a pull request that changes a state surface without updating the register. Ratified by RYA-659.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Corroboration-Accept Standing Rule</span></div><div class="term-row"><span class="term-label">Definition</span><p>An alternative acceptance gate for cases where ionization balance stops on precision rather than value. The rule has five bounded criteria and lives in <code>docs/SCIENCE_STANDARDS.md</code>. Titanium with the Mallinson 2024 atom was its first use. Ratified by RYA-545.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Cross-Engine Mix Gate</span></div><div class="term-row"><span class="term-label">Definition</span><p>A loud-fail guard in <code>pipeline/engine_selection.py</code>. It raises when per-line winner selection produces a material disagreement between Engine A and Engine B at the element level. This prevents silent averaging.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Disposition Report</span></div><div class="term-row"><span class="term-label">Definition</span><p>A machine-generated, per-element report at <code>data/audit/element_disposition_report.json</code>. It reads the current phase_c verdict, gold reference, two-engine artifact, and tracker. It classifies each element as PASS held, PASS candidate, provisional flip, owed with cause, or data-gap. The report runs before every freeze and is not hand-editable. Ratified by RYA-663.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Element Status Tracker</span></div><div class="term-row"><span class="term-label">Definition</span><p>The analyst-facing state table at <code>data/audit/element_status_tracker.csv</code>. It is generated from the phase_c verdict, <code>config/physics_regime_rya400.yaml</code>, and an editorial sidecar. Hand-editing the CSV breaks the build. Ratified by RYA-654.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Engine A</span></div><div class="term-row"><span class="term-label">Definition</span><p>The 1D-NLTE production path. It measures an equivalent width or uses synthesis-v2, then applies a per-line NLTE correction from a one-dimensional correction table. The table may come from PySME-derived, MPIA, Korotin, INSPECT, or <code>nlte_cno</code> data. Engine A supplies the reported gold-reference value for most elements. Ratified by RYA-525.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Engine B</span></div><div class="term-row"><span class="term-label">Definition</span><p>The Turbospectrum-native NLTE synthesis path. It runs per line with the Gerber TS-native NLTE deck and uses native departure coefficients where a validated model atom exists. It runs beside Engine A for cross-engine verification. Ratified by RYA-533 and RYA-525.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Four-Noun Naming Convention</span></div><div class="term-row"><span class="term-label">Definition</span><p>The rule that state artifacts use one of four nouns: Catalog for a master enumeration, Register for mutable state facts, Tracker for work or progress, and Reference for frozen validated truth. “Gold” is reserved for a Reference modifier. Ratified by RYA-631.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Gold Reference (gold vN)</span></div><div class="term-row"><span class="term-label">Definition</span><p>A frozen, hashed, write-once solar abundance reference at <code>data/reference/solar/solar_abundances_vN.csv</code>. It is promoted from a phase_c verdict with <code>scripts/promote_solar_reference.py --apply</code>. A correction creates vN+1 rather than editing a frozen file. <code>data/reference/solar/CURRENT</code> names the active version.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">HFS-Resolved Synthesis</span></div><div class="term-row"><span class="term-label">Definition</span><p>Synthesis in which an atomic line is expanded into its hyperfine-structure components before fitting. The Codex uses it for Mn, Co, Cu, V, Sc, Ba II, Eu II, Na, and Al. Lithium at 6707 Å is not used as an HFS test in warm F stars because depletion can mimic a synthesis failure. Ratified by RYA-269.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Idempotent Correction</span></div><div class="term-row"><span class="term-label">Definition</span><p>A correction that is safe to request more than once because the pipeline recognizes an already-corrected state. The iron 1D-to-3D correction checks <code>method_scale</code>, so re-emitting cannot apply it twice. Ratified by RYA-553.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Ledger Consistency Guard</span></div><div class="term-row"><span class="term-label">Definition</span><p>A continuous-integration guard that compares the element status tracker, phase_c verdict, and gold reference. It reports any disagreement that lacks a documented ratified divergence. Zero undocumented failures is the target. Ratified by RYA-632.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">LEDGERS.md</span></div><div class="term-row"><span class="term-label">Definition</span><p>The repository-root startup index. It names the canonical register, tracker, catalogs, holdings manifest, and <code>SEQUENCE.md</code> read-set. Every session begins by reading that set. Every state-changing pull request updates at least one member. Ratified by RYA-659.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Owed Tier</span></div><div class="term-row"><span class="term-label">Definition</span><p>A ratified freeze tier that carries no frozen value even when the phase_c verdict contains a measurement. It is used when a value exists but has not been approved as gold-frozen. “Owed-HELD” and “owed-BLANK” are different states. Ratified by RYA-522.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Owed-HELD vs Owed-BLANK</span></div><div class="term-row"><span class="term-label">Definition</span><p>The distinction between a measured value held from promotion and an element with no measurement. <code>owed-HELD</code> means the verdict contains a value that is not yet gold. <code>owed-BLANK</code> means no value has been measured. The blank-cause honesty tripwire keeps the states separate. Ratified by RYA-596.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">phase_c Verdict</span></div><div class="term-row"><span class="term-label">Definition</span><p>The canonical per-element abundance verdict produced by <code>scripts/phase_c_verdict_rya371.py</code>. It combines equivalent-width measurements, NLTE corrections, dedicated synthesis channels, and ratified corrections. Each element has one row with its abundance, method, tier, and verdict status. Gold references are built from this channel.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">physics_regime</span></div><div class="term-row"><span class="term-label">Definition</span><p>A per-element classification in <code>config/physics_regime_rya400.yaml</code>. It distinguishes elements measured by equivalent width from elements sourced by synthesis. The tracker generator uses it to separate a verifier’s blind spot from a true measurement gap. Ratified by RYA-654.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Ratified Freeze Tier</span></div><div class="term-row"><span class="term-label">Definition</span><p>A per-element assignment of <code>gold</code>, <code>owed</code>, or <code>data-gap</code>. It controls whether a phase_c verdict value is promoted into the frozen reference. Ryan ratifies each assignment; the computation does not. Ratified by RYA-522.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Ratified GET-DATA Divergences</span></div><div class="term-row"><span class="term-label">Definition</span><p>Elements that the phase_c verifier reports as having no measurement even though a synthesis or Kitt Peak atlas channel carries a real value. Co, N, K, and Cu are registered in <code>data/audit/known_verdict_divergences.yaml</code> and pinned by test. They are annotated divergences, not measurement gaps.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Scaled-Drawin vs Ab-Initio (H-Collision Recipe)</span></div><div class="term-row"><span class="term-label">Definition</span><p>Two families of hydrogen-collision recipes in NLTE model atoms. Scaled-Drawin recipes are empirical and can overpredict corrections. Ab-initio recipes derive the collision physics directly and are often smaller. The model-atom vintage audit records which family each element uses and whether the difference is material. Ratified by RYA-546.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Science Product Package (SPP)</span></div><div class="term-row"><span class="term-label">Definition</span><p>The per-star release deliverable. Each released star receives one PDF with twelve standard sections covering identity, provenance, parameters, abundances, science products, cross-region checks, anomalies, line diagnostics, uncertainty, caveats, data provenance, and method provenance. Each package is write-once, hashed, and versioned with its gold reference. Ratified by RYA-668.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">SEQUENCE.md</span></div><div class="term-row"><span class="term-label">Definition</span><p>The newest-first landing log at the repository root. Each merged ticket gets one line stating what landed and what it unblocks. It is a narrative overlay on the register, not a state machine. Ratified by RYA-666.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Sirius</span></div><div class="term-row"><span class="term-label">Definition</span><p>The HP ProBook 450 that serves as the authoritative production runner. Abundance computation and continuous-integration tests run there. The Mac is used for research, development, and pull-request review, not production computation. Ratified by RYA-517 and RYA-567.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">State Surface</span></div><div class="term-row"><span class="term-label">Definition</span><p>A file listed in <code>pipeline/state_surfaces.py</code>. Changing one triggers the register-freshness guard. Examples include the verdict generator, gold builder, <code>config/stars.yaml</code>, and <code>config/constants.py</code>.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Three-Gate Promotion</span></div><div class="term-row"><span class="term-label">Definition</span><p>The strict test for promoting an element from <code>owed</code> to <code>gold</code>. Gate 1 requires Engine B to recover the external anchor within 0.05 dex. Gate 2 requires the model atom to pass the validate-don’t-tune firewall. Gate 3 requires the absolute dCE to remain within its band against the two-engine artifact. All three gates must pass. A missing gate fails. Ratified by RYA-561.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Two-Engine Floor</span></div><div class="term-row"><span class="term-label">Definition</span><p>The architecture that runs Engine A and Engine B for every element with a validated model atom. Cross-engine spread is reported as a diagnostic and is never silently averaged into the result. <code>CROSS_ENGINE_MIX_GATE</code> flags a material conflict between per-line selection and element-level aggregation. Ratified by RYA-525.</p></div></div>
+    <div class="term-card"><div class="term-header"><span class="term-name">Validate-Don't-Tune</span></div><div class="term-row"><span class="term-label">Definition</span><p>The Codex firewall that forbids tuning an atom or grid to reproduce an anchor. The physics must produce the anchor. The anchor tests the model; it is not the model’s target.</p></div></div>
+  </section>
+
 
   <section class="gloss-section" id="line-profiles">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 2</p>
+      <p class="gloss-eyebrow">Section 3</p>
       <h2 class="gloss-section-title">Line Profiles and Broadening</h2>
       <p class="gloss-intro">Real spectral lines are not infinitely sharp — they are broadened by several physical mechanisms. Understanding broadening is essential for choosing the right profile model (Gaussian vs Voigt) and for measuring accurate equivalent widths.</p>
     </div>
@@ -253,7 +291,7 @@
 
   <section class="gloss-section" id="stellar-params">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 3</p>
+      <p class="gloss-eyebrow">Section 4</p>
       <h2 class="gloss-section-title">Stellar Parameters</h2>
       <p class="gloss-intro">Four numbers completely describe the model atmosphere of a main-sequence FGK star. Getting these right is fundamental — errors in stellar parameters propagate into every elemental abundance we measure.</p>
     </div>
@@ -306,7 +344,7 @@
 
   <section class="gloss-section" id="abundance">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 4</p>
+      <p class="gloss-eyebrow">Section 5</p>
       <h2 class="gloss-section-title">Abundance Notation and Units</h2>
     </div>
     <figure class="gloss-figure">
@@ -358,7 +396,7 @@
 
   <section class="gloss-section" id="model-atm">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 5</p>
+      <p class="gloss-eyebrow">Section 6</p>
       <h2 class="gloss-section-title">Model Atmospheres and LTE</h2>
     </div>
     <figure class="gloss-figure">
@@ -410,7 +448,7 @@
 
   <section class="gloss-section" id="nucleosynthesis">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 6</p>
+      <p class="gloss-eyebrow">Section 7</p>
       <h2 class="gloss-section-title">Nucleosynthesis and Element Groups</h2>
       <p class="gloss-intro">The elements in a star did not form in that star — they were forged in supernovae and other stars over billions of years of galactic chemical evolution. Understanding which process made each element explains the patterns we see in stellar abundances.</p>
     </div>
@@ -451,7 +489,7 @@
 
   <section class="gloss-section" id="pipeline">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 7</p>
+      <p class="gloss-eyebrow">Section 8</p>
       <h2 class="gloss-section-title">Pipeline and Analysis Terms</h2>
     </div>
     <div class="term-card">
@@ -555,7 +593,7 @@
 
   <section class="gloss-section" id="science">
     <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 8</p>
+      <p class="gloss-eyebrow">Section 9</p>
       <h2 class="gloss-section-title">Key Science Outputs</h2>
     </div>
     <div class="term-card">
