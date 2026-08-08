@@ -90,9 +90,7 @@
     .orbital-source { padding:0 1.2rem 0.8rem; font-family:var(--mono); font-size:0.57rem; color:rgba(136,153,187,0.72); text-align:center; line-height:1.55; }
     .orbital-source a { color:rgba(79,195,247,0.82); }
     .orbit-callout { fill:none; stroke-width:1; opacity:0.8; vector-effect:non-scaling-stroke; }
-    .orbit-label-backplate { fill:rgba(6,13,31,0.88); }
     .orbit-name { font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:0.4px; }
-    .hz-label-backplate { fill:rgba(6,32,34,0.9); }
     .hz-name { font-family:var(--mono); font-size:9px; font-weight:700; letter-spacing:0.65px; fill:#73e0a7; }
 
     /* planet orbit animations */
@@ -746,9 +744,6 @@
     });
 
     var hzLabel = polar((hzInner + hzOuter) / 2, 138);
-    hzLayer.appendChild(svgNode('rect', {
-      x:hzLabel.x - 47, y:hzLabel.y - 10, width:94, height:17, rx:2, class:'hz-label-backplate'
-    }));
     hzLayer.appendChild(svgNode('text', {
       x:hzLabel.x, y:hzLabel.y + 2, class:'hz-name', 'text-anchor':'middle'
     }, 'CONSERVATIVE HZ'));
@@ -776,14 +771,9 @@
       var elbow = polar(radius + 12, planet.labelAngle);
       var onRight = Math.cos(planet.labelAngle * Math.PI / 180) >= 0;
       var endX = elbow.x + (onRight ? 16 : -16);
-      var labelWidth = planet.name.length * 7.5 + 10;
       labelLayer.appendChild(svgNode('polyline', {
         points:attach.x + ',' + attach.y + ' ' + elbow.x + ',' + elbow.y + ' ' + endX + ',' + elbow.y,
         class:'orbit-callout', stroke:planet.color
-      }));
-      labelLayer.appendChild(svgNode('rect', {
-        x:onRight ? endX + 1 : endX - labelWidth - 1, y:elbow.y - 9,
-        width:labelWidth, height:18, rx:2, class:'orbit-label-backplate'
       }));
       labelLayer.appendChild(svgNode('text', {
         x:endX + (onRight ? 4 : -4), y:elbow.y + 4, class:'orbit-name', fill:planet.color,
