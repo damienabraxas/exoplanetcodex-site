@@ -85,7 +85,14 @@
     .orbital-label { padding:0.6rem 1.2rem; border-bottom:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:#00d4ff; text-transform:uppercase; background:rgba(10,17,40,0.95); position:relative; z-index:3; }
     .orbital-svg-wrap { position:relative; overflow:hidden; }
     #orbital-map { display:block; width:100%; max-width:680px; margin:0 auto; }
-    .orbital-note { padding:0.6rem 1.2rem; border-top:1px solid rgba(0,212,255,0.2); font-family:var(--mono); font-size:0.62rem; color:rgba(0,212,255,0.45); text-align:center; }
+    .orbital-note { padding:0.7rem 1.2rem; border-top:1px solid rgba(0,212,255,0.2); font-family:var(--mono); font-size:0.64rem; color:rgba(0,212,255,0.64); text-align:center; line-height:1.65; }
+    .orbital-note strong { color:rgba(0,212,255,0.9); font-weight:400; }
+    .orbital-source { padding:0 1.2rem 0.8rem; font-family:var(--mono); font-size:0.57rem; color:rgba(136,153,187,0.72); text-align:center; line-height:1.55; }
+    .orbital-source a { color:rgba(79,195,247,0.82); }
+    .orbit-callout { fill:none; stroke-width:1; opacity:0.8; vector-effect:non-scaling-stroke; }
+    .orbit-name { font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:0.4px; paint-order:stroke; stroke:#060d1f; stroke-width:3px; stroke-linejoin:round; }
+    .hz-name { font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:0.8px; fill:#73e0a7; paint-order:stroke; stroke:#060d1f; stroke-width:3px; }
+    .hz-detail { font-family:var(--mono); font-size:8px; fill:rgba(115,224,167,0.9); paint-order:stroke; stroke:#060d1f; stroke-width:3px; }
 
     /* planet orbit animations */
     @keyframes orbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
@@ -104,8 +111,17 @@
     #asteroid-belt { transform-origin:340px 340px; animation:belt-spin 400s linear infinite; }
 
     /* planet clickable dots */
-    .planet-dot { cursor:pointer; }
+    .planet-dot { cursor:pointer; stroke:transparent; stroke-width:10px; paint-order:stroke fill; }
     .planet-dot:hover { filter:brightness(1.6); }
+    .saturn-rings { pointer-events:none; }
+
+    @media(max-width:600px) {
+      .orbital-map-wrap { width:calc(100vw - 2.8rem); max-width:calc(100vw - 2.8rem); }
+      .orbital-label { font-size:0.58rem; letter-spacing:0.12em; }
+      .orbital-note { font-size:0.58rem; }
+      .orbital-source { font-size:0.53rem; }
+      .orbit-name { font-size:13px; }
+    }
 
     /* --- planet modal --- */
     #planet-modal {
@@ -270,92 +286,25 @@
               </filter>
             </defs>
 
-            <!-- Habitable zone shading -->
-            <circle cx="340" cy="340" r="115" fill="none" stroke="rgba(82,199,138,0.12)" stroke-width="28"/>
-
-            <!-- Orbital rings -->
-            <circle cx="340" cy="340" r="45"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Mercury -->
-            <circle cx="340" cy="340" r="68"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Venus -->
-            <circle cx="340" cy="340" r="90"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Earth -->
-            <circle cx="340" cy="340" r="118" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Mars -->
-            <!-- asteroid belt: dashed ring -->
-            <circle cx="340" cy="340" r="148" fill="none" stroke="#1e3060" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.5"/>
-            <circle cx="340" cy="340" r="160" fill="none" stroke="#1e3060" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.3"/>
-            <circle cx="340" cy="340" r="200" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Jupiter -->
-            <circle cx="340" cy="340" r="248" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Saturn -->
-            <circle cx="340" cy="340" r="298" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Uranus -->
-            <circle cx="340" cy="340" r="330" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Neptune -->
-
-            <!-- Asteroid belt particles -->
-            <g id="asteroid-belt">
-              <circle cx="340" cy="192" r="1.2" fill="#334466" opacity="0.7"/>
-              <circle cx="430" cy="208" r="1.0" fill="#334466" opacity="0.6"/>
-              <circle cx="466" cy="252" r="1.4" fill="#334466" opacity="0.5"/>
-              <circle cx="472" cy="320" r="0.9" fill="#334466" opacity="0.7"/>
-              <circle cx="450" cy="388" r="1.1" fill="#334466" opacity="0.6"/>
-              <circle cx="400" cy="444" r="1.3" fill="#334466" opacity="0.7"/>
-              <circle cx="330" cy="464" r="1.0" fill="#334466" opacity="0.5"/>
-              <circle cx="258" cy="444" r="1.2" fill="#334466" opacity="0.6"/>
-              <circle cx="208" cy="396" r="1.4" fill="#334466" opacity="0.7"/>
-              <circle cx="196" cy="330" r="1.0" fill="#334466" opacity="0.5"/>
-              <circle cx="214" cy="262" r="1.1" fill="#334466" opacity="0.6"/>
-              <circle cx="268" cy="214" r="0.9" fill="#334466" opacity="0.7"/>
-            </g>
+            <g id="hz-layer"></g>
+            <g id="orbit-layer"></g>
+            <g id="asteroid-belt"></g>
 
             <!-- Sun -->
             <circle cx="340" cy="340" r="14" fill="#ffe066" filter="url(#sun-glow)"/>
             <circle cx="340" cy="340" r="10" fill="#fff4aa"/>
 
-            <!-- Mercury -->
-            <g id="p-mercury" class="orbit-group">
-              <circle class="planet-dot" cx="385" cy="340" r="3.5" fill="#8899bb" filter="url(#planet-glow)" data-planet="mercury"/>
-            </g>
-            <!-- Venus -->
-            <g id="p-venus" class="orbit-group">
-              <circle class="planet-dot" cx="408" cy="340" r="4.5" fill="#c0875a" filter="url(#planet-glow)" data-planet="venus"/>
-            </g>
-            <!-- Earth / Terra -->
-            <g id="p-earth" class="orbit-group">
-              <circle class="planet-dot" cx="430" cy="340" r="4.8" fill="#4fc3f7" filter="url(#planet-glow)" data-planet="earth"/>
-            </g>
-            <!-- Mars -->
-            <g id="p-mars" class="orbit-group">
-              <circle class="planet-dot" cx="458" cy="340" r="3.8" fill="#bf6060" filter="url(#planet-glow)" data-planet="mars"/>
-            </g>
-            <!-- Jupiter -->
-            <g id="p-jupiter" class="orbit-group">
-              <circle class="planet-dot" cx="540" cy="340" r="8.5" fill="#c8914a" filter="url(#planet-glow)" data-planet="jupiter"/>
-            </g>
-            <!-- Saturn -->
-            <g id="p-saturn" class="orbit-group">
-              <!-- rings -->
-              <ellipse cx="588" cy="340" rx="15" ry="5" fill="none" stroke="#b0925a" stroke-width="2" opacity="0.6"/>
-              <circle class="planet-dot" cx="588" cy="340" r="7" fill="#b0a060" filter="url(#planet-glow)" data-planet="saturn"/>
-            </g>
-            <!-- Uranus -->
-            <g id="p-uranus" class="orbit-group">
-              <circle class="planet-dot" cx="638" cy="340" r="6" fill="#7ab8c8" filter="url(#planet-glow)" data-planet="uranus"/>
-            </g>
-            <!-- Neptune -->
-            <g id="p-neptune" class="orbit-group">
-              <circle class="planet-dot" cx="670" cy="340" r="5.5" fill="#5575c8" filter="url(#planet-glow)" data-planet="neptune"/>
-            </g>
-
-            <!-- Hab zone label -->
-            <text x="424" y="256" font-family="Space Mono, monospace" font-size="7" fill="rgba(82,199,138,0.55)" letter-spacing="0.5">HZ</text>
-
-            <!-- Planet name labels (static, near orbit ring) -->
-            <text x="387" y="294" font-family="Space Mono, monospace" font-size="7" fill="#8899bb" opacity="0.7">Me</text>
-            <text x="404" y="277" font-family="Space Mono, monospace" font-size="7" fill="#c0875a" opacity="0.7">Ve</text>
-            <text x="422" y="261" font-family="Space Mono, monospace" font-size="7" fill="#4fc3f7" opacity="0.85">Terra</text>
-            <text x="447" y="243" font-family="Space Mono, monospace" font-size="7" fill="#bf6060" opacity="0.7">Ma</text>
-            <text x="507" y="211" font-family="Space Mono, monospace" font-size="7" fill="#c8914a" opacity="0.75">Jup</text>
-            <text x="556" y="166" font-family="Space Mono, monospace" font-size="7" fill="#b0a060" opacity="0.7">Sat</text>
-            <text x="597" y="118" font-family="Space Mono, monospace" font-size="7" fill="#7ab8c8" opacity="0.7">Ura</text>
-            <text x="626" y="87"  font-family="Space Mono, monospace" font-size="7" fill="#5575c8" opacity="0.7">Nep</text>
+            <g id="planet-layer"></g>
+            <g id="orbit-label-layer"></g>
           </svg>
         </div>
-        <div class="orbital-note">Click any planet for mass, radius, type, and habitability zone status</div>
+        <div class="orbital-note">
+          Click any planet for mass, radius, type, and habitability zone status<br>
+          <strong>NOT TO SCALE</strong> — orbital spacing uses a logarithmic AU transform; planet markers are schematic.
+        </div>
+        <div class="orbital-source">
+          Geometry: <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html" target="_blank" rel="noopener">JPL Solar System Dynamics</a> semimajor axes · Conservative HZ (0.99–1.70 AU): <a href="https://arxiv.org/abs/1301.6674" target="_blank" rel="noopener">Kopparapu et al. (2013)</a>
+        </div>
       </div>
     </section>
 
@@ -721,6 +670,138 @@
 (function () {
   'use strict';
 
+  /*
+   * Orbital geometry sources:
+   * - Planetary semimajor axes: JPL Solar System Dynamics,
+   *   https://ssd.jpl.nasa.gov/planets/approx_pos.html
+   * - Conservative circumsolar HZ (water loss to maximum greenhouse):
+   *   Kopparapu et al. 2013, https://arxiv.org/abs/1301.6674
+   *
+   * Every physical AU value below passes through the same monotonic logarithmic
+   * display transform. The map is intentionally schematic, not a scale drawing.
+   */
+  var ORBIT_GEOMETRY = [
+    { key:'mercury', name:'Mercury', a:0.38709927, color:'#a9b6d0', marker:5.0, labelAngle:-140 },
+    { key:'venus',   name:'Venus',   a:0.72333566, color:'#d6a071', marker:6.0, labelAngle:-110 },
+    { key:'earth',   name:'Terra',   a:1.00000261, color:'#5ad2ff', marker:6.5, labelAngle:-74  },
+    { key:'mars',    name:'Mars',    a:1.52371034, color:'#e17a70', marker:5.5, labelAngle:-38  },
+    { key:'jupiter', name:'Jupiter', a:5.20288700, color:'#e0ad68', marker:10,  labelAngle:150  },
+    { key:'saturn',  name:'Saturn',  a:9.53667594, color:'#d2bf78', marker:8.5, labelAngle:124  },
+    { key:'uranus',  name:'Uranus',  a:19.18916464,color:'#8fd7e5', marker:7.5, labelAngle:78   },
+    { key:'neptune', name:'Neptune', a:30.06992276,color:'#718fe5', marker:7.5, labelAngle:61   }
+  ];
+  var MAP_CENTER = 340;
+  var MIN_RADIUS = 42;
+  var MAX_RADIUS = 330;
+  var MIN_AU = ORBIT_GEOMETRY[0].a;
+  var MAX_AU = ORBIT_GEOMETRY[ORBIT_GEOMETRY.length - 1].a;
+  var HZ_INNER_AU = 0.99;
+  var HZ_OUTER_AU = 1.70;
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
+  function displayRadius(a) {
+    return MIN_RADIUS + (MAX_RADIUS - MIN_RADIUS) *
+      Math.log(a / MIN_AU) / Math.log(MAX_AU / MIN_AU);
+  }
+
+  function svgNode(tag, attrs, text) {
+    var node = document.createElementNS(SVG_NS, tag);
+    Object.keys(attrs || {}).forEach(function (key) { node.setAttribute(key, attrs[key]); });
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function polar(radius, angle) {
+    var radians = angle * Math.PI / 180;
+    return { x:MAP_CENTER + radius * Math.cos(radians), y:MAP_CENTER + radius * Math.sin(radians) };
+  }
+
+  (function buildOrbitalMap() {
+    var hzLayer = document.getElementById('hz-layer');
+    var orbitLayer = document.getElementById('orbit-layer');
+    var beltLayer = document.getElementById('asteroid-belt');
+    var planetLayer = document.getElementById('planet-layer');
+    var labelLayer = document.getElementById('orbit-label-layer');
+    if (!hzLayer || !orbitLayer || !planetLayer || !labelLayer) return;
+
+    var radii = ORBIT_GEOMETRY.map(function (planet) { return displayRadius(planet.a); });
+    var hzInner = displayRadius(HZ_INNER_AU);
+    var hzOuter = displayRadius(HZ_OUTER_AU);
+    var earthRadius = displayRadius(ORBIT_GEOMETRY[2].a);
+    var monotonic = radii.every(function (radius, index) { return index === 0 || radius > radii[index - 1]; });
+    if (!monotonic || earthRadius < hzInner || earthRadius > hzOuter) {
+      throw new Error('Orbital map geometry invariant failed');
+    }
+
+    hzLayer.appendChild(svgNode('circle', {
+      cx:MAP_CENTER, cy:MAP_CENTER, r:(hzInner + hzOuter) / 2,
+      fill:'none', stroke:'rgba(82,199,138,0.18)', 'stroke-width':hzOuter - hzInner
+    }));
+    [hzInner, hzOuter].forEach(function (radius) {
+      hzLayer.appendChild(svgNode('circle', {
+        cx:MAP_CENTER, cy:MAP_CENTER, r:radius, fill:'none', stroke:'rgba(115,224,167,0.55)',
+        'stroke-width':'0.8', 'stroke-dasharray':'3 4'
+      }));
+    });
+
+    var hzPoint = polar((hzInner + hzOuter) / 2, 32);
+    var hzElbow = polar(hzOuter + 20, 32);
+    hzLayer.appendChild(svgNode('polyline', {
+      points:hzPoint.x + ',' + hzPoint.y + ' ' + hzElbow.x + ',' + hzElbow.y + ' ' + (hzElbow.x + 48) + ',' + hzElbow.y,
+      class:'orbit-callout', stroke:'#73e0a7'
+    }));
+    hzLayer.appendChild(svgNode('text', { x:hzElbow.x + 52, y:hzElbow.y - 3, class:'hz-name' }, 'HABITABLE ZONE'));
+    hzLayer.appendChild(svgNode('text', { x:hzElbow.x + 52, y:hzElbow.y + 9, class:'hz-detail' }, 'CONSERVATIVE · 0.99–1.70 AU'));
+
+    ORBIT_GEOMETRY.forEach(function (planet, index) {
+      var radius = radii[index];
+      orbitLayer.appendChild(svgNode('circle', {
+        cx:MAP_CENTER, cy:MAP_CENTER, r:radius, fill:'none', stroke:'#294273', 'stroke-width':'0.9', opacity:'0.82'
+      }));
+
+      var group = svgNode('g', { id:'p-' + planet.key, class:'orbit-group' });
+      if (planet.key === 'saturn') {
+        group.appendChild(svgNode('ellipse', {
+          cx:MAP_CENTER + radius, cy:MAP_CENTER, rx:'17', ry:'5.5', fill:'none', stroke:'#d2bf78',
+          'stroke-width':'2', opacity:'0.85', class:'saturn-rings'
+        }));
+      }
+      group.appendChild(svgNode('circle', {
+        cx:MAP_CENTER + radius, cy:MAP_CENTER, r:planet.marker, fill:planet.color,
+        filter:'url(#planet-glow)', class:'planet-dot', 'data-planet':planet.key
+      }));
+      planetLayer.appendChild(group);
+
+      var attach = polar(radius, planet.labelAngle);
+      var elbow = polar(radius + 12, planet.labelAngle);
+      var onRight = Math.cos(planet.labelAngle * Math.PI / 180) >= 0;
+      var endX = elbow.x + (onRight ? 16 : -16);
+      labelLayer.appendChild(svgNode('polyline', {
+        points:attach.x + ',' + attach.y + ' ' + elbow.x + ',' + elbow.y + ' ' + endX + ',' + elbow.y,
+        class:'orbit-callout', stroke:planet.color
+      }));
+      labelLayer.appendChild(svgNode('text', {
+        x:endX + (onRight ? 4 : -4), y:elbow.y + 4, class:'orbit-name', fill:planet.color,
+        'text-anchor':onRight ? 'start' : 'end'
+      }, planet.name));
+    });
+
+    // Representative main-belt radius, transformed identically from 2.7 AU.
+    var beltRadius = displayRadius(2.7);
+    [beltRadius - 5, beltRadius + 5].forEach(function (radius, index) {
+      beltLayer.appendChild(svgNode('circle', {
+        cx:MAP_CENTER, cy:MAP_CENTER, r:radius, fill:'none', stroke:'#3a507b',
+        'stroke-width':index ? '0.7' : '1.3', 'stroke-dasharray':index ? '2 8' : '3 5', opacity:'0.55'
+      }));
+    });
+    for (var i = 0; i < 24; i += 1) {
+      var particle = polar(beltRadius + ((i % 5) - 2) * 2.1, i * 137.508);
+      beltLayer.appendChild(svgNode('circle', {
+        cx:particle.x, cy:particle.y, r:0.8 + (i % 3) * 0.25, fill:'#607397', opacity:0.5 + (i % 4) * 0.1
+      }));
+    }
+  })();
+
   // Planet data for modal
   var PLANETS = {
     mercury: { name: 'Mercury', type: 'Terrestrial · Rocky',
@@ -734,7 +815,7 @@
       hab: 'Yes', habNote: 'Reference habitable world' },
     mars: { name: 'Mars', type: 'Terrestrial · Rocky',
       mass: '0.107 M⊕', radius: '0.532 R⊕', distance: '1.524 AU', period: '686.97 d',
-      hab: 'Marginal', habNote: 'Edge of hab zone — thin CO₂ atmosphere' },
+      hab: 'In zone', habNote: 'Inside the conservative orbital HZ; present surface is cold and dry' },
     jupiter: { name: 'Jupiter', type: 'Gas Giant',
       mass: '317.8 M⊕', radius: '11.21 R⊕', distance: '5.203 AU', period: '11.86 yr',
       hab: 'No', habNote: 'Gas giant — no solid surface' },
@@ -760,7 +841,7 @@
     if (!d) return;
     modalName.textContent = d.name;
     modalType.textContent = d.type;
-    var habClass = d.hab === 'Yes' ? 'hab' : (d.hab === 'Marginal' ? 'hab' : 'nohab');
+    var habClass = (d.hab === 'Yes' || d.hab === 'In zone') ? 'hab' : 'nohab';
     modalRows.innerHTML =
       row('Mass',     d.mass) +
       row('Radius',   d.radius) +
