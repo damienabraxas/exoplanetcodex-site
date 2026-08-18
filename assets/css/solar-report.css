@@ -29,6 +29,9 @@
 .solar-element-link::after { content:'→'; margin-left:.35rem; font-size:.7rem; }
 .solar-element-link:hover { color:var(--text-bright); }
 .solar-element-symbol { color:var(--text-dim); font-weight:700; }
+.solar-species-child td { background:rgba(79,195,247,.025); }
+.solar-species-child td:first-child { border-left:2px solid var(--rim); }
+.solar-row-role { display:block; margin-top:.18rem; color:var(--accent); font-size:.57rem; letter-spacing:.06em; text-transform:uppercase; }
 .solar-number { white-space:nowrap; font-variant-numeric:tabular-nums; }
 .solar-primary { color:var(--accent-warm) !important; }
 .solar-sigma { color:var(--text); }

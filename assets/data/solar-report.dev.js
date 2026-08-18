@@ -33,6 +33,7 @@ window.SOLAR_REPORT = {
     {
       atomicNumber: 26,
       symbol: 'Fe',
+      ion: 'I',
       name: 'Iron',
       status: 'development snapshot',
       appendixPath: '/systems/sol/elements/fe/',
@@ -51,6 +52,16 @@ window.SOLAR_REPORT = {
         { line: '11973.046 Å', category: 'unconstrained synthesis fit', caption: 'Fixture caption: the objective remained flat in abundance across the tested interval.' },
         { line: '11689.972 Å', category: 'blend-dominated', caption: 'Fixture caption: a neighbouring feature falls inside the fit window.' }
       ]
+    },
+    {
+      atomicNumber: 26,
+      symbol: 'Fe',
+      ion: 'II',
+      name: 'Iron',
+      childOf: 'Fe I',
+      status: 'appendix pending · RYA-876',
+      measurementRole: 'ionization arbiter / diagnostic',
+      diagnostic: { value: 7.500, sigmaTotal: null, lineCount: 3 }
     },
     { atomicNumber: 6, symbol: 'C', name: 'Carbon', status: 'in calibration', asplund: 8.46 },
     { atomicNumber: 7, symbol: 'N', name: 'Nitrogen', status: 'queued', asplund: 7.83 },

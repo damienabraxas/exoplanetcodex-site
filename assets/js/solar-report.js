@@ -26,16 +26,20 @@
   function elementRows(elements) {
     return elements.map(function (element) {
       var hasAppendix = Boolean(element.appendixPath && element.primary);
+      var species = element.symbol + (element.ion ? ' ' + element.ion : '');
       var label = hasAppendix
-        ? '<a class="solar-element-link" href="' + esc(element.appendixPath) + '">' + esc(element.symbol) + '<span class="sr-only"> — open appendix page</span></a>'
-        : '<span class="solar-element-symbol">' + esc(element.symbol) + '</span>';
-      var primary = element.primary
-        ? number(element.primary.value, 3) + ' <span class="solar-sigma">± ' + number(element.primary.sigmaTotal, 2) + '</span>'
+        ? '<a class="solar-element-link" href="' + esc(element.appendixPath) + '">' + esc(species) + '<span class="sr-only"> — open appendix page</span></a>'
+        : '<span class="solar-element-symbol">' + esc(species) + '</span>';
+      var measurement = element.primary || element.diagnostic;
+      var primary = measurement
+        ? number(measurement.value, 3) + (measurement.sigmaTotal == null ? '' : ' <span class="solar-sigma">± ' + number(measurement.sigmaTotal, 2) + '</span>')
         : '—';
-      var delta = element.primary ? signed(element.primary.value - element.asplund) : '—';
-      return '<tr class="' + (hasAppendix ? 'has-appendix' : 'no-appendix') + '">' +
+      var delta = measurement && typeof element.asplund === 'number' ? signed(measurement.value - element.asplund) : '—';
+      var lineCount = measurement && measurement.lineCount ? ' · n = ' + esc(measurement.lineCount) : '';
+      var role = element.measurementRole ? '<span class="solar-row-role">' + esc(element.measurementRole) + lineCount + '</span>' : '';
+      return '<tr class="' + (hasAppendix ? 'has-appendix' : 'no-appendix') + (element.childOf ? ' solar-species-child' : '') + '">' +
         '<td class="solar-z">' + esc(element.atomicNumber) + '</td>' +
-        '<td>' + label + '</td><td>' + esc(element.name) + '</td>' +
+        '<td>' + label + '</td><td>' + esc(element.name) + role + '</td>' +
         '<td class="solar-number solar-primary">' + primary + '</td>' +
         '<td class="solar-number">' + number(element.asplund, 2) + '</td>' +
         '<td class="solar-number">' + delta + '</td>' +
@@ -94,7 +98,7 @@
     }).join('') + '</ol>';
   }
 
-  var fe = report.elements.filter(function (element) { return element.symbol === 'Fe'; })[0];
+  var fe = report.elements.filter(function (element) { return element.symbol === 'Fe' && element.ion === 'I'; })[0];
   var meta = report.reproducibility;
   if (introRoot) {
     introRoot.innerHTML =
@@ -113,7 +117,7 @@
     overviewRoot.innerHTML =
       '<div class="solar-dev-banner">Development snapshot · not for publication</div>' +
       '<p class="solar-report-lede">The Sun is the Codex calibration anchor. Select an element with an available measurement to open its generated appendix, products, uncertainties, and diagnostic evidence.</p>' +
-      '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>El</th><th>Element</th><th>Primary graded A(X)</th><th>Asplund 2021</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
+      '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>Species</th><th>Element / role</th><th>Reported A(X) ± σ</th><th>Asplund 2021</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
       '<p class="solar-table-note">Only elements with generated appendix data are clickable. Representative placeholder rows exercise the incomplete-element layout.</p>';
   }
 
