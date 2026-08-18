@@ -115,7 +115,7 @@ window.SOLAR_REPORT = {
       "symbol": "Fe",
       "ion": "I",
       "name": "Iron",
-      "status": "gold · generated",
+      "status": "graded 1D-LTE · generated",
       "appendixPath": "/systems/sol/elements/fe/",
       "referenceKeys": [
         "asplund2021",
@@ -124,20 +124,29 @@ window.SOLAR_REPORT = {
         "bergemann2012"
       ],
       "primary": {
-        "value": 7.466,
-        "sigmaStat": null,
-        "sigmaSys": null,
-        "sigmaTotal": 0.139,
-        "lineCount": 62
+        "label": "Primary reported product · VIS graded 1D-LTE",
+        "value": 7.445,
+        "sigmaStat": 0.0394,
+        "sigmaSys": 0.0614,
+        "sigmaTotal": 0.07295423222815794,
+        "lineCount": 9,
+        "explanation": "The highlighted result is the VIS 1D-LTE product restricted to the primary laboratory-gf pool. Its uncertainty uses that pool’s cited gf term. No cross-band or cross-engine average is made."
       },
       "secondary": {
-        "value": 7.57,
-        "sigmaStat": null,
-        "sigmaSys": null,
-        "sigmaTotal": 0.17123156835116593,
-        "lineCount": 131
+        "label": "Same cell · VIS ungraded 1D-LTE",
+        "value": 7.586,
+        "sigmaStat": 0.0261,
+        "sigmaSys": 0.1705,
+        "sigmaTotal": 0.1724861153832389,
+        "lineCount": 148,
+        "explanation": "The broader comparison uses all accepted VIS 1D-LTE lines from the post-gate cell. More lines do not make it the headline because their gf provenance carries the wider ungraded floor."
       },
       "asplund": 7.46,
+      "goldAnchor": {
+        "value": 7.466,
+        "sigma": 0.139,
+        "lineCount": 62
+      },
       "products": [
         {
           "band": "VIS",
@@ -146,6 +155,8 @@ window.SOLAR_REPORT = {
           "method": "GRADED (primary lab gf)",
           "value": 7.445,
           "sigma": 0.07295423222815794,
+          "sigmaStat": 0.0394,
+          "sigmaSys": 0.0614,
           "lineCount": 9,
           "role": "graded"
         },
@@ -156,6 +167,8 @@ window.SOLAR_REPORT = {
           "method": "GRADED (primary lab gf)",
           "value": 7.577,
           "sigma": 0.14118020399475276,
+          "sigmaStat": 0.0849,
+          "sigmaSys": 0.1128,
           "lineCount": 59,
           "role": "graded"
         },
@@ -166,6 +179,8 @@ window.SOLAR_REPORT = {
           "method": "GRADED (primary lab gf)",
           "value": 7.516,
           "sigma": 0.0657684574853326,
+          "sigmaStat": 0.0225,
+          "sigmaSys": 0.0618,
           "lineCount": 20,
           "role": "graded"
         },
@@ -176,6 +191,8 @@ window.SOLAR_REPORT = {
           "method": "SynthesisHandler",
           "value": 7.498,
           "sigma": 0.20823892527575147,
+          "sigmaStat": 0.0669,
+          "sigmaSys": 0.1972,
           "lineCount": 39,
           "role": "ungraded"
         },
@@ -186,6 +203,8 @@ window.SOLAR_REPORT = {
           "method": "SynthesisHandler",
           "value": 7.492,
           "sigma": 0.22167446853438041,
+          "sigmaStat": 0.1391,
+          "sigmaSys": 0.1726,
           "lineCount": 31,
           "role": "ungraded"
         },
@@ -196,6 +215,8 @@ window.SOLAR_REPORT = {
           "method": "ProfileFitHandler",
           "value": 7.586,
           "sigma": 0.1724861153832389,
+          "sigmaStat": 0.0261,
+          "sigmaSys": 0.1705,
           "lineCount": 148,
           "role": "ungraded"
         },
@@ -206,6 +227,8 @@ window.SOLAR_REPORT = {
           "method": "ProfileFitHandler",
           "value": 7.597,
           "sigma": 0.1727676474343504,
+          "sigmaStat": 0.0279,
+          "sigmaSys": 0.1705,
           "lineCount": 105,
           "role": "ungraded"
         },
@@ -216,6 +239,8 @@ window.SOLAR_REPORT = {
           "method": "SynthesisHandler",
           "value": 7.515,
           "sigma": 0.1710920512472745,
+          "sigmaStat": 0.0193,
+          "sigmaSys": 0.17,
           "lineCount": 129,
           "role": "ungraded"
         },
@@ -226,58 +251,26 @@ window.SOLAR_REPORT = {
           "method": "SynthesisHandler",
           "value": 7.57,
           "sigma": 0.17123156835116593,
+          "sigmaStat": 0.0205,
+          "sigmaSys": 0.17,
           "lineCount": 131,
           "role": "ungraded"
         }
       ],
       "diagnostics": [
         {
-          "line": "11119.795 Å",
-          "category": "telluric adjacent",
-          "caption": "0.205 A below the H2O 11120-11560 A edge in telluric_policy.TELLURIC_BANDS, so the band list does not catch it while the absorption plainly reaches it: Kitt Peak window median flux 0.872 against a synthesis normalised to unity (RYA-843 measured 0.966-0.996 for clean lines in the same band). NO ATLAS CAN REFEREE IT -- the telluric_policy KP-vs-IAG discriminator needs IAG, and the staged atlas stops at 11083.4 A, below this line. Excluded CONSERVATIVELY on that unresolvable ambiguity, not on its fitted value: it fits at 7.833, a perfectly plausible number, and its chi2 moves only 2.2% across 8 dex of iron, so it measured nothing and landed there by luck. Retire when an atlas that reaches 11120 A can adjudicate the band edge.",
-          "status": "flagged_kept"
+          "line": "Fe I 4919 Å",
+          "category": "archived problem-line diagnostic",
+          "caption": "Observed spectrum, fitted profile, blend markers, and fit residuals from the committed RYA-224 diagnostic record.",
+          "status": "excluded · confirmed blend",
+          "imagePath": "/assets/images/sol/problem-lines/Fe_I_4919A_2026-06-11.png"
         },
         {
-          "line": "11689.972 Å",
-          "category": "deriver excluded",
-          "caption": "SYNTHESIS: edge_pinned",
-          "status": "excluded"
-        },
-        {
-          "line": "12638.703 Å",
-          "category": "deriver excluded",
-          "caption": "NON-MINIMUM: chi2 at a bracket end is not above the reported minimum (frac_rise = -1.95e-05 <= 0), so the optimizer returned a point that is not a minimum and the fit did not determine A(X). A correctness failure, not a quality threshold. Measured and retained; excluded from the aggregate only (RYA-711).",
-          "status": "excluded"
-        },
-        {
-          "line": "12648.741 Å",
-          "category": "deriver excluded",
-          "caption": "SYNTHESIS: edge_pinned",
-          "status": "excluded"
-        },
-        {
-          "line": "3617.318 Å",
-          "category": "non minimum",
-          "caption": "The optimizer returned a point that is NOT a minimum: chi2 at a bracket end is BELOW chi2 at the reported best fit (frac_rise = -0.117), so the fit did not determine A(Fe) at all. A correctness failure, not a quality judgement -- there is no threshold involved, only the sign. 🔴 ITS VALUE LOOKS PERFECTLY NORMAL: A = 7.477, indistinguishable from solar, which is exactly why no plausibility check could ever have found it and why the RYA-847 sweep was needed. Removing it moves the near-UV 1D-LTE cell 7.4875 -> 7.4980 and makes the scatter slightly WORSE (0.4126 -> 0.4178): this exclusion costs dispersion rather than buying it, which is the evidence that it is a validity cut and not tuning (RYA-161/844). Caught automatically by the constraint gate; recorded here so the cut is reproducible from its stated reason without running the pipeline.",
-          "status": "excluded"
-        },
-        {
-          "line": "4769.812 Å",
-          "category": "atomic blend",
-          "caption": "RYA-764/783: the 1D-LTE EW inversion returns A(Fe I) = 8.342 on this line at EW 44.1 mA -- physically impossible for the Sun (~7.5) and it ENTERS the band-product aggregate, because derive_band_products.py does not consult this registry. It is one of 17 (VIS) / 11 (IR) used lines above A=8.0 in the EW route; the ENGINE-B flux fit produces ZERO such lines in the IR (max 7.953) on the same pool, so the pathology is the EW->abundance inversion, not the spectrum. The median protects the reported product value, but these lines are the heavy tail of the Engine-A minus Engine-B per-line diagnostic (robust sd 0.10 dex, naive sd 0.50). CAUSE NOT ESTABLISHED -- misidentification, a wrong gf and unmodelled blending all produce this signature; do NOT re-source the gf on this evidence. || RYA-808: required_treatment exclude -> investigate. The cause is not established (status=owed), and a treatment cannot be prescribed from an undiagnosed cause (RYA-161). Behaviour is UNCHANGED -- aggregate_action already kept owed rows in the aggregate, flagged. When a cause IS established: status -> active AND required_treatment -> the diagnosed treatment. || RYA-809 RCA: GHOST: absorbs 4.7x the EW its catalogued central_depth (0.059) can support, with no co-located absorber to account for it — the feature is not this transition. mismatch 0.4 mA; Ce II present at +3.91 dex per-atom, but its solar abundance is not tabulated here -> INCONCLUSIVE; gf K07 (+/-0.2 dex); REW -5.034; A 8.342 (+0.738 vs pool median); EW-vs-strength residual +0.590 dex; absorbs 4.7x the EW its catalogued central_depth supports",
-          "status": "excluded"
-        },
-        {
-          "line": "4880.524 Å",
-          "category": "deriver excluded",
-          "caption": "COG-INVERSION: bisection did not converge, so this EW does not map to an abundance here",
-          "status": "excluded"
-        },
-        {
-          "line": "4932.084 Å",
-          "category": "abundance outlier",
-          "caption": "RYA-764/783: the 1D-LTE EW inversion returns A(Fe I) = 8.500 on this line at EW 52.2 mA -- physically impossible for the Sun (~7.5) and it ENTERS the band-product aggregate, because derive_band_products.py does not consult this registry. It is one of 17 (VIS) / 11 (IR) used lines above A=8.0 in the EW route; the ENGINE-B flux fit produces ZERO such lines in the IR (max 7.953) on the same pool, so the pathology is the EW->abundance inversion, not the spectrum. The median protects the reported product value, but these lines are the heavy tail of the Engine-A minus Engine-B per-line diagnostic (robust sd 0.10 dex, naive sd 0.50). CAUSE NOT ESTABLISHED -- misidentification, a wrong gf and unmodelled blending all produce this signature; do NOT re-source the gf on this evidence. || RYA-808: required_treatment exclude -> investigate. The cause is not established (status=owed), and a treatment cannot be prescribed from an undiagnosed cause (RYA-161). Behaviour is UNCHANGED -- aggregate_action already kept owed rows in the aggregate, flagged. When a cause IS established: status -> active AND required_treatment -> the diagnosed treatment. || RYA-809 RCA: AMBIGUOUS after all four tests — +0.896 dex above the pool on a non-laboratory K07 gf (+/-0.2 dex), which makes the gf a CANDIDATE but not an established cause — RYA-760 refuted loosening the tier, and RYA-780 found no primary measurement to adjudicate against. Stays investigate/owed and is NOT excluded (RYA-161: no exclusion without an established cause). mismatch 0.4 mA; C2 present at +5.40 dex per-atom, but its solar abundance is not tabulated here -> INCONCLUSIVE; gf K07 (+/-0.2 dex); REW -4.976; A 8.500 (+0.896 vs pool median); EW-vs-strength residual +0.299 dex; absorbs 1.3x the EW its catalogued central_depth supports",
-          "status": "flagged_kept"
+          "line": "Fe I 4970 Å",
+          "category": "archived problem-line diagnostic",
+          "caption": "Observed spectrum, fitted profile, blend markers, and fit residuals from the committed RYA-224 diagnostic record.",
+          "status": "excluded · confirmed blend",
+          "imagePath": "/assets/images/sol/problem-lines/Fe_I_4970A_2026-06-11.png"
         }
       ],
       "provenance": {

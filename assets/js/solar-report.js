@@ -85,7 +85,8 @@
   function diagnostics(records) {
     if (!records || !records.length) return '<p class="solar-empty">No generated diagnostic records.</p>';
     return '<div class="solar-diagnostics">' + records.map(function (record) {
-      return '<article><p class="solar-diagnostic-category">' + esc(record.category) + '</p><h4>' + esc(record.line) + '</h4><p>' + esc(record.caption) + '</p><small>Disposition: ' + esc(record.status) + '</small></article>';
+      var plot = record.imagePath ? '<a class="solar-diagnostic-plot" href="' + esc(record.imagePath) + '" target="_blank" rel="noopener"><img src="' + esc(record.imagePath) + '" alt="Diagnostic spectrum and residual plot for ' + esc(record.line) + '" loading="lazy"></a>' : '';
+      return '<article><p class="solar-diagnostic-category">' + esc(record.category) + '</p><h4>' + esc(record.line) + '</h4>' + plot + '<p>' + esc(record.caption) + '</p><small>Disposition: ' + esc(record.status) + '</small></article>';
     }).join('') + '</div>';
   }
 
@@ -118,19 +119,19 @@
       (report.mode === 'development' ? '<div class="solar-dev-banner">Development snapshot · not for publication</div>' : '<div class="solar-generated-banner">Generated from versioned science artifacts</div>') +
       '<p class="solar-report-lede">The Sun is the Codex calibration anchor. Select an element with an available measurement to open its generated appendix, products, uncertainties, and diagnostic evidence.</p>' +
       '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>Species</th><th>Element / role</th><th>Reported A(X) ± σ</th><th>Asplund 2021</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
-      '<p class="solar-table-note">Only elements with generated appendix data are clickable. Representative placeholder rows exercise the incomplete-element layout.</p>';
+      '<p class="solar-table-note">Only species with a generated appendix are clickable. Blank measurements remain visible with their pipeline disposition rather than being silently omitted.</p>';
   }
 
   if (appendixRoot) {
     appendixRoot.innerHTML =
     '<article class="solar-appendix">' +
       '<a class="solar-back" href="/systems/sol/#our-findings">← Back to Solar element table</a><p class="solar-kicker">Element appendix</p><h2>Iron <span>Fe</span></h2>' +
-      '<div class="solar-hero"><div><span>Primary · graded</span><strong>' + number(fe.primary.value, 3) + ' <small>± ' + number(fe.primary.sigmaTotal, 2) + '</small></strong><p>' + esc(fe.primary.lineCount) + ' lines · stat ' + number(fe.primary.sigmaStat, 2) + ' · sys ' + number(fe.primary.sigmaSys, 2) + '</p></div>' +
-      '<div class="secondary"><span>Secondary · all accepted lines</span><strong>' + number(fe.secondary.value, 3) + ' <small>± ' + number(fe.secondary.sigmaTotal, 2) + '</small></strong><p>' + esc(fe.secondary.lineCount) + ' lines · broader gf floor; broader does not mean bad</p></div></div>' +
-      '<h4 class="solar-subhead">Band × instrument × engine products</h4><div class="solar-table-wrap"><table class="solar-product-table"><thead><tr><th>Band</th><th>Instrument</th><th>Engine / method</th><th>A(Fe) ± σ</th><th>N</th><th>Role</th></tr></thead><tbody>' + productRows(fe.products) + '</tbody></table></div>' +
-      '<h4 class="solar-subhead">Per-engine uncertainty by band</h4><div class="solar-error-plot">' + plotRows(fe.products, report.references) + '</div>' +
+      '<div class="solar-hero solar-hero-single"><div><span>' + esc(fe.primary.label) + '</span><strong>' + number(fe.primary.value, 3) + ' <small>± ' + number(fe.primary.sigmaTotal, 3) + '</small></strong><p>' + esc(fe.primary.lineCount) + ' lines · stat ' + number(fe.primary.sigmaStat, 3) + ' · sys ' + number(fe.primary.sigmaSys, 3) + '</p></div></div>' +
+      '<div class="solar-headline-explanation solar-headline-explanation-single"><p><strong>What the headline means.</strong> ' + esc(fe.primary.explanation) + ' Ungraded and alternate-engine results appear only as comparison rows below.</p></div>' +
+      '<h4 class="solar-subhead">Graded 1D-LTE and comparison error bars</h4><p class="solar-copy">Gold rows are the graded 1D-LTE primary products. Blue rows are separate post-gate band × engine comparisons. No rows are averaged together.</p><div class="solar-error-plot">' + plotRows(fe.products, report.references) + '</div>' +
       '<p class="solar-reference-key">Gold vertical markers: ' + report.references.map(function (r) { return esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2); }).join(' · ') + '</p>' +
-      '<h4 class="solar-subhead">Error budget</h4><p class="solar-copy">The display reports statistical, systematic, and total uncertainty from the reporting model. Graded products use their cited-pool gf uncertainty when available; ungraded products retain the wider all-lines gf term.</p>' +
+      '<h4 class="solar-subhead">Band × instrument × engine products</h4><div class="solar-table-wrap"><table class="solar-product-table"><thead><tr><th>Band</th><th>Instrument</th><th>Engine / method</th><th>A(Fe) ± σ</th><th>N</th><th>State</th></tr></thead><tbody>' + productRows(fe.products) + '</tbody></table></div>' +
+      '<h4 class="solar-subhead">Error budget</h4><p class="solar-copy">Every product bar is σ<sub>total</sub> = √(σ<sub>stat</sub>² + σ<sub>sys</sub>²). The highlighted graded 1D-LTE result uses its cited laboratory-gf pool term; ungraded comparisons retain their wider gf floor.</p>' +
       '<h4 class="solar-subhead">Near-UV atomic-data provenance</h4><p class="solar-copy">' + esc(fe.provenance.sentence) + ' Counts are computed from the downloadable line records, not maintained as page prose.</p>' +
       '<h4 class="solar-subhead">Problem-line diagnostics</h4>' + diagnostics(fe.diagnostics) +
       '<p class="solar-download"><a href="' + esc(fe.downloadPath) + '" download>Download the replication-grade Fe per-line product (.csv)</a></p>' +

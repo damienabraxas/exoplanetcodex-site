@@ -60,6 +60,7 @@ def main() -> None:
         science / "data/results/rya847/gated/ts-lte/FeI_3800_6910_kpno_solar_atlas_PROFILEFIT_products.csv",
         science / "data/results/rya847/gated/gerber-nlte/FeI_3800_6910_kpno_solar_atlas_PROFILEFIT_products.csv",
     ]
+    plot_root = science / "plots/problem_lines/solar"
     required = [perline_path, gold_path, tracker_path, matrix_path, *product_paths]
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -73,13 +74,13 @@ def main() -> None:
         row for row in rows(matrix_path)
         if row["element"] == "Fe" and row["ion"] == "I" and row["primary_is_graded"] == "True"
     ]
-
     products = []
     for row in graded:
         products.append({
             "band": row["band"], "instrument": "Kitt Peak solar atlas",
             "engine": row["engine"], "method": row["pool"],
             "value": float(row["A"]), "sigma": float(row["total_dex"]),
+            "sigmaStat": float(row["stat_dex"]), "sigmaSys": float(row["syst_dex"]),
             "lineCount": int(row["n_lines"]), "role": "graded",
         })
     seen = set()
@@ -93,6 +94,7 @@ def main() -> None:
                 "band": row["band"], "instrument": row["instrument"].replace("_", " "),
                 "engine": row["treatment"], "method": row["handler"],
                 "value": float(row["A"]), "sigma": total(row["stat_dex"], row["syst_dex"]),
+                "sigmaStat": float(row["stat_dex"]), "sigmaSys": float(row["syst_dex"]),
                 "lineCount": int(row["n_lines"]), "role": "ungraded",
             })
 
@@ -108,24 +110,25 @@ def main() -> None:
         ),
     }
 
-    problems = [r for r in perline if r["ion"] == "I" and r["status"] != "in_aggregate"]
+    plot_output = SITE_ROOT / "assets/images/sol/problem-lines"
+    plot_output.mkdir(parents=True, exist_ok=True)
     diagnostics = []
-    diagnostic_keys = set()
-    for row in problems:
-        key = (row["wavelength_air_A"], row["reason_code"])
-        if key in diagnostic_keys:
-            continue
-        diagnostic_keys.add(key)
+    if not plot_root.is_dir():
+        raise SystemExit(f"Missing diagnostic plot directory: {plot_root}")
+    for path in sorted(plot_root.glob("Fe_I_*A_*.png")):
+        destination = plot_output / path.name
+        shutil.copyfile(path, destination)
+        parts = path.stem.split("_")
         diagnostics.append({
-            "line": f'{float(row["wavelength_air_A"]):.3f} Å',
-            "category": row["reason_code"].replace("_", " ").lower(),
-            "caption": row["reason_note"] or "Disposition emitted by the problem-line registry.",
-            "status": row["status"],
+            "line": f"Fe I {parts[2][:-1]} Å",
+            "category": "archived problem-line diagnostic",
+            "caption": "Observed spectrum, fitted profile, blend markers, and fit residuals from the committed RYA-224 diagnostic record.",
+            "status": "excluded · confirmed blend",
+            "imagePath": f"/assets/images/sol/problem-lines/{path.name}",
         })
-        if len(diagnostics) == 8:
-            break
 
-    secondary = next(p for p in products if p["band"] == "VIS" and p["engine"] == "ENGINE-B-NLTE")
+    primary = next(p for p in products if p["band"] == "VIS" and p["engine"] == "1D-LTE" and p["role"] == "graded")
+    secondary = next(p for p in products if p["band"] == "VIS" and p["engine"] == "1D-LTE" and p["role"] == "ungraded")
     atomic_numbers = {
         "Li": 3, "C": 6, "N": 7, "O": 8, "Na": 11, "Mg": 12, "Al": 13,
         "Si": 14, "P": 15, "S": 16, "K": 19, "Ca": 20, "Sc": 21, "Ti": 22,
@@ -152,10 +155,10 @@ def main() -> None:
     other_elements.sort(key=lambda item: item["atomicNumber"])
 
     iron_rows = [
-        {"atomicNumber":26,"symbol":"Fe","ion":"I","name":"Iron","status":"gold · generated","appendixPath":"/systems/sol/elements/fe/","referenceKeys":["asplund2021","lodders2025","scott2015","bergemann2012"],
-         "primary":{"value":float(gold["A_X"]),"sigmaStat":None,"sigmaSys":None,"sigmaTotal":float(tracker["sigma"]),"lineCount":int(gold["n_lines"])},
-         "secondary":{"value":secondary["value"],"sigmaStat":None,"sigmaSys":None,"sigmaTotal":secondary["sigma"],"lineCount":secondary["lineCount"]},
-         "asplund":float(gold["asplund2021"]),"products":products,"diagnostics":diagnostics,"provenance":provenance,
+        {"atomicNumber":26,"symbol":"Fe","ion":"I","name":"Iron","status":"graded 1D-LTE · generated","appendixPath":"/systems/sol/elements/fe/","referenceKeys":["asplund2021","lodders2025","scott2015","bergemann2012"],
+         "primary":{"label":"Primary reported product · VIS graded 1D-LTE","value":primary["value"],"sigmaStat":primary["sigmaStat"],"sigmaSys":primary["sigmaSys"],"sigmaTotal":primary["sigma"],"lineCount":primary["lineCount"],"explanation":"The highlighted result is the VIS 1D-LTE product restricted to the primary laboratory-gf pool. Its uncertainty uses that pool’s cited gf term. No cross-band or cross-engine average is made."},
+         "secondary":{"label":"Same cell · VIS ungraded 1D-LTE","value":secondary["value"],"sigmaStat":secondary["sigmaStat"],"sigmaSys":secondary["sigmaSys"],"sigmaTotal":secondary["sigma"],"lineCount":secondary["lineCount"],"explanation":"The broader comparison uses all accepted VIS 1D-LTE lines from the post-gate cell. More lines do not make it the headline because their gf provenance carries the wider ungraded floor."},
+         "asplund":float(gold["asplund2021"]),"goldAnchor":{"value":float(gold["A_X"]),"sigma":float(tracker["sigma"]),"lineCount":int(gold["n_lines"])},"products":products,"diagnostics":diagnostics,"provenance":provenance,
          "downloadPath":"/assets/data/solar/Fe_perline.csv"},
         {"atomicNumber":26,"symbol":"Fe","ion":"II","name":"Iron","childOf":"Fe I","status":"appendix pending · RYA-876","measurementRole":"ionization arbiter / diagnostic","diagnostic":{"value":7.500,"sigmaTotal":None,"lineCount":3}},
     ]

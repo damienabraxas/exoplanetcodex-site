@@ -92,12 +92,18 @@
 .solar-credit-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:1.5rem; padding:1px; background:var(--rim); }
 .solar-credit-grid p { margin:0; padding:.9rem 1rem; background:var(--deep); color:var(--text-dim); font-size:.72rem; line-height:1.6; }
 .solar-credit-grid strong { color:var(--accent); font-family:var(--mono); font-size:.61rem; font-weight:400; letter-spacing:.1em; text-transform:uppercase; }
-.solar-diagnostics { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px; padding:1px; background:var(--rim); }
+.solar-headline-explanation { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; margin:1px 0 1.5rem; padding:1px; background:var(--rim); }
+.solar-hero-single,
+.solar-headline-explanation-single { grid-template-columns:1fr; }
+.solar-headline-explanation p { margin:0; padding:1rem; background:var(--deep); color:var(--text-dim); font-size:.76rem; line-height:1.65; }
+.solar-headline-explanation strong { color:var(--text-bright); }
+.solar-diagnostics { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:1px; padding:1px; background:var(--rim); }
 .solar-diagnostics article { padding:1rem; background:var(--deep); }
 .solar-diagnostics h4 { margin:.2rem 0 .8rem; color:var(--text-bright); font-family:var(--mono); font-size:.78rem; }
 .solar-diagnostics article > p:last-child { color:var(--text-dim); font-size:.74rem; line-height:1.6; }
 .solar-diagnostic-category { color:var(--accent-warm); font-family:var(--mono); font-size:.56rem; letter-spacing:.1em; text-transform:uppercase; }
-.solar-diagnostic-placeholder { display:grid; min-height:115px; place-items:center; border:1px dashed var(--rim); color:var(--text-dim); font-family:var(--mono); font-size:.58rem; text-transform:uppercase; }
+.solar-diagnostic-plot { display:block; margin-bottom:.85rem; border:1px solid var(--rim); background:#0d1117; }
+.solar-diagnostic-plot img { display:block; width:100%; height:auto; }
 .solar-empty { color:var(--text-dim); }
 .solar-repro { margin-top:2.4rem; padding:1rem 1.1rem; border:1px solid var(--rim); font-family:var(--mono); font-size:.64rem; }
 .solar-repro > strong { color:var(--accent-warm); letter-spacing:.14em; text-transform:uppercase; }
@@ -108,7 +114,9 @@
 
 @media (max-width:700px) {
   .solar-coverage-grid,
-  .solar-credit-grid { grid-template-columns:1fr; }
+  .solar-credit-grid,
+  .solar-headline-explanation { grid-template-columns:1fr; }
+  .solar-diagnostics { grid-template-columns:1fr; }
   .solar-hero { grid-template-columns:1fr; }
   .solar-hero > div + div { border-left:0; border-top:1px solid var(--rim); }
   .solar-error-plot { overflow-x:auto; }
