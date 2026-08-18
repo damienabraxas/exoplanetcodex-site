@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/codex.css">
+  <link rel="stylesheet" href="/assets/css/solar-report.css">
   <style>
     /* --- data strip --- */
     .data-strip { display:flex; border:1px solid var(--rim); overflow-x:auto; margin:2rem 0; }
@@ -42,33 +43,9 @@
       border:1px dashed var(--rim);
     }
 
-    /* --- HUD panel (NASA / solar system) --- */
+    /* --- orbital map / NASA visualization --- */
     @keyframes corner-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
     @keyframes scanline-scroll { 0%{transform:translateY(0)} 100%{transform:translateY(4px)} }
-
-    .hud-outer {
-      position:relative; margin:2rem 0;
-      border:1px solid #00d4ff;
-      box-shadow:0 0 18px rgba(0,212,255,0.18), inset 0 0 18px rgba(0,212,255,0.04);
-      background:rgba(10,17,40,0.95); overflow:hidden;
-    }
-    .hud-outer::after {
-      content:''; position:absolute; inset:0; pointer-events:none;
-      background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,212,255,0.015) 3px,rgba(0,212,255,0.015) 4px);
-      animation:scanline-scroll 0.15s linear infinite; z-index:1;
-    }
-    .hud-inner { position:relative; z-index:2; }
-    .hud-inner::before { content:''; position:absolute; top:-1px; left:-1px; width:18px; height:18px; border-top:2px solid #00d4ff; border-left:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite; }
-    .hud-inner::after  { content:''; position:absolute; bottom:-1px; right:-1px; width:18px; height:18px; border-bottom:2px solid #00d4ff; border-right:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 1.25s; }
-    .hud-corner-tr { position:absolute; top:-1px; right:-1px; z-index:3; width:18px; height:18px; border-top:2px solid #00d4ff; border-right:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 0.6s; }
-    .hud-corner-bl { position:absolute; bottom:-1px; left:-1px; z-index:3; width:18px; height:18px; border-bottom:2px solid #00d4ff; border-left:2px solid #00d4ff; animation:corner-pulse 2.5s ease-in-out infinite 1.8s; }
-    .hud-header { padding:0.7rem 1.2rem; border-bottom:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:#00d4ff; text-transform:uppercase; }
-    .hud-body { padding:1.8rem 2rem; text-align:center; }
-    .hud-title { font-family:var(--serif); font-size:1.4rem; font-weight:300; color:var(--text-bright); margin-bottom:0.6rem; }
-    .hud-desc { font-family:var(--mono); font-size:0.78rem; color:#00d4ff; margin-bottom:1.6rem; opacity:0.8; }
-    .hud-link { display:inline-block; border:1px solid #00d4ff; padding:0.7em 2em; font-family:var(--mono); font-size:0.75rem; letter-spacing:0.12em; color:#00d4ff; text-decoration:none; text-transform:uppercase; box-shadow:0 0 10px rgba(0,212,255,0.2); transition:background 0.2s,box-shadow 0.2s; }
-    .hud-link:hover { background:rgba(0,212,255,0.12); box-shadow:0 0 22px rgba(0,212,255,0.4); }
-    .hud-footer { padding:0.6rem 1.2rem; border-top:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.6rem; letter-spacing:0.18em; color:rgba(0,212,255,0.5); text-align:center; text-transform:uppercase; }
 
     /* --- orbital map --- */
     .orbital-map-wrap {
@@ -84,7 +61,12 @@
     .orbital-label { padding:0.6rem 1.2rem; border-bottom:1px solid rgba(0,212,255,0.3); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; color:#00d4ff; text-transform:uppercase; background:rgba(10,17,40,0.95); position:relative; z-index:3; }
     .orbital-svg-wrap { position:relative; overflow:hidden; }
     #orbital-map { display:block; width:100%; max-width:680px; margin:0 auto; }
-    .orbital-note { padding:0.6rem 1.2rem; border-top:1px solid rgba(0,212,255,0.2); font-family:var(--mono); font-size:0.62rem; color:rgba(0,212,255,0.45); text-align:center; }
+    .orbital-note { padding:0.7rem 1.2rem; border-top:1px solid rgba(0,212,255,0.2); font-family:var(--mono); font-size:0.64rem; color:rgba(0,212,255,0.64); text-align:center; line-height:1.65; }
+    .orbital-note strong { color:rgba(0,212,255,0.9); font-weight:400; }
+    .orbital-source { padding:0 1.2rem 0.8rem; font-family:var(--mono); font-size:0.57rem; color:rgba(136,153,187,0.72); text-align:center; line-height:1.55; }
+    .orbital-source a { color:rgba(79,195,247,0.82); }
+    .orbit-symbol { font-family:"Apple Symbols","Segoe UI Symbol",sans-serif; font-size:17px; font-weight:400; }
+    .hz-name { font-family:var(--mono); font-size:9px; font-weight:700; letter-spacing:0.65px; fill:#73e0a7; }
 
     /* planet orbit animations */
     @keyframes orbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
@@ -93,6 +75,7 @@
     #p-venus    { animation:orbit  20s linear infinite; }
     #p-earth    { animation:orbit  30s linear infinite; }
     #p-mars     { animation:orbit  50s linear infinite; }
+    #p-vesta    { animation:orbit  92s linear infinite; }
     #p-jupiter  { animation:orbit 150s linear infinite; }
     #p-saturn   { animation:orbit 360s linear infinite; }
     #p-uranus   { animation:orbit 700s linear infinite; }
@@ -103,8 +86,9 @@
     #asteroid-belt { transform-origin:340px 340px; animation:belt-spin 400s linear infinite; }
 
     /* planet clickable dots */
-    .planet-dot { cursor:pointer; }
+    .planet-dot { cursor:pointer; stroke:transparent; stroke-width:10px; paint-order:stroke fill; }
     .planet-dot:hover { filter:brightness(1.6); }
+    .saturn-rings { pointer-events:none; }
 
     /* --- planet modal --- */
     #planet-modal {
@@ -138,29 +122,12 @@
     .plots-placeholder .pp-label { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:0.8rem; }
     .plots-placeholder p { font-size:0.9rem; color:var(--text-dim); max-width:500px; margin:0 auto; line-height:1.7; }
 
-    /* --- download button --- */
-    .btn-download {
-      display:inline-block; margin-top:1.2rem;
-      padding:0.7em 1.6em;
-      border:1px solid var(--accent); color:var(--accent);
-      font-family:var(--mono); font-size:0.78rem; letter-spacing:0.1em;
-      text-transform:uppercase; text-decoration:none;
-      transition:background 0.2s,color 0.2s;
-      opacity:0.4; pointer-events:none; cursor:default;
-    }
-    .btn-download.ready { opacity:1; pointer-events:auto; cursor:pointer; }
-    .btn-download.ready:hover { background:var(--accent); color:var(--void); }
-
     /* --- refs --- */
     .refs-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rim); border:1px solid var(--rim); margin:1.5rem 0; }
     .refs-grid > div { background:var(--deep); padding:1rem 1.2rem; }
     .refs-title { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
     .refs-grid p { font-size:0.85rem; color:var(--text-dim); line-height:1.6; margin:0.25rem 0; }
     @media(max-width:600px) { .refs-grid { grid-template-columns:1fr; } }
-      .hud-cta-btn{display:inline-block;border:1px solid #00d4ff;padding:.8em 2.2em;font-family:var(--mono);font-size:.78rem;letter-spacing:.15em;color:#00d4ff;text-decoration:none;box-shadow:0 0 12px rgba(0,212,255,.3);transition:background .2s,box-shadow .2s}
-    .hud-cta-btn:hover{background:rgba(0,212,255,.12);box-shadow:0 0 22px rgba(0,212,255,.5)}
-    .hud-fallback{padding:3rem;text-align:center}
-    .hud-fallback p{font-family:var(--mono);font-size:.75rem;color:#00d4ff;margin-bottom:1.4rem}
   </style>
 </head>
 <body>
@@ -198,7 +165,6 @@
   <header class="page-hero">
     <div class="page-eyebrow">System // Entry 000 — Calibration Reference</div>
     <h1 class="page-title">The <em>Sun</em></h1>
-    <p class="page-subtitle">Sol · G2V main sequence · 10 direct HARPS S1D spectra · ESO 1102.D-0954(A) · PI: Dumusque · SNR 306–309</p>
   </header>
 
   <div class="container">
@@ -209,6 +175,8 @@
     <section class="sys-section" id="general-info">
       <p class="sys-section-label">Section 01</p>
       <h2 class="sys-section-title">General Information</h2>
+
+      <div id="solar-observing-intro" aria-live="polite"></div>
 
       <div class="data-strip">
         <div class="data-cell"><div class="data-label">Spectral type</div><div class="data-value">G2 V</div></div>
@@ -229,28 +197,6 @@
         <figcaption class="sdo-caption">Credit: NASA/SDO</figcaption>
       </figure>
 
-      <!-- NASA Solar System HUD -->
-      <div class="hud-outer">
-        <div class="hud-corner-tr"></div>
-        <div class="hud-corner-bl"></div>
-        <div class="hud-inner">
-          <div class="hud-header">// SYSTEM SCAN — NASA SOLAR SYSTEM EXPLORATION //</div>
-          <div class="hud-body">
-            <div class="hud-title">Sol · G2V · 8 planets · 1 AU reference</div>
-            <div class="hud-desc">
-              The calibration anchor for all Codex [X/H] measurements
-              <br>A(Fe)☉ = 7.46 · C/O☉ = 0.55 · Asplund et al. (2021)
-            </div>
-            <a class="hud-link"
-               href="https://solarsystem.nasa.gov/solar-system/our-solar-system/overview/"
-               target="_blank" rel="noopener">
-              Open NASA Solar System ↗
-            </a>
-          </div>
-          <div class="hud-footer">// TAP TO EXPLORE //</div>
-        </div>
-      </div>
-
       <!-- Interactive Orbital Map -->
       <div class="orbital-map-wrap" id="orbital-map-container">
         <div class="orbital-corner-tr"></div>
@@ -269,92 +215,20 @@
               </filter>
             </defs>
 
-            <!-- Habitable zone shading -->
-            <circle cx="340" cy="340" r="115" fill="none" stroke="rgba(82,199,138,0.12)" stroke-width="28"/>
-
-            <!-- Orbital rings -->
-            <circle cx="340" cy="340" r="45"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Mercury -->
-            <circle cx="340" cy="340" r="68"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Venus -->
-            <circle cx="340" cy="340" r="90"  fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Earth -->
-            <circle cx="340" cy="340" r="118" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Mars -->
-            <!-- asteroid belt: dashed ring -->
-            <circle cx="340" cy="340" r="148" fill="none" stroke="#1e3060" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.5"/>
-            <circle cx="340" cy="340" r="160" fill="none" stroke="#1e3060" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.3"/>
-            <circle cx="340" cy="340" r="200" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Jupiter -->
-            <circle cx="340" cy="340" r="248" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Saturn -->
-            <circle cx="340" cy="340" r="298" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Uranus -->
-            <circle cx="340" cy="340" r="330" fill="none" stroke="#1e3060" stroke-width="0.6" opacity="0.7"/><!-- Neptune -->
-
-            <!-- Asteroid belt particles -->
-            <g id="asteroid-belt">
-              <circle cx="340" cy="192" r="1.2" fill="#334466" opacity="0.7"/>
-              <circle cx="430" cy="208" r="1.0" fill="#334466" opacity="0.6"/>
-              <circle cx="466" cy="252" r="1.4" fill="#334466" opacity="0.5"/>
-              <circle cx="472" cy="320" r="0.9" fill="#334466" opacity="0.7"/>
-              <circle cx="450" cy="388" r="1.1" fill="#334466" opacity="0.6"/>
-              <circle cx="400" cy="444" r="1.3" fill="#334466" opacity="0.7"/>
-              <circle cx="330" cy="464" r="1.0" fill="#334466" opacity="0.5"/>
-              <circle cx="258" cy="444" r="1.2" fill="#334466" opacity="0.6"/>
-              <circle cx="208" cy="396" r="1.4" fill="#334466" opacity="0.7"/>
-              <circle cx="196" cy="330" r="1.0" fill="#334466" opacity="0.5"/>
-              <circle cx="214" cy="262" r="1.1" fill="#334466" opacity="0.6"/>
-              <circle cx="268" cy="214" r="0.9" fill="#334466" opacity="0.7"/>
-            </g>
+            <g id="hz-layer"></g>
+            <g id="orbit-layer"></g>
+            <g id="asteroid-belt"></g>
 
             <!-- Sun -->
             <circle cx="340" cy="340" r="14" fill="#ffe066" filter="url(#sun-glow)"/>
             <circle cx="340" cy="340" r="10" fill="#fff4aa"/>
 
-            <!-- Mercury -->
-            <g id="p-mercury" class="orbit-group">
-              <circle class="planet-dot" cx="385" cy="340" r="3.5" fill="#8899bb" filter="url(#planet-glow)" data-planet="mercury"/>
-            </g>
-            <!-- Venus -->
-            <g id="p-venus" class="orbit-group">
-              <circle class="planet-dot" cx="408" cy="340" r="4.5" fill="#c0875a" filter="url(#planet-glow)" data-planet="venus"/>
-            </g>
-            <!-- Earth / Terra -->
-            <g id="p-earth" class="orbit-group">
-              <circle class="planet-dot" cx="430" cy="340" r="4.8" fill="#4fc3f7" filter="url(#planet-glow)" data-planet="earth"/>
-            </g>
-            <!-- Mars -->
-            <g id="p-mars" class="orbit-group">
-              <circle class="planet-dot" cx="458" cy="340" r="3.8" fill="#bf6060" filter="url(#planet-glow)" data-planet="mars"/>
-            </g>
-            <!-- Jupiter -->
-            <g id="p-jupiter" class="orbit-group">
-              <circle class="planet-dot" cx="540" cy="340" r="8.5" fill="#c8914a" filter="url(#planet-glow)" data-planet="jupiter"/>
-            </g>
-            <!-- Saturn -->
-            <g id="p-saturn" class="orbit-group">
-              <!-- rings -->
-              <ellipse cx="588" cy="340" rx="15" ry="5" fill="none" stroke="#b0925a" stroke-width="2" opacity="0.6"/>
-              <circle class="planet-dot" cx="588" cy="340" r="7" fill="#b0a060" filter="url(#planet-glow)" data-planet="saturn"/>
-            </g>
-            <!-- Uranus -->
-            <g id="p-uranus" class="orbit-group">
-              <circle class="planet-dot" cx="638" cy="340" r="6" fill="#7ab8c8" filter="url(#planet-glow)" data-planet="uranus"/>
-            </g>
-            <!-- Neptune -->
-            <g id="p-neptune" class="orbit-group">
-              <circle class="planet-dot" cx="670" cy="340" r="5.5" fill="#5575c8" filter="url(#planet-glow)" data-planet="neptune"/>
-            </g>
-
-            <!-- Hab zone label -->
-            <text x="424" y="256" font-family="Space Mono, monospace" font-size="7" fill="rgba(82,199,138,0.55)" letter-spacing="0.5">HZ</text>
-
-            <!-- Planet name labels (static, near orbit ring) -->
-            <text x="387" y="294" font-family="Space Mono, monospace" font-size="7" fill="#8899bb" opacity="0.7">Me</text>
-            <text x="404" y="277" font-family="Space Mono, monospace" font-size="7" fill="#c0875a" opacity="0.7">Ve</text>
-            <text x="422" y="261" font-family="Space Mono, monospace" font-size="7" fill="#4fc3f7" opacity="0.85">Terra</text>
-            <text x="447" y="243" font-family="Space Mono, monospace" font-size="7" fill="#bf6060" opacity="0.7">Ma</text>
-            <text x="507" y="211" font-family="Space Mono, monospace" font-size="7" fill="#c8914a" opacity="0.75">Jup</text>
-            <text x="556" y="166" font-family="Space Mono, monospace" font-size="7" fill="#b0a060" opacity="0.7">Sat</text>
-            <text x="597" y="118" font-family="Space Mono, monospace" font-size="7" fill="#7ab8c8" opacity="0.7">Ura</text>
-            <text x="626" y="87"  font-family="Space Mono, monospace" font-size="7" fill="#5575c8" opacity="0.7">Nep</text>
+            <g id="planet-layer"></g>
+            <g id="orbit-label-layer"></g>
           </svg>
         </div>
-        <div class="orbital-note">Click any planet for mass, radius, type, and habitability zone status</div>
+        <div class="orbital-note">Click any planet or Vesta for physical and diagnostic details<br><strong>NOT TO SCALE</strong> — orbital spacing uses a logarithmic AU transform; object markers are schematic.</div>
+        <div class="orbital-source">Geometry: JPL Solar System Dynamics semimajor axes · Conservative HZ (0.99–1.70 AU): Kopparapu et al. (2013)</div>
       </div>
     </section>
 
@@ -391,125 +265,23 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         OUR FINDINGS
-    ============================================================ -->
+    <!-- Generated from the normalized Solar reporting model. -->
     <section class="sys-section" id="our-findings">
-      <p class="sys-section-label">Section 02</p>
-      <h2 class="sys-section-title">Our Findings</h2>
-
-      <p style="font-family:var(--serif);font-size:1.05rem;color:var(--text);line-height:1.85;max-width:720px;margin-bottom:1.5rem;">
-        The Sun is not a target — it is the ruler. Every abundance in the Codex is expressed as
-        <strong style="color:var(--text-bright)">[X/H] = A(X)★ − A(X)☉</strong>, which means getting
-        the solar reference right is the single most important calibration decision in the pipeline.
-        We use 10 direct HARPS S1D exposures (ESO 1102.D-0954(A), PI: Dumusque) — a direct solar
-        feed, not asteroid-reflected sunlight — with SNR 306–309 per exposure.
-      </p>
-
-      <!-- ── Chart 1: Elemental Abundance Bar Chart ── -->
-      <div style="margin:2rem 0;">
-        <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">Solar Calibration Results</p>
-        <p style="font-family:var(--serif);font-size:0.95rem;color:var(--text-dim);max-width:680px;line-height:1.7;margin-bottom:1.2rem;">
-          A(X)_ours − A(X)_Asplund2021 for 15 measurable elements. Fe I recovers 0.00 dex by construction — the calibration anchor. Many elements show large systematic offsets driven by nonlinear line exclusions; these are actively under investigation before science targets are touched.
-        </p>
-        <div style="background:#0a1128;border:1px solid var(--rim);padding:1rem;position:relative;">
-          <canvas id="chart-abundance" height="340"></canvas>
-        </div>
-        <p style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);margin-top:0.5rem;">
-          ⚠ = hard_warning flag (systematic offset or high nonlinear fraction). Error bars = σ_total (stat ⊕ sys).
-          Elements not shown (Ba, Co, Eu, K, Li, N, Na, O, Sc): not yet measurable with current optical HARPS coverage.
-        </p>
+      <p class="sys-section-label">Section 03</p>
+      <h2 class="sys-section-title">Solar Photospheric Abundances</h2>
+      <div id="solar-report" aria-live="polite">
+        <p class="solar-report-loading">Loading the Solar reporting model…</p>
       </div>
 
-      <!-- ── Charts 2+3: Alpha panel + C/O panel ── -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;">
-        <div>
-          <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">Alpha Elements [X/Fe]</p>
-          <div style="background:#0a1128;border:1px solid var(--rim);padding:1rem;">
-            <canvas id="chart-alpha" height="260"></canvas>
-          </div>
-          <p style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);margin-top:0.4rem;">[X/Fe] = δ(X) − δ(Fe). Reference line: 0.0 dex.</p>
-        </div>
-        <div>
-          <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">C/O Ratio</p>
-          <div style="background:#0a1128;border:1px solid var(--rim);padding:1.2rem 1.4rem;">
-            <p style="font-family:var(--mono);font-size:0.75rem;color:var(--accent);margin-bottom:0.7rem;">// C/O STATUS //</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-family:var(--mono);font-size:0.78rem;">
-              <div style="padding:0.7rem;border:1px solid var(--rim);background:var(--deep);">
-                <div style="font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:0.3rem;">C I (5380 Å)</div>
-                <div style="color:#4fc3f7;font-size:1.1rem;">+2.20 dex</div>
-                <div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.2rem;">⚠ nonlinear issues</div>
-              </div>
-              <div style="padding:0.7rem;border:1px solid var(--rim);background:var(--deep);">
-                <div style="font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:0.3rem;">O I (6300 Å)</div>
-                <div style="color:var(--text-dim);font-size:1.1rem;">— N/M —</div>
-                <div style="font-size:0.65rem;color:var(--text-dim);margin-top:0.2rem;">No usable lines found</div>
-              </div>
-            </div>
-            <div style="margin-top:1rem;padding:0.8rem;border-left:3px solid var(--accent-warm);background:rgba(232,162,74,0.05);">
-              <p style="font-size:0.78rem;color:var(--text);line-height:1.6;margin:0;">C/O cannot be computed until O I is recovered. The [O I] 6300.304 Å line requires Ni blend subtraction; Li I 6707 Å requires CN deblending. Both are in active development.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Chart 4: Problem Lines explainer ── -->
-      <div style="margin:2rem 0;">
-        <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:0.5rem;">Problem Lines — Active Development</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rim);border:1px solid var(--rim);">
-          <div style="background:var(--deep);padding:1.2rem 1.4rem;">
-            <p style="font-family:var(--mono);font-size:0.72rem;color:#4fc3f7;letter-spacing:0.12em;margin-bottom:0.8rem;">[O I] 6300.304 Å — Ni I Blend</p>
-            <p style="font-size:0.88rem;color:var(--text);line-height:1.7;">The forbidden oxygen line at 6300.304 Å is blended with Ni I at 6300.336 Å (Δλ = 0.032 Å). At HARPS resolution (R~115,000) they are marginally resolved but the Ni contribution must be computed from the measured Ni abundance and subtracted analytically. Until Ni is cleanly measured in the solar calibration run, this blend correction propagates uncertainty into C/O. Currently: O I has no usable lines returned by the pipeline.</p>
-          </div>
-          <div style="background:var(--deep);padding:1.2rem 1.4rem;">
-            <p style="font-family:var(--mono);font-size:0.72rem;color:#4fc3f7;letter-spacing:0.12em;margin-bottom:0.8rem;">Li I 6707.76 Å — CN Blend</p>
-            <p style="font-size:0.88rem;color:var(--text);line-height:1.7;">The lithium doublet at 6707.76 + 6707.91 Å is contaminated by CN molecular lines in cool, metal-rich stars. In the Sun this is a minor issue, but in 55 Cancri A ([Fe/H] = +0.32) CN blending becomes significant. The pipeline currently flags all Li I measurements in the solar run as nonlinear-excluded. Accurate Li requires an updated CN linelist and deblending step — planned for Milestone B.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── EW CSV download (active) ── -->
-      <p style="margin-top:1.5rem;">
-        <a href="/assets/data/sol_ew_results_v1.csv" class="btn-download ready" download>
-          ⬇ Download Raw EW Data (CSV)
-        </a>
-        <span style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);display:block;margin-top:0.5rem;">
-          806 lines · 22 elements · HARPS 3780–6910 Å · ESO 1102.D-0954(A)
-        </span>
-      </p>
     </section>
 
     <!-- ============================================================
          REFERENCES & CREDITS
     ============================================================ -->
     <section class="sys-section" id="references">
-      <p class="sys-section-label">Section 03</p>
-      <h2 class="sys-section-title">References &amp; Credits</h2>
-
-      <div class="refs-grid">
-        <div>
-          <p class="refs-title">Solar Abundance Reference</p>
-          <p>Asplund et al. (2021), A&amp;A 653, A141 — A(Fe)☉ = 7.46</p>
-          <p>Lodders (2003), ApJ 591, 1220 — predecessor reference</p>
-          <p>Grevesse &amp; Sauval (1998), Space Sci. Rev. 85, 161</p>
-        </div>
-        <div>
-          <p class="refs-title">Observational Dataset</p>
-          <p>ESO Program 1102.D-0954(A)</p>
-          <p>PI: Xavier Dumusque, University of Geneva</p>
-          <p>10 HARPS S1D spectra · direct solar feed · SNR 306–309</p>
-        </div>
-        <div>
-          <p class="refs-title">Image Credit</p>
-          <p>Solar image: Credit NASA/SDO</p>
-          <p>Orbital map: original illustration · Exoplanet Codex</p>
-        </div>
-        <div>
-          <p class="refs-title">Planetary Data</p>
-          <p>NASA Solar System Exploration</p>
-          <p>IAU 2006 planet definition · 8 planets</p>
-        </div>
-      </div>
+      <p class="sys-section-label">Section 04</p>
+      <h2 class="sys-section-title">Sources &amp; Credits</h2>
+      <div id="solar-sources" aria-live="polite"></div>
 
       <p style="margin-top:1.5rem;">
         <a href="/systems/" class="btn-ghost">← Back to Systems</a>
@@ -529,189 +301,8 @@
   </footer>
 </div>
 
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-
-<script>
-(function () {
-  'use strict';
-
-  // ── Abundance data (A_X_ours − A_X_Asplund2021) ──
-  // Source: results/Solar/2026-05-31/solar_abundances.csv
-  // delta = 0.0 for Fe I by pipeline construction (calibration anchor)
-  var ABUND = [
-    {el:'C',  group:'cno',   delta: 2.200, sigma:0.351, n:  3, warn:true},
-    {el:'P',  group:'cno',   delta:-2.030, sigma:0.358, n:  2, warn:true},
-    {el:'S',  group:'cno',   delta: 2.224, sigma:0.484, n:  6, warn:true},
-    {el:'Ca', group:'alpha', delta:-0.417, sigma:0.627, n: 18, warn:true},
-    {el:'Mg', group:'alpha', delta: 1.003, sigma:0.924, n:  3, warn:true},
-    {el:'Si', group:'alpha', delta: 1.090, sigma:0.634, n: 55, warn:true},
-    {el:'Ti', group:'alpha', delta:-0.447, sigma:0.772, n: 51, warn:true},
-    {el:'Cr', group:'irpk',  delta: 0.526, sigma:0.592, n: 44, warn:true},
-    {el:'Fe', group:'irpk',  delta: 0.000, sigma:0.716, n:269, warn:false},
-    {el:'Mn', group:'irpk',  delta: 0.940, sigma:0.402, n:  8, warn:true},
-    {el:'Ni', group:'irpk',  delta: 0.892, sigma:0.749, n: 18, warn:true},
-    {el:'V',  group:'irpk',  delta: 0.435, sigma:0.186, n:  5, warn:true},
-    {el:'Y',  group:'sproc', delta:-0.179, sigma:0.626, n:  2, warn:true},
-    {el:'Zr', group:'sproc', delta:-0.238, sigma:null,  n:  1, warn:true},
-    {el:'Al', group:'other', delta: 0.237, sigma:0.114, n:  2, warn:true},
-  ];
-
-  var GC = {
-    cno:'#4fc3f7', alpha:'#81c784', irpk:'#ffb74d',
-    sproc:'#ce93d8', rproc:'#ef9a9a', other:'#90a4ae'
-  };
-  var DARK_BG   = '#0a1128';
-  var GRID_COL  = 'rgba(30,48,96,0.7)';
-  var TICK_COL  = '#8899bb';
-  var TITLE_COL = '#ccd6f0';
-
-  // Error bar plugin (draws ± sigma as vertical whiskers)
-  var errorBarPlugin = {
-    id: 'errorBar',
-    afterDatasetsDraw: function (chart) {
-      var ctx = chart.ctx;
-      chart.data.datasets.forEach(function (ds, di) {
-        if (!ds.errorBars) return;
-        var meta = chart.getDatasetMeta(di);
-        meta.data.forEach(function (el, i) {
-          var err = ds.errorBars[i];
-          if (err == null || err === 0) return;
-          var props = el.getProps(['x', 'y'], true);
-          var yPlus  = chart.scales.y.getPixelForValue(ds.data[i] + err);
-          var yMinus = chart.scales.y.getPixelForValue(ds.data[i] - err);
-          var hw = 3;
-          ctx.save();
-          ctx.strokeStyle = 'rgba(255,255,255,0.55)';
-          ctx.lineWidth = 1.5;
-          ctx.beginPath();
-          ctx.moveTo(props.x, yPlus);  ctx.lineTo(props.x, yMinus);
-          ctx.moveTo(props.x - hw, yPlus);  ctx.lineTo(props.x + hw, yPlus);
-          ctx.moveTo(props.x - hw, yMinus); ctx.lineTo(props.x + hw, yMinus);
-          ctx.stroke();
-          ctx.restore();
-        });
-      });
-    }
-  };
-  Chart.register(errorBarPlugin);
-
-  // ── Chart 1: Abundance bar chart ──
-  (function () {
-    var ctx = document.getElementById('chart-abundance');
-    if (!ctx) return;
-    var labels    = ABUND.map(function (d) { return d.warn ? d.el + ' ⚠' : d.el; });
-    var values    = ABUND.map(function (d) { return d.delta; });
-    var colors    = ABUND.map(function (d) { return GC[d.group] || '#90a4ae'; });
-    var errBars   = ABUND.map(function (d) { return d.sigma || 0; });
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'A(X)_ours − A(X)_Asplund2021  (dex)',
-          data: values,
-          backgroundColor: colors.map(function (c) { return c + 'bb'; }),
-          borderColor: colors,
-          borderWidth: 1,
-          errorBars: errBars
-        }]
-      },
-      options: {
-        responsive: true,
-        animation: false,
-        plugins: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: 'Solar Calibration — [X/H] = A(X)_ours − A(X)_Asplund (2021)',
-            color: TITLE_COL,
-            font: { family: "'Space Mono', monospace", size: 11 },
-            padding: { bottom: 12 }
-          },
-          tooltip: {
-            callbacks: {
-              label: function (ctx) {
-                var d = ABUND[ctx.dataIndex];
-                return [
-                  'Δ = ' + d.delta.toFixed(3) + ' dex',
-                  'σ = ±' + (d.sigma != null ? d.sigma.toFixed(3) : 'N/A') + ' dex',
-                  'n lines = ' + d.n
-                ];
-              }
-            }
-          }
-        },
-        scales: {
-          x: {
-            ticks: { color: TICK_COL, font: { family: "'Space Mono', monospace", size: 9 } },
-            grid: { color: GRID_COL }
-          },
-          y: {
-            title: { display: true, text: 'Δ A(X)  (dex)', color: TICK_COL, font: { size: 10 } },
-            ticks: { color: TICK_COL, font: { family: "'Space Mono', monospace", size: 9 } },
-            grid: { color: GRID_COL },
-            suggestedMin: -3,
-            suggestedMax: 3
-          }
-        }
-      }
-    });
-  })();
-
-  // ── Chart 2: Alpha elements [X/Fe] ──
-  (function () {
-    var ctx = document.getElementById('chart-alpha');
-    if (!ctx) return;
-    var alphas = ABUND.filter(function (d) { return d.group === 'alpha'; });
-    var feDelta = 0.000;
-    var labels  = alphas.map(function (d) { return d.el; });
-    var values  = alphas.map(function (d) { return +(d.delta - feDelta).toFixed(3); });
-    var errBars = alphas.map(function (d) { return d.sigma || 0; });
-    var color   = GC.alpha;
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: '[X/Fe] (dex)',
-          data: values,
-          backgroundColor: color + 'bb',
-          borderColor: color,
-          borderWidth: 1,
-          errorBars: errBars
-        }]
-      },
-      options: {
-        responsive: true,
-        animation: false,
-        plugins: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: 'Alpha Elements  [X/Fe]  vs solar reference',
-            color: TITLE_COL,
-            font: { family: "'Space Mono', monospace", size: 10 },
-            padding: { bottom: 10 }
-          }
-        },
-        scales: {
-          x: { ticks: { color: TICK_COL }, grid: { color: GRID_COL } },
-          y: {
-            title: { display: true, text: '[X/Fe]  (dex)', color: TICK_COL, font: {size:9} },
-            ticks: { color: TICK_COL, font: { family: "'Space Mono', monospace", size: 9 } },
-            grid: { color: GRID_COL },
-            suggestedMin: -2,
-            suggestedMax: 2
-          }
-        }
-      }
-    });
-  })();
-})();
-</script>
+<script src="/assets/data/solar-report.dev.js"></script>
+<script src="/assets/js/solar-report.js"></script>
 
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
@@ -719,6 +310,136 @@
 <script>
 (function () {
   'use strict';
+
+  /* JPL semimajor axes and the Kopparapu et al. (2013) conservative HZ
+   * share this logarithmic display transform. */
+  var ORBIT_GEOMETRY = [
+    { key:'mercury', symbol:'☿', a:0.38709927, color:'#a9b6d0', marker:5.0, labelAngle:-140 },
+    { key:'venus',   symbol:'♀', a:0.72333566, color:'#d6a071', marker:6.0, labelAngle:-110 },
+    { key:'earth',   symbol:'⊕', a:1.00000261, color:'#5ad2ff', marker:6.5, labelAngle:-74  },
+    { key:'mars',    symbol:'♂', a:1.52371034, color:'#e17a70', marker:5.5, labelAngle:-38  },
+    { key:'jupiter', symbol:'♃', a:5.20288700, color:'#e0ad68', marker:10,  labelAngle:150  },
+    { key:'saturn',  symbol:'♄', a:9.53667594, color:'#d2bf78', marker:8.5, labelAngle:124  },
+    { key:'uranus',  symbol:'♅', a:19.18916464,color:'#8fd7e5', marker:7.5, labelAngle:78   },
+    { key:'neptune', symbol:'♆', a:30.06992276,color:'#718fe5', marker:7.5, labelAngle:61   }
+  ];
+  var MAP_CENTER = 340;
+  var MIN_RADIUS = 42;
+  var MAX_RADIUS = 330;
+  var MIN_AU = ORBIT_GEOMETRY[0].a;
+  var MAX_AU = ORBIT_GEOMETRY[ORBIT_GEOMETRY.length - 1].a;
+  var HZ_INNER_AU = 0.99;
+  var HZ_OUTER_AU = 1.70;
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
+  function displayRadius(au) {
+    return MIN_RADIUS + (MAX_RADIUS - MIN_RADIUS) *
+      Math.log(au / MIN_AU) / Math.log(MAX_AU / MIN_AU);
+  }
+
+  function svgNode(tag, attrs, text) {
+    var node = document.createElementNS(SVG_NS, tag);
+    Object.keys(attrs || {}).forEach(function (key) { node.setAttribute(key, attrs[key]); });
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function polar(radius, angle) {
+    var radians = angle * Math.PI / 180;
+    return { x:MAP_CENTER + radius * Math.cos(radians), y:MAP_CENTER + radius * Math.sin(radians) };
+  }
+
+  (function buildOrbitalMap() {
+    var hzLayer = document.getElementById('hz-layer');
+    var orbitLayer = document.getElementById('orbit-layer');
+    var beltLayer = document.getElementById('asteroid-belt');
+    var planetLayer = document.getElementById('planet-layer');
+    var labelLayer = document.getElementById('orbit-label-layer');
+    if (!hzLayer || !orbitLayer || !beltLayer || !planetLayer || !labelLayer) return;
+
+    var radii = ORBIT_GEOMETRY.map(function (planet) { return displayRadius(planet.a); });
+    var hzInner = displayRadius(HZ_INNER_AU);
+    var hzOuter = displayRadius(HZ_OUTER_AU);
+    var earthRadius = displayRadius(ORBIT_GEOMETRY[2].a);
+    var monotonic = radii.every(function (radius, index) { return index === 0 || radius > radii[index - 1]; });
+    if (!monotonic || earthRadius < hzInner || earthRadius > hzOuter) {
+      throw new Error('Orbital map geometry invariant failed');
+    }
+
+    hzLayer.appendChild(svgNode('circle', {
+      cx:MAP_CENTER, cy:MAP_CENTER, r:(hzInner + hzOuter) / 2,
+      fill:'none', stroke:'rgba(82,199,138,0.18)', 'stroke-width':hzOuter - hzInner
+    }));
+    [hzInner, hzOuter].forEach(function (radius) {
+      hzLayer.appendChild(svgNode('circle', {
+        cx:MAP_CENTER, cy:MAP_CENTER, r:radius, fill:'none', stroke:'rgba(115,224,167,0.55)',
+        'stroke-width':'0.8', 'stroke-dasharray':'3 4'
+      }));
+    });
+    var hzLabel = polar((hzInner + hzOuter) / 2, 138);
+    hzLayer.appendChild(svgNode('text', {
+      x:hzLabel.x, y:hzLabel.y, class:'hz-name', 'text-anchor':'middle'
+    }, 'HZ 0.99–1.70 AU'));
+
+    ORBIT_GEOMETRY.forEach(function (planet, index) {
+      var radius = radii[index];
+      orbitLayer.appendChild(svgNode('circle', {
+        cx:MAP_CENTER, cy:MAP_CENTER, r:radius, fill:'none', stroke:'#294273', 'stroke-width':'0.9', opacity:'0.82'
+      }));
+
+      var group = svgNode('g', { id:'p-' + planet.key, class:'orbit-group' });
+      if (planet.key === 'saturn') {
+        group.appendChild(svgNode('ellipse', {
+          cx:MAP_CENTER + radius, cy:MAP_CENTER, rx:'17', ry:'5.5', fill:'none', stroke:planet.color,
+          'stroke-width':'2', opacity:'0.85', class:'saturn-rings'
+        }));
+      }
+      group.appendChild(svgNode('circle', {
+        cx:MAP_CENTER + radius, cy:MAP_CENTER, r:planet.marker, fill:planet.color,
+        filter:'url(#planet-glow)', class:'planet-dot', 'data-planet':planet.key
+      }));
+      planetLayer.appendChild(group);
+
+      var label = polar(radius, planet.labelAngle);
+      labelLayer.appendChild(svgNode('text', {
+        x:label.x, y:label.y + 6, class:'orbit-symbol', fill:planet.color,
+        'text-anchor':'middle', 'aria-label':planet.key
+      }, planet.symbol));
+    });
+
+    var beltRadius = displayRadius(2.7);
+    [beltRadius - 5, beltRadius + 5].forEach(function (radius, index) {
+      beltLayer.appendChild(svgNode('circle', {
+        cx:MAP_CENTER, cy:MAP_CENTER, r:radius, fill:'none', stroke:'#3a507b',
+        'stroke-width':index ? '0.7' : '1.3', 'stroke-dasharray':index ? '2 8' : '3 5', opacity:'0.55'
+      }));
+    });
+    for (var i = 0; i < 24; i += 1) {
+      var particle = polar(beltRadius + ((i % 5) - 2) * 2.1, i * 137.508);
+      beltLayer.appendChild(svgNode('circle', {
+        cx:particle.x, cy:particle.y, r:0.8 + (i % 3) * 0.25, fill:'#607397', opacity:0.5 + (i % 4) * 0.1
+      }));
+    }
+
+    // Vesta is retained as a named diagnostic target because reflected-solar
+    // spectra provide an independent check on the direct solar-feed products.
+    var vestaRadius = displayRadius(2.361);
+    orbitLayer.appendChild(svgNode('circle', {
+      cx:MAP_CENTER, cy:MAP_CENTER, r:vestaRadius, fill:'none', stroke:'#b7a7d8',
+      'stroke-width':'0.8', 'stroke-dasharray':'2 6', opacity:'0.55'
+    }));
+    var vestaGroup = svgNode('g', { id:'p-vesta', class:'orbit-group' });
+    vestaGroup.appendChild(svgNode('circle', {
+      cx:MAP_CENTER + vestaRadius, cy:MAP_CENTER, r:'4.5', fill:'#b7a7d8',
+      filter:'url(#planet-glow)', class:'planet-dot', 'data-planet':'vesta'
+    }));
+    planetLayer.appendChild(vestaGroup);
+    var vestaLabel = polar(vestaRadius, 18);
+    labelLayer.appendChild(svgNode('text', {
+      x:vestaLabel.x, y:vestaLabel.y + 6, class:'orbit-symbol', fill:'#c9b9e8',
+      'text-anchor':'middle', 'aria-label':'Vesta'
+    }, '⚶'));
+  })();
 
   // Planet data for modal
   var PLANETS = {
@@ -734,6 +455,9 @@
     mars: { name: 'Mars', type: 'Terrestrial · Rocky',
       mass: '0.107 M⊕', radius: '0.532 R⊕', distance: '1.524 AU', period: '686.97 d',
       hab: 'Marginal', habNote: 'Edge of hab zone — thin CO₂ atmosphere' },
+    vesta: { name: '4 Vesta', type: 'Main-belt asteroid · Solar reflector',
+      mass: '4.34 × 10⁻⁵ M⊕', radius: '262.7 km mean', distance: '2.361 AU', period: '3.63 yr',
+      hab: 'No', habNote: 'Diagnostic target — reflected sunlight independently tests the solar pipeline' },
     jupiter: { name: 'Jupiter', type: 'Gas Giant',
       mass: '317.8 M⊕', radius: '11.21 R⊕', distance: '5.203 AU', period: '11.86 yr',
       hab: 'No', habNote: 'Gas giant — no solid surface' },
