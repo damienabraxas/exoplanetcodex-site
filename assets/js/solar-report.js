@@ -85,7 +85,7 @@
   function diagnostics(records) {
     if (!records || !records.length) return '<p class="solar-empty">No generated diagnostic records.</p>';
     return '<div class="solar-diagnostics">' + records.map(function (record) {
-      return '<article><p class="solar-diagnostic-category">' + esc(record.category) + '</p><h4>' + esc(record.line) + '</h4><div class="solar-diagnostic-placeholder">Diagnostic plot fixture</div><p>' + esc(record.caption) + '</p></article>';
+      return '<article><p class="solar-diagnostic-category">' + esc(record.category) + '</p><h4>' + esc(record.line) + '</h4><p>' + esc(record.caption) + '</p><small>Disposition: ' + esc(record.status) + '</small></article>';
     }).join('') + '</div>';
   }
 
@@ -115,7 +115,7 @@
   }
   if (overviewRoot) {
     overviewRoot.innerHTML =
-      '<div class="solar-dev-banner">Development snapshot · not for publication</div>' +
+      (report.mode === 'development' ? '<div class="solar-dev-banner">Development snapshot · not for publication</div>' : '<div class="solar-generated-banner">Generated from versioned science artifacts</div>') +
       '<p class="solar-report-lede">The Sun is the Codex calibration anchor. Select an element with an available measurement to open its generated appendix, products, uncertainties, and diagnostic evidence.</p>' +
       '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>Species</th><th>Element / role</th><th>Reported A(X) ± σ</th><th>Asplund 2021</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
       '<p class="solar-table-note">Only elements with generated appendix data are clickable. Representative placeholder rows exercise the incomplete-element layout.</p>';
@@ -131,9 +131,11 @@
       '<h4 class="solar-subhead">Per-engine uncertainty by band</h4><div class="solar-error-plot">' + plotRows(fe.products, report.references) + '</div>' +
       '<p class="solar-reference-key">Gold vertical markers: ' + report.references.map(function (r) { return esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2); }).join(' · ') + '</p>' +
       '<h4 class="solar-subhead">Error budget</h4><p class="solar-copy">The display reports statistical, systematic, and total uncertainty from the reporting model. Graded products use their cited-pool gf uncertainty when available; ungraded products retain the wider all-lines gf term.</p>' +
+      '<h4 class="solar-subhead">Near-UV atomic-data provenance</h4><p class="solar-copy">' + esc(fe.provenance.sentence) + ' Counts are computed from the downloadable line records, not maintained as page prose.</p>' +
       '<h4 class="solar-subhead">Problem-line diagnostics</h4>' + diagnostics(fe.diagnostics) +
+      '<p class="solar-download"><a href="' + esc(fe.downloadPath) + '" download>Download the replication-grade Fe per-line product (.csv)</a></p>' +
       '<h4 class="solar-subhead">References for Fe</h4><p class="solar-copy">Every citation used by this element is linked from its generated reporting record.</p>' + referenceList(fe.referenceKeys) +
-      '<div class="solar-repro"><strong>Reproducibility</strong><dl><dt>Generator</dt><dd>' + esc(meta.generator) + ' ' + esc(meta.version) + '</dd><dt>Source</dt><dd>' + esc(meta.sourceArtifact) + '</dd><dt>Instrument</dt><dd>' + esc(meta.instrument) + '</dd><dt>Git</dt><dd>' + esc(meta.gitCommit) + '</dd><dt>Generated</dt><dd>' + esc(meta.generatedAt) + '</dd></dl></div>' +
+      '<div class="solar-repro"><strong>Reproducibility</strong><dl><dt>Generator</dt><dd>' + esc(meta.generator) + ' ' + esc(meta.version) + '</dd><dt>Source</dt><dd>' + esc(meta.sourceArtifact) + '</dd><dt>Instrument</dt><dd>' + esc(meta.instrument) + '</dd><dt>Science Git</dt><dd>' + esc(meta.gitCommit) + '</dd><dt>Product Git</dt><dd>' + esc(meta.productCommit) + '</dd><dt>Gold</dt><dd>' + esc(meta.goldVersion) + '</dd><dt>Generated</dt><dd>' + esc(meta.generatedAt) + '</dd></dl></div>' +
     '</article>';
   }
 })();
