@@ -117,3 +117,32 @@
   .solar-repro dl { grid-template-columns:1fr; }
   .solar-repro dd + dt { margin-top:.35rem; }
 }
+
+/* RYA-876 — Fe II appendix (arbiter/diagnostic species) */
+.solar-arbiter-note { margin:1.2rem 0 0; padding:.9rem 1.1rem; border:1px solid var(--accent-warm); border-left-width:3px; background:rgba(232,162,74,.06); color:var(--text); font-size:.86rem; line-height:1.7; }
+.solar-arbiter-note strong { color:var(--accent-warm); }
+.solar-arbiter-note a { color:var(--accent); }
+.solar-trio { font-size:clamp(1rem,2.4vw,1.35rem) !important; letter-spacing:.02em; }
+.solar-role.arbiter { border-color:var(--accent-warm); color:var(--accent-warm); }
+.solar-role.diagnostic { border-color:var(--accent); color:var(--accent); }
+.solar-role.excluded { border-color:rgba(232,120,120,.55); color:#e88; }
+.solar-error.arbiter { color:var(--accent-warm); background:var(--accent-warm); }
+.solar-point.arbiter { background:var(--accent-warm); }
+.solar-moved { color:var(--accent-warm); }
+.solar-unmoved { color:var(--text-dim); font-size:.63rem; }
+.solar-caveat { margin:.6rem 0 0; padding:.6rem .9rem; border-left:2px solid var(--rim); color:var(--text-dim); font-family:var(--mono); font-size:.66rem; line-height:1.65; }
+.solar-callout { margin:1.1rem 0; padding:1rem 1.1rem; border:1px solid var(--rim); background:var(--deep); }
+.solar-callout > span { display:block; color:var(--accent-warm); font-family:var(--mono); font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; }
+.solar-callout p { margin:.5rem 0 0; color:var(--text-dim); font-size:.8rem; line-height:1.7; }
+.solar-callout p.solar-verdict { color:var(--accent); font-family:var(--mono); font-size:.7rem; letter-spacing:.04em; }
+.solar-line-table { min-width:900px; font-size:.72rem; }
+.solar-line-table tr.solar-line-out td { color:var(--text-dim); background:rgba(232,120,120,.045); }
+@media (max-width:700px) {
+  .solar-line-table { min-width:820px; }
+}
+.solar-state { display:inline-block; padding:.14rem .42rem; border:1px solid var(--rim); border-radius:2px; font-size:.56rem; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap; }
+.solar-state.re-derived { border-color:var(--accent); color:var(--accent); }
+.solar-state.unaffected { border-color:var(--rim); color:var(--text-dim); }
+.solar-state.not-re-derived { border-color:rgba(232,162,74,.7); color:var(--accent-warm); background:rgba(232,162,74,.07); }
+.solar-novalue { color:var(--text-dim); font-size:.63rem; letter-spacing:.04em; text-transform:uppercase; cursor:help; }
+.solar-row-tier { display:block; margin-top:.18rem; color:var(--text-dim); font-size:.57rem; letter-spacing:.06em; text-transform:uppercase; }

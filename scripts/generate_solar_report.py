@@ -9,10 +9,18 @@ import json
 import math
 import shutil
 import subprocess
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import fe2_record  # noqa: E402
 
 
 SITE_ROOT = Path(__file__).resolve().parents[1]
+#: One atlas, one label. The graded (RYA-850) and ungraded (band product) rows carry
+#: `Kitt Peak solar atlas` and `kpno_solar_atlas` for the same instrument; printing
+#: both makes one instrument look like two.
+ATLAS_LABEL = "NSO Kitt Peak solar flux atlas"
 POOR_NIST_CLASSES = {"C", "C+", "D", "D+", "E"}
 
 
@@ -60,7 +68,8 @@ def main() -> None:
         science / "data/results/rya847/gated/ts-lte/FeI_3800_6910_kpno_solar_atlas_PROFILEFIT_products.csv",
         science / "data/results/rya847/gated/gerber-nlte/FeI_3800_6910_kpno_solar_atlas_PROFILEFIT_products.csv",
     ]
-    required = [perline_path, gold_path, tracker_path, matrix_path, *product_paths]
+    required = [perline_path, gold_path, tracker_path, matrix_path, *product_paths,
+                *fe2_record.required_paths(science)]
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
         raise SystemExit("Missing required science artifacts:\n" + "\n".join(missing))
@@ -77,7 +86,7 @@ def main() -> None:
     products = []
     for row in graded:
         products.append({
-            "band": row["band"], "instrument": "Kitt Peak solar atlas",
+            "band": row["band"], "instrument": ATLAS_LABEL,
             "engine": row["engine"], "method": row["pool"],
             "value": float(row["A"]), "sigma": float(row["total_dex"]),
             "lineCount": int(row["n_lines"]), "role": "graded",
@@ -90,7 +99,7 @@ def main() -> None:
                 continue
             seen.add(key)
             products.append({
-                "band": row["band"], "instrument": row["instrument"].replace("_", " "),
+                "band": row["band"], "instrument": ATLAS_LABEL,
                 "engine": row["treatment"], "method": row["handler"],
                 "value": float(row["A"]), "sigma": total(row["stat_dex"], row["syst_dex"]),
                 "lineCount": int(row["n_lines"]), "role": "ungraded",
@@ -139,25 +148,64 @@ def main() -> None:
         "Cr":"Chromium", "Mn":"Manganese", "Co":"Cobalt", "Ni":"Nickel", "Cu":"Copper",
         "Zn":"Zinc", "Sr":"Strontium", "Y":"Yttrium", "Zr":"Zirconium", "Ba":"Barium", "Eu":"Europium",
     }
+    # 🔴 EVERY element row comes from the GENERATED tracker (RYA-654), not from the
+    # gold reference. The gold file is a write-once ratification record: it carries a
+    # blank A_X for every CURATION-OWED element and its `ion` column still reads I for
+    # species measured as II (Ba, Sr, Y, Zr, Eu). Reading it for the front table threw
+    # away every measured non-Fe value and mislabelled five species.
+    asplund_of = {row["element"]: row["asplund2021"] for row in rows(gold_path)}
+    tier_of = {row["element"]: row["confidence"] for row in rows(gold_path)}
+
+    def optional(value):
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return None
+
     other_elements = []
-    for row in rows(gold_path):
-        if row["element"] == "Fe" or row["element"] not in atomic_numbers:
+    for row in rows(tracker_path):
+        symbol = row["element"]
+        if symbol == "Fe" or symbol not in atomic_numbers:
             continue
+        value = optional(row["verdict_value"])
         item = {
-            "atomicNumber": atomic_numbers[row["element"]], "symbol": row["element"],
-            "ion": row["ion"], "name": names[row["element"]],
-            "status": row["verdict"].lower(), "asplund": float(row["asplund2021"]),
+            "atomicNumber": atomic_numbers[symbol], "symbol": symbol,
+            "ion": row["ion"], "name": names[symbol],
+            # The tracker's own verdict + tier, not a re-derived label.
+            "status": (row["verdict"] or "no verdict").lower(),
+            "tier": tier_of.get(symbol, ""),
+            "method": row["method"],
+            "asplund": optional(asplund_of.get(symbol)),
+            # RYA-844: an element with no ratified value keeps a row and states why,
+            # rather than being dropped from the table.
+            "measurementNote": "" if value is not None else (row["method"] or ""),
         }
+        if value is not None:
+            item["primaryValue"] = {
+                "value": value,
+                "sigmaTotal": optional(row["sigma"]),
+                "lineCount": optional(row["n_lines"]),
+            }
+            # Publish the tracker's own delta rather than recomputing it here — a
+            # number declared in two places is the RYA-845 defect.
+            item["delta"] = optional(row["delta_vs_asplund"])
         other_elements.append(item)
     other_elements.sort(key=lambda item: item["atomicNumber"])
 
+    fe2 = fe2_record.build(science, perline)
+
     iron_rows = [
         {"atomicNumber":26,"symbol":"Fe","ion":"I","name":"Iron","status":"gold · generated","appendixPath":"/systems/sol/elements/fe/","referenceKeys":["asplund2021","lodders2025","scott2015","bergemann2012"],
-         "primary":{"value":float(gold["A_X"]),"sigmaStat":None,"sigmaSys":None,"sigmaTotal":float(tracker["sigma"]),"lineCount":int(gold["n_lines"])},
+         # σ_total is the tracker's published Fe figure; no artifact splits the
+         # ratified anchor into stat/sys, so those stay absent rather than invented.
+         "primary":{"value":float(gold["A_X"]),"sigmaStat":None,"sigmaSys":None,"sigmaTotal":float(tracker["sigma"]),"lineCount":int(gold["n_lines"]),"sigmaBasis":"element status tracker (RYA-654) — total only"},
          "secondary":{"value":secondary["value"],"sigmaStat":None,"sigmaSys":None,"sigmaTotal":secondary["sigma"],"lineCount":secondary["lineCount"]},
          "asplund":float(gold["asplund2021"]),"products":products,"diagnostics":diagnostics,"provenance":provenance,
          "downloadPath":"/assets/data/solar/Fe_perline.csv"},
-        {"atomicNumber":26,"symbol":"Fe","ion":"II","name":"Iron","childOf":"Fe I","status":"appendix pending · RYA-876","measurementRole":"ionization arbiter / diagnostic","diagnostic":{"value":7.500,"sigmaTotal":None,"lineCount":3}},
+        # RYA-876: Fe II is its own species row and its own page. The value is READ
+        # from the post-disposition band product (RYA-877 -> RYA-880); the 7.500 that
+        # used to sit here was the element tracker's 2026-07-14 number.
+        fe2,
     ]
     report = {
         "mode": "generated", "target": "Sun",
@@ -175,6 +223,8 @@ def main() -> None:
             "lodders2025":{"label":"Lodders, Bergemann & Palme (2025), Solar System Elemental Abundances","url":"https://doi.org/10.1007/s11214-025-01146-w","role":"Solar-system abundance comparison"},
             "scott2015":{"label":"Scott et al. (2015), The elemental composition of the Sun II","url":"https://doi.org/10.1051/0004-6361/201424110","role":"Iron-group abundance reference"},
             "bergemann2012":{"label":"Bergemann et al. (2012), Non-LTE line formation of Fe","url":"https://doi.org/10.1111/j.1365-2966.2012.21687.x","role":"Fe non-LTE comparison"},
+            "denhartog2019":{"label":"Den Hartog et al. (2019), Atomic transition probabilities for UV and blue lines of Fe II","url":"https://doi.org/10.3847/1538-4365/ab322e","role":"Primary-laboratory Fe II gf referee (2250–3280 Å + 4173–4584 Å)"},
+            "melendez2009":{"label":"Meléndez & Barbuy (2009), Both accurate and precise gf-values for Fe II lines","url":"https://doi.org/10.1051/0004-6361/200811302","role":"Fe II log gf source; Table 1 L/S flags separate laboratory-normalised from solar-fitted"},
             "reiners2016":{"label":"Reiners et al. (2016), The IAG solar flux atlas","url":"https://doi.org/10.1051/0004-6361/201527530","role":"Optical/near-IR atlas"},
             "hase2010":{"label":"Hase et al. (2010), The ACE-FTS atlas","url":"https://doi.org/10.1016/j.jqsrt.2009.10.020","role":"Telluric-free infrared atlas"},
         },
@@ -192,6 +242,9 @@ def main() -> None:
     print(f"generated {args.output.relative_to(SITE_ROOT)}")
     print(f"copied {download.relative_to(SITE_ROOT)} ({len(perline)} rows)")
     print(provenance["sentence"])
+    for finding in fe2["staleInputs"]:
+        print(f"STALE INPUT: {finding['artifact']} · Fe II {finding['engine']}: "
+              f"{finding['artifactLineCount']} lines vs {finding['publishedLineCount']} published")
 
 
 if __name__ == "__main__":
