@@ -635,5 +635,5 @@ def build(science: Path, perline: list[dict]) -> dict:
         "lineAccounting": line_accounting(science),
         "staleInputs": stale_inputs(science, perline, impact),
         "reproducibility": reproducibility(science),
-        "downloadPath": "/assets/data/solar/Fe_perline.csv",
+        "downloadPath": "/assets/data/solar/FeII_perline.csv",
     }

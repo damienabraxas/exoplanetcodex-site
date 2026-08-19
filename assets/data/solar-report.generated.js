@@ -304,7 +304,7 @@ window.SOLAR_REPORT = {
         ],
         "sentence": "17 of 40 near-UV Fe I lines carry a citable NIST accuracy class; 9 of those are in the C/C+/D/D+/E classes."
       },
-      "downloadPath": "/assets/data/solar/Fe_perline.csv"
+      "downloadPath": "/assets/data/solar/FeI_perline.csv"
     },
     {
       "atomicNumber": 26,
@@ -1476,9 +1476,9 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "acfa0fecebdcbf15633cee1eb727f372b9409153",
         "registryCommit": "8177e047dd4497344e01a280d925642e80e4cbf5",
         "scienceGit": "045a6eb00fc6296c44ad7554e309199adf48b848",
-        "generatedAt": "2026-08-19T01:45:06+00:00"
+        "generatedAt": "2026-08-19T02:28:07+00:00"
       },
-      "downloadPath": "/assets/data/solar/Fe_perline.csv"
+      "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
     {
       "atomicNumber": 3,

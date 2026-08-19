@@ -62,7 +62,8 @@
     }).join('');
   }
 
-  function plotRows(products, references) {
+  function plotRows(products, references, options) {
+    options = options || {};
     var all = products.map(function (p) { return [p.value - p.sigma, p.value + p.sigma]; });
     references.forEach(function (r) { all.push([r.value - r.sigma, r.value + r.sigma]); });
     var min = Math.min.apply(null, all.map(function (v) { return v[0]; })) - 0.03;
@@ -72,19 +73,27 @@
 
     var bands = [];
     products.forEach(function (p) { if (bands.indexOf(p.band) === -1) bands.push(p.band); });
-    return '<div class="solar-plot-axis"><span>' + min.toFixed(2) + '</span><span>A(Fe)</span><span>' + max.toFixed(2) + '</span></div>' +
+    var referenceBands = references.map(function (r, index) {
+      return '<i class="solar-reference-band reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>' +
+        '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>';
+    }).join('');
+    return '<div class="solar-plot-axis"><span>' + min.toFixed(2) + '</span><span>' + esc(options.axisLabel || 'A(Fe)') + '</span><span>' + max.toFixed(2) + '</span></div>' +
       bands.map(function (band) {
         var rows = products.filter(function (p) { return p.band === band; }).map(function (p) {
           var left = pct(p.value - p.sigma);
           var width = (p.sigma * 2 / span * 100).toFixed(2);
-          return '<div class="solar-plot-row"><div class="solar-plot-label">' + esc(p.engine) + '<span>' + esc(p.role) + '</span></div>' +
-            '<div class="solar-plot-track"><i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' +
+          var stat = typeof p.sigmaStat === 'number' ? p.sigmaStat : null;
+          var statBar = stat == null ? '' : '<i class="solar-error-stat ' + esc(p.role) + '" style="left:' + pct(p.value - stat) + '%;width:' + ((stat * 2 / span) * 100).toFixed(2) + '%"></i>';
+          return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(p.engine) + '</strong>' +
+            '<span>' + (p.method ? '(' + esc(p.method) + ') · ' : '') + esc(p.role) + '</span></div>' +
+            '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + statBar +
             '<b class="solar-point ' + esc(p.role) + '" style="left:' + pct(p.value) + '%"></b>' +
-            references.map(function (r) { return '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>'; }).join('') +
-            '</div><div class="solar-plot-value">' + number(p.value, 3) + ' ± ' + number(p.sigma, 2) + '</div></div>';
+            '</div><div class="solar-plot-value">' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
+            (stat == null ? '' : '<span>stat ±' + number(stat, 3) + '</span>') + '</div></div>';
         }).join('');
         return '<section class="solar-band"><h4>' + esc(band) + '</h4>' + rows + '</section>';
-      }).join('');
+      }).join('') + '<div class="solar-forest-legend"><span><i class="legend-total"></i>total σ</span><span><i class="legend-stat"></i>statistical σ</span>' +
+      references.map(function (r, index) { return '<span><i class="legend-reference reference-' + index + '"></i>' + esc(r.name) + ' ±' + number(r.sigma, 2) + '</span>'; }).join('') + '</div>';
   }
 
   function diagnostics(records) {
@@ -311,11 +320,13 @@
       '<th>Product</th><th>N</th><th>A(Fe II)</th><th>Δ</th><th>Statistical σ</th></tr></thead><tbody>' +
       moved + '</tbody></table></div>' +
       '<p class="solar-table-note">' + esc(impact.controlMethod) + '</p>' +
-      '<div class="solar-diagnostics">' + record.dispositions.map(function (d) {
-        return '<article><p class="solar-diagnostic-category">' + esc(d.problemClass.replace(/_/g, ' ').toLowerCase()) +
+      '<div class="solar-problem-lines">' + record.dispositions.map(function (d) {
+        var plot = d.plotPath ? '<figure><img src="' + esc(d.plotPath) + '" alt="Diagnostic plot for ' +
+          esc(d.scope) + '"><figcaption>' + esc(d.plotCaption || 'Generated line diagnostic') + '</figcaption></figure>' : '';
+        return '<article><div><p class="solar-diagnostic-category">' + esc(d.problemClass.replace(/_/g, ' ').toLowerCase()) +
           ' · ' + esc(d.treatment) + '</p><h4>' + esc(d.scope) + '</h4>' +
           '<p>' + esc(d.note) + '</p><small>RYA-' + esc(d.tickets.split(',').join(' · RYA-')) +
-          ' · severity ' + esc(d.severity) + ' · ' + esc(d.status) + '</small></article>';
+          ' · severity ' + esc(d.severity) + ' · ' + esc(d.status) + '</small></div>' + plot + '</article>';
       }).join('') + '</div>';
   }
 
@@ -343,23 +354,23 @@
       '<div class="solar-diagnostics">' + items.join('') + '</div>';
   }
 
-  function fe2Lines(records) {
-    return '<div class="solar-table-wrap"><table class="solar-product-table solar-line-table"><thead><tr>' +
-      '<th>λ air (Å)</th><th>EP (eV)</th><th>log gf</th><th>gf source / grade</th>' +
-      '<th>Engine</th><th>A(Fe II)</th><th>NLTE Δ</th><th>In pool</th></tr></thead><tbody>' +
-      records.map(function (r) {
-        return '<tr class="' + (r.kept ? '' : 'solar-line-out') + '">' +
-          '<td class="solar-number">' + number(r.wavelength, 4) + '</td>' +
-          '<td class="solar-number">' + number(r.ep, 4) + '</td>' +
-          '<td class="solar-number">' + number(r.logGf, 3) + '</td>' +
-          '<td>' + esc(r.gfSource || '—') + (r.gfGrade ? '<span class="solar-method">' + esc(r.gfGrade) + '</span>' : '') + '</td>' +
-          '<td>' + esc(r.engine) + '</td>' +
-          '<td class="solar-number">' + number(r.abundance, 3) + '</td>' +
-          '<td class="solar-number">' + (typeof r.nlteDeltaDex === 'number' ? signed(r.nlteDeltaDex) : '—') +
-          (r.nlteSource ? '<span class="solar-method">' + esc(r.nlteSource) + '</span>' : '') + '</td>' +
-          '<td>' + (r.kept ? '<span class="solar-role arbiter">kept</span>'
-                           : '<span class="solar-role excluded" title="' + esc(r.excludedReason) + '">' + esc(r.exclusionLabel) + '</span>') + '</td></tr>';
-      }).join('') + '</tbody></table></div>';
+  function fe2LineRecord(records, downloadPath) {
+    var wavelengths = {};
+    var engines = {};
+    var flagged = {};
+    records.forEach(function (r) {
+      wavelengths[number(r.wavelength, 4)] = true;
+      engines[r.engine] = true;
+      if (r.problemClass || !r.kept) flagged[number(r.wavelength, 4)] = true;
+    });
+    return '<div class="solar-line-record"><div><span>Downloadable data product</span>' +
+      '<strong>' + Object.keys(wavelengths).length + ' unique lines</strong>' +
+      '<p>' + records.length + ' engine-level records · ' + Object.keys(engines).length +
+      ' treatments · ' + Object.keys(flagged).length + ' flagged ' +
+      (Object.keys(flagged).length === 1 ? 'line' : 'lines') +
+      '. The complete measurement record belongs in the CSV, not in a thousand-row web table.</p></div>' +
+      '<a class="solar-csv-download" href="' + esc(downloadPath) + '" download>' +
+      '<strong>Download Fe per-line CSV</strong><span>Repository-kept · replication-grade</span></a></div>';
   }
 
   if (appendixRoot && appendixSpecies === 'Fe II') {
@@ -390,7 +401,7 @@
         '<p class="solar-table-note">Engines are separate data products and are never combined (RYA-712). The arbiter is one of them, not an average of them. <strong>RYA-877 state</strong>: <em>re-derived</em> = recomputed after the disposition; <em>unaffected</em> = the dispositioned line is outside the band; <em>not re-derived</em> = still carrying its pre-disposition membership, with no committed artifact recording whether the line was in it.</p>' +
 
         '<h4 class="solar-subhead">Per-engine uncertainty</h4><div class="solar-error-plot">' +
-        plotRows(fe2.products, report.references) + '</div>' +
+        plotRows(fe2.products, report.references, { axisLabel: 'A(Fe II)' }) + '</div>' +
         '<p class="solar-reference-key">Gold vertical markers show the elemental A(Fe) scale (' +
         report.references.map(function (r) { return esc(r.name) + ' ' + number(r.value, 2); }).join(' · ') +
         ') for orientation only — those are A(Fe), not a published A(Fe II), and the arbiter is not scored against them.</p>' +
@@ -403,12 +414,12 @@
         '<h4 class="solar-subhead">Error budget</h4><p class="solar-copy">Every Fe II product above is dominated by <strong>' +
         esc(fe2.products[0].dominant) + '</strong>. There is no primary-laboratory gf table for Fe II in this wavelength range — the graded ladder built in RYA-799/824/836 is Fe I only — so no Fe II product can be promoted to a graded value, and more lines will not shrink the dominant term. The honest floor is the ungraded gf systematic, not the statistical scatter.</p>' +
 
-        '<h4 class="solar-subhead">RYA-877 · the circular line</h4>' + fe2Disposition(fe2) +
+        '<h4 class="solar-subhead">Problem-line diagnostics</h4>' + fe2Disposition(fe2) +
+        '<p class="solar-table-note">Only lines requiring scientific attention are expanded here. Generated plots are attached when the disposition needs spectral evidence—for example blends, ghosts, or fit failures. Atomic-data provenance cases can be established from the cited record without inventing an unnecessary plot.</p>' +
 
         '<h4 class="solar-subhead">Artifact integrity checks</h4>' + fe2Integrity(fe2) +
 
-        '<h4 class="solar-subhead">Per-line record</h4>' + fe2Lines(fe2.lines) +
-        '<p class="solar-download"><a href="' + esc(fe2.downloadPath) + '" download>Download the replication-grade Fe per-line product (.csv)</a></p>' +
+        '<h4 class="solar-subhead">Per-line record</h4>' + fe2LineRecord(fe2.lines, fe2.downloadPath) +
 
         '<h4 class="solar-subhead">References for Fe II</h4>' + referenceList(fe2.referenceKeys) +
         fe2Repro(fe2.reproducibility) +

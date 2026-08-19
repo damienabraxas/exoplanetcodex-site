@@ -7,7 +7,6 @@ import argparse
 import csv
 import json
 import math
-import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -39,6 +38,33 @@ def metadata(path: Path) -> dict[str, str]:
                 key, value = line[1:].split(":", 1)
                 result[key.strip()] = value.strip()
     return result
+
+
+def write_species_csv(source: Path, destination: Path, ion: str) -> int:
+    """Publish one appendix-sized CSV from the element-wide pipeline artifact."""
+    source_rows = rows(source)
+    species_rows = [row for row in source_rows if row["element"] == "Fe" and row["ion"] == ion]
+    if not species_rows:
+        raise SystemExit(f"No Fe {ion} rows found in {source}")
+
+    comments = []
+    with source.open(encoding="utf-8") as handle:
+        for line in handle:
+            if not line.startswith("#"):
+                break
+            comments.append(line)
+    comments.extend([
+        f"# appendix_species: Fe {ion}\n",
+        "# website_export: species-specific subset; source rows are unchanged\n",
+    ])
+
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with destination.open("w", newline="", encoding="utf-8") as handle:
+        handle.writelines(comments)
+        writer = csv.DictWriter(handle, fieldnames=species_rows[0].keys())
+        writer.writeheader()
+        writer.writerows(species_rows)
+    return len(species_rows)
 
 
 def total(stat: str, syst: str) -> float:
@@ -201,7 +227,7 @@ def main() -> None:
          "primary":{"value":float(gold["A_X"]),"sigmaStat":None,"sigmaSys":None,"sigmaTotal":float(tracker["sigma"]),"lineCount":int(gold["n_lines"]),"sigmaBasis":"element status tracker (RYA-654) — total only"},
          "secondary":{"value":secondary["value"],"sigmaStat":None,"sigmaSys":None,"sigmaTotal":secondary["sigma"],"lineCount":secondary["lineCount"]},
          "asplund":float(gold["asplund2021"]),"products":products,"diagnostics":diagnostics,"provenance":provenance,
-         "downloadPath":"/assets/data/solar/Fe_perline.csv"},
+         "downloadPath":"/assets/data/solar/FeI_perline.csv"},
         # RYA-876: Fe II is its own species row and its own page. The value is READ
         # from the post-disposition band product (RYA-877 -> RYA-880); the 7.500 that
         # used to sit here was the element tracker's 2026-07-14 number.
@@ -236,11 +262,13 @@ def main() -> None:
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("window.SOLAR_REPORT = " + json.dumps(report, indent=2, ensure_ascii=False) + ";\n", encoding="utf-8")
-    download = SITE_ROOT / "assets/data/solar/Fe_perline.csv"
-    download.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(perline_path, download)
+    download_fe1 = SITE_ROOT / "assets/data/solar/FeI_perline.csv"
+    download_fe2 = SITE_ROOT / "assets/data/solar/FeII_perline.csv"
+    count_fe1 = write_species_csv(perline_path, download_fe1, "I")
+    count_fe2 = write_species_csv(perline_path, download_fe2, "II")
     print(f"generated {args.output.relative_to(SITE_ROOT)}")
-    print(f"copied {download.relative_to(SITE_ROOT)} ({len(perline)} rows)")
+    print(f"wrote {download_fe1.relative_to(SITE_ROOT)} ({count_fe1} rows)")
+    print(f"wrote {download_fe2.relative_to(SITE_ROOT)} ({count_fe2} rows)")
     print(provenance["sentence"])
     for finding in fe2["staleInputs"]:
         print(f"STALE INPUT: {finding['artifact']} · Fe II {finding['engine']}: "
