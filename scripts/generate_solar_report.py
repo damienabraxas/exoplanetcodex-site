@@ -160,7 +160,25 @@ def main() -> None:
         if len(diagnostics) == 8:
             break
 
-    secondary = next(p for p in products if p["band"] == "VIS" and p["engine"] == "ENGINE-B-NLTE")
+    # 🔴 RYA-906 — select the secondary product by its PHYSICS, not by the spelling of
+    # its label. This was `p["engine"] == "ENGINE-B-NLTE"`, the same compare-against-a-
+    # label shape RYA-869 was filed about; there it silently matched nothing, here a bare
+    # `next()` would raise StopIteration and take the whole report down. Prefer the axis
+    # columns the science repo now emits (route/scale/model), fall back to the legacy
+    # label for artifacts that predate them, and say plainly what was being looked for.
+    def _is_nlte_synth(p):
+        route, scale = p.get("route"), p.get("scale")
+        if route and scale:
+            return route == "synth" and scale != "1D-LTE"
+        return p.get("engine") == "ENGINE-B-NLTE"
+
+    secondary = next(
+        (p for p in products if p["band"] == "VIS" and _is_nlte_synth(p)), None)
+    if secondary is None:
+        raise SystemExit(
+            "no VIS NLTE-synthesis product found (route=synth, scale!=1D-LTE, legacy "
+            "label ENGINE-B-NLTE). The Solar report names one as its secondary; refusing "
+            "to render a page that silently drops it.")
     atomic_numbers = {
         "Li": 3, "C": 6, "N": 7, "O": 8, "Na": 11, "Mg": 12, "Al": 13,
         "Si": 14, "P": 15, "S": 16, "K": 19, "Ca": 20, "Sc": 21, "Ti": 22,

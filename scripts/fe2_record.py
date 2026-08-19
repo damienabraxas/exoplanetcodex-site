@@ -176,7 +176,26 @@ def _band_range(band: str):
     return _BAND_RANGES.get(band, (None, None))
 
 
-def _handler_of(treatment: str) -> str:
+def _handler_of(treatment: str, science: Path | None = None) -> str:
+    """The handler that produced this treatment — READ from the product, not inferred.
+
+    🔴 RYA-906. What stood here was
+        `"SynthesisHandler" if treatment.startswith("ENGINE-B") else "ProfileFitHandler"`
+    which derives a property of the measurement from the spelling of its label. That is
+    the RYA-869 defect inverted: RYA-869 inferred the treatment's systematic from the
+    label and charged four published bars the wrong handler's residual. The same
+    reasoning here gets the near-UV Fe I cell backwards — its label is `1D-LTE` and it is
+    a RYA-759 synthesis flux fit, so a prefix test calls it the profile fitter.
+
+    The science repo's products CSV carries `handler` (RYA-869) and now `route` (RYA-906).
+    Read it. Fall back to the old inference only when no product row exists, and say so.
+    """
+    if science is not None:
+        for row in _rows(science / BAND_PRODUCT_DIR / f"{FE2_STEM}_products.csv"):
+            if (row.get("treatment") or "").strip() == treatment:
+                h = (row.get("handler") or "").strip()
+                if h:
+                    return h
     return "SynthesisHandler" if treatment.startswith("ENGINE-B") else "ProfileFitHandler"
 
 
@@ -414,7 +433,11 @@ def lines(science: Path, perline: list[dict]) -> list[dict]:
                 "wavelength": round(wl, 4),
                 "ep": _num(row.get("ep_eV"), 4),
                 "engine": treatment,
-                "handler": "SynthesisHandler" if treatment == "ENGINE-B" else "ProfileFitHandler",
+                # 🔴 RYA-906 — this was `treatment == "ENGINE-B"`, the EXACT compare
+                # RYA-869 was filed about: it does not match `ENGINE-B-NLTE`, so the
+                # NLTE synthesis leg was being labelled ProfileFitHandler on the
+                # published page. Read the handler off the product instead.
+                "handler": _handler_of(treatment, science),
                 "abundance": _num(row.get("abundance"), 4),
                 "kept": kept,
                 "logGf": _num(atom.get("log_gf"), 4),
