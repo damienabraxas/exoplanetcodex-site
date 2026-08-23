@@ -1476,7 +1476,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "acfa0fecebdcbf15633cee1eb727f372b9409153",
         "registryCommit": "8177e047dd4497344e01a280d925642e80e4cbf5",
         "scienceGit": "b6225a75a72b09a57b1b2dd4e521c86cf4a0e090",
-        "generatedAt": "2026-08-23T04:51:13+00:00"
+        "generatedAt": "2026-08-23T05:10:56+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1579,7 +1579,8 @@ window.SOLAR_REPORT = {
       "tier": "owed",
       "method": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 6.43,
-      "measurementNote": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank"
+      "measurementNote": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "appendixPath": "/systems/sol/elements/al/"
     },
     {
       "atomicNumber": 14,

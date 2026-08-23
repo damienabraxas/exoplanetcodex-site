@@ -25,7 +25,7 @@
 
   function elementRows(elements) {
     return elements.map(function (element) {
-      var hasAppendix = Boolean(element.appendixPath && element.primary);
+      var hasAppendix = Boolean(element.appendixPath);
       var species = element.symbol + (element.ion ? ' ' + element.ion : '');
       var label = hasAppendix
         ? '<a class="solar-element-link" href="' + esc(element.appendixPath) + '">' + esc(species) + '<span class="sr-only"> — open appendix page</span></a>'
@@ -42,7 +42,8 @@
       var role = element.measurementRole
         ? '<span class="solar-row-role">' + esc(element.measurementRole) + lineCount + '</span>'
         : (element.tier ? '<span class="solar-row-tier">' + esc(element.tier) + lineCount + '</span>' : '');
-      return '<tr class="' + (hasAppendix ? 'has-appendix' : 'no-appendix') + (element.childOf ? ' solar-species-child' : '') + '">' +
+      var searchText = [element.symbol, element.ion, element.name, element.status, element.tier, element.measurementNote].join(' ').toLowerCase();
+      return '<tr data-element-search="' + esc(searchText) + '" class="' + (hasAppendix ? 'has-appendix' : 'no-appendix') + (element.childOf ? ' solar-species-child' : '') + '">' +
         '<td class="solar-z">' + esc(element.atomicNumber) + '</td>' +
         '<td>' + label + '</td><td>' + esc(element.name) + role + '</td>' +
         '<td class="solar-number solar-primary">' + primary + '</td>' +
@@ -138,8 +139,24 @@
     overviewRoot.innerHTML =
       (report.mode === 'development' ? '<div class="solar-dev-banner">Development snapshot · not for publication</div>' : '<div class="solar-generated-banner">Generated from versioned science artifacts</div>') +
       '<p class="solar-report-lede">The Sun is the Codex calibration anchor. Select an element with an available measurement to open its generated appendix, products, uncertainties, and diagnostic evidence.</p>' +
+      '<div class="solar-table-tools"><label for="solar-element-filter">Find an element</label><input id="solar-element-filter" type="search" placeholder="Symbol, name, or status…" autocomplete="off"><span id="solar-element-count" aria-live="polite"></span></div>' +
       '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>Species</th><th>Element / role</th><th>Reported A(X) ± σ</th><th>Asplund 2021</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
       '<p class="solar-table-note">Every row is read from the generated element status tracker. Elements reading <em>no ratified value</em> have been measured but are curation-owed — the value is withheld rather than published provisionally; hover the cell for the method that is owed. Only species with a generated appendix are clickable.</p>';
+    var elementFilter = document.getElementById('solar-element-filter');
+    var elementCount = document.getElementById('solar-element-count');
+    var elementTableRows = Array.prototype.slice.call(overviewRoot.querySelectorAll('tbody tr[data-element-search]'));
+    function filterElements() {
+      var query = (elementFilter.value || '').trim().toLowerCase();
+      var shown = 0;
+      elementTableRows.forEach(function (row) {
+        var visible = !query || row.getAttribute('data-element-search').indexOf(query) !== -1;
+        row.hidden = !visible;
+        if (visible) shown += 1;
+      });
+      elementCount.textContent = query ? shown + ' of ' + elementTableRows.length + ' elements' : elementTableRows.length + ' elements';
+    }
+    elementFilter.addEventListener('input', filterElements);
+    filterElements();
   }
 
   if (appendixRoot && appendixSpecies === 'Fe I') {

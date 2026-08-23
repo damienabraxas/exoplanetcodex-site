@@ -228,6 +228,8 @@ def main() -> None:
             # rather than being dropped from the table.
             "measurementNote": "" if value is not None else (row["method"] or ""),
         }
+        if symbol == "Al" and row["ion"] == "I":
+            item["appendixPath"] = "/systems/sol/elements/al/"
         if value is not None:
             item["primaryValue"] = {
                 "value": value,

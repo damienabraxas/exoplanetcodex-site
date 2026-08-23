@@ -20,8 +20,10 @@ code{color:var(--link);font-size:.85em}
 .val{font-variant-numeric:tabular-nums;white-space:nowrap}
 .tell{display:grid;grid-template-columns:190px 1fr 1fr 1fr;gap:8px;padding:5px 0;border-bottom:1px solid var(--rule)}
 .note{font-size:.9em}
+label{display:block;color:var(--mut);margin:8px 0;font-size:.9em}input{margin-left:8px;padding:7px 9px;border:1px solid var(--rule);border-radius:5px;background:var(--bg);color:var(--fg);font:inherit}
 </style></head><body><main>
 <h1>Codex live product tracker</h1>
+<label for="elementFilter">Filter elements <input id="elementFilter" type="search" placeholder="e.g. AlI, FeII"></label>
 <p class="muted">Instrument &times; holding &times; band &times; engine. Every cell is derived from a product
 or a registry by <code>scripts/rya935_live_status.py</code> &mdash; nothing on this page is typed by hand.</p>
 <div id="pills" class="pills"></div>
@@ -71,6 +73,7 @@ async function draw(){
    }
  }
  document.querySelector('#matrix').innerHTML=h+'</tbody>';
+ applyElementFilter();
  document.querySelector('#unattributed').innerHTML = d.unattributed_products
    ? '<span class="warn">'+d.unattributed_products+'</span> product rows predate RYA-933/934 and carry no holding in their filename. '
      +'They are attributable to an instrument only \u2014 an instrument can serve a corrected and an uncorrected holding, and guessing which would be the collapse the stem change prevents.'
@@ -81,6 +84,14 @@ async function draw(){
     +'<span class="'+(t.externally_validated?'good':'warn')+'">'+(t.externally_validated?'yes':'NONE \u2014 unvalidated')+'</span></div>').join('');
  document.querySelector('#err').textContent='';
 }
+function applyElementFilter(){
+ const q=(document.querySelector('#elementFilter').value||'').trim().toLowerCase();
+ document.querySelectorAll('#matrix tbody tr').forEach(row=>{
+   const isHeading=row.cells.length===1;
+   row.hidden=Boolean(q&&!isHeading&&!row.textContent.toLowerCase().includes(q));
+ });
+}
+document.querySelector('#elementFilter').addEventListener('input',applyElementFilter);
 draw().catch(e=>document.querySelector('#err').textContent='Serve this directory over HTTP: '+e);
 setInterval(()=>draw().catch(()=>{}),5000);
 </script></body></html>

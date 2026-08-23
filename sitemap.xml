@@ -7,10 +7,10 @@
     <loc>https://exoplanetcodex.org/about/</loc>
   </url>
   <url>
-    <loc>https://exoplanetcodex.org/glossary/</loc>
+    <loc>https://exoplanetcodex.org/architecture/</loc>
   </url>
   <url>
-    <loc>https://exoplanetcodex.org/architecture/</loc>
+    <loc>https://exoplanetcodex.org/glossary/</loc>
   </url>
   <url>
     <loc>https://exoplanetcodex.org/method/</loc>
@@ -68,6 +68,15 @@
   </url>
   <url>
     <loc>https://exoplanetcodex.org/systems/sol/</loc>
+  </url>
+  <url>
+    <loc>https://exoplanetcodex.org/systems/sol/elements/al/</loc>
+  </url>
+  <url>
+    <loc>https://exoplanetcodex.org/systems/sol/elements/fe-ii/</loc>
+  </url>
+  <url>
+    <loc>https://exoplanetcodex.org/systems/sol/elements/fe/</loc>
   </url>
   <url>
     <loc>https://exoplanetcodex.org/systems/tau-ceti/</loc>
