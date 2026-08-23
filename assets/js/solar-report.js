@@ -56,7 +56,7 @@
   function productRows(products) {
     return products.map(function (product) {
       return '<tr><td>' + esc(product.band) + '</td><td>' + esc(product.instrument) + '</td>' +
-        '<td>' + esc(product.engine) + '<span class="solar-method">' + esc(product.method) + '</span></td>' +
+        '<td>' + esc(product.engine) + '<span class="solar-method">' + esc(product.method) + '</span><span class="solar-method">' + esc(product.telluric || 'telluric: not declared') + '</span></td>' +
         '<td class="solar-number">' + number(product.value, 3) + ' ± ' + number(product.sigma, 2) + '</td>' +
         '<td class="solar-number">' + esc(product.lineCount) + '</td>' +
         '<td><span class="solar-role ' + esc(product.role) + '">' + esc(product.role) + '</span></td></tr>';
@@ -89,15 +89,18 @@
           var width = (p.sigma * 2 / span * 100).toFixed(2);
           var stat = typeof p.sigmaStat === 'number' ? p.sigmaStat : null;
           var statBar = stat == null ? '' : '<i class="solar-error-stat ' + esc(p.role) + '" style="left:' + pct(p.value - stat) + '%;width:' + ((stat * 2 / span) * 100).toFixed(2) + '%"></i>';
+          var syst = typeof p.sigmaSys === 'number' ? p.sigmaSys : null;
+          var systBar = syst == null ? '' : '<i class="solar-error-syst ' + esc(p.role) + '" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
+          var metadata = (p.method ? p.method + ' · ' : '') + (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
           return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(p.engine) + '</strong>' +
-            '<span>' + (p.method ? '(' + esc(p.method) + ') · ' : '') + esc(p.role) + '</span></div>' +
-            '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + statBar +
+            '<span>' + esc(metadata) + '</span></div>' +
+            '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + systBar + statBar +
             '<b class="solar-point ' + esc(p.role) + '" style="left:' + pct(p.value) + '%"></b>' +
             '</div><div class="solar-plot-value">' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
             (stat == null ? '' : '<span>stat ±' + number(stat, 3) + '</span>') + '</div></div>';
         }).join('');
         return '<section class="solar-band"><h4>' + esc(band) + '</h4>' + rows + '</section>';
-      }).join('') + '<div class="solar-forest-legend"><span><i class="legend-total"></i>total σ</span><span><i class="legend-stat"></i>statistical σ</span>' +
+      }).join('') + '<div class="solar-forest-legend"><span><i class="legend-total"></i>total σ</span><span><i class="legend-stat"></i>statistical σ</span><span><i class="legend-systematic"></i>systematic σ</span>' +
       references.map(function (r, index) { return '<span><i class="legend-reference reference-' + index + '"></i>' + esc(r.name) + ' ±' + number(r.sigma, 2) + '</span>'; }).join('') + '</div>';
   }
 
@@ -126,6 +129,7 @@
   var appendixSpecies = (appendixRoot && appendixRoot.getAttribute('data-species')) || 'Fe I';
   var fe = species('Fe I');
   var alEvidence = report.alEvidence || { products: [], coverageGrid: [] };
+  var feEvidence = report.feEvidence || { products: [], coverageGrid: [] };
   var meta = report.reproducibility;
   if (introRoot) {
     introRoot.innerHTML =
@@ -165,13 +169,16 @@
   }
 
   if (appendixRoot && appendixSpecies === 'Fe I') {
+    var feDisplayProducts = feEvidence.products.length ? feEvidence.products : fe.products;
     appendixRoot.innerHTML =
     '<article class="solar-appendix">' +
       '<a class="solar-back" href="/systems/sol/#our-findings">← Back to Solar element table</a><p class="solar-kicker">Element appendix</p><h2>Iron <span>Fe</span></h2>' +
       '<div class="solar-hero"><div><span>Primary · graded</span><strong>' + number(fe.primary.value, 3) + ' <small>± ' + number(fe.primary.sigmaTotal, 2) + '</small></strong><p>' + esc(fe.primary.lineCount) + ' lines · ' + (typeof fe.primary.sigmaStat === 'number' ? 'stat ' + number(fe.primary.sigmaStat, 2) + ' · sys ' + number(fe.primary.sigmaSys, 2) : esc(fe.primary.sigmaBasis || 'total uncertainty only')) + '</p></div>' +
       '<div class="secondary"><span>Secondary · all accepted lines</span><strong>' + number(fe.secondary.value, 3) + ' <small>± ' + number(fe.secondary.sigmaTotal, 2) + '</small></strong><p>' + esc(fe.secondary.lineCount) + ' lines · broader gf floor; broader does not mean bad</p></div></div>' +
-      '<h4 class="solar-subhead">Band × instrument × engine products</h4><div class="solar-table-wrap"><table class="solar-product-table"><thead><tr><th>Band</th><th>Instrument</th><th>Engine / method</th><th>A(Fe) ± σ</th><th>N</th><th>Role</th></tr></thead><tbody>' + productRows(fe.products) + '</tbody></table></div>' +
-      '<h4 class="solar-subhead">Per-engine uncertainty by band</h4><div class="solar-error-plot">' + plotRows(fe.products, report.references) + '</div>' +
+      '<h4 class="solar-subhead">RYA-935 product matrix · instrument × band</h4>' + productMatrix(feDisplayProducts, feEvidence.coverageGrid) +
+      '<p class="solar-table-note">The matrix preserves every RYA-935 product identity. Telluric state is shown as not declared when the source product has no holding attribution.</p>' +
+      '<h4 class="solar-subhead">RYA-935 band × instrument × engine products</h4><div class="solar-table-wrap"><table class="solar-product-table"><thead><tr><th>Band</th><th>Instrument / holding</th><th>Engine / treatment / telluric</th><th>A(Fe) ± σ</th><th>N</th><th>Role</th></tr></thead><tbody>' + productRows(feDisplayProducts) + '</tbody></table></div>' +
+      '<h4 class="solar-subhead">RYA-935 uncertainty by product</h4><div class="solar-error-plot">' + plotRows(feDisplayProducts, report.references) + '</div>' +
       '<p class="solar-reference-key">Gold vertical markers: ' + report.references.map(function (r) { return esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2); }).join(' · ') + '</p>' +
       '<h4 class="solar-subhead">Error budget</h4><p class="solar-copy">The display reports statistical, systematic, and total uncertainty from the reporting model. Graded products use their cited-pool gf uncertainty when available; ungraded products retain the wider all-lines gf term.</p>' +
       '<h4 class="solar-subhead">Near-UV atomic-data provenance</h4><p class="solar-copy">' + esc(fe.provenance.sentence) + ' Counts are computed from the downloadable line records, not maintained as page prose.</p>' +
@@ -218,9 +225,13 @@
         return '<div class="pmatrix-cell is-present"><span class="pmatrix-state">product</span>' +
           here.map(function (p) {
             return '<span class="pmatrix-engine"><span class="pm-eng">' + esc(p.engine) + '</span>' +
+              '<span class="pm-method">' + esc(p.method || '') + '</span>' +
               '<span class="pm-val">' + number(p.value, 3) + '</span>' +
-              '<span class="pm-sig">&plusmn; ' + number(p.sigma, 2) + '</span>' +
-              '<span class="pm-n">n=' + esc(p.lineCount) + '</span></span>';
+              '<span class="pm-sig">&plusmn; ' + number(p.sigma, 2) + ' total</span>' +
+              (typeof p.sigmaStat === 'number' ? '<span class="pm-sig">stat ' + number(p.sigmaStat, 3) + '</span>' : '') +
+              (typeof p.sigmaSys === 'number' ? '<span class="pm-sig">syst ' + number(p.sigmaSys, 3) + '</span>' : '') +
+              '<span class="pm-n">n=' + esc(p.lineCount) + '</span>' +
+              '<span class="pm-tell">' + esc(p.telluric || 'telluric: not declared') + '</span></span>';
           }).join('') + '</div>';
       }
       var st = STATE[c.state] || STATE.gap;
@@ -269,7 +280,7 @@
       var state = '<span class="solar-state ' + esc(p.dispositionState.replace(/ /g, '-')) + '" title="' +
         esc(p.dispositionNote) + '">' + esc(p.dispositionState) + '</span>';
       return '<tr><td>' + esc(p.band) + '</td><td>' + esc(p.instrument) + '</td>' +
-        '<td>' + esc(p.engine) + '<span class="solar-method">' + esc(p.method) + '</span></td>' +
+            '<td>' + esc(p.engine) + '<span class="solar-method">' + esc(p.method) + '</span><span class="solar-method">' + esc(p.telluric || 'telluric: not declared') + '</span></td>' +
         '<td class="solar-number">' + number(p.value, 3) + ' ± ' + number(p.sigma, 2) +
         '<span class="solar-method">stat ' + number(p.sigmaStat, 4) + ' · sys ' + number(p.sigmaSys, 4) + '</span></td>' +
         '<td class="solar-number">' + esc(p.lineCount) + '<span class="solar-method">' + esc(p.excludedCount) + ' excluded</span></td>' +
@@ -462,7 +473,7 @@
         '<div class="solar-table-wrap"><table class="solar-product-table"><thead><tr><th>Band</th><th>Instrument / holding</th><th>Engine / method</th><th>A(Al) ± σ</th><th>σ stat</th><th>σ syst</th><th>N</th></tr></thead><tbody>' +
         alProducts.map(function (p) {
           return '<tr><td>' + esc(p.band) + '</td><td>' + esc(p.instrument) + (p.holding ? '<span class="solar-method">' + esc(p.holding) + '</span>' : '') + '</td>' +
-            '<td>' + esc(p.engine) + '<span class="solar-method">' + esc(p.method) + '</span></td>' +
+            '<td>' + esc(p.engine) + '<span class="solar-method">' + esc(p.method) + '</span><span class="solar-method">' + esc(p.telluric || 'telluric: not declared') + '</span></td>' +
             '<td class="solar-number">' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) + '</td>' +
             '<td class="solar-number">' + number(p.sigmaStat, 3) + '</td><td class="solar-number">' + number(p.sigmaSys, 3) + '</td>' +
             '<td class="solar-number">' + esc(p.lineCount) + '</td></tr>';

@@ -256,8 +256,9 @@ def main() -> None:
             "band": row.get("band", ""),
             "instrument": row.get("instrument", ""),
             "holding": row.get("holding"),
-            "engine": row.get("treatment") or row.get("handler") or "unspecified",
-            "method": row.get("handler", ""),
+            "engine": row.get("handler") or "unspecified",
+            "method": row.get("treatment", ""),
+            "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
             "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
             "sigmaStat": float(row["sigma_stat"]),
@@ -280,6 +281,40 @@ def main() -> None:
             "range": "",
         }
         for instrument in al_instruments for band in al_bands
+    ]
+    fe_evidence_products = []
+    for row in live_status.get("products", []):
+        if row.get("element") != "Fe" or row.get("ion") != "I":
+            continue
+        fe_evidence_products.append({
+            "band": row.get("band", ""),
+            "instrument": row.get("instrument", ""),
+            "holding": row.get("holding"),
+            "engine": row.get("handler") or "unspecified",
+            "method": row.get("treatment", ""),
+            "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
+            "value": float(row["A"]),
+            "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
+            "sigmaStat": float(row["sigma_stat"]),
+            "sigmaSys": float(row["sigma_syst"]),
+            "lineCount": row.get("n_lines"),
+            "role": "RYA-935 evidence",
+        })
+    fe_evidence_bands = []
+    fe_evidence_instruments = []
+    for product in fe_evidence_products:
+        if product["band"] not in fe_evidence_bands:
+            fe_evidence_bands.append(product["band"])
+        if product["instrument"] not in fe_evidence_instruments:
+            fe_evidence_instruments.append(product["instrument"])
+    fe_evidence_coverage = [
+        {
+            "instrument": instrument,
+            "band": band,
+            "state": "present" if any(p["instrument"] == instrument and p["band"] == band for p in fe_evidence_products) else "gap",
+            "range": "",
+        }
+        for instrument in fe_evidence_instruments for band in fe_evidence_bands
     ]
 
     iron_rows = [
@@ -325,6 +360,7 @@ def main() -> None:
             "bands": al_bands,
             "reference": {"name": "Asplund et al. 2021", "value": 6.43, "sigma": 0.04},
         },
+        "feEvidence": {"products": fe_evidence_products, "coverageGrid": fe_evidence_coverage},
         "reproducibility":{"generator":"scripts/generate_solar_report.py","version":"1.0.0","sourceArtifact":"data/products/solar/Fe_perline.csv","instrument":"Kitt Peak solar atlas + Solar gold v5","gitCommit":git_head(science),"productCommit":meta.get("commit_sha"),"goldVersion":meta.get("gold_version"),"generatedAt":meta.get("generated_utc")},
     }
 

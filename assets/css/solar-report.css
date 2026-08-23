@@ -97,6 +97,12 @@
 .solar-error-stat::after { content:''; position:absolute; top:-2px; height:8px; border-left:1px solid var(--text-bright); }
 .solar-error-stat::before { left:0; }
 .solar-error-stat::after { right:0; }
+.solar-error-syst { position:absolute; top:.2rem; height:.82rem; border:1px solid rgba(85,205,205,.6); background:rgba(85,205,205,.06); z-index:1; }
+.solar-error-syst::before,
+.solar-error-syst::after { content:''; position:absolute; top:-1px; height:calc(.82rem + 2px); border-left:1px solid currentColor; }
+.solar-error-syst::before { left:-1px; }
+.solar-error-syst::after { right:-1px; }
+.solar-error-syst.graded { border-color:rgba(232,162,74,.7); background:rgba(232,162,74,.07); }
 .solar-point { position:absolute; top:.29rem; width:.55rem; height:.55rem; border-radius:50%; background:var(--accent); transform:translateX(-50%); z-index:2; }
 .solar-point.graded { background:var(--accent-warm); }
 .solar-reference { position:absolute; top:0; bottom:0; border-left:1px solid rgba(232,162,74,.55); }
@@ -109,6 +115,7 @@
 .solar-forest-legend i { display:inline-block; width:1.6rem; }
 .legend-total { border-top:2px solid var(--accent); }
 .legend-stat { border-top:4px solid var(--text-bright); }
+.legend-systematic { height:.7rem; border:1px solid rgba(85,205,205,.6); background:rgba(85,205,205,.06); }
 .legend-reference { height:.65rem; background:rgba(232,162,74,.16); border-inline:1px solid rgba(232,162,74,.4); }
 .legend-reference.reference-1 { background:rgba(79,195,247,.12); border-color:rgba(79,195,247,.35); }
 .solar-reference-key { color:var(--accent-warm); font-family:var(--mono); font-size:.6rem; line-height:1.6; }
