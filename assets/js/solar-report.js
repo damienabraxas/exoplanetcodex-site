@@ -91,32 +91,33 @@
       return '<i class="solar-reference-band reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>' +
         '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>';
     }).join('');
-    var literatureRail = references.map(function (r, index) {
-      return '<span class="solar-literature-range reference-' + index + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"><b>' + esc(r.name) + '</b><small>' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '</small></span>';
+    var literatureText = references.map(function (r) {
+      return r.name + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2);
+    }).join(' · ');
+    var referenceMarkup = references.map(function (r, index) {
+      return '<i class="solar-935-ref reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>';
     }).join('');
-    return '<div class="solar-literature-row"><div></div><div class="solar-literature-track">' + literatureRail + '</div><div></div></div>' +
-      '<div class="solar-plot-axis"><span></span><div class="solar-axis-scale">' + ticks + '</div><span></span></div>' +
-      '<div class="solar-axis-title">' + esc(options.axisLabel || 'A(Fe)') + ' · dex</div>' +
+    return '<div class="solar-935-literature">Literature: ' + esc(literatureText) + ' dex · <span>' + esc(options.axisLabel || 'A(Fe)') + '</span></div>' +
+      '<div class="solar-935-plot">' +
       bands.map(function (band) {
         var rows = products.filter(function (p) { return p.band === band; }).map(function (p) {
           var left = pct(p.value - p.sigma);
           var width = (p.sigma * 2 / span * 100).toFixed(2);
           var stat = typeof p.sigmaStat === 'number' ? p.sigmaStat : null;
-          var statBar = stat == null ? '' : '<i class="solar-error-stat ' + esc(p.role) + '" style="left:' + pct(p.value - stat) + '%;width:' + ((stat * 2 / span) * 100).toFixed(2) + '%"></i>';
+          var statBar = stat == null ? '' : '<i class="solar-935-stat" style="left:' + pct(p.value - stat) + '%;width:' + ((stat * 2 / span) * 100).toFixed(2) + '%"></i>';
           var syst = typeof p.sigmaSys === 'number' ? p.sigmaSys : null;
-          var systBar = syst == null ? '' : '<i class="solar-error-syst ' + esc(p.role) + '" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
-          var metadata = (p.method ? readableEngine(p.method) + ' · ' : '') + (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
-          return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(readableProduct(p)) + '</strong>' +
-            '<span>' + esc(metadata) + '</span></div>' +
-            '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + systBar + statBar +
-            '<b class="solar-point ' + esc(p.role) + '" style="left:' + pct(p.value) + '%"></b>' +
-            '</div><div class="solar-plot-value">' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
-            (stat == null ? '' : '<span class="solar-stat-label">stat ±' + number(stat, 3) + '</span>') +
-            (syst == null ? '' : '<span class="solar-syst-label">syst ±' + number(syst, 3) + '</span>') + '</div></div>';
+          var systBar = syst == null ? '' : '<i class="solar-935-syst" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
+          var metadata = (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
+          return '<div class="solar-935-row"><span>' + esc(band + ' · ' + readableProduct(p)) + '<small>' + esc(metadata) + '</small></span>' +
+            '<span class="solar-935-track">' + referenceMarkup + systBar + statBar +
+            '<i class="solar-935-dot" style="left:' + pct(p.value) + '%"></i>' +
+            '</span><span>' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
+            (stat == null ? '' : '<small>stat ±' + number(stat, 3) + '</small>') +
+            (syst == null ? '' : '<small>syst ±' + number(syst, 3) + '</small>') + '</span></div>';
         }).join('');
-        return '<section class="solar-band"><h4>' + esc(band) + '</h4>' + rows + '</section>';
-      }).join('') + '<div class="solar-forest-legend"><span><i class="legend-total"></i>total σ</span><span><i class="legend-stat"></i>statistical σ</span><span><i class="legend-systematic"></i>systematic σ</span>' +
-      references.map(function (r, index) { return '<span><i class="legend-reference reference-' + index + '"></i>' + esc(r.name) + ' ±' + number(r.sigma, 2) + '</span>'; }).join('') + '</div>';
+        return rows;
+      }).join('') + '</div>' +
+      '<div class="solar-935-legend"><span><i class="solar-935-key-ref"></i>literature interval</span><span><i class="solar-935-key-stat"></i>statistical σ</span><span><i class="solar-935-key-syst"></i>systematic σ</span></div>';
   }
 
   function diagnostics(records) {
