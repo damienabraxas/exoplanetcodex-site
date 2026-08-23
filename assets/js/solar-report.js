@@ -71,6 +71,9 @@
     var max = Math.max.apply(null, all.map(function (v) { return v[1]; })) + 0.03;
     var span = max - min;
     function pct(value) { return ((value - min) / span * 100).toFixed(2); }
+    var ticks = [0, .25, .5, .75, 1].map(function (fraction) {
+      return '<span>' + (min + span * fraction).toFixed(2) + '</span>';
+    }).join('');
 
     var bands = [];
     products.forEach(function (p) { if (bands.indexOf(p.band) === -1) bands.push(p.band); });
@@ -78,7 +81,8 @@
       return '<i class="solar-reference-band reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>' +
         '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>';
     }).join('');
-    return '<div class="solar-plot-axis"><span>' + min.toFixed(2) + '</span><span>' + esc(options.axisLabel || 'A(Fe)') + '</span><span>' + max.toFixed(2) + '</span></div>' +
+    return '<div class="solar-plot-axis"><span></span><div class="solar-axis-scale">' + ticks + '</div><span></span></div>' +
+      '<div class="solar-axis-title">' + esc(options.axisLabel || 'A(Fe)') + ' · dex</div>' +
       bands.map(function (band) {
         var rows = products.filter(function (p) { return p.band === band; }).map(function (p) {
           var left = pct(p.value - p.sigma);
@@ -467,7 +471,7 @@
         productMatrix(alProducts, alEvidence.coverageGrid) +
         '<p class="solar-table-note">Each matrix cell retains its band and instrument identity. Empty cells are gaps in the committed Al product set, not inferred non-detections.</p>' +
         '<h4 class="solar-subhead">Uncertainty by product</h4>' +
-        '<div class="solar-error-plot">' + plotRows(alProducts, [], { axisLabel: 'A(Al)' }) + '</div>' +
+        '<div class="solar-error-plot">' + plotRows(alProducts, [alEvidence.reference], { axisLabel: 'A(Al)' }) + '</div>' +
         '<p class="solar-table-note">Bars show total σ; the inner bars show statistical σ where available. The systematic term remains visible in the product table because it dominates several Al products.</p>' +
         '<h4 class="solar-subhead">RYA-935 provenance</h4>' +
         '<p class="solar-copy">Values, line counts, instrument labels, and error components are read from the committed RYA-935 live status artifact. The shared <a href="/assets/data/rya935/live_tracker.html">full tracker</a> remains available for holding and telluric detail.</p>' +

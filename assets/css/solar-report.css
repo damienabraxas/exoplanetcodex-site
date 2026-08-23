@@ -76,10 +76,10 @@
 .solar-plot-axis,
 .solar-plot-row { display:grid; grid-template-columns:minmax(115px,1.1fr) minmax(260px,3fr) minmax(105px,1fr); gap:1rem; align-items:center; }
 .solar-plot-axis { color:var(--text-dim); font-size:.58rem; }
-.solar-plot-axis span:nth-child(2) { display:flex; justify-content:space-between; }
-.solar-plot-axis span:nth-child(2)::before,
-.solar-plot-axis span:nth-child(2)::after { content:''; width:34%; border-top:1px solid var(--rim); align-self:center; }
-.solar-plot-axis span:last-child { text-align:right; }
+.solar-axis-scale { display:flex; justify-content:space-between; border-bottom:1px solid var(--rim); }
+.solar-axis-scale span { position:relative; padding-bottom:.35rem; }
+.solar-axis-scale span::after { content:''; position:absolute; left:50%; bottom:-4px; height:7px; border-left:1px solid var(--rim); }
+.solar-axis-title { grid-column:2; margin:.2rem 0 .25rem; color:var(--text-dim); font-size:.58rem; letter-spacing:.12em; text-align:center; text-transform:uppercase; }
 .solar-band h4 { margin:1rem 0 .35rem; color:var(--accent); font-size:.62rem; letter-spacing:.16em; }
 .solar-plot-row { min-height:2.1rem; }
 .solar-plot-label { color:var(--text); font-size:.65rem; line-height:1.2; }

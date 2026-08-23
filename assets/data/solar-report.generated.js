@@ -1476,7 +1476,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "acfa0fecebdcbf15633cee1eb727f372b9409153",
         "registryCommit": "8177e047dd4497344e01a280d925642e80e4cbf5",
         "scienceGit": "b6225a75a72b09a57b1b2dd4e521c86cf4a0e090",
-        "generatedAt": "2026-08-23T05:24:22+00:00"
+        "generatedAt": "2026-08-23T05:37:10+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1965,7 +1965,12 @@ window.SOLAR_REPORT = {
       "near-UV",
       "red-optical",
       "VIS"
-    ]
+    ],
+    "reference": {
+      "name": "Asplund et al. 2021",
+      "value": 6.43,
+      "sigma": 0.04
+    }
   },
   "reproducibility": {
     "generator": "scripts/generate_solar_report.py",

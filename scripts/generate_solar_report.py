@@ -319,7 +319,12 @@ def main() -> None:
         "pageReferenceKeys":["asplund2021","lodders2025","reiners2016","hase2010"],
         "references":[{"name":"Asplund et al. 2021","value":7.46,"sigma":0.04},{"name":"Lodders et al. 2025","value":7.51,"sigma":0.05}],
         "elements": iron_rows + other_elements,
-        "alEvidence": {"products": al_products, "coverageGrid": al_coverage, "bands": al_bands},
+        "alEvidence": {
+            "products": al_products,
+            "coverageGrid": al_coverage,
+            "bands": al_bands,
+            "reference": {"name": "Asplund et al. 2021", "value": 6.43, "sigma": 0.04},
+        },
         "reproducibility":{"generator":"scripts/generate_solar_report.py","version":"1.0.0","sourceArtifact":"data/products/solar/Fe_perline.csv","instrument":"Kitt Peak solar atlas + Solar gold v5","gitCommit":git_head(science),"productCommit":meta.get("commit_sha"),"goldVersion":meta.get("gold_version"),"generatedAt":meta.get("generated_utc")},
     }
 
