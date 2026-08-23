@@ -23,6 +23,11 @@
     return (value >= 0 ? '+' : '') + value.toFixed(3);
   }
 
+  function readableEngine(value) {
+    return { '1D-LTE': '1D LTE', 'ENGINE-A': 'Engine A', 'ENGINE-B': 'Engine B',
+      'ENGINE-B-NLTE': 'Engine B NLTE', 'PROFILEFIT': 'Profile fit', 'SYNTH': 'Synthesis' }[value] || value || 'unspecified';
+  }
+
   function elementRows(elements) {
     return elements.map(function (element) {
       var hasAppendix = Boolean(element.appendixPath);
@@ -56,7 +61,7 @@
   function productRows(products) {
     return products.map(function (product) {
       return '<tr><td>' + esc(product.band) + '</td><td>' + esc(product.instrument) + '</td>' +
-        '<td>' + esc(product.engine) + '<span class="solar-method">' + esc(product.method) + '</span><span class="solar-method">' + esc(product.telluric || 'telluric: not declared') + '</span></td>' +
+        '<td>' + esc(readableEngine(product.engine)) + '<span class="solar-method">' + esc(readableEngine(product.method)) + '</span><span class="solar-method">' + esc(product.telluric || 'telluric: not declared') + '</span></td>' +
         '<td class="solar-number">' + number(product.value, 3) + ' ± ' + number(product.sigma, 2) + '</td>' +
         '<td class="solar-number">' + esc(product.lineCount) + '</td>' +
         '<td><span class="solar-role ' + esc(product.role) + '">' + esc(product.role) + '</span></td></tr>';
@@ -81,7 +86,11 @@
       return '<i class="solar-reference-band reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>' +
         '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>';
     }).join('');
-    return '<div class="solar-plot-axis"><span></span><div class="solar-axis-scale">' + ticks + '</div><span></span></div>' +
+    var literature = references.map(function (r, index) {
+      return '<span class="solar-literature-ref reference-' + index + '"><b>' + esc(r.name) + '</b><small>A = ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '</small></span>';
+    }).join('');
+    return '<div class="solar-literature-key">' + literature + '</div>' +
+      '<div class="solar-plot-axis"><span></span><div class="solar-axis-scale">' + ticks + '</div><span></span></div>' +
       '<div class="solar-axis-title">' + esc(options.axisLabel || 'A(Fe)') + ' · dex</div>' +
       bands.map(function (band) {
         var rows = products.filter(function (p) { return p.band === band; }).map(function (p) {
@@ -91,8 +100,8 @@
           var statBar = stat == null ? '' : '<i class="solar-error-stat ' + esc(p.role) + '" style="left:' + pct(p.value - stat) + '%;width:' + ((stat * 2 / span) * 100).toFixed(2) + '%"></i>';
           var syst = typeof p.sigmaSys === 'number' ? p.sigmaSys : null;
           var systBar = syst == null ? '' : '<i class="solar-error-syst ' + esc(p.role) + '" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
-          var metadata = (p.method ? p.method + ' · ' : '') + (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
-          return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(p.engine) + '</strong>' +
+          var metadata = (p.method ? readableEngine(p.method) + ' · ' : '') + (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
+          return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(readableEngine(p.engine)) + '</strong>' +
             '<span>' + esc(metadata) + '</span></div>' +
             '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + systBar + statBar +
             '<b class="solar-point ' + esc(p.role) + '" style="left:' + pct(p.value) + '%"></b>' +
@@ -224,8 +233,8 @@
       if (here.length) {
         return '<div class="pmatrix-cell is-present"><span class="pmatrix-state">product</span>' +
           here.map(function (p) {
-            return '<span class="pmatrix-engine"><span class="pm-eng">' + esc(p.engine) + '</span>' +
-              '<span class="pm-method">' + esc(p.method || '') + '</span>' +
+            return '<span class="pmatrix-engine"><span class="pm-eng">' + esc(readableEngine(p.engine)) + '</span>' +
+              '<span class="pm-method">' + esc(readableEngine(p.method || '')) + '</span>' +
               '<span class="pm-val">' + number(p.value, 3) + '</span>' +
               '<span class="pm-sig">&plusmn; ' + number(p.sigma, 2) + ' total</span>' +
               (typeof p.sigmaStat === 'number' ? '<span class="pm-sig">stat ' + number(p.sigmaStat, 3) + '</span>' : '') +
@@ -280,7 +289,7 @@
       var state = '<span class="solar-state ' + esc(p.dispositionState.replace(/ /g, '-')) + '" title="' +
         esc(p.dispositionNote) + '">' + esc(p.dispositionState) + '</span>';
       return '<tr><td>' + esc(p.band) + '</td><td>' + esc(p.instrument) + '</td>' +
-            '<td>' + esc(p.engine) + '<span class="solar-method">' + esc(p.method) + '</span><span class="solar-method">' + esc(p.telluric || 'telluric: not declared') + '</span></td>' +
+            '<td>' + esc(readableEngine(p.engine)) + '<span class="solar-method">' + esc(readableEngine(p.method)) + '</span><span class="solar-method">' + esc(p.telluric || 'telluric: not declared') + '</span></td>' +
         '<td class="solar-number">' + number(p.value, 3) + ' ± ' + number(p.sigma, 2) +
         '<span class="solar-method">stat ' + number(p.sigmaStat, 4) + ' · sys ' + number(p.sigmaSys, 4) + '</span></td>' +
         '<td class="solar-number">' + esc(p.lineCount) + '<span class="solar-method">' + esc(p.excludedCount) + ' excluded</span></td>' +

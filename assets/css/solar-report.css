@@ -103,6 +103,11 @@
 .solar-error-syst::before { left:-1px; }
 .solar-error-syst::after { right:-1px; }
 .solar-error-syst.graded { border-color:rgba(232,162,74,.7); background:rgba(232,162,74,.07); }
+.solar-literature-key { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:.8rem; }
+.solar-literature-ref { display:inline-flex; flex-direction:column; min-width:11rem; padding:.5rem .7rem; border-left:3px solid var(--accent-warm); background:rgba(232,162,74,.12); color:var(--text-bright); font-family:var(--mono); font-size:.65rem; }
+.solar-literature-ref.reference-1 { border-left-color:var(--accent); background:rgba(79,195,247,.12); }
+.solar-literature-ref b { font-weight:600; letter-spacing:.04em; }
+.solar-literature-ref small { margin-top:.2rem; color:var(--text); font-size:.58rem; }
 .solar-point { position:absolute; top:.29rem; width:.55rem; height:.55rem; border-radius:50%; background:var(--accent); transform:translateX(-50%); z-index:2; }
 .solar-point.graded { background:var(--accent-warm); }
 .solar-reference { position:absolute; top:0; bottom:0; border-left:1px solid rgba(232,162,74,.55); }
