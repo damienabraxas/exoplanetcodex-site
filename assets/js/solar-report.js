@@ -86,10 +86,10 @@
       return '<i class="solar-reference-band reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>' +
         '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>';
     }).join('');
-    var literature = references.map(function (r, index) {
-      return '<span class="solar-literature-ref reference-' + index + '"><b>' + esc(r.name) + '</b><small>A = ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '</small></span>';
+    var literatureRail = references.map(function (r, index) {
+      return '<span class="solar-literature-range reference-' + index + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"><b>' + esc(r.name) + '</b><small>' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '</small></span>';
     }).join('');
-    return '<div class="solar-literature-key">' + literature + '</div>' +
+    return '<div class="solar-literature-row"><div></div><div class="solar-literature-track">' + literatureRail + '</div><div></div></div>' +
       '<div class="solar-plot-axis"><span></span><div class="solar-axis-scale">' + ticks + '</div><span></span></div>' +
       '<div class="solar-axis-title">' + esc(options.axisLabel || 'A(Fe)') + ' · dex</div>' +
       bands.map(function (band) {
@@ -106,7 +106,8 @@
             '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + systBar + statBar +
             '<b class="solar-point ' + esc(p.role) + '" style="left:' + pct(p.value) + '%"></b>' +
             '</div><div class="solar-plot-value">' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
-            (stat == null ? '' : '<span>stat ±' + number(stat, 3) + '</span>') + '</div></div>';
+            (stat == null ? '' : '<span class="solar-stat-label">stat ±' + number(stat, 3) + '</span>') +
+            (syst == null ? '' : '<span class="solar-syst-label">syst ±' + number(syst, 3) + '</span>') + '</div></div>';
         }).join('');
         return '<section class="solar-band"><h4>' + esc(band) + '</h4>' + rows + '</section>';
       }).join('') + '<div class="solar-forest-legend"><span><i class="legend-total"></i>total σ</span><span><i class="legend-stat"></i>statistical σ</span><span><i class="legend-systematic"></i>systematic σ</span>' +
