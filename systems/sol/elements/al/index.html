@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/codex.css">
   <link rel="stylesheet" href="/assets/css/solar-report.css">
+  <link rel="stylesheet" href="/assets/css/product-matrix.css">
 </head>
 <body>
 <canvas id="starfield"></canvas>
@@ -35,24 +36,9 @@
   </header>
 
   <main class="container">
-    <article class="solar-appendix">
-      <a class="solar-back" href="/systems/sol/#our-findings">← Back to Solar element table</a>
-      <p class="solar-kicker">Element appendix · evidence record</p>
-      <h2>Aluminium <span>Al I</span></h2>
-      <div class="solar-arbiter-note">The current Solar element record is <strong>curation-owed</strong>. This page exposes the committed Al I products and their instrument, band, holding, engine, and telluric provenance without promoting a value that the status tracker has not ratified.</div>
-    </article>
-
-    <section class="solar-live-tracker" aria-labelledby="live-tracker-heading">
-      <div class="solar-live-tracker-heading">
-        <div>
-          <p class="solar-kicker">RYA-935 · repository evidence</p>
-          <h2 id="live-tracker-heading">Live Al product tracker</h2>
-        </div>
-        <a href="/assets/data/rya935/live_tracker.html">Open full tracker ↗</a>
-      </div>
-      <p class="solar-copy">The shared tracker includes Al I alongside Fe I and Fe II. Use the browser’s find function for “AlI” or filter the product rows by element in the tracker view.</p>
-      <iframe src="/assets/data/rya935/live_tracker.html" title="RYA-935 live aluminum product tracker" loading="lazy"></iframe>
-    </section>
+    <div id="solar-element-appendix" data-species="Al I" aria-live="polite">
+      <p class="solar-report-loading">Loading the Al I evidence model…</p>
+    </div>
   </main>
 
   <footer class="codex-footer">
@@ -67,5 +53,7 @@
 </div>
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
+<script src="/assets/data/solar-report.generated.js"></script>
+<script src="/assets/js/solar-report.js"></script>
 </body>
 </html>

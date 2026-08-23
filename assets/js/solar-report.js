@@ -121,6 +121,7 @@
   }
   var appendixSpecies = (appendixRoot && appendixRoot.getAttribute('data-species')) || 'Fe I';
   var fe = species('Fe I');
+  var alEvidence = report.alEvidence || { products: [], coverageGrid: [] };
   var meta = report.reproducibility;
   if (introRoot) {
     introRoot.innerHTML =
@@ -442,5 +443,34 @@
         fe2Repro(fe2.reproducibility) +
       '</article>';
     }
+  }
+
+  // RYA-935 Al I evidence appendix. This deliberately mirrors the Fe product
+  // views while refusing to collapse curation-owed products into a headline.
+  if (appendixRoot && appendixSpecies === 'Al I') {
+    var alProducts = alEvidence.products || [];
+    appendixRoot.innerHTML =
+      '<article class="solar-appendix">' +
+        '<a class="solar-back" href="/systems/sol/#our-findings">← Back to Solar element table</a>' +
+        '<p class="solar-kicker">Element appendix · RYA-935 evidence record</p><h2>Aluminium <span>Al I</span></h2>' +
+        '<div class="solar-arbiter-note">The current Solar element record is <strong>curation-owed</strong>. These are the committed Al I products, shown individually with their uncertainty budgets. No product is promoted to a ratified solar abundance here.</div>' +
+        '<h4 class="solar-subhead">Product values · band × instrument × engine</h4>' +
+        '<div class="solar-table-wrap"><table class="solar-product-table"><thead><tr><th>Band</th><th>Instrument / holding</th><th>Engine / method</th><th>A(Al) ± σ</th><th>σ stat</th><th>σ syst</th><th>N</th></tr></thead><tbody>' +
+        alProducts.map(function (p) {
+          return '<tr><td>' + esc(p.band) + '</td><td>' + esc(p.instrument) + (p.holding ? '<span class="solar-method">' + esc(p.holding) + '</span>' : '') + '</td>' +
+            '<td>' + esc(p.engine) + '<span class="solar-method">' + esc(p.method) + '</span></td>' +
+            '<td class="solar-number">' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) + '</td>' +
+            '<td class="solar-number">' + number(p.sigmaStat, 3) + '</td><td class="solar-number">' + number(p.sigmaSys, 3) + '</td>' +
+            '<td class="solar-number">' + esc(p.lineCount) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' +
+        '<h4 class="solar-subhead">Value matrix · instrument × band</h4>' +
+        productMatrix(alProducts, alEvidence.coverageGrid) +
+        '<p class="solar-table-note">Each matrix cell retains its band and instrument identity. Empty cells are gaps in the committed Al product set, not inferred non-detections.</p>' +
+        '<h4 class="solar-subhead">Uncertainty by product</h4>' +
+        '<div class="solar-error-plot">' + plotRows(alProducts, [], { axisLabel: 'A(Al)' }) + '</div>' +
+        '<p class="solar-table-note">Bars show total σ; the inner bars show statistical σ where available. The systematic term remains visible in the product table because it dominates several Al products.</p>' +
+        '<h4 class="solar-subhead">RYA-935 provenance</h4>' +
+        '<p class="solar-copy">Values, line counts, instrument labels, and error components are read from the committed RYA-935 live status artifact. The shared <a href="/assets/data/rya935/live_tracker.html">full tracker</a> remains available for holding and telluric detail.</p>' +
+      '</article>';
   }
 })();

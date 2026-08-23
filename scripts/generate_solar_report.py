@@ -244,6 +244,44 @@ def main() -> None:
 
     fe2 = fe2_record.build(science, perline)
 
+    # RYA-935 Al evidence is intentionally a product record, not a ratified
+    # abundance. Preserve each band/engine/value/error-bar tuple for the Al
+    # appendix's Fe-style presentation.
+    live_status = json.loads(live_status_path.read_text(encoding="utf-8"))
+    al_products = []
+    for row in live_status.get("products", []):
+        if row.get("element") != "Al" or row.get("ion") != "I":
+            continue
+        al_products.append({
+            "band": row.get("band", ""),
+            "instrument": row.get("instrument", ""),
+            "holding": row.get("holding"),
+            "engine": row.get("treatment") or row.get("handler") or "unspecified",
+            "method": row.get("handler", ""),
+            "value": float(row["A"]),
+            "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
+            "sigmaStat": float(row["sigma_stat"]),
+            "sigmaSys": float(row["sigma_syst"]),
+            "lineCount": row.get("n_lines"),
+            "role": "RYA-935 evidence",
+        })
+    al_bands = []
+    al_instruments = []
+    for product in al_products:
+        if product["band"] not in al_bands:
+            al_bands.append(product["band"])
+        if product["instrument"] not in al_instruments:
+            al_instruments.append(product["instrument"])
+    al_coverage = [
+        {
+            "instrument": instrument,
+            "band": band,
+            "state": "present" if any(p["instrument"] == instrument and p["band"] == band for p in al_products) else "gap",
+            "range": "",
+        }
+        for instrument in al_instruments for band in al_bands
+    ]
+
     iron_rows = [
         {"atomicNumber":26,"symbol":"Fe","ion":"I","name":"Iron","status":"gold · generated","appendixPath":"/systems/sol/elements/fe/","referenceKeys":["asplund2021","lodders2025","scott2015","bergemann2012"],
          # σ_total is the tracker's published Fe figure; no artifact splits the
@@ -281,6 +319,7 @@ def main() -> None:
         "pageReferenceKeys":["asplund2021","lodders2025","reiners2016","hase2010"],
         "references":[{"name":"Asplund et al. 2021","value":7.46,"sigma":0.04},{"name":"Lodders et al. 2025","value":7.51,"sigma":0.05}],
         "elements": iron_rows + other_elements,
+        "alEvidence": {"products": al_products, "coverageGrid": al_coverage, "bands": al_bands},
         "reproducibility":{"generator":"scripts/generate_solar_report.py","version":"1.0.0","sourceArtifact":"data/products/solar/Fe_perline.csv","instrument":"Kitt Peak solar atlas + Solar gold v5","gitCommit":git_head(science),"productCommit":meta.get("commit_sha"),"goldVersion":meta.get("gold_version"),"generatedAt":meta.get("generated_utc")},
     }
 

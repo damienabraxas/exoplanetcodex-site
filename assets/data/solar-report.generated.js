@@ -1476,7 +1476,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "acfa0fecebdcbf15633cee1eb727f372b9409153",
         "registryCommit": "8177e047dd4497344e01a280d925642e80e4cbf5",
         "scienceGit": "b6225a75a72b09a57b1b2dd4e521c86cf4a0e090",
-        "generatedAt": "2026-08-23T05:10:56+00:00"
+        "generatedAt": "2026-08-23T05:24:22+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1847,6 +1847,126 @@ window.SOLAR_REPORT = {
       "measurementNote": "EW present; no independent-gf line survives the graded cull"
     }
   ],
+  "alEvidence": {
+    "products": [
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "1D-LTE",
+        "method": "SYNTH",
+        "value": 4.198,
+        "sigma": 0.1974533869043527,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1972,
+        "lineCount": 1,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "1D-LTE",
+        "method": "PROFILEFIT",
+        "value": 6.47,
+        "sigma": 0.18065574997768546,
+        "sigmaStat": 0.0517,
+        "sigmaSys": 0.1731,
+        "lineCount": 6,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "ENGINE-A",
+        "method": "PROFILEFIT",
+        "value": 6.38,
+        "sigma": 0.17709424044841213,
+        "sigmaStat": 0.0374,
+        "sigmaSys": 0.1731,
+        "lineCount": 4,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "ENGINE-B",
+        "method": "PROFILEFIT",
+        "value": 6.387,
+        "sigma": 0.17493716014615077,
+        "sigmaStat": 0.0285,
+        "sigmaSys": 0.1726,
+        "lineCount": 6,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "1D-LTE",
+        "method": "PROFILEFIT",
+        "value": 6.531,
+        "sigma": 0.20803579019005358,
+        "sigmaStat": 0.1192,
+        "sigmaSys": 0.1705,
+        "lineCount": 4,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "ENGINE-A",
+        "method": "PROFILEFIT",
+        "value": 6.351,
+        "sigma": 0.17095031441913175,
+        "sigmaStat": 0.0124,
+        "sigmaSys": 0.1705,
+        "lineCount": 2,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": null,
+        "engine": "ENGINE-B",
+        "method": "PROFILEFIT",
+        "value": 6.271,
+        "sigma": 0.1711959111661257,
+        "sigmaStat": 0.0202,
+        "sigmaSys": 0.17,
+        "lineCount": 4,
+        "role": "RYA-935 evidence"
+      }
+    ],
+    "coverageGrid": [
+      {
+        "instrument": "kpno_solar_atlas",
+        "band": "near-UV",
+        "state": "present",
+        "range": ""
+      },
+      {
+        "instrument": "kpno_solar_atlas",
+        "band": "red-optical",
+        "state": "present",
+        "range": ""
+      },
+      {
+        "instrument": "kpno_solar_atlas",
+        "band": "VIS",
+        "state": "present",
+        "range": ""
+      }
+    ],
+    "bands": [
+      "near-UV",
+      "red-optical",
+      "VIS"
+    ]
+  },
   "reproducibility": {
     "generator": "scripts/generate_solar_report.py",
     "version": "1.0.0",
