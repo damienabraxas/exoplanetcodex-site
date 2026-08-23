@@ -85,22 +85,31 @@
       return '<span>' + (min + span * fraction).toFixed(2) + '</span>';
     }).join('');
 
+    var bandNames = { 'near-UV': 'UV Data', 'VIS': 'VIS Data', 'red-optical': 'VIS Data', 'NIR': 'IR Data' };
     var bands = [];
-    products.forEach(function (p) { if (bands.indexOf(p.band) === -1) bands.push(p.band); });
-    var referenceBands = references.map(function (r, index) {
-      return '<i class="solar-reference-band reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>' +
-        '<i class="solar-reference" title="' + esc(r.name) + '" style="left:' + pct(r.value) + '%"></i>';
-    }).join('');
+    products.forEach(function (p) {
+      var group = bandNames[p.band] || p.band;
+      if (bands.indexOf(group) === -1) bands.push(group);
+    });
     var literatureText = references.map(function (r) {
       return r.name + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2);
     }).join(' · ');
     var referenceMarkup = references.map(function (r, index) {
       return '<i class="solar-935-ref reference-' + index + '" title="' + esc(r.name) + ' ' + number(r.value, 2) + ' ± ' + number(r.sigma, 2) + '" style="left:' + pct(r.value - r.sigma) + '%;width:' + ((r.sigma * 2 / span) * 100).toFixed(2) + '%"></i>';
     }).join('');
-    return '<div class="solar-935-literature">Literature: ' + esc(literatureText) + ' dex · <span>' + esc(options.axisLabel || 'A(Fe)') + '</span></div>' +
+    var axisLabel = options.axisLabel || 'A(Fe)';
+    var axisMarkup = '<div></div><div class="solar-935-axis-track">' + ticks + '</div><div></div>' +
+      '<div></div><div class="solar-935-axis-title">' + esc(axisLabel) + ' · dex</div><div></div>';
+    return '<div class="solar-935-literature">Literature: ' + esc(literatureText) + ' dex · <span>' + esc(axisLabel) + '</span></div>' +
       '<div class="solar-935-plot">' +
+      axisMarkup +
       bands.map(function (band) {
-        var rows = products.filter(function (p) { return p.band === band; }).map(function (p) {
+        var bandLabel = band;
+        var bandRefs = references.map(function (r, index) {
+          var shortName = String(r.name || '').replace(/\s+et al\..*$/i, '').replace(/\s+et al.*$/i, '');
+          return '<span class="solar-935-band-ref reference-' + index + '">' + esc(shortName) + ' ' + number(r.value, 2) + '</span>';
+        }).join('');
+        var rows = products.filter(function (p) { return (bandNames[p.band] || p.band) === band; }).map(function (p) {
           var left = pct(p.value - p.sigma);
           var width = (p.sigma * 2 / span * 100).toFixed(2);
           var stat = typeof p.sigmaStat === 'number' ? p.sigmaStat : null;
@@ -108,14 +117,14 @@
           var syst = typeof p.sigmaSys === 'number' ? p.sigmaSys : null;
           var systBar = syst == null ? '' : '<i class="solar-935-syst" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
           var metadata = (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
-          return '<div class="solar-935-row"><span>' + esc(band + ' · ' + readableProduct(p)) + '<small>' + esc(metadata) + '</small></span>' +
+          return '<div class="solar-935-row"><span>' + esc(p.band + ' · ' + readableProduct(p)) + '<small>' + esc(metadata) + '</small></span>' +
             '<span class="solar-935-track">' + referenceMarkup + systBar + statBar +
             '<i class="solar-935-dot" style="left:' + pct(p.value) + '%"></i>' +
             '</span><span>' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
             (stat == null ? '' : '<small>stat ±' + number(stat, 3) + '</small>') +
             (syst == null ? '' : '<small>syst ±' + number(syst, 3) + '</small>') + '</span></div>';
         }).join('');
-        return rows;
+        return '<div class="solar-935-band-heading"><strong>' + esc(bandLabel) + '</strong><span>' + bandRefs + '</span></div>' + rows;
       }).join('') + '</div>' +
       '<div class="solar-935-legend"><span><i class="solar-935-key-ref"></i>literature interval</span><span><i class="solar-935-key-stat"></i>statistical σ</span><span><i class="solar-935-key-syst"></i>systematic σ</span></div>';
   }
