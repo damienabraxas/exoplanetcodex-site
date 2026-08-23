@@ -36,6 +36,19 @@ python -m http.server 8000
 # then visit http://localhost:8000
 ```
 
+To regenerate the Solar/Fe reporting model from a clean checkout of the science
+repository, run:
+
+```bash
+python3 scripts/generate_solar_report.py --science-root /path/to/exoplanetcodex
+python3 -m http.server 8000
+# then visit http://localhost:8000/systems/sol/
+```
+
+The generator loud-fails when a required versioned artifact is missing. It also
+copies the replication-grade Fe per-line CSV into the site's downloadable data
+directory; no scientific values are stored in the HTML or rendering code.
+
 ## Analytics and sitemap
 
 All pages load the shared GA4 integration from `assets/js/analytics.js`. The public measurement ID is single-sourced there because this is a static site without a server-side environment layer.

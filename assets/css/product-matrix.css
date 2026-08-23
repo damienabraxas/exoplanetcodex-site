@@ -1,0 +1,111 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+ * PRODUCT MATRIX — instrument × band coverage grid for an element appendix.
+ *
+ * Extracted from the RYA-896/897 solar Fe coverage tracker, where this layout
+ * answered "what do we actually have, and what is missing" faster than any table.
+ * Generalised here so every per-element appendix (RYA-775/851/876) can use it.
+ *
+ * WHY A GRID AND NOT A TABLE. The product key is (instrument × band × engine),
+ * so the natural shape of the data is two-dimensional with a list in each cell.
+ * A flat table forces the reader to reconstruct that shape by eye; the grid shows
+ * it, and — crucially — shows the EMPTY cells, which a table of existing rows
+ * cannot do at all. An absence is only visible if you draw the space it would
+ * occupy.
+ *
+ * STATE IS IN THE FORM, NOT ONLY THE NUMBER. Four states, and the distinction
+ * between the last three is the whole point of the audit:
+ *   .is-present    a product exists       — value(s) shown, one line per engine
+ *   .is-gap        data held, no product  — a real completeness gap
+ *   .is-blocked    unreachable            — held and permitted, but no loader
+ *   .is-void       outside the instrument — not a gap; nothing is owed here
+ *
+ * 🔴 The grid ranks nothing. Each cell is its own data product (RYA-712), and
+ * different instrument = different product. There is no "best" column and no Δ
+ * between instruments — those belong in a diagnostic, never in the coverage view.
+ *
+ * Depends on the palette tokens defined in solar-report.css / codex.css.
+ * ───────────────────────────────────────────────────────────────────────────── */
+
+.pmatrix { overflow-x: auto; margin: 1.25rem 0 .6rem; }
+.pmatrix-inner { min-width: 780px; }
+
+/* Column headers: the band, and the wavelength span it actually covers.
+ * The span comes from pipeline/band_policy.POLICIES, never from a filename stem —
+ * a stem names the range that was RUN, which is not the band. */
+.pmatrix-head,
+.pmatrix-row {
+  display: grid;
+  grid-template-columns: 176px repeat(var(--pm-bands, 4), minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.pmatrix-bh { padding: 0 10px 6px; }
+.pmatrix-bh b { display: block; font-size: .8rem; font-weight: 600; color: var(--text-bright); }
+.pmatrix-bh span {
+  font-family: var(--mono); font-size: .6rem; color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Row header: the instrument, and what kind of holding it is. */
+.pmatrix-ih {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 10px 12px; border: 1px solid var(--rim); background: rgba(255, 255, 255, .02);
+}
+.pmatrix-ih b { font-size: .84rem; font-weight: 600; color: var(--text-bright); }
+.pmatrix-ih span {
+  margin-top: 3px; font-family: var(--mono); font-size: .57rem;
+  color: var(--text-dim); line-height: 1.5;
+}
+
+.pmatrix-cell {
+  display: flex; flex-direction: column; gap: 4px;
+  min-height: 78px; padding: 10px 11px;
+  border: 1px solid var(--rim);
+}
+.pmatrix-state {
+  font-family: var(--mono); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* One line per engine. The engine label is the product's identity; the value is
+ * its result. Both are always shown — a value without its engine is unattributable. */
+.pmatrix-engine {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px;
+  font-family: var(--mono); font-size: .68rem;
+}
+.pmatrix-engine .pm-eng { color: var(--text-dim); }
+.pmatrix-engine .pm-val {
+  color: var(--text-bright); font-weight: 600; font-variant-numeric: tabular-nums;
+}
+.pmatrix-engine .pm-sig { color: var(--text); font-variant-numeric: tabular-nums; }
+.pmatrix-engine .pm-n { color: var(--text-dim); font-size: .58rem; }
+
+/* An absence has to carry its reason, or it reads as "we forgot" (RYA-844). */
+.pmatrix-reason { font-size: .64rem; line-height: 1.5; color: var(--text-dim); }
+
+.pmatrix-cell.is-present { border-color: var(--pm-ok, #57d1a4); background: rgba(87, 209, 164, .10); }
+.pmatrix-cell.is-present .pmatrix-state { color: var(--pm-ok, #57d1a4); }
+.pmatrix-cell.is-gap { border-color: var(--accent-warm); background: rgba(232, 162, 74, .11); }
+.pmatrix-cell.is-gap .pmatrix-state { color: var(--accent-warm); }
+.pmatrix-cell.is-blocked { border-color: var(--pm-bad, #f2668b); background: rgba(242, 102, 139, .11); }
+.pmatrix-cell.is-blocked .pmatrix-state { color: var(--pm-bad, #f2668b); }
+.pmatrix-cell.is-void { background: rgba(120, 134, 168, .06); }
+.pmatrix-cell.is-void .pmatrix-state { color: var(--text-dim); }
+
+.pmatrix-legend {
+  display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px;
+  font-family: var(--mono); font-size: .62rem; color: var(--text-dim);
+}
+.pmatrix-legend i {
+  display: inline-block; width: 9px; height: 9px; margin-right: 5px;
+  vertical-align: -1px; border: 1px solid currentColor; background: currentColor; opacity: .85;
+}
+.pmatrix-legend .lg-void i { background: none; }
+.pmatrix-legend .lg-ok { color: var(--pm-ok, #57d1a4); }
+.pmatrix-legend .lg-gap { color: var(--accent-warm); }
+.pmatrix-legend .lg-bad { color: var(--pm-bad, #f2668b); }
+
+@media (max-width: 760px) {
+  .pmatrix-head,
+  .pmatrix-row { grid-template-columns: 132px repeat(var(--pm-bands, 4), minmax(112px, 1fr)); }
+}
