@@ -28,6 +28,11 @@
       'ENGINE-B-NLTE': 'Engine B NLTE', 'PROFILEFIT': 'Profile fit', 'SYNTH': 'Synthesis' }[value] || value || 'unspecified';
   }
 
+  function readableProduct(product) {
+    return (product.displayName || readableEngine(product.engine))
+      .replace(/^ew\b/, 'EW').replace(/^synth\b/, 'Synth');
+  }
+
   function elementRows(elements) {
     return elements.map(function (element) {
       var hasAppendix = Boolean(element.appendixPath);
@@ -61,7 +66,7 @@
   function productRows(products) {
     return products.map(function (product) {
       return '<tr><td>' + esc(product.band) + '</td><td>' + esc(product.instrument) + '</td>' +
-        '<td>' + esc(readableEngine(product.engine)) + '<span class="solar-method">' + esc(readableEngine(product.method)) + '</span><span class="solar-method">' + esc(product.telluric || 'telluric: not declared') + '</span></td>' +
+        '<td>' + esc(readableProduct(product)) + '<span class="solar-method">' + esc(readableEngine(product.method)) + '</span><span class="solar-method">' + esc(product.telluric || 'telluric: not declared') + '</span></td>' +
         '<td class="solar-number">' + number(product.value, 3) + ' ± ' + number(product.sigma, 2) + '</td>' +
         '<td class="solar-number">' + esc(product.lineCount) + '</td>' +
         '<td><span class="solar-role ' + esc(product.role) + '">' + esc(product.role) + '</span></td></tr>';
@@ -101,7 +106,7 @@
           var syst = typeof p.sigmaSys === 'number' ? p.sigmaSys : null;
           var systBar = syst == null ? '' : '<i class="solar-error-syst ' + esc(p.role) + '" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
           var metadata = (p.method ? readableEngine(p.method) + ' · ' : '') + (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
-          return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(readableEngine(p.engine)) + '</strong>' +
+          return '<div class="solar-plot-row"><div class="solar-plot-label"><strong>' + esc(readableProduct(p)) + '</strong>' +
             '<span>' + esc(metadata) + '</span></div>' +
             '<div class="solar-plot-track">' + referenceBands + '<i class="solar-error ' + esc(p.role) + '" style="left:' + left + '%;width:' + width + '%"></i>' + systBar + statBar +
             '<b class="solar-point ' + esc(p.role) + '" style="left:' + pct(p.value) + '%"></b>' +
@@ -234,7 +239,7 @@
       if (here.length) {
         return '<div class="pmatrix-cell is-present"><span class="pmatrix-state">product</span>' +
           here.map(function (p) {
-            return '<span class="pmatrix-engine"><span class="pm-eng">' + esc(readableEngine(p.engine)) + '</span>' +
+            return '<span class="pmatrix-engine"><span class="pm-eng">' + esc(readableProduct(p)) + '</span>' +
               '<span class="pm-method">' + esc(readableEngine(p.method || '')) + '</span>' +
               '<span class="pm-val">' + number(p.value, 3) + '</span>' +
               '<span class="pm-sig">&plusmn; ' + number(p.sigma, 2) + ' total</span>' +
@@ -290,7 +295,7 @@
       var state = '<span class="solar-state ' + esc(p.dispositionState.replace(/ /g, '-')) + '" title="' +
         esc(p.dispositionNote) + '">' + esc(p.dispositionState) + '</span>';
       return '<tr><td>' + esc(p.band) + '</td><td>' + esc(p.instrument) + '</td>' +
-            '<td>' + esc(readableEngine(p.engine)) + '<span class="solar-method">' + esc(readableEngine(p.method)) + '</span><span class="solar-method">' + esc(p.telluric || 'telluric: not declared') + '</span></td>' +
+            '<td>' + esc(readableProduct(p)) + '<span class="solar-method">' + esc(readableEngine(p.method)) + '</span><span class="solar-method">' + esc(p.telluric || 'telluric: not declared') + '</span></td>' +
         '<td class="solar-number">' + number(p.value, 3) + ' ± ' + number(p.sigma, 2) +
         '<span class="solar-method">stat ' + number(p.sigmaStat, 4) + ' · sys ' + number(p.sigmaSys, 4) + '</span></td>' +
         '<td class="solar-number">' + esc(p.lineCount) + '<span class="solar-method">' + esc(p.excludedCount) + ' excluded</span></td>' +

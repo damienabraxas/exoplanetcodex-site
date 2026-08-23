@@ -248,6 +248,16 @@ def main() -> None:
     # abundance. Preserve each band/engine/value/error-bar tuple for the Al
     # appendix's Fe-style presentation.
     live_status = json.loads(live_status_path.read_text(encoding="utf-8"))
+    def product_display(row):
+        declared = str(row.get("display") or "").strip()
+        if declared:
+            return declared
+        fallback = {
+            "ENGINE-A": "EW · 1D-NLTE · Bergemann",
+            "ENGINE-B": "Synth · 1D-LTE",
+            "ENGINE-B-NLTE": "Synth · 1D-NLTE · Gerber",
+        }
+        return fallback.get(row.get("treatment"), row.get("treatment") or "unspecified")
     al_products = []
     for row in live_status.get("products", []):
         if row.get("element") != "Al" or row.get("ion") != "I":
@@ -258,6 +268,7 @@ def main() -> None:
             "holding": row.get("holding"),
             "engine": row.get("treatment") or "unspecified",
             "method": row.get("handler", ""),
+            "displayName": product_display(row),
             "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
             "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
@@ -292,6 +303,7 @@ def main() -> None:
             "holding": row.get("holding"),
             "engine": row.get("treatment") or "unspecified",
             "method": row.get("handler", ""),
+            "displayName": product_display(row),
             "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
             "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
