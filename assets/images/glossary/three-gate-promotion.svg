@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Three-gate promotion</title><desc id="desc">Anchor recovery, validate-don't-tune, and cross-engine agreement must all pass before gold promotion.</desc>
+  <rect x="32" y="30" width="656" height="380" fill="none" stroke="#1a2640" stroke-width="2"/>
+  <g font-family="Space Mono,monospace"><text x="72" y="73" fill="#e8a24a" font-size="18" letter-spacing="4">THREE-GATE PROMOTION</text>
+  <g fill="none" stroke="#4fc3f7" stroke-width="3"><rect x="68" y="118" width="170" height="120"/><rect x="275" y="118" width="170" height="120"/><rect x="482" y="118" width="170" height="120"/></g>
+  <g fill="#4fc3f7" font-size="16" text-anchor="middle"><text x="153" y="151">GATE 1</text><text x="360" y="151">GATE 2</text><text x="567" y="151">GATE 3</text></g><g fill="#ddeeff" font-size="15" text-anchor="middle"><text x="153" y="185">ANCHOR</text><text x="153" y="208">RECOVERY</text><text x="360" y="185">VALIDATE,</text><text x="360" y="208">DON'T TUNE</text><text x="567" y="185">|dCE|</text><text x="567" y="208">IN BAND</text></g>
+  <rect x="238" y="292" width="244" height="68" fill="none" stroke="#52c78a" stroke-width="3"/><text x="360" y="334" fill="#52c78a" font-size="24" text-anchor="middle">ALL PASS → GOLD</text><text x="360" y="390" fill="#6b8aad" font-size="14" text-anchor="middle">MISSING GATE = FAIL</text></g>
+  <g stroke="#52c78a" stroke-width="3"><path d="M153 238v28h414v-28" fill="none"/><path d="M360 238v54"/></g>
+</svg>

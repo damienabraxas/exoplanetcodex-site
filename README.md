@@ -49,6 +49,16 @@ The generator loud-fails when a required versioned artifact is missing. It also
 copies the replication-grade Fe per-line CSV into the site's downloadable data
 directory; no scientific values are stored in the HTML or rendering code.
 
+## Analytics and sitemap
+
+All pages load the shared GA4 integration from `assets/js/analytics.js`. The public measurement ID is single-sourced there because this is a static site without a server-side environment layer.
+
+After adding or removing an HTML page, regenerate the sitemap:
+
+```bash
+node scripts/generate-sitemap.mjs
+```
+
 ## Image credits & licensing
 
 All imagery is NASA/ESA/JPL public domain or Creative Commons.

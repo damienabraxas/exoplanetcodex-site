@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/js/analytics.js"></script>
+  <title>Science Architecture · The Exoplanet Codex</title>
+  <meta name="description" content="How The Exoplanet Codex verifies measurements, promotes results, freezes references, and preserves the scientific record.">
+  <link rel="canonical" href="https://exoplanetcodex.org/architecture/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    .btn-download { display:inline-block; padding:.7em 1.6em; border:1px solid var(--accent); color:var(--accent); font-family:var(--mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; }
+    .btn-download:hover { background:var(--accent); color:var(--void); }
+    .document-links { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin-top:1.5rem; }
+    .document-link { font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; color:var(--text-dim); text-decoration:none; }
+    .document-link:hover { color:var(--accent); }
+    .jump-links { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.8rem; }
+    .jump-links a { font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid var(--rim); padding:.35em .85em; text-decoration:none; }
+    .architecture-content { padding:3.5rem 0 5rem; }
+    .architecture-intro { max-width:760px; font-size:1.08rem; color:var(--text-mid); line-height:1.85; margin-bottom:2.5rem; }
+    .architecture-section { padding:2.8rem 0; border-top:1px solid var(--rim); max-width:820px; scroll-margin-top:1.5rem; }
+    .architecture-section:first-of-type { border-top:none; }
+    .section-number { font-family:var(--mono); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:.5rem; }
+    .architecture-section h2 { font-family:var(--serif); font-size:clamp(1.65rem,2.5vw,2.25rem); font-weight:300; line-height:1.2; color:var(--text-bright); margin-bottom:1.2rem; }
+    .architecture-section p { font-size:1rem; color:var(--text-mid); line-height:1.85; margin-bottom:1rem; max-width:760px; }
+    .architecture-section ul { max-width:720px; margin:1rem 0 1rem 1.3rem; color:var(--text-mid); }
+    .architecture-section li { margin-bottom:.75rem; padding-left:.35rem; }
+    code { font-family:var(--mono); font-size:.78em; color:var(--accent); background:var(--surface); border:1px solid var(--rim); padding:.12em .35em; overflow-wrap:anywhere; }
+    .boundary-note { border:1px solid var(--rim); background:var(--deep); padding:1.6rem 1.8rem; max-width:820px; }
+    .boundary-note h2 { font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:.8rem; }
+    .boundary-note p { font-size:.94rem; color:var(--text-mid); line-height:1.75; }
+    @media print {
+      #starfield,.codex-nav,.codex-footer,.jump-links,.document-links { display:none!important; }
+      body { background:#fff; color:#17263a; } body::after { display:none; }
+      .page { max-width:none; padding:0 .5in; } .page-hero { padding:.4in 0 .3in; opacity:1; animation:none; }
+      .page-title,.architecture-section h2 { color:#0d2238; }
+      .page-subtitle,.architecture-intro,.architecture-section p,.architecture-section li,.boundary-note p { color:#263d55; }
+      .architecture-content { padding-top:.25in; } .architecture-section { break-inside:avoid; padding:.2in 0; }
+      .boundary-note { background:#f4f7fa; } code { color:#005b85; background:#f4f7fa; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links"><li><a href="/systems/">Systems</a></li><li><a href="/glossary/">Glossary</a></li><li><a href="/method/">Method</a></li><li><a href="/sources/">Sources</a></li><li><a href="/mission-log/">Mission Log</a></li><li><a href="/origin/">Origin</a></li><li><a href="/about/">About</a></li><li><a href="/roadmap.html">Roadmap</a></li><li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li></ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Science Architecture</span></div>
+  </nav>
+  <header class="page-hero">
+    <div class="page-eyebrow">Framework // How the Codex thinks</div>
+    <h1 class="page-title">Science <em>Architecture</em></h1>
+    <p class="page-subtitle">How the Exoplanet Codex checks measurements, promotes results, freezes references, and preserves the scientific record.</p>
+    <div class="document-links"><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf" class="btn-download" download>↓ Download Architecture PDF (v3.0)</a><a href="/glossary/" class="document-link">Browse the Glossary →</a><a href="/assets/docs/exoplanet-codex-science-architecture-v2.0.docx" class="document-link" download>Previous version: v2.0</a></div>
+    <nav class="jump-links" aria-label="Jump to section"><a href="#two-engine">Two-engine floor</a><a href="#promotion">Three gates</a><a href="#tiers">Freeze tiers</a><a href="#honesty">Honesty tripwire</a><a href="#disposition">Disposition</a><a href="#tracker">Tracker</a><a href="#naming">Naming</a><a href="#read-set">Read set</a><a href="#sirius">Sirius</a><a href="#firewall">Firewall</a></nav>
+  </header>
+  <main class="architecture-content">
+    <p class="architecture-intro">This document explains how the Exoplanet Codex decides which scientific results it can trust. Pipeline details appear only when they explain a scientific safeguard. Star-specific abundance values belong in that star’s Science Product Package, not here.</p>
+    <section class="architecture-section" id="two-engine"><p class="section-number">Section 01</p><h2>The two-engine floor</h2><p>A result from one measurement engine can be internally consistent and still be wrong. The Codex therefore runs two independent engines for every element that has a validated model atom. Their agreement is an honesty check that neither engine can provide alone.</p><p>Engine A is the 1D-NLTE production path. It measures an equivalent width or uses synthesis-v2, then applies a per-line NLTE correction from a one-dimensional correction table.</p><p>Engine B performs NLTE synthesis inside Turbospectrum with the Gerber 2023 deck. It uses native departure coefficients for each line where a validated atom exists.</p><p><code>pipeline/engine_selection.py:select_element</code> compares the engines line by line. When both provide acceptable measurements, the element result uses inverse-variance weighting. Cross-engine spread remains a separate diagnostic. <code>CROSS_ENGINE_MIX_GATE</code> raises when per-line winners produce a material conflict at the element level. A missing NLTE grid stops the pipeline; it never triggers a silent LTE fallback.</p></section>
+    <section class="architecture-section" id="promotion"><p class="section-number">Section 02</p><h2>The three-gate promotion</h2><p>An element does not become <code>gold</code> because one comparison looks good. Promotion requires three independent checks.</p><ul><li>Gate 1 tests whether Engine B recovers the external INSPECT or Amarsi anchor within 0.05 dex.</li><li>Gate 2 applies the validate-don’t-tune firewall to the model atom.</li><li>Gate 3 checks whether the absolute cross-engine difference, |dCE|, lies within the ratified band for the two-engine artifact.</li></ul><p>The rule is strict. All three gates must pass. A missing gate is a failure, not an abstention.</p></section>
+    <section class="architecture-section" id="tiers"><p class="section-number">Section 03</p><h2>Ratified freeze tiers</h2><p>Every element has one of three freeze tiers.</p><ul><li><code>gold</code> means the value is approved and frozen in the active reference.</li><li><code>owed</code> means work or approval remains before the value can be frozen.</li><li><code>data-gap</code> means no value has been measured.</li></ul><p><code>owed-HELD</code> means the verdict contains a measured value that has not been promoted. <code>owed-BLANK</code> means no measured value exists. Ryan ratifies each element’s tier. The pipeline enforces that decision; it does not make it.</p></section>
+    <section class="architecture-section" id="honesty"><p class="section-number">Section 04</p><h2>The blank-cause honesty tripwire</h2><p>A historical failure mode allowed a verdict row to say that no independent-gf line survived even when the tracker recorded surviving lines and a measured value. The text made a real measurement look blank.</p><p><code>pipeline/provenance_honesty.py:_assert_blank_cause_is_honest</code> rejects that contradiction. The phase_c verdict emitter and gold-reference builder call the same guard. This makes the bad state unrepresentable before it can enter a frozen artifact.</p></section>
+    <section class="architecture-section" id="disposition"><p class="section-number">Section 05</p><h2>The disposition report</h2><p>The disposition report is the final straggler sweep before a freeze. It reads the phase_c verdict, gold reference, two-engine artifact, and element status tracker. It assigns each element one disposition: PASS held, PASS candidate, provisional flip, owed with cause, or data-gap.</p><p>The report is machine-generated at <code>data/audit/element_disposition_report.json</code>. Analysts do not edit it. The generator runs before every freeze so unresolved elements are visible before the reference becomes immutable.</p></section>
+    <section class="architecture-section" id="tracker"><p class="section-number">Section 06</p><h2>The generated element status tracker</h2><p>The tracker was once edited by hand. That allowed the table to drift away from the evidence it summarized.</p><p>It is now generated from the phase_c verdict, <code>config/physics_regime_rya400.yaml</code>, and <code>data/audit/element_status_tracker_editorial.yaml</code>. An explicit <code>verdict</code> column keeps the scientific verdict separate from the freeze tier. A <code>--check</code> run compares the committed file with a fresh generation. Any hand edit becomes a build failure.</p></section>
+    <section class="architecture-section" id="naming"><p class="section-number">Section 07</p><h2>The four-noun naming convention</h2><p>A state artifact’s filename should reveal how it may change.</p><ul><li>A Catalog is a master enumeration.</li><li>A Register holds mutable state facts.</li><li>A Tracker records work or progress.</li><li>A Reference holds frozen, validated truth.</li></ul><p><code>SEQUENCE.md</code> is a narrative overlay, not a fifth state noun. “Gold” is reserved for a Reference modifier.</p></section>
+    <section class="architecture-section" id="read-set"><p class="section-number">Section 08</p><h2>The read-set discipline</h2><p>Every working session begins with <code>LEDGERS.md</code>. That startup index points to the register, tracker, catalogs, holdings manifest, and <code>SEQUENCE.md</code>.</p><p>The register-freshness guard blocks a pull request that changes a state surface without updating <code>CODEX_STATE_REGISTER.md</code>. The ledger-consistency guard compares the tracker, verdict, and gold reference. It reports undocumented disagreements in continuous integration and becomes blocking at merge.</p></section>
+    <section class="architecture-section" id="sirius"><p class="section-number">Section 09</p><h2>Sirius-only compute and continuous integration</h2><p>Sirius, an HP ProBook 450 running the project’s reference software stack, is the authoritative production runner. Abundance computations run there. The Mac is for research, development, and pull-request review.</p><p>Continuous integration also runs on Sirius. Twenty-four test files require iSpec. Ephemeral runners therefore fail 22 percent of the suite. <code>CI/test</code> is required before a pull request can merge to <code>main</code>. The repository uses merge commits so the landing record remains explicit.</p></section>
+    <section class="architecture-section" id="firewall"><p class="section-number">Section 10</p><h2>The validate-don’t-tune firewall</h2><p>A model atom or correction grid must never be tuned to reproduce a trusted anchor. The physics must produce the anchor. The anchor is the test, not the target.</p><p>The corroboration-accept standing rule provides a bounded alternative when ionization balance stops on precision. Model vintage also matters. Titanium and manganese moved to ab-initio atoms after the audit. Iron, calcium, chromium, barium, and strontium remain on scaled-Drawin atoms with explicit annotations because the current effect is benign or not material.</p><p>Corrections carry idempotency guards. A correction that has already been applied must be recognized as complete. Re-running the pipeline cannot apply it twice.</p></section>
+    <aside class="boundary-note"><h2>Document boundaries</h2><p>The Science Architecture describes framework-level decisions. The Method page describes the general measurement pipeline. The Glossary defines terms. A star’s Science Product Package carries its values, diagnostics, and caveats.</p></aside>
+  </main>
+  <footer class="codex-footer"><div class="footer-grid"><div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div><div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/architecture/">Science Architecture</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div><div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf">Architecture PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div><div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div></div><p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p></footer>
+</div>
+<script src="/assets/js/starfield.js"></script><script src="/assets/js/codex.js"></script>
+</body>
+</html>
