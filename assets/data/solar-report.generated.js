@@ -1475,8 +1475,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "acfa0fecebdcbf15633cee1eb727f372b9409153",
         "registryCommit": "8177e047dd4497344e01a280d925642e80e4cbf5",
-        "scienceGit": "045a6eb00fc6296c44ad7554e309199adf48b848",
-        "generatedAt": "2026-08-19T02:28:07+00:00"
+        "scienceGit": "b6225a75a72b09a57b1b2dd4e521c86cf4a0e090",
+        "generatedAt": "2026-08-23T04:51:13+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1851,7 +1851,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "c05eecf7de1f23d4c38e098c0658beab8891e541",
+    "gitCommit": "b6225a75a72b09a57b1b2dd4e521c86cf4a0e090",
     "productCommit": "4e3dabb5ba139c89ca0b5f5538afb64525ab8fae",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-08-18T21:08:52+00:00"

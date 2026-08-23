@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import math
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -88,13 +89,16 @@ def main() -> None:
     gold_path = science / "data/reference/solar/solar_abundances_v5.csv"
     tracker_path = science / "data/audit/element_status_tracker.csv"
     matrix_path = science / "data/results/rya850/rya850_element_table.csv"
+    live_tracker_path = science / "data/results/rya935/live_tracker.html"
+    live_status_path = science / "data/results/rya935/live_status.json"
     product_paths = [
         science / "data/results/rya847/gated/FeI_3000_3780_kpno_solar_atlas_SYNTH_products.csv",
         science / "data/results/rya847/gated/FeI_10000_12935_kpno_solar_atlas_SYNTH_products.csv",
         science / "data/results/rya847/gated/ts-lte/FeI_3800_6910_kpno_solar_atlas_PROFILEFIT_products.csv",
         science / "data/results/rya847/gated/gerber-nlte/FeI_3800_6910_kpno_solar_atlas_PROFILEFIT_products.csv",
     ]
-    required = [perline_path, gold_path, tracker_path, matrix_path, *product_paths,
+    required = [perline_path, gold_path, tracker_path, matrix_path,
+                live_tracker_path, live_status_path, *product_paths,
                 *fe2_record.required_paths(science)]
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -284,9 +288,14 @@ def main() -> None:
     download_fe2 = SITE_ROOT / "assets/data/solar/FeII_perline.csv"
     count_fe1 = write_species_csv(perline_path, download_fe1, "I")
     count_fe2 = write_species_csv(perline_path, download_fe2, "II")
+    live_destination = SITE_ROOT / "assets/data/rya935"
+    live_destination.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(live_tracker_path, live_destination / "live_tracker.html")
+    shutil.copyfile(live_status_path, live_destination / "live_status.json")
     print(f"generated {args.output.relative_to(SITE_ROOT)}")
     print(f"wrote {download_fe1.relative_to(SITE_ROOT)} ({count_fe1} rows)")
     print(f"wrote {download_fe2.relative_to(SITE_ROOT)} ({count_fe2} rows)")
+    print(f"published RYA-935 tracker snapshot to {live_destination.relative_to(SITE_ROOT)}")
     print(provenance["sentence"])
     for finding in fe2["staleInputs"]:
         print(f"STALE INPUT: {finding['artifact']} · Fe II {finding['engine']}: "
