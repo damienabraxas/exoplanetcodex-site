@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/js/analytics.js"></script>
+  <title>Barnards Star · The Exoplanet Codex</title>
+  <meta name="description" content="Barnards Star registry profile in the Exoplanet Codex target catalog.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <style>
+    .registry-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rim);border:1px solid var(--rim);margin:2rem 0}
+    .registry-cell{background:var(--deep);padding:1.2rem}
+    .registry-label{font:0.58rem var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.4rem}
+    .registry-value{font:0.9rem/1.5 var(--mono);color:var(--accent)}
+    .registry-note{border-left:3px solid var(--accent);background:rgba(79,195,247,.04);padding:1.4rem 1.6rem;margin:2rem 0;color:var(--text);line-height:1.75}
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/" class="active">Systems</a></li><li><a href="/glossary/">Glossary</a></li><li><a href="/method/">Method</a></li><li><a href="/sources/">Sources</a></li><li><a href="/mission-log/">Mission Log</a></li><li><a href="/about/">About</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/systems/">Systems</a> / <span>Barnards Star</span></div>
+  </nav>
+  <header class="page-hero">
+    <div class="page-eyebrow">Registered target // Profile</div>
+    <h1 class="page-title"><em>Barnards Star</em></h1>
+    <p class="page-subtitle">Future Target · 1.83 pc</p>
+  </header>
+  <main class="container">
+    <section>
+      <div class="section-label">Catalog record</div>
+      <h2 class="section-title">Registry profile</h2>
+      <div class="registry-grid">
+        <div class="registry-cell"><div class="registry-label">Role</div><div class="registry-value">Future Target</div></div>
+        <div class="registry-cell"><div class="registry-label">Spectral type</div><div class="registry-value">Pending registry adoption</div></div>
+        <div class="registry-cell"><div class="registry-label">Distance</div><div class="registry-value">1.83 pc</div></div>
+        <div class="registry-cell"><div class="registry-label">Astrometry</div><div class="registry-value">SIMBAD/CDS (2020yCat.1350....0G)</div></div>
+      </div>
+      <div class="registry-note">This target is part of the committed Codex star registry. Its profile is public now; validated stellar parameters, spectra, and analysis products will be added as they pass the pipeline.</div>
+      <div class="registry-grid">
+        <div class="registry-cell"><div class="registry-label">Toward Galactic center</div><div class="registry-value">1.520 pc</div></div>
+        <div class="registry-cell"><div class="registry-label">Direction of rotation</div><div class="registry-value">0.914 pc</div></div>
+        <div class="registry-cell"><div class="registry-label">North Galactic pole</div><div class="registry-value">0.444 pc</div></div>
+      </div>
+      <p><a href="/#neighborhood-title" class="btn-ghost">← Back to neighborhood map</a></p>
+    </section>
+  </main>
+  <footer><span>THE EXOPLANET CODEX</span><span>Open science · Reproducible results</span></footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+</body>
+</html>

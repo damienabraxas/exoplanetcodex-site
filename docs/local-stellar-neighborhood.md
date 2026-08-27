@@ -8,7 +8,7 @@ Target membership, identifiers, roles, spectral types, and slugs come from every
 
 The generator uses Astropy `SkyCoord` to transform ICRS position plus distance into heliocentric Galactic Cartesian coordinates. `x_gc` points toward the Galactic center, `y_rotation` toward Galactic longitude 90 degrees (the direction of Galactic rotation), and `z_ngp` toward the north Galactic pole. The homepage renders the orthographic `x_gc`–`y_rotation` projection with equal scale on both axes. Scientific coordinates are not offset to separate labels or markers; Alpha Centauri A and B therefore appear nearly coincident at neighborhood scale.
 
-The Sun is the coordinate origin and has no fixed sky position. A target URL is emitted only when the catalog slug resolves to an actual site `index.html`; unpublished targets remain focusable for their name and distance but receive no invented link.
+The Sun is the coordinate origin and has no fixed sky position. Every registered target has a canonical page under `/systems/<website_slug>/`; the map generator emits a URL only after that page resolves to an actual `index.html`. Minimal registry profiles intentionally publish only committed catalog and astrometry fields until richer science products are validated.
 
 ## Regeneration
 
