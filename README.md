@@ -49,6 +49,16 @@ The generator loud-fails when a required versioned artifact is missing. It also
 copies the replication-grade Fe per-line CSV into the site's downloadable data
 directory; no scientific values are stored in the HTML or rendering code.
 
+To regenerate the homepage's versioned stellar-neighborhood map from the same
+canonical catalog, STAR_PARAMS pointers, and cached SIMBAD astrometry:
+
+```bash
+python3 scripts/generate_local_stellar_neighborhood.py \
+  --site-root /path/to/exoplanetcodex-site
+```
+
+See [the coordinate and provenance notes](docs/local-stellar-neighborhood.md).
+
 ## Analytics and sitemap
 
 All pages load the shared GA4 integration from `assets/js/analytics.js`. The public measurement ID is single-sourced there because this is a static site without a server-side environment layer.
