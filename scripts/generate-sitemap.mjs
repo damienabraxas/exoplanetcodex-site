@@ -34,7 +34,7 @@ const files = await findHtmlFiles(siteRoot);
 const urls = [...new Set(files.map(urlForFile))]
   .filter((url) => ![
     `${origin}/confirmed/`,
-    `${origin}/roadmap.html`,
+    `${origin}/roadmap/`,
   ].includes(url))
   .sort((first, second) => first.localeCompare(second));
 
