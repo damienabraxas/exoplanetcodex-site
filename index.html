@@ -70,14 +70,29 @@
     .hero-sub strong { color:var(--text-bright); font-weight:400; }
     .hero-cta-group { display:flex; gap:1rem; flex-wrap:wrap; }
     .hero-credit { position:absolute; bottom:1.2rem; right:2rem; font-family:var(--mono); font-size:0.58rem; color:rgba(168,192,216,0.4); letter-spacing:0.08em; z-index:3; }
-    /* ── DATA STRIP ── */
-    .data-strip { display:flex; border:1px solid var(--rim); border-top:none; overflow-x:auto; opacity:0; animation:fade-in 1s ease 1.4s forwards; }
-    .data-cell { flex:1; min-width:130px; padding:1.1rem 1.6rem; border-right:1px solid var(--rim); }
-    .data-cell:last-child { border-right:none; }
-    .data-label { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-dim); margin-bottom:0.35rem; }
-    .data-value { font-family:var(--mono); font-size:1.05rem; color:var(--accent); letter-spacing:0.04em; }
-    .data-value.warm { color:var(--accent-warm); }
-    .data-value.dim  { color:var(--text-mid); font-size:0.85rem; }
+    /* ── LOCAL STELLAR NEIGHBOURHOOD ── */
+    .neighborhood { border:1px solid var(--rim); border-top:none; padding:clamp(1rem,3vw,2rem); opacity:0; animation:fade-in 1s ease 1.4s forwards; }
+    .neighborhood-head { display:flex; justify-content:space-between; gap:1rem; align-items:flex-end; flex-wrap:wrap; margin-bottom:1rem; }
+    .neighborhood h2 { font-family:var(--serif); color:var(--text-bright); font-size:clamp(1.5rem,3vw,2.25rem); font-weight:300; }
+    .neighborhood-copy,.map-status { color:var(--text-dim); font-size:.85rem; line-height:1.55; max-width:620px; }
+    .map-status { font-family:var(--mono); font-size:.65rem; letter-spacing:.06em; padding:1rem; }
+    .map-shell { position:relative; background:rgba(4,6,13,.72); border:1px solid var(--rim); min-height:280px; }
+    .map-shell svg { display:block; width:100%; height:auto; touch-action:manipulation; }
+    .map-ring { fill:none; stroke:rgba(168,192,216,.18); stroke-width:.8; vector-effect:non-scaling-stroke; }
+    .map-axis { stroke:rgba(168,192,216,.28); stroke-width:.8; vector-effect:non-scaling-stroke; }
+    .map-ring-label,.map-axis-label { fill:var(--text-dim); font:10px var(--mono); }
+    .target-node { fill:var(--accent); stroke:var(--deep); stroke-width:2; vector-effect:non-scaling-stroke; transition:fill .15s,filter .15s; }
+    .target-hit { fill:transparent; stroke:none; }
+    .target-link:focus { outline:none; }
+    .target-link:hover .target-node,.target-link:focus .target-node { fill:#fff; filter:drop-shadow(0 0 5px var(--accent)); }
+    .target-node.unpublished { fill:var(--accent-warm); }
+    .sun-node { fill:#ffd36a; stroke:#fff1b8; }
+    .map-label { fill:var(--text-mid); font:11px var(--mono); pointer-events:none; }
+    .map-tooltip { position:absolute; z-index:2; pointer-events:none; background:var(--surface); border:1px solid var(--accent); color:var(--text-bright); padding:.55rem .7rem; font:12px/1.45 var(--mono); transform:translate(10px,-110%); max-width:220px; }
+    .map-legend { display:flex; gap:1.2rem; flex-wrap:wrap; color:var(--text-dim); font:10px var(--mono); padding-top:.8rem; }
+    .legend-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent); margin-right:.4rem; }
+    .legend-dot.unpublished { background:var(--accent-warm); }
+    @media (prefers-reduced-motion:reduce) { .neighborhood { animation:none; opacity:1; } .target-node { transition:none; } }
     /* ── SEARCH ── */
     .search-label { font-family:var(--mono); font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--text-dim); }
     .search-bar { display:flex; border:1px solid var(--rim); transition:border-color 0.2s; }
@@ -190,15 +205,20 @@
 
 <div class="page">
 
-  <div class="data-strip">
-    <div class="data-cell"><div class="data-label">First target</div><div class="data-value">55 Cancri A</div></div>
-    <div class="data-cell"><div class="data-label">IAU name</div><div class="data-value warm">Copernicus</div></div>
-    <div class="data-cell"><div class="data-label">Distance</div><div class="data-value">40.9 ly</div></div>
-    <div class="data-cell"><div class="data-label">T<sub>eff</sub></div><div class="data-value">5196 K</div></div>
-    <div class="data-cell"><div class="data-label">Planets</div><div class="data-value">5</div></div>
-    <div class="data-cell"><div class="data-label">Spectrograph</div><div class="data-value dim">HARPS R~115k</div></div>
-    <div class="data-cell"><div class="data-label">Model</div><div class="data-value dim">ATLAS9 / Kurucz</div></div>
-  </div>
+  <section class="neighborhood" aria-labelledby="neighborhood-title">
+    <div class="neighborhood-head">
+      <div>
+        <div class="section-label">Our stellar neighborhood</div>
+        <h2 id="neighborhood-title">Codex targets in local Galactic space</h2>
+      </div>
+      <p class="neighborhood-copy">A Sun-centered view in parsecs. Positions are projected onto the Galactic plane: toward the Galactic center is right; Galactic rotation is up. Coordinates are never moved for appearance.</p>
+    </div>
+    <div id="neighborhood-map" class="map-shell" role="group" aria-label="Local stellar-neighborhood target map">
+      <p class="map-status" id="neighborhood-status">Loading versioned astrometry…</p>
+      <noscript><p class="map-status">This interactive map needs JavaScript. All published targets remain available in the <a href="/systems/">systems index</a>.</p></noscript>
+    </div>
+    <div class="map-legend" aria-hidden="true"><span><i class="legend-dot"></i>Published target — opens target page</span><span><i class="legend-dot unpublished"></i>Pipeline target — no public route yet</span></div>
+  </section>
 
   <section class="systems-section" id="systems">
     <div class="section-label">Primary science targets</div>
@@ -315,5 +335,6 @@
 
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
+  <script src="/assets/js/local-neighborhood.js" defer></script>
 </body>
 </html>
