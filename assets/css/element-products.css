@@ -55,5 +55,6 @@
 .matrix-na{color:var(--text-dim)}.matrix-reason{display:block;margin-top:.25rem;color:var(--text-dim);font-weight:400}
 .matrix-row{display:block;margin-top:.3rem;color:var(--text-dim);font-weight:400}
 .matrix-uncertainty{display:block;color:var(--accent);white-space:nowrap}
+.matrix-tier-pending{color:var(--accent-warm);font-weight:600}
 .product-feed-error{padding:1rem;border:1px solid #ff8d8d;color:#ffb1b1;background:rgba(255,90,90,.06)}
 @media(max-width:760px){.forest,.axis{grid-template-columns:180px minmax(260px,1fr) 120px}.product-forest{overflow-x:auto}.product-forest-inner{min-width:620px}}

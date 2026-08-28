@@ -27,6 +27,9 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("num(p.sigma_stat)", self.js)
         self.assertIn("num(p.sigma_syst)", self.js)
         self.assertIn("matrix-uncertainty", self.css)
+        self.assertIn("Deepgraded and consistent matrix", self.js)
+        self.assertIn("matrix(secondary", self.js)
+        self.assertIn("matrix-tier-pending", self.css)
 
     def test_rya935_forest_geometry_is_exact(self):
         self.assertIn(".forest{display:grid;grid-template-columns:250px 1fr 150px", self.css)
