@@ -82,9 +82,44 @@
     return byKey;
   }
 
+  // Compatibility renderer for a short feed-version skew. The website can deploy
+  // before raw.githubusercontent.com exposes the science commit that adds plot_grid;
+  // an absent grid must degrade to the existing grouped forest, never an empty page.
+  function compatibilityForest(feed, ion, reference) {
+    var rows = uniqueProducts((feed.products || []).filter(function (p) {
+      return p.ion === ion && (p.tier === 'GRADED' || (p.band === 'near-UV' && p.tier === 'DEEPGRADED'));
+    }));
+    if (!rows.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
+    var out = '<p class="product-feed-meta">Compatibility view while this feed version publishes no plot_grid.</p>' +
+      '<div class="forest-legend"><span>blue solid = statistical σ</span><span>blue wireframe = systematic σ</span></div>' +
+      '<div class="product-forest"><div class="product-forest-inner">';
+    BANDS.forEach(function (band) {
+      var here = rows.filter(function (p) { return p.band === band; });
+      if (!here.length) return;
+      var vals = [];
+      here.forEach(function (p) { vals.push(Number(p.A)-Number(p.sigma_stat||0),Number(p.A)+Number(p.sigma_stat||0),Number(p.A)-Number(p.sigma_syst||0),Number(p.A)+Number(p.sigma_syst||0)); });
+      if (reference) { vals.push(reference.band[0],reference.band[1]); (reference.comparators||[]).forEach(function(c){vals.push(Number(c.value)-Number(c.sigma||0),Number(c.value)+Number(c.sigma||0));}); }
+      var lo=Math.min.apply(null,vals)-0.03, hi=Math.max.apply(null,vals)+0.03, span=hi-lo||1;
+      function x(v){return Math.max(0,Math.min(100,(v-lo)/span*100));}
+      out += '<div class="forest-band">'+esc(band)+'</div>';
+      INSTRUMENTS.forEach(function(inst){
+        var group=here.filter(function(p){return p.instrument===inst;}); if(!group.length)return;
+        out += '<div class="forest-instrument">'+esc(LABELS[inst]||inst)+'</div>';
+        group.forEach(function(p){
+          var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
+          var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(0.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(0.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
+          out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.holding)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(0.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+        });
+      });
+      var ticks=''; for(var j=0;j<5;j++){var v=lo+(hi-lo)*j/4;ticks+='<span class="tick" style="left:'+(j*25)+'%">'+num(v,2)+'</span>';}
+      out += '<div class="axis"><span></span><span class="ticks">'+ticks+'</span><span class="forest-value">A('+esc(element)+') dex</span></div>';
+    });
+    return (reference?'<div class="literature-regions"><span class="asplund-region">'+esc(reference.best_external)+' '+num(reference.asplund2021,2)+' ± '+num(reference.sigma_external,2)+'</span>'+(reference.comparators||[]).map(function(c){return '<span class="lodders-region">'+esc(c.name)+' '+num(c.value,2)+' ± '+num(c.sigma,2)+'</span>';}).join('')+'</div>':'')+out+'</div></div>';
+  }
+
   function forest(feed, ion, reference) {
     var grid = feed.plot_grid;
-    if (!grid || !grid.sections) return '<p class="product-pending">This feed publishes no plot grid.</p>';
+    if (!grid || !grid.sections) return compatibilityForest(feed, ion, reference);
     var byKey = productIndex(feed);
     var sections = grid.sections.filter(function (s) { return s.ion === ion; });
     if (!sections.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
