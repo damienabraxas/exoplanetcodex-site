@@ -52,6 +52,7 @@ class ElementProductTests(unittest.TestCase):
         html = (ROOT / "systems/sol/elements/fe/index.html").read_text()
         self.assertIn('id="element-products" data-element="Fe"', html)
         self.assertNotIn("solar-report.generated.js", html)
+        self.assertIn("element-products.js?v=", html)
 
 
 if __name__ == "__main__":
