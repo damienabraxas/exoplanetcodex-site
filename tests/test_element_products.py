@@ -32,6 +32,10 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("live_status.json", self.js)
         self.assertIn("tracker.reference&&tracker.reference.FeI", self.js)
         self.assertIn("solar_kpno_kurucz2005_corrected", self.js)
+        self.assertIn("p.band==='near-UV'", self.js)
+        self.assertIn("band-near-uv", self.css)
+        self.assertIn("band-vis", self.css)
+        self.assertIn("band-ir", self.css)
 
     def test_fe_page_has_no_generated_abundance_bundle(self):
         html = (ROOT / "systems/sol/elements/fe/index.html").read_text()

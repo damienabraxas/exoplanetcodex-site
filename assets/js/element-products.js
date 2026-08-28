@@ -54,7 +54,8 @@
     })[0];
   }
   function card(p, telluric) {
-    return '<article class="product-card"><span class="eyebrow">'+esc(LABELS[p.instrument]||p.instrument)+' · '+esc(p.band)+' · '+esc(p.tier)+'</span>'+
+    var bandClass=p.band==='near-UV'?'band-near-uv':p.band==='NIR'?'band-ir':'band-vis';
+    return '<article class="product-card '+bandClass+'"><span class="eyebrow">'+esc(LABELS[p.instrument]||p.instrument)+' · '+esc(p.band)+' · '+esc(p.tier)+'</span>'+
       '<strong>'+num(p.A)+' <small>± '+num(p.sigma_stat)+' stat</small></strong><p>'+esc(p.display)+' · n='+esc(p.n_lines)+'</p>'+
       '<small>± '+num(p.sigma_syst)+' systematic · '+esc(p.dominant_term||'systematic basis not declared')+'</small>'+
       '<small class="corrected">telluric '+esc(telluric[p.holding]||'UNKNOWN')+' · '+esc(p.holding)+'</small></article>';
@@ -99,10 +100,12 @@
     var excluded=(feed.products||[]).filter(function(p){return telluric[p.holding]!=='applied';});
     var graded=live.filter(function(p){return p.ion==='I'&&p.tier==='GRADED';});
     var top=INSTRUMENTS.map(function(i){var candidates=graded.filter(function(p){return p.instrument===i;});if(i==='kpno_solar_atlas'){var kp2005=candidates.filter(function(p){return p.holding==='solar_kpno_kurucz2005_corrected';});if(kp2005.length)candidates=kp2005;}return preferred(candidates);}).filter(Boolean);
+    var nearUv=preferred(live.filter(function(p){return p.ion==='I'&&p.band==='near-UV'&&p.instrument==='kpno_solar_atlas'&&p.holding==='solar_kpno_kurucz2005_corrected';}));
+    if(nearUv)top.unshift(nearUv);
     var secondary=live.filter(function(p){return p.ion==='I'&&(p.tier==='DEEPGRADED'||p.tier==='CONSISTENT');});
     var pending=INSTRUMENTS.filter(function(i){return !top.some(function(p){return p.instrument===i;});}).map(function(i){return LABELS[i];});
     root.innerHTML='<p class="product-feed-meta">Live source: <strong>codex.element_product/1 · '+esc(element)+'.json v'+esc(feed.version)+'</strong> · updated '+esc(feed.updated_at)+' · cache-busted on every load · '+excluded.length+' telluric-ineligible live rows refused</p>'+
-      '<section class="product-section"><h2>Highlighted graded products</h2><p class="product-section-intro">Finished graded Kitt Peak, HARPS, IAG, and CRIRES+ products, read directly from the merged science feed.</p><div class="product-headlines">'+top.map(function(p){return card(p,telluric);}).join('')+'</div>'+(pending.length?'<p class="product-pending">Pending graded instruments: '+esc(pending.join(', '))+'</p>':'')+'</section>'+
+      '<section class="product-section"><h2>Highlighted band products</h2><p class="product-section-intro">Finished Kitt Peak near-UV plus graded Kitt Peak, HARPS, IAG, and CRIRES+ products, read directly from the merged science feed.</p><div class="product-headlines">'+top.map(function(p){return card(p,telluric);}).join('')+'</div>'+(pending.length?'<p class="product-pending">Pending graded instruments: '+esc(pending.join(', '))+'</p>':'')+'</section>'+
       '<section class="product-section"><h2>Deepgraded and consistent</h2><p class="product-section-intro">Secondary tiers remain visually subordinate. CONSISTENT stays pending until the feed emits it.</p><div class="product-secondary">'+secondary.map(function(p){return card(p,telluric);}).join('')+'</div>'+(!live.some(function(p){return p.tier==='CONSISTENT';})?'<p class="product-pending">CONSISTENT · Pending</p>':'')+'</section>'+
       '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">RYA-935 geometry: per-holding rows with statistical and systematic uncertainties kept separate.</p>'+forest(live.filter(function(p){return p.ion==='I';}),tracker.reference&&tracker.reference.FeI)+'</section>'+
       '<section class="product-section"><h2>Band × instrument matrix</h2><p class="product-section-intro">Finished, Pending, out-of-band blank, closed N/A with reason, and quarantined Problem are distinct states.</p>'+matrix(live,feed.quarantine||[],feed.gaps||[],catalog)+'</section>';
