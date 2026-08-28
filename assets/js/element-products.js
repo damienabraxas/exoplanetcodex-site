@@ -19,6 +19,14 @@
   var BANDS = ['near-UV', 'VIS', 'red-optical', 'NIR'];
   var INSTRUMENTS = ['kpno_solar_atlas', 'harps', 'iag_fts_solar_atlas', 'crires_plus'];
   var LABELS = {kpno_solar_atlas:'Kitt Peak',harps:'HARPS',iag_fts_solar_atlas:'IAG',crires_plus:'CRIRES+'};
+  var HOLDING_LABELS = {
+    solar_kpno_kurucz2005_corrected: 'Kitt Peak — Kurucz 2005 corrected',
+    solar_kpno_molecfit_corrected: 'Kitt Peak — 1984 Molecfit corrected'
+  };
+
+  function holdingLabel(holding, instrument) {
+    return HOLDING_LABELS[holding] || LABELS[instrument] || instrument;
+  }
 
   function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function(c) {
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
@@ -104,11 +112,15 @@
       out += '<div class="forest-band">'+esc(band)+'</div>';
       INSTRUMENTS.forEach(function(inst){
         var group=here.filter(function(p){return p.instrument===inst;}); if(!group.length)return;
-        out += '<div class="forest-instrument">'+esc(LABELS[inst]||inst)+'</div>';
-        group.forEach(function(p){
-          var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
-          var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(0.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(0.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
-          out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.holding)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(0.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+        var holdings=[];
+        group.forEach(function(p){if(holdings.indexOf(p.holding)<0)holdings.push(p.holding);});
+        holdings.forEach(function(holding){
+          out += '<div class="forest-instrument">'+esc(holdingLabel(holding,inst))+'<small>'+esc(holding)+'</small></div>';
+          group.filter(function(p){return p.holding===holding;}).forEach(function(p){
+            var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
+            var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(0.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(0.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
+            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(0.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+          });
         });
       });
       var ticks=''; for(var j=0;j<5;j++){var v=lo+(hi-lo)*j/4;ticks+='<span class="tick" style="left:'+(j*25)+'%">'+num(v,2)+'</span>';}
@@ -157,7 +169,7 @@
 
       INSTRUMENTS.forEach(function (inst) {
         here.filter(function (s) { return s.instrument === inst; }).forEach(function (s) {
-          out += '<div class="forest-instrument">' + esc(LABELS[inst] || inst) +
+          out += '<div class="forest-instrument">' + esc(holdingLabel(s.holding, inst)) +
             '<small>' + esc(s.holding) + (s.only_deepgraded ? ' \u00b7 DEEPGRADED (no graded product in this band)' : '') + '</small></div>';
 
           s.cells.forEach(function (c) {
