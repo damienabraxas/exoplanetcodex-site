@@ -87,7 +87,7 @@
       var bad=quarantine.filter(function(p){return p.instrument===inst&&p.band===band;});
       var gap=gaps.filter(function(g){return g.band===band;})[0];
       if(bad.length) h+='<td class="matrix-problem"><span class="matrix-state">Problem</span>'+(rows.length?'<span class="matrix-row">Finished products also exist in this cell; quarantined rows are never hidden.</span>':'')+'<span class="matrix-reason">'+esc(bad[0].quarantine_reason||'Quarantined product')+'</span></td>';
-      else if(rows.length) h+='<td class="matrix-product"><span class="matrix-state">Finished</span>'+rows.map(function(p){return '<span class="matrix-row">'+esc(p.tier)+' · '+esc(p.display)+' · '+num(p.A)+'</span>';}).join('')+'</td>';
+      else if(rows.length) h+='<td class="matrix-product"><span class="matrix-state">Finished</span>'+rows.map(function(p){return '<span class="matrix-row">'+esc(p.tier)+' · '+esc(p.display)+' · '+num(p.A)+' <span class="matrix-uncertainty">±'+num(p.sigma_stat)+' stat ±'+num(p.sigma_syst)+' syst</span></span>';}).join('')+'</td>';
       else if(!covered(inst,band)) h+='<td class="matrix-na" aria-label="Out of band"></td>';
       else if(gap) h+='<td class="matrix-na"><span class="matrix-state">N/A</span><span class="matrix-reason">N/A for '+esc(element)+': '+esc(gap.reason)+'</span></td>';
       else h+='<td class="matrix-pending"><span class="matrix-state">Pending</span></td>';
