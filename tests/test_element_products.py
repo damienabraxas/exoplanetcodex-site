@@ -46,6 +46,9 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("band-ir", self.css)
         self.assertIn("forest-instrument", self.js)
         self.assertIn(".forest-instrument", self.css)
+        self.assertIn("Kitt Peak — Kurucz 2005 corrected", self.js)
+        self.assertIn("Kitt Peak — 1984 Molecfit corrected", self.js)
+        self.assertIn("holdings.forEach", self.js)
         self.assertIn("group=here.filter", self.js)
         self.assertIn(".product-headlines{grid-template-columns:repeat(5,minmax(0,1fr))}", self.css)
 
