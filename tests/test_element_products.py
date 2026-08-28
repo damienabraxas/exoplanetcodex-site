@@ -41,6 +41,9 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("band-near-uv", self.css)
         self.assertIn("band-vis", self.css)
         self.assertIn("band-ir", self.css)
+        self.assertIn("forest-instrument", self.js)
+        self.assertIn(".forest-instrument", self.css)
+        self.assertIn("group=here.filter", self.js)
 
     def test_fe_page_has_no_generated_abundance_bundle(self):
         html = (ROOT / "systems/sol/elements/fe/index.html").read_text()

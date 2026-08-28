@@ -70,9 +70,14 @@
       var lo=Math.min.apply(null,vals)-.03, hi=Math.max.apply(null,vals)+.03, span=hi-lo||1;
       function x(v){return Math.max(0,Math.min(100,(v-lo)/span*100));}
       out+='<div class="forest-band">'+esc(band)+'</div>';
-      here.forEach(function(p){var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
-        var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
-        out+='<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label"><b>'+esc(LABELS[p.instrument]||p.instrument)+'</b> · '+esc(p.display)+'<small>'+esc(p.holding)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+      INSTRUMENTS.forEach(function(inst){
+        var group=here.filter(function(p){return p.instrument===inst;});
+        if(!group.length)return;
+        out+='<div class="forest-instrument">'+esc(LABELS[inst]||inst)+'</div>';
+        group.forEach(function(p){var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
+          var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
+          out+='<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.holding)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+        });
       });
       var ticks=''; for(var j=0;j<5;j++){var v=lo+(hi-lo)*j/4;ticks+='<span class="tick" style="left:'+(j*25)+'%">'+num(v,2)+'</span>';}
       out+='<div class="axis"><span></span><span class="ticks">'+ticks+'</span><span class="forest-value">A('+esc(element)+') dex</span></div>';
