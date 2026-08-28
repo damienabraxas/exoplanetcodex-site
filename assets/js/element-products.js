@@ -60,30 +60,105 @@
       '<small>± '+num(p.sigma_syst)+' systematic · '+esc(p.dominant_term||'systematic basis not declared')+'</small>'+
       '<small class="corrected">telluric '+esc(telluric[p.holding]||'UNKNOWN')+' · '+esc(p.holding)+'</small></article>';
   }
-  function forest(rows, reference) {
-    if(!rows.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
-    var out='<div class="forest-legend"><span>blue solid = statistical σ</span><span>blue wireframe = systematic σ</span></div><div class="product-forest"><div class="product-forest-inner">';
-    BANDS.forEach(function(band){
-      var here=rows.filter(function(p){return p.band===band;}); if(!here.length) return;
-      var vals=[]; here.forEach(function(p){vals.push(Number(p.A)-Number(p.sigma_stat||0),Number(p.A)+Number(p.sigma_stat||0),Number(p.A)-Number(p.sigma_syst||0),Number(p.A)+Number(p.sigma_syst||0));});
-      if(reference){vals.push(reference.band[0],reference.band[1]);(reference.comparators||[]).forEach(function(c){vals.push(Number(c.value)-Number(c.sigma||0),Number(c.value)+Number(c.sigma||0));});}
-      var lo=Math.min.apply(null,vals)-.03, hi=Math.max.apply(null,vals)+.03, span=hi-lo||1;
-      function x(v){return Math.max(0,Math.min(100,(v-lo)/span*100));}
-      out+='<div class="forest-band">'+esc(band)+'</div>';
-      INSTRUMENTS.forEach(function(inst){
-        var group=here.filter(function(p){return p.instrument===inst;});
-        if(!group.length)return;
-        out+='<div class="forest-instrument">'+esc(LABELS[inst]||inst)+'</div>';
-        group.forEach(function(p){var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
-          var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
-          out+='<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.holding)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+  // RYA-1102 — THE ERROR-BAR FOREST DRAWS A PUBLISHED GRID, NOT WHATEVER ROWS EXIST.
+  //
+  // It used to do `group.forEach(product)` inside band x instrument, so a section's row
+  // count was however many products happened to exist -- Kitt Peak rendered 19 -- and an
+  // instrument with no product was skipped entirely (`if(!group.length) return`), which
+  // is indistinguishable from a model that does not exist. Ryan: "each instrument section
+  // should have 8 lines total, no more no less. If the data product is not available for
+  // that instrument at that band we simply put N/A."
+  //
+  // The row axis and the section membership now come from `feed.plot_grid`, derived in
+  // pipeline/plot_grid.py from the physics registry. NO DISPLAY POLICY LIVES HERE: which
+  // tier is showcased, which product wins a slot, and what the rows are called are all
+  // science decisions, and a copy of them in JS is a copy that drifts.
+  function productIndex(feed) {
+    var fields = (feed.plot_grid && feed.plot_grid.key_fields) || [];
+    var byKey = {};
+    (feed.products || []).forEach(function (p) {
+      byKey[fields.map(function (f) { return p[f] == null ? '' : String(p[f]); }).join('|')] = p;
+    });
+    return byKey;
+  }
+
+  function forest(feed, ion, reference) {
+    var grid = feed.plot_grid;
+    if (!grid || !grid.sections) return '<p class="product-pending">This feed publishes no plot grid.</p>';
+    var byKey = productIndex(feed);
+    var sections = grid.sections.filter(function (s) { return s.ion === ion; });
+    if (!sections.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
+
+    var out = '<div class="forest-legend"><span>blue solid = statistical \u03c3</span>' +
+      '<span>blue wireframe = systematic \u03c3</span><span>N/A = no product for this model</span></div>' +
+      '<div class="product-forest"><div class="product-forest-inner">';
+
+    BANDS.forEach(function (band) {
+      var here = sections.filter(function (s) { return s.band === band; });
+      if (!here.length) return;
+
+      // Scale from the products actually plotted in this band, plus the literature marks.
+      var vals = [];
+      here.forEach(function (s) {
+        s.cells.forEach(function (c) {
+          var p = c.product_key && byKey[c.product_key];
+          if (!p) return;
+          vals.push(Number(p.A) - Number(p.sigma_stat || 0), Number(p.A) + Number(p.sigma_stat || 0),
+                    Number(p.A) - Number(p.sigma_syst || 0), Number(p.A) + Number(p.sigma_syst || 0));
         });
       });
-      var ticks=''; for(var j=0;j<5;j++){var v=lo+(hi-lo)*j/4;ticks+='<span class="tick" style="left:'+(j*25)+'%">'+num(v,2)+'</span>';}
-      out+='<div class="axis"><span></span><span class="ticks">'+ticks+'</span><span class="forest-value">A('+esc(element)+') dex</span></div>';
+      if (reference) {
+        vals.push(reference.band[0], reference.band[1]);
+        (reference.comparators || []).forEach(function (c) {
+          vals.push(Number(c.value) - Number(c.sigma || 0), Number(c.value) + Number(c.sigma || 0));
+        });
+      }
+      if (!vals.length) return;
+      var lo = Math.min.apply(null, vals) - 0.03, hi = Math.max.apply(null, vals) + 0.03;
+      var span = hi - lo || 1;
+      function x(v) { return Math.max(0, Math.min(100, (v - lo) / span * 100)); }
+
+      out += '<div class="forest-band">' + esc(band) + '</div>';
+
+      INSTRUMENTS.forEach(function (inst) {
+        here.filter(function (s) { return s.instrument === inst; }).forEach(function (s) {
+          out += '<div class="forest-instrument">' + esc(LABELS[inst] || inst) +
+            '<small>' + esc(s.holding) + (s.only_deepgraded ? ' \u00b7 DEEPGRADED (no graded product in this band)' : '') + '</small></div>';
+
+          s.cells.forEach(function (c) {
+            var p = c.product_key && byKey[c.product_key];
+            if (!p) {
+              // 🔴 THE N/A ROW. Present, labelled, and empty -- "we did not measure this"
+              // is a fact, and a row that is simply absent cannot state it.
+              out += '<div class="forest forest-na"><span class="forest-label">' + esc(c.row) +
+                '<small>no product</small></span><span class="track"></span>' +
+                '<span class="forest-value">N/A</span></div>';
+              return;
+            }
+            var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst || 0);
+            var sl = x(Number(p.A) - st), sw = x(Number(p.A) + st) - sl;
+            var yl = x(Number(p.A) - sy), yw = x(Number(p.A) + sy) - yl;
+            var refs = reference ? '<i class="ref" title="' + esc(reference.best_external) + '" style="left:' + x(reference.band[0]) + '%;width:' + Math.max(0.4, x(reference.band[1]) - x(reference.band[0])) + '%"></i><i class="refline" style="left:' + x(reference.asplund2021) + '%"></i>' + (reference.comparators || []).map(function (c2) { return '<i class="cmpband" title="' + esc(c2.name) + '" style="left:' + x(Number(c2.value) - Number(c2.sigma || 0)) + '%;width:' + Math.max(0.4, x(Number(c2.value) + Number(c2.sigma || 0)) - x(Number(c2.value) - Number(c2.sigma || 0))) + '%"></i><i class="cmp" style="left:' + x(c2.value) + '%"></i>'; }).join('') : '';
+            out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + '">' +
+              '<span class="forest-label">' + esc(c.row) + '<small>n=' + esc(p.n_lines) +
+              (c.alternates ? ' \u00b7 ' + c.alternates + ' alternate' + (c.alternates > 1 ? 's' : '') : '') +
+              '</small></span><span class="track">' + refs +
+              '<i class="sysbar" style="left:' + yl + '%;width:' + Math.max(0.4, yw) + '%"></i>' +
+              '<i class="bar" style="left:' + sl + '%;width:' + Math.max(0.4, sw) + '%"></i>' +
+              '<i class="dot" style="left:' + x(Number(p.A)) + '%"></i></span>' +
+              '<span class="forest-value">' + num(p.A) + ' <small>\u00b1' + num(st) + ' stat \u00b1' + num(sy) + ' syst</small></span></div>';
+          });
+        });
+      });
+
+      var ticks = '';
+      for (var j = 0; j < 5; j++) { var v = lo + (hi - lo) * j / 4; ticks += '<span class="tick" style="left:' + (j * 25) + '%">' + num(v, 2) + '</span>'; }
+      out += '<div class="axis"><span></span><span class="ticks">' + ticks + '</span><span class="forest-value">A(' + esc(element) + ') dex</span></div>';
     });
-    return (reference?'<div class="literature-regions"><span class="asplund-region">'+esc(reference.best_external)+' '+num(reference.asplund2021,2)+' ± '+num(reference.sigma_external,2)+'</span>'+(reference.comparators||[]).map(function(c){return '<span class="lodders-region">'+esc(c.name)+' '+num(c.value,2)+' ± '+num(c.sigma,2)+'</span>';}).join('')+'</div>':'')+out+'</div></div>';
+
+    return (reference ? '<div class="literature-regions"><span class="asplund-region">' + esc(reference.best_external) + ' ' + num(reference.asplund2021, 2) + ' \u00b1 ' + num(reference.sigma_external, 2) + '</span>' + (reference.comparators || []).map(function (c) { return '<span class="lodders-region">' + esc(c.name) + ' ' + num(c.value, 2) + ' \u00b1 ' + num(c.sigma, 2) + '</span>'; }).join('') + '</div>' : '') + out + '</div></div>';
   }
+
   function matrix(products, quarantine, gaps, catalog, expectedTiers) {
     function covered(inst,band){var r=catalog[inst];if(!r)return false;var declared=(String(r.bands_supported||'')+'|'+String(r.observing_domain||'')).toLowerCase().replace(/_/g,'-').split('|');return declared.some(function(b){return b===band.toLowerCase() || (b==='nuv'&&band==='near-UV') || (b==='uv-vis-nir'&&band!=='near-UV') || (b==='vis-nir'&&band!=='near-UV') || (b==='nir'&&band==='NIR');});}
     var h='<div class="live-matrix-wrap"><table class="live-matrix"><thead><tr><th>Instrument</th>'+BANDS.map(function(b){return '<th>'+esc(b)+'</th>';}).join('')+'</tr></thead><tbody>';
@@ -111,7 +186,7 @@
     var pending=INSTRUMENTS.filter(function(i){return !top.some(function(p){return p.instrument===i;});}).map(function(i){return LABELS[i];});
     root.innerHTML='<p class="product-feed-meta">Live source: <strong>codex.element_product/1 · '+esc(element)+'.json v'+esc(feed.version)+'</strong> · updated '+esc(feed.updated_at)+' · cache-busted on every load · '+excluded.length+' telluric-ineligible live rows refused</p>'+
       '<section class="product-section"><h2>Highlighted band products</h2><p class="product-section-intro">The only near-UV product we were able to derive is the Kitt Peak DEEPGRADED line product; the highlighted VIS and NIR products are GRADED. Every value is read directly from the merged science feed.</p><div class="product-headlines">'+top.map(function(p){return card(p,telluric);}).join('')+'</div>'+(pending.length?'<p class="product-pending">Pending graded instruments: '+esc(pending.join(', '))+'</p>':'')+'</section>'+
-      '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">RYA-935 geometry: per-holding rows with statistical and systematic uncertainties kept separate.</p>'+forest(live.filter(function(p){return p.ion==='I';}),tracker.reference&&tracker.reference.FeI)+'</section>'+
+      '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Every instrument section shows the same fixed model axis in the same order, so a model with no product for that instrument and band reads N/A rather than vanishing. Rows, ordering and tier policy come from the science feed (plot_grid), not from this page.</p>'+forest(feed,'I',tracker.reference&&tracker.reference.FeI)+'</section>'+
       '<section class="product-section"><h2>Band × instrument matrix</h2><p class="product-section-intro">Finished, Pending, out-of-band blank, closed N/A with reason, and quarantined Problem are distinct states.</p>'+matrix(live,feed.quarantine||[],feed.gaps||[],catalog)+'</section>'+
       '<section class="product-section"><h2>Deepgraded and consistent matrix</h2><p class="product-section-intro">Secondary tiers use the same band × instrument structure. Missing CONSISTENT products remain explicitly Pending.</p>'+matrix(secondary,(feed.quarantine||[]).filter(function(p){return p.ion==='I'&&(p.tier==='DEEPGRADED'||p.tier==='CONSISTENT');}),feed.gaps||[],catalog,['DEEPGRADED','CONSISTENT'])+'</section>';
   }).catch(function(err){root.innerHTML='<p class="product-feed-error"><strong>PROBLEM:</strong> '+esc(element)+' feed could not be loaded. This element failed in isolation; other element pages remain available.<br><small>'+esc(err.message)+'</small></p>';});
