@@ -34,10 +34,10 @@
 .lodders-region::before{background:rgba(242,204,96,.2);border-inline:1px solid #f2cc60}
 .bar{position:absolute;top:8px;height:4px;background:var(--accent);border-radius:2px}
 .sysbar{position:absolute;top:5px;height:10px;border:1px dashed var(--accent);border-radius:2px;background:none;opacity:.75}
-.gradedrow .bar{background:var(--accent-warm)}
-.gradedrow .sysbar{border-color:var(--accent-warm)}
+.gradedrow .bar{background:var(--accent)}
+.gradedrow .sysbar{border-color:var(--accent)}
 .dot{position:absolute;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent);transform:translateX(-50%)}
-.gradedrow .dot{background:var(--accent-warm)}
+.gradedrow .dot{background:var(--accent)}
 .forest-label,.forest-value{color:var(--text);font:.61rem/1.45 var(--mono)}
 .forest-label small,.forest-value small{display:block;color:var(--text-dim)}
 .forest-value{text-align:right}

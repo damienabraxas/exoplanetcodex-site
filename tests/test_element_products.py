@@ -29,6 +29,8 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn(".forest{display:grid;grid-template-columns:250px 1fr 150px", self.css)
         self.assertIn(".gradedrow .bar", self.css)
         self.assertIn(".gradedrow .sysbar", self.css)
+        self.assertIn(".gradedrow .bar{background:var(--accent)}", self.css)
+        self.assertIn(".gradedrow .dot{background:var(--accent)}", self.css)
         self.assertIn("live_status.json", self.js)
         self.assertIn("tracker.reference&&tracker.reference.FeI", self.js)
         self.assertIn("solar_kpno_kurucz2005_corrected", self.js)

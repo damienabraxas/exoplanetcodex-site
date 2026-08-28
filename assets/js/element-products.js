@@ -62,7 +62,7 @@
   }
   function forest(rows, reference) {
     if(!rows.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
-    var out='<div class="forest-legend"><span>solid = statistical σ</span><span>wireframe = systematic σ</span><span>gold = GRADED</span></div><div class="product-forest"><div class="product-forest-inner">';
+    var out='<div class="forest-legend"><span>blue solid = statistical σ</span><span>blue wireframe = systematic σ</span></div><div class="product-forest"><div class="product-forest-inner">';
     BANDS.forEach(function(band){
       var here=rows.filter(function(p){return p.band===band;}); if(!here.length) return;
       var vals=[]; here.forEach(function(p){vals.push(Number(p.A)-Number(p.sigma_stat||0),Number(p.A)+Number(p.sigma_stat||0),Number(p.A)-Number(p.sigma_syst||0),Number(p.A)+Number(p.sigma_syst||0));});
