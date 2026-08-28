@@ -21,6 +21,14 @@
 .tick{position:absolute;top:0;transform:translateX(-50%);font-size:.78em;color:var(--text-dim);font-variant-numeric:tabular-nums;padding-top:3px;white-space:nowrap}
 .tick::before{content:'';position:absolute;left:50%;top:0;width:1px;height:5px;background:var(--rim)}
 .track{height:18px;position:relative;border-bottom:1px solid var(--rim)}
+.ref{position:absolute;top:0;height:100%;background:rgba(83,216,153,.16);border-left:2px dashed #53d899;border-right:2px dashed #53d899}
+.refline{position:absolute;top:0;height:100%;width:0;border-left:2px solid #53d899}
+.cmp{position:absolute;top:0;height:100%;width:0;border-left:2px dotted #f2cc60}
+.cmpband{position:absolute;top:0;height:100%;background:rgba(242,204,96,.2);border-left:1px solid #f2cc60;border-right:1px solid #f2cc60}
+.literature-regions{display:flex;flex-wrap:wrap;gap:1rem;margin:.6rem 0;color:var(--text-dim);font:.58rem/1.4 var(--mono)}
+.literature-regions span::before{content:'';display:inline-block;width:1.5rem;height:.65rem;margin-right:.35rem;vertical-align:middle}
+.asplund-region::before{background:rgba(83,216,153,.16);border-inline:2px dashed #53d899}
+.lodders-region::before{background:rgba(242,204,96,.2);border-inline:1px solid #f2cc60}
 .bar{position:absolute;top:8px;height:4px;background:var(--accent);border-radius:2px}
 .sysbar{position:absolute;top:5px;height:10px;border:1px dashed var(--accent);border-radius:2px;background:none;opacity:.75}
 .gradedrow .bar{background:var(--accent-warm)}
