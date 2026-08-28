@@ -47,6 +47,7 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("forest-instrument", self.js)
         self.assertIn(".forest-instrument", self.css)
         self.assertIn("group=here.filter", self.js)
+        self.assertIn(".product-headlines{grid-template-columns:repeat(5,minmax(0,1fr))}", self.css)
 
     def test_fe_page_has_no_generated_abundance_bundle(self):
         html = (ROOT / "systems/sol/elements/fe/index.html").read_text()
