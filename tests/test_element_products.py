@@ -55,6 +55,8 @@ class ElementProductTests(unittest.TestCase):
         self.assertNotIn("solar-report.generated.js", html)
         self.assertIn("element-products.js?v=", html)
         self.assertIn("only near-UV product we were able to derive", self.js)
+        self.assertIn("compatibilityForest(feed, ion, reference)", self.js)
+        self.assertNotIn("This feed publishes no plot grid", self.js)
 
 
 if __name__ == "__main__":
