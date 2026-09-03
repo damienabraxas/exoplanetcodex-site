@@ -84,8 +84,22 @@
   function productIndex(feed) {
     var fields = (feed.plot_grid && feed.plot_grid.key_fields) || [];
     var byKey = {};
+    function identityValue(p, field) {
+      if (field !== 'line_set') return p[field];
+      // RYA-1127 made line_set part of the canonical identity.  The science feed
+      // deliberately derives the Codex pools from tier instead of storing the same
+      // fact twice on every product; only external/reference pools carry line_set.
+      // Mirror that published identity rule while joining plot_grid to products.
+      if (p.line_set != null && p.line_set !== '') return p.line_set;
+      if (p.tier === 'GRADED') return 'our-graded';
+      if (p.tier === 'DEEPGRADED') return 'our-deep-graded';
+      return '';
+    }
     (feed.products || []).forEach(function (p) {
-      byKey[fields.map(function (f) { return p[f] == null ? '' : String(p[f]); }).join('|')] = p;
+      byKey[fields.map(function (f) {
+        var value = identityValue(p, f);
+        return value == null ? '' : String(value);
+      }).join('|')] = p;
     });
     return byKey;
   }

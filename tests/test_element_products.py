@@ -61,6 +61,13 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("compatibilityForest(feed, ion, reference)", self.js)
         self.assertNotIn("This feed publishes no plot grid", self.js)
 
+    def test_plot_grid_join_resolves_derived_line_set_identity(self):
+        """RYA-1186: RYA-1127 added line_set without duplicating it on Codex products."""
+        self.assertIn("if (field !== 'line_set') return p[field]", self.js)
+        self.assertIn("if (p.tier === 'GRADED') return 'our-graded'", self.js)
+        self.assertIn("if (p.tier === 'DEEPGRADED') return 'our-deep-graded'", self.js)
+        self.assertNotIn("p[f] == null ? '' : String(p[f])", self.js)
+
 
 if __name__ == "__main__":
     unittest.main()
