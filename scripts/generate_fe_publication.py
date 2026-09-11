@@ -43,7 +43,7 @@ def read_csv(path):
 def write_csv(name, records):
     keys = list(dict.fromkeys(k for r in records for k in r))
     with (OUT / name).open('w', newline='') as f:
-        w = csv.DictWriter(f, fieldnames=keys)
+        w = csv.DictWriter(f, fieldnames=keys, lineterminator='\n')
         w.writeheader()
         w.writerows({k: json.dumps(v, ensure_ascii=False, sort_keys=True)
                      if isinstance(v, (dict, list)) else v for k, v in r.items()} for r in records)
@@ -80,14 +80,18 @@ def forest(products, reference, name, social=False):
         else:
             text += f"\n{p['holding']} · {p['selector']}\n{p['route']} · {p['treatment']}"
         labels.append(text)
-        ax.text(1.025, y, f"{p['A']:.3f} ± {p['sigma_reported']:.3f}" +
+        ax.text(1.025, y, f"{p['A']:.3f} ± {p['sigma_reported']:.3f}" + ('*' if p.get('sigma_reported_caveat') else '') +
                 ('' if social else f"  n={p['n_lines']}"),
                 transform=ax.get_yaxis_transform(), va='center', color=color, fontsize=9)
     ax.set_yticks(range(len(products)), labels, color='#dae4eb', fontsize=9 if social else 8)
     ax.invert_yaxis()
     ax.tick_params(axis='x', colors='#b8c8d3')
     ax.tick_params(axis='y', length=0, pad=12)
-    ax.set_xlabel('A(Fe) · thick: statistical · thin: reported total (including xi)', color='#b8c8d3', fontsize=9)
+    ax.set_xlabel('A(Fe) · thick: statistical · thin: reported uncertainty', color='#b8c8d3', fontsize=9)
+    caveats = [p['sigma_reported_caveat'] for p in products if p.get('sigma_reported_caveat')]
+    if caveats:
+        footnote = '* Lower-bound uncertainty; microturbulence term unavailable.' if all('LOWER BOUND' in c for c in caveats) else '* Reported uncertainty is qualified; see source product CSV.'
+        fig.text(.02, .01, footnote, color='#b8c8d3', fontsize=8)
     ax.set_title(f"{'Solar iron · HARPS + CRIRES+' if social else 'Solar iron · ' + name}\n"
                  f"Asplund et al. 2021: {ref:.2f} ± {sigma:.2f}", color=CYAN, loc='left', pad=20, fontsize=13)
     for spine in ax.spines.values():
@@ -216,7 +220,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     if ion == 'II':
         vis = [p for p in own if p['band']=='VIS']
         body += f'<p>Ionization-balance diagnostic: current VIS Fe II products span {min(p["A"] for p in vis):.3f}–{max(p["A"] for p in vis):.3f}. A single historical ionization value is not a result of this feed.</p>'
-    body += '<p>Filled gold: graded gf pools (consistency checks). Open cyan: all-lines/reference pools. Grey: experimental. Thick bars show statistical uncertainty; thin bars show the feed’s reported total, including microturbulence once.</p>'
+    body += '<p>Filled gold: graded gf pools (consistency checks). Open cyan: all-lines/reference pools. Grey: experimental. Thick bars show statistical uncertainty; thin bars show the feed’s reported uncertainty. Microturbulence is included where the feed supplies it; starred bars carry a feed caveat and may be lower bounds.</p>'
     for band in BANDS:
         group = [p for p in own if p['band']==band]
         if not group:
@@ -227,6 +231,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         accessible = '<details><summary>Read all plotted values</summary><ul>'+''.join(
             f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
             f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
+            + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
             + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in group)+'</ul></details>'
         body += section(band, f'<div class="fe-plot"><img src="/assets/data/fe-publication/{name}.svg" alt="Fe {ion} {band}: {len(group)} separate product uncertainty rows"></div>'+accessible)
     highlights = []
@@ -234,7 +239,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         candidates = [p for p in own if p['band']==band and not held(p)]
         if candidates:
             p = min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))
-            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n={p["n_lines"]}</p><small>{esc(p["holding"])} · ξ {esc(p["xi_state"])}</small></article>')
+            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n={p["n_lines"]}</p><small>{esc(p["holding"])} · ξ {esc(p["xi_state"])}<br>{esc(p.get("sigma_reported_caveat") or "")}</small></article>')
     body += section('Highlighted band products', '<p>Smallest reported uncertainty in each band, excluding held experiments. This selection does not establish physical superiority or a combined abundance.</p><div class="fe-highlights">'+''.join(highlights)+'</div>')
     for title, key in [('Near-UV opacity — report and noted', 'opacity_note'), ('Frankenstein — experimental, pending the Bride', 'adoption_note')]:
         source_products = products if key == 'adoption_note' else own

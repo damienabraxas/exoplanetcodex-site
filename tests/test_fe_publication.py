@@ -1,6 +1,7 @@
 """Check published artifacts against their own pinned feed, not fixture numbers."""
 import csv
 import hashlib
+import html
 import io
 import json
 import re
@@ -23,6 +24,9 @@ class FePublicationTests(unittest.TestCase):
             expected = [f'Fe-{i:03d}' for i,p in enumerate(self.feed['products']) if p['ion']==ion]
             self.assertCountEqual(re.findall('data-product-id="([^"]+)"', page), expected)
             self.assertNotIn('productMatrix(', page)
+            for product in self.feed['products']:
+                if product['ion']==ion and product.get('sigma_reported_caveat'):
+                    self.assertIn(html.escape(product['sigma_reported_caveat']), page)
             for link in re.findall(r'(?:href|src)="(/assets/data/[^"?#]+)', page):
                 self.assertTrue((ROOT / link.lstrip('/')).is_file(), link)
 
