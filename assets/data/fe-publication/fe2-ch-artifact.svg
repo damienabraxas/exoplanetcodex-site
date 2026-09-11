@@ -24,8 +24,9 @@
 L 792 288
 L 792 0
 L 0 0
+L 0 288
 z
-" style="fill: #081219"/>
+" style="fill: none"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
@@ -33,8 +34,9 @@ z
 L 780.88351 236.58
 L 780.88351 11.489231
 L 56.05 11.489231
+L 56.05 236.58
 z
-" style="fill: #081219"/>
+" style="fill: none"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
@@ -1460,7 +1462,7 @@ Q 630.57351 15.489231 630.57351 17.089231
 L 630.57351 63.833231
 Q 630.57351 65.433231 632.17351 65.433231
 z
-" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+" style="fill: #081219; stroke: #65717b; stroke-linejoin: miter"/>
     </g>
     <g id="line2d_18">
      <path d="M 633.77351 24.849231
@@ -1469,7 +1471,7 @@ L 649.77351 24.849231
     </g>
     <g id="text_19">
      <!-- CH (n=36) -->
-     <g transform="translate(656.17351 27.649231) scale(0.08 -0.08)">
+     <g style="fill: #ffffff" transform="translate(656.17351 27.649231) scale(0.08 -0.08)">
       <defs>
        <path id="SpaceMono-Regular-42" d="M 467 0
 L 467 4480
@@ -1568,7 +1570,7 @@ L 649.77351 40.697231
     </g>
     <g id="text_20">
      <!-- Other transitions (n=30) -->
-     <g transform="translate(656.17351 43.497231) scale(0.08 -0.08)">
+     <g style="fill: #ffffff" transform="translate(656.17351 43.497231) scale(0.08 -0.08)">
       <defs>
        <path id="SpaceMono-Regular-6c" d="M 1958 -90
 Q 1222 -90 803 380
@@ -1664,7 +1666,7 @@ L 649.77351 56.545231
     </g>
     <g id="text_21">
      <!-- Curated Fe II 4303.170 -->
-     <g transform="translate(656.17351 59.345231) scale(0.08 -0.08)">
+     <g style="fill: #ffffff" transform="translate(656.17351 59.345231) scale(0.08 -0.08)">
       <defs>
        <path id="SpaceMono-Regular-3a" d="M 608 0
 L 608 4480

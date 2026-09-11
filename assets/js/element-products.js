@@ -1,13 +1,14 @@
 (function () {
   'use strict';
-  var root = document.getElementById('element-products');
-  if (!root) return;
+  var server = typeof module !== 'undefined' && module.exports;
+  var root = server ? null : document.getElementById('element-products');
+  if (!server && !root) return;
 
-  var element = root.getAttribute('data-element');
+  var element = server ? 'Fe' : root.getAttribute('data-element');
   // `feedBase` is a read-only smoke-test hook: point it at a local copy, add a
   // product, reload, and the page changes without a source edit. Production
   // always defaults to the merged main-repository feed.
-  var requestedBase = new URLSearchParams(window.location.search).get('feedBase');
+  var requestedBase = server ? null : new URLSearchParams(window.location.search).get('feedBase');
   var base = requestedBase || 'https://raw.githubusercontent.com/damienabraxas/exoplanetcodex/main/';
   if (base.charAt(base.length - 1) !== '/') base += '/';
   var urls = {
@@ -16,7 +17,7 @@
     instruments: base + 'data/catalog/instrument_catalog.csv',
     tracker: base + 'data/results/rya935/live_status.json'
   };
-  var BANDS = ['near-UV', 'VIS', 'red-optical', 'NIR'];
+  var BANDS = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H'];
   var INSTRUMENTS = ['kpno_solar_atlas', 'harps', 'iag_fts_solar_atlas', 'crires_plus'];
   var LABELS = {kpno_solar_atlas:'Kitt Peak',harps:'HARPS',iag_fts_solar_atlas:'IAG',crires_plus:'CRIRES+'};
   var HOLDING_LABELS = {
@@ -165,7 +166,7 @@
           var p = c.product_key && byKey[c.product_key];
           if (!p) return;
           vals.push(Number(p.A) - Number(p.sigma_stat || 0), Number(p.A) + Number(p.sigma_stat || 0),
-                    Number(p.A) - Number(p.sigma_syst || 0), Number(p.A) + Number(p.sigma_syst || 0));
+                    Number(p.A) - Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0)), Number(p.A) + Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0)));
         });
       });
       if (reference) {
@@ -196,7 +197,7 @@
                 '<span class="forest-value">N/A</span></div>';
               return;
             }
-            var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst || 0);
+            var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0));
             var sl = x(Number(p.A) - st), sw = x(Number(p.A) + st) - sl;
             var yl = x(Number(p.A) - sy), yw = x(Number(p.A) + sy) - yl;
             var refs = reference ? '<i class="ref" title="' + esc(reference.best_external) + '" style="left:' + x(reference.band[0]) + '%;width:' + Math.max(0.4, x(reference.band[1]) - x(reference.band[0])) + '%"></i><i class="refline" style="left:' + x(reference.asplund2021) + '%"></i>' + (reference.comparators || []).map(function (c2) { return '<i class="cmpband" title="' + esc(c2.name) + '" style="left:' + x(Number(c2.value) - Number(c2.sigma || 0)) + '%;width:' + Math.max(0.4, x(Number(c2.value) + Number(c2.sigma || 0)) - x(Number(c2.value) - Number(c2.sigma || 0))) + '%"></i><i class="cmp" style="left:' + x(c2.value) + '%"></i>'; }).join('') : '';
@@ -234,6 +235,7 @@
       else h+='<td class="matrix-pending"><span class="matrix-state">Pending</span></td>';
     });h+='</tr>';}); return h+'</tbody></table></div>';
   }
+  if (server) { module.exports = {forest: forest}; return; }
   Promise.all([fetchText(urls.product),fetchText(urls.holdings),fetchText(urls.instruments),fetchText(urls.tracker)]).then(function(parts){
     var feed=JSON.parse(parts[0]), holdings=csv(parts[1]), instruments=csv(parts[2]), tracker=JSON.parse(parts[3]), telluric={}, catalog={};
     holdings.forEach(function(r){telluric[r.holding_id]=r.telluric_applied;}); instruments.forEach(function(r){catalog[r.instrument_id]=r;});

@@ -170,8 +170,8 @@ def diagnostics(science, products):
     ax.axvline(wl, color=GOLD, linestyle='--', label=f'Curated Fe II {wl:.3f}')
     ax.set_xlabel('Air wavelength [Å]', color='white')
     ax.set_ylabel('Catalogued central depth', color='white')
-    ax.tick_params(colors='white'); ax.legend(fontsize=8)
-    fig.tight_layout(); fig.savefig(OUT / 'fe2-ch-artifact.svg', metadata={'Date': None}); plt.close(fig)
+    ax.tick_params(colors='white'); ax.legend(fontsize=8, facecolor=BG, edgecolor='#65717b', labelcolor='white', framealpha=1)
+    fig.tight_layout(); fig.savefig(OUT / 'fe2-ch-artifact.svg', metadata={'Date': None}, transparent=True); plt.close(fig)
     result.append(('CH G-band artifact', 'fe2-ch-artifact.svg',
                    str(rule.reason)+' · '+str(rule.evidence)+' The plot shows the committed transition census in the proof generator’s fit window; it is not a synthetic spectrum.', source))
     lever_path = 'data/results/rya1207/nearuv_molecular_lever.json'
@@ -182,7 +182,7 @@ def diagnostics(science, products):
     ax.barh(list(measurements), list(measurements.values()), color=CYAN)
     ax.tick_params(colors='white', labelsize=8)
     ax.set_xlabel('A(Fe) change, molecules ON - OFF [dex]', color='white')
-    fig.tight_layout(); fig.savefig(OUT / 'nearuv-opacity.svg', metadata={'Date': None}); plt.close(fig)
+    fig.tight_layout(); fig.savefig(OUT / 'nearuv-opacity.svg', metadata={'Date': None}, transparent=True); plt.close(fig)
     result.append(('Near-UV molecular opacity', 'nearuv-opacity.svg', lever['method'], lever_path))
     # Compare like-for-like live Fe II products by engine, without averaging arms.
     vis = [p for p in products if p['ion']=='II' and p['band']=='VIS']
@@ -197,8 +197,8 @@ def diagnostics(science, products):
     ax.barh(ys, [p['n_lines'] for p in h], color=CYAN, label='Measured / included')
     ax.barh(ys, [p['n_excluded'] for p in h], left=[p['n_lines'] for p in h], color='#596773', label='Excluded / not served')
     ax.set_yticks(list(ys), [p['display'] for p in h], color='white', fontsize=8)
-    ax.tick_params(axis='x', colors='white'); ax.set_xlabel('Line count', color='white'); ax.legend(fontsize=8)
-    fig.tight_layout(); fig.savefig(OUT / 'crires-h-coverage.svg', metadata={'Date': None}); plt.close(fig)
+    ax.tick_params(axis='x', colors='white'); ax.set_xlabel('Line count', color='white'); ax.legend(fontsize=8, facecolor=BG, edgecolor='#65717b', labelcolor='white', framealpha=1)
+    fig.tight_layout(); fig.savefig(OUT / 'crires-h-coverage.svg', metadata={'Date': None}, transparent=True); plt.close(fig)
     result.append(('CRIRES+ H model coverage', 'crires-h-coverage.svg',
                    'Included and excluded line counts from each current product. Excluded rows are not automatically failed fits; the per-line reason distinguishes unavailable NLTE coverage.',
                    'data/products/solar/Fe.json'))
@@ -220,20 +220,19 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     if ion == 'II':
         vis = [p for p in own if p['band']=='VIS']
         body += f'<p>Ionization-balance diagnostic: current VIS Fe II products span {min(p["A"] for p in vis):.3f}–{max(p["A"] for p in vis):.3f}. A single historical ionization value is not a result of this feed.</p>'
-    body += '<p>Filled gold: graded gf pools (consistency checks). Open cyan: all-lines/reference pools. Grey: experimental. Thick bars show statistical uncertainty; thin bars show the feed’s reported uncertainty. Microturbulence is included where the feed supplies it; starred bars carry a feed caveat and may be lower bounds.</p>'
-    for band in BANDS:
-        group = [p for p in own if p['band']==band]
-        if not group:
-            body += section(band, '<p>No live product for this species in this band.</p>')
-            continue
-        name = 'Fe'+ion+'-'+band
-        forest(group, reference, name)
-        accessible = '<details><summary>Read all plotted values</summary><ul>'+''.join(
-            f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
-            f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
-            + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
-            + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in group)+'</ul></details>'
-        body += section(band, f'<div class="fe-plot"><img src="/assets/data/fe-publication/{name}.svg" alt="Fe {ion} {band}: {len(group)} separate product uncertainty rows"></div>'+accessible)
+    # Render the established component with its original band/holding/model hierarchy.
+    forest_html = subprocess.check_output([
+        'node', '-e',
+        "const fs=require('fs'); const {forest}=require('./assets/js/element-products.js'); "
+        "const x=JSON.parse(fs.readFileSync(0,'utf8')); process.stdout.write(forest(x.feed,x.ion,x.reference));"
+    ], input=json.dumps({'feed': feed, 'ion': ion, 'reference': reference}), text=True, cwd=ROOT)
+    body += '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Every instrument section retains the same fixed model axis. Models without a product remain N/A. Rows and ordering come from the science feed.</p>'+forest_html+'</section>'
+    accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
+        f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
+        f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
+        + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
+        + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'
+    body += accessible
     highlights = []
     for band in BANDS:
         candidates = [p for p in own if p['band']==band and not held(p)]
@@ -245,7 +244,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         source_products = products if key == 'adoption_note' else own
         notes = list(dict.fromkeys(p[key] for p in source_products if p.get(key)))
         if notes:
-            count = f'<p>{sum(held(p) for p in products)} experimental products remain visible in the Fe I forest and downloads.</p>' if key == 'adoption_note' else ''
+            count = f'<p>{sum(held(p) for p in products)} experimental products remain available in the Fe I product values and downloads.</p>' if key == 'adoption_note' else ''
             body += section(title, count+''.join('<p>'+esc(n)+'</p>' for n in notes))
     if ion == 'II':
         body += section('Saturation characterization', '<p>'+esc(saturation)+'</p>')
@@ -266,10 +265,12 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     template = template[:start]+'  <main class="container fe-publication">\n'+body+'\n  </main>'+template[end:]
     import re
     template = re.sub(r'<script src="/assets/(?:js/(?:element-products|solar-report)|data/solar-report.generated)[^"]*"></script>\n?', '', template)
-    template = re.sub(r'<link rel="stylesheet" href="/assets/css/(?:element-products|product-matrix)[^"]*">', '', template)
+    template = re.sub(r'<link rel="stylesheet" href="/assets/css/(?:product-matrix)[^"]*">', '', template)
     template = re.sub(r'<p class="page-subtitle">.*?</p>', f'<p class="page-subtitle">Fe {ion} · measured products, uncertainty and reproducible evidence</p>', template)
     template = re.sub(r'<meta name="description" content="[^"]*">',
                       f'<meta name="description" content="Generated Solar Fe {ion} appendix: band-sectioned uncertainty forests, current products, problem-line evidence and reproducible downloads.">', template)
+    if '/assets/css/element-products.css' not in template:
+        template = template.replace('</head>', '  <link rel="stylesheet" href="/assets/css/element-products.css">\n</head>')
     if '/assets/css/fe-publication.css' not in template:
         template = template.replace('</head>', '  <link rel="stylesheet" href="/assets/css/fe-publication.css">\n</head>')
     page.write_text('\n'.join(line.rstrip() for line in template.splitlines())+'\n')
