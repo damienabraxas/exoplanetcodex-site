@@ -152,7 +152,9 @@
     if (!sections.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
 
     var out = '<div class="forest-legend"><span>blue solid = statistical \u03c3</span>' +
-      '<span>blue wireframe = systematic \u03c3</span><span>N/A = no product for this model</span></div>' +
+      '<span>wireframe = systematic \u03c3</span><span>blue = regular model result</span>' +
+      '<span style="color:#f07848">reddish orange = experimental Frankenstein / Gerber mean-3D; not adopted</span>' +
+      '<span>green = Asplund; gold = Lodders</span><span>N/A = no product for this model</span></div>' +
       '<div class="product-forest"><div class="product-forest-inner">';
 
     BANDS.forEach(function (band) {
@@ -201,8 +203,10 @@
             var sl = x(Number(p.A) - st), sw = x(Number(p.A) + st) - sl;
             var yl = x(Number(p.A) - sy), yw = x(Number(p.A) + sy) - yl;
             var refs = reference ? '<i class="ref" title="' + esc(reference.best_external) + '" style="left:' + x(reference.band[0]) + '%;width:' + Math.max(0.4, x(reference.band[1]) - x(reference.band[0])) + '%"></i><i class="refline" style="left:' + x(reference.asplund2021) + '%"></i>' + (reference.comparators || []).map(function (c2) { return '<i class="cmpband" title="' + esc(c2.name) + '" style="left:' + x(Number(c2.value) - Number(c2.sigma || 0)) + '%;width:' + Math.max(0.4, x(Number(c2.value) + Number(c2.sigma || 0)) - x(Number(c2.value) - Number(c2.sigma || 0))) + '%"></i><i class="cmp" style="left:' + x(c2.value) + '%"></i>'; }).join('') : '';
-            out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + '">' +
-              '<span class="forest-label">' + esc(c.row) + '<small>n=' + esc(p.n_lines) +
+            var experimental = p.adoption === 'EXPERIMENTAL-NOT-ADOPTED';
+            out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + '"' +
+              (experimental ? ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' : '') + '>' +
+              '<span class="forest-label">' + esc(c.row) + (experimental ? ' · Frankenstein (experimental)' : '') + '<small>n=' + esc(p.n_lines) +
               (c.alternates ? ' \u00b7 ' + c.alternates + ' alternate' + (c.alternates > 1 ? 's' : '') : '') +
               '</small></span><span class="track">' + refs +
               '<i class="sysbar" style="left:' + yl + '%;width:' + Math.max(0.4, yw) + '%"></i>' +

@@ -1,7 +1,8 @@
 # Generate the Fe publication
 
 Use a clean checkout of science main and a Python environment with pandas,
-NumPy and Matplotlib (the science environment already supplies them).
+NumPy and Matplotlib (the science environment already supplies them), plus Node.js
+for server rendering of the existing forest component.
 
 ```sh
 CODEX_KP_ATLAS='/path/to/Kitt Peak Flux Atlas' python /path/to/science/scripts/rya935_live_status.py
@@ -24,7 +25,10 @@ gf comes from that artifact where supplied, otherwise an unambiguous canonical
 line-list match within wavelength and EP tolerances. This is not an independent
 gf adjudication.
 
-Plots use `sigma_reported` for total bars and `sigma_stat` for thick inner bars.
+The page forest preserves the original band/holding/model hierarchy and CSS,
+with solid statistical bars and wireframe systematic bars. Experimental
+Frankenstein/Gerber mean-3D rows use reddish orange. Diagnostic and social
+plots use `sigma_reported` for total bars and `sigma_stat` for thick inner bars.
 Feed uncertainty caveats are shown with the corresponding products; starred
 bars identify incomplete reported uncertainties rather than implying that a
 missing microturbulence term was measured to be zero.
