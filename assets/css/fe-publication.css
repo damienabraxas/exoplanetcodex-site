@@ -1,0 +1,23 @@
+.fe-publication { max-width: 1440px; color: var(--text-primary, #dae4eb); }
+.fe-publication p, .fe-publication figcaption { line-height: 1.75; max-width: 100ch; }
+.fe-stamp, .fe-anchor { font-family: 'Space Mono', monospace; color: #63dce6; }
+.fe-anchor { font-size: clamp(1.2rem, 3vw, 2rem); }
+.fe-section { margin: 3rem 0; padding-top: 2rem; border-top: 1px solid #263843; }
+.fe-section h2 { color: #63dce6; margin-bottom: 1rem; }
+.fe-section h3 { margin: 1rem 0; }
+.fe-plot { overflow-x: auto; background: #081219; border: 1px solid #263843; }
+.fe-plot img { display: block; width: 100%; min-width: 1000px; }
+.fe-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.fe-highlights article { padding: 1.3rem; border: 1px solid #263843; background: #0a1820; overflow-wrap: anywhere; }
+.fe-highlights strong { color: #ebc77c; font: 1.25rem 'Space Mono', monospace; }
+.fe-diagnostic { max-width: 100%; height: auto; background: #081219; }
+.fe-publication figure { margin: 2rem 0; }
+.fe-publication code { overflow-wrap: anywhere; font-size: .85em; }
+.fe-publication li { margin: .8rem 0; }
+.fe-publication small { color: #a9bdc9; }
+.fe-publication a { color: #63dce6; text-underline-offset: .2em; }
+.fe-publication a:hover { color: #ebc77c; }
+.fe-publication ul { padding-left: 1.4rem; }
+.fe-publication summary { cursor: pointer; color: #63dce6; padding: .8rem 0; }
+.fe-publication details li { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .fe-section { margin: 2rem 0; } .fe-publication { padding: 0 16px; } }

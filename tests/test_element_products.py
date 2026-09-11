@@ -52,11 +52,12 @@ class ElementProductTests(unittest.TestCase):
         self.assertIn("group=here.filter", self.js)
         self.assertIn(".product-headlines{grid-template-columns:repeat(5,minmax(0,1fr))}", self.css)
 
-    def test_fe_page_has_no_generated_abundance_bundle(self):
+    def test_fe_page_uses_reviewable_publication_build(self):
         html = (ROOT / "systems/sol/elements/fe/index.html").read_text()
-        self.assertIn('id="element-products" data-element="Fe"', html)
+        self.assertIn('class="container fe-publication"', html)
         self.assertNotIn("solar-report.generated.js", html)
-        self.assertIn("element-products.js?v=", html)
+        self.assertNotIn('src="/assets/js/element-products.js', html)
+        self.assertIn('fe-publication/manifest.json', html)
         self.assertIn("only near-UV product we were able to derive", self.js)
         self.assertIn("compatibilityForest(feed, ion, reference)", self.js)
         self.assertNotIn("This feed publishes no plot grid", self.js)
