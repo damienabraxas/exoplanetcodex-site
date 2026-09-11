@@ -225,7 +225,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         candidates = [p for p in own if p['band']==band and not held(p)]
         if candidates:
             p = min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))
-            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n = {p["n_lines"]}</p></article>')
+            spectrum = 'uv' if band == 'near-UV' else 'visible' if band in ('VIS', 'red-optical') else 'ir'
+            highlights.append(f'<article class="fe-highlight-{spectrum}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n = {p["n_lines"]}</p></article>')
     body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
@@ -281,6 +282,9 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         template = template.replace('</head>', '  <link rel="stylesheet" href="/assets/css/element-products.css">\n</head>')
     if '/assets/css/fe-publication.css' not in template:
         template = template.replace('</head>', '  <link rel="stylesheet" href="/assets/css/fe-publication.css">\n</head>')
+    css_version = hashlib.sha256((ROOT / 'assets/css/fe-publication.css').read_bytes()).hexdigest()[:12]
+    template = re.sub(r'/assets/css/fe-publication\.css(?:\?[^" ]*)?',
+                      '/assets/css/fe-publication.css?v='+css_version, template)
     page.write_text('\n'.join(line.rstrip() for line in template.splitlines())+'\n')
 
 

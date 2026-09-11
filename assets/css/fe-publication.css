@@ -21,3 +21,10 @@
 .fe-publication summary { cursor: pointer; color: #63dce6; padding: .8rem 0; }
 .fe-publication details li { overflow-wrap: anywhere; }
 @media (max-width: 600px) { .fe-section { margin: 2rem 0; } .fe-publication { padding: 0 16px; } }
+
+/* Spectrum accents apply only to the highlighted product cards. */
+.fe-highlights .fe-highlight-uv { --band-color: #b68aff; --band-tint: rgba(182,138,255,.12); }
+.fe-highlights .fe-highlight-visible { --band-color: #69d995; --band-tint: rgba(105,217,149,.12); }
+.fe-highlights .fe-highlight-ir { --band-color: #ff8080; --band-tint: rgba(255,128,128,.12); }
+.fe-highlights article { border-color: var(--band-color); background: linear-gradient(var(--band-tint),var(--band-tint)),#0a1820; }
+.fe-highlights h3,.fe-highlights strong { color: var(--band-color); }
