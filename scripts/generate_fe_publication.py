@@ -69,7 +69,7 @@ def forest(products, reference, name, social=False):
     for y, p in enumerate(products):
         color = GOLD if p['tier'] != 'ALL' else CYAN
         if held(p):
-            color = '#89939c'
+            color = '#f07848'
         ax.errorbar(p['A'], y, xerr=p['sigma_reported'], fmt='o',
                     color=color, mfc=color if p['tier'] != 'ALL' else BG,
                     capsize=3, lw=1.2, markersize=5)
@@ -99,7 +99,7 @@ def forest(products, reference, name, social=False):
     ax.grid(axis='x', alpha=.12)
     fig.subplots_adjust(left=.44 if social else .48, right=.81, top=.81 if social else .89, bottom=.17 if social else .13)
     stem = 'fe-social-forest' if social else name
-    fig.savefig(OUT / (stem+'.svg'), facecolor=BG, metadata={'Date': None}, bbox_inches='tight', pad_inches=.25)
+    fig.savefig(OUT / (stem+'.svg'), facecolor=BG, transparent=not social, metadata={'Date': None}, bbox_inches='tight', pad_inches=.25)
     if social:
         fig.savefig(OUT / (stem+'.png'), dpi=180, facecolor=BG, bbox_inches='tight', pad_inches=.25)
     plt.close(fig)
@@ -170,7 +170,7 @@ def diagnostics(science, products):
     ax.axvline(wl, color=GOLD, linestyle='--', label=f'Curated Fe II {wl:.3f}')
     ax.set_xlabel('Air wavelength [Å]', color='white')
     ax.set_ylabel('Catalogued central depth', color='white')
-    ax.tick_params(colors='white'); ax.legend(fontsize=8, facecolor=BG, edgecolor='#65717b', labelcolor='white', framealpha=1)
+    ax.tick_params(colors='white'); ax.legend(fontsize=8, labelcolor='white', frameon=False)
     fig.tight_layout(); fig.savefig(OUT / 'fe2-ch-artifact.svg', metadata={'Date': None}, transparent=True); plt.close(fig)
     result.append(('CH G-band artifact', 'fe2-ch-artifact.svg',
                    str(rule.reason)+' · '+str(rule.evidence)+' The plot shows the committed transition census in the proof generator’s fit window; it is not a synthetic spectrum.', source))
@@ -197,7 +197,7 @@ def diagnostics(science, products):
     ax.barh(ys, [p['n_lines'] for p in h], color=CYAN, label='Measured / included')
     ax.barh(ys, [p['n_excluded'] for p in h], left=[p['n_lines'] for p in h], color='#596773', label='Excluded / not served')
     ax.set_yticks(list(ys), [p['display'] for p in h], color='white', fontsize=8)
-    ax.tick_params(axis='x', colors='white'); ax.set_xlabel('Line count', color='white'); ax.legend(fontsize=8, facecolor=BG, edgecolor='#65717b', labelcolor='white', framealpha=1)
+    ax.tick_params(axis='x', colors='white'); ax.set_xlabel('Line count', color='white'); ax.legend(fontsize=8, labelcolor='white', frameon=False, loc='lower left', bbox_to_anchor=(0, 1.02), ncol=2)
     fig.tight_layout(); fig.savefig(OUT / 'crires-h-coverage.svg', metadata={'Date': None}, transparent=True); plt.close(fig)
     result.append(('CRIRES+ H model coverage', 'crires-h-coverage.svg',
                    'Included and excluded line counts from each current product. Excluded rows are not automatically failed fits; the per-line reason distinguishes unavailable NLTE coverage.',
@@ -220,19 +220,6 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     if ion == 'II':
         vis = [p for p in own if p['band']=='VIS']
         body += f'<p>Ionization-balance diagnostic: current VIS Fe II products span {min(p["A"] for p in vis):.3f}–{max(p["A"] for p in vis):.3f}. A single historical ionization value is not a result of this feed.</p>'
-    # Render the established component with its original band/holding/model hierarchy.
-    forest_html = subprocess.check_output([
-        'node', '-e',
-        "const fs=require('fs'); const {forest}=require('./assets/js/element-products.js'); "
-        "const x=JSON.parse(fs.readFileSync(0,'utf8')); process.stdout.write(forest(x.feed,x.ion,x.reference));"
-    ], input=json.dumps({'feed': feed, 'ion': ion, 'reference': reference}), text=True, cwd=ROOT)
-    body += '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Every instrument section retains the same fixed model axis. Models without a product remain N/A. Rows and ordering come from the science feed.</p>'+forest_html+'</section>'
-    accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
-        f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
-        f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
-        + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
-        + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'
-    body += accessible
     highlights = []
     for band in BANDS:
         candidates = [p for p in own if p['band']==band and not held(p)]
@@ -240,6 +227,19 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
             p = min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))
             highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n={p["n_lines"]}</p><small>{esc(p["holding"])} · ξ {esc(p["xi_state"])}<br>{esc(p.get("sigma_reported_caveat") or "")}</small></article>')
     body += section('Highlighted band products', '<p>Smallest reported uncertainty in each band, excluding held experiments. This selection does not establish physical superiority or a combined abundance.</p><div class="fe-highlights">'+''.join(highlights)+'</div>')
+    # Render the established component with its original band/holding/model hierarchy.
+    forest_html = subprocess.check_output([
+        'node', '-e',
+        "const fs=require('fs'); const {forest}=require('./assets/js/element-products.js'); "
+        "const x=JSON.parse(fs.readFileSync(0,'utf8')); process.stdout.write(forest(x.feed,x.ion,x.reference));"
+    ], input=json.dumps({'feed': feed, 'ion': ion, 'reference': reference}), text=True, cwd=ROOT)
+    body += '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Each band is divided into instrument and holding subsections with the same fixed model axis; models without a product remain N/A. Solid bars show statistical uncertainty and wireframe bars show systematic uncertainty. Blue denotes the regular model results. Reddish-orange text, points and bars identify the experimental Frankenstein / Gerber mean-3D engines, which are not adopted results. Green and gold regions show the Asplund and Lodders literature comparisons. Feed caveats and reported total uncertainties are listed in the expandable product values below.</p>'+forest_html+'</section>'
+    accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
+        f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
+        f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
+        + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
+        + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'
+    body += accessible
     for title, key in [('Near-UV opacity — report and noted', 'opacity_note'), ('Frankenstein — experimental, pending the Bride', 'adoption_note')]:
         source_products = products if key == 'adoption_note' else own
         notes = list(dict.fromkeys(p[key] for p in source_products if p.get(key)))
@@ -249,7 +249,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     if ion == 'II':
         body += section('Saturation characterization', '<p>'+esc(saturation)+'</p>')
     body += section('Problem-line and model diagnostics', ''.join(
-        f'<figure><h3>{esc(title)}</h3><img class="fe-diagnostic" src="/assets/data/fe-publication/{path}" alt="{esc(title)}"><figcaption>{esc(caption)} <a href="{meta["source_url"]}/{source}">Source evidence</a></figcaption></figure>'
+        f'<figure><h3>{esc(title)}</h3><img class="fe-diagnostic" src="/assets/data/fe-publication/{path}?v={meta["generator_sha256"][:12]}" alt="{esc(title)}"><figcaption>{esc(caption)} <a href="{meta["source_url"]}/{source}">Source evidence</a></figcaption></figure>'
         for title, path, caption, source in plots))
     missing = [r for r in coverage if not r['resolved'] and r['tier'] != 'ALL']
     gf_missing = sum(r['log_gf'] is None for r in records)
@@ -259,6 +259,14 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
             ('Fe_perline_coverage.csv','Per-product line-evidence coverage (CSV)'), ('Fe.json','Source Fe.json'),
             ('fe-social-forest.png','Social forest (PNG)'), ('fe-social-forest.svg','Social forest (SVG)')])+'</ul>')
     body += section('Reproducibility', f'<p>Generator {esc(meta["generator"])} v{VERSION}<br>Science source commit <code>{meta["source_commit"]}</code><br>Fe.json v{esc(feed["version"])} · feed timestamp {esc(feed["updated_at"])}<br>Generated {esc(meta["generated_at"])}<br>Feed SHA-256 <code>{meta["feed_sha256"]}</code></p><p><a href="/assets/data/rya935/live_tracker.html">Refreshed product tracker</a> · <a href="/assets/data/fe-publication/manifest.json">Build manifest</a> · <a href="/systems/sol/elements/{"fe-ii" if ion=="I" else "fe"}/">Fe {"II" if ion=="I" else "I"} appendix</a></p>')
+    body += section('References', '<ul>'
+        '<li>Asplund, M., Amarsi, A. M. &amp; Grevesse, N. (2021). '
+        '<a href="https://doi.org/10.1051/0004-6361/202140445">The chemical make-up of the Sun: A 2020 vision</a>. '
+        'Astronomy &amp; Astrophysics, 653, A141. Green forest comparison: A(Fe) = 7.46 ± 0.04.</li>'
+        '<li>Lodders, K., Bergemann, M. &amp; Palme, H. (2025). '
+        '<a href="https://doi.org/10.1007/s11214-025-01146-w">Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites</a>. '
+        'Space Science Reviews, 221, 23, Table 6. Gold forest comparison: present-day solar A(Fe) = 7.49 ± 0.01; this is not the proto-solar value.</li>'
+        '</ul>')
     page = ROOT / f'systems/sol/elements/{"fe" if ion=="I" else "fe-ii"}/index.html'
     template = page.read_text()
     start, end = template.index('  <main'), template.index('</main>')+len('</main>')

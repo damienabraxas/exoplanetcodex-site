@@ -41,6 +41,19 @@ class FePublicationTests(unittest.TestCase):
             self.assertIn('/assets/css/element-products.css', page)
             self.assertNotRegex(page, r'<img[^>]+Fe(?:I|II)-(?:VIS|NIR|H|near-UV|red-optical)')
 
+    def test_highlights_references_and_experimental_rows(self):
+        for ion, slug in [('I', 'fe'), ('II', 'fe-ii')]:
+            page = (ROOT / f'systems/sol/elements/{slug}/index.html').read_text()
+            self.assertLess(page.index('<h2>Highlighted band products'), page.index('<h2>Error-bar forest'))
+            self.assertIn('https://doi.org/10.1051/0004-6361/202140445', page)
+            self.assertIn('https://doi.org/10.1007/s11214-025-01146-w', page)
+            expected = sum(p['ion'] == ion and p.get('adoption') == 'EXPERIMENTAL-NOT-ADOPTED' for p in self.feed['products'])
+            self.assertEqual(page.count('data-experimental="true"'), expected)
+            self.assertIn('reddish orange = experimental Frankenstein', page)
+            for src in re.findall(r'<img[^>]+src="([^"]+)"', page):
+                if '/fe-publication/' in src:
+                    self.assertIn('?v=', src)
+
     def test_csv_is_lossless_and_tracker_reconciles(self):
         rows = list(csv.DictReader(io.StringIO((OUT / 'Fe_products.csv').read_text())))
         self.assertEqual(len(rows), len(self.feed['products']))
