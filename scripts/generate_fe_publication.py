@@ -330,6 +330,10 @@ def main():
     (OUT / 'manifest.json').write_text(json.dumps(meta, indent=2)+'\n')
     for ion in ['I','II']:
         render_page(ion, products, feed, meta, REFERENCE, records, coverage, plots, saturation)
+    # Matplotlib leaves spaces at the ends of SVG path lines. Keep the generated
+    # XML equivalent while avoiding whitespace-only failures in review diffs.
+    for svg in OUT.glob('*.svg'):
+        svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     dest = ROOT / 'assets/data/rya935'
     for name in ['live_status.json','live_tracker.html']:
         shutil.copyfile(science / 'data/results/rya935' / name, dest / name)
