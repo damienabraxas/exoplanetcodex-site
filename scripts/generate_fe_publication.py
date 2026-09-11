@@ -225,8 +225,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         candidates = [p for p in own if p['band']==band and not held(p)]
         if candidates:
             p = min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))
-            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n={p["n_lines"]}</p><small>{esc(p["holding"])} · ξ {esc(p["xi_state"])}<br>{esc(p.get("sigma_reported_caveat") or "")}</small></article>')
-    body += section('Highlighted band products', '<p>Smallest reported uncertainty in each band, excluding held experiments. This selection does not establish physical superiority or a combined abundance.</p><div class="fe-highlights">'+''.join(highlights)+'</div>')
+            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n = {p["n_lines"]}</p></article>')
+    body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
         'node', '-e',
