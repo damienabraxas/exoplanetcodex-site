@@ -1,0 +1,3289 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="742.710063pt" height="578.7504pt" viewBox="0 0 742.710063 578.7504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 578.7504 
+L 742.710063 578.7504 
+L 742.710063 -0 
+L 0 -0 
+z
+" style="fill: #081219"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 284.605 521.6114 
+L 617.245 521.6114 
+L 617.245 71.813 
+L 284.605 71.813 
+z
+" style="fill: #081219"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 383.247065 521.6114 
+L 408.833582 521.6114 
+L 408.833582 71.813 
+L 383.247065 71.813 
+z
+" clip-path="url(#pccf8973dd8)" style="fill: #ebc77c; opacity: 0.12; stroke: #ebc77c; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 312.884145 521.6114 
+L 312.884145 71.813 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.12; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m97c486f7ec" d="M 0 0 
+L 0 3.5 
+" style="stroke: #b8c8d3; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m97c486f7ec" x="312.884145" y="521.6114" style="fill: #b8c8d3; stroke: #b8c8d3; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 7.2 -->
+      <g style="fill: #b8c8d3" transform="translate(303.703677 539.8114) scale(0.1 -0.1)">
+       <defs>
+        <path id="SpaceMono-Regular-20b" d="M 768 0 
+L 768 230 
+Q 768 461 864 656 
+Q 960 851 1158 1152 
+L 2995 3904 
+L 2995 3981 
+L 461 3981 
+L 461 4480 
+L 3456 4480 
+L 3456 3699 
+L 1568 845 
+Q 1434 646 1363 496 
+Q 1293 346 1293 192 
+L 1293 0 
+L 768 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-24c" d="M 1958 -90 
+Q 1779 -90 1644 44 
+Q 1510 179 1510 358 
+Q 1510 544 1644 675 
+Q 1779 806 1958 806 
+Q 2144 806 2275 675 
+Q 2406 544 2406 358 
+Q 2406 179 2275 44 
+Q 2144 -90 1958 -90 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-206" d="M 448 0 
+L 448 768 
+Q 448 1178 627 1446 
+Q 806 1715 1132 1884 
+Q 1459 2054 1907 2150 
+Q 2477 2278 2729 2518 
+Q 2982 2758 2982 3098 
+L 2982 3136 
+Q 2982 3366 2880 3580 
+Q 2778 3795 2557 3932 
+Q 2336 4070 1984 4070 
+Q 1498 4070 1222 3769 
+Q 947 3469 947 2970 
+L 947 2688 
+L 410 2688 
+L 410 3008 
+Q 410 3418 589 3773 
+Q 768 4128 1120 4349 
+Q 1472 4570 1984 4570 
+Q 2502 4570 2841 4368 
+Q 3181 4166 3350 3852 
+Q 3520 3539 3520 3194 
+L 3520 3078 
+Q 3520 2573 3200 2208 
+Q 2880 1843 2176 1690 
+Q 1568 1555 1277 1334 
+Q 986 1114 986 691 
+L 986 499 
+L 3482 499 
+L 3482 0 
+L 448 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-20b"/>
+       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-206" transform="translate(122.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 376.850436 521.6114 
+L 376.850436 71.813 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.12; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m97c486f7ec" x="376.850436" y="521.6114" style="fill: #b8c8d3; stroke: #b8c8d3; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 7.4 -->
+      <g style="fill: #b8c8d3" transform="translate(367.669967 539.8114) scale(0.1 -0.1)">
+       <defs>
+        <path id="SpaceMono-Regular-208" d="M 2387 0 
+L 2387 845 
+L 314 845 
+L 314 1587 
+L 1882 4480 
+L 2925 4480 
+L 2925 1344 
+L 3616 1344 
+L 3616 845 
+L 2925 845 
+L 2925 0 
+L 2387 0 
+z
+M 774 1344 
+L 2387 1344 
+L 2387 4250 
+L 2310 4250 
+L 774 1421 
+L 774 1344 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-20b"/>
+       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-208" transform="translate(122.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 440.816727 521.6114 
+L 440.816727 71.813 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.12; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m97c486f7ec" x="440.816727" y="521.6114" style="fill: #b8c8d3; stroke: #b8c8d3; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 7.6 -->
+      <g style="fill: #b8c8d3" transform="translate(431.636258 539.8114) scale(0.1 -0.1)">
+       <defs>
+        <path id="SpaceMono-Regular-20a" d="M 1958 -90 
+Q 1517 -90 1165 99 
+Q 813 288 608 621 
+Q 403 954 403 1389 
+L 403 3021 
+Q 403 3494 614 3843 
+Q 826 4192 1174 4381 
+Q 1523 4570 1946 4570 
+Q 2374 4570 2710 4400 
+Q 3046 4230 3241 3916 
+Q 3437 3603 3437 3174 
+L 2899 3174 
+Q 2899 3590 2643 3843 
+Q 2387 4096 1933 4096 
+Q 1504 4096 1222 3798 
+Q 941 3501 941 3021 
+L 941 2355 
+L 1018 2355 
+Q 1171 2637 1456 2797 
+Q 1741 2957 2093 2957 
+Q 2509 2957 2829 2781 
+Q 3149 2605 3331 2275 
+Q 3514 1946 3514 1485 
+L 3514 1408 
+Q 3514 966 3309 630 
+Q 3104 294 2752 102 
+Q 2400 -90 1958 -90 
+z
+M 1958 384 
+Q 2426 384 2701 669 
+Q 2976 954 2976 1395 
+L 2976 1472 
+Q 2976 1773 2845 2000 
+Q 2714 2227 2483 2355 
+Q 2253 2483 1958 2483 
+Q 1670 2483 1440 2352 
+Q 1210 2221 1075 1997 
+Q 941 1773 941 1498 
+L 941 1376 
+Q 941 947 1216 665 
+Q 1491 384 1958 384 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-20b"/>
+       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-20a" transform="translate(122.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 504.783018 521.6114 
+L 504.783018 71.813 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.12; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m97c486f7ec" x="504.783018" y="521.6114" style="fill: #b8c8d3; stroke: #b8c8d3; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 7.8 -->
+      <g style="fill: #b8c8d3" transform="translate(495.602549 539.8114) scale(0.1 -0.1)">
+       <defs>
+        <path id="SpaceMono-Regular-20c" d="M 1901 -90 
+Q 1453 -90 1113 70 
+Q 774 230 588 505 
+Q 403 781 403 1126 
+L 403 1203 
+Q 403 1510 524 1731 
+Q 646 1952 835 2089 
+Q 1024 2227 1235 2285 
+L 1235 2362 
+Q 947 2458 732 2707 
+Q 518 2957 518 3328 
+L 518 3405 
+Q 518 3744 697 4006 
+Q 877 4269 1197 4419 
+Q 1517 4570 1939 4570 
+L 1978 4570 
+Q 2400 4570 2720 4419 
+Q 3040 4269 3219 4006 
+Q 3398 3744 3398 3405 
+L 3398 3328 
+Q 3398 2957 3184 2707 
+Q 2970 2458 2682 2362 
+L 2682 2285 
+Q 2893 2227 3081 2089 
+Q 3270 1952 3392 1731 
+Q 3514 1510 3514 1203 
+L 3514 1126 
+Q 3514 781 3328 505 
+Q 3142 230 2806 70 
+Q 2470 -90 2016 -90 
+L 1901 -90 
+z
+M 1958 2573 
+Q 2355 2573 2608 2787 
+Q 2861 3002 2861 3315 
+L 2861 3354 
+Q 2861 3680 2614 3881 
+Q 2368 4083 1958 4083 
+Q 1549 4083 1302 3881 
+Q 1056 3680 1056 3354 
+L 1056 3315 
+Q 1056 3002 1309 2787 
+Q 1562 2573 1958 2573 
+z
+M 1920 397 
+L 1997 397 
+Q 2432 397 2704 624 
+Q 2976 851 2976 1203 
+L 2976 1242 
+Q 2976 1638 2697 1856 
+Q 2419 2074 1978 2074 
+L 1939 2074 
+Q 1498 2074 1219 1856 
+Q 941 1638 941 1242 
+L 941 1203 
+Q 941 851 1216 624 
+Q 1491 397 1920 397 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-20b"/>
+       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-20c" transform="translate(122.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 568.749308 521.6114 
+L 568.749308 71.813 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.12; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m97c486f7ec" x="568.749308" y="521.6114" style="fill: #b8c8d3; stroke: #b8c8d3; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 8.0 -->
+      <g style="fill: #b8c8d3" transform="translate(559.56884 539.8114) scale(0.1 -0.1)">
+       <defs>
+        <path id="SpaceMono-Regular-204" d="M 1958 -90 
+Q 1222 -90 803 380 
+Q 384 851 384 1741 
+L 384 2739 
+Q 384 3603 803 4086 
+Q 1222 4570 1958 4570 
+Q 2701 4570 3117 4086 
+Q 3533 3603 3533 2739 
+L 3533 1741 
+Q 3533 851 3117 380 
+Q 2701 -90 1958 -90 
+z
+M 1958 397 
+Q 2477 397 2736 761 
+Q 2995 1126 2995 1779 
+L 2995 2701 
+Q 2995 3315 2736 3699 
+Q 2477 4083 1958 4083 
+Q 1440 4083 1181 3699 
+Q 922 3315 922 2701 
+L 922 1779 
+Q 922 1126 1181 761 
+Q 1440 397 1958 397 
+z
+M 1958 1830 
+Q 1798 1830 1673 1955 
+Q 1549 2080 1549 2240 
+Q 1549 2406 1673 2528 
+Q 1798 2650 1958 2650 
+Q 2125 2650 2246 2528 
+Q 2368 2406 2368 2240 
+Q 2368 2080 2246 1955 
+Q 2125 1830 1958 1830 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-20c"/>
+       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_6">
+     <!-- A(Fe) · thick: statistical · thin: reported total (including xi) -->
+     <g style="fill: #b8c8d3" transform="translate(274.66 557.5014) scale(0.09 -0.09)">
+      <defs>
+       <path id="SpaceMono-Regular-1" d="M 96 0 
+L 1453 4480 
+L 2464 4480 
+L 3821 0 
+L 3245 0 
+L 2918 1114 
+L 998 1114 
+L 672 0 
+L 96 0 
+z
+M 1146 1613 
+L 2771 1613 
+L 1997 4250 
+L 1920 4250 
+L 1146 1613 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-263" d="M 3264 -998 
+Q 2816 -998 2409 -832 
+Q 2003 -666 1686 -349 
+Q 1370 -32 1184 419 
+Q 998 870 998 1434 
+L 998 3046 
+Q 998 3616 1184 4064 
+Q 1370 4512 1686 4829 
+Q 2003 5146 2409 5312 
+Q 2816 5478 3264 5478 
+L 3494 5478 
+L 3494 5005 
+L 3264 5005 
+Q 2803 5005 2400 4765 
+Q 1997 4525 1747 4080 
+Q 1498 3635 1498 3021 
+L 1498 1459 
+Q 1498 845 1747 400 
+Q 1997 -45 2400 -285 
+Q 2803 -525 3264 -525 
+L 3494 -525 
+L 3494 -998 
+L 3264 -998 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-3a" d="M 608 0 
+L 608 4480 
+L 3360 4480 
+L 3360 3981 
+L 1146 3981 
+L 1146 2496 
+L 3322 2496 
+L 3322 1997 
+L 1146 1997 
+L 1146 0 
+L 608 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-101" d="M 1971 -90 
+Q 1517 -90 1168 118 
+Q 819 326 620 694 
+Q 422 1062 422 1549 
+L 422 1702 
+Q 422 2150 627 2502 
+Q 832 2854 1187 3059 
+Q 1542 3264 1984 3264 
+Q 2374 3264 2659 3123 
+Q 2944 2982 3126 2764 
+Q 3309 2547 3395 2300 
+Q 3482 2054 3482 1843 
+L 3482 1434 
+L 922 1434 
+Q 941 966 1219 675 
+Q 1498 384 1984 384 
+Q 2438 384 2662 576 
+Q 2886 768 2970 1037 
+L 3443 909 
+Q 3309 467 2947 188 
+Q 2586 -90 1971 -90 
+z
+M 934 1894 
+L 2982 1894 
+Q 2970 2170 2826 2371 
+Q 2682 2573 2458 2681 
+Q 2234 2790 1984 2790 
+Q 1562 2790 1274 2534 
+Q 986 2278 934 1894 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-264" d="M 422 -998 
+L 422 -525 
+L 653 -525 
+Q 1114 -525 1517 -285 
+Q 1920 -45 2169 400 
+Q 2419 845 2419 1459 
+L 2419 3021 
+Q 2419 3635 2169 4080 
+Q 1920 4525 1517 4765 
+Q 1114 5005 653 5005 
+L 422 5005 
+L 422 5478 
+L 653 5478 
+Q 1101 5478 1507 5312 
+Q 1914 5146 2230 4829 
+Q 2547 4512 2732 4064 
+Q 2918 3616 2918 3046 
+L 2918 1434 
+Q 2918 870 2732 419 
+Q 2547 -32 2230 -349 
+Q 1914 -666 1507 -832 
+Q 1101 -998 653 -998 
+L 422 -998 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-24a" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-255" d="M 1958 1792 
+Q 1779 1792 1644 1926 
+Q 1510 2061 1510 2240 
+Q 1510 2426 1644 2557 
+Q 1779 2688 1958 2688 
+Q 2144 2688 2275 2557 
+Q 2406 2426 2406 2240 
+Q 2406 2061 2275 1926 
+Q 2144 1792 1958 1792 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-17e" d="M 1939 0 
+Q 1722 0 1584 141 
+Q 1446 282 1446 499 
+L 1446 2714 
+L 448 2714 
+L 448 3174 
+L 1446 3174 
+L 1446 4480 
+L 1946 4480 
+L 1946 3174 
+L 3174 3174 
+L 3174 2714 
+L 1946 2714 
+L 1946 653 
+Q 1946 461 2118 461 
+L 3021 461 
+L 3021 0 
+L 1939 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-11e" d="M 557 0 
+L 557 4480 
+L 1056 4480 
+L 1056 2598 
+L 1133 2598 
+Q 1280 2906 1545 3085 
+Q 1811 3264 2195 3264 
+Q 2714 3264 3037 2921 
+Q 3360 2579 3360 1894 
+L 3360 0 
+L 2861 0 
+L 2861 1792 
+Q 2861 2291 2637 2540 
+Q 2413 2790 2029 2790 
+Q 1581 2790 1318 2480 
+Q 1056 2170 1056 1651 
+L 1056 0 
+L 557 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-124" d="M 1990 3674 
+Q 1811 3674 1676 3808 
+Q 1542 3942 1542 4122 
+Q 1542 4307 1676 4438 
+Q 1811 4570 1990 4570 
+Q 2176 4570 2307 4438 
+Q 2438 4307 2438 4122 
+Q 2438 3942 2307 3808 
+Q 2176 3674 1990 3674 
+z
+M 634 0 
+L 634 461 
+L 1747 461 
+L 1747 2714 
+L 749 2714 
+L 749 3174 
+L 2246 3174 
+L 2246 461 
+L 3283 461 
+L 3283 0 
+L 634 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-f5" d="M 2016 -90 
+Q 1574 -90 1203 99 
+Q 832 288 605 653 
+Q 378 1018 378 1536 
+L 378 1613 
+Q 378 2125 605 2496 
+Q 832 2867 1203 3065 
+Q 1574 3264 2016 3264 
+Q 2419 3264 2736 3107 
+Q 3053 2950 3254 2675 
+Q 3456 2400 3514 2048 
+L 3014 1933 
+Q 2989 2157 2867 2352 
+Q 2746 2547 2531 2668 
+Q 2317 2790 2003 2790 
+Q 1696 2790 1443 2640 
+Q 1190 2490 1040 2224 
+Q 890 1958 890 1613 
+L 890 1536 
+Q 890 1178 1040 918 
+Q 1190 659 1446 521 
+Q 1702 384 2016 384 
+Q 2330 384 2544 509 
+Q 2758 634 2876 829 
+Q 2995 1024 3027 1242 
+L 3526 1126 
+Q 3462 774 3264 499 
+Q 3066 224 2749 67 
+Q 2432 -90 2016 -90 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-135" d="M 877 0 
+L 877 4480 
+L 1376 4480 
+L 1376 1856 
+L 1485 1856 
+L 2694 3174 
+L 3309 3174 
+L 3309 3136 
+L 1990 1683 
+L 1990 1568 
+L 3462 38 
+L 3462 0 
+L 2848 0 
+L 1498 1395 
+L 1376 1395 
+L 1376 0 
+L 877 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-24e" d="M 1958 2368 
+Q 1779 2368 1644 2502 
+Q 1510 2637 1510 2816 
+Q 1510 3002 1644 3133 
+Q 1779 3264 1958 3264 
+Q 2144 3264 2275 3133 
+Q 2406 3002 2406 2816 
+Q 2406 2637 2275 2502 
+Q 2144 2368 1958 2368 
+z
+M 1958 -90 
+Q 1779 -90 1644 44 
+Q 1510 179 1510 358 
+Q 1510 544 1644 675 
+Q 1779 806 1958 806 
+Q 2144 806 2275 675 
+Q 2406 544 2406 358 
+Q 2406 179 2275 44 
+Q 2144 -90 1958 -90 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-174" d="M 2010 -90 
+Q 1517 -90 1203 80 
+Q 890 250 736 515 
+Q 582 781 563 1062 
+L 1037 1178 
+Q 1069 813 1321 592 
+Q 1574 371 1984 371 
+Q 2336 371 2550 508 
+Q 2765 646 2765 896 
+Q 2765 1165 2553 1280 
+Q 2342 1395 1869 1427 
+Q 1325 1466 1027 1686 
+Q 730 1907 730 2317 
+L 730 2355 
+Q 730 2656 896 2857 
+Q 1062 3059 1324 3161 
+Q 1587 3264 1882 3264 
+Q 2304 3264 2582 3120 
+Q 2861 2976 3008 2749 
+Q 3155 2522 3187 2278 
+L 2714 2163 
+Q 2688 2470 2470 2643 
+Q 2253 2816 1907 2816 
+Q 1638 2816 1427 2701 
+Q 1216 2586 1216 2355 
+Q 1216 2125 1411 2003 
+Q 1606 1882 2125 1843 
+Q 2675 1798 2969 1577 
+Q 3264 1357 3264 934 
+L 3264 896 
+Q 3264 435 2915 172 
+Q 2566 -90 2010 -90 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-d8" d="M 1786 -90 
+Q 1370 -90 1034 99 
+Q 698 288 499 649 
+Q 301 1011 301 1536 
+L 301 1638 
+Q 301 2157 499 2521 
+Q 698 2886 1034 3075 
+Q 1370 3264 1773 3264 
+Q 2099 3264 2364 3120 
+Q 2630 2976 2784 2675 
+L 2861 2675 
+L 2861 3174 
+L 3360 3174 
+L 3360 653 
+Q 3360 461 3533 461 
+L 3693 461 
+L 3693 0 
+L 3354 0 
+Q 3155 0 3008 128 
+Q 2861 256 2861 538 
+L 2784 538 
+Q 2630 224 2358 67 
+Q 2086 -90 1786 -90 
+z
+M 1837 384 
+Q 2285 384 2573 704 
+Q 2861 1024 2861 1549 
+L 2861 1626 
+Q 2861 1965 2726 2227 
+Q 2592 2490 2361 2640 
+Q 2131 2790 1837 2790 
+Q 1542 2790 1312 2646 
+Q 1082 2502 947 2243 
+Q 813 1984 813 1638 
+L 813 1536 
+Q 813 998 1101 691 
+Q 1389 384 1837 384 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-139" d="M 557 0 
+L 557 461 
+L 1709 461 
+L 1709 4019 
+L 595 4019 
+L 595 4480 
+L 2208 4480 
+L 2208 461 
+L 3360 461 
+L 3360 0 
+L 557 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-144" d="M 557 0 
+L 557 3174 
+L 1056 3174 
+L 1056 2637 
+L 1133 2637 
+Q 1427 3264 2157 3264 
+Q 2707 3264 3033 2921 
+Q 3360 2579 3360 1894 
+L 3360 0 
+L 2861 0 
+L 2861 1792 
+Q 2861 2291 2637 2540 
+Q 2413 2790 2029 2790 
+Q 1581 2790 1318 2480 
+Q 1056 2170 1056 1651 
+L 1056 0 
+L 557 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-16c" d="M 301 0 
+L 301 461 
+L 1030 461 
+L 1030 2714 
+L 378 2714 
+L 378 3174 
+L 1530 3174 
+L 1530 2752 
+L 1606 2752 
+Q 1728 3014 1955 3139 
+Q 2182 3264 2464 3264 
+Q 2938 3264 3235 2950 
+Q 3533 2637 3552 2035 
+L 3027 1958 
+Q 3027 2400 2816 2595 
+Q 2605 2790 2298 2790 
+Q 1907 2790 1718 2505 
+Q 1530 2221 1530 1805 
+L 1530 461 
+L 2336 461 
+L 2336 0 
+L 301 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-169" d="M 442 -1280 
+L 442 3174 
+L 941 3174 
+L 941 2675 
+L 1018 2675 
+Q 1184 2963 1478 3113 
+Q 1773 3264 2118 3264 
+Q 2509 3264 2841 3075 
+Q 3174 2886 3376 2524 
+Q 3578 2163 3578 1651 
+L 3578 1523 
+Q 3578 1005 3379 646 
+Q 3181 288 2845 99 
+Q 2509 -90 2106 -90 
+Q 1798 -90 1491 54 
+Q 1184 198 1018 486 
+L 941 486 
+L 941 -1280 
+L 442 -1280 
+z
+M 2003 384 
+Q 2458 384 2762 691 
+Q 3066 998 3066 1523 
+L 3066 1651 
+Q 3066 1990 2925 2246 
+Q 2784 2502 2544 2646 
+Q 2304 2790 2003 2790 
+Q 1709 2790 1469 2640 
+Q 1229 2490 1085 2227 
+Q 941 1965 941 1626 
+L 941 1549 
+Q 941 1197 1081 934 
+Q 1222 672 1465 528 
+Q 1709 384 2003 384 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-14e" d="M 1958 -90 
+Q 1536 -90 1174 102 
+Q 813 294 589 659 
+Q 365 1024 365 1549 
+L 365 1626 
+Q 365 2144 589 2512 
+Q 813 2880 1174 3072 
+Q 1536 3264 1958 3264 
+Q 2381 3264 2742 3072 
+Q 3104 2880 3328 2512 
+Q 3552 2144 3552 1626 
+L 3552 1549 
+Q 3552 1024 3328 659 
+Q 3104 294 2742 102 
+Q 2381 -90 1958 -90 
+z
+M 1958 384 
+Q 2266 384 2509 525 
+Q 2752 666 2896 928 
+Q 3040 1190 3040 1549 
+L 3040 1626 
+Q 3040 1971 2896 2233 
+Q 2752 2496 2505 2643 
+Q 2259 2790 1958 2790 
+Q 1658 2790 1411 2643 
+Q 1165 2496 1021 2233 
+Q 877 1971 877 1626 
+L 877 1549 
+Q 877 1190 1021 928 
+Q 1165 666 1411 525 
+Q 1658 384 1958 384 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-fb" d="M 1901 -90 
+Q 1478 -90 1132 99 
+Q 787 288 582 653 
+Q 378 1018 378 1536 
+L 378 1638 
+Q 378 2157 586 2518 
+Q 794 2880 1136 3072 
+Q 1478 3264 1888 3264 
+Q 2214 3264 2499 3120 
+Q 2784 2976 2938 2675 
+L 3014 2675 
+L 3014 4480 
+L 3514 4480 
+L 3514 0 
+L 3014 0 
+L 3014 486 
+L 2938 486 
+Q 2784 192 2486 51 
+Q 2189 -90 1901 -90 
+z
+M 1952 384 
+Q 2253 384 2493 528 
+Q 2733 672 2873 934 
+Q 3014 1197 3014 1549 
+L 3014 1626 
+Q 3014 1965 2870 2227 
+Q 2726 2490 2486 2640 
+Q 2246 2790 1952 2790 
+Q 1651 2790 1411 2646 
+Q 1171 2502 1030 2243 
+Q 890 1984 890 1638 
+L 890 1536 
+Q 890 1184 1027 925 
+Q 1165 666 1408 525 
+Q 1651 384 1952 384 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-187" d="M 1709 -90 
+Q 1184 -90 851 256 
+Q 518 602 518 1280 
+L 518 3174 
+L 1018 3174 
+L 1018 1344 
+Q 1018 845 1222 614 
+Q 1427 384 1850 384 
+Q 2304 384 2563 694 
+Q 2822 1005 2822 1523 
+L 2822 3174 
+L 3322 3174 
+L 3322 0 
+L 2822 0 
+L 2822 576 
+L 2746 576 
+Q 2592 269 2342 89 
+Q 2093 -90 1709 -90 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-116" d="M 909 -1280 
+L 909 -819 
+L 2797 -819 
+Q 2970 -819 2970 -627 
+L 2970 486 
+L 2893 486 
+Q 2739 198 2473 54 
+Q 2208 -90 1894 -90 
+Q 1472 -90 1117 99 
+Q 762 288 547 653 
+Q 333 1018 333 1536 
+L 333 1638 
+Q 333 2157 550 2518 
+Q 768 2880 1120 3072 
+Q 1472 3264 1882 3264 
+Q 2227 3264 2489 3113 
+Q 2752 2963 2893 2675 
+L 2970 2675 
+L 2970 3174 
+L 3469 3174 
+L 3469 -781 
+Q 3469 -998 3331 -1139 
+Q 3194 -1280 2976 -1280 
+L 909 -1280 
+z
+M 1907 384 
+Q 2208 384 2448 528 
+Q 2688 672 2829 934 
+Q 2970 1197 2970 1549 
+L 2970 1626 
+Q 2970 1965 2826 2227 
+Q 2682 2490 2442 2640 
+Q 2202 2790 1907 2790 
+Q 1606 2790 1366 2646 
+Q 1126 2502 985 2243 
+Q 845 1984 845 1638 
+L 845 1536 
+Q 845 1184 982 925 
+Q 1120 666 1360 525 
+Q 1600 384 1907 384 
+z
+" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-1a7" d="M 454 0 
+L 1466 1587 
+L 1466 1664 
+L 531 3174 
+L 1101 3174 
+L 1901 1856 
+L 2016 1856 
+L 2816 3174 
+L 3386 3174 
+L 2451 1664 
+L 2451 1587 
+L 3462 0 
+L 2880 0 
+L 2016 1395 
+L 1901 1395 
+L 1037 0 
+L 454 0 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#SpaceMono-Regular-1"/>
+      <use xlink:href="#SpaceMono-Regular-263" transform="translate(61.203125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-3a" transform="translate(122.40625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-101" transform="translate(183.609375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-264" transform="translate(244.8125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(489.625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-11e" transform="translate(550.828125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(612.03125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-f5" transform="translate(673.234375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-135" transform="translate(734.4375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24e" transform="translate(795.640625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-174" transform="translate(918.046875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(979.25 0)"/>
+      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1040.453125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1101.65625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(1162.859375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-174" transform="translate(1224.0625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1285.265625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(1346.46875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1407.671875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1468.875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-139" transform="translate(1530.078125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1591.28125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-255" transform="translate(1652.484375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1713.6875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1774.890625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-11e" transform="translate(1836.09375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(1897.296875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-144" transform="translate(1958.5 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24e" transform="translate(2019.703125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2080.90625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2142.109375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-101" transform="translate(2203.3125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-169" transform="translate(2264.515625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-14e" transform="translate(2325.71875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2386.921875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(2448.125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-101" transform="translate(2509.328125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2570.53125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2631.734375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(2692.9375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-14e" transform="translate(2754.140625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(2815.34375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2876.546875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-139" transform="translate(2937.75 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2998.953125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-263" transform="translate(3060.15625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(3121.359375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-144" transform="translate(3182.5625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-f5" transform="translate(3243.765625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-139" transform="translate(3304.96875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-187" transform="translate(3366.171875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-fb" transform="translate(3427.375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(3488.578125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-144" transform="translate(3549.78125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-116" transform="translate(3610.984375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(3672.1875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-1a7" transform="translate(3733.390625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-124" transform="translate(3794.59375 0)"/>
+      <use xlink:href="#SpaceMono-Regular-264" transform="translate(3855.796875 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <!-- HARPS · Synth · 1D-LTE · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(101.23625 84.890382) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-42" d="M 467 0 
+L 467 4480 
+L 1005 4480 
+L 1005 2496 
+L 2912 2496 
+L 2912 4480 
+L 3450 4480 
+L 3450 0 
+L 2912 0 
+L 2912 1997 
+L 1005 1997 
+L 1005 0 
+L 467 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-89" d="M 544 0 
+L 544 4480 
+L 2144 4480 
+Q 2605 4480 2909 4310 
+Q 3213 4141 3363 3865 
+Q 3514 3590 3514 3264 
+L 3514 3072 
+Q 3514 2822 3376 2572 
+Q 3238 2323 2950 2189 
+L 2950 2112 
+Q 3142 2086 3251 1961 
+Q 3360 1837 3360 1613 
+L 3360 0 
+L 2822 0 
+L 2822 1498 
+Q 2822 1664 2745 1753 
+Q 2669 1843 2477 1843 
+L 1082 1843 
+L 1082 0 
+L 544 0 
+z
+M 1082 2342 
+L 2080 2342 
+Q 2976 2342 2976 3110 
+L 2976 3226 
+Q 2976 3565 2755 3773 
+Q 2534 3981 2080 3981 
+L 1082 3981 
+L 1082 2342 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-86" d="M 544 0 
+L 544 4480 
+L 2144 4480 
+Q 2605 4480 2909 4310 
+Q 3213 4141 3363 3865 
+Q 3514 3590 3514 3264 
+L 3514 3072 
+Q 3514 2746 3360 2464 
+Q 3206 2182 2902 2012 
+Q 2598 1843 2144 1843 
+L 1082 1843 
+L 1082 0 
+L 544 0 
+z
+M 1082 2342 
+L 2080 2342 
+Q 2976 2342 2976 3110 
+L 2976 3226 
+Q 2976 3565 2755 3773 
+Q 2534 3981 2080 3981 
+L 1082 3981 
+L 1082 2342 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-90" d="M 2048 -90 
+Q 1472 -90 1081 124 
+Q 691 339 489 710 
+Q 288 1082 288 1549 
+L 288 1741 
+L 826 1741 
+L 826 1587 
+Q 826 1005 1152 707 
+Q 1478 410 2048 410 
+Q 2547 410 2800 634 
+Q 3053 858 3053 1216 
+L 3053 1254 
+Q 3053 1606 2793 1792 
+Q 2534 1978 1952 2061 
+Q 1280 2157 880 2441 
+Q 480 2726 480 3302 
+L 480 3379 
+Q 480 3731 669 3996 
+Q 858 4262 1190 4416 
+Q 1523 4570 1958 4570 
+Q 2464 4570 2819 4384 
+Q 3174 4198 3363 3894 
+Q 3552 3590 3552 3226 
+L 3552 2957 
+L 3014 2957 
+L 3014 3187 
+Q 3014 3482 2867 3677 
+Q 2720 3872 2477 3971 
+Q 2234 4070 1952 4070 
+Q 1709 4070 1494 3987 
+Q 1280 3904 1149 3747 
+Q 1018 3590 1018 3360 
+L 1018 3322 
+Q 1018 2950 1318 2780 
+Q 1619 2611 2221 2522 
+Q 2925 2419 3257 2112 
+Q 3590 1805 3590 1293 
+L 3590 1216 
+Q 3590 634 3196 272 
+Q 2803 -90 2048 -90 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-1a8" d="M 1056 -1280 
+L 1056 -819 
+L 2688 -819 
+Q 2861 -819 2861 -627 
+L 2861 576 
+L 2784 576 
+Q 2630 269 2380 89 
+Q 2131 -90 1747 -90 
+Q 1222 -90 889 256 
+Q 557 602 557 1280 
+L 557 3174 
+L 1056 3174 
+L 1056 1344 
+Q 1056 845 1261 614 
+Q 1466 384 1888 384 
+Q 2342 384 2601 694 
+Q 2861 1005 2861 1523 
+L 2861 3174 
+L 3360 3174 
+L 3360 -781 
+Q 3360 -998 3222 -1139 
+Q 3085 -1280 2867 -1280 
+L 1056 -1280 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-205" d="M 454 0 
+L 454 499 
+L 1722 499 
+L 1722 4243 
+L 1645 4243 
+L 909 2560 
+L 378 2560 
+L 378 2598 
+L 1216 4480 
+L 2259 4480 
+L 2259 499 
+L 3526 499 
+L 3526 0 
+L 454 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-21" d="M 467 0 
+L 467 506 
+L 851 506 
+L 851 3981 
+L 467 3981 
+L 467 4480 
+L 1939 4480 
+Q 2765 4480 3152 4080 
+Q 3539 3680 3539 2816 
+L 3539 1664 
+Q 3539 800 3152 400 
+Q 2765 0 1939 0 
+L 467 0 
+z
+M 1389 499 
+L 1862 499 
+Q 2253 499 2505 604 
+Q 2758 710 2880 972 
+Q 3002 1235 3002 1702 
+L 3002 2778 
+Q 3002 3245 2880 3507 
+Q 2758 3770 2505 3875 
+Q 2253 3981 1862 3981 
+L 1389 3981 
+L 1389 499 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-25d" d="M 998 1434 
+L 998 1894 
+L 2918 1894 
+L 2918 1434 
+L 998 1434 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-59" d="M 557 0 
+L 557 4480 
+L 1094 4480 
+L 1094 499 
+L 3437 499 
+L 3437 0 
+L 557 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-99" d="M 1690 0 
+L 1690 3981 
+L 384 3981 
+L 384 4480 
+L 3533 4480 
+L 3533 3981 
+L 2227 3981 
+L 2227 0 
+L 1690 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-27" d="M 602 0 
+L 602 4480 
+L 3315 4480 
+L 3315 3981 
+L 1139 3981 
+L 1139 2496 
+L 3277 2496 
+L 3277 1997 
+L 1139 1997 
+L 1139 499 
+L 3354 499 
+L 3354 0 
+L 602 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-3b" d="M 1926 -90 
+Q 1210 -90 794 380 
+Q 378 851 378 1741 
+L 378 2739 
+Q 378 3603 797 4086 
+Q 1216 4570 1952 4570 
+Q 2464 4570 2816 4352 
+Q 3168 4134 3347 3766 
+Q 3526 3398 3526 2944 
+L 3526 2867 
+L 2989 2867 
+L 2989 2944 
+Q 2989 3238 2883 3494 
+Q 2778 3750 2547 3910 
+Q 2317 4070 1952 4070 
+Q 1434 4070 1174 3692 
+Q 915 3315 915 2701 
+L 915 1779 
+Q 915 1126 1177 768 
+Q 1440 410 1965 410 
+Q 2438 410 2713 720 
+Q 2989 1030 2989 1574 
+L 2989 1651 
+L 1530 1651 
+L 1530 2150 
+L 3526 2150 
+L 3526 0 
+L 3027 0 
+L 3027 538 
+L 2950 538 
+Q 2848 262 2569 86 
+Q 2291 -90 1926 -90 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-42"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2080.90625 0)"/>
+      </g>
+      <!-- solar_harps_molecfit_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(62.06625 96.738382) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-260" d="M 467 -768 
+L 467 -307 
+L 3450 -307 
+L 3450 -768 
+L 467 -768 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-141" d="M 307 0 
+L 307 3174 
+L 806 3174 
+L 806 2829 
+L 883 2829 
+Q 966 3053 1126 3158 
+Q 1286 3264 1504 3264 
+Q 1734 3264 1884 3142 
+Q 2035 3021 2093 2829 
+L 2170 2829 
+Q 2387 3264 2861 3264 
+Q 3219 3264 3414 3037 
+Q 3610 2810 3610 2445 
+L 3610 0 
+L 3110 0 
+L 3110 2278 
+Q 3110 2502 3008 2646 
+Q 2906 2790 2682 2790 
+Q 2470 2790 2339 2630 
+Q 2208 2470 2208 2150 
+L 2208 0 
+L 1709 0 
+L 1709 2304 
+Q 1709 2515 1593 2652 
+Q 1478 2790 1286 2790 
+Q 1056 2790 931 2624 
+Q 806 2458 806 2189 
+L 806 0 
+L 307 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-115" d="M 1504 0 
+L 1504 2714 
+L 525 2714 
+L 525 3174 
+L 1504 3174 
+L 1504 3981 
+Q 1504 4198 1641 4339 
+Q 1779 4480 1997 4480 
+L 3251 4480 
+L 3251 4019 
+L 2176 4019 
+Q 2003 4019 2003 3827 
+L 2003 3174 
+L 3328 3174 
+L 3328 2714 
+L 2003 2714 
+L 2003 0 
+L 1504 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-174" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-115" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2570.53125 0)"/>
+      </g>
+      <!-- SYNTH · 1D-LTE -->
+      <g style="fill: #dae4eb" transform="translate(204.0575 108.586382) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-bf" d="M 1690 0 
+L 1690 1574 
+L 1574 1574 
+L 173 4480 
+L 774 4480 
+L 1920 2035 
+L 1997 2035 
+L 3142 4480 
+L 3744 4480 
+L 2342 1574 
+L 2227 1574 
+L 2227 0 
+L 1690 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-63" d="M 467 0 
+L 467 4480 
+L 1542 4480 
+L 2835 230 
+L 2912 230 
+L 2912 4480 
+L 3450 4480 
+L 3450 0 
+L 2374 0 
+L 1082 4250 
+L 1005 4250 
+L 1005 0 
+L 467 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(795.640625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12"/>
+     <g id="text_8">
+      <!-- HARPS · Synth · 1D-NLTE · Bergemann · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(37.585 136.003836) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-19" d="M 365 0 
+L 365 499 
+L 749 499 
+L 749 3981 
+L 365 3981 
+L 365 4480 
+L 2176 4480 
+Q 2822 4480 3161 4147 
+Q 3501 3814 3501 3315 
+L 3501 3238 
+Q 3501 2874 3283 2624 
+Q 3066 2374 2746 2285 
+L 2746 2208 
+Q 3066 2125 3283 1865 
+Q 3501 1606 3501 1248 
+L 3501 1171 
+Q 3501 666 3161 333 
+Q 2822 0 2176 0 
+L 365 0 
+z
+M 1286 2496 
+L 2157 2496 
+Q 2541 2496 2765 2694 
+Q 2989 2893 2989 3238 
+L 2989 3277 
+Q 2989 3603 2752 3792 
+Q 2515 3981 2138 3981 
+L 1286 3981 
+L 1286 2496 
+z
+M 1286 499 
+L 2138 499 
+Q 2515 499 2752 688 
+Q 2989 877 2989 1210 
+L 2989 1248 
+Q 2989 1587 2765 1792 
+Q 2541 1997 2157 1997 
+L 1286 1997 
+L 1286 499 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-42"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-19" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-116" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2631.734375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2692.9375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2754.140625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2815.34375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2876.546875 0)"/>
+      </g>
+      <!-- solar_harps_molecfit_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(62.06625 147.851836) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-174" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-115" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2570.53125 0)"/>
+      </g>
+      <!-- SYNTH · ENGINE-A -->
+      <g style="fill: #dae4eb" transform="translate(194.265 159.699836) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-47" d="M 538 0 
+L 538 499 
+L 1690 499 
+L 1690 3981 
+L 538 3981 
+L 538 4480 
+L 3379 4480 
+L 3379 3981 
+L 2227 3981 
+L 2227 499 
+L 3379 499 
+L 3379 0 
+L 538 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-47" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(918.046875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13"/>
+     <g id="text_9">
+      <!-- HARPS · Synth · 1D-LTE · Gerber · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(57.17 187.117291) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-f3" d="M 2106 -90 
+Q 1798 -90 1491 54 
+Q 1184 198 1018 486 
+L 941 486 
+L 941 0 
+L 442 0 
+L 442 4480 
+L 941 4480 
+L 941 2675 
+L 1018 2675 
+Q 1184 2963 1478 3113 
+Q 1773 3264 2118 3264 
+Q 2509 3264 2841 3075 
+Q 3174 2886 3376 2524 
+Q 3578 2163 3578 1651 
+L 3578 1523 
+Q 3578 1005 3379 646 
+Q 3181 288 2845 99 
+Q 2509 -90 2106 -90 
+z
+M 2003 384 
+Q 2458 384 2762 691 
+Q 3066 998 3066 1523 
+L 3066 1651 
+Q 3066 1990 2925 2246 
+Q 2784 2502 2544 2646 
+Q 2304 2790 2003 2790 
+Q 1709 2790 1469 2640 
+Q 1229 2490 1085 2227 
+Q 941 1965 941 1626 
+L 941 1549 
+Q 941 1197 1081 934 
+Q 1222 672 1465 528 
+Q 1709 384 2003 384 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-42"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f3" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2631.734375 0)"/>
+      </g>
+      <!-- solar_harps_molecfit_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(62.06625 198.965291) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-174" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-115" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2570.53125 0)"/>
+      </g>
+      <!-- SYNTH · synth-1D-LTE-gerber -->
+      <g style="fill: #dae4eb" transform="translate(140.40625 210.813291) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-174" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-116" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f3" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1591.28125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_14"/>
+     <g id="text_10">
+      <!-- Kitt Peak · Synth · 1D-LTE · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(81.65125 238.230745) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-57" d="M 570 0 
+L 570 4480 
+L 1107 4480 
+L 1107 2496 
+L 1254 2496 
+L 2976 4480 
+L 3642 4480 
+L 3642 4442 
+L 1786 2278 
+L 1786 2202 
+L 3718 38 
+L 3718 0 
+L 3040 0 
+L 1254 1997 
+L 1107 1997 
+L 1107 0 
+L 570 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-57"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2325.71875 0)"/>
+      </g>
+      <!-- solar_kpno_kurucz2005_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(57.17 250.078745) scale(0.08 -0.08)">
+       <defs>
+        <path id="SpaceMono-Regular-1b2" d="M 582 0 
+L 582 794 
+L 2848 2637 
+L 2848 2714 
+L 621 2714 
+L 621 3174 
+L 3270 3174 
+L 3270 2406 
+L 992 538 
+L 992 461 
+L 3347 461 
+L 3347 0 
+L 582 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="SpaceMono-Regular-209" d="M 2035 -90 
+Q 1517 -90 1155 108 
+Q 794 307 608 652 
+Q 422 998 422 1434 
+L 422 1613 
+L 960 1613 
+L 960 1472 
+Q 960 947 1257 678 
+Q 1555 410 2035 410 
+Q 2381 410 2611 570 
+Q 2842 730 2957 989 
+Q 3072 1248 3072 1549 
+L 3072 1587 
+Q 3072 1850 2957 2064 
+Q 2842 2278 2637 2406 
+Q 2432 2534 2163 2534 
+Q 1894 2534 1721 2396 
+Q 1549 2259 1510 2112 
+L 499 2112 
+L 499 4480 
+L 3302 4480 
+L 3302 3981 
+L 1024 3981 
+L 1024 2381 
+L 1101 2381 
+Q 1235 2643 1507 2838 
+Q 1779 3034 2202 3034 
+Q 2611 3034 2928 2858 
+Q 3245 2682 3427 2362 
+Q 3610 2042 3610 1613 
+L 3610 1498 
+Q 3610 1075 3430 713 
+Q 3251 352 2899 131 
+Q 2547 -90 2035 -90 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-187" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-187" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1b2" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-209" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2631.734375 0)"/>
+      </g>
+      <!-- SYNTH · 1D-LTE -->
+      <g style="fill: #dae4eb" transform="translate(204.0575 261.926745) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(795.640625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15"/>
+     <g id="text_11">
+      <!-- Kitt Peak · Synth · 1D-NLTE · Bergemann · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(18 289.3442) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-57"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-19" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-116" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2631.734375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2692.9375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(2754.140625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2815.34375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2876.546875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2937.75 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2998.953125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(3060.15625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(3121.359375 0)"/>
+      </g>
+      <!-- solar_kpno_kurucz2005_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(57.17 301.1922) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-187" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-187" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1b2" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-209" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2631.734375 0)"/>
+      </g>
+      <!-- SYNTH · ENGINE-A -->
+      <g style="fill: #dae4eb" transform="translate(194.265 313.0402) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-47" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(918.046875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_16"/>
+     <g id="text_12">
+      <!-- Kitt Peak · Synth · 1D-LTE · Gerber · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(37.585 340.457655) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-57"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f3" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2631.734375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2692.9375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2754.140625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2815.34375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2876.546875 0)"/>
+      </g>
+      <!-- solar_kpno_kurucz2005_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(57.17 352.305655) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-187" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-187" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1b2" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-204" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-209" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2631.734375 0)"/>
+      </g>
+      <!-- SYNTH · synth-1D-LTE-gerber -->
+      <g style="fill: #dae4eb" transform="translate(140.40625 364.153655) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-174" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-116" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f3" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1591.28125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17"/>
+     <g id="text_13">
+      <!-- Kitt Peak · Synth · 1D-LTE · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(81.65125 391.571109) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-57"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2325.71875 0)"/>
+      </g>
+      <!-- solar_kpno_molecfit_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(66.9625 403.419109) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-115" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2509.328125 0)"/>
+      </g>
+      <!-- SYNTH · 1D-LTE -->
+      <g style="fill: #dae4eb" transform="translate(204.0575 415.267109) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(795.640625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_18"/>
+     <g id="text_14">
+      <!-- Kitt Peak · Synth · 1D-NLTE · Bergemann · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(18 442.684564) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-57"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-19" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-116" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2631.734375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2692.9375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(2754.140625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2815.34375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2876.546875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2937.75 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2998.953125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(3060.15625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(3121.359375 0)"/>
+      </g>
+      <!-- solar_kpno_molecfit_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(66.9625 454.532564) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-115" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2509.328125 0)"/>
+      </g>
+      <!-- SYNTH · ENGINE-A -->
+      <g style="fill: #dae4eb" transform="translate(194.265 466.380564) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-47" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(918.046875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_19"/>
+     <g id="text_15">
+      <!-- Kitt Peak · Synth · 1D-LTE · Gerber · Deep Grade -->
+      <g style="fill: #dae4eb" transform="translate(37.585 493.798018) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-57"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-90" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f3" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(2509.328125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2570.53125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2631.734375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2692.9375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2754.140625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(2815.34375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(2876.546875 0)"/>
+      </g>
+      <!-- solar_kpno_molecfit_corrected · DEEPGRADED -->
+      <g style="fill: #dae4eb" transform="translate(66.9625 505.646018) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-174"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-135" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-169" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-141" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-139" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-115" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-124" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-260" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1591.28125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1652.484375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1713.6875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1774.890625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(1836.09375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1897.296875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(1958.5 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2019.703125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2080.90625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-86" transform="translate(2142.109375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-3b" transform="translate(2203.3125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-89" transform="translate(2264.515625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1" transform="translate(2325.71875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2386.921875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(2448.125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(2509.328125 0)"/>
+      </g>
+      <!-- SYNTH · synth-1D-LTE-gerber -->
+      <g style="fill: #dae4eb" transform="translate(140.40625 517.494018) scale(0.08 -0.08)">
+       <use xlink:href="#SpaceMono-Regular-90"/>
+       <use xlink:href="#SpaceMono-Regular-bf" transform="translate(61.203125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-63" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(183.609375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-42" transform="translate(244.8125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-255" transform="translate(367.21875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-174" transform="translate(489.625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-1a8" transform="translate(550.828125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-17e" transform="translate(673.234375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-11e" transform="translate(734.4375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(795.640625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-205" transform="translate(856.84375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-21" transform="translate(918.046875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(979.25 0)"/>
+       <use xlink:href="#SpaceMono-Regular-59" transform="translate(1040.453125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-99" transform="translate(1101.65625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-27" transform="translate(1162.859375 0)"/>
+       <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1224.0625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-116" transform="translate(1285.265625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1346.46875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1407.671875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-f3" transform="translate(1468.875 0)"/>
+       <use xlink:href="#SpaceMono-Regular-101" transform="translate(1530.078125 0)"/>
+       <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1591.28125 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_20">
+    <path d="M 396.040323 521.6114 
+L 396.040323 71.813 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 478.821659 92.258382 
+L 600.467633 92.258382 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_21">
+    <defs>
+     <path id="md08d645184" d="M 0 3 
+L 0 -3 
+" style="stroke: #ebc77c"/>
+    </defs>
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="478.821659" y="92.258382" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_22">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="600.467633" y="92.258382" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_23">
+    <path d="M 487.224271 92.258382 
+L 592.065021 92.258382 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_2">
+    <path d="M 381.205261 143.371836 
+L 456.291452 143.371836 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_24">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="381.205261" y="143.371836" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="456.291452" y="143.371836" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_26">
+    <path d="M 391.242852 143.371836 
+L 446.253862 143.371836 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_3">
+    <path d="M 487.398899 194.485291 
+L 602.125 194.485291 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_27">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="487.398899" y="194.485291" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_28">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="602.125" y="194.485291" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_29">
+    <path d="M 491.28613 194.485291 
+L 598.237769 194.485291 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_4">
+    <path d="M 375.727508 245.598745 
+L 487.355722 245.598745 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_30">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="375.727508" y="245.598745" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_31">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="487.355722" y="245.598745" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_32">
+    <path d="M 384.366475 245.598745 
+L 478.716754 245.598745 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_5">
+    <path d="M 299.725 296.7122 
+L 405.361491 296.7122 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_33">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="299.725" y="296.7122" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_34">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="405.361491" y="296.7122" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_35">
+    <path d="M 308.086674 296.7122 
+L 396.999818 296.7122 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_6">
+    <path d="M 377.7546 347.825655 
+L 482.769978 347.825655 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_36">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="377.7546" y="347.825655" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_37">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="482.769978" y="347.825655" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_38">
+    <path d="M 382.031706 347.825655 
+L 478.492872 347.825655 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_7">
+    <path d="M 372.9712 398.939109 
+L 483.075737 398.939109 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_39">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="372.9712" y="398.939109" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_40">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="483.075737" y="398.939109" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_41">
+    <path d="M 383.151116 398.939109 
+L 472.895822 398.939109 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_8">
+    <path d="M 305.542094 450.052564 
+L 402.103048 450.052564 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_42">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="305.542094" y="450.052564" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_43">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="402.103048" y="450.052564" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_44">
+    <path d="M 312.084567 450.052564 
+L 395.560576 450.052564 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="LineCollection_9">
+    <path d="M 376.110346 501.166018 
+L 477.37794 501.166018 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_45">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="376.110346" y="501.166018" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_46">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#md08d645184" x="477.37794" y="501.166018" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_47">
+    <path d="M 380.560481 501.166018 
+L 472.927805 501.166018 
+" clip-path="url(#pccf8973dd8)" style="fill: none; stroke: #ebc77c; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_48">
+    <defs>
+     <path id="m848ed311d9" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #ebc77c"/>
+    </defs>
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="539.644646" y="92.258382" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_49">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="418.748357" y="143.371836" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_50">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="544.761949" y="194.485291" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_51">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="431.541615" y="245.598745" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_52">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="352.543246" y="296.7122" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_53">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="430.262289" y="347.825655" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_54">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="428.023469" y="398.939109" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_55">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="353.822571" y="450.052564" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="line2d_56">
+    <g clip-path="url(#pccf8973dd8)">
+     <use xlink:href="#m848ed311d9" x="426.744143" y="501.166018" style="fill: #ebc77c; stroke: #ebc77c"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- 7.909 ± 0.190  n=8 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 95.673882) scale(0.09 -0.09)">
+     <defs>
+      <path id="SpaceMono-Regular-20d" d="M 1971 -90 
+Q 1530 -90 1194 80 
+Q 858 250 669 563 
+Q 480 877 480 1306 
+L 1018 1306 
+Q 1018 896 1277 640 
+Q 1536 384 1984 384 
+Q 2419 384 2697 681 
+Q 2976 979 2976 1459 
+L 2976 2125 
+L 2899 2125 
+Q 2758 1850 2480 1686 
+Q 2202 1523 1837 1523 
+Q 1421 1523 1097 1696 
+Q 774 1869 588 2192 
+Q 403 2515 403 2976 
+L 403 3053 
+Q 403 3494 604 3836 
+Q 806 4179 1158 4374 
+Q 1510 4570 1958 4570 
+Q 2413 4570 2761 4378 
+Q 3110 4186 3312 3846 
+Q 3514 3507 3514 3072 
+L 3514 1459 
+Q 3514 986 3309 637 
+Q 3104 288 2755 99 
+Q 2406 -90 1971 -90 
+z
+M 1958 1997 
+Q 2246 1997 2476 2125 
+Q 2707 2253 2841 2470 
+Q 2976 2688 2976 2963 
+L 2976 3085 
+Q 2976 3373 2851 3600 
+Q 2726 3827 2499 3961 
+Q 2272 4096 1958 4096 
+Q 1491 4096 1216 3801 
+Q 941 3507 941 3066 
+L 941 2989 
+Q 941 2541 1229 2269 
+Q 1517 1997 1958 1997 
+z
+" transform="scale(0.015625)"/>
+      <path id="SpaceMono-Regular-2b9" d="M 1728 902 
+L 1728 2010 
+L 621 2010 
+L 621 2470 
+L 1728 2470 
+L 1728 3578 
+L 2189 3578 
+L 2189 2470 
+L 3296 2470 
+L 3296 2010 
+L 2189 2010 
+L 2189 902 
+L 1728 902 
+z
+M 621 0 
+L 621 461 
+L 3296 461 
+L 3296 0 
+L 621 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="SpaceMono-Regular-2b3" d="M 621 2470 
+L 621 2931 
+L 3296 2931 
+L 3296 2470 
+L 621 2470 
+z
+M 621 1549 
+L 621 2010 
+L 3296 2010 
+L 3296 1549 
+L 621 1549 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20d" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20d" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20d" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- 7.531 ± 0.117  n=2 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 146.787336) scale(0.09 -0.09)">
+     <defs>
+      <path id="SpaceMono-Regular-207" d="M 2029 -90 
+Q 1523 -90 1158 112 
+Q 794 314 598 650 
+Q 403 986 403 1395 
+L 403 1741 
+L 941 1741 
+L 941 1434 
+Q 941 954 1248 682 
+Q 1555 410 2016 410 
+Q 2298 410 2525 534 
+Q 2752 659 2883 867 
+Q 3014 1075 3014 1331 
+L 3014 1370 
+Q 3014 1773 2758 2000 
+Q 2502 2227 2118 2227 
+L 1517 2227 
+L 1517 2970 
+L 2976 3904 
+L 2976 3981 
+L 442 3981 
+L 442 4480 
+L 3437 4480 
+L 3437 3661 
+L 1978 2726 
+L 1978 2650 
+L 2234 2650 
+Q 2573 2650 2873 2502 
+Q 3174 2355 3363 2076 
+Q 3552 1798 3552 1389 
+L 3552 1274 
+Q 3552 890 3353 579 
+Q 3155 269 2809 89 
+Q 2464 -90 2029 -90 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-207" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- 7.925 ± 0.179  n=8 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 197.900791) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20d" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20d" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <!-- 7.571 ± 0.175  n=8 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 249.014245) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_20">
+    <!-- 7.324 ± 0.165  n=2 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 300.1277) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-207" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-208" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20a" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_21">
+    <!-- 7.567 ± 0.164  n=8 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 351.241155) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20a" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20a" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-208" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_22">
+    <!-- 7.560 ± 0.172  n=8 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 402.354609) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20a" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_23">
+    <!-- 7.328 ± 0.151  n=2 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 453.468064) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-207" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_24">
+    <!-- 7.556 ± 0.158  n=8 -->
+    <g style="fill: #ebc77c" transform="translate(625.561 504.581518) scale(0.09 -0.09)">
+     <use xlink:href="#SpaceMono-Regular-20b"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20a" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-209" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20c" transform="translate(1040.453125 0)"/>
+    </g>
+   </g>
+   <g id="text_25">
+    <!-- Solar iron · fe2-arm-diagnostic -->
+    <g style="fill: #63dce6" transform="translate(284.605 32.56) scale(0.13 -0.13)">
+     <use xlink:href="#SpaceMono-Regular-90"/>
+     <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-124" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-16c" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-14e" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-255" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-115" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-101" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-25d" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1040.453125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1101.65625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-141" transform="translate(1162.859375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1224.0625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1285.265625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-124" transform="translate(1346.46875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1407.671875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-116" transform="translate(1468.875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(1530.078125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1591.28125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-174" transform="translate(1652.484375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1713.6875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-124" transform="translate(1774.890625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-f5" transform="translate(1836.09375 0)"/>
+    </g>
+    <!-- Asplund et al. 2021: 7.46 ± 0.04 -->
+    <g style="fill: #63dce6" transform="translate(284.605 51.813) scale(0.13 -0.13)">
+     <use xlink:href="#SpaceMono-Regular-1"/>
+     <use xlink:href="#SpaceMono-Regular-174" transform="translate(61.203125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-169" transform="translate(122.40625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-139" transform="translate(183.609375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-187" transform="translate(244.8125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(306.015625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-fb" transform="translate(367.21875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-101" transform="translate(489.625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-17e" transform="translate(550.828125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(612.03125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(673.234375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-139" transform="translate(734.4375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-206" transform="translate(1040.453125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-205" transform="translate(1101.65625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24e" transform="translate(1162.859375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1224.0625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20b" transform="translate(1285.265625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(1346.46875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-208" transform="translate(1407.671875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-20a" transform="translate(1468.875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1530.078125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-2b9" transform="translate(1591.28125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1652.484375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(1713.6875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24c" transform="translate(1774.890625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-204" transform="translate(1836.09375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-208" transform="translate(1897.296875 0)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pccf8973dd8">
+   <rect x="284.605" y="71.813" width="332.64" height="449.7984"/>
+  </clipPath>
+ </defs>
+</svg>

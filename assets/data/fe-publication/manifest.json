@@ -1,0 +1,24 @@
+{
+  "generator": "scripts/generate_fe_publication.py",
+  "version": "1.0.0",
+  "source_commit": "6af75abfe7f0d1b1dbf9790886fd3c4f61e1c891",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/6af75abfe7f0d1b1dbf9790886fd3c4f61e1c891",
+  "generated_at": "2026-09-11T04:05:54+00:00",
+  "feed_version": "1.158",
+  "feed_sha256": "459b0854b2f4a92eb8a55ac906ecf3672f31443c9820da35ba9eac12abf292e5",
+  "products": 92,
+  "perline_rows": 2676,
+  "resolved_products": 71,
+  "held_products": 4,
+  "generator_sha256": "690abae80b1e41dbf19a36b19d53e985b510e683ebb8273911d11bbe17013aac",
+  "supplemental_sources": [
+    "data/linelists/canonical_gf.csv",
+    "data/linelists/linelist_solar.csv",
+    "data/reference/solar/CURRENT",
+    "data/audit/rya515_fe_perline/fe2_blend_census.csv",
+    "data/results/rya935/live_status.json",
+    "data/catalog/line_curation_exclusions.csv",
+    "data/results/rya1207/nearuv_molecular_lever.json",
+    "data/products/solar/Fe.json"
+  ]
+}
