@@ -30,6 +30,17 @@ class FePublicationTests(unittest.TestCase):
             for link in re.findall(r'(?:href|src)="(/assets/data/[^"?#]+)', page):
                 self.assertTrue((ROOT / link.lstrip('/')).is_file(), link)
 
+    def test_original_forest_hierarchy_and_stylesheet_are_retained(self):
+        for ion, slug in [('I', 'fe'), ('II', 'fe-ii')]:
+            page = (ROOT / f'systems/sol/elements/{slug}/index.html').read_text()
+            sections = [s for s in self.feed['plot_grid']['sections'] if s['ion'] == ion]
+            self.assertEqual(page.count('class="forest-instrument"'), len(sections))
+            self.assertEqual(page.count('class="forest-band"'), len({s['band'] for s in sections}))
+            self.assertEqual(len(re.findall(r'class="forest (?:gradedrow|forest-na)?"', page)),
+                             sum(len(s['cells']) for s in sections))
+            self.assertIn('/assets/css/element-products.css', page)
+            self.assertNotRegex(page, r'<img[^>]+Fe(?:I|II)-(?:VIS|NIR|H|near-UV|red-optical)')
+
     def test_csv_is_lossless_and_tracker_reconciles(self):
         rows = list(csv.DictReader(io.StringIO((OUT / 'Fe_products.csv').read_text())))
         self.assertEqual(len(rows), len(self.feed['products']))

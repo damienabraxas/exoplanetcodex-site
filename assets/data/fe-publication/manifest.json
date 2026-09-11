@@ -1,8 +1,8 @@
 {
   "generator": "scripts/generate_fe_publication.py",
   "version": "1.0.0",
-  "source_commit": "f80a3e17bb77e3ea9d89bb99a731a868e886fa9c",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/f80a3e17bb77e3ea9d89bb99a731a868e886fa9c",
+  "source_commit": "370a66e8de93b5b3453edd56114f2814a0d06bed",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/370a66e8de93b5b3453edd56114f2814a0d06bed",
   "generated_at": "2026-09-11T05:30:36+00:00",
   "feed_version": "1.163",
   "feed_sha256": "0b49055ba5dc5931f126b2dba263c387570e6ba5df1893ef57c1bbde33442b62",
@@ -10,7 +10,7 @@
   "perline_rows": 2676,
   "resolved_products": 71,
   "held_products": 4,
-  "generator_sha256": "d8ac288c6385301164cb7591fdfbe2d82237cacaef80cee949db1f3afc06436f",
+  "generator_sha256": "0f852d85d9e0c675c93893f853f1b157800ec56dcb843ec6c6ff6793b02d6470",
   "supplemental_sources": [
     "data/linelists/canonical_gf.csv",
     "data/linelists/linelist_solar.csv",
