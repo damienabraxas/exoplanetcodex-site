@@ -3237,8 +3237,17 @@ z
     </g>
    </g>
    <g id="text_25">
-    <!-- Solar iron · harps-arm-offset-dark -->
+    <!-- Solar iron · HARPS / Kitt Peak arm comparison -->
     <g style="fill: #63dce6" transform="translate(481.68 32.56) scale(0.13 -0.13)">
+     <defs>
+      <path id="SpaceMono-Regular-259" d="M 1254 -678
+L 800 -538
+L 2669 5158
+L 3117 5018
+L 1254 -678
+z
+" transform="scale(0.015625)"/>
+     </defs>
      <use xlink:href="#SpaceMono-Regular-90"/>
      <use xlink:href="#SpaceMono-Regular-14e" transform="translate(61.203125 0)"/>
      <use xlink:href="#SpaceMono-Regular-139" transform="translate(122.40625 0)"/>
@@ -3252,27 +3261,38 @@ z
      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(612.03125 0)"/>
      <use xlink:href="#SpaceMono-Regular-255" transform="translate(673.234375 0)"/>
      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(734.4375 0)"/>
-     <use xlink:href="#SpaceMono-Regular-11e" transform="translate(795.640625 0)"/>
-     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(856.84375 0)"/>
-     <use xlink:href="#SpaceMono-Regular-16c" transform="translate(918.046875 0)"/>
-     <use xlink:href="#SpaceMono-Regular-169" transform="translate(979.25 0)"/>
-     <use xlink:href="#SpaceMono-Regular-174" transform="translate(1040.453125 0)"/>
-     <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1101.65625 0)"/>
-     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1162.859375 0)"/>
-     <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1224.0625 0)"/>
-     <use xlink:href="#SpaceMono-Regular-141" transform="translate(1285.265625 0)"/>
-     <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1346.46875 0)"/>
-     <use xlink:href="#SpaceMono-Regular-14e" transform="translate(1407.671875 0)"/>
-     <use xlink:href="#SpaceMono-Regular-115" transform="translate(1468.875 0)"/>
-     <use xlink:href="#SpaceMono-Regular-115" transform="translate(1530.078125 0)"/>
-     <use xlink:href="#SpaceMono-Regular-174" transform="translate(1591.28125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-42" transform="translate(795.640625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-1" transform="translate(856.84375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-89" transform="translate(918.046875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-86" transform="translate(979.25 0)"/>
+     <use xlink:href="#SpaceMono-Regular-90" transform="translate(1040.453125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1101.65625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-259" transform="translate(1162.859375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1224.0625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-57" transform="translate(1285.265625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-124" transform="translate(1346.46875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1407.671875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1468.875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1530.078125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-86" transform="translate(1591.28125 0)"/>
      <use xlink:href="#SpaceMono-Regular-101" transform="translate(1652.484375 0)"/>
-     <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1713.6875 0)"/>
-     <use xlink:href="#SpaceMono-Regular-25d" transform="translate(1774.890625 0)"/>
-     <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1836.09375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1713.6875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-135" transform="translate(1774.890625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1836.09375 0)"/>
      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(1897.296875 0)"/>
      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(1958.5 0)"/>
-     <use xlink:href="#SpaceMono-Regular-135" transform="translate(2019.703125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-141" transform="translate(2019.703125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-24a" transform="translate(2080.90625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-f5" transform="translate(2142.109375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-14e" transform="translate(2203.3125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-141" transform="translate(2264.515625 0)"/>
+     <use xlink:href="#SpaceMono-Regular-169" transform="translate(2325.71875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-d8" transform="translate(2386.921875 0)"/>
+     <use xlink:href="#SpaceMono-Regular-16c" transform="translate(2448.125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-124" transform="translate(2509.328125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-174" transform="translate(2570.53125 0)"/>
+     <use xlink:href="#SpaceMono-Regular-14e" transform="translate(2631.734375 0)"/>
+     <use xlink:href="#SpaceMono-Regular-144" transform="translate(2692.9375 0)"/>
     </g>
     <!-- Asplund et al. 2021: 7.46 ± 0.04 -->
     <g style="fill: #63dce6" transform="translate(481.68 51.813) scale(0.13 -0.13)">

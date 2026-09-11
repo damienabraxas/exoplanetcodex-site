@@ -92,7 +92,7 @@ def forest(products, reference, name, social=False):
     if caveats:
         footnote = '* Lower-bound uncertainty; microturbulence term unavailable.' if all('LOWER BOUND' in c for c in caveats) else '* Reported uncertainty is qualified; see source product CSV.'
         fig.text(.02, .01, footnote, color='#b8c8d3', fontsize=8)
-    ax.set_title(f"{'Solar iron · HARPS + CRIRES+' if social else 'Solar iron · ' + name}\n"
+    ax.set_title(f"{'Solar iron · HARPS + CRIRES+' if social else 'Solar iron · HARPS / Kitt Peak arm comparison' if name == 'harps-arm-offset-dark' else 'Solar iron · ' + name}\n"
                  f"Asplund et al. 2021: {ref:.2f} ± {sigma:.2f}", color=CYAN, loc='left', pad=20, fontsize=13)
     for spine in ax.spines.values():
         spine.set_visible(False)
