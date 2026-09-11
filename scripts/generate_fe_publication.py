@@ -223,10 +223,24 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     highlights = []
     for band in BANDS:
         candidates = [p for p in own if p['band']==band and not held(p)]
-        if candidates:
-            p = min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))
+        selected = []
+        if ion == 'I' and band == 'VIS':
+            for holding in ['solar_kpno_molecfit_corrected', 'solar_harps_molecfit_corrected']:
+                matches = [p for p in candidates if p['holding'] == holding
+                           and p['grade'] == 'Reference Grade' and p['selector'] == 'ASPLUND_AGSS21'
+                           and p['route'] == 'SYNTH' and p['treatment'] == 'ENGINE-A-3DNLTE']
+                if len(matches) != 1:
+                    raise ValueError(f'Expected one reference Amarsi VIS product for {holding}')
+                selected.extend(matches)
+        elif candidates:
+            selected = [min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))]
+        for p in selected:
             spectrum = 'uv' if band == 'near-UV' else 'visible' if band in ('VIS', 'red-optical') else 'ir'
-            highlights.append(f'<article class="fe-highlight-{spectrum}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n = {p["n_lines"]}</p></article>')
+            product_label = label(p)
+            if ion == 'I' and band == 'VIS':
+                instrument_label = 'Kitt Peak Molecfit' if p['instrument'] == 'kpno_solar_atlas' else 'HARPS'
+                product_label = f"{instrument_label} · Synth · 3D-NLTE · Amarsi · {p['grade']}"
+            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p></article>')
     body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
