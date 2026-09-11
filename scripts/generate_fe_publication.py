@@ -92,15 +92,15 @@ def forest(products, reference, name, social=False):
     if caveats:
         footnote = '* Lower-bound uncertainty; microturbulence term unavailable.' if all('LOWER BOUND' in c for c in caveats) else '* Reported uncertainty is qualified; see source product CSV.'
         fig.text(.02, .01, footnote, color='#b8c8d3', fontsize=8)
-    ax.set_title(f"{'Solar iron · HARPS + CRIRES+' if social else 'Solar iron · ' + name}\n"
+    ax.set_title(f"{'Solar iron · HARPS + CRIRES+' if social else 'Solar iron · HARPS / Kitt Peak arm comparison' if name == 'harps-arm-offset-dark' else 'Solar iron · ' + name}\n"
                  f"Asplund et al. 2021: {ref:.2f} ± {sigma:.2f}", color=CYAN, loc='left', pad=20, fontsize=13)
     for spine in ax.spines.values():
         spine.set_visible(False)
     ax.grid(axis='x', alpha=.12)
     fig.subplots_adjust(left=.44 if social else .48, right=.81, top=.81 if social else .89, bottom=.17 if social else .13)
     stem = 'fe-social-forest' if social else name
-    fig.savefig(OUT / (stem+'.svg'), facecolor=BG, transparent=not social, metadata={'Date': None}, bbox_inches='tight', pad_inches=.25)
-    if social:
+    fig.savefig(OUT / (stem+'.svg'), facecolor=BG, transparent=False, metadata={'Date': None}, bbox_inches='tight', pad_inches=.25)
+    if social or name == 'harps-arm-offset-dark':
         fig.savefig(OUT / (stem+'.png'), dpi=180, facecolor=BG, bbox_inches='tight', pad_inches=.25)
     plt.close(fig)
 
@@ -186,8 +186,8 @@ def diagnostics(science, products):
     result.append(('Near-UV molecular opacity', 'nearuv-opacity.svg', lever['method'], lever_path))
     # Compare like-for-like live Fe II products by engine, without averaging arms.
     vis = [p for p in products if p['ion']=='II' and p['band']=='VIS']
-    forest(vis, REFERENCE, 'fe2-arm-diagnostic')
-    result.append(('HARPS arm offset', 'fe2-arm-diagnostic.svg',
+    forest(vis, REFERENCE, 'harps-arm-offset-dark')
+    result.append(('HARPS arm offset', 'harps-arm-offset-dark.png',
                    'Current Fe II VIS products, separated by holding and engine. The arm offset persists after the curated CH artifact was removed.',
                    'data/products/solar/Fe.json'))
     h = [p for p in products if p['band']=='H' and p['instrument']=='crires_plus']
@@ -225,8 +225,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         candidates = [p for p in own if p['band']==band and not held(p)]
         if candidates:
             p = min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))
-            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n={p["n_lines"]}</p><small>{esc(p["holding"])} · ξ {esc(p["xi_state"])}<br>{esc(p.get("sigma_reported_caveat") or "")}</small></article>')
-    body += section('Highlighted band products', '<p>Smallest reported uncertainty in each band, excluding held experiments. This selection does not establish physical superiority or a combined abundance.</p><div class="fe-highlights">'+''.join(highlights)+'</div>')
+            highlights.append(f'<article><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(label(p))} · n = {p["n_lines"]}</p></article>')
+    body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
         'node', '-e',
