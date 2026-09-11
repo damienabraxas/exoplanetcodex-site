@@ -32,8 +32,9 @@ plots use `sigma_reported` for total bars and `sigma_stat` for thick inner bars.
 Feed uncertainty caveats are shown with the corresponding products; starred
 bars identify incomplete reported uncertainties rather than implying that a
 missing microturbulence term was measured to be zero.
-Best-constrained band callouts minimize reported uncertainty among non-held
-products. They do not average engines or claim a physically preferred model.
+Fe I VIS highlights explicitly select the Reference Grade Amarsi 3D-NLTE
+Kitt Peak Molecfit and HARPS products. Other band callouts minimize reported
+uncertainty among non-held products. Forest rows display the source grade verbatim. They do not average engines or claim a physically preferred model.
 The five social identities are explicit selectors; their numbers are never
 constants. Ambiguous or absent social identities stop the build.
 

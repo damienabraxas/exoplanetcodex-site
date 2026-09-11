@@ -134,7 +134,7 @@
           group.filter(function(p){return p.holding===holding;}).forEach(function(p){
             var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
             var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(0.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(0.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
-            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(0.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.grade)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(0.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
           });
         });
       });
@@ -206,7 +206,7 @@
             var experimental = p.adoption === 'EXPERIMENTAL-NOT-ADOPTED';
             out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + '"' +
               (experimental ? ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' : '') + '>' +
-              '<span class="forest-label">' + esc(c.row) + (experimental ? ' · Frankenstein (experimental)' : '') + '<small>n=' + esc(p.n_lines) +
+              '<span class="forest-label">' + esc(c.row) + (experimental ? ' · Frankenstein (experimental)' : '') + '<small>' + esc(p.grade) + ' · n=' + esc(p.n_lines) +
               (c.alternates ? ' \u00b7 ' + c.alternates + ' alternate' + (c.alternates > 1 ? 's' : '') : '') +
               '</small></span><span class="track">' + refs +
               '<i class="sysbar" style="left:' + yl + '%;width:' + Math.max(0.4, yw) + '%"></i>' +

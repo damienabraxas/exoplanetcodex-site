@@ -54,6 +54,22 @@ class FePublicationTests(unittest.TestCase):
                 if '/fe-publication/' in src:
                     self.assertIn('?v=', src)
 
+    def test_vis_highlights_are_requested_reference_products(self):
+        page = (ROOT / 'systems/sol/elements/fe/index.html').read_text()
+        ids = re.findall(r'data-highlight-product="Fe-(\d+)"', page)
+        vis = [self.feed['products'][int(i)] for i in ids if self.feed['products'][int(i)]['band'] == 'VIS']
+        self.assertEqual([p['holding'] for p in vis], ['solar_kpno_molecfit_corrected', 'solar_harps_molecfit_corrected'])
+        for p in vis:
+            self.assertEqual(p['grade'], 'Reference Grade')
+            self.assertEqual(p['treatment'], 'ENGINE-A-3DNLTE')
+        grades = {p['grade'] for p in self.feed['products']}
+        for slug in ['fe', 'fe-ii']:
+            page = (ROOT / f'systems/sol/elements/{slug}/index.html').read_text()
+            rows = re.findall(r'<span class="forest-label">.*?<small>(.*?)</small>', page)
+            for row in rows:
+                if row != 'no product':
+                    self.assertIn(html.unescape(row.split(' · n=')[0]), grades)
+
     def test_csv_is_lossless_and_tracker_reconciles(self):
         rows = list(csv.DictReader(io.StringIO((OUT / 'Fe_products.csv').read_text())))
         self.assertEqual(len(rows), len(self.feed['products']))
@@ -68,7 +84,7 @@ class FePublicationTests(unittest.TestCase):
         self.assertEqual(len(actual), len(rows))
         self.assertTrue(set(p['band'] for p in actual) <= set(tracker['bands']))
         for a,b in zip(actual, self.feed['products']):
-            for field in ['A','n_lines','sigma_reported','holding','selector','treatment']:
+            for field in ['A','n_lines','sigma_reported','holding','selector','treatment','grade']:
                 self.assertEqual(a[field], b[field])
 
     def test_line_export_is_honest_about_coverage(self):
