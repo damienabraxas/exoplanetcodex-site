@@ -99,8 +99,8 @@ def forest(products, reference, name, social=False):
     ax.grid(axis='x', alpha=.12)
     fig.subplots_adjust(left=.44 if social else .48, right=.81, top=.81 if social else .89, bottom=.17 if social else .13)
     stem = 'fe-social-forest' if social else name
-    fig.savefig(OUT / (stem+'.svg'), facecolor=BG, transparent=not social, metadata={'Date': None}, bbox_inches='tight', pad_inches=.25)
-    if social:
+    fig.savefig(OUT / (stem+'.svg'), facecolor=BG, transparent=False, metadata={'Date': None}, bbox_inches='tight', pad_inches=.25)
+    if social or name == 'harps-arm-offset-dark':
         fig.savefig(OUT / (stem+'.png'), dpi=180, facecolor=BG, bbox_inches='tight', pad_inches=.25)
     plt.close(fig)
 
@@ -186,8 +186,8 @@ def diagnostics(science, products):
     result.append(('Near-UV molecular opacity', 'nearuv-opacity.svg', lever['method'], lever_path))
     # Compare like-for-like live Fe II products by engine, without averaging arms.
     vis = [p for p in products if p['ion']=='II' and p['band']=='VIS']
-    forest(vis, REFERENCE, 'fe2-arm-diagnostic')
-    result.append(('HARPS arm offset', 'fe2-arm-diagnostic.svg',
+    forest(vis, REFERENCE, 'harps-arm-offset-dark')
+    result.append(('HARPS arm offset', 'harps-arm-offset-dark.png',
                    'Current Fe II VIS products, separated by holding and engine. The arm offset persists after the curated CH artifact was removed.',
                    'data/products/solar/Fe.json'))
     h = [p for p in products if p['band']=='H' and p['instrument']=='crires_plus']
