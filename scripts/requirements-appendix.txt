@@ -1,0 +1,8 @@
+# Install in the existing science Python environment (pandas/numpy/matplotlib).
+reportlab==5.0.1
+beautifulsoup4==4.15.0
+PyMuPDF==1.28.2
+matplotlib==3.11.1
+numpy==2.2.6
+pandas==3.0.3
+pypdf==6.18.1
