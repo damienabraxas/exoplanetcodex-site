@@ -1500,6 +1500,7 @@ window.SOLAR_REPORT = {
     {
       "atomicNumber": 6,
       "symbol": "C",
+      "appendixPath": "/systems/sol/elements/c/",
       "ion": "I",
       "name": "Carbon",
       "status": "pass",
@@ -1517,6 +1518,7 @@ window.SOLAR_REPORT = {
     {
       "atomicNumber": 7,
       "symbol": "N",
+      "appendixPath": "/systems/sol/elements/n/",
       "ion": "I",
       "name": "Nitrogen",
       "status": "curation-owed",
@@ -1534,6 +1536,7 @@ window.SOLAR_REPORT = {
     {
       "atomicNumber": 8,
       "symbol": "O",
+      "appendixPath": "/systems/sol/elements/o/",
       "ion": "I",
       "name": "Oxygen",
       "status": "pass",

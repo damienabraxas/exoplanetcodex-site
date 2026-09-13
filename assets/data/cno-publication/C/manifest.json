@@ -1,0 +1,35 @@
+{
+  "generator": "scripts/generate_cno_publication.py",
+  "version": "1.0.0",
+  "source_commit": "a1ec12a9cc09472037e2af3b1242db2ce5b37c6b",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/a1ec12a9cc09472037e2af3b1242db2ce5b37c6b",
+  "generated_at": "2026-09-12T23:07:15-06:00",
+  "timestamp_basis": "source commit timestamp (deterministic build)",
+  "feed_version": "1.17",
+  "feed_updated_at": "2026-09-13T04:21:45Z",
+  "feed_sha256": "a8e4c55286be31f9752d7ce58d1007faa8893382b3c224643edbf448339de9af",
+  "source_sha256": {
+    "data/products/solar/C.json": "a8e4c55286be31f9752d7ce58d1007faa8893382b3c224643edbf448339de9af",
+    "data/refs/bibliography.csv": "8efa4ef9775aaa2155c709c5f5bd8558a20b73e9a680c0b578a1f4904d078a18",
+    "data/catalog/holdings_manifest_registry.csv": "9438a39b63124e87c83576087da92c6c43f25cf28b94ee92aa5926bcf4f42a8c",
+    "docs/co_indicator_strategy.md": "497ef9d59f404a386723d90ec826ee03863a13cf7d36780d0d1adf49eabf85e8",
+    "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json": "11900b0d8856975da602890b8b95d300e8415c5fb535386a0ba06db2faf04a3b",
+    "data/audit/rya1214_cno_products/agss21_indicator_gf_check.csv": "66528cf2edfd2aa11794c877536bfeb495dfe11d92d3a23f9c6248bf4cf91752"
+  },
+  "generator_sha256": "b4c1aa88569855b5a97eb4dc3b149082362e9e7a239b8f76a1726fd9d3be5e2e",
+  "template_sha256": "64b1eb02f7dd3aad6b69ba10e4aecc74354626cbc3a3969711c08e57ceb1c9e7",
+  "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "pdf_generator_sha256": "b4daae058771c927a8830ff89d39a00b6ab5822f7491f9b3b05ce5920ceb555c",
+  "counts": {
+    "products": 0,
+    "quarantine": 17,
+    "archive": 0,
+    "superseded": 0
+  },
+  "visible_products": 0,
+  "dispositions": {
+    "quarantine": 17
+  },
+  "highlight_selectors": [],
+  "status": "NOT_YET_DEFENSIBLE"
+}
