@@ -103,13 +103,15 @@ class FePublicationTests(unittest.TestCase):
             for key in ['abundance','wavelength_air_A','ep_eV','log_gf','holding','band','treatment','perline_artifact']:
                 self.assertNotIn(r[key], ['', 'nan'])
 
-    def test_manifest_and_social_product_selection(self):
+    def test_manifest_and_no_social_publication(self):
         self.assertEqual(self.manifest['feed_sha256'], hashlib.sha256((OUT/'Fe.json').read_bytes()).hexdigest())
         self.assertEqual(self.manifest['held_products'], sum(p.get('adoption')=='EXPERIMENTAL-NOT-ADOPTED' for p in self.feed['products']))
-        social = list(csv.DictReader(io.StringIO((OUT/'Fe_social_products.csv').read_text())))
-        self.assertLessEqual(len(social),5)
-        self.assertEqual({r['instrument'] for r in social}, {'harps','crires_plus'})
-        self.assertTrue((OUT/'fe-social-forest.png').stat().st_size > 10000)
+        for slug in ['fe', 'fe-ii']:
+            page = (ROOT / f'systems/sol/elements/{slug}/index.html').read_text()
+            self.assertNotIn('fe-social', page)
+        self.assertFalse((OUT/'fe-social-forest.png').exists())
+        self.assertFalse((OUT/'fe-social-forest.svg').exists())
+
 
 
 if __name__ == '__main__':

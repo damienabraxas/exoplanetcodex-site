@@ -213,13 +213,42 @@ def section(title, body):
     return f'<section class="fe-section"><h2>{esc(title)}</h2>{body}</section>'
 
 
-def render_page(ion, products, feed, meta, reference, records, coverage, plots, saturation):
+def appendix_references(science, ion, records, products):
+    bibliography = {r['doi']: r for r in csv.DictReader((science/'data/refs/bibliography.csv').open())}
+    wanted = {
+        '10.1051/0004-6361/202140445': 'AGSS21 Solar reference and the green literature comparison; Table A.2 defines the Reference Grade Fe I line set.',
+        '10.1007/s11214-025-01146-w': 'Table 6 present-day Solar composition, shown as the gold literature comparison.'}
+    if any('3DNLTE' in p['treatment'] for p in products):
+        wanted['10.1051/0004-6361/202244542'] = 'The Amarsi 3D non-LTE iron correction grid used by the displayed products.'
+    if any('Gerber' in p['display'] for p in products):
+        wanted['10.1051/0004-6361/202243673'] = 'The Gerber Turbospectrum non-LTE synthesis implementation named in the model rows.'
+    canonical = read_csv(science/'data/linelists/canonical_gf.csv')
+    canonical = canonical[(canonical.key_z==26) & (canonical.ion==(1 if ion=='I' else 2))]
+    # Cite only laboratory sources whose actual gf matches a resolved exported line.
+    for r in records:
+        if r['ion'] != ion: continue
+        hits = canonical[(abs(canonical.wavelength_air_A-float(r['wavelength_air_A'])) <= .02)
+                         & (abs(canonical.excitation_potential_eV-float(r['ep_eV'])) <= .01)
+                         & (abs(canonical.log_gf-float(r['log_gf'])) <= .001)]
+        for doi in hits.gf_source_doi.dropna():
+            if doi in bibliography:
+                wanted[doi] = f'Laboratory transition probabilities used in the resolved Fe {ion} per-line evidence. Coverage and unresolved products are listed in the downloads.'
+    return [dict(authors=bibliography[doi]['authors'], year=bibliography[doi]['year'],
+                 title=bibliography[doi]['title'], doi=doi, url='https://doi.org/'+doi, role=role)
+            for doi, role in wanted.items()]
+
+
+def render_page(ion, products, feed, meta, reference, records, coverage, plots, saturation, science):
     own = [p for p in products if p['ion'] == ion]
     body = f'<p class="fe-stamp">Fe.json v{esc(feed["version"])} · {len(own)} Fe {ion} products · {len(products)} total</p>'
-    body += f'<p class="fe-anchor">Solar reference anchor A(Fe)☉ = {reference["codex_A_X"]:.3f}</p><p>The retained reference anchor is not a median of the current products. Each measurement below remains a separate instrument, holding, line set and engine result.</p>'
-    if ion == 'II':
-        vis = [p for p in own if p['band']=='VIS']
-        body += f'<p>Ionization-balance diagnostic: current VIS Fe II products span {min(p["A"] for p in vis):.3f}–{max(p["A"] for p in vis):.3f}. A single historical ionization value is not a result of this feed.</p>'
+    anchors = [p for p in products if p['ion']=='I' and p['instrument']=='harps'
+               and p['holding']=='solar_harps_molecfit_corrected' and p['band']=='VIS'
+               and p['grade']=='Reference Grade' and p['selector']=='ASPLUND_AGSS21'
+               and p['treatment']=='ENGINE-A-3DNLTE' and p['route']=='SYNTH']
+    if len(anchors) != 1:
+        raise ValueError('The selected HARPS Fe I reference anchor is missing or ambiguous')
+    anchor = anchors[0]
+    body += f'<p class="fe-anchor">Solar Fe I anchor: {anchor["A"]:.3f} ± {anchor["sigma_reported"]:.3f}</p><p>HARPS · Reference Grade · Amarsi 3D-NLTE · n = {anchor["n_lines"]}. The selected Fe I product anchors this Solar appendix; products and engines are not averaged together.</p>'
     highlights = []
     for band in BANDS:
         candidates = [p for p in own if p['band']==band and not held(p)]
@@ -248,13 +277,34 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         "const fs=require('fs'); const {forest}=require('./assets/js/element-products.js'); "
         "const x=JSON.parse(fs.readFileSync(0,'utf8')); process.stdout.write(forest(x.feed,x.ion,x.reference));"
     ], input=json.dumps({'feed': feed, 'ion': ion, 'reference': reference}), text=True, cwd=ROOT)
-    body += '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Each band is divided into instrument and holding subsections with the same fixed model axis; models without a product remain N/A. Solid bars show statistical uncertainty and wireframe bars show systematic uncertainty. Blue denotes the regular model results. Reddish-orange text, points and bars identify the experimental Frankenstein / Gerber mean-3D engines, which are not adopted results. Green and gold regions show the Asplund and Lodders literature comparisons. Feed caveats and reported total uncertainties are listed in the expandable product values below.</p>'+forest_html+'</section>'
+    guide = '<p class="product-section-intro"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Solid bars show statistical uncertainty from the line measurements; wireframes show systematic uncertainty from the product’s adopted error budget, which does not average away with more lines. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool’s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p>'
+    definitions = {
+        'Reference Grade': 'An externally published reference line pool, using that reference’s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.',
+        'Codex Grade': 'The vetted Codex pool of primary-laboratory oscillator strengths, restricted to lines at or below the adopted feature-depth gate.',
+        'Deep Grade': 'The corresponding laboratory-data pool above that depth gate. These stronger lines extend coverage but require particular care with saturation and blends.'}
+    grades = list(dict.fromkeys(p['grade'] for p in own))
+    if set(grades) - definitions.keys():
+        raise ValueError('A new feed grade needs a sourced explanation')
+    glossary = '<details><summary>Grades and model labels</summary><ul>'+''.join(
+        '<li><strong>'+esc(g)+'.</strong> '+esc(definitions[g])+'</li>' for g in definitions if g in grades)+'</ul>'
+    glossary += '<p><strong>1D-LTE</strong> uses a one-dimensional atmosphere with atomic populations in local thermodynamic equilibrium. <strong>1D-NLTE</strong> allows departures from that equilibrium; the named implementation supplies the correction or synthesis treatment.</p>'
+    if any('3DNLTE' in p['treatment'] for p in own):
+        glossary += '<p><strong>3D-NLTE (Amarsi)</strong> includes three-dimensional atmospheric structure and non-LTE line formation; these products apply the published Amarsi correction grid to a 1D baseline.</p>'
+    if any(held(p) for p in own):
+        glossary += '<p><strong>Mean-3D / Frankenstein</strong> combines a spatially and temporally averaged 3D atmosphere with the Gerber synthesis route. Averaging removes the full 3D fluctuations and velocity field; this experimental hybrid is not a full 3D calculation or an adopted engine.</p>'
+    glossary += '<p><strong>Synthesis</strong> fits the spectral line profile.'
+    if any(p['route'] in ('EW', 'PROFILEFIT') for p in own):
+        glossary += ' <strong>EW</strong> infers abundance from a line’s integrated absorption (equivalent width).'
+    glossary += ' See <a href="/method/">Methodology</a> for the full model, line-selection and uncertainty procedures.</p></details>'
+    body += '<section class="product-section"><h2>Error-bar forest</h2>'+guide+glossary+forest_html+'</section>'
     accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
         f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
         f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
         + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
         + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'
     body += accessible
+    context = ('Fe I supplies the bulk of the neutral-iron line statistics used for the Solar abundance reference. Separate instruments, line pools and treatments test the stability of that reference; their differences remain visible.' if ion == 'I' else 'Fe II traces singly ionized iron and is retained as an ionization and consistency diagnostic alongside Fe I, not an independent headline to average with it. The current resolved pool contains strong, saturation-sensitive lines and documented blend exclusions; the diagnostics below distinguish those limitations from model and holding differences.')
+    body += section('Solar iron context', '<p>'+context+'</p>')
     for title, key in [('Near-UV opacity — report and noted', 'opacity_note'), ('Frankenstein — experimental, pending the Bride', 'adoption_note')]:
         source_products = products if key == 'adoption_note' else own
         notes = list(dict.fromkeys(p[key] for p in source_products if p.get(key)))
@@ -271,17 +321,23 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     body += section('Download the evidence', f'<p>{len(records)} graded per-line measurements exported. Evidence for {len(missing)} graded products is missing or does not reproduce the feed; {gf_missing} exported lines lack an unambiguous gf match. The download is explicitly incomplete until those upstream records are supplied.</p><ul>'+''.join(
         f'<li><a download href="/assets/data/fe-publication/{path}">{label_}</a></li>' for path, label_ in [
             ('Fe_graded_perline.csv','Graded per-line abundances (CSV)'), ('Fe_products.csv','All product fields (CSV; nested fields preserved as JSON)'),
-            ('Fe_perline_coverage.csv','Per-product line-evidence coverage (CSV)'), ('Fe.json','Source Fe.json'),
-            ('fe-social-forest.png','Social forest (PNG)'), ('fe-social-forest.svg','Social forest (SVG)')])+'</ul>')
+            ('Fe_perline_coverage.csv','Per-product line-evidence coverage (CSV)'), ('Fe.json','Source Fe.json')])+'</ul>')
     body += section('Reproducibility', f'<p>Generator {esc(meta["generator"])} v{VERSION}<br>Science source commit <code>{meta["source_commit"]}</code><br>Fe.json v{esc(feed["version"])} · feed timestamp {esc(feed["updated_at"])}<br>Generated {esc(meta["generated_at"])}<br>Feed SHA-256 <code>{meta["feed_sha256"]}</code></p><p><a href="/assets/data/rya935/live_tracker.html">Refreshed product tracker</a> · <a href="/assets/data/fe-publication/manifest.json">Build manifest</a> · <a href="/systems/sol/elements/{"fe-ii" if ion=="I" else "fe"}/">Fe {"II" if ion=="I" else "I"} appendix</a></p>')
-    body += section('References', '<ul>'
-        '<li>Asplund, M., Amarsi, A. M. &amp; Grevesse, N. (2021). '
-        '<a href="https://doi.org/10.1051/0004-6361/202140445">The chemical make-up of the Sun: A 2020 vision</a>. '
-        'Astronomy &amp; Astrophysics, 653, A141. Green forest comparison: A(Fe) = 7.46 ± 0.04.</li>'
-        '<li>Lodders, K., Bergemann, M. &amp; Palme, H. (2025). '
-        '<a href="https://doi.org/10.1007/s11214-025-01146-w">Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites</a>. '
-        'Space Science Reviews, 221, 23, Table 6. Gold forest comparison: present-day solar A(Fe) = 7.49 ± 0.01; this is not the proto-solar value.</li>'
-        '</ul>')
+    references = appendix_references(science, ion, records, own)
+    body += section('References', '<ul>'+''.join(
+        f'<li>{esc(r["authors"])} ({esc(r["year"])}). <a href="{esc(r["url"])}">{esc(r["title"])}</a> (doi: {esc(r["doi"])}). {esc(r["role"])}</li>' for r in references)+'</ul>')
+    pdf_name = f'solar_fe_{ion.lower()}_appendix.pdf'
+    pdf_link = f'<p><a download href="/assets/docs/appendices/{pdf_name}">Download PDF — Solar Fe {ion} appendix</a></p>'
+    # This semantic report is the single rendered body consumed by both exports.
+    from element_appendix_pdf import make_report, render_pdf
+    report = make_report(f'Solar Fe {ion} appendix', 'Sun', 'Fe', ion, body, meta, own)
+    report['references'] = references
+    report['image_background'] = BG
+    report['anchor_product'] = anchor
+    report_path = OUT / f'solar_fe_{ion.lower()}_appendix.report.json'
+    report_path.write_text(json.dumps(report, indent=2)+'\n')
+    render_pdf(report, ROOT / 'assets/docs/appendices' / pdf_name, ROOT)
+    body = body.replace('<section class="fe-section"><h2>Download the evidence</h2>', '<section class="fe-section"><h2>Download the evidence</h2>'+pdf_link)
     page = ROOT / f'systems/sol/elements/{"fe" if ion=="I" else "fe-ii"}/index.html'
     template = page.read_text()
     start, end = template.index('  <main'), template.index('</main>')+len('</main>')
@@ -324,7 +380,7 @@ def main():
     if len(actual) != len(products):
         raise SystemExit('Tracker product count differs from feed')
     global REFERENCE
-    REFERENCE = tracker['reference']['FeI']
+    REFERENCE = dict(tracker['reference']['FeI'], best_external='Asplund, Amarsi & Grevesse 2021')
     plt.rcParams.update({'font.family': 'monospace', 'svg.fonttype': 'path', 'svg.hashsalt': 'fe-publication-v1'})
     font = ROOT / 'assets/fonts/SpaceMono-Regular.ttf'
     if font.exists():
@@ -335,19 +391,6 @@ def main():
     plots, saturation = diagnostics(science, products)
     write_csv('Fe_products.csv', products)
     (OUT / 'Fe.json').write_bytes(raw)
-    social = []
-    for inst, band, route, treatment, tier in [
-            ('harps','VIS','SYNTH','ENGINE-A-3DNLTE','ALL'),
-            ('harps','VIS','SYNTH','ENGINE-A','GRADED'),
-            ('harps','VIS','SYNTH','1D-LTE','GRADED'),
-            ('crires_plus','H','SYNTH','1D-LTE','GRADED'),
-            ('crires_plus','H','SYNTH','ENGINE-B-NLTE','GRADED')]:
-        choices = [p for p in products if (p['instrument'],p['band'],p['route'],p['treatment'],p['tier']) == (inst,band,route,treatment,tier)]
-        if len(choices) != 1:
-            raise SystemExit(f'Social product identity is absent or ambiguous: {choices}')
-        social.extend(choices)
-    forest(social, REFERENCE, 'social', social=True)
-    write_csv('Fe_social_products.csv', social)
     meta = {'generator':'scripts/generate_fe_publication.py', 'version':VERSION,
             'source_commit':source_commit, 'source_url':f'https://github.com/damienabraxas/exoplanetcodex/blob/{source_commit}',
             'generated_at':tracker['generated'], 'feed_version':feed['version'],
@@ -355,13 +398,15 @@ def main():
             'perline_rows':len(records), 'resolved_products':sum(r['resolved'] for r in coverage),
             'held_products':sum(held(p) for p in products),
             'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-            'supplemental_sources':list(dict.fromkeys(['data/linelists/canonical_gf.csv',
+            'pdf_generator':'scripts/element_appendix_pdf.py',
+            'pdf_generator_sha256':hashlib.sha256((ROOT/'scripts/element_appendix_pdf.py').read_bytes()).hexdigest(),
+            'supplemental_sources':list(dict.fromkeys(['data/linelists/canonical_gf.csv', 'data/refs/bibliography.csv', 'docs/catalog/model_registry_notes.md',
                                     'data/linelists/linelist_solar.csv', 'data/reference/solar/CURRENT',
                                     'data/audit/rya515_fe_perline/fe2_blend_census.csv',
                                     'data/results/rya935/live_status.json']+[p[3] for p in plots]))}
     (OUT / 'manifest.json').write_text(json.dumps(meta, indent=2)+'\n')
     for ion in ['I','II']:
-        render_page(ion, products, feed, meta, REFERENCE, records, coverage, plots, saturation)
+        render_page(ion, products, feed, meta, REFERENCE, records, coverage, plots, saturation, science)
     # Matplotlib leaves spaces at the ends of SVG path lines. Keep the generated
     # XML equivalent while avoiding whitespace-only failures in review diffs.
     for svg in OUT.glob('*.svg'):
