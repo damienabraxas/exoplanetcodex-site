@@ -1,0 +1,1069 @@
+{
+  "references": [
+    {
+      "id": "asplund2021",
+      "citation": "Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). The chemical make-up of the Sun: A 2020 vision. A&A 653, A141",
+      "doi": "10.1051/0004-6361/202140445",
+      "url": "https://doi.org/10.1051/0004-6361/202140445",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "asplund2021"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar C atomic/molecular indicator lineage and atmospheric sensitivity; comparison literature, not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "Amarsi2021_Table2",
+      "citation": "Amarsi et al. 2021, A&A 656 A113",
+      "doi": "10.1051/0004-6361/202141384",
+      "url": "https://doi.org/10.1051/0004-6361/202141384",
+      "evidence": [
+        {
+          "path": "data/audit/rya1136_cno_intake/source_bibliography.csv",
+          "record": "Amarsi2021_Table2"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Solar abundance and indicator analyses",
+        "Molecular line data and delivery"
+      ],
+      "roles": [
+        "Solar C atomic/molecular indicator lineage and atmospheric sensitivity; comparison literature, not an adopted Codex abundance.",
+        "CH line-data delivery: CH A-X: Masseron et al. 2014 (MNRAS 442, 1489) / 2022 update. Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md The primary intake identifies Masseron 2014 as A&A 571 A47; the older delivery manifest’s MNRAS locator conflicts with that record.",
+        "C2 line-data delivery: C2 Swan d³Πg–a³Πu (Brooke et al. 2013 / Masseron compilation). Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md"
+      ]
+    },
+    {
+      "id": "nist_asd",
+      "citation": "Kramida, A.; Ralchenko, Yu.; Reader, J.; NIST ASD Team (2024). NIST Atomic Spectra Database (version 5.11/5.12). National Institute of Standards and Technology, Gaithersburg, MD",
+      "doi": "10.18434/T4W30F",
+      "url": "https://doi.org/10.18434/T4W30F",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "nist_asd"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "The recorded C I/II pedigree is the partial NIST MCHF update described by Wiese & Fuhr; evaluated theory is not primary laboratory evidence.",
+        "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join."
+      ]
+    },
+    {
+      "id": "wiese_fuhr2006",
+      "citation": "Wiese, W. L.; Fuhr, J. R. (2006). New Critical Compilations of Atomic Transition Probabilities for Neutral and Singly Ionized Carbon, Nitrogen, and Iron. Proceedings of the NASA Laboratory Astrophysics Workshop (14-16 February 2006, UNLV, Las Vegas)",
+      "doi": "",
+      "url": "https://ntrs.nasa.gov/citations/20060052476",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "wiese_fuhr2006"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "The recorded C I/II pedigree is the partial NIST MCHF update described by Wiese & Fuhr; evaluated theory is not primary laboratory evidence.",
+        "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join."
+      ]
+    },
+    {
+      "id": "Li2021",
+      "citation": "Li, Amarsi, Papoulia, Ekman & Jonsson 2021, MNRAS 502, 3780",
+      "doi": "10.1093/mnras/stab214",
+      "url": "https://doi.org/10.1093/mnras/stab214",
+      "evidence": [
+        {
+          "path": "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json",
+          "record": "Li2021"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "AGSS21 names Li et al. for its C I gf lineage. This reference calculation is distinct from the campaign’s NIST/MCHF adjudication; no gf source is substituted here."
+      ]
+    },
+    {
+      "id": "amarsi2019",
+      "citation": "Amarsi, A. M.; Nissen, P. E.; Skuladottir, A. (2019). Carbon, oxygen, and iron abundances in disk and halo stars. A&A 630, A104",
+      "doi": "10.1051/0004-6361/201936265",
+      "url": "https://doi.org/10.1051/0004-6361/201936265",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "amarsi2019"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Registered C I line/grid lineage: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — line-by-line 3D-NLTE / 1D-NLTE grids (CDS J/A+A/630/A104). The current feed treatment remains authoritative; a grid reference does not imply a correction was applied."
+      ]
+    },
+    {
+      "id": "gerber2023",
+      "citation": "Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). Non-LTE radiative transfer with Turbospectrum. A&A 669, A43",
+      "doi": "10.1051/0004-6361/202243673",
+      "url": "https://doi.org/10.1051/0004-6361/202243673",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "gerber2023"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Model and grid sources",
+        "Molecular line data and delivery"
+      ],
+      "roles": [
+        "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+        "CH line-data delivery: CH A-X: Masseron et al. 2014 (MNRAS 442, 1489) / 2022 update. Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md The primary intake identifies Masseron 2014 as A&A 571 A47; the older delivery manifest’s MNRAS locator conflicts with that record.",
+        "C2 line-data delivery: C2 Swan d³Πg–a³Πu (Brooke et al. 2013 / Masseron compilation). Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md"
+      ]
+    },
+    {
+      "id": "Masseron2014_CH",
+      "citation": "Masseron et al. 2014, A&A 571 A47",
+      "doi": "10.1051/0004-6361/201423956",
+      "url": "https://doi.org/10.1051/0004-6361/201423956",
+      "evidence": [
+        {
+          "path": "data/audit/rya1136_cno_intake/source_bibliography.csv",
+          "record": "Masseron2014_CH"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Molecular line data and delivery"
+      ],
+      "roles": [
+        "CH line-data delivery: CH A-X: Masseron et al. 2014 (MNRAS 442, 1489) / 2022 update. Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md The primary intake identifies Masseron 2014 as A&A 571 A47; the older delivery manifest’s MNRAS locator conflicts with that record."
+      ]
+    },
+    {
+      "id": "Brooke2013_C2",
+      "citation": "Brooke et al. 2013, JQSRT 124, 11",
+      "doi": "10.1016/j.jqsrt.2013.02.025",
+      "url": "https://doi.org/10.1016/j.jqsrt.2013.02.025",
+      "evidence": [
+        {
+          "path": "data/audit/rya1136_cno_intake/source_bibliography.csv",
+          "record": "Brooke2013_C2"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Molecular line data and delivery"
+      ],
+      "roles": [
+        "C2 line-data delivery: C2 Swan d³Πg–a³Πu (Brooke et al. 2013 / Masseron compilation). Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md"
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "subject": "element-context",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "asplund2021",
+        "Amarsi2021_Table2"
+      ],
+      "claim": "Solar C atomic/molecular indicator lineage and atmospheric sensitivity; comparison literature, not an adopted Codex abundance.",
+      "evidence": [
+        "data/audit/rya1136_cno_intake/source_bibliography.csv",
+        "docs/co_indicator_strategy.md"
+      ]
+    },
+    {
+      "subject": "atomic-pedigree",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "The recorded C I/II pedigree is the partial NIST MCHF update described by Wiese & Fuhr; evaluated theory is not primary laboratory evidence.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "reference-carbon-gf",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "Li2021"
+      ],
+      "claim": "AGSS21 names Li et al. for its C I gf lineage. This reference calculation is distinct from the campaign’s NIST/MCHF adjudication; no gf source is substituted here.",
+      "evidence": [
+        "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json",
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "registered-model-lineage",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019"
+      ],
+      "claim": "Registered C I line/grid lineage: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — line-by-line 3D-NLTE / 1D-NLTE grids (CDS J/A+A/630/A104). The current feed treatment remains authoritative; a grid reference does not imply a correction was applied.",
+      "evidence": [
+        "data/curation/threednlte_availability.csv",
+        "data/nlte_grids/amarsi2019_cno/provenance.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-d336fe3e3260",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-d336fe3e3260",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-41dc4d995d0a",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-41dc4d995d0a",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-d7f7f2d3feb3",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-d7f7f2d3feb3",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-639e603cf7be",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-639e603cf7be",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-2aa4ddfc06a1",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-2aa4ddfc06a1",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-9b3b9069e4e7",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-9b3b9069e4e7",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-3bc9c9cad7eb",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-3bc9c9cad7eb",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-355831cbb1ba",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-355831cbb1ba",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-4fbb94c006f5",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-4fbb94c006f5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-fcfcfcb6a7f1",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-fcfcfcb6a7f1",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-7dc0d38da697",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-7dc0d38da697",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-cfe54788e705",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-cfe54788e705",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-f3b6b9c248bd",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-f3b6b9c248bd",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "C-quarantine-a9c721228e27",
+      "layer": "Molecular line data and delivery",
+      "reference_ids": [
+        "Amarsi2021_Table2",
+        "gerber2023",
+        "Masseron2014_CH"
+      ],
+      "claim": "CH line-data delivery: CH A-X: Masseron et al. 2014 (MNRAS 442, 1489) / 2022 update. Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md The primary intake identifies Masseron 2014 as A&A 571 A47; the older delivery manifest’s MNRAS locator conflicts with that record.",
+      "evidence": [
+        "data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json",
+        "data/audit/rya1136_cno_intake/source_bibliography.csv"
+      ]
+    },
+    {
+      "subject": "C-quarantine-a9c721228e27",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "data/audit/cno_synthesis/solar_vis_cno_provenance.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-886af3241708",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-886af3241708",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "data/audit/cno_synthesis/solar_vis_cno_provenance.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-801532fb2d97",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006"
+      ],
+      "claim": "Atomic C I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-801532fb2d97",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "data/audit/cno_synthesis/solar_vis_cno_provenance.json"
+      ]
+    },
+    {
+      "subject": "C-quarantine-1c1b6ac111e3",
+      "layer": "Molecular line data and delivery",
+      "reference_ids": [
+        "Amarsi2021_Table2",
+        "gerber2023",
+        "Brooke2013_C2"
+      ],
+      "claim": "C2 line-data delivery: C2 Swan d³Πg–a³Πu (Brooke et al. 2013 / Masseron compilation). Masseron compilation, VALD-based, distributed with iSpec/Turbospectrum (Gerber et al. 2023, A&A 669, A43; uploaded 2022 to keeper.mpdl.mpg.de, split per wavelength region) — see molecules-dir README.md",
+      "evidence": [
+        "data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json",
+        "data/audit/rya1136_cno_intake/source_bibliography.csv"
+      ]
+    },
+    {
+      "subject": "C-quarantine-1c1b6ac111e3",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "data/audit/cno_synthesis/solar_vis_cno_provenance.json"
+      ]
+    }
+  ],
+  "product_sources": [
+    {
+      "publication_id": "C-quarantine-d336fe3e3260",
+      "source_bucket": "quarantine",
+      "source_index": 0,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-41dc4d995d0a",
+      "source_bucket": "quarantine",
+      "source_index": 1,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-d7f7f2d3feb3",
+      "source_bucket": "quarantine",
+      "source_index": 2,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-639e603cf7be",
+      "source_bucket": "quarantine",
+      "source_index": 3,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-2aa4ddfc06a1",
+      "source_bucket": "quarantine",
+      "source_index": 4,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-9b3b9069e4e7",
+      "source_bucket": "quarantine",
+      "source_index": 5,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-3bc9c9cad7eb",
+      "source_bucket": "quarantine",
+      "source_index": 6,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-355831cbb1ba",
+      "source_bucket": "quarantine",
+      "source_index": 7,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-4fbb94c006f5",
+      "source_bucket": "quarantine",
+      "source_index": 8,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-fcfcfcb6a7f1",
+      "source_bucket": "quarantine",
+      "source_index": 9,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-7dc0d38da697",
+      "source_bucket": "quarantine",
+      "source_index": 10,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-cfe54788e705",
+      "source_bucket": "quarantine",
+      "source_index": 11,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-f3b6b9c248bd",
+      "source_bucket": "quarantine",
+      "source_index": 12,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-a9c721228e27",
+      "source_bucket": "quarantine",
+      "source_index": 13,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "MOL-CH_Gband",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "Amarsi2021_Table2",
+        "gerber2023",
+        "Masseron2014_CH"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-886af3241708",
+      "source_bucket": "quarantine",
+      "source_index": 14,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "ATOM-CI_5052",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-801532fb2d97",
+      "source_bucket": "quarantine",
+      "source_index": 15,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "ATOM-CI_5380",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "C-quarantine-1c1b6ac111e3",
+      "source_bucket": "quarantine",
+      "source_index": 16,
+      "identity": {
+        "element": "C",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "MOL-C2_Swan",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "Amarsi2021_Table2",
+        "gerber2023",
+        "Brooke2013_C2"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    }
+  ],
+  "source_paths": [
+    "data/audit/cno_synthesis/solar_vis_cno_provenance.json",
+    "data/audit/rya1136_cno_intake/source_bibliography.csv",
+    "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json",
+    "data/curation/threednlte_availability.csv",
+    "data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json",
+    "data/nlte_grids/amarsi2019_cno/provenance.json",
+    "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json",
+    "data/refs/bibliography.csv",
+    "docs/co_indicator_strategy.md",
+    "pipeline/band_products.py"
+  ],
+  "policy": "Current product identity and committed provenance select sources. Registered models, comparison anchors and quarantined diagnostics are not adopted results."
+}

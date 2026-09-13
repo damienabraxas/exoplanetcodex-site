@@ -17,6 +17,7 @@ import re
 import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
+from cno_references import reconcile, render_references, SUPPLEMENT
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
@@ -174,17 +175,13 @@ def source_evidence(science, element):
         notes.append(pedigree['oi_777_decision'])
     if element == 'N': notes.append(pedigree['n_i_caveat'])
     notes = list(dict.fromkeys(notes))
-    with (science/paths[0]).open() as f:
-        bib = {r['doi']:r for r in csv.DictReader(f)}
-    r = bib['10.1051/0004-6361/202140445']
-    refs = [dict(authors=r['authors'], year=r['year'], title=r['title'], doi=r['doi'],
-                 url='https://doi.org/'+r['doi'], role='Solar atomic and molecular indicator context; no literature abundance is adopted here.')]
-    return paths, notes, refs
+    return paths, notes
+
 
 
 def build(science, element, selectors, site=ROOT):
     feed_path = f'data/products/solar/{element}.json'
-    paths, notes, refs = source_evidence(science, element)
+    paths, notes = source_evidence(science, element)
     paths = [feed_path] + paths
     dirty = subprocess.check_output(['git','-C',str(science),'status','--porcelain','--',*paths],text=True)
     if dirty: raise ValueError('Science inputs differ from committed provenance: '+dirty)
@@ -196,6 +193,11 @@ def build(science, element, selectors, site=ROOT):
         telluric = {r['holding_id']:r['telluric_applied'] for r in csv.DictReader(f)}
     products, audit = audit_feed(feed, telluric)
     highlights = select_highlights(products, selectors)
+    reference_bundle = reconcile(science, element, feed, audit)
+    refs = reference_bundle["references"]
+    paths = list(dict.fromkeys(paths + reference_bundle["source_paths"]))
+    dirty = subprocess.check_output(["git", "-C", str(science), "status", "--porcelain", "--", *paths], text=True)
+    if dirty: raise ValueError("Reference inputs differ from committed provenance: " + dirty)
     status = 'products' if any(p.get('adoption') != 'EXPERIMENTAL-NOT-ADOPTED' for p in products) else 'NOT_YET_DEFENSIBLE'
     base = f'https://github.com/damienabraxas/exoplanetcodex/blob/{commit}'
     meta = dict(generator='scripts/generate_cno_publication.py', version='1.0.0', source_commit=commit,
@@ -204,6 +206,9 @@ def build(science, element, selectors, site=ROOT):
                 feed_sha256=digest((science/feed_path).read_bytes()),
                 source_sha256={p:digest((science/p).read_bytes()) for p in paths},
                 generator_sha256=digest(Path(__file__).read_bytes()),
+                reference_resolver_sha256=digest((ROOT/'scripts/cno_references.py').read_bytes()),
+                reference_supplement_sha256=digest(SUPPLEMENT.read_bytes()),
+                reference_count=len(refs),
                 template_sha256=digest((ROOT/'systems/sol/elements/fe/index.html').read_bytes()),
                 highlight_selectors_sha256=digest(json.dumps(selectors,sort_keys=True).encode()),
                 pdf_generator_sha256=digest((ROOT/'scripts/element_appendix_pdf.py').read_bytes()),
@@ -232,15 +237,16 @@ def build(science, element, selectors, site=ROOT):
                     +''.join(f'<li data-audit-id="{r["publication_id"]}"><strong>{esc(r["disposition"])}</strong> · '+esc(' · '.join(str(v) for v in r['identity'].values() if v is not None))+f'<br>{esc(r["omission_reason"])}</li>' for r in omitted)+'</ul></details>')
     pdf = f'solar_{element.lower()}_appendix.pdf'
     body += section('Download the evidence',f'<p><a download href="/assets/docs/appendices/{pdf}">Download PDF — Solar {element} appendix</a></p><ul>'
-                    +''.join(f'<li><a download href="/{OUT}/{element}/{name}">{esc(label)}</a></li>' for name,label in [(element+'.json','Source feed — includes quarantined fit outputs, not adopted abundances'),('visibility.json','Complete product visibility audit'),('report.json','Shared website/PDF report'),('manifest.json','Reproducibility manifest')])+'</ul>')
+                    +''.join(f'<li><a download href="/{OUT}/{element}/{name}">{esc(label)}</a></li>' for name,label in [(element+'.json','Source feed — includes quarantined fit outputs, not adopted abundances'),('visibility.json','Complete product visibility audit'),('report.json','Shared website/PDF report'),('manifest.json','Reproducibility manifest'),('references.json','Complete references and product-to-source bindings')])+'</ul>')
     body += section('Reproducibility',f'<p>Generated from the pinned CNO campaign snapshot. Source commit <code>{commit}</code><br>Feed {element}.json v{esc(feed["version"])} · updated {esc(feed["updated_at"])}<br>Generated {esc(stamp)} (source commit timestamp)<br>Feed SHA-256 <code>{meta["feed_sha256"]}</code><br>Generator {meta["generator"]} v{meta["version"]}</p><p><a href="{base}/{feed_path}">Pinned scientific source</a></p>')
-    body += section('References', '<ul>'+''.join(f'<li>{esc(r["authors"])} ({esc(r["year"])}). <a href="{esc(r["url"])}">{esc(r["title"])}</a>. {esc(r["role"])}</li>' for r in refs)+'</ul>')
+    body += section('References / Data & Model Sources', render_references(reference_bundle, base))
     report = make_report('Solar '+element+' appendix','Sun',element,'',body,meta,products)
-    report.update(references=refs, visibility_audit=audit, highlighted_products=highlights)
+    report['site_url'] = f'https://exoplanetcodex.org/systems/sol/elements/{element.lower()}/'
+    report.update(references=refs, reference_bindings=reference_bundle["bindings"], product_sources=reference_bundle["product_sources"], visibility_audit=audit, highlighted_products=highlights)
     dest = site/OUT/element
     dest.mkdir(parents=True,exist_ok=True)
     (dest/(element+'.json')).write_bytes((science/feed_path).read_bytes())
-    for name,obj in [('manifest.json',meta),('visibility.json',audit),('report.json',report)]:
+    for name,obj in [('manifest.json',meta),('visibility.json',audit),('report.json',report),('references.json',reference_bundle)]:
         (dest/name).write_text(json.dumps(obj,indent=2,ensure_ascii=False,allow_nan=False)+'\n')
     render_pdf(report,site/'assets/docs/appendices'/pdf,site)
     template = (ROOT/'systems/sol/elements/fe/index.html').read_text()

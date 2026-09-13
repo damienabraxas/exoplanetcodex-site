@@ -138,4 +138,66 @@ class GeneratedTests(unittest.TestCase):
         self.assertIn('DISAGREES',oxygen['body_html'])
         self.assertIn('OPEN. Tachiev',oxygen['body_html'])
 
+class ReferenceTests(unittest.TestCase):
+    def test_element_specific_layers_and_complete_product_bindings(self):
+        expected={
+            'C': {'Amarsi2021_Table2','Masseron2014_CH','Brooke2013_C2','Li2021','amarsi2019'},
+            'N': {'Amarsi2021_Table2','Brooke2014_CN','sneden2014_cn','TachievFroeseFischer2002','Amarsi2020_N','solar_3d_N','N_grid_deposit'},
+            'O': {'Amarsi2021_Table2','wfd1996','TachievFroeseFischer2002','amarsi2019','solar_3d_O','johansson2003','storey_zeippen2000','caffau2015_6300'}}
+        for e in 'CNO':
+            bundle=json.loads((ROOT/OUT/e/'references.json').read_text())
+            report=json.loads((ROOT/OUT/e/'report.json').read_text())
+            refs={r['id']:r for r in bundle['references']}
+            self.assertTrue(expected[e] <= refs.keys())
+            self.assertEqual(report['references'],bundle['references'])
+            self.assertEqual(len(bundle['product_sources']),len(report['visibility_audit']))
+            page=BeautifulSoup(report['body_html'],'html.parser')
+            for p in bundle['product_sources']:
+                self.assertTrue(set(p['reference_ids']) <= refs.keys())
+                self.assertTrue(p['identity']['holding'])
+                self.assertIn(p['publication_id'],page.get_text())
+            for ref in refs.values():
+                self.assertTrue(ref['layers'])
+                self.assertTrue(ref['roles'])
+                self.assertTrue(ref['evidence'])
+                self.assertTrue(page.select_one('#ref-'+ref['id']))
+                for evidence in ref['evidence']:
+                    self.assertIn(evidence['path'],report['metadata']['source_sha256'])
+            for link in page.select('a[href^="#ref-"]'):
+                self.assertIsNotNone(page.select_one(link['href']))
+
+    def test_no_reference_promotion_or_cross_element_padding(self):
+        bundles={e:json.loads((ROOT/OUT/e/'references.json').read_text()) for e in 'CNO'}
+        for e,b in bundles.items():
+            ids={r['id'] for r in b['references']}
+            self.assertFalse({'melendez2009','bergemann2012','caffau2011'} & ids)
+            for p in b['product_sources']:
+                self.assertEqual(p['source_bucket'],'quarantine')
+                if p['identity']['treatment']=='1D-LTE':
+                    self.assertIn('no NLTE/3D correction is claimed',p['model_note'])
+        nitrogen=' '.join(x['claim'] for x in bundles['N']['bindings'])
+        self.assertIn('not independent confirmation',nitrogen)
+        self.assertIn('generic Bergemann label',nitrogen)
+        self.assertIn('Amarsi/PySME',nitrogen)
+        oxygen=' '.join(x['claim'] for x in bundles['O']['bindings'])
+        self.assertIn('Tachiev NOT adopted',oxygen)
+        self.assertIn('OPEN',oxygen)
+        carbon=' '.join(x['claim'] for x in bundles['C']['bindings'])
+        self.assertIn('older delivery manifest',carbon)
+
+    def test_pdf_includes_all_bibliography_records_and_role_notes(self):
+        for e in 'CNO':
+            bundle=json.loads((ROOT/OUT/e/'references.json').read_text())
+            doc=pymupdf.open(ROOT/f'assets/docs/appendices/solar_{e.lower()}_appendix.pdf')
+            text=' '.join(' '.join(p.get_text().split()) for p in doc)
+            for ref in bundle['references']:
+                self.assertIn(ref['citation'].split(',')[0].split(';')[0],text)
+                if ref['doi']: self.assertIn(ref['doi'],text)
+            links=[l.get('uri','') for page in doc for l in page.get_links()]
+            self.assertTrue(any(f'/systems/sol/elements/{e.lower()}/#ref-' in u for u in links))
+            self.assertFalse(any('exoplanetcodex.org/#ref-' in u for u in links))
+            self.assertIn('Product-to-source index',text)
+            self.assertIn('Complete applicable bibliography',text)
+            self.assertIn('NOT_YET_DEFENSIBLE',text)
+
 if __name__=='__main__': unittest.main()
