@@ -1,0 +1,243 @@
+[
+  {
+    "publication_id": "N-quarantine-92f4078d16e7",
+    "source_bucket": "quarantine",
+    "source_index": 0,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-AGSS21_ENGINE-A",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-b6f3d1679545",
+    "source_bucket": "quarantine",
+    "source_index": 1,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-e3c293991e58",
+    "source_bucket": "quarantine",
+    "source_index": 2,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21_ENGINE-A",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-08261af2d8eb",
+    "source_bucket": "quarantine",
+    "source_index": 3,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-e61a07d3c5f5",
+    "source_bucket": "quarantine",
+    "source_index": 4,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21_ENGINE-A",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-dd0e12b67a86",
+    "source_bucket": "quarantine",
+    "source_index": 5,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-8cbfc9992ddc",
+    "source_bucket": "quarantine",
+    "source_index": 6,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "MOL-CN_red",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "STAT_BASIS_MISMATCH",
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [STAT_BASIS_MISMATCH] sigma_stat here is a 'curvature_sigma' (SYNTH route, band_products.py:506) while the rest of the feed publishes a 'standard_error' (error_budget.py:609). The feed carries no stat_basis field, so `A +/- sigma_stat` renders as comparable when it is not -- this product's bar reads ~sqrt(n) times worse than it is. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-8766bede3cad",
+    "source_bucket": "quarantine",
+    "source_index": 7,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-659e8305561b",
+    "source_bucket": "quarantine",
+    "source_index": 8,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  },
+  {
+    "publication_id": "N-quarantine-8c7f96d180bf",
+    "source_bucket": "quarantine",
+    "source_index": 9,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "NOT_YET_DEFENSIBLE"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] N I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+  }
+]

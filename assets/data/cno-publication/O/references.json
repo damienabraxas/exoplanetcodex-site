@@ -1,0 +1,673 @@
+{
+  "references": [
+    {
+      "id": "asplund2021",
+      "citation": "Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). The chemical make-up of the Sun: A 2020 vision. A&A 653, A141",
+      "doi": "10.1051/0004-6361/202140445",
+      "url": "https://doi.org/10.1051/0004-6361/202140445",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "asplund2021"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar O atomic/molecular indicator lineage and atmospheric sensitivity; comparison literature, not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "Amarsi2021_Table2",
+      "citation": "Amarsi et al. 2021, A&A 656 A113",
+      "doi": "10.1051/0004-6361/202141384",
+      "url": "https://doi.org/10.1051/0004-6361/202141384",
+      "evidence": [
+        {
+          "path": "data/audit/rya1136_cno_intake/source_bibliography.csv",
+          "record": "Amarsi2021_Table2"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar O atomic/molecular indicator lineage and atmospheric sensitivity; comparison literature, not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "nist_asd",
+      "citation": "Kramida, A.; Ralchenko, Yu.; Reader, J.; NIST ASD Team (2024). NIST Atomic Spectra Database (version 5.11/5.12). National Institute of Standards and Technology, Gaithersburg, MD",
+      "doi": "10.18434/T4W30F",
+      "url": "https://doi.org/10.18434/T4W30F",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "nist_asd"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "The recorded O I/O II base pedigree is Wiese–Fuhr–Deters / Opacity Project theory. Per-transition exceptions and the open O I source decisions remain explicit.",
+        "O I triplet source record: NIST (this script) — Tachiev NOT adopted; OPEN — referred to Ryan (RYA-1214 EOS)",
+        "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join."
+      ]
+    },
+    {
+      "id": "wiese_fuhr2006",
+      "citation": "Wiese, W. L.; Fuhr, J. R. (2006). New Critical Compilations of Atomic Transition Probabilities for Neutral and Singly Ionized Carbon, Nitrogen, and Iron. Proceedings of the NASA Laboratory Astrophysics Workshop (14-16 February 2006, UNLV, Las Vegas)",
+      "doi": "",
+      "url": "https://ntrs.nasa.gov/citations/20060052476",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "wiese_fuhr2006"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "The recorded O I/O II base pedigree is Wiese–Fuhr–Deters / Opacity Project theory. Per-transition exceptions and the open O I source decisions remain explicit.",
+        "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join."
+      ]
+    },
+    {
+      "id": "wfd1996",
+      "citation": "Wiese, W. L.; Fuhr, J. R.; Deters, T. M. (1996). Atomic Transition Probabilities of Carbon, Nitrogen, and Oxygen: A Critical Data Compilation. JPCRD Monograph 7.",
+      "doi": "",
+      "url": "https://srd.nist.gov/JPCRD/jpcrdM7.pdf",
+      "evidence": [
+        {
+          "path": "pipeline/cno_gf_pedigree.py",
+          "record": "WFD1996_MONOGRAPH7_OPACITY_PROJECT"
+        }
+      ],
+      "metadata_source": "https://www.nist.gov/publications/atomic-transition-probabilities-carbon-nitrogen-and-oxygen",
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "The recorded O I/O II base pedigree is Wiese–Fuhr–Deters / Opacity Project theory. Per-transition exceptions and the open O I source decisions remain explicit.",
+        "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join."
+      ]
+    },
+    {
+      "id": "TachievFroeseFischer2002",
+      "citation": "Tachiev & Froese Fischer 2002, A&A 385, 716",
+      "doi": "10.1051/0004-6361:20011816",
+      "url": "https://doi.org/10.1051/0004-6361:20011816",
+      "evidence": [
+        {
+          "path": "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json",
+          "record": "TachievFroeseFischer2002"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "O I triplet source record: NIST (this script) — Tachiev NOT adopted; OPEN — referred to Ryan (RYA-1214 EOS)"
+      ]
+    },
+    {
+      "id": "amarsi2019",
+      "citation": "Amarsi, A. M.; Nissen, P. E.; Skuladottir, A. (2019). Carbon, oxygen, and iron abundances in disk and halo stars. A&A 630, A104",
+      "doi": "10.1051/0004-6361/201936265",
+      "url": "https://doi.org/10.1051/0004-6361/201936265",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "amarsi2019"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Registered O I line/grid lineage: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — line-by-line 3D-NLTE grids built on the Amarsi+2018 O I model atom. The current feed treatment remains authoritative; a grid reference does not imply a correction was applied."
+      ]
+    },
+    {
+      "id": "solar_3d_O",
+      "citation": "Amarsi, Barklem, Asplund, Collet & Zatsarinny 2018, A&A 616, A89",
+      "doi": "10.1051/0004-6361/201832770",
+      "url": "https://doi.org/10.1051/0004-6361/201832770",
+      "evidence": [
+        {
+          "path": "data/curation/threednlte_availability.csv",
+          "record": "O"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Registered O I line/grid lineage: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — line-by-line 3D-NLTE grids built on the Amarsi+2018 O I model atom. The current feed treatment remains authoritative; a grid reference does not imply a correction was applied."
+      ]
+    },
+    {
+      "id": "gerber2023",
+      "citation": "Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). Non-LTE radiative transfer with Turbospectrum. A&A 669, A43",
+      "doi": "10.1051/0004-6361/202243673",
+      "url": "https://doi.org/10.1051/0004-6361/202243673",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "gerber2023"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation."
+      ]
+    },
+    {
+      "id": "johansson2003",
+      "citation": "Johansson, S.; Litzen, U.; Lundberg, H.; Zhang, Z. (2003). Experimental f-Value and Isotopic Structure for the Ni I Line Blended with [O I] at 6300 A. ApJ 584, L107",
+      "doi": "10.1086/374037",
+      "url": "https://doi.org/10.1086/374037",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "johansson2003"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Special diagnostics"
+      ],
+      "roles": [
+        "The synthesis sidecar names Johansson’s Ni I blend data, Storey & Zeippen’s forbidden-line gf lineage and Caffau’s CO5BOLD comparison anchor. The feed entry remains 1D-LTE and quarantined; the sidecar’s cited anchor is not promoted to a measured abundance."
+      ]
+    },
+    {
+      "id": "storey_zeippen2000",
+      "citation": "Storey, P. J.; Zeippen, C. J. (2000). Theoretical values for the [O III] 5007/4959 line-intensity ratio and homologous cases. MNRAS 312, 813",
+      "doi": "10.1046/j.1365-8711.2000.03184.x",
+      "url": "https://doi.org/10.1046/j.1365-8711.2000.03184.x",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "storey_zeippen2000"
+        }
+      ],
+      "metadata_source": null,
+      "layers": [
+        "Special diagnostics"
+      ],
+      "roles": [
+        "The synthesis sidecar names Johansson’s Ni I blend data, Storey & Zeippen’s forbidden-line gf lineage and Caffau’s CO5BOLD comparison anchor. The feed entry remains 1D-LTE and quarantined; the sidecar’s cited anchor is not promoted to a measured abundance."
+      ]
+    },
+    {
+      "id": "caffau2015_6300",
+      "citation": "Caffau, E.; Ludwig, H.-G.; Steffen, M.; Livingston, W.; Bonifacio, P.; Malherbe, J.-M.; Doerr, H.-P.; Schmidt, W. (2015). The photospheric solar oxygen project. III. Investigation of the centre-to-limb variation of the 630 nm [O I]–Ni I blend. A&A 579, A88.",
+      "doi": "",
+      "url": "https://arxiv.org/abs/1506.00931",
+      "evidence": [
+        {
+          "path": "data/audit/cno_synthesis/solar_vis_cno_provenance.json",
+          "record": "Caffau et al. 2015, A&A 579 A88"
+        }
+      ],
+      "metadata_source": "https://arxiv.org/abs/1506.00931",
+      "layers": [
+        "Special diagnostics"
+      ],
+      "roles": [
+        "The synthesis sidecar names Johansson’s Ni I blend data, Storey & Zeippen’s forbidden-line gf lineage and Caffau’s CO5BOLD comparison anchor. The feed entry remains 1D-LTE and quarantined; the sidecar’s cited anchor is not promoted to a measured abundance."
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "subject": "element-context",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "asplund2021",
+        "Amarsi2021_Table2"
+      ],
+      "claim": "Solar O atomic/molecular indicator lineage and atmospheric sensitivity; comparison literature, not an adopted Codex abundance.",
+      "evidence": [
+        "data/audit/rya1136_cno_intake/source_bibliography.csv",
+        "docs/co_indicator_strategy.md"
+      ]
+    },
+    {
+      "subject": "atomic-pedigree",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "The recorded O I/O II base pedigree is Wiese–Fuhr–Deters / Opacity Project theory. Per-transition exceptions and the open O I source decisions remain explicit.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "oxygen-777-source-decision",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "O I triplet source record: NIST (this script) — Tachiev NOT adopted; OPEN — referred to Ryan (RYA-1214 EOS)",
+      "evidence": [
+        "data/audit/rya1214_cno_products/oi_tachiev_vs_nist.csv",
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "registered-model-lineage",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered O I line/grid lineage: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — line-by-line 3D-NLTE grids built on the Amarsi+2018 O I model atom. The current feed treatment remains authoritative; a grid reference does not imply a correction was applied.",
+      "evidence": [
+        "data/curation/threednlte_availability.csv",
+        "data/nlte_grids/amarsi2019_cno/provenance.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-361df42bd1f9",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-361df42bd1f9",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-quarantine-945c945b31da",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-945c945b31da",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-quarantine-e2dedb7ba833",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-e2dedb7ba833",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-quarantine-eadb1d33ffa2",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-eadb1d33ffa2",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-quarantine-da700d54e88d",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-da700d54e88d",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-quarantine-255dd9842275",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-255dd9842275",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-quarantine-a69ed2a177ae",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-a69ed2a177ae",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "data/audit/cno_synthesis/solar_vis_cno_provenance.json"
+      ]
+    },
+    {
+      "subject": "O-quarantine-a69ed2a177ae",
+      "layer": "Special diagnostics",
+      "reference_ids": [
+        "johansson2003",
+        "storey_zeippen2000",
+        "caffau2015_6300"
+      ],
+      "claim": "The synthesis sidecar names Johansson’s Ni I blend data, Storey & Zeippen’s forbidden-line gf lineage and Caffau’s CO5BOLD comparison anchor. The feed entry remains 1D-LTE and quarantined; the sidecar’s cited anchor is not promoted to a measured abundance.",
+      "evidence": [
+        "data/audit/cno_synthesis/solar_vis_cno_provenance.json"
+      ]
+    }
+  ],
+  "product_sources": [
+    {
+      "publication_id": "O-quarantine-361df42bd1f9",
+      "source_bucket": "quarantine",
+      "source_index": 0,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-quarantine-945c945b31da",
+      "source_bucket": "quarantine",
+      "source_index": 1,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-quarantine-e2dedb7ba833",
+      "source_bucket": "quarantine",
+      "source_index": 2,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-quarantine-eadb1d33ffa2",
+      "source_bucket": "quarantine",
+      "source_index": 3,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-quarantine-da700d54e88d",
+      "source_bucket": "quarantine",
+      "source_index": 4,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-quarantine-255dd9842275",
+      "source_bucket": "quarantine",
+      "source_index": 5,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-quarantine-a69ed2a177ae",
+      "source_bucket": "quarantine",
+      "source_index": 6,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "FORB-OI_6300",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023",
+        "johansson2003",
+        "storey_zeippen2000",
+        "caffau2015_6300"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    }
+  ],
+  "source_paths": [
+    "data/audit/cno_synthesis/solar_vis_cno_provenance.json",
+    "data/audit/rya1136_cno_intake/source_bibliography.csv",
+    "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json",
+    "data/audit/rya1214_cno_products/oi_tachiev_vs_nist.csv",
+    "data/curation/threednlte_availability.csv",
+    "data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json",
+    "data/nlte_grids/amarsi2019_cno/provenance.json",
+    "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json",
+    "data/refs/bibliography.csv",
+    "docs/co_indicator_strategy.md",
+    "pipeline/band_products.py",
+    "pipeline/cno_gf_pedigree.py"
+  ],
+  "policy": "Current product identity and committed provenance select sources. Registered models, comparison anchors and quarantined diagnostics are not adopted results."
+}
