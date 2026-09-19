@@ -26,6 +26,18 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'assets/data/fe-publication'
 BANDS = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H']
+# RYA-1223 Option B (Ryan, 2026-09-19): the complete bands publish now and near-UV is
+# HELD until RYA-1226 wires its measured components (RYA-846 continuum, RYA-1220
+# profile_ew, model_atmosphere) and carries the RYA-1190 blends bound. Ryan's requirement
+# for the interim is explicit: near-UV "shows as 'systematic under development,' not stale
+# or absent" -- so the band keeps rendering its CURRENT post-opacity abundance (no
+# pre-opacity ~7.9xx value may ship) and carries this notice beside it. Editorial text
+# naming the gating ticket, never a science value: RYA-914 forbids hardcoded measurements,
+# and nothing here is one.
+HELD_BANDS = {'near-UV': 'Systematic under development — the abundance is current '
+                         '(post-RYA-1207 molecular opacity) but the uncertainty budget is '
+                         'not closed: component wiring and the blends bound are pending '
+                         'RYA-1226.'}
 LABELS = {'harps': 'HARPS', 'crires_plus': 'CRIRES+',
           'kpno_solar_atlas': 'Kitt Peak', 'iag_fts_solar_atlas': 'IAG'}
 CYAN, GOLD, BG = '#63dce6', '#ebc77c', '#081219'
@@ -269,7 +281,9 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
             if ion == 'I' and band == 'VIS':
                 instrument_label = 'Kitt Peak Molecfit' if p['instrument'] == 'kpno_solar_atlas' else 'HARPS'
                 product_label = f"{instrument_label} · Synth · 3D-NLTE · Amarsi · {p['grade']}"
-            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p></article>')
+            hold = HELD_BANDS.get(band)
+            notice = f'<p class="fe-hold">{esc(hold)}</p>' if hold else ''
+            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p>{notice}</article>')
     body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
