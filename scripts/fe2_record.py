@@ -358,11 +358,16 @@ def ionization_balance(science: Path) -> dict:
     return {
         "source": "derived here from the Fe product matrix, like with like",
         "verdictArtifactCarriesIt": False,
+        #: The number is gone on purpose. This said "the published Fe I anchor of 7.466",
+        #: which stopped being the published anchor when RYA-850 promoted the graded pool
+        #: and RYA-819 retired that construction. The sentence never needed the value --
+        #: its point is the SCALE, not the number -- and a literal here is the same defect
+        #: as the one in the feed's opacity notes, just in a different file.
         "note": ("Each row differences the same band, atlas, and engine, so the only "
-                 "variable is the ionization stage. The published Fe I anchor of 7.466 "
-                 "is on the 3D-NLTE scale and is deliberately NOT used here — "
-                 "differencing it against these Fe II products would measure the scale, "
-                 "not the ionization."),
+                 "variable is the ionization stage. The published Fe I anchor is on the "
+                 "3D-NLTE scale and is deliberately NOT used here — differencing it "
+                 "against these Fe II products would measure the scale, not the "
+                 "ionization."),
         "pairs": pairs,
     }
 
@@ -376,24 +381,42 @@ def nist_offset_story(science: Path) -> dict:
     audit = json.loads(
         (science / "data/results/rya852/rya852_summary.json").read_text())
     band = referee.get("band_dependence", {})
+    #: 🔴 THE PUBLISHED "+0.106 ACROSS THE WHOLE POOL" WAS THE RED-POOL NUMBER, n=8.
+    #: This function used to read `ours_minus_nist_pool`, and RYA-853's re-run does not emit
+    #: that key any more. What the artifact does carry is decisive: the whole 22-line overlap
+    #: sits at `ours_minus_nist_same_lines.median` = -0.036, while `band_dependence` records
+    #: `red_pool_ours_minus_nist` = +0.107 on 8 lines and `blue_overlap_ours_minus_nist` =
+    #: -0.066 on 10, `sign_flips: true` -- and it even names the old figure for what it was,
+    #: `rya852_reported_red_offset: 0.106`. So the site was publishing a real measurement of
+    #: the WRONG POOL, with the OPPOSITE SIGN to the full overlap, as a whole-pool claim.
+    #:
+    #: The field is renamed rather than repointed: `overlapOffsetDex` cannot be read as a
+    #: pool statement by the next person the way `poolOffsetDex` was.
     return {
-        "poolOffsetDex": _num(referee["ours_minus_nist_pool"], 3),
+        "overlapOffsetDex": _num(referee["ours_minus_nist_same_lines"]["median"], 3),
+        "overlapOffsetN": referee["ours_minus_nist_same_lines"]["n"],
+        "redPoolOffsetDex": _num(referee["band_dependence"]["red_pool_ours_minus_nist"], 3),
+        "redPoolN": referee["band_dependence"]["red_n"],
         "verdict": referee["verdict"],
         "reasoning": referee["reasoning"],
         "referee": referee["referee"],
-        "nOverlapLines": referee["n_overlap_lines"],
+        "nOverlapLines": referee["n_overlap_ep_matched"],
         "oursMinusDh": {
             "median": _num(referee["ours_minus_dh"]["median"], 3),
             "ci95": [_num(v, 3) for v in referee["ours_minus_dh"]["ci95"]],
             "n": referee["ours_minus_dh"]["n"],
         },
         "bandDependence": {
-            "blue": _num(band.get("blue_overlap_4173_4584"), 3),
-            "red": _num(band.get("red_pool_5256_6456"), 3),
+            "blue": _num(band.get("blue_overlap_ours_minus_nist"), 3),
+            "red": _num(band.get("red_pool_ours_minus_nist"), 3),
             "swing": _num(band.get("swing_dex"), 3),
             "signFlips": bool(band.get("sign_flips")),
         },
-        "caveat": referee["caveat"],
+        #: The re-run splits one `caveat` into three. This slot renders immediately
+        #: before the arbiter-line discussion, so it takes the arbiter caveat; the
+        #: other two (independence is string-deep only; the balance figures predate
+        #: every continuum fix) belong to sections this function does not build.
+        "caveat": referee["caveat_arbiter_lines"],
         # RYA-852: the honest floor, and why it is not the 0.041 a grade B implies.
         "arbiterLines": audit["arbiter_lines_air_A"],
         "arbiterNistAccuracyDex": {k: _num(v, 3) for k, v in
