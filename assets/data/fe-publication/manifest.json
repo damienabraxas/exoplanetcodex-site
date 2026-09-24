@@ -1,9 +1,9 @@
 {
   "generator": "scripts/generate_fe_publication.py",
   "version": "1.0.0",
-  "source_commit": "9fdf06f3658267df2c9a813a2fe1fb5ff18f1f7a",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/9fdf06f3658267df2c9a813a2fe1fb5ff18f1f7a",
-  "generated_at": "2026-09-24T15:12:27+00:00",
+  "source_commit": "2481de7efcee54198f12665cf791c686dd7aea3f",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/2481de7efcee54198f12665cf791c686dd7aea3f",
+  "generated_at": "2026-09-24T16:34:16+00:00",
   "feed_version": "1.223",
   "feed_sha256": "140e81ffc805708f97f1a1caede872c40cd5eef3e05580211ecf0ee6a0e72728",
   "products": 160,
