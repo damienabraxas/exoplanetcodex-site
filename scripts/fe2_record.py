@@ -432,26 +432,70 @@ def nist_offset_story(science: Path) -> dict:
 # ------------------------------------------------------------ per-line evidence
 
 
+def _grade_labeller(science: Path):
+    """The codex's own gf-grade labeller, imported rather than reimplemented.
+
+    🔴 A BARE NIST LETTER MUST NOT REACH THE PAGE. RYA-711 exists because `C+` read as a
+    gf-data grade is indistinguishable from `MQ-C+`, a measurement-quality score computed
+    somewhere else entirely; `pipeline.perline_product._grade_label` namespaces it to
+    `NIST:C+` and returns `ungraded` where canonical_gf carries no letter. Publishing the
+    raw column instead would republish that collision -- which is what my first pass did,
+    turning 26 `ungraded` into blank and 6 `NIST:B` into a bare `C+`.
+    """
+    import sys
+    if str(science) not in sys.path:
+        sys.path.insert(0, str(science))
+    from pipeline.perline_product import _grade_label
+    return _grade_label
+
+
+def _canonical_gf(science: Path) -> list[dict]:
+    """Fe II rows of canonical_gf.csv — the SSOT for log gf (RYA-834)."""
+    return [r for r in _rows(science / "data/linelists/canonical_gf.csv")
+            if (r.get("species") or "").strip() == "Fe II"]
+
+
+def _gf_of(canonical: list[dict], wl: float, ep: float | None) -> dict:
+    """The canonical_gf row for this line, on WAVELENGTH AND EP.
+
+    ⚠️ NEVER WAVELENGTH ALONE. RYA-780/852 both found that a wavelength-only window
+    returns a high-excitation neighbour as if it were the line, and RYA-1206 found the
+    same class of error joining per-line medians to "the nearest published A".
+    """
+    hits = [r for r in canonical
+            if abs(float(r["wavelength_air_A"]) - wl) <= 0.05
+            and (ep is None or not r.get("excitation_potential_eV")
+                 or abs(float(r["excitation_potential_eV"]) - ep) <= 0.05)]
+    return hits[0] if len(hits) == 1 else {}
+
+
 def lines(science: Path, perline: list[dict]) -> list[dict]:
     """One row per (line × engine), read from the band products RYA-880 emitted.
 
-    The atomic data is joined from the RYA-870 per-line product on wavelength AND
-    excitation potential — RYA-780/852 both found a wavelength-only window returns
-    a high-excitation neighbour as if it were the line.
+    🔴 THE ATOMIC DATA COMES FROM canonical_gf.csv, NOT FROM THE PER-LINE PRODUCT.
+    It used to be joined out of `Fe_perline.csv` on (wavelength, engine), which worked
+    only because that product happened to be built by globbing `data/results/rya877/` --
+    the same PROFILEFIT snapshot this page publishes from. Since RYA-1229 the per-line
+    product is a projection of the FEED, and the feed publishes no Fe II PROFILEFIT
+    product at all: its 30 Fe II products are all SYNTH, on an 8-line VIS pool that
+    shares ZERO wavelengths with this page's 11-line pool. Measured, after the join
+    silently went to None on every line: 0 of 11 matched.
+
+    So the hop through the product is removed and the SSOT is read directly, which is
+    where the per-line product gets these values from anyway (canonical_gf OVERRIDES the
+    linelist, RYA-834). `perline` is no longer consulted here.
     """
-    atomic = {}
-    for row in perline:
-        if row["ion"] != "II":
-            continue
-        key = (round(float(row["wavelength_air_A"]), 2), row["engine"])
-        atomic[key] = row
+    canonical = _canonical_gf(science)
+    grade_label = _grade_labeller(science)
 
     out = []
     for treatment in ("1D-LTE", "ENGINE-A", "ENGINE-B"):
         path = science / BAND_PRODUCT_DIR / f"{FE2_STEM}_{treatment}_lines.csv"
         for row in _rows(path):
             wl = float(row["wavelength_air_A"])
-            atom = atomic.get((round(wl, 2), treatment), {})
+            _ep = row.get("ep_eV")
+            atom = _gf_of(canonical, wl,
+                          float(_ep) if (_ep or "").strip() not in ("", "nan") else None)
             kept = row["in_aggregate"] == "True"
             out.append({
                 "wavelength": round(wl, 4),
@@ -465,8 +509,10 @@ def lines(science: Path, perline: list[dict]) -> list[dict]:
                 "abundance": _num(row.get("abundance"), 4),
                 "kept": kept,
                 "logGf": _num(atom.get("log_gf"), 4),
-                "gfSource": atom.get("gf_source") or "",
-                "gfGrade": atom.get("gf_grade") or "",
+                "gfSource": atom.get("loggf_reference") or "",
+                "gfGrade": (grade_label(atom.get("nist_grade"),
+                                        atom.get("loggf_reference") or "")
+                            if atom else ""),
                 "nlteDeltaDex": _num(row.get("nlte_delta_dex"), 4),
                 "nlteSource": row.get("nlte_source") or "",
                 "problemClass": row.get("problem_class") or "",
@@ -540,31 +586,39 @@ def dispositions(science: Path) -> list[dict]:
 def stale_inputs(science: Path, perline: list[dict], impact: dict) -> list[dict]:
     """🔴 Report, never hide, any committed artifact that disagrees on membership.
 
-    RYA-877 excluded 5991.371 and measured the move. RYA-870's per-line product
-    was generated from the PRE-disposition line set banked under
-    `data/results/rya877/`, so its Fe II slice still counts the line into the pool
-    (it reads `flagged_kept`, which is what `_disposition` returns whenever the
-    deriver kept a registered line — a benign-looking status for a stale input).
+    ⚠️ THIS USED TO COMPARE COUNTS THAT ARE NO LONGER COMPARABLE, and the change is
+    RYA-1229's. Before it, the per-line product was built by globbing two snapshot
+    directories, one of which (`data/results/rya877/`) predates the RYA-877 disposition
+    of 5991.371 — so its Fe II slice still counted that line in, and comparing its
+    per-engine kept-count against the band product this page publishes caught it.
 
-    This function makes that visible instead of letting the page inherit it. It
-    compares the per-line product's kept-count per engine against the band product
-    this page actually publishes.
+    Since RYA-1229 the per-line product is a projection of the FEED: a file is read only
+    because a published product's own `provenance.copied_to` names it, and every row
+    carries the full RYA-1127 identity. So `engine` alone is no longer a key on that
+    file — one treatment now spans many published products (tiers, selectors, holdings),
+    and summing them would compare 30-odd products' lines against one product's n_lines
+    and report a difference on every engine. That is a unit error, not a finding.
+
+    So the comparison is scoped to IDENTITY, and where this page's product does not exist
+    in the feed there is nothing to compare — which is itself reported, because a download
+    that is silent about the products a page publishes should say so out loud.
     """
+    findings = []
     published = {}
     for row in _rows(science / BAND_PRODUCT_DIR / f"{FE2_STEM}_products.csv"):
         published[row["treatment"]] = int(row["n_lines"])
 
-    counts: dict[str, int] = {}
+    #: Keyed on the published identity, not on the treatment token. `PROFILEFIT` is the
+    #: route this page's products were derived on; the per-line rows carry `route`.
+    kept: dict[tuple, int] = {}
     for row in perline:
-        if row["ion"] != "II":
+        if row["ion"] != "II" or row["status"] == "excluded":
             continue
-        if row["status"] == "excluded":
-            continue
-        counts[row["engine"]] = counts.get(row["engine"], 0) + 1
+        kept[(row.get("route", ""), row["treatment"])] = 1 + kept.get(
+            (row.get("route", ""), row["treatment"]), 0)
 
-    findings = []
     for engine, n_published in published.items():
-        n_perline = counts.get(engine)
+        n_perline = kept.get(("PROFILEFIT", engine))
         if n_perline is None or n_perline == n_published:
             continue
         findings.append({
@@ -573,12 +627,47 @@ def stale_inputs(science: Path, perline: list[dict], impact: dict) -> list[dict]
             "publishedLineCount": n_published,
             "artifactLineCount": n_perline,
             "detail": (
-                f"The per-line product counts {n_perline} Fe II {engine} lines into "
-                f"the pool; the published band product carries {n_published}. Its "
-                f"band-product input defaults to data/results/rya877/, which predates "
-                f"the RYA-877 disposition; data/results/rya880/ supersedes it. This "
-                f"page reports the band product, so no published number is affected — "
-                f"but the downloadable per-line file is one generation behind."),
+                f"The per-line product counts {n_perline} Fe II {engine} lines into the "
+                f"pool on the PROFILEFIT route; the published band product carries "
+                f"{n_published}. This page reports the band product, so no published "
+                f"number is affected — but the downloadable per-line file disagrees on "
+                f"membership."),
+        })
+
+    #: 🔴 SILENCE ABOUT THIS PAGE'S OWN PRODUCTS IS THE THING TO REPORT. The per-line
+    #: download projects Fe.json, and Fe.json publishes THIRTY Fe II products, every one
+    #: of them on the SYNTH route — it publishes no Fe II PROFILEFIT product at all. The
+    #: products this page reports are the RYA-880 re-derivation
+    #: (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT), which is not in the feed, so the
+    #: download carries no rows for them and the count comparison above can never fire.
+    #: Stating that is the honest alternative to a check that quietly cannot run.
+    feed = json.loads((science / "data/products/solar/Fe.json").read_text(encoding="utf-8"))
+    feed_fe2 = [q for q in feed["products"] if q["ion"] == "II"]
+    if not kept.get(("PROFILEFIT", "1D-LTE")):
+        ident = {(q["band"], q["instrument"], q.get("holding", ""), q["tier"],
+                  q.get("selector", ""), q["route"], q["treatment"]) for q in feed_fe2}
+        covered = {(r["band"], r["instrument"], r["holding"], r["tier"],
+                    r["selector"], r["route"], r["treatment"])
+                   for r in perline if r["ion"] == "II"}
+        findings.append({
+            # ⚠️ NOT A STALE INPUT, AND IT MUST NOT BE LABELLED ONE. The download is
+            # current; it simply does not describe this page's products. Filing a
+            # full-coverage fact under "stale input" would claim a defect that is not
+            # there, which is the same sin in the other direction.
+            "category": "download coverage",
+            "artifact": "data/products/solar/Fe_perline.csv (RYA-870)",
+            "engine": "this page's products",
+            "publishedLineCount": len(published),
+            "artifactLineCount": 0,
+            "detail": (
+                f"The per-line download is a projection of Fe.json (RYA-1229) and is "
+                f"CURRENT: it covers {len(covered & ident)} of the {len(ident)} Fe II "
+                f"products the feed publishes, all of them on the SYNTH route. It carries "
+                f"no rows for the {len(published)} treatments THIS page reports, because "
+                f"those are the RYA-880 re-derivation ({FE2_STEM}) and the feed publishes "
+                f"no Fe II PROFILEFIT product at all. Every number on this page comes from "
+                f"that band product directly, so nothing here is affected — but the "
+                f"download is not where to look for this page's per-line evidence."),
         })
 
     #: 🔴 THE PER-ENGINE COUNTS UNDERSTATE IT, AND A DOWNLOADER DESERVES THE REAL EXTENT.

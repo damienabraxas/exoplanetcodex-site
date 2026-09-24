@@ -243,58 +243,60 @@ window.SOLAR_REPORT = {
       ],
       "diagnostics": [
         {
-          "line": "11119.795 Å",
-          "category": "telluric adjacent",
-          "caption": "0.205 A below the H2O 11120-11560 A edge in telluric_policy.TELLURIC_BANDS, so the band list does not catch it while the absorption plainly reaches it: Kitt Peak window median flux 0.872 against a synthesis normalised to unity (RYA-843 measured 0.966-0.996 for clean lines in the same band). NO ATLAS CAN REFEREE IT -- the telluric_policy KP-vs-IAG discriminator needs IAG, and the staged atlas stops at 11083.4 A, below this line. Excluded CONSERVATIVELY on that unresolvable ambiguity, not on its fitted value: it fits at 7.833, a perfectly plausible number, and its chi2 moves only 2.2% across 8 dex of iron, so it measured nothing and landed there by luck. Retire when an atlas that reaches 11120 A can adjudicate the band edge.",
-          "status": "flagged_kept"
-        },
-        {
-          "line": "11689.972 Å",
+          "line": "3540.121 Å",
           "category": "deriver excluded",
-          "caption": "SYNTHESIS: edge_pinned",
+          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 9.548 is 2.09 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
           "status": "excluded"
         },
         {
-          "line": "12638.703 Å",
+          "line": "3603.681 Å",
           "category": "deriver excluded",
-          "caption": "NON-MINIMUM: chi2 at a bracket end is not above the reported minimum (frac_rise = -1.95e-05 <= 0), so the optimizer returned a point that is not a minimum and the fit did not determine A(X). A correctness failure, not a quality threshold. Measured and retained; excluded from the aggregate only (RYA-711).",
+          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 8.960 is 1.50 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
           "status": "excluded"
         },
         {
-          "line": "12648.741 Å",
+          "line": "3618.299 Å",
           "category": "deriver excluded",
-          "caption": "SYNTHESIS: edge_pinned",
+          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 10.856 is 3.40 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
           "status": "excluded"
         },
         {
-          "line": "3617.318 Å",
-          "category": "non minimum",
-          "caption": "The optimizer returned a point that is NOT a minimum: chi2 at a bracket end is BELOW chi2 at the reported best fit (frac_rise = -0.117), so the fit did not determine A(Fe) at all. A correctness failure, not a quality judgement -- there is no threshold involved, only the sign. 🔴 ITS VALUE LOOKS PERFECTLY NORMAL: A = 7.477, indistinguishable from solar, which is exactly why no plausibility check could ever have found it and why the RYA-847 sweep was needed. Removing it moves the near-UV 1D-LTE cell 7.4875 -> 7.4980 and makes the scatter slightly WORSE (0.4126 -> 0.4178): this exclusion costs dispersion rather than buying it, which is the evidence that it is a validity cut and not tuning (RYA-161/844). Caught automatically by the constraint gate; recorded here so the cut is reproducible from its stated reason without running the pipeline.",
-          "status": "excluded"
-        },
-        {
-          "line": "4769.812 Å",
-          "category": "atomic blend",
-          "caption": "RYA-764/783: the 1D-LTE EW inversion returns A(Fe I) = 8.342 on this line at EW 44.1 mA -- physically impossible for the Sun (~7.5) and it ENTERS the band-product aggregate, because derive_band_products.py does not consult this registry. It is one of 17 (VIS) / 11 (IR) used lines above A=8.0 in the EW route; the ENGINE-B flux fit produces ZERO such lines in the IR (max 7.953) on the same pool, so the pathology is the EW->abundance inversion, not the spectrum. The median protects the reported product value, but these lines are the heavy tail of the Engine-A minus Engine-B per-line diagnostic (robust sd 0.10 dex, naive sd 0.50). CAUSE NOT ESTABLISHED -- misidentification, a wrong gf and unmodelled blending all produce this signature; do NOT re-source the gf on this evidence. || RYA-808: required_treatment exclude -> investigate. The cause is not established (status=owed), and a treatment cannot be prescribed from an undiagnosed cause (RYA-161). Behaviour is UNCHANGED -- aggregate_action already kept owed rows in the aggregate, flagged. When a cause IS established: status -> active AND required_treatment -> the diagnosed treatment. || RYA-809 RCA: GHOST: absorbs 4.7x the EW its catalogued central_depth (0.059) can support, with no co-located absorber to account for it — the feature is not this transition. mismatch 0.4 mA; Ce II present at +3.91 dex per-atom, but its solar abundance is not tabulated here -> INCONCLUSIVE; gf K07 (+/-0.2 dex); REW -5.034; A 8.342 (+0.738 vs pool median); EW-vs-strength residual +0.590 dex; absorbs 4.7x the EW its catalogued central_depth supports",
-          "status": "excluded"
-        },
-        {
-          "line": "4880.524 Å",
+          "line": "3735.324 Å",
           "category": "deriver excluded",
-          "caption": "COG-INVERSION: bisection did not converge, so this EW does not map to an abundance here",
+          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 9.441 is 1.98 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
           "status": "excluded"
         },
         {
-          "line": "4932.084 Å",
-          "category": "abundance outlier",
-          "caption": "RYA-764/783: the 1D-LTE EW inversion returns A(Fe I) = 8.500 on this line at EW 52.2 mA -- physically impossible for the Sun (~7.5) and it ENTERS the band-product aggregate, because derive_band_products.py does not consult this registry. It is one of 17 (VIS) / 11 (IR) used lines above A=8.0 in the EW route; the ENGINE-B flux fit produces ZERO such lines in the IR (max 7.953) on the same pool, so the pathology is the EW->abundance inversion, not the spectrum. The median protects the reported product value, but these lines are the heavy tail of the Engine-A minus Engine-B per-line diagnostic (robust sd 0.10 dex, naive sd 0.50). CAUSE NOT ESTABLISHED -- misidentification, a wrong gf and unmodelled blending all produce this signature; do NOT re-source the gf on this evidence. || RYA-808: required_treatment exclude -> investigate. The cause is not established (status=owed), and a treatment cannot be prescribed from an undiagnosed cause (RYA-161). Behaviour is UNCHANGED -- aggregate_action already kept owed rows in the aggregate, flagged. When a cause IS established: status -> active AND required_treatment -> the diagnosed treatment. || RYA-809 RCA: AMBIGUOUS after all four tests — +0.896 dex above the pool on a non-laboratory K07 gf (+/-0.2 dex), which makes the gf a CANDIDATE but not an established cause — RYA-760 refuted loosening the tier, and RYA-780 found no primary measurement to adjudicate against. Stays investigate/owed and is NOT excluded (RYA-161: no exclusion without an established cause). mismatch 0.4 mA; C2 present at +5.40 dex per-atom, but its solar abundance is not tabulated here -> INCONCLUSIVE; gf K07 (+/-0.2 dex); REW -4.976; A 8.500 (+0.896 vs pool median); EW-vs-strength residual +0.299 dex; absorbs 1.3x the EW its catalogued central_depth supports",
-          "status": "flagged_kept"
+          "line": "3742.617 Å",
+          "category": "deriver excluded",
+          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 9.560 is 2.10 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
+          "status": "excluded"
+        },
+        {
+          "line": "4203.938 Å",
+          "category": "deriver excluded",
+          "caption": "transition energy Eup-Elo 2.9485 eV outside training [1.8190, 2.5898] (gt02, n=154);   -> that is a WAVELENGTH statement: the network saw 4787.8-6810.3 A only, and Eup-Elo is hc/lambda_vac by construction",
+          "status": "excluded"
+        },
+        {
+          "line": "4233.602 Å",
+          "category": "deriver excluded",
+          "caption": "transition energy Eup-Elo 2.9278 eV outside training [1.8190, 2.5898] (gt02, n=154);   -> that is a WAVELENGTH statement: the network saw 4787.8-6810.3 A only, and Eup-Elo is hc/lambda_vac by construction; upper level 5.4099 eV is not within 0.02 eV of any level in the training set",
+          "status": "excluded"
+        },
+        {
+          "line": "4245.344 Å",
+          "category": "deriver excluded",
+          "caption": "transition energy Eup-Elo 2.9197 eV outside training [1.8190, 2.5898] (gt02, n=154);   -> that is a WAVELENGTH statement: the network saw 4787.8-6810.3 A only, and Eup-Elo is hc/lambda_vac by construction; upper level 6.2517 eV is not within 0.02 eV of any level in the training set",
+          "status": "excluded"
         }
       ],
+      "diagnosticsShown": 8,
+      "problemCount": 183,
       "provenance": {
-        "poolCount": 40,
-        "nistClassCount": 17,
-        "poorNistClassCount": 9,
+        "poolCount": 58,
+        "nistClassCount": 44,
+        "poorNistClassCount": 20,
         "poorClasses": [
           "C",
           "C+",
@@ -302,7 +304,7 @@ window.SOLAR_REPORT = {
           "D+",
           "E"
         ],
-        "sentence": "17 of 40 near-UV Fe I lines carry a citable NIST accuracy class; 9 of those are in the C/C+/D/D+/E classes."
+        "sentence": "44 of 58 near-UV Fe I lines carry a citable NIST accuracy class; 20 of those are in the C/C+/D/D+/E classes."
       },
       "downloadPath": "/assets/data/solar/FeI_perline.csv"
     },
@@ -922,8 +924,8 @@ window.SOLAR_REPORT = {
           "abundance": 7.5684,
           "kept": true,
           "logGf": -2.724,
-          "gfSource": "NIST ASD v5.11 grade B",
-          "gfGrade": "NIST:B",
+          "gfSource": "VALD3-scale value via nist_reference.csv; NOT NIST (ASD gives -2.854 acc E) -- RYA-853",
+          "gfGrade": "ungraded",
           "nlteDeltaDex": 0.0,
           "nlteSource": "none — LTE, no departure applied",
           "problemClass": "",
@@ -958,8 +960,8 @@ window.SOLAR_REPORT = {
           "abundance": 7.4453,
           "kept": true,
           "logGf": -2.329,
-          "gfSource": "NIST ASD v5.11 grade B",
-          "gfGrade": "NIST:B",
+          "gfSource": "VALD3-scale value via nist_reference.csv; NOT NIST (ASD gives -2.444 acc D) -- RYA-853",
+          "gfGrade": "ungraded",
           "nlteDeltaDex": 0.0,
           "nlteSource": "none — LTE, no departure applied",
           "problemClass": "",
@@ -993,9 +995,9 @@ window.SOLAR_REPORT = {
           "handler": "ProfileFitHandler",
           "abundance": 7.498,
           "kept": true,
-          "logGf": -3.52,
-          "gfSource": "VALD3",
-          "gfGrade": "ungraded",
+          "logGf": -3.4976,
+          "gfSource": "NIST-C+ T7589",
+          "gfGrade": "NIST:C+",
           "nlteDeltaDex": 0.0,
           "nlteSource": "none — LTE, no departure applied",
           "problemClass": "",
@@ -1102,8 +1104,8 @@ window.SOLAR_REPORT = {
           "abundance": null,
           "kept": false,
           "logGf": -2.724,
-          "gfSource": "NIST ASD v5.11 grade B",
-          "gfGrade": "NIST:B",
+          "gfSource": "VALD3-scale value via nist_reference.csv; NOT NIST (ASD gives -2.854 acc E) -- RYA-853",
+          "gfGrade": "ungraded",
           "nlteDeltaDex": null,
           "nlteSource": "MPIA per-line delta_nlte (NOT SERVED)",
           "problemClass": "",
@@ -1138,8 +1140,8 @@ window.SOLAR_REPORT = {
           "abundance": 7.4463,
           "kept": true,
           "logGf": -2.329,
-          "gfSource": "NIST ASD v5.11 grade B",
-          "gfGrade": "NIST:B",
+          "gfSource": "VALD3-scale value via nist_reference.csv; NOT NIST (ASD gives -2.444 acc D) -- RYA-853",
+          "gfGrade": "ungraded",
           "nlteDeltaDex": 0.001,
           "nlteSource": "Bergemann MPIA per-line delta_nlte (live query, solar node); PER-LINE additive correction",
           "problemClass": "",
@@ -1173,9 +1175,9 @@ window.SOLAR_REPORT = {
           "handler": "ProfileFitHandler",
           "abundance": null,
           "kept": false,
-          "logGf": -3.52,
-          "gfSource": "VALD3",
-          "gfGrade": "ungraded",
+          "logGf": -3.4976,
+          "gfSource": "NIST-C+ T7589",
+          "gfGrade": "NIST:C+",
           "nlteDeltaDex": null,
           "nlteSource": "MPIA per-line delta_nlte (NOT SERVED)",
           "problemClass": "",
@@ -1300,8 +1302,8 @@ window.SOLAR_REPORT = {
           "abundance": 7.492,
           "kept": true,
           "logGf": -2.724,
-          "gfSource": "NIST ASD v5.11 grade B",
-          "gfGrade": "NIST:B",
+          "gfSource": "VALD3-scale value via nist_reference.csv; NOT NIST (ASD gives -2.854 acc E) -- RYA-853",
+          "gfGrade": "ungraded",
           "nlteDeltaDex": 0.0,
           "nlteSource": "none — LTE, no departure applied",
           "problemClass": "",
@@ -1336,8 +1338,8 @@ window.SOLAR_REPORT = {
           "abundance": 7.465,
           "kept": true,
           "logGf": -2.329,
-          "gfSource": "NIST ASD v5.11 grade B",
-          "gfGrade": "NIST:B",
+          "gfSource": "VALD3-scale value via nist_reference.csv; NOT NIST (ASD gives -2.444 acc D) -- RYA-853",
+          "gfGrade": "ungraded",
           "nlteDeltaDex": 0.0,
           "nlteSource": "none — LTE, no departure applied",
           "problemClass": "",
@@ -1371,9 +1373,9 @@ window.SOLAR_REPORT = {
           "handler": "SynthesisHandler",
           "abundance": 7.419,
           "kept": true,
-          "logGf": -3.52,
-          "gfSource": "VALD3",
-          "gfGrade": "ungraded",
+          "logGf": -3.4976,
+          "gfSource": "NIST-C+ T7589",
+          "gfGrade": "NIST:C+",
           "nlteDeltaDex": 0.0,
           "nlteSource": "none — LTE, no departure applied",
           "problemClass": "",
@@ -1465,25 +1467,12 @@ window.SOLAR_REPORT = {
       },
       "staleInputs": [
         {
+          "category": "download coverage",
           "artifact": "data/products/solar/Fe_perline.csv (RYA-870)",
-          "engine": "1D-LTE",
-          "publishedLineCount": 10,
-          "artifactLineCount": 11,
-          "detail": "The per-line product counts 11 Fe II 1D-LTE lines into the pool; the published band product carries 10. Its band-product input defaults to data/results/rya877/, which predates the RYA-877 disposition; data/results/rya880/ supersedes it. This page reports the band product, so no published number is affected — but the downloadable per-line file is one generation behind."
-        },
-        {
-          "artifact": "data/products/solar/Fe_perline.csv (RYA-870)",
-          "engine": "ENGINE-B",
-          "publishedLineCount": 9,
-          "artifactLineCount": 10,
-          "detail": "The per-line product counts 10 Fe II ENGINE-B lines into the pool; the published band product carries 9. Its band-product input defaults to data/results/rya877/, which predates the RYA-877 disposition; data/results/rya880/ supersedes it. This page reports the band product, so no published number is affected — but the downloadable per-line file is one generation behind."
-        },
-        {
-          "artifact": "data/products/solar/Fe_perline.csv (RYA-870)",
-          "engine": "whole file",
-          "publishedLineCount": 107,
-          "artifactLineCount": 1039,
-          "detail": "Generated 2026-08-18T21:08:52+00:00 from 4e3dabb5ba13. 932 of 1039 rows carry an `engine` label that is not a current feed treatment -- they use the pre-RYA-906 deck-suffixed form (1D-LTE (gerber-nlte), 1D-LTE (ts-lte), ENGINE-A (gerber-nlte)...) -- so those rows cannot be joined to a published product by identity, and the file carries no rows at all for the treatments the headline rests on. Every number ON this page comes from the band products and the feed, not from this file; it is the per-line DOWNLOAD that is behind. Regenerating it needs iSpec on Sirius (RYA-870). The Fe appendix's own per-line export is built from the current band products and is not affected."
+          "engine": "this page's products",
+          "publishedLineCount": 3,
+          "artifactLineCount": 0,
+          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 30 of the 30 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
         }
       ],
       "reproducibility": {
@@ -1494,8 +1483,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "910381683e0a42fc57c834f3b6345a100e34a333",
-        "scienceGit": "b028b715683cf2dd7f581e8d8295a4afc5103803",
-        "generatedAt": "2026-09-24T18:37:09+00:00"
+        "scienceGit": "4a49cc11379d3e24020af532d2109a09c7484d8f",
+        "generatedAt": "2026-09-24T19:37:17+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -3957,9 +3946,9 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "2481de7efcee54198f12665cf791c686dd7aea3f",
-    "productCommit": "4e3dabb5ba139c89ca0b5f5538afb64525ab8fae",
+    "gitCommit": "4a49cc11379d3e24020af532d2109a09c7484d8f",
+    "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
-    "generatedAt": "2026-08-18T21:08:52+00:00"
+    "generatedAt": "2026-09-24T19:24:31+00:00"
   }
 };
