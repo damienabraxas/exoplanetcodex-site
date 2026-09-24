@@ -35,6 +35,7 @@ INSTR_LABEL = {
     "crires_plus": "CRIRES+ (Vesta)",
 }
 
+PERLINE = Path("data/products/solar/Fe_perline.csv")
 BAND_PRODUCT_DIR = "data/results/rya880"
 #: The FULL Fe product matrix (RYA-783). The rya880 re-derivation covers the three
 #: VIS cells RYA-877 touched; every other Fe II cell — the whole red-optical band,
@@ -579,7 +580,62 @@ def stale_inputs(science: Path, perline: list[dict], impact: dict) -> list[dict]
                 f"page reports the band product, so no published number is affected — "
                 f"but the downloadable per-line file is one generation behind."),
         })
+
+    #: 🔴 THE PER-ENGINE COUNTS UNDERSTATE IT, AND A DOWNLOADER DESERVES THE REAL EXTENT.
+    #: The counts above catch one excluded line. Measured on the artifact itself, the file
+    #: is stale on two further axes that no line count reveals:
+    #:
+    #:   * its `engine` labels are the PRE-RYA-906 deck-suffixed form -- "1D-LTE (ts-lte)",
+    #:     "ENGINE-A (gerber-nlte)" -- so most rows cannot be joined to a published product
+    #:     by identity at all. Joining them by proximity instead is the RYA-1206 error.
+    #:   * it therefore carries NO rows for the treatments the headline actually rests on.
+    #:
+    #: Reported, not resolved: regenerating it is a Sirius job (the replication-grade
+    #: damping source needs iSpec) and belongs to RYA-870, not to a publish pass. The
+    #: appendix's own per-line export is built per-product from the current band products
+    #: and is unaffected -- this is only the Sun page's download.
+    header = _header(science / PERLINE)
+    engines = {row["engine"] for row in perline}
+    unjoinable = sorted(e for e in engines if e not in published_treatments(science))
+    if unjoinable:
+        n_rows = sum(1 for row in perline if row["engine"] in unjoinable)
+        findings.append({
+            "artifact": "data/products/solar/Fe_perline.csv (RYA-870)",
+            "engine": "whole file",
+            "publishedLineCount": len(perline) - n_rows,
+            "artifactLineCount": len(perline),
+            "detail": (
+                f"Generated {header.get('generated_utc', 'unknown')} from "
+                f"{header.get('commit_sha', 'an unrecorded commit')[:12]}. "
+                f"{n_rows} of {len(perline)} rows carry an `engine` label that is not a "
+                f"current feed treatment -- they use the pre-RYA-906 deck-suffixed form "
+                f"({', '.join(unjoinable[:3])}...) -- so those rows cannot be joined to a "
+                f"published product by identity, and the file carries no rows at all for "
+                f"the treatments the headline rests on. Every number ON this page comes "
+                f"from the band products and the feed, not from this file; it is the "
+                f"per-line DOWNLOAD that is behind. Regenerating it needs iSpec on Sirius "
+                f"(RYA-870). The Fe appendix's own per-line export is built from the "
+                f"current band products and is not affected."),
+        })
     return findings
+
+
+def _header(path: Path) -> dict:
+    """The `# key: value` provenance block the per-line generator writes."""
+    out = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("#"):
+            break
+        if ":" in line:
+            k, _, v = line[1:].partition(":")
+            out[k.strip()] = v.strip()
+    return out
+
+
+def published_treatments(science: Path) -> set:
+    """The feed's own treatment tokens -- the vocabulary a per-line row must match."""
+    feed = json.loads((science / "data/products/solar/Fe.json").read_text(encoding="utf-8"))
+    return {p["treatment"] for p in feed["products"]}
 
 
 def _last_commit(science: Path, relative: str) -> str:

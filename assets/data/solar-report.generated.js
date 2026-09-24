@@ -1477,6 +1477,13 @@ window.SOLAR_REPORT = {
           "publishedLineCount": 9,
           "artifactLineCount": 10,
           "detail": "The per-line product counts 10 Fe II ENGINE-B lines into the pool; the published band product carries 9. Its band-product input defaults to data/results/rya877/, which predates the RYA-877 disposition; data/results/rya880/ supersedes it. This page reports the band product, so no published number is affected — but the downloadable per-line file is one generation behind."
+        },
+        {
+          "artifact": "data/products/solar/Fe_perline.csv (RYA-870)",
+          "engine": "whole file",
+          "publishedLineCount": 107,
+          "artifactLineCount": 1039,
+          "detail": "Generated 2026-08-18T21:08:52+00:00 from 4e3dabb5ba13. 932 of 1039 rows carry an `engine` label that is not a current feed treatment -- they use the pre-RYA-906 deck-suffixed form (1D-LTE (gerber-nlte), 1D-LTE (ts-lte), ENGINE-A (gerber-nlte)...) -- so those rows cannot be joined to a published product by identity, and the file carries no rows at all for the treatments the headline rests on. Every number ON this page comes from the band products and the feed, not from this file; it is the per-line DOWNLOAD that is behind. Regenerating it needs iSpec on Sirius (RYA-870). The Fe appendix's own per-line export is built from the current band products and is not affected."
         }
       ],
       "reproducibility": {
@@ -1488,7 +1495,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "910381683e0a42fc57c834f3b6345a100e34a333",
         "scienceGit": "b028b715683cf2dd7f581e8d8295a4afc5103803",
-        "generatedAt": "2026-09-24T16:35:09+00:00"
+        "generatedAt": "2026-09-24T18:37:09+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
