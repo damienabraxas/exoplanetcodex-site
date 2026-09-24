@@ -107,6 +107,30 @@ def main() -> None:
     perline = rows(perline_path)
     meta = metadata(perline_path)
     gold = next(row for row in rows(gold_path) if row["element"] == "Fe" and row["ion"] == "I")
+
+    # 🔴 THE Fe I ELEMENT-TABLE ROW READS THE FEED, NOT THE GOLD RECORD (RYA-850/819).
+    # It used to publish `gold["A_X"]` = 7.466, and that number is retired as a headline:
+    # RYA-819 showed the Magic-2013 -0.05 correction that constructed it wrong in both
+    # magnitude and shape, and RYA-850 promoted the graded laboratory-gf pool to the PRIMARY
+    # reported value on 2026-09-13. The gold file is a write-once ratification record and is
+    # NOT edited here -- it keeps its own account of what was ratified and why. The site
+    # simply stops reading it for this row.
+    #
+    # The product selected is the one the Fe appendix already renders as the anchor, so the
+    # two pages cannot disagree: Fe I, VIS, Reference Grade, the AGSS21 selector, the Amarsi
+    # full-3D-NLTE treatment, on HARPS -- which this same report calls the "Primary
+    # direct-solar dataset" in observingCoverage. `test_sun_table_matches_appendix_anchor`
+    # pins the agreement, because a shared rule written twice is a rule that drifts.
+    feed = json.loads((science / "data/products/solar/Fe.json").read_text(encoding="utf-8"))
+    anchors = [q for q in feed["products"]
+               if q["ion"] == "I" and q["band"] == "VIS" and q.get("grade") == "Reference Grade"
+               and q.get("selector") == "ASPLUND_AGSS21" and q["route"] == "SYNTH"
+               and q["treatment"] == "ENGINE-A-3DNLTE"
+               and q["holding"] == "solar_harps_molecfit_corrected"]
+    if len(anchors) != 1:
+        raise SystemExit(f"expected exactly one HARPS Reference Amarsi VIS Fe I product, "
+                         f"found {len(anchors)} -- refusing to guess the headline")
+    anchor = anchors[0]
     tracker = next(row for row in rows(tracker_path) if row["element"] == "Fe")
     graded = [
         row for row in rows(matrix_path)
@@ -331,9 +355,16 @@ def main() -> None:
 
     iron_rows = [
         {"atomicNumber":26,"symbol":"Fe","ion":"I","name":"Iron","status":"gold · generated","appendixPath":"/systems/sol/elements/fe/","referenceKeys":["asplund2021","lodders2025","scott2015","bergemann2012"],
-         # σ_total is the tracker's published Fe figure; no artifact splits the
-         # ratified anchor into stat/sys, so those stay absent rather than invented.
-         "primary":{"value":float(gold["A_X"]),"sigmaStat":None,"sigmaSys":None,"sigmaTotal":float(tracker["sigma"]),"lineCount":int(gold["n_lines"]),"sigmaBasis":"element status tracker (RYA-654) — total only"},
+         # ⚠️ stat AND sys are now POPULATED. The old note said "no artifact splits the
+         # ratified anchor into stat/sys, so those stay absent rather than invented" -- true
+         # of the gold row, but the feed product splits it, so the table can stop showing a
+         # total-only bar.
+         "primary":{"value":float(anchor["A"]),"sigmaStat":float(anchor["sigma_stat"]),
+                    "sigmaSys":float(anchor["sigma_syst_complete"]),
+                    "sigmaTotal":float(anchor["sigma_reported"]),
+                    "lineCount":int(anchor["n_lines"]),
+                    "sigmaBasis":f"Fe.json v{feed['version']} — {anchor['holding']}, "
+                                 f"{anchor['grade']}, Amarsi 3D-NLTE (RYA-850 primary)"},
          "secondary":{"value":secondary["value"],"sigmaStat":None,"sigmaSys":None,"sigmaTotal":secondary["sigma"],"lineCount":secondary["lineCount"]},
          "asplund":float(gold["asplund2021"]),"products":products,"diagnostics":diagnostics,"provenance":provenance,
          "downloadPath":"/assets/data/solar/FeI_perline.csv"},

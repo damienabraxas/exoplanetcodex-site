@@ -346,8 +346,16 @@
 
   function fe2Nist(story) {
     var b = story.bandDependence;
-    return '<p class="solar-copy">Across the visible pool the Codex Fe II log gf values sit <strong>' +
-      signed(story.poolOffsetDex) + ' dex</strong> above NIST ASD. A coherent offset across the whole pool — including its plain-VALD3 members — is a <em>scale</em> difference rather than independent per-line errors, and a log gf that is too high yields an abundance that is too low, so this bears directly on the ionization balance above.</p>' +
+    // The earlier copy quoted +0.106 dex as a WHOLE-POOL offset above NIST ASD and drew an
+    // ionization-balance conclusion from it. RYA-853's referee re-run refutes both: +0.106
+    // is the RED sub-pool alone (8 lines), the full 22-line overlap sits the other side of
+    // zero, and the offset changes sign between blue and red — so there is no coherent
+    // pool-wide scale difference to reason from. The verdict rendered below now says our
+    // scale IS the pure-lab scale. This states the measurement and leaves the conclusion
+    // to that verdict.
+    return '<p class="solar-copy">Over the <strong>' + esc(story.overlapOffsetN) + ' lines</strong> our Fe II pool shares with NIST ASD, the Codex log gf values sit <strong>' +
+      signed(story.overlapOffsetDex) + ' dex</strong> from ASD. The offset is <em>not</em> coherent across the pool: it changes sign by band (below), reaching ' +
+      signed(story.redPoolOffsetDex) + ' dex on the red sub-pool of ' + esc(story.redPoolN) + ' lines — the figure previously quoted here as a pool-wide result.</p>' +
       '<div class="solar-callout"><span>Referee</span><p>' + esc(story.referee) + '</p>' +
       '<p>Overlap with our pool: <strong>' + esc(story.nOverlapLines) + ' lines</strong>. Ours − Den&nbsp;Hartog = ' +
       signed(story.oursMinusDh.median) + ' dex, 95% CI [' + number(story.oursMinusDh.ci95[0], 3) + ', ' + number(story.oursMinusDh.ci95[1], 3) + '].</p>' +
