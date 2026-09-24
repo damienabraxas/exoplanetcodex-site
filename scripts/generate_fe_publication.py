@@ -26,18 +26,26 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'assets/data/fe-publication'
 BANDS = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H']
-# RYA-1223 Option B (Ryan, 2026-09-19): the complete bands publish now and near-UV is
-# HELD until RYA-1226 wires its measured components (RYA-846 continuum, RYA-1220
-# profile_ew, model_atmosphere) and carries the RYA-1190 blends bound. Ryan's requirement
-# for the interim is explicit: near-UV "shows as 'systematic under development,' not stale
-# or absent" -- so the band keeps rendering its CURRENT post-opacity abundance (no
-# pre-opacity ~7.9xx value may ship) and carries this notice beside it. Editorial text
-# naming the gating ticket, never a science value: RYA-914 forbids hardcoded measurements,
-# and nothing here is one.
-HELD_BANDS = {'near-UV': 'Systematic under development — the abundance is current '
-                         '(post-RYA-1207 molecular opacity) but the uncertainty budget is '
-                         'not closed: component wiring and the blends bound are pending '
-                         'RYA-1226.'}
+# RYA-1223 / RYA-1226. Option B (Ryan, 2026-09-19) published the complete bands first and
+# HELD near-UV until RYA-1226 wired its measured uncertainty components. RYA-1226 has now
+# landed (PR #559): six of the eight near-UV Fe rows carry a complete, validated RYA-587
+# budget -- the first products in the feed to carry one at all -- so the band is no longer
+# held and no longer reads "systematic under development".
+#
+# ⚠️ WHAT REMAINS IS NARROWER AND IS SAID PLAINLY RATHER THAN DROPPED. Two Fe I molecfit rows
+# keep a legacy bar because their xi pool MOVED (Fe I 3427.119 A rails at xi = 1.10), so
+# stellar.xi is an honest HOLD and an incomplete budget must not publish. And on the six that
+# did migrate, 81.6% of the published variance is a single term -- profile_ew, measured by
+# RYA-1220 on N I at 8216 A, a different element, band and holding. That is a real property
+# of the published bar, so a reader is told rather than left to infer it from a wide bar.
+#
+# The dict is kept (rather than deleted now that nothing is "held") because a band-level
+# caveat is a recurring need; the next one is a one-line change.
+HELD_BANDS = {'near-UV': 'Uncertainty budget closed for six of eight rows (RYA-1226); '
+                         'two Fe I Kitt Peak/molecfit rows keep a legacy bar pending their '
+                         'microturbulence bracket. On the migrated rows most of the quoted '
+                         'systematic is a conservative profile-width term carried from a '
+                         'measurement in another band.'}
 LABELS = {'harps': 'HARPS', 'crires_plus': 'CRIRES+',
           'kpno_solar_atlas': 'Kitt Peak', 'iag_fts_solar_atlas': 'IAG'}
 CYAN, GOLD, BG = '#63dce6', '#ebc77c', '#081219'

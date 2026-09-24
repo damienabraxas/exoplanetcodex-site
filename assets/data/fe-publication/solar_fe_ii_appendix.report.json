@@ -8,16 +8,16 @@
   "metadata": {
     "generator": "scripts/generate_fe_publication.py",
     "version": "1.0.0",
-    "source_commit": "0e4539da63c8fe63facab98cae5166e98219126b",
-    "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/0e4539da63c8fe63facab98cae5166e98219126b",
-    "generated_at": "2026-09-19T16:52:30+00:00",
-    "feed_version": "1.221",
-    "feed_sha256": "66421362d81e61e8d3aa6a412e1ae362743c05e41fb8b12a2331347f890395b0",
+    "source_commit": "d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853",
+    "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853",
+    "generated_at": "2026-09-24T15:12:27+00:00",
+    "feed_version": "1.222",
+    "feed_sha256": "dd6e47ce2225fa7e32a0ef5f03bda18f13dce61ab3e158d4a16a66fc0e5d2e8e",
     "products": 160,
     "perline_rows": 6686,
     "resolved_products": 138,
     "held_products": 4,
-    "generator_sha256": "0121ba588023c67cd400be22b5a03621d4a56e8c7c5dea57dbec22072372ad9e",
+    "generator_sha256": "a1a10c0ebd9ae8b3c421f4e3f75debc848e3a0a10db3cd8f2e19171018192f4f",
     "pdf_generator": "scripts/element_appendix_pdf.py",
     "pdf_generator_sha256": "b4daae058771c927a8830ff89d39a00b6ab5822f7491f9b3b05ce5920ceb555c",
     "supplemental_sources": [
@@ -1390,8 +1390,8 @@
         "sigma_xi": 0.013832
       },
       "sigma_syst_complete": 0.11037,
-      "sigma_reported": 0.122134,
-      "sigma_reported_basis": "quadrature(sigma_stat, sigma_syst_complete) where sigma_syst_complete = quadrature(published sigma_syst, sigma_xi). sigma_xi enters ONCE, through sigma_syst_complete \u2014 the RYA-1120 artifact's own sigma_reported omitted sigma_syst altogether.",
+      "sigma_reported": 0.2391787538440949,
+      "sigma_reported_basis": "RYA-587 canonical total over all 16 contract components (RYA-1226). Supersedes the legacy quadrature, which charged four terms. See `uncertainty` for the component table; terms whose evidence is a bound carry evidence.bound = true.",
       "science_provenance": {
         "gf_source": "laboratory (canonical_gf LAB tier, above the depth gate)",
         "gf_grade": "primary laboratory",
@@ -1410,6 +1410,628 @@
         }
       },
       "grade_variant": "laboratory gf, above the 0.60 feature-depth gate",
+      "star": "solar",
+      "uncertainty_indicator_ids": [
+        "pk_6e41a12859a1",
+        "pk_9b85a1408c07",
+        "pk_61d3f8242dfd",
+        "pk_27a007d728be",
+        "pk_49532a81af69",
+        "pk_660af6efd93e",
+        "pk_611337302ff9",
+        "pk_47f70269ac75",
+        "pk_fcded4d4fa5c",
+        "pk_2053f62ffef4",
+        "pk_ecdfa7d10bb4",
+        "pk_e5b09ba33ea8"
+      ],
+      "uncertainty": {
+        "schema": "rya587.uncertainty.v1",
+        "scope": {
+          "star": "solar",
+          "product_key": "Fe|II|near-UV|kpno_solar_atlas|solar_kpno_kurucz2005_corrected|DEEPGRADED|DEEPGRADED|SYNTH|1D-LTE|our-deep-graded",
+          "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729"
+        },
+        "components": [
+          {
+            "name": "measurement",
+            "state": "MEASURED",
+            "sigma_dex": 0.05229594181485818,
+            "source": "per-line scatter of the accepted pool, band_products artifact",
+            "evidence": {
+              "method": "line_scatter",
+              "independent": true,
+              "n_lines": 12,
+              "raw_sigma": 0.18115845650600024,
+              "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729"
+            }
+          },
+          {
+            "name": "stellar.logg",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar log g is pinned; delta_logg is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.metallicity",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar [Fe/H] is pinned; delta_feh is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.teff",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "sourced DEFINED zero: no Teff perturbation has been run on this pool, and the derived response is immaterial at this budget's precision",
+            "evidence": {
+              "parameter_exists": true,
+              "delta_K": 1.0,
+              "derived_but_not_perturbed_dex": 0.000665,
+              "derived_from": "uncertainty_stack 0.0665 dex/100 K x 1 K",
+              "share_of_variance": "0.0004%",
+              "owed_measurement": "a Teff perturbation on this pool"
+            }
+          },
+          {
+            "name": "pseudo_continuum",
+            "state": "MEASURED",
+            "sigma_dex": 0.070975,
+            "source": "RYA-846 sigma_delta, measured at this band's product lines: Kitt Peak (Kurucz/Brault) vs Wallace+2011 (NSO), two independent reductions, deconfounded from Wallace's own internal scatter. Supersedes the RYA-1113/841 band-flat 0.100 allowance, which RYA-846 records as `assumed_term_dex` -- the number it was built to replace.",
+            "evidence": {
+              "band": "near-UV",
+              "basis": "measured, two-reduction difference",
+              "n_lines": 40,
+              "n_lines_outside_wallace": 0,
+              "raw_at_lines": 0.049380578903038624,
+              "wallace_internal": 0.04071404004144703,
+              "net_quadrature": 0.027942951102248863,
+              "term_raw_dex": 0.125427,
+              "term_net_dex": 0.070975,
+              "lever": 2.54,
+              "supersedes_assumed_dex": 0.1,
+              "empirical_lower_bound": "RYA-846 states this measures reduction-to-reduction disagreement, not distance from an unobservable true continuum, so it is a LOWER bound",
+              "lever_note": "the artifact's lever is 2.54 (RYA-841, 200 fits, +/-4% grid, p16 0.91 / p84 4.68); the directive said 2.42"
+            }
+          },
+          {
+            "name": "hfs_isotopes",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "every line in this pool has hfs_n_components == 1 (canonical_gf)",
+            "evidence": {
+              "hfs_n_components": [
+                1
+              ]
+            }
+          },
+          {
+            "name": "telluric",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "3000-3780 A contains no registered telluric band (pipeline.telluric_policy)",
+            "evidence": {
+              "window_A": [
+                3000,
+                3780
+              ],
+              "bands_in_window": 0
+            }
+          },
+          {
+            "name": "molecular_coupling",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "atomic Fe product; the selector is not a MOL- indicator set",
+            "evidence": {
+              "selector": "DEEPGRADED"
+            }
+          },
+          {
+            "name": "holding_instrument",
+            "state": "MEASURED",
+            "sigma_dex": 0.0,
+            "source": "SynthesisHandler harness residual MEASURED against the known optical answer, not assumed zero (control/frontier rule)",
+            "evidence": {
+              "harness_residual_dex": 0.0
+            }
+          },
+          {
+            "name": "continuum",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "the per-line continuum fit carries no evidence to price -- continuum_method, continuum_ref and continuum_level are empty on every line in this pool -- and the band-level continuum PLACEMENT uncertainty is measured by RYA-846 and charged once, on pseudo_continuum.",
+            "evidence": {
+              "per_line_fields_empty": [
+                "continuum_method",
+                "continuum_ref",
+                "continuum_level"
+              ],
+              "subsumed_by": "pseudo_continuum (RYA-846 measured, 0.070975 dex)",
+              "not_double_counted": true,
+              "withdrawn_floor_dex": 0.1075,
+              "why_withdrawn": "it was the OBSERVED SPREAD BETWEEN THE TWO HOLDINGS, which prices each product from its sibling's answer, and it exceeded RYA-846's real measurement -- a bound where a measurement exists (Ryan, 2026-09-19: do not bound-fudge)",
+              "holding_values": {
+                "solar_kpno_kurucz2005_corrected": 7.617,
+                "solar_kpno_molecfit_corrected": 7.402
+              },
+              "owed_refinement": "sigma_delta for Kurucz2005-vs-1984KP specifically, per ion -- RYA-846 compared Kitt Peak vs Wallace+2011. RYA-1133 recorded this as blocked on Fe II near-UV having no *_lines.csv; RYA-908 emitted them the same day and 14 are in the tree, so it is RUNNABLE, and it would refine rather than unblock -- the term is measured now."
+            }
+          },
+          {
+            "name": "model_atmosphere",
+            "state": "DEFINED",
+            "sigma_dex": 0.004,
+            "source": "RYA-1032 atmosphere_nuisance: atlas9 -> marcs-ges, LTE, same pool",
+            "evidence": {
+              "bound": true,
+              "status": "measured on the VIS Fe I pool, carried cross-band",
+              "delta_dex": 0.004,
+              "n_hi": 67,
+              "n_lo": 67,
+              "same_pool": true,
+              "varied": "atmosphere",
+              "measured_band": "VIS",
+              "grid_shift_lever_exists": true,
+              "lever_is": "RYA-1032 atmosphere_nuisance: A(marcs-ges) 7.451 - A(atlas9) 7.447 = 0.004, one axis varied",
+              "stagger_step_is_a_different_axis": {
+                "step": "RYA-1032 dimensionality_step",
+                "delta_dex": 0.101,
+                "varied": "dim",
+                "from": "marcs-ges (1D-LTE)",
+                "to": "stagger-mean3d (<3D>-LTE)",
+                "why_not_charged": "dimensionality, not grid choice -- the feed carries <3D> as its own treatment"
+              }
+            }
+          },
+          {
+            "name": "profile_ew",
+            "state": "DEFINED",
+            "sigma_dex": 0.216,
+            "source": "RYA-1220 fit half-width excursion, +/-0.25 A vs +/-1.1 A",
+            "evidence": {
+              "bound": true,
+              "status": "systematic under development -- NOT demonstrably conservative",
+              "delta_dex": 0.216,
+              "measured_on": "N I 8216.336 A, solar_iag",
+              "cross_element": true,
+              "cross_band": true,
+              "cross_holding": true,
+              "source_artifact_says": "steps_are_adopted_uncertainties: false; status: diagnostic_only",
+              "owed_measurement": "half-width sweep on the near-UV Fe pool at its own fixed +/-0.4 A"
+            }
+          },
+          {
+            "name": "blends",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "no un-modelled resolvable blends exist in this band: RYA-1190 measured the near-UV list to BE the full VALD extract ('nothing to complete'), and the opacity deficit it did find was corrected by RYA-1204 and wired into this synthesis by RYA-1207.",
+            "evidence": {
+              "rya1190_verdict": "the near-UV list IS the VALD extract -- nothing to complete; the residual was the OPACITY deficit, not catalogueable blends",
+              "opacity_deficit_corrected_by": [
+                "RYA-1204",
+                "RYA-1207"
+              ],
+              "synthesis_is_post_correction": true,
+              "limiting_term_is": "pseudo_continuum / normalization (RYA-841), measured by RYA-846",
+              "withdrawn_bound_dex": 0.1721,
+              "why_withdrawn": "RYA-1190's PRE-correction deficit. It measured the band before RYA-1204/1207; carrying it as a ceiling bills this product for an error the synthesis it ran on has already removed.",
+              "withdrawn_alternative_dex": 0.028,
+              "why_alternative_also_withdrawn": "also pre-correction -- it is how much a completeness build would have closed, and there is nothing left to complete"
+            }
+          },
+          {
+            "name": "nlte",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "this leg applies no departures: nlte_delta_dex is 0 on every line and nlte_source reads 'none -- LTE'",
+            "evidence": {
+              "nlte_delta_dex": 0.0
+            }
+          },
+          {
+            "name": "stellar.xi",
+            "state": "MEASURED",
+            "sigma_dex": 0.032032000000000005,
+            "source": "per-line paired differential at xi 0.90/1.10 on this product's OWN pool, on the current molecular synthesis",
+            "evidence": {
+              "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729",
+              "parameter_source": "RYA-1089 sourced solar delta_xi = 0.2912 km/s, the honest method+selection spread |0.709 - 1.0|",
+              "response_assessment": "NOT ASSESSED: RYA-1213's published artifact retains only the central median for this pool and its legs are not in the committed tree, so per-side asymmetry cannot be measured here. Owed.",
+              "signed_response_dex": -0.032032000000000005,
+              "delta_plus_dex": -0.032032000000000005,
+              "delta_minus_dex": 0.032032000000000005,
+              "delta_parameter": 0.2912,
+              "dA_dxi": -0.11,
+              "delta_xi_kms": 0.2912,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "transition_data",
+            "state": "MEASURED",
+            "sigma_dex": 0.041666666666666664,
+            "source": "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+            "evidence": {
+              "indicator_ids": [
+                "pk_6e41a12859a1",
+                "pk_9b85a1408c07",
+                "pk_61d3f8242dfd",
+                "pk_27a007d728be",
+                "pk_49532a81af69",
+                "pk_660af6efd93e",
+                "pk_611337302ff9",
+                "pk_47f70269ac75",
+                "pk_fcded4d4fa5c",
+                "pk_2053f62ffef4",
+                "pk_ecdfa7d10bb4",
+                "pk_e5b09ba33ea8"
+              ],
+              "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729",
+              "line_sigma_dex": [
+                0.04,
+                0.07,
+                0.04,
+                0.03,
+                0.04,
+                0.04,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.04,
+                0.08
+              ],
+              "weights": [
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333
+              ],
+              "line_sources": [
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)"
+              ],
+              "covariance": [
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0028000000000000004,
+                  0.004900000000000001,
+                  0.0028000000000000004,
+                  0.0021000000000000003,
+                  0.0028000000000000004,
+                  0.0028000000000000004,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0028000000000000004,
+                  0.005600000000000001
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0032,
+                  0.005600000000000001,
+                  0.0032,
+                  0.0024,
+                  0.0032,
+                  0.0032,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0032,
+                  0.0064
+                ]
+              ]
+            }
+          }
+        ],
+        "required_extra": [],
+        "covariance": [
+          [
+            0.0027348655303030323,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.005037450624999999,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.046655999999999996,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0010260490240000004,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001736111111111111
+          ]
+        ],
+        "covariance_order": [
+          "measurement",
+          "stellar.logg",
+          "stellar.metallicity",
+          "stellar.teff",
+          "pseudo_continuum",
+          "holding_instrument",
+          "model_atmosphere",
+          "profile_ew",
+          "stellar.xi",
+          "transition_data"
+        ],
+        "covariance_source": "components treated as independent of one another; the within-component correlations (shared gf source) are carried inside transition_data's own covariance",
+        "assumptions": "solar log g and [Fe/H] are pinned, so their responses are definitionally zero rather than unmeasured",
+        "state": "COMPLETE",
+        "holds": [],
+        "sigma_reported": 0.2391787538440949,
+        "sigma_measured_partial": 0.2391787538440949
+      },
       "publication_id": "Fe-018"
     },
     {
@@ -1466,8 +2088,8 @@
         "sigma_xi": 0.01456
       },
       "sigma_syst_complete": 0.110464,
-      "sigma_reported": 0.13692,
-      "sigma_reported_basis": "quadrature(sigma_stat, sigma_syst_complete) where sigma_syst_complete = quadrature(published sigma_syst, sigma_xi). sigma_xi enters ONCE, through sigma_syst_complete \u2014 the RYA-1120 artifact's own sigma_reported omitted sigma_syst altogether.",
+      "sigma_reported": 0.2511638277230282,
+      "sigma_reported_basis": "RYA-587 canonical total over all 16 contract components (RYA-1226). Supersedes the legacy quadrature, which charged four terms. See `uncertainty` for the component table; terms whose evidence is a bound carry evidence.bound = true.",
       "science_provenance": {
         "gf_source": "laboratory (canonical_gf LAB tier, above the depth gate)",
         "gf_grade": "primary laboratory",
@@ -1486,6 +2108,528 @@
         }
       },
       "grade_variant": "laboratory gf, above the 0.60 feature-depth gate",
+      "star": "solar",
+      "uncertainty_indicator_ids": [
+        "pk_9b85a1408c07",
+        "pk_61d3f8242dfd",
+        "pk_27a007d728be",
+        "pk_611337302ff9",
+        "pk_fcded4d4fa5c",
+        "pk_2053f62ffef4",
+        "pk_e5b09ba33ea8"
+      ],
+      "uncertainty": {
+        "schema": "rya587.uncertainty.v1",
+        "scope": {
+          "star": "solar",
+          "product_key": "Fe|II|near-UV|kpno_solar_atlas|solar_kpno_kurucz2005_corrected|DEEPGRADED|DEEPGRADED|SYNTH|ENGINE-A|our-deep-graded",
+          "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3"
+        },
+        "components": [
+          {
+            "name": "measurement",
+            "state": "MEASURED",
+            "sigma_dex": 0.08085508158234135,
+            "source": "per-line scatter of the accepted pool, band_products artifact",
+            "evidence": {
+              "method": "line_scatter",
+              "independent": true,
+              "n_lines": 7,
+              "raw_sigma": 0.21392243810271408,
+              "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3"
+            }
+          },
+          {
+            "name": "stellar.logg",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar log g is pinned; delta_logg is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.metallicity",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar [Fe/H] is pinned; delta_feh is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.teff",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "sourced DEFINED zero: no Teff perturbation has been run on this pool, and the derived response is immaterial at this budget's precision",
+            "evidence": {
+              "parameter_exists": true,
+              "delta_K": 1.0,
+              "derived_but_not_perturbed_dex": 0.000665,
+              "derived_from": "uncertainty_stack 0.0665 dex/100 K x 1 K",
+              "share_of_variance": "0.0004%",
+              "owed_measurement": "a Teff perturbation on this pool"
+            }
+          },
+          {
+            "name": "pseudo_continuum",
+            "state": "MEASURED",
+            "sigma_dex": 0.070975,
+            "source": "RYA-846 sigma_delta, measured at this band's product lines: Kitt Peak (Kurucz/Brault) vs Wallace+2011 (NSO), two independent reductions, deconfounded from Wallace's own internal scatter. Supersedes the RYA-1113/841 band-flat 0.100 allowance, which RYA-846 records as `assumed_term_dex` -- the number it was built to replace.",
+            "evidence": {
+              "band": "near-UV",
+              "basis": "measured, two-reduction difference",
+              "n_lines": 40,
+              "n_lines_outside_wallace": 0,
+              "raw_at_lines": 0.049380578903038624,
+              "wallace_internal": 0.04071404004144703,
+              "net_quadrature": 0.027942951102248863,
+              "term_raw_dex": 0.125427,
+              "term_net_dex": 0.070975,
+              "lever": 2.54,
+              "supersedes_assumed_dex": 0.1,
+              "empirical_lower_bound": "RYA-846 states this measures reduction-to-reduction disagreement, not distance from an unobservable true continuum, so it is a LOWER bound",
+              "lever_note": "the artifact's lever is 2.54 (RYA-841, 200 fits, +/-4% grid, p16 0.91 / p84 4.68); the directive said 2.42"
+            }
+          },
+          {
+            "name": "hfs_isotopes",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "every line in this pool has hfs_n_components == 1 (canonical_gf)",
+            "evidence": {
+              "hfs_n_components": [
+                1
+              ]
+            }
+          },
+          {
+            "name": "telluric",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "3000-3780 A contains no registered telluric band (pipeline.telluric_policy)",
+            "evidence": {
+              "window_A": [
+                3000,
+                3780
+              ],
+              "bands_in_window": 0
+            }
+          },
+          {
+            "name": "molecular_coupling",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "atomic Fe product; the selector is not a MOL- indicator set",
+            "evidence": {
+              "selector": "DEEPGRADED"
+            }
+          },
+          {
+            "name": "holding_instrument",
+            "state": "MEASURED",
+            "sigma_dex": 0.0,
+            "source": "SynthesisHandler harness residual MEASURED against the known optical answer, not assumed zero (control/frontier rule)",
+            "evidence": {
+              "harness_residual_dex": 0.0
+            }
+          },
+          {
+            "name": "continuum",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "the per-line continuum fit carries no evidence to price -- continuum_method, continuum_ref and continuum_level are empty on every line in this pool -- and the band-level continuum PLACEMENT uncertainty is measured by RYA-846 and charged once, on pseudo_continuum.",
+            "evidence": {
+              "per_line_fields_empty": [
+                "continuum_method",
+                "continuum_ref",
+                "continuum_level"
+              ],
+              "subsumed_by": "pseudo_continuum (RYA-846 measured, 0.070975 dex)",
+              "not_double_counted": true,
+              "withdrawn_floor_dex": 0.1155,
+              "why_withdrawn": "it was the OBSERVED SPREAD BETWEEN THE TWO HOLDINGS, which prices each product from its sibling's answer, and it exceeded RYA-846's real measurement -- a bound where a measurement exists (Ryan, 2026-09-19: do not bound-fudge)",
+              "holding_values": {
+                "solar_kpno_kurucz2005_corrected": 7.635,
+                "solar_kpno_molecfit_corrected": 7.404
+              },
+              "owed_refinement": "sigma_delta for Kurucz2005-vs-1984KP specifically, per ion -- RYA-846 compared Kitt Peak vs Wallace+2011. RYA-1133 recorded this as blocked on Fe II near-UV having no *_lines.csv; RYA-908 emitted them the same day and 14 are in the tree, so it is RUNNABLE, and it would refine rather than unblock -- the term is measured now."
+            }
+          },
+          {
+            "name": "model_atmosphere",
+            "state": "DEFINED",
+            "sigma_dex": 0.004,
+            "source": "RYA-1032 atmosphere_nuisance: atlas9 -> marcs-ges, LTE, same pool",
+            "evidence": {
+              "bound": true,
+              "status": "measured on the VIS Fe I pool, carried cross-band",
+              "delta_dex": 0.004,
+              "n_hi": 67,
+              "n_lo": 67,
+              "same_pool": true,
+              "varied": "atmosphere",
+              "measured_band": "VIS",
+              "grid_shift_lever_exists": true,
+              "lever_is": "RYA-1032 atmosphere_nuisance: A(marcs-ges) 7.451 - A(atlas9) 7.447 = 0.004, one axis varied",
+              "stagger_step_is_a_different_axis": {
+                "step": "RYA-1032 dimensionality_step",
+                "delta_dex": 0.101,
+                "varied": "dim",
+                "from": "marcs-ges (1D-LTE)",
+                "to": "stagger-mean3d (<3D>-LTE)",
+                "why_not_charged": "dimensionality, not grid choice -- the feed carries <3D> as its own treatment"
+              }
+            }
+          },
+          {
+            "name": "profile_ew",
+            "state": "DEFINED",
+            "sigma_dex": 0.216,
+            "source": "RYA-1220 fit half-width excursion, +/-0.25 A vs +/-1.1 A",
+            "evidence": {
+              "bound": true,
+              "status": "systematic under development -- NOT demonstrably conservative",
+              "delta_dex": 0.216,
+              "measured_on": "N I 8216.336 A, solar_iag",
+              "cross_element": true,
+              "cross_band": true,
+              "cross_holding": true,
+              "source_artifact_says": "steps_are_adopted_uncertainties: false; status: diagnostic_only",
+              "owed_measurement": "half-width sweep on the near-UV Fe pool at its own fixed +/-0.4 A"
+            }
+          },
+          {
+            "name": "blends",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "no un-modelled resolvable blends exist in this band: RYA-1190 measured the near-UV list to BE the full VALD extract ('nothing to complete'), and the opacity deficit it did find was corrected by RYA-1204 and wired into this synthesis by RYA-1207.",
+            "evidence": {
+              "rya1190_verdict": "the near-UV list IS the VALD extract -- nothing to complete; the residual was the OPACITY deficit, not catalogueable blends",
+              "opacity_deficit_corrected_by": [
+                "RYA-1204",
+                "RYA-1207"
+              ],
+              "synthesis_is_post_correction": true,
+              "limiting_term_is": "pseudo_continuum / normalization (RYA-841), measured by RYA-846",
+              "withdrawn_bound_dex": 0.1721,
+              "why_withdrawn": "RYA-1190's PRE-correction deficit. It measured the band before RYA-1204/1207; carrying it as a ceiling bills this product for an error the synthesis it ran on has already removed.",
+              "withdrawn_alternative_dex": 0.028,
+              "why_alternative_also_withdrawn": "also pre-correction -- it is how much a completeness build would have closed, and there is nothing left to complete"
+            }
+          },
+          {
+            "name": "nlte",
+            "state": "DEFINED",
+            "sigma_dex": 0.043,
+            "source": "RYA-1032 model_family_spread (Gerber - Bergemann, 1D-NLTE)",
+            "evidence": {
+              "bound": true,
+              "status": "measured on the VIS Fe I pool, carried cross-band",
+              "delta_dex": 0.043,
+              "deconfounded_dex": 0.039,
+              "varied": "family",
+              "measured_band": "VIS",
+              "owed_measurement": "the Gerber/Bergemann disagreement on the near-UV pool itself"
+            }
+          },
+          {
+            "name": "stellar.xi",
+            "state": "MEASURED",
+            "sigma_dex": 0.032032000000000005,
+            "source": "per-line paired differential at xi 0.90/1.10 on this product's OWN pool, on the current molecular synthesis",
+            "evidence": {
+              "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3",
+              "parameter_source": "RYA-1089 sourced solar delta_xi = 0.2912 km/s, the honest method+selection spread |0.709 - 1.0|",
+              "response_assessment": "NOT ASSESSED: RYA-1213's published artifact retains only the central median for this pool and its legs are not in the committed tree, so per-side asymmetry cannot be measured here. Owed.",
+              "signed_response_dex": -0.032032000000000005,
+              "delta_plus_dex": -0.032032000000000005,
+              "delta_minus_dex": 0.032032000000000005,
+              "delta_parameter": 0.2912,
+              "dA_dxi": -0.11,
+              "delta_xi_kms": 0.2912,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "transition_data",
+            "state": "MEASURED",
+            "sigma_dex": 0.04428571428571428,
+            "source": "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+            "evidence": {
+              "indicator_ids": [
+                "pk_9b85a1408c07",
+                "pk_61d3f8242dfd",
+                "pk_27a007d728be",
+                "pk_611337302ff9",
+                "pk_fcded4d4fa5c",
+                "pk_2053f62ffef4",
+                "pk_e5b09ba33ea8"
+              ],
+              "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3",
+              "line_sigma_dex": [
+                0.07,
+                0.04,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.08
+              ],
+              "weights": [
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285
+              ],
+              "line_sources": [
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)"
+              ],
+              "covariance": [
+                [
+                  0.004900000000000001,
+                  0.0028000000000000004,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.005600000000000001
+                ],
+                [
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0032
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.005600000000000001,
+                  0.0032,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0064
+                ]
+              ]
+            }
+          }
+        ],
+        "required_extra": [],
+        "covariance": [
+          [
+            0.006537544217687075,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.005037450624999999,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6e-05,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.046655999999999996,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0018489999999999997,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0010260490240000004,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001961224489795918
+          ]
+        ],
+        "covariance_order": [
+          "measurement",
+          "stellar.logg",
+          "stellar.metallicity",
+          "stellar.teff",
+          "pseudo_continuum",
+          "holding_instrument",
+          "model_atmosphere",
+          "profile_ew",
+          "nlte",
+          "stellar.xi",
+          "transition_data"
+        ],
+        "covariance_source": "components treated as independent of one another; the within-component correlations (shared gf source) are carried inside transition_data's own covariance",
+        "assumptions": "solar log g and [Fe/H] are pinned, so their responses are definitionally zero rather than unmeasured",
+        "state": "COMPLETE",
+        "holds": [],
+        "sigma_reported": 0.2511638277230282,
+        "sigma_measured_partial": 0.2511638277230282
+      },
       "publication_id": "Fe-019"
     },
     {
@@ -1846,8 +2990,8 @@
         "sigma_xi": 0.017472
       },
       "sigma_syst_complete": 0.110885,
-      "sigma_reported": 0.120513,
-      "sigma_reported_basis": "quadrature(sigma_stat, sigma_syst_complete) where sigma_syst_complete = quadrature(published sigma_syst, sigma_xi). sigma_xi enters ONCE, through sigma_syst_complete \u2014 the RYA-1120 artifact's own sigma_reported omitted sigma_syst altogether.",
+      "sigma_reported": 0.23811028904692483,
+      "sigma_reported_basis": "RYA-587 canonical total over all 16 contract components (RYA-1226). Supersedes the legacy quadrature, which charged four terms. See `uncertainty` for the component table; terms whose evidence is a bound carry evidence.bound = true.",
       "science_provenance": {
         "gf_source": "laboratory (canonical_gf LAB tier, above the depth gate)",
         "gf_grade": "primary laboratory",
@@ -1866,6 +3010,628 @@
         }
       },
       "grade_variant": "laboratory gf, above the 0.60 feature-depth gate",
+      "star": "solar",
+      "uncertainty_indicator_ids": [
+        "pk_6e41a12859a1",
+        "pk_9b85a1408c07",
+        "pk_61d3f8242dfd",
+        "pk_27a007d728be",
+        "pk_49532a81af69",
+        "pk_660af6efd93e",
+        "pk_611337302ff9",
+        "pk_47f70269ac75",
+        "pk_fcded4d4fa5c",
+        "pk_2053f62ffef4",
+        "pk_ecdfa7d10bb4",
+        "pk_e5b09ba33ea8"
+      ],
+      "uncertainty": {
+        "schema": "rya587.uncertainty.v1",
+        "scope": {
+          "star": "solar",
+          "product_key": "Fe|II|near-UV|kpno_solar_atlas|solar_kpno_molecfit_corrected|DEEPGRADED|DEEPGRADED|SYNTH|1D-LTE|our-deep-graded",
+          "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729"
+        },
+        "components": [
+          {
+            "name": "measurement",
+            "state": "MEASURED",
+            "sigma_dex": 0.04716883494320151,
+            "source": "per-line scatter of the accepted pool, band_products artifact",
+            "evidence": {
+              "method": "line_scatter",
+              "independent": true,
+              "n_lines": 12,
+              "raw_sigma": 0.1633976373109105,
+              "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729"
+            }
+          },
+          {
+            "name": "stellar.logg",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar log g is pinned; delta_logg is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.metallicity",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar [Fe/H] is pinned; delta_feh is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.teff",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "sourced DEFINED zero: no Teff perturbation has been run on this pool, and the derived response is immaterial at this budget's precision",
+            "evidence": {
+              "parameter_exists": true,
+              "delta_K": 1.0,
+              "derived_but_not_perturbed_dex": 0.000665,
+              "derived_from": "uncertainty_stack 0.0665 dex/100 K x 1 K",
+              "share_of_variance": "0.0004%",
+              "owed_measurement": "a Teff perturbation on this pool"
+            }
+          },
+          {
+            "name": "pseudo_continuum",
+            "state": "MEASURED",
+            "sigma_dex": 0.070975,
+            "source": "RYA-846 sigma_delta, measured at this band's product lines: Kitt Peak (Kurucz/Brault) vs Wallace+2011 (NSO), two independent reductions, deconfounded from Wallace's own internal scatter. Supersedes the RYA-1113/841 band-flat 0.100 allowance, which RYA-846 records as `assumed_term_dex` -- the number it was built to replace.",
+            "evidence": {
+              "band": "near-UV",
+              "basis": "measured, two-reduction difference",
+              "n_lines": 40,
+              "n_lines_outside_wallace": 0,
+              "raw_at_lines": 0.049380578903038624,
+              "wallace_internal": 0.04071404004144703,
+              "net_quadrature": 0.027942951102248863,
+              "term_raw_dex": 0.125427,
+              "term_net_dex": 0.070975,
+              "lever": 2.54,
+              "supersedes_assumed_dex": 0.1,
+              "empirical_lower_bound": "RYA-846 states this measures reduction-to-reduction disagreement, not distance from an unobservable true continuum, so it is a LOWER bound",
+              "lever_note": "the artifact's lever is 2.54 (RYA-841, 200 fits, +/-4% grid, p16 0.91 / p84 4.68); the directive said 2.42"
+            }
+          },
+          {
+            "name": "hfs_isotopes",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "every line in this pool has hfs_n_components == 1 (canonical_gf)",
+            "evidence": {
+              "hfs_n_components": [
+                1
+              ]
+            }
+          },
+          {
+            "name": "telluric",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "3000-3780 A contains no registered telluric band (pipeline.telluric_policy)",
+            "evidence": {
+              "window_A": [
+                3000,
+                3780
+              ],
+              "bands_in_window": 0
+            }
+          },
+          {
+            "name": "molecular_coupling",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "atomic Fe product; the selector is not a MOL- indicator set",
+            "evidence": {
+              "selector": "DEEPGRADED"
+            }
+          },
+          {
+            "name": "holding_instrument",
+            "state": "MEASURED",
+            "sigma_dex": 0.0,
+            "source": "SynthesisHandler harness residual MEASURED against the known optical answer, not assumed zero (control/frontier rule)",
+            "evidence": {
+              "harness_residual_dex": 0.0
+            }
+          },
+          {
+            "name": "continuum",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "the per-line continuum fit carries no evidence to price -- continuum_method, continuum_ref and continuum_level are empty on every line in this pool -- and the band-level continuum PLACEMENT uncertainty is measured by RYA-846 and charged once, on pseudo_continuum.",
+            "evidence": {
+              "per_line_fields_empty": [
+                "continuum_method",
+                "continuum_ref",
+                "continuum_level"
+              ],
+              "subsumed_by": "pseudo_continuum (RYA-846 measured, 0.070975 dex)",
+              "not_double_counted": true,
+              "withdrawn_floor_dex": 0.1075,
+              "why_withdrawn": "it was the OBSERVED SPREAD BETWEEN THE TWO HOLDINGS, which prices each product from its sibling's answer, and it exceeded RYA-846's real measurement -- a bound where a measurement exists (Ryan, 2026-09-19: do not bound-fudge)",
+              "holding_values": {
+                "solar_kpno_kurucz2005_corrected": 7.617,
+                "solar_kpno_molecfit_corrected": 7.402
+              },
+              "owed_refinement": "sigma_delta for Kurucz2005-vs-1984KP specifically, per ion -- RYA-846 compared Kitt Peak vs Wallace+2011. RYA-1133 recorded this as blocked on Fe II near-UV having no *_lines.csv; RYA-908 emitted them the same day and 14 are in the tree, so it is RUNNABLE, and it would refine rather than unblock -- the term is measured now."
+            }
+          },
+          {
+            "name": "model_atmosphere",
+            "state": "DEFINED",
+            "sigma_dex": 0.004,
+            "source": "RYA-1032 atmosphere_nuisance: atlas9 -> marcs-ges, LTE, same pool",
+            "evidence": {
+              "bound": true,
+              "status": "measured on the VIS Fe I pool, carried cross-band",
+              "delta_dex": 0.004,
+              "n_hi": 67,
+              "n_lo": 67,
+              "same_pool": true,
+              "varied": "atmosphere",
+              "measured_band": "VIS",
+              "grid_shift_lever_exists": true,
+              "lever_is": "RYA-1032 atmosphere_nuisance: A(marcs-ges) 7.451 - A(atlas9) 7.447 = 0.004, one axis varied",
+              "stagger_step_is_a_different_axis": {
+                "step": "RYA-1032 dimensionality_step",
+                "delta_dex": 0.101,
+                "varied": "dim",
+                "from": "marcs-ges (1D-LTE)",
+                "to": "stagger-mean3d (<3D>-LTE)",
+                "why_not_charged": "dimensionality, not grid choice -- the feed carries <3D> as its own treatment"
+              }
+            }
+          },
+          {
+            "name": "profile_ew",
+            "state": "DEFINED",
+            "sigma_dex": 0.216,
+            "source": "RYA-1220 fit half-width excursion, +/-0.25 A vs +/-1.1 A",
+            "evidence": {
+              "bound": true,
+              "status": "systematic under development -- NOT demonstrably conservative",
+              "delta_dex": 0.216,
+              "measured_on": "N I 8216.336 A, solar_iag",
+              "cross_element": true,
+              "cross_band": true,
+              "cross_holding": true,
+              "source_artifact_says": "steps_are_adopted_uncertainties: false; status: diagnostic_only",
+              "owed_measurement": "half-width sweep on the near-UV Fe pool at its own fixed +/-0.4 A"
+            }
+          },
+          {
+            "name": "blends",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "no un-modelled resolvable blends exist in this band: RYA-1190 measured the near-UV list to BE the full VALD extract ('nothing to complete'), and the opacity deficit it did find was corrected by RYA-1204 and wired into this synthesis by RYA-1207.",
+            "evidence": {
+              "rya1190_verdict": "the near-UV list IS the VALD extract -- nothing to complete; the residual was the OPACITY deficit, not catalogueable blends",
+              "opacity_deficit_corrected_by": [
+                "RYA-1204",
+                "RYA-1207"
+              ],
+              "synthesis_is_post_correction": true,
+              "limiting_term_is": "pseudo_continuum / normalization (RYA-841), measured by RYA-846",
+              "withdrawn_bound_dex": 0.1721,
+              "why_withdrawn": "RYA-1190's PRE-correction deficit. It measured the band before RYA-1204/1207; carrying it as a ceiling bills this product for an error the synthesis it ran on has already removed.",
+              "withdrawn_alternative_dex": 0.028,
+              "why_alternative_also_withdrawn": "also pre-correction -- it is how much a completeness build would have closed, and there is nothing left to complete"
+            }
+          },
+          {
+            "name": "nlte",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "this leg applies no departures: nlte_delta_dex is 0 on every line and nlte_source reads 'none -- LTE'",
+            "evidence": {
+              "nlte_delta_dex": 0.0
+            }
+          },
+          {
+            "name": "stellar.xi",
+            "state": "MEASURED",
+            "sigma_dex": 0.032032000000000005,
+            "source": "per-line paired differential at xi 0.90/1.10 on this product's OWN pool, on the current molecular synthesis",
+            "evidence": {
+              "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729",
+              "parameter_source": "RYA-1089 sourced solar delta_xi = 0.2912 km/s, the honest method+selection spread |0.709 - 1.0|",
+              "response_assessment": "NOT ASSESSED: as for kurucz2005 -- RYA-1213 publishes only the central median.",
+              "signed_response_dex": -0.032032000000000005,
+              "delta_plus_dex": -0.032032000000000005,
+              "delta_minus_dex": 0.032032000000000005,
+              "delta_parameter": 0.2912,
+              "dA_dxi": -0.11,
+              "delta_xi_kms": 0.2912,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "transition_data",
+            "state": "MEASURED",
+            "sigma_dex": 0.041666666666666664,
+            "source": "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+            "evidence": {
+              "indicator_ids": [
+                "pk_6e41a12859a1",
+                "pk_9b85a1408c07",
+                "pk_61d3f8242dfd",
+                "pk_27a007d728be",
+                "pk_49532a81af69",
+                "pk_660af6efd93e",
+                "pk_611337302ff9",
+                "pk_47f70269ac75",
+                "pk_fcded4d4fa5c",
+                "pk_2053f62ffef4",
+                "pk_ecdfa7d10bb4",
+                "pk_e5b09ba33ea8"
+              ],
+              "pool_sha256": "52f79bece19c7013d6d5e07cb54917186bc9ff06fa73967e922c09eba21ed729",
+              "line_sigma_dex": [
+                0.04,
+                0.07,
+                0.04,
+                0.03,
+                0.04,
+                0.04,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.04,
+                0.08
+              ],
+              "weights": [
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333,
+                0.08333333333333333
+              ],
+              "line_sources": [
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)"
+              ],
+              "covariance": [
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0028000000000000004,
+                  0.004900000000000001,
+                  0.0028000000000000004,
+                  0.0021000000000000003,
+                  0.0028000000000000004,
+                  0.0028000000000000004,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0028000000000000004,
+                  0.005600000000000001
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0012,
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0012,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0012,
+                  0.0024
+                ],
+                [
+                  0.0016,
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0016,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0016,
+                  0.0032
+                ],
+                [
+                  0.0032,
+                  0.005600000000000001,
+                  0.0032,
+                  0.0024,
+                  0.0032,
+                  0.0032,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0032,
+                  0.0064
+                ]
+              ]
+            }
+          }
+        ],
+        "required_extra": [],
+        "covariance": [
+          [
+            0.0022248989898989878,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.005037450624999999,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6e-05,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.046655999999999996,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0010260490240000004,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001736111111111111
+          ]
+        ],
+        "covariance_order": [
+          "measurement",
+          "stellar.logg",
+          "stellar.metallicity",
+          "stellar.teff",
+          "pseudo_continuum",
+          "holding_instrument",
+          "model_atmosphere",
+          "profile_ew",
+          "stellar.xi",
+          "transition_data"
+        ],
+        "covariance_source": "components treated as independent of one another; the within-component correlations (shared gf source) are carried inside transition_data's own covariance",
+        "assumptions": "solar log g and [Fe/H] are pinned, so their responses are definitionally zero rather than unmeasured",
+        "state": "COMPLETE",
+        "holds": [],
+        "sigma_reported": 0.23811028904692483,
+        "sigma_measured_partial": 0.23811028904692483
+      },
       "publication_id": "Fe-024"
     },
     {
@@ -1922,8 +3688,8 @@
         "sigma_xi": 0.011648
       },
       "sigma_syst_complete": 0.110118,
-      "sigma_reported": 0.121397,
-      "sigma_reported_basis": "quadrature(sigma_stat, sigma_syst_complete) where sigma_syst_complete = quadrature(published sigma_syst, sigma_xi). sigma_xi enters ONCE, through sigma_syst_complete \u2014 the RYA-1120 artifact's own sigma_reported omitted sigma_syst altogether.",
+      "sigma_reported": 0.24321517653711408,
+      "sigma_reported_basis": "RYA-587 canonical total over all 16 contract components (RYA-1226). Supersedes the legacy quadrature, which charged four terms. See `uncertainty` for the component table; terms whose evidence is a bound carry evidence.bound = true.",
       "science_provenance": {
         "gf_source": "laboratory (canonical_gf LAB tier, above the depth gate)",
         "gf_grade": "primary laboratory",
@@ -1942,6 +3708,528 @@
         }
       },
       "grade_variant": "laboratory gf, above the 0.60 feature-depth gate",
+      "star": "solar",
+      "uncertainty_indicator_ids": [
+        "pk_9b85a1408c07",
+        "pk_61d3f8242dfd",
+        "pk_27a007d728be",
+        "pk_611337302ff9",
+        "pk_fcded4d4fa5c",
+        "pk_2053f62ffef4",
+        "pk_e5b09ba33ea8"
+      ],
+      "uncertainty": {
+        "schema": "rya587.uncertainty.v1",
+        "scope": {
+          "star": "solar",
+          "product_key": "Fe|II|near-UV|kpno_solar_atlas|solar_kpno_molecfit_corrected|DEEPGRADED|DEEPGRADED|SYNTH|ENGINE-A|our-deep-graded",
+          "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3"
+        },
+        "components": [
+          {
+            "name": "measurement",
+            "state": "MEASURED",
+            "sigma_dex": 0.051067582272745875,
+            "source": "per-line scatter of the accepted pool, band_products artifact",
+            "evidence": {
+              "method": "line_scatter",
+              "independent": true,
+              "n_lines": 7,
+              "raw_sigma": 0.13511212275101625,
+              "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3"
+            }
+          },
+          {
+            "name": "stellar.logg",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar log g is pinned; delta_logg is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.metallicity",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "solar [Fe/H] is pinned; delta_feh is definitionally zero (RYA-1089)",
+            "evidence": {
+              "delta": 0.0,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "stellar.teff",
+            "state": "DEFINED",
+            "sigma_dex": 0.0,
+            "source": "sourced DEFINED zero: no Teff perturbation has been run on this pool, and the derived response is immaterial at this budget's precision",
+            "evidence": {
+              "parameter_exists": true,
+              "delta_K": 1.0,
+              "derived_but_not_perturbed_dex": 0.000665,
+              "derived_from": "uncertainty_stack 0.0665 dex/100 K x 1 K",
+              "share_of_variance": "0.0004%",
+              "owed_measurement": "a Teff perturbation on this pool"
+            }
+          },
+          {
+            "name": "pseudo_continuum",
+            "state": "MEASURED",
+            "sigma_dex": 0.070975,
+            "source": "RYA-846 sigma_delta, measured at this band's product lines: Kitt Peak (Kurucz/Brault) vs Wallace+2011 (NSO), two independent reductions, deconfounded from Wallace's own internal scatter. Supersedes the RYA-1113/841 band-flat 0.100 allowance, which RYA-846 records as `assumed_term_dex` -- the number it was built to replace.",
+            "evidence": {
+              "band": "near-UV",
+              "basis": "measured, two-reduction difference",
+              "n_lines": 40,
+              "n_lines_outside_wallace": 0,
+              "raw_at_lines": 0.049380578903038624,
+              "wallace_internal": 0.04071404004144703,
+              "net_quadrature": 0.027942951102248863,
+              "term_raw_dex": 0.125427,
+              "term_net_dex": 0.070975,
+              "lever": 2.54,
+              "supersedes_assumed_dex": 0.1,
+              "empirical_lower_bound": "RYA-846 states this measures reduction-to-reduction disagreement, not distance from an unobservable true continuum, so it is a LOWER bound",
+              "lever_note": "the artifact's lever is 2.54 (RYA-841, 200 fits, +/-4% grid, p16 0.91 / p84 4.68); the directive said 2.42"
+            }
+          },
+          {
+            "name": "hfs_isotopes",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "every line in this pool has hfs_n_components == 1 (canonical_gf)",
+            "evidence": {
+              "hfs_n_components": [
+                1
+              ]
+            }
+          },
+          {
+            "name": "telluric",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "3000-3780 A contains no registered telluric band (pipeline.telluric_policy)",
+            "evidence": {
+              "window_A": [
+                3000,
+                3780
+              ],
+              "bands_in_window": 0
+            }
+          },
+          {
+            "name": "molecular_coupling",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "atomic Fe product; the selector is not a MOL- indicator set",
+            "evidence": {
+              "selector": "DEEPGRADED"
+            }
+          },
+          {
+            "name": "holding_instrument",
+            "state": "MEASURED",
+            "sigma_dex": 0.0,
+            "source": "SynthesisHandler harness residual MEASURED against the known optical answer, not assumed zero (control/frontier rule)",
+            "evidence": {
+              "harness_residual_dex": 0.0
+            }
+          },
+          {
+            "name": "continuum",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "the per-line continuum fit carries no evidence to price -- continuum_method, continuum_ref and continuum_level are empty on every line in this pool -- and the band-level continuum PLACEMENT uncertainty is measured by RYA-846 and charged once, on pseudo_continuum.",
+            "evidence": {
+              "per_line_fields_empty": [
+                "continuum_method",
+                "continuum_ref",
+                "continuum_level"
+              ],
+              "subsumed_by": "pseudo_continuum (RYA-846 measured, 0.070975 dex)",
+              "not_double_counted": true,
+              "withdrawn_floor_dex": 0.1155,
+              "why_withdrawn": "it was the OBSERVED SPREAD BETWEEN THE TWO HOLDINGS, which prices each product from its sibling's answer, and it exceeded RYA-846's real measurement -- a bound where a measurement exists (Ryan, 2026-09-19: do not bound-fudge)",
+              "holding_values": {
+                "solar_kpno_kurucz2005_corrected": 7.635,
+                "solar_kpno_molecfit_corrected": 7.404
+              },
+              "owed_refinement": "sigma_delta for Kurucz2005-vs-1984KP specifically, per ion -- RYA-846 compared Kitt Peak vs Wallace+2011. RYA-1133 recorded this as blocked on Fe II near-UV having no *_lines.csv; RYA-908 emitted them the same day and 14 are in the tree, so it is RUNNABLE, and it would refine rather than unblock -- the term is measured now."
+            }
+          },
+          {
+            "name": "model_atmosphere",
+            "state": "DEFINED",
+            "sigma_dex": 0.004,
+            "source": "RYA-1032 atmosphere_nuisance: atlas9 -> marcs-ges, LTE, same pool",
+            "evidence": {
+              "bound": true,
+              "status": "measured on the VIS Fe I pool, carried cross-band",
+              "delta_dex": 0.004,
+              "n_hi": 67,
+              "n_lo": 67,
+              "same_pool": true,
+              "varied": "atmosphere",
+              "measured_band": "VIS",
+              "grid_shift_lever_exists": true,
+              "lever_is": "RYA-1032 atmosphere_nuisance: A(marcs-ges) 7.451 - A(atlas9) 7.447 = 0.004, one axis varied",
+              "stagger_step_is_a_different_axis": {
+                "step": "RYA-1032 dimensionality_step",
+                "delta_dex": 0.101,
+                "varied": "dim",
+                "from": "marcs-ges (1D-LTE)",
+                "to": "stagger-mean3d (<3D>-LTE)",
+                "why_not_charged": "dimensionality, not grid choice -- the feed carries <3D> as its own treatment"
+              }
+            }
+          },
+          {
+            "name": "profile_ew",
+            "state": "DEFINED",
+            "sigma_dex": 0.216,
+            "source": "RYA-1220 fit half-width excursion, +/-0.25 A vs +/-1.1 A",
+            "evidence": {
+              "bound": true,
+              "status": "systematic under development -- NOT demonstrably conservative",
+              "delta_dex": 0.216,
+              "measured_on": "N I 8216.336 A, solar_iag",
+              "cross_element": true,
+              "cross_band": true,
+              "cross_holding": true,
+              "source_artifact_says": "steps_are_adopted_uncertainties: false; status: diagnostic_only",
+              "owed_measurement": "half-width sweep on the near-UV Fe pool at its own fixed +/-0.4 A"
+            }
+          },
+          {
+            "name": "blends",
+            "state": "N/A",
+            "sigma_dex": null,
+            "source": "no un-modelled resolvable blends exist in this band: RYA-1190 measured the near-UV list to BE the full VALD extract ('nothing to complete'), and the opacity deficit it did find was corrected by RYA-1204 and wired into this synthesis by RYA-1207.",
+            "evidence": {
+              "rya1190_verdict": "the near-UV list IS the VALD extract -- nothing to complete; the residual was the OPACITY deficit, not catalogueable blends",
+              "opacity_deficit_corrected_by": [
+                "RYA-1204",
+                "RYA-1207"
+              ],
+              "synthesis_is_post_correction": true,
+              "limiting_term_is": "pseudo_continuum / normalization (RYA-841), measured by RYA-846",
+              "withdrawn_bound_dex": 0.1721,
+              "why_withdrawn": "RYA-1190's PRE-correction deficit. It measured the band before RYA-1204/1207; carrying it as a ceiling bills this product for an error the synthesis it ran on has already removed.",
+              "withdrawn_alternative_dex": 0.028,
+              "why_alternative_also_withdrawn": "also pre-correction -- it is how much a completeness build would have closed, and there is nothing left to complete"
+            }
+          },
+          {
+            "name": "nlte",
+            "state": "DEFINED",
+            "sigma_dex": 0.043,
+            "source": "RYA-1032 model_family_spread (Gerber - Bergemann, 1D-NLTE)",
+            "evidence": {
+              "bound": true,
+              "status": "measured on the VIS Fe I pool, carried cross-band",
+              "delta_dex": 0.043,
+              "deconfounded_dex": 0.039,
+              "varied": "family",
+              "measured_band": "VIS",
+              "owed_measurement": "the Gerber/Bergemann disagreement on the near-UV pool itself"
+            }
+          },
+          {
+            "name": "stellar.xi",
+            "state": "MEASURED",
+            "sigma_dex": 0.032032000000000005,
+            "source": "per-line paired differential at xi 0.90/1.10 on this product's OWN pool, on the current molecular synthesis",
+            "evidence": {
+              "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3",
+              "parameter_source": "RYA-1089 sourced solar delta_xi = 0.2912 km/s, the honest method+selection spread |0.709 - 1.0|",
+              "response_assessment": "NOT ASSESSED: as for kurucz2005 -- RYA-1213 publishes only the central median.",
+              "signed_response_dex": -0.032032000000000005,
+              "delta_plus_dex": -0.032032000000000005,
+              "delta_minus_dex": 0.032032000000000005,
+              "delta_parameter": 0.2912,
+              "dA_dxi": -0.11,
+              "delta_xi_kms": 0.2912,
+              "parameter_exists": true
+            }
+          },
+          {
+            "name": "transition_data",
+            "state": "MEASURED",
+            "sigma_dex": 0.04428571428571428,
+            "source": "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+            "evidence": {
+              "indicator_ids": [
+                "pk_9b85a1408c07",
+                "pk_61d3f8242dfd",
+                "pk_27a007d728be",
+                "pk_611337302ff9",
+                "pk_fcded4d4fa5c",
+                "pk_2053f62ffef4",
+                "pk_e5b09ba33ea8"
+              ],
+              "pool_sha256": "c2d7518c2a96d7819f6e6e3de3f4e0ee4fde96af53f403bbcf7e57565d196fb3",
+              "line_sigma_dex": [
+                0.07,
+                0.04,
+                0.03,
+                0.03,
+                0.03,
+                0.03,
+                0.08
+              ],
+              "weights": [
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285,
+                0.14285714285714285
+              ],
+              "line_sources": [
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)",
+                "Den Hartog et al. 2019, ApJS 243, 33 (DOI 10.3847/1538-4365/ab322e)"
+              ],
+              "covariance": [
+                [
+                  0.004900000000000001,
+                  0.0028000000000000004,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.0021000000000000003,
+                  0.005600000000000001
+                ],
+                [
+                  0.0028000000000000004,
+                  0.0016,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0012,
+                  0.0032
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.0021000000000000003,
+                  0.0012,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0009,
+                  0.0024
+                ],
+                [
+                  0.005600000000000001,
+                  0.0032,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0024,
+                  0.0064
+                ]
+              ]
+            }
+          }
+        ],
+        "required_extra": [],
+        "covariance": [
+          [
+            0.0026078979591836688,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.005037450624999999,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6e-05,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.046655999999999996,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0018489999999999997,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0010260490240000004,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.001961224489795918
+          ]
+        ],
+        "covariance_order": [
+          "measurement",
+          "stellar.logg",
+          "stellar.metallicity",
+          "stellar.teff",
+          "pseudo_continuum",
+          "holding_instrument",
+          "model_atmosphere",
+          "profile_ew",
+          "nlte",
+          "stellar.xi",
+          "transition_data"
+        ],
+        "covariance_source": "components treated as independent of one another; the within-component correlations (shared gf source) are carried inside transition_data's own covariance",
+        "assumptions": "solar log g and [Fe/H] are pinned, so their responses are definitionally zero rather than unmeasured",
+        "state": "COMPLETE",
+        "holds": [],
+        "sigma_reported": 0.24321517653711408,
+        "sigma_measured_partial": 0.24321517653711408
+      },
       "publication_id": "Fe-025"
     },
     {
@@ -2249,7 +4537,7 @@
       "publication_id": "Fe-029"
     }
   ],
-  "body_html": "<p class=\"fe-stamp\">Fe.json v1.221 \u00b7 30 Fe II products \u00b7 160 total</p><p class=\"fe-anchor\">Solar Fe I anchor: 7.477 \u00b1 0.052</p><p>HARPS \u00b7 Reference Grade \u00b7 Amarsi 3D-NLTE \u00b7 n = 21. The selected Fe I product anchors this Solar appendix; products and engines are not averaged together.</p><section class=\"fe-section\"><h2>Highlighted band products</h2><div class=\"fe-highlights\"><article class=\"fe-highlight-uv\" data-highlight-product=\"Fe-024\"><h3>near-UV</h3><strong>7.402 \u00b1 0.121</strong><p>Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 n = 12</p><p class=\"fe-hold\">Systematic under development \u2014 the abundance is current (post-RYA-1207 molecular opacity) but the uncertainty budget is not closed: component wiring and the blends bound are pending RYA-1226.</p></article><article class=\"fe-highlight-visible\" data-highlight-product=\"Fe-001\"><h3>VIS</h3><strong>7.531 \u00b1 0.108</strong><p>HARPS \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 n = 2</p></article></div></section><section class=\"product-section\"><h2>Error-bar forest</h2><p class=\"product-section-intro\"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Solid bars show statistical uncertainty from the line measurements; wireframes show systematic uncertainty from the product\u2019s adopted error budget, which does not average away with more lines. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool\u2019s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p><details><summary>Grades and model labels</summary><ul><li><strong>Reference Grade.</strong> An externally published reference line pool, using that reference\u2019s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.</li><li><strong>Deep Grade.</strong> The corresponding laboratory-data pool above that depth gate. These stronger lines extend coverage but require particular care with saturation and blends.</li></ul><p><strong>1D-LTE</strong> uses a one-dimensional atmosphere with atomic populations in local thermodynamic equilibrium. <strong>1D-NLTE</strong> allows departures from that equilibrium; the named implementation supplies the correction or synthesis treatment.</p><p><strong>Synthesis</strong> fits the spectral line profile. See <a href=\"/method/\">Methodology</a> for the full model, line-selection and uncertainty procedures.</p></details><div class=\"literature-regions\"><span class=\"asplund-region\">Asplund, Amarsi &amp; Grevesse 2021 7.46 \u00b1 0.04</span><span class=\"lodders-region\">Lodders+ 2025 7.49 \u00b1 0.01</span></div><div class=\"forest-legend\"><span>blue solid = statistical \u03c3</span><span>wireframe = systematic \u03c3</span><span>blue = regular model result</span><span style=\"color:#f07848\">reddish orange = experimental Frankenstein / Gerber mean-3D; not adopted</span><span>green = Asplund; gold = Lodders</span><span>N/A = no product for this model</span></div><div class=\"product-forest\"><div class=\"product-forest-inner\"><div class=\"forest-band\">near-UV</div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:47.7331539480003%;width:42.91638556699814%\"></i><i class=\"bar\" style=\"left:59.02315353971718%;width:20.336386383564367%\"></i><i class=\"dot\" style=\"left:69.19134673149937%\"></i></span><span class=\"forest-value\">7.617 <small>\u00b10.052 stat \u00b10.110 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:48.30572237916271%;width:43.71545390386682%\"></i><i class=\"bar\" style=\"left:59.917487931346194%;width:20.491922799499854%\"></i><i class=\"dot\" style=\"left:70.16344933109612%\"></i></span><span class=\"forest-value\">7.622 <small>\u00b10.053 stat \u00b10.112 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=7</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:51.214447777676085%;width:42.95293662474323%\"></i><i class=\"bar\" style=\"left:56.96229602857199%;width:31.457240122951426%\"></i><i class=\"dot\" style=\"left:72.6909160900477%\"></i></span><span class=\"forest-value\">7.635 <small>\u00b10.081 stat \u00b10.110 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:5.832615597580677%;width:43.11663870251508%\"></i><i class=\"bar\" style=\"left:18.214286408644668%;width:18.353297080387094%\"></i><i class=\"dot\" style=\"left:27.39093494883822%\"></i></span><span class=\"forest-value\">7.402 <small>\u00b10.047 stat \u00b10.111 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:8.411020532751003%;width:45.736649628948435%\"></i><i class=\"bar\" style=\"left:22.433211690894666%;width:17.69226731266111%\"></i><i class=\"dot\" style=\"left:31.279345347225217%\"></i></span><span class=\"forest-value\">7.422 <small>\u00b10.045 stat \u00b10.118 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=7</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:6.370577176197438%;width:42.81839762495889%\"></i><i class=\"bar\" style=\"left:17.844887420797892%;width:19.86977713575798%\"></i><i class=\"dot\" style=\"left:27.77977598867688%\"></i></span><span class=\"forest-value\">7.404 <small>\u00b10.051 stat \u00b10.110 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"axis\"><span></span><span class=\"ticks\"><span class=\"tick\" style=\"left:0%\">7.26</span><span class=\"tick\" style=\"left:25%\">7.39</span><span class=\"tick\" style=\"left:50%\">7.52</span><span class=\"tick\" style=\"left:75%\">7.65</span><span class=\"tick\" style=\"left:100%\">7.78</span></span><span class=\"forest-value\">A(Fe) dex</span></div><div class=\"forest-band\">VIS</div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:31.879239040529423%;width:22.263027295285315%\"></i><i class=\"bar\" style=\"left:27.760545905707236%;width:30.500413564929683%\"></i><i class=\"dot\" style=\"left:43.010752688172076%\"></i></span><span class=\"forest-value\">7.571 <small>\u00b10.147 stat \u00b10.108 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:31.763544251447527%;width:21.667287014061266%\"></i><i class=\"bar\" style=\"left:27.00578990901577%;width:31.18279569892479%\"></i><i class=\"dot\" style=\"left:42.597187758478164%\"></i></span><span class=\"forest-value\">7.567 <small>\u00b10.151 stat \u00b10.105 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=2</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:10.763027295285436%;width:13.420181968569011%\"></i><i class=\"bar\" style=\"left:3.10173697270474%;width:28.742762613730406%\"></i><i class=\"dot\" style=\"left:17.473118279569942%\"></i></span><span class=\"forest-value\">7.324 <small>\u00b10.139 stat \u00b10.065 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:31.390715467328377%;width:20.965467328370593%\"></i><i class=\"bar\" style=\"left:27.36765922249797%;width:29.0115798180314%\"></i><i class=\"dot\" style=\"left:41.87344913151367%\"></i></span><span class=\"forest-value\">7.560 <small>\u00b10.140 stat \u00b10.101 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:30.50775434243186%;width:21.904259718775783%\"></i><i class=\"bar\" style=\"left:26.530190239867718%;width:29.859387923904077%\"></i><i class=\"dot\" style=\"left:41.459884201819754%\"></i></span><span class=\"forest-value\">7.556 <small>\u00b10.144 stat \u00b10.106 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=2</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:11.176592224979446%;width:13.42018196856901%\"></i><i class=\"bar\" style=\"left:4.3941273779984815%;width:26.985111662530933%\"></i><i class=\"dot\" style=\"left:17.88668320926395%\"></i></span><span class=\"forest-value\">7.328 <small>\u00b10.131 stat \u00b10.065 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">HARPS<small>solar_harps_molecfit_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:68.58116211745245%;width:18.751654259718833%\"></i><i class=\"bar\" style=\"left:61.01116625310179%;width:33.891645988420265%\"></i><i class=\"dot\" style=\"left:77.95698924731187%\"></i></span><span class=\"forest-value\">7.909 <small>\u00b10.164 stat \u00b10.091 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:69.18620760959472%;width:20.85008271298601%\"></i><i class=\"bar\" style=\"left:62.324234904880086%;width:34.57402812241527%\"></i><i class=\"dot\" style=\"left:79.61124896608773%\"></i></span><span class=\"forest-value\">7.925 <small>\u00b10.167 stat \u00b10.101 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=2</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:32.16501240694795%;width:13.420181968569011%\"></i><i class=\"bar\" style=\"left:29.983457402812242%;width:17.783291976840424%\"></i><i class=\"dot\" style=\"left:38.87510339123246%\"></i></span><span class=\"forest-value\">7.531 <small>\u00b10.086 stat \u00b10.065 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">HARPS<small>solar_harps_molecfit_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"axis\"><span></span><span class=\"ticks\"><span class=\"tick\" style=\"left:0%\">7.15</span><span class=\"tick\" style=\"left:25%\">7.40</span><span class=\"tick\" style=\"left:50%\">7.64</span><span class=\"tick\" style=\"left:75%\">7.88</span><span class=\"tick\" style=\"left:100%\">8.12</span></span><span class=\"forest-value\">A(Fe) dex</span></div></div></div></section><details><summary>Read all product values, including alternate line sets and experiments</summary><ul><li data-product-id=\"Fe-000\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_harps_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.909 \u00b1 0.187 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-001\">HARPS \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_harps_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.531 \u00b1 0.108 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-002\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_harps_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.925 \u00b1 0.195 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-003\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_harps_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.909 \u00b1 0.187 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-004\">HARPS \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_harps_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.531 \u00b1 0.108 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-005\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_harps_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.925 \u00b1 0.195 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-006\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.571 \u00b1 0.183 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-007\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.324 \u00b1 0.153 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-008\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.567 \u00b1 0.184 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-009\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.571 \u00b1 0.183 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-010\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.324 \u00b1 0.153 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-011\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.567 \u00b1 0.184 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-012\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.560 \u00b1 0.173 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-013\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.328 \u00b1 0.146 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-014\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.556 \u00b1 0.179 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-015\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.560 \u00b1 0.173 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-016\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.328 \u00b1 0.146 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-017\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.556 \u00b1 0.179 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-018\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.617 \u00b1 0.122 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-019\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.635 \u00b1 0.137 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-020\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.622 \u00b1 0.124 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-021\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.617 \u00b1 0.126 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-022\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.635 \u00b1 0.140 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-023\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.621 \u00b1 0.124 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-024\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.402 \u00b1 0.121 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-025\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.404 \u00b1 0.121 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-026\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.422 \u00b1 0.126 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-027\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.402 \u00b1 0.124 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-028\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.404 \u00b1 0.125 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-029\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.415 \u00b1 0.126 reported total; n=12; \u03be MEASURED</li></ul></details><section class=\"fe-section\"><h2>Solar iron context</h2><p>Fe II traces singly ionized iron and is retained as an ionization and consistency diagnostic alongside Fe I, not an independent headline to average with it. The current resolved pool contains strong, saturation-sensitive lines and documented blend exclusions; the diagnostics below distinguish those limitations from model and holding differences.</p></section><section class=\"fe-section\"><h2>Near-UV opacity \u2014 report and noted</h2><p>Molecular opacity INCLUDED \u2014 OH A-X, NH, CH and CN violet, 6,223 VALD lines as Turbospectrum lists with the dominant isotopologue (RYA-1207). The band previously carried none: every molecular list iSpec ships begins at 400 nm. Measured PAIRED against a molecules-off run on the same code and pool, the lever is -0.047..-0.055 dex on Fe I and -0.276..-0.332 on Fe II, with chi2r median 81.8 -&gt; 67.4 and control windows containing no molecular line bit-identical. RYA-1209 additionally curated out Fe I 3721.272 (systematic:K07 \u2014 gf attributed to a VALD3 reference that publishes no per-line uncertainty, no NIST accuracy class, so it never met the DEEPGRADED tier&#x27;s lab-gf definition); the Fe I pool is 57 candidates and the budget clears at gf rung 3 (cited lab), 55/55 GF-LAB, RMS 0.0509 dex. RESIDUAL DEFICIT: the correction still UNDER-corrects \u2014 RYA-1204 measured synth/obs above 1 on 24 of 40 windows after it \u2014 so the band remains short of opacity by an amount not yet measured on this pool, and these values are a floor rather than a converged answer. sigma_syst is unchanged at 0.1122 because it is dominated by the 0.10 dex pseudo-continuum term, not by gf: the true continuum is never observed here. Not adopted for the headline, which rests on the VIS anchor 7.466 (RYA-161: nothing calibrated to a target).</p></section><section class=\"fe-section\"><h2>Frankenstein \u2014 experimental, pending the Bride</h2><p>4 experimental products remain available in the Fe I product values and downloads.</p><p>RYA-1197 Part A: the Frankenstein mean-&lt;3D&gt; route is HELD FROM HEADLINE publication until the Bride validates it. It inflates A(Fe) by roughly +0.10 dex against the 1D siblings and exists on VIS/KP only, so it is not a comparable measurement of the same quantity. It stays in the feed deliberately: the LTE/NLTE mean-3D PAIR is the NLTE differential on ONE atmosphere (RYA-542), which is the diagnostic it is for. Not a headline value.</p></section><section class=\"fe-section\"><h2>Saturation characterization</h2><p>Committed proof census: 120 line/holding records; 100% have observed depth &gt; 0.70. Median observed log10(EW[m\u00c5]/\u03bb[\u00c5]) = -1.252. In consistent \u00c5 units this is -4.252. These diagnostics characterize the audited saturated pool, not every newly added product.</p></section><section class=\"fe-section\"><h2>Problem-line and model diagnostics</h2><figure><h3>CH G-band artifact</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/fe2-ch-artifact.svg?v=0121ba588023\" alt=\"CH G-band artifact\"><figcaption>CH G-band blend artifact \u2014 the synthesis list cannot represent the dominant absorber \u00b7 A = 10.0 (+2.5 dex). RYA-1191 blend audit: 66 catalogued transitions in the 0.62 A fit window, top contaminant CH I at 43.8% of the summed depth against Fe II&#x27;s 11.1%. The VIS synthesis list GESv6_atom_hfs_iso carries 206 species and NOT ONE molecular, so the fit had nowhere to put the CH absorption except Fe II. RYA-515 independently counted 36 of 65 transitions as CH. The plot shows the committed transition census in the proof generator\u2019s fit window; it is not a synthetic spectrum. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/0e4539da63c8fe63facab98cae5166e98219126b/data/catalog/line_curation_exclusions.csv\">Source evidence</a></figcaption></figure><figure><h3>Near-UV molecular opacity</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/nearuv-opacity.svg?v=0121ba588023\" alt=\"Near-UV molecular opacity\"><figcaption>molecules OFF vs ON on THE SAME CODE and the same pool. Differencing against the published values instead would have measured the molecular lever PLUS every code change since the feed was written on Sept 3 -- which is about -0.035 dex of the total. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/0e4539da63c8fe63facab98cae5166e98219126b/data/results/rya1207/nearuv_molecular_lever.json\">Source evidence</a></figcaption></figure><figure><h3>HARPS arm offset</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/harps-arm-offset-dark.png?v=0121ba588023\" alt=\"HARPS arm offset\"><figcaption>Current Fe II VIS products, separated by holding and engine. The arm offset persists after the curated CH artifact was removed. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/0e4539da63c8fe63facab98cae5166e98219126b/data/products/solar/Fe.json\">Source evidence</a></figcaption></figure><figure><h3>CRIRES+ H model coverage</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/crires-h-coverage.svg?v=0121ba588023\" alt=\"CRIRES+ H model coverage\"><figcaption>Included and excluded line counts from each current product. Excluded rows are not automatically failed fits; the per-line reason distinguishes unavailable NLTE coverage. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/0e4539da63c8fe63facab98cae5166e98219126b/data/products/solar/Fe.json\">Source evidence</a></figcaption></figure></section><section class=\"fe-section\"><h2>Download the evidence</h2><p>6686 graded per-line measurements exported. Evidence for 22 graded products is missing or does not reproduce the feed; 0 exported lines lack an unambiguous gf match. The download is explicitly incomplete until those upstream records are supplied.</p><ul><li><a download href=\"/assets/data/fe-publication/Fe_graded_perline.csv\">Graded per-line abundances (CSV)</a></li><li><a download href=\"/assets/data/fe-publication/Fe_products.csv\">All product fields (CSV; nested fields preserved as JSON)</a></li><li><a download href=\"/assets/data/fe-publication/Fe_perline_coverage.csv\">Per-product line-evidence coverage (CSV)</a></li><li><a download href=\"/assets/data/fe-publication/Fe.json\">Source Fe.json</a></li></ul></section><section class=\"fe-section\"><h2>Reproducibility</h2><p>Generator scripts/generate_fe_publication.py v1.0.0<br>Science source commit <code>0e4539da63c8fe63facab98cae5166e98219126b</code><br>Fe.json v1.221 \u00b7 feed timestamp 2026-09-19T05:36:46Z<br>Generated 2026-09-19T16:52:30+00:00<br>Feed SHA-256 <code>66421362d81e61e8d3aa6a412e1ae362743c05e41fb8b12a2331347f890395b0</code></p><p><a href=\"/assets/data/rya935/live_tracker.html\">Refreshed product tracker</a> \u00b7 <a href=\"/assets/data/fe-publication/manifest.json\">Build manifest</a> \u00b7 <a href=\"/systems/sol/elements/fe/\">Fe I appendix</a></p></section><section class=\"fe-section\"><h2>References</h2><ul><li>Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). <a href=\"https://doi.org/10.1051/0004-6361/202140445\">The chemical make-up of the Sun: A 2020 vision</a> (doi: 10.1051/0004-6361/202140445). AGSS21 Solar reference and the green literature comparison; Table A.2 defines the Reference Grade Fe I line set.</li><li>Lodders, K.; Bergemann, M.; Palme, H. (2025). <a href=\"https://doi.org/10.1007/s11214-025-01146-w\">Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites</a> (doi: 10.1007/s11214-025-01146-w). Table 6 present-day Solar composition, shown as the gold literature comparison.</li><li>Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). <a href=\"https://doi.org/10.1051/0004-6361/202243673\">Non-LTE radiative transfer with Turbospectrum</a> (doi: 10.1051/0004-6361/202243673). The Gerber Turbospectrum non-LTE synthesis implementation named in the model rows.</li><li>Den Hartog, E. A.; Lawler, J. E.; Sneden, C.; Cowan, J. J.; Brukhovesky, A. (2019). <a href=\"https://doi.org/10.3847/1538-4365/ab322e\">Atomic Transition Probabilities for UV and Blue Lines of Fe II and Abundance Determinations in the Photospheres of the Sun and Metal-poor Star HD 84937</a> (doi: 10.3847/1538-4365/ab322e). Laboratory transition probabilities used in the resolved Fe II per-line evidence. Coverage and unresolved products are listed in the downloads.</li></ul></section>",
+  "body_html": "<p class=\"fe-stamp\">Fe.json v1.222 \u00b7 30 Fe II products \u00b7 160 total</p><p class=\"fe-anchor\">Solar Fe I anchor: 7.477 \u00b1 0.052</p><p>HARPS \u00b7 Reference Grade \u00b7 Amarsi 3D-NLTE \u00b7 n = 21. The selected Fe I product anchors this Solar appendix; products and engines are not averaged together.</p><section class=\"fe-section\"><h2>Highlighted band products</h2><div class=\"fe-highlights\"><article class=\"fe-highlight-uv\" data-highlight-product=\"Fe-023\"><h3>near-UV</h3><strong>7.621 \u00b1 0.124</strong><p>Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 n = 12</p><p class=\"fe-hold\">Uncertainty budget closed for six of eight rows (RYA-1226); two Fe I Kitt Peak/molecfit rows keep a legacy bar pending their microturbulence bracket. On the migrated rows most of the quoted systematic is a conservative profile-width term carried from a measurement in another band.</p></article><article class=\"fe-highlight-visible\" data-highlight-product=\"Fe-001\"><h3>VIS</h3><strong>7.531 \u00b1 0.108</strong><p>HARPS \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 n = 2</p></article></div></section><section class=\"product-section\"><h2>Error-bar forest</h2><p class=\"product-section-intro\"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Solid bars show statistical uncertainty from the line measurements; wireframes show systematic uncertainty from the product\u2019s adopted error budget, which does not average away with more lines. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool\u2019s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p><details><summary>Grades and model labels</summary><ul><li><strong>Reference Grade.</strong> An externally published reference line pool, using that reference\u2019s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.</li><li><strong>Deep Grade.</strong> The corresponding laboratory-data pool above that depth gate. These stronger lines extend coverage but require particular care with saturation and blends.</li></ul><p><strong>1D-LTE</strong> uses a one-dimensional atmosphere with atomic populations in local thermodynamic equilibrium. <strong>1D-NLTE</strong> allows departures from that equilibrium; the named implementation supplies the correction or synthesis treatment.</p><p><strong>Synthesis</strong> fits the spectral line profile. See <a href=\"/method/\">Methodology</a> for the full model, line-selection and uncertainty procedures.</p></details><div class=\"literature-regions\"><span class=\"asplund-region\">Asplund, Amarsi &amp; Grevesse 2021 7.46 \u00b1 0.04</span><span class=\"lodders-region\">Lodders+ 2025 7.49 \u00b1 0.01</span></div><div class=\"forest-legend\"><span>blue solid = statistical \u03c3</span><span>wireframe = systematic \u03c3</span><span>blue = regular model result</span><span style=\"color:#f07848\">reddish orange = experimental Frankenstein / Gerber mean-3D; not adopted</span><span>green = Asplund; gold = Lodders</span><span>N/A = no product for this model</span></div><div class=\"product-forest\"><div class=\"product-forest-inner\"><div class=\"forest-band\">near-UV</div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:47.7331539480003%;width:42.91638556699814%\"></i><i class=\"bar\" style=\"left:59.02315353971718%;width:20.336386383564367%\"></i><i class=\"dot\" style=\"left:69.19134673149937%\"></i></span><span class=\"forest-value\">7.617 <small>\u00b10.052 stat \u00b10.110 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:48.30572237916271%;width:43.71545390386682%\"></i><i class=\"bar\" style=\"left:59.917487931346194%;width:20.491922799499854%\"></i><i class=\"dot\" style=\"left:70.16344933109612%\"></i></span><span class=\"forest-value\">7.622 <small>\u00b10.053 stat \u00b10.112 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=7</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:51.214447777676085%;width:42.95293662474323%\"></i><i class=\"bar\" style=\"left:56.96229602857199%;width:31.457240122951426%\"></i><i class=\"dot\" style=\"left:72.6909160900477%\"></i></span><span class=\"forest-value\">7.635 <small>\u00b10.081 stat \u00b10.110 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:5.832615597580677%;width:43.11663870251508%\"></i><i class=\"bar\" style=\"left:18.214286408644668%;width:18.353297080387094%\"></i><i class=\"dot\" style=\"left:27.39093494883822%\"></i></span><span class=\"forest-value\">7.402 <small>\u00b10.047 stat \u00b10.111 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=12</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:8.411020532751003%;width:45.736649628948435%\"></i><i class=\"bar\" style=\"left:22.433211690894666%;width:17.69226731266111%\"></i><i class=\"dot\" style=\"left:31.279345347225217%\"></i></span><span class=\"forest-value\">7.422 <small>\u00b10.045 stat \u00b10.118 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=7</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:30.890504307386557%;width:15.553641593548356%\"></i><i class=\"refline\" style=\"left:38.66732510416073%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:42.55573550254791%;width:3.888410398387002%\"></i><i class=\"cmp\" style=\"left:44.49994070174141%\"></i><i class=\"sysbar\" style=\"left:6.370577176197438%;width:42.81839762495889%\"></i><i class=\"bar\" style=\"left:17.844887420797892%;width:19.86977713575798%\"></i><i class=\"dot\" style=\"left:27.77977598867688%\"></i></span><span class=\"forest-value\">7.404 <small>\u00b10.051 stat \u00b10.110 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"axis\"><span></span><span class=\"ticks\"><span class=\"tick\" style=\"left:0%\">7.26</span><span class=\"tick\" style=\"left:25%\">7.39</span><span class=\"tick\" style=\"left:50%\">7.52</span><span class=\"tick\" style=\"left:75%\">7.65</span><span class=\"tick\" style=\"left:100%\">7.78</span></span><span class=\"forest-value\">A(Fe) dex</span></div><div class=\"forest-band\">VIS</div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:31.879239040529423%;width:22.263027295285315%\"></i><i class=\"bar\" style=\"left:27.760545905707236%;width:30.500413564929683%\"></i><i class=\"dot\" style=\"left:43.010752688172076%\"></i></span><span class=\"forest-value\">7.571 <small>\u00b10.147 stat \u00b10.108 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:31.763544251447527%;width:21.667287014061266%\"></i><i class=\"bar\" style=\"left:27.00578990901577%;width:31.18279569892479%\"></i><i class=\"dot\" style=\"left:42.597187758478164%\"></i></span><span class=\"forest-value\">7.567 <small>\u00b10.151 stat \u00b10.105 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=2</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:10.763027295285436%;width:13.420181968569011%\"></i><i class=\"bar\" style=\"left:3.10173697270474%;width:28.742762613730406%\"></i><i class=\"dot\" style=\"left:17.473118279569942%\"></i></span><span class=\"forest-value\">7.324 <small>\u00b10.139 stat \u00b10.065 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 Kurucz 2005 corrected<small>solar_kpno_kurucz2005_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:31.390715467328377%;width:20.965467328370593%\"></i><i class=\"bar\" style=\"left:27.36765922249797%;width:29.0115798180314%\"></i><i class=\"dot\" style=\"left:41.87344913151367%\"></i></span><span class=\"forest-value\">7.560 <small>\u00b10.140 stat \u00b10.101 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:30.50775434243186%;width:21.904259718775783%\"></i><i class=\"bar\" style=\"left:26.530190239867718%;width:29.859387923904077%\"></i><i class=\"dot\" style=\"left:41.459884201819754%\"></i></span><span class=\"forest-value\">7.556 <small>\u00b10.144 stat \u00b10.106 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=2</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:11.176592224979446%;width:13.42018196856901%\"></i><i class=\"bar\" style=\"left:4.3941273779984815%;width:26.985111662530933%\"></i><i class=\"dot\" style=\"left:17.88668320926395%\"></i></span><span class=\"forest-value\">7.328 <small>\u00b10.131 stat \u00b10.065 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">Kitt Peak \u2014 1984 Molecfit corrected<small>solar_kpno_molecfit_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">HARPS<small>solar_harps_molecfit_corrected \u00b7 DEEPGRADED (no graded product in this band)</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:68.58116211745245%;width:18.751654259718833%\"></i><i class=\"bar\" style=\"left:61.01116625310179%;width:33.891645988420265%\"></i><i class=\"dot\" style=\"left:77.95698924731187%\"></i></span><span class=\"forest-value\">7.909 <small>\u00b10.164 stat \u00b10.091 syst</small></span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>Deep Grade \u00b7 n=8</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:69.18620760959472%;width:20.85008271298601%\"></i><i class=\"bar\" style=\"left:62.324234904880086%;width:34.57402812241527%\"></i><i class=\"dot\" style=\"left:79.61124896608773%\"></i></span><span class=\"forest-value\">7.925 <small>\u00b10.167 stat \u00b10.101 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest \"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>Deep Grade \u00b7 n=2</small></span><span class=\"track\"><i class=\"ref\" title=\"Asplund, Amarsi &amp; Grevesse 2021\" style=\"left:27.398676592225037%;width:8.271298593879244%\"></i><i class=\"refline\" style=\"left:31.53432588916466%\"></i><i class=\"cmpband\" title=\"Lodders+ 2025\" style=\"left:33.602150537634515%;width:2.0678246484697667%\"></i><i class=\"cmp\" style=\"left:34.6360628618694%\"></i><i class=\"sysbar\" style=\"left:32.16501240694795%;width:13.420181968569011%\"></i><i class=\"bar\" style=\"left:29.983457402812242%;width:17.783291976840424%\"></i><i class=\"dot\" style=\"left:38.87510339123246%\"></i></span><span class=\"forest-value\">7.531 <small>\u00b10.086 stat \u00b10.065 syst</small></span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest-instrument\">HARPS<small>solar_harps_molecfit_corrected</small></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-LTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">EW \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Bergemann<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 1D-NLTE \u00b7 Gerber<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-LTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 &lt;3D&gt;-NLTE \u00b7 Gerber \u00b7 stagger<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"forest forest-na\"><span class=\"forest-label\">Synth \u00b7 3D-NLTE \u00b7 Amarsi \u00b7 lab-gf<small>no product</small></span><span class=\"track\"></span><span class=\"forest-value\">N/A</span></div><div class=\"axis\"><span></span><span class=\"ticks\"><span class=\"tick\" style=\"left:0%\">7.15</span><span class=\"tick\" style=\"left:25%\">7.40</span><span class=\"tick\" style=\"left:50%\">7.64</span><span class=\"tick\" style=\"left:75%\">7.88</span><span class=\"tick\" style=\"left:100%\">8.12</span></span><span class=\"forest-value\">A(Fe) dex</span></div></div></div></section><details><summary>Read all product values, including alternate line sets and experiments</summary><ul><li data-product-id=\"Fe-000\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_harps_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.909 \u00b1 0.187 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-001\">HARPS \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_harps_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.531 \u00b1 0.108 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-002\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_harps_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.925 \u00b1 0.195 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-003\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_harps_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.909 \u00b1 0.187 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-004\">HARPS \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_harps_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.531 \u00b1 0.108 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-005\">HARPS \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_harps_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.925 \u00b1 0.195 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-006\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.571 \u00b1 0.183 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-007\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.324 \u00b1 0.153 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-008\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.567 \u00b1 0.184 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-009\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.571 \u00b1 0.183 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-010\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.324 \u00b1 0.153 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-011\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.567 \u00b1 0.184 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-012\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.560 \u00b1 0.173 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-013\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.328 \u00b1 0.146 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-014\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.556 \u00b1 0.179 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-015\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.560 \u00b1 0.173 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-016\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.328 \u00b1 0.146 reported total; n=2; \u03be UNMEASURED \u00b7 INCOMPLETE: no dA/dxi exists for this pool, so the xi term is absent from this bar rather than zero. The bar is a LOWER BOUND.</li><li data-product-id=\"Fe-017\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.556 \u00b1 0.179 reported total; n=8; \u03be MEASURED</li><li data-product-id=\"Fe-018\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.617 \u00b1 0.239 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-019\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.635 \u00b1 0.251 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-020\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.622 \u00b1 0.124 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-021\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.617 \u00b1 0.126 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-022\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.635 \u00b1 0.140 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-023\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_kurucz2005_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.621 \u00b1 0.124 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-024\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 1D-LTE: 7.402 \u00b1 0.238 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-025\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 ENGINE-A: 7.404 \u00b1 0.243 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-026\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Deep Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 DEEPGRADED \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.422 \u00b1 0.126 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-027\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 1D-LTE: 7.402 \u00b1 0.124 reported total; n=12; \u03be MEASURED</li><li data-product-id=\"Fe-028\">Kitt Peak \u00b7 Synth \u00b7 1D-NLTE \u00b7 Bergemann \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 ENGINE-A: 7.404 \u00b1 0.125 reported total; n=7; \u03be MEASURED</li><li data-product-id=\"Fe-029\">Kitt Peak \u00b7 Synth \u00b7 1D-LTE \u00b7 Gerber \u00b7 Reference Grade \u00b7 solar_kpno_molecfit_corrected \u00b7 REFERENCE \u00b7 SYNTH \u00b7 synth-1D-LTE-gerber: 7.415 \u00b1 0.126 reported total; n=12; \u03be MEASURED</li></ul></details><section class=\"fe-section\"><h2>Solar iron context</h2><p>Fe II traces singly ionized iron and is retained as an ionization and consistency diagnostic alongside Fe I, not an independent headline to average with it. The current resolved pool contains strong, saturation-sensitive lines and documented blend exclusions; the diagnostics below distinguish those limitations from model and holding differences.</p></section><section class=\"fe-section\"><h2>Near-UV opacity \u2014 report and noted</h2><p>Molecular opacity INCLUDED \u2014 OH A-X, NH, CH and CN violet, 6,223 VALD lines as Turbospectrum lists with the dominant isotopologue (RYA-1207). The band previously carried none: every molecular list iSpec ships begins at 400 nm. Measured PAIRED against a molecules-off run on the same code and pool, the lever is -0.047..-0.055 dex on Fe I and -0.276..-0.332 on Fe II, with chi2r median 81.8 -&gt; 67.4 and control windows containing no molecular line bit-identical. RYA-1209 additionally curated out Fe I 3721.272 (systematic:K07 \u2014 gf attributed to a VALD3 reference that publishes no per-line uncertainty, no NIST accuracy class, so it never met the DEEPGRADED tier&#x27;s lab-gf definition); the Fe I pool is 57 candidates and the budget clears at gf rung 3 (cited lab), 55/55 GF-LAB, RMS 0.0509 dex. RESIDUAL DEFICIT: the correction still UNDER-corrects \u2014 RYA-1204 measured synth/obs above 1 on 24 of 40 windows after it \u2014 so the band remains short of opacity by an amount not yet measured on this pool, and these values are a floor rather than a converged answer. sigma_syst is unchanged at 0.1122 because it is dominated by the 0.10 dex pseudo-continuum term, not by gf: the true continuum is never observed here. Not adopted for the headline, which rests on the VIS anchor 7.466 (RYA-161: nothing calibrated to a target).</p></section><section class=\"fe-section\"><h2>Frankenstein \u2014 experimental, pending the Bride</h2><p>4 experimental products remain available in the Fe I product values and downloads.</p><p>RYA-1197 Part A: the Frankenstein mean-&lt;3D&gt; route is HELD FROM HEADLINE publication until the Bride validates it. It inflates A(Fe) by roughly +0.10 dex against the 1D siblings and exists on VIS/KP only, so it is not a comparable measurement of the same quantity. It stays in the feed deliberately: the LTE/NLTE mean-3D PAIR is the NLTE differential on ONE atmosphere (RYA-542), which is the diagnostic it is for. Not a headline value.</p></section><section class=\"fe-section\"><h2>Saturation characterization</h2><p>Committed proof census: 120 line/holding records; 100% have observed depth &gt; 0.70. Median observed log10(EW[m\u00c5]/\u03bb[\u00c5]) = -1.252. In consistent \u00c5 units this is -4.252. These diagnostics characterize the audited saturated pool, not every newly added product.</p></section><section class=\"fe-section\"><h2>Problem-line and model diagnostics</h2><figure><h3>CH G-band artifact</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/fe2-ch-artifact.svg?v=a1a10c0ebd9a\" alt=\"CH G-band artifact\"><figcaption>CH G-band blend artifact \u2014 the synthesis list cannot represent the dominant absorber \u00b7 A = 10.0 (+2.5 dex). RYA-1191 blend audit: 66 catalogued transitions in the 0.62 A fit window, top contaminant CH I at 43.8% of the summed depth against Fe II&#x27;s 11.1%. The VIS synthesis list GESv6_atom_hfs_iso carries 206 species and NOT ONE molecular, so the fit had nowhere to put the CH absorption except Fe II. RYA-515 independently counted 36 of 65 transitions as CH. The plot shows the committed transition census in the proof generator\u2019s fit window; it is not a synthetic spectrum. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853/data/catalog/line_curation_exclusions.csv\">Source evidence</a></figcaption></figure><figure><h3>Near-UV molecular opacity</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/nearuv-opacity.svg?v=a1a10c0ebd9a\" alt=\"Near-UV molecular opacity\"><figcaption>molecules OFF vs ON on THE SAME CODE and the same pool. Differencing against the published values instead would have measured the molecular lever PLUS every code change since the feed was written on Sept 3 -- which is about -0.035 dex of the total. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853/data/results/rya1207/nearuv_molecular_lever.json\">Source evidence</a></figcaption></figure><figure><h3>HARPS arm offset</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/harps-arm-offset-dark.png?v=a1a10c0ebd9a\" alt=\"HARPS arm offset\"><figcaption>Current Fe II VIS products, separated by holding and engine. The arm offset persists after the curated CH artifact was removed. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853/data/products/solar/Fe.json\">Source evidence</a></figcaption></figure><figure><h3>CRIRES+ H model coverage</h3><img class=\"fe-diagnostic\" src=\"/assets/data/fe-publication/crires-h-coverage.svg?v=a1a10c0ebd9a\" alt=\"CRIRES+ H model coverage\"><figcaption>Included and excluded line counts from each current product. Excluded rows are not automatically failed fits; the per-line reason distinguishes unavailable NLTE coverage. <a href=\"https://github.com/damienabraxas/exoplanetcodex/blob/d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853/data/products/solar/Fe.json\">Source evidence</a></figcaption></figure></section><section class=\"fe-section\"><h2>Download the evidence</h2><p>6686 graded per-line measurements exported. Evidence for 22 graded products is missing or does not reproduce the feed; 0 exported lines lack an unambiguous gf match. The download is explicitly incomplete until those upstream records are supplied.</p><ul><li><a download href=\"/assets/data/fe-publication/Fe_graded_perline.csv\">Graded per-line abundances (CSV)</a></li><li><a download href=\"/assets/data/fe-publication/Fe_products.csv\">All product fields (CSV; nested fields preserved as JSON)</a></li><li><a download href=\"/assets/data/fe-publication/Fe_perline_coverage.csv\">Per-product line-evidence coverage (CSV)</a></li><li><a download href=\"/assets/data/fe-publication/Fe.json\">Source Fe.json</a></li></ul></section><section class=\"fe-section\"><h2>Reproducibility</h2><p>Generator scripts/generate_fe_publication.py v1.0.0<br>Science source commit <code>d8eaec91bd42eb9fb31be1d9ea9eb6fe2431c853</code><br>Fe.json v1.222 \u00b7 feed timestamp 2026-09-24T14:59:14Z<br>Generated 2026-09-24T15:12:27+00:00<br>Feed SHA-256 <code>dd6e47ce2225fa7e32a0ef5f03bda18f13dce61ab3e158d4a16a66fc0e5d2e8e</code></p><p><a href=\"/assets/data/rya935/live_tracker.html\">Refreshed product tracker</a> \u00b7 <a href=\"/assets/data/fe-publication/manifest.json\">Build manifest</a> \u00b7 <a href=\"/systems/sol/elements/fe/\">Fe I appendix</a></p></section><section class=\"fe-section\"><h2>References</h2><ul><li>Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). <a href=\"https://doi.org/10.1051/0004-6361/202140445\">The chemical make-up of the Sun: A 2020 vision</a> (doi: 10.1051/0004-6361/202140445). AGSS21 Solar reference and the green literature comparison; Table A.2 defines the Reference Grade Fe I line set.</li><li>Lodders, K.; Bergemann, M.; Palme, H. (2025). <a href=\"https://doi.org/10.1007/s11214-025-01146-w\">Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites</a> (doi: 10.1007/s11214-025-01146-w). Table 6 present-day Solar composition, shown as the gold literature comparison.</li><li>Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). <a href=\"https://doi.org/10.1051/0004-6361/202243673\">Non-LTE radiative transfer with Turbospectrum</a> (doi: 10.1051/0004-6361/202243673). The Gerber Turbospectrum non-LTE synthesis implementation named in the model rows.</li><li>Den Hartog, E. A.; Lawler, J. E.; Sneden, C.; Cowan, J. J.; Brukhovesky, A. (2019). <a href=\"https://doi.org/10.3847/1538-4365/ab322e\">Atomic Transition Probabilities for UV and Blue Lines of Fe II and Abundance Determinations in the Photospheres of the Sun and Metal-poor Star HD 84937</a> (doi: 10.3847/1538-4365/ab322e). Laboratory transition probabilities used in the resolved Fe II per-line evidence. Coverage and unresolved products are listed in the downloads.</li></ul></section>",
   "references": [
     {
       "authors": "Asplund, M.; Amarsi, A. M.; Grevesse, N.",
