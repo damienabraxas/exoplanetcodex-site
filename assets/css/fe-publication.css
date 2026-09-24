@@ -28,3 +28,4 @@
 .fe-highlights .fe-highlight-ir { --band-color: #ff8080; --band-tint: rgba(255,128,128,.12); }
 .fe-highlights article { border-color: var(--band-color); background: linear-gradient(var(--band-tint),var(--band-tint)),#0a1820; }
 .fe-highlights h3,.fe-highlights strong { color: var(--band-color); }
+.fe-highlights .fe-hold { margin-top: .7rem; padding-top: .6rem; border-top: 1px dashed var(--band-color); color: #cbb68a; font-size: .82rem; font-style: italic; }

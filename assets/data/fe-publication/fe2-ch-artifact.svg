@@ -9,7 +9,7 @@
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -30,11 +30,11 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 56.05 236.58
-L 780.88351 236.58
-L 780.88351 11.489231
-L 56.05 11.489231
-L 56.05 236.58
+    <path d="M 49.52 244.6675
+L 781.2 244.6675
+L 781.2 10.8
+L 49.52 10.8
+L 49.52 244.6675
 z
 " style="fill: none"/>
    </g>
@@ -47,14 +47,14 @@ L 0 3.5
 " style="stroke: #ffffff; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m49fce81f33" x="103.724931" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="97.64525" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
       <!-- 4302.6 -->
-      <g style="fill: #ffffff" transform="translate(85.363994 254.78) scale(0.1 -0.1)">
+      <g style="fill: #ffffff" transform="translate(79.284312 258.6675) scale(0.1 -0.1)">
        <defs>
-        <path id="SpaceMono-Regular-208" d="M 2387 0
+        <path id="SpaceMono-Regular-34" d="M 2387 0
 L 2387 845
 L 314 845
 L 314 1587
@@ -75,7 +75,7 @@ L 774 1421
 L 774 1344
 z
 " transform="scale(0.015625)"/>
-        <path id="SpaceMono-Regular-207" d="M 2029 -90
+        <path id="SpaceMono-Regular-33" d="M 2029 -90
 Q 1523 -90 1158 112
 Q 794 314 598 650
 Q 403 986 403 1395
@@ -110,7 +110,7 @@ Q 3155 269 2809 89
 Q 2464 -90 2029 -90
 z
 " transform="scale(0.015625)"/>
-        <path id="SpaceMono-Regular-204" d="M 1958 -90
+        <path id="SpaceMono-Regular-30" d="M 1958 -90
 Q 1222 -90 803 380
 Q 384 851 384 1741
 L 384 2739
@@ -145,7 +145,7 @@ Q 2368 2080 2246 1955
 Q 2125 1830 1958 1830
 z
 " transform="scale(0.015625)"/>
-        <path id="SpaceMono-Regular-206" d="M 448 0
+        <path id="SpaceMono-Regular-32" d="M 448 0
 L 448 768
 Q 448 1178 627 1446
 Q 806 1715 1132 1884
@@ -178,7 +178,7 @@ L 3482 0
 L 448 0
 z
 " transform="scale(0.015625)"/>
-        <path id="SpaceMono-Regular-24c" d="M 1958 -90
+        <path id="SpaceMono-Regular-2e" d="M 1958 -90
 Q 1779 -90 1644 44
 Q 1510 179 1510 358
 Q 1510 544 1644 675
@@ -189,7 +189,7 @@ Q 2406 179 2275 44
 Q 2144 -90 1958 -90
 z
 " transform="scale(0.015625)"/>
-        <path id="SpaceMono-Regular-20a" d="M 1958 -90
+        <path id="SpaceMono-Regular-36" d="M 1958 -90
 Q 1517 -90 1165 99
 Q 813 288 608 621
 Q 403 954 403 1389
@@ -233,26 +233,26 @@ Q 1491 384 1958 384
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-206" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20a" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-32" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-36" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m49fce81f33" x="212.820884" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="207.77168" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
       <!-- 4302.8 -->
-      <g style="fill: #ffffff" transform="translate(194.459947 254.78) scale(0.1 -0.1)">
+      <g style="fill: #ffffff" transform="translate(189.410742 258.6675) scale(0.1 -0.1)">
        <defs>
-        <path id="SpaceMono-Regular-20c" d="M 1901 -90
+        <path id="SpaceMono-Regular-38" d="M 1901 -90
 Q 1453 -90 1113 70
 Q 774 230 588 505
 Q 403 781 403 1126
@@ -312,110 +312,110 @@ Q 1491 397 1920 397
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-206" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20c" transform="translate(306.015625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-32" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-38" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m49fce81f33" x="321.916837" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="317.89811" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
       <!-- 4303.0 -->
-      <g style="fill: #ffffff" transform="translate(303.555899 254.78) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(306.015625 0)"/>
+      <g style="fill: #ffffff" transform="translate(299.537172 258.6675) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m49fce81f33" x="431.01279" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="428.024539" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
       <!-- 4303.2 -->
-      <g style="fill: #ffffff" transform="translate(412.651852 254.78) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-206" transform="translate(306.015625 0)"/>
+      <g style="fill: #ffffff" transform="translate(409.663602 258.6675) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-32" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#m49fce81f33" x="540.108742" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="538.150969" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
       <!-- 4303.4 -->
-      <g style="fill: #ffffff" transform="translate(521.747805 254.78) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-208" transform="translate(306.015625 0)"/>
+      <g style="fill: #ffffff" transform="translate(519.790032 258.6675) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-34" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m49fce81f33" x="649.204695" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="648.277399" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
       <!-- 4303.6 -->
-      <g style="fill: #ffffff" transform="translate(630.843757 254.78) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20a" transform="translate(306.015625 0)"/>
+      <g style="fill: #ffffff" transform="translate(629.916462 258.6675) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-36" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="xtick_7">
      <g id="line2d_7">
       <g>
-       <use xlink:href="#m49fce81f33" x="758.300648" y="236.58" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m49fce81f33" x="758.403829" y="244.6675" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_7">
       <!-- 4303.8 -->
-      <g style="fill: #ffffff" transform="translate(739.93971 254.78) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-208"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(183.609375 0)"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(244.8125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20c" transform="translate(306.015625 0)"/>
+      <g style="fill: #ffffff" transform="translate(740.042892 258.6675) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-34"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="183.599991"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="244.799988"/>
+       <use xlink:href="#SpaceMono-Regular-38" x="305.999985"/>
       </g>
      </g>
     </g>
     <g id="text_8">
      <!-- Air wavelength [Å] -->
-     <g style="fill: #ffffff" transform="translate(363.383942 273.59) scale(0.1 -0.1)">
+     <g style="fill: #ffffff" transform="translate(360.277188 274.408125) scale(0.1 -0.1)">
       <defs>
-       <path id="SpaceMono-Regular-1" d="M 96 0
+       <path id="SpaceMono-Regular-41" d="M 96 0
 L 1453 4480
 L 2464 4480
 L 3821 0
@@ -432,7 +432,7 @@ L 1920 4250
 L 1146 1613
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-124" d="M 1990 3674
+       <path id="SpaceMono-Regular-69" d="M 1990 3674
 Q 1811 3674 1676 3808
 Q 1542 3942 1542 4122
 Q 1542 4307 1676 4438
@@ -455,7 +455,7 @@ L 3283 0
 L 634 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-16c" d="M 301 0
+       <path id="SpaceMono-Regular-72" d="M 301 0
 L 301 461
 L 1030 461
 L 1030 2714
@@ -479,8 +479,8 @@ L 2336 0
 L 301 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-24a" transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-1a1" d="M 614 0
+       <path id="SpaceMono-Regular-20" transform="scale(0.015625)"/>
+       <path id="SpaceMono-Regular-77" d="M 614 0
 L 115 3174
 L 627 3174
 L 1050 230
@@ -499,7 +499,7 @@ L 1536 0
 L 614 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-d8" d="M 1786 -90
+       <path id="SpaceMono-Regular-61" d="M 1786 -90
 Q 1370 -90 1034 99
 Q 698 288 499 649
 Q 301 1011 301 1536
@@ -538,7 +538,7 @@ Q 813 998 1101 691
 Q 1389 384 1837 384
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-19f" d="M 1459 0
+       <path id="SpaceMono-Regular-76" d="M 1459 0
 L 352 3174
 L 941 3174
 L 1914 230
@@ -549,7 +549,7 @@ L 2445 0
 L 1459 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-101" d="M 1971 -90
+       <path id="SpaceMono-Regular-65" d="M 1971 -90
 Q 1517 -90 1168 118
 Q 819 326 620 694
 Q 422 1062 422 1549
@@ -580,7 +580,7 @@ Q 1562 2790 1274 2534
 Q 986 2278 934 1894
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-139" d="M 557 0
+       <path id="SpaceMono-Regular-6c" d="M 557 0
 L 557 461
 L 1709 461
 L 1709 4019
@@ -593,7 +593,7 @@ L 3360 0
 L 557 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-144" d="M 557 0
+       <path id="SpaceMono-Regular-6e" d="M 557 0
 L 557 3174
 L 1056 3174
 L 1056 2637
@@ -612,7 +612,7 @@ L 1056 0
 L 557 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-116" d="M 909 -1280
+       <path id="SpaceMono-Regular-67" d="M 909 -1280
 L 909 -819
 L 2797 -819
 Q 2970 -819 2970 -627
@@ -654,7 +654,7 @@ Q 1120 666 1360 525
 Q 1600 384 1907 384
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-17e" d="M 1939 0
+       <path id="SpaceMono-Regular-74" d="M 1939 0
 Q 1722 0 1584 141
 Q 1446 282 1446 499
 L 1446 2714
@@ -674,7 +674,7 @@ L 3021 0
 L 1939 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-11e" d="M 557 0
+       <path id="SpaceMono-Regular-68" d="M 557 0
 L 557 4480
 L 1056 4480
 L 1056 2598
@@ -694,7 +694,7 @@ L 1056 0
 L 557 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-267" d="M 2182 -998
+       <path id="SpaceMono-Regular-5b" d="M 2182 -998
 Q 1965 -998 1827 -857
 Q 1690 -717 1690 -499
 L 1690 4979
@@ -711,7 +711,7 @@ L 2803 -998
 L 2182 -998
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-16" d="M 96 0
+       <path id="SpaceMono-Regular-c5" d="M 96 0
 L 1453 4480
 L 2464 4480
 L 3821 0
@@ -727,28 +727,28 @@ L 1997 4250
 L 1920 4250
 L 1146 1613
 z
-M 1958 4954
-Q 1683 4954 1494 5143
-Q 1306 5332 1306 5607
-Q 1306 5882 1494 6071
-Q 1683 6260 1958 6260
-Q 2234 6260 2422 6071
-Q 2611 5882 2611 5607
-Q 2611 5332 2422 5143
-Q 2234 4954 1958 4954
+M 1958 4928
+Q 1683 4928 1494 5117
+Q 1306 5306 1306 5581
+Q 1306 5856 1494 6045
+Q 1683 6234 1958 6234
+Q 2234 6234 2422 6045
+Q 2611 5856 2611 5581
+Q 2611 5306 2422 5117
+Q 2234 4928 1958 4928
 z
-M 1958 5338
-Q 2074 5338 2150 5415
-Q 2227 5492 2227 5607
-Q 2227 5722 2150 5799
-Q 2074 5876 1958 5876
-Q 1843 5876 1766 5799
-Q 1690 5722 1690 5607
-Q 1690 5492 1766 5415
-Q 1843 5338 1958 5338
+M 1958 5312
+Q 2074 5312 2150 5389
+Q 2227 5466 2227 5581
+Q 2227 5696 2150 5773
+Q 2074 5850 1958 5850
+Q 1843 5850 1766 5773
+Q 1690 5696 1690 5581
+Q 1690 5466 1766 5389
+Q 1843 5312 1958 5312
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-268" d="M 1114 -998
+       <path id="SpaceMono-Regular-5d" d="M 1114 -998
 L 1114 -538
 L 1555 -538
 Q 1728 -538 1728 -346
@@ -766,24 +766,24 @@ L 1114 -998
 z
 " transform="scale(0.015625)"/>
       </defs>
-      <use xlink:href="#SpaceMono-Regular-1"/>
-      <use xlink:href="#SpaceMono-Regular-124" transform="translate(61.203125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(122.40625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(183.609375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-1a1" transform="translate(244.8125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(306.015625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-19f" transform="translate(367.21875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(428.421875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-139" transform="translate(489.625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(550.828125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-144" transform="translate(612.03125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-116" transform="translate(673.234375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(734.4375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-11e" transform="translate(795.640625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(856.84375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-267" transform="translate(918.046875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-16" transform="translate(979.25 0)"/>
-      <use xlink:href="#SpaceMono-Regular-268" transform="translate(1040.453125 0)"/>
+      <use xlink:href="#SpaceMono-Regular-41"/>
+      <use xlink:href="#SpaceMono-Regular-69" x="61.199997"/>
+      <use xlink:href="#SpaceMono-Regular-72" x="122.399994"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="183.599991"/>
+      <use xlink:href="#SpaceMono-Regular-77" x="244.799988"/>
+      <use xlink:href="#SpaceMono-Regular-61" x="305.999985"/>
+      <use xlink:href="#SpaceMono-Regular-76" x="367.199982"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="428.399979"/>
+      <use xlink:href="#SpaceMono-Regular-6c" x="489.599976"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="550.799973"/>
+      <use xlink:href="#SpaceMono-Regular-6e" x="611.999969"/>
+      <use xlink:href="#SpaceMono-Regular-67" x="673.199966"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="734.399963"/>
+      <use xlink:href="#SpaceMono-Regular-68" x="795.59996"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="856.799957"/>
+      <use xlink:href="#SpaceMono-Regular-5b" x="917.999954"/>
+      <use xlink:href="#SpaceMono-Regular-c5" x="979.199951"/>
+      <use xlink:href="#SpaceMono-Regular-5d" x="1040.399948"/>
      </g>
     </g>
    </g>
@@ -796,29 +796,29 @@ L -3.5 0
 " style="stroke: #ffffff; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="226.348601" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="234.037159" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_9">
       <!-- 0.0 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 231.948601) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-204" transform="translate(122.40625 0)"/>
+      <g style="fill: #ffffff" transform="translate(24.159063 237.537159) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-30" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_9">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="200.114246" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="206.779875" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_10">
       <!-- 0.1 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 205.714246) scale(0.1 -0.1)">
+      <g style="fill: #ffffff" transform="translate(24.159063 210.279875) scale(0.1 -0.1)">
        <defs>
-        <path id="SpaceMono-Regular-205" d="M 454 0
+        <path id="SpaceMono-Regular-31" d="M 454 0
 L 454 499
 L 1722 499
 L 1722 4243
@@ -835,68 +835,68 @@ L 454 0
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-205" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-31" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="173.879891" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="179.52259" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_11">
       <!-- 0.2 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 179.479891) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-206" transform="translate(122.40625 0)"/>
+      <g style="fill: #ffffff" transform="translate(24.159063 183.02259) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-32" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="147.645535" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="152.265306" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_12">
       <!-- 0.3 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 153.245535) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-207" transform="translate(122.40625 0)"/>
+      <g style="fill: #ffffff" transform="translate(24.159063 155.765306) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-33" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="121.41118" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="125.008022" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_13">
       <!-- 0.4 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 127.01118) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-208" transform="translate(122.40625 0)"/>
+      <g style="fill: #ffffff" transform="translate(24.159063 128.508022) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-34" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_6">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="95.176824" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="97.750737" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_14">
       <!-- 0.5 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 100.776824) scale(0.1 -0.1)">
+      <g style="fill: #ffffff" transform="translate(24.159063 101.250737) scale(0.1 -0.1)">
        <defs>
-        <path id="SpaceMono-Regular-209" d="M 2035 -90
+        <path id="SpaceMono-Regular-35" d="M 2035 -90
 Q 1517 -90 1155 108
 Q 794 307 608 652
 Q 422 998 422 1434
@@ -933,38 +933,38 @@ Q 2547 -90 2035 -90
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-209" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-35" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_7">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="68.942469" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="70.493453" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_15">
       <!-- 0.6 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 74.542469) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20a" transform="translate(122.40625 0)"/>
+      <g style="fill: #ffffff" transform="translate(24.159063 73.993453) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-36" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_8">
      <g id="line2d_15">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="42.708114" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="43.236168" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_16">
       <!-- 0.7 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 48.308114) scale(0.1 -0.1)">
+      <g style="fill: #ffffff" transform="translate(24.159063 46.736168) scale(0.1 -0.1)">
        <defs>
-        <path id="SpaceMono-Regular-20b" d="M 768 0
+        <path id="SpaceMono-Regular-37" d="M 768 0
 L 768 230
 Q 768 461 864 656
 Q 960 851 1158 1152
@@ -982,32 +982,32 @@ L 768 0
 z
 " transform="scale(0.015625)"/>
        </defs>
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20b" transform="translate(122.40625 0)"/>
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-37" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="ytick_9">
      <g id="line2d_16">
       <g>
-       <use xlink:href="#m44ddbeb521" x="56.05" y="16.473758" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
+       <use xlink:href="#m44ddbeb521" x="49.52" y="15.978884" style="fill: #ffffff; stroke: #ffffff; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_17">
       <!-- 0.8 -->
-      <g style="fill: #ffffff" transform="translate(30.689063 22.073758) scale(0.1 -0.1)">
-       <use xlink:href="#SpaceMono-Regular-204"/>
-       <use xlink:href="#SpaceMono-Regular-24c" transform="translate(61.203125 0)"/>
-       <use xlink:href="#SpaceMono-Regular-20c" transform="translate(122.40625 0)"/>
+      <g style="fill: #ffffff" transform="translate(24.159063 19.478884) scale(0.1 -0.1)">
+       <use xlink:href="#SpaceMono-Regular-30"/>
+       <use xlink:href="#SpaceMono-Regular-2e" x="61.199997"/>
+       <use xlink:href="#SpaceMono-Regular-38" x="122.399994"/>
       </g>
      </g>
     </g>
     <g id="text_18">
      <!-- Catalogued central depth -->
-     <g style="fill: #ffffff" transform="translate(23.079062 197.478365) rotate(-90) scale(0.1 -0.1)">
+     <g style="fill: #ffffff" transform="translate(18.159063 201.1775) rotate(-90) scale(0.1 -0.1)">
       <defs>
-       <path id="SpaceMono-Regular-1b" d="M 1984 -90
+       <path id="SpaceMono-Regular-43" d="M 1984 -90
 Q 1248 -90 829 380
 Q 410 851 410 1741
 L 410 2739
@@ -1038,7 +1038,7 @@ Q 3200 346 2848 128
 Q 2496 -90 1984 -90
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-14e" d="M 1958 -90
+       <path id="SpaceMono-Regular-6f" d="M 1958 -90
 Q 1536 -90 1174 102
 Q 813 294 589 659
 Q 365 1024 365 1549
@@ -1071,7 +1071,7 @@ Q 1165 666 1411 525
 Q 1658 384 1958 384
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-187" d="M 1709 -90
+       <path id="SpaceMono-Regular-75" d="M 1709 -90
 Q 1184 -90 851 256
 Q 518 602 518 1280
 L 518 3174
@@ -1091,7 +1091,7 @@ Q 2592 269 2342 89
 Q 2093 -90 1709 -90
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-fb" d="M 1901 -90
+       <path id="SpaceMono-Regular-64" d="M 1901 -90
 Q 1478 -90 1132 99
 Q 787 288 582 653
 Q 378 1018 378 1536
@@ -1128,7 +1128,7 @@ Q 1165 666 1408 525
 Q 1651 384 1952 384
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-f5" d="M 2016 -90
+       <path id="SpaceMono-Regular-63" d="M 2016 -90
 Q 1574 -90 1203 99
 Q 832 288 605 653
 Q 378 1018 378 1536
@@ -1159,7 +1159,7 @@ Q 3066 224 2749 67
 Q 2432 -90 2016 -90
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-169" d="M 442 -1280
+       <path id="SpaceMono-Regular-70" d="M 442 -1280
 L 442 3174
 L 941 3174
 L 941 2675
@@ -1196,271 +1196,271 @@ Q 1709 384 2003 384
 z
 " transform="scale(0.015625)"/>
       </defs>
-      <use xlink:href="#SpaceMono-Regular-1b"/>
-      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(61.203125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(122.40625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-139" transform="translate(244.8125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-14e" transform="translate(306.015625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-116" transform="translate(367.21875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-187" transform="translate(428.421875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(489.625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-fb" transform="translate(550.828125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(612.03125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-f5" transform="translate(673.234375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(734.4375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-144" transform="translate(795.640625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(856.84375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(918.046875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(979.25 0)"/>
-      <use xlink:href="#SpaceMono-Regular-139" transform="translate(1040.453125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1101.65625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-fb" transform="translate(1162.859375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(1224.0625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-169" transform="translate(1285.265625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(1346.46875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-11e" transform="translate(1407.671875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-43"/>
+      <use xlink:href="#SpaceMono-Regular-61" x="61.199997"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="122.399994"/>
+      <use xlink:href="#SpaceMono-Regular-61" x="183.599991"/>
+      <use xlink:href="#SpaceMono-Regular-6c" x="244.799988"/>
+      <use xlink:href="#SpaceMono-Regular-6f" x="305.999985"/>
+      <use xlink:href="#SpaceMono-Regular-67" x="367.199982"/>
+      <use xlink:href="#SpaceMono-Regular-75" x="428.399979"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="489.599976"/>
+      <use xlink:href="#SpaceMono-Regular-64" x="550.799973"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="611.999969"/>
+      <use xlink:href="#SpaceMono-Regular-63" x="673.199966"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="734.399963"/>
+      <use xlink:href="#SpaceMono-Regular-6e" x="795.59996"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="856.799957"/>
+      <use xlink:href="#SpaceMono-Regular-72" x="917.999954"/>
+      <use xlink:href="#SpaceMono-Regular-61" x="979.199951"/>
+      <use xlink:href="#SpaceMono-Regular-6c" x="1040.399948"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="1101.599945"/>
+      <use xlink:href="#SpaceMono-Regular-64" x="1162.799942"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="1223.999939"/>
+      <use xlink:href="#SpaceMono-Regular-70" x="1285.199936"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="1346.399933"/>
+      <use xlink:href="#SpaceMono-Regular-68" x="1407.59993"/>
      </g>
     </g>
    </g>
    <g id="LineCollection_1">
-    <path d="M 88.996978 226.348601
-L 88.996978 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 94.451775 226.348601
-L 94.451775 226.086258
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 104.815891 226.348601
-L 104.815891 170.731768
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 131.544399 226.348601
-L 131.544399 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 133.180839 226.348601
-L 133.180839 225.823914
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 134.817278 226.348601
-L 134.817278 172.830516
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 167.000584 226.348601
-L 167.000584 167.058958
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 168.637023 226.348601
-L 168.637023 224.77454
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 171.364422 226.348601
-L 171.364422 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 183.364977 226.348601
-L 183.364977 117.476027
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 185.546896 226.348601
-L 185.546896 224.249853
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 204.638688 226.348601
-L 204.638688 216.64189
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 205.729647 226.348601
-L 205.729647 216.64189
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 207.366086 226.348601
-L 207.366086 164.697866
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 238.458433 226.348601
-L 238.458433 226.086258
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 270.096259 226.348601
-L 270.096259 113.016186
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 270.641739 226.348601
-L 270.641739 224.249853
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 285.369693 226.348601
-L 285.369693 225.036884
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 353.009183 226.348601
-L 353.009183 225.823914
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 353.009183 226.348601
-L 353.009183 225.823914
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 375.373854 226.348601
-L 375.373854 192.506283
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 375.373854 226.348601
-L 375.373854 192.243939
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 498.65228 226.348601
-L 498.65228 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 518.289552 226.348601
-L 518.289552 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 527.017228 226.348601
-L 527.017228 226.086258
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 545.56354 226.348601
-L 545.56354 167.321302
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 560.836973 226.348601
-L 560.836973 169.944737
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 581.565204 226.348601
-L 581.565204 226.086258
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 656.841412 226.348601
-L 656.841412 204.311743
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 656.841412 226.348601
-L 656.841412 204.311743
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 677.024163 226.348601
-L 677.024163 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 686.842799 226.348601
-L 686.842799 225.823914
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 702.116232 226.348601
-L 702.116232 210.870332
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 711.934868 226.348601
-L 711.934868 165.222553
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 731.572139 226.348601
-L 731.572139 225.561571
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
-    <path d="M 747.936532 226.348601
-L 747.936532 210.870332
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 82.778182 234.037159
+L 82.778182 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 88.284503 234.037159
+L 88.284503 233.764586
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 98.746514 234.037159
+L 98.746514 176.251716
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 125.727489 234.037159
+L 125.727489 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 127.379386 234.037159
+L 127.379386 233.492013
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 129.031282 234.037159
+L 129.031282 178.432299
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 161.518579 234.037159
+L 161.518579 172.435696
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 163.170476 234.037159
+L 163.170476 232.401722
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 165.923636 234.037159
+L 165.923636 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 178.037544 234.037159
+L 178.037544 120.919429
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 180.240072 234.037159
+L 180.240072 231.856576
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 199.512197 234.037159
+L 199.512197 223.951964
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 200.613462 234.037159
+L 200.613462 223.951964
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 202.265358 234.037159
+L 202.265358 169.982541
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 233.651391 234.037159
+L 233.651391 233.764586
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 265.588055 234.037159
+L 265.588055 116.285691
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 266.138688 234.037159
+L 266.138688 231.856576
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 281.005756 234.037159
+L 281.005756 232.674295
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 349.284142 234.037159
+L 349.284142 233.492013
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 349.284142 234.037159
+L 349.284142 233.492013
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 371.86006 234.037159
+L 371.86006 198.875262
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 371.86006 234.037159
+L 371.86006 198.602689
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 496.302926 234.037159
+L 496.302926 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 516.125683 234.037159
+L 516.125683 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 524.935798 234.037159
+L 524.935798 233.764586
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 543.657291 234.037159
+L 543.657291 172.708269
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 559.074991 234.037159
+L 559.074991 175.433998
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 579.999013 234.037159
+L 579.999013 233.764586
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 655.986249 234.037159
+L 655.986249 211.14104
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 655.986249 234.037159
+L 655.986249 211.14104
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 676.359639 234.037159
+L 676.359639 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 686.271017 234.037159
+L 686.271017 233.492013
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 701.688718 234.037159
+L 701.688718 217.955361
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 711.600096 234.037159
+L 711.600096 170.527686
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 731.422854 234.037159
+L 731.422854 233.219441
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
+    <path d="M 747.941818 234.037159
+L 747.941818 217.955361
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
    </g>
    <g id="LineCollection_2">
-    <path d="M 115.496385 226.348601
-L 115.496385 222.413448
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 132.973556 226.348601
-L 132.973556 220.052356
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 135.395486 226.348601
-L 135.395486 151.318345
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 153.276313 226.348601
-L 153.276313 215.330172
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 165.909624 226.348601
-L 165.909624 224.249853
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 177.419247 226.348601
-L 177.419247 217.166577
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 225.912398 226.348601
-L 225.912398 206.935178
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 261.914063 226.348601
-L 261.914063 222.413448
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 279.751251 226.348601
-L 279.751251 225.823914
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 309.95992 226.348601
-L 309.95992 204.311743
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 348.148959 226.348601
-L 348.148959 220.577043
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 414.632032 226.348601
-L 414.632032 21.720629
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 433.909287 226.348601
-L 433.909287 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 436.162118 226.348601
-L 436.162118 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 439.996841 226.348601
-L 439.996841 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 440.007751 226.348601
-L 440.007751 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 442.216944 226.348601
-L 442.216944 189.882847
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 444.295222 226.348601
-L 444.295222 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 450.159129 226.348601
-L 450.159129 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 450.388231 226.348601
-L 450.388231 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 457.735843 226.348601
-L 457.735843 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 458.286778 226.348601
-L 458.286778 224.77454
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 458.286778 226.348601
-L 458.286778 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 467.898131 226.348601
-L 467.898131 180.963167
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 548.716413 226.348601
-L 548.716413 225.823914
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 570.110129 226.348601
-L 570.110129 226.086258
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 602.277071 226.348601
-L 602.277071 217.166577
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 628.852845 226.348601
-L 628.852845 226.086258
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 632.840302 226.348601
-L 632.840302 59.235758
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
-    <path d="M 633.70216 226.348601
-L 633.70216 222.413448
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 109.527892 234.037159
+L 109.527892 229.948566
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 127.170146 234.037159
+L 127.170146 227.495411
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 129.614952 234.037159
+L 129.614952 156.081326
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 147.664674 234.037159
+L 147.664674 222.5891
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 160.417315 234.037159
+L 160.417315 231.856576
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 172.035653 234.037159
+L 172.035653 224.49711
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 220.986851 234.037159
+L 220.986851 213.866769
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 257.328573 234.037159
+L 257.328573 229.948566
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 275.334244 234.037159
+L 275.334244 233.492013
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 305.828253 234.037159
+L 305.828253 211.14104
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 344.37801 234.037159
+L 344.37801 228.040557
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 411.489056 234.037159
+L 411.489056 21.430341
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 430.948396 234.037159
+L 430.948396 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 433.222507 234.037159
+L 433.222507 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 437.093451 234.037159
+L 437.093451 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 437.104464 234.037159
+L 437.104464 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 439.334524 234.037159
+L 439.334524 196.149534
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 441.432432 234.037159
+L 441.432432 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 447.351728 234.037159
+L 447.351728 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 447.582993 234.037159
+L 447.582993 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 455.000008 234.037159
+L 455.000008 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 455.556147 234.037159
+L 455.556147 232.401722
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 455.556147 234.037159
+L 455.556147 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 465.258285 234.037159
+L 465.258285 186.882057
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 546.839945 234.037159
+L 546.839945 233.492013
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 568.435738 234.037159
+L 568.435738 233.764586
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 600.906515 234.037159
+L 600.906515 224.49711
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 627.733314 234.037159
+L 627.733314 233.764586
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 631.758435 234.037159
+L 631.758435 60.408258
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
+    <path d="M 632.628433 234.037159
+L 632.628433 229.948566
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
    </g>
    <g id="line2d_17">
-    <path d="M 414.648397 236.58
-L 414.648397 11.489231
-" clip-path="url(#p70f40c1d9e)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ebc77c; stroke-width: 1.5"/>
+    <path d="M 411.505575 244.6675
+L 411.505575 10.8
+" clip-path="url(#p2f9c09978b)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ebc77c; stroke-width: 1.5"/>
    </g>
    <g id="patch_3">
-    <path d="M 56.05 236.58
-L 56.05 11.489231
+    <path d="M 49.52 244.6675
+L 49.52 10.8
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
-    <path d="M 780.88351 236.58
-L 780.88351 11.489231
+    <path d="M 781.2 244.6675
+L 781.2 10.8
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_5">
-    <path d="M 56.05 236.58
-L 780.88351 236.58
+    <path d="M 49.52 244.6675
+L 781.2 244.6675
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_6">
-    <path d="M 56.05 11.489231
-L 780.88351 11.489231
+    <path d="M 49.52 10.8
+L 781.2 10.8
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="legend_1">
     <g id="line2d_18">
-     <path d="M 633.77351 24.849231
-L 649.77351 24.849231
+     <path d="M 634.09 21.695
+L 650.09 21.695
 " style="fill: none; stroke: #63dce6; stroke-width: 1.5"/>
     </g>
     <g id="text_19">
      <!-- CH (n=36) -->
-     <g style="fill: #ffffff" transform="translate(656.17351 27.649231) scale(0.08 -0.08)">
+     <g style="fill: #ffffff" transform="translate(656.49 24.495) scale(0.08 -0.08)">
       <defs>
-       <path id="SpaceMono-Regular-42" d="M 467 0
+       <path id="SpaceMono-Regular-48" d="M 467 0
 L 467 4480
 L 1005 4480
 L 1005 2496
@@ -1475,7 +1475,7 @@ L 1005 0
 L 467 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-263" d="M 3264 -998
+       <path id="SpaceMono-Regular-28" d="M 3264 -998
 Q 2816 -998 2409 -832
 Q 2003 -666 1686 -349
 Q 1370 -32 1184 419
@@ -1500,7 +1500,7 @@ L 3494 -998
 L 3264 -998
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-2b3" d="M 621 2470
+       <path id="SpaceMono-Regular-3d" d="M 621 2470
 L 621 2931
 L 3296 2931
 L 3296 2470
@@ -1513,7 +1513,7 @@ L 3296 1549
 L 621 1549
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-264" d="M 422 -998
+       <path id="SpaceMono-Regular-29" d="M 422 -998
 L 422 -525
 L 653 -525
 Q 1114 -525 1517 -285
@@ -1539,27 +1539,27 @@ L 422 -998
 z
 " transform="scale(0.015625)"/>
       </defs>
-      <use xlink:href="#SpaceMono-Regular-1b"/>
-      <use xlink:href="#SpaceMono-Regular-42" transform="translate(61.203125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(122.40625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-263" transform="translate(183.609375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-144" transform="translate(244.8125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(306.015625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-207" transform="translate(367.21875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-20a" transform="translate(428.421875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-264" transform="translate(489.625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-43"/>
+      <use xlink:href="#SpaceMono-Regular-48" x="61.199997"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="122.399994"/>
+      <use xlink:href="#SpaceMono-Regular-28" x="183.599991"/>
+      <use xlink:href="#SpaceMono-Regular-6e" x="244.799988"/>
+      <use xlink:href="#SpaceMono-Regular-3d" x="305.999985"/>
+      <use xlink:href="#SpaceMono-Regular-33" x="367.199982"/>
+      <use xlink:href="#SpaceMono-Regular-36" x="428.399979"/>
+      <use xlink:href="#SpaceMono-Regular-29" x="489.599976"/>
      </g>
     </g>
     <g id="line2d_19">
-     <path d="M 633.77351 40.697231
-L 649.77351 40.697231
+     <path d="M 634.09 33.79
+L 650.09 33.79
 " style="fill: none; stroke: #89939c; stroke-width: 1.5"/>
     </g>
     <g id="text_20">
      <!-- Other transitions (n=30) -->
-     <g style="fill: #ffffff" transform="translate(656.17351 43.497231) scale(0.08 -0.08)">
+     <g style="fill: #ffffff" transform="translate(656.49 36.59) scale(0.08 -0.08)">
       <defs>
-       <path id="SpaceMono-Regular-6c" d="M 1958 -90
+       <path id="SpaceMono-Regular-4f" d="M 1958 -90
 Q 1222 -90 803 380
 Q 384 851 384 1741
 L 384 2739
@@ -1584,7 +1584,7 @@ Q 922 1126 1181 768
 Q 1440 410 1958 410
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-174" d="M 2010 -90
+       <path id="SpaceMono-Regular-73" d="M 2010 -90
 Q 1517 -90 1203 80
 Q 890 250 736 515
 Q 582 781 563 1062
@@ -1619,43 +1619,43 @@ Q 2566 -90 2010 -90
 z
 " transform="scale(0.015625)"/>
       </defs>
-      <use xlink:href="#SpaceMono-Regular-6c"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(61.203125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-11e" transform="translate(122.40625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(183.609375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(244.8125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(306.015625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(367.21875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(428.421875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(489.625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-144" transform="translate(550.828125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-174" transform="translate(612.03125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-124" transform="translate(673.234375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(734.4375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-124" transform="translate(795.640625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-14e" transform="translate(856.84375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-144" transform="translate(918.046875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-174" transform="translate(979.25 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(1040.453125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-263" transform="translate(1101.65625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-144" transform="translate(1162.859375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-2b3" transform="translate(1224.0625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-207" transform="translate(1285.265625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-204" transform="translate(1346.46875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-264" transform="translate(1407.671875 0)"/>
+      <use xlink:href="#SpaceMono-Regular-4f"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="61.199997"/>
+      <use xlink:href="#SpaceMono-Regular-68" x="122.399994"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="183.599991"/>
+      <use xlink:href="#SpaceMono-Regular-72" x="244.799988"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="305.999985"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="367.199982"/>
+      <use xlink:href="#SpaceMono-Regular-72" x="428.399979"/>
+      <use xlink:href="#SpaceMono-Regular-61" x="489.599976"/>
+      <use xlink:href="#SpaceMono-Regular-6e" x="550.799973"/>
+      <use xlink:href="#SpaceMono-Regular-73" x="611.999969"/>
+      <use xlink:href="#SpaceMono-Regular-69" x="673.199966"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="734.399963"/>
+      <use xlink:href="#SpaceMono-Regular-69" x="795.59996"/>
+      <use xlink:href="#SpaceMono-Regular-6f" x="856.799957"/>
+      <use xlink:href="#SpaceMono-Regular-6e" x="917.999954"/>
+      <use xlink:href="#SpaceMono-Regular-73" x="979.199951"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="1040.399948"/>
+      <use xlink:href="#SpaceMono-Regular-28" x="1101.599945"/>
+      <use xlink:href="#SpaceMono-Regular-6e" x="1162.799942"/>
+      <use xlink:href="#SpaceMono-Regular-3d" x="1223.999939"/>
+      <use xlink:href="#SpaceMono-Regular-33" x="1285.199936"/>
+      <use xlink:href="#SpaceMono-Regular-30" x="1346.399933"/>
+      <use xlink:href="#SpaceMono-Regular-29" x="1407.59993"/>
      </g>
     </g>
     <g id="line2d_20">
-     <path d="M 633.77351 56.545231
-L 641.77351 56.545231
-L 649.77351 56.545231
+     <path d="M 634.09 44.99
+L 642.09 44.99
+L 650.09 44.99
 " style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ebc77c; stroke-width: 1.5"/>
     </g>
     <g id="text_21">
      <!-- Curated Fe II 4303.170 -->
-     <g style="fill: #ffffff" transform="translate(656.17351 59.345231) scale(0.08 -0.08)">
+     <g style="fill: #ffffff" transform="translate(656.49 47.79) scale(0.08 -0.08)">
       <defs>
-       <path id="SpaceMono-Regular-3a" d="M 608 0
+       <path id="SpaceMono-Regular-46" d="M 608 0
 L 608 4480
 L 3360 4480
 L 3360 3981
@@ -1668,7 +1668,7 @@ L 1146 0
 L 608 0
 z
 " transform="scale(0.015625)"/>
-       <path id="SpaceMono-Regular-47" d="M 538 0
+       <path id="SpaceMono-Regular-49" d="M 538 0
 L 538 499
 L 1690 499
 L 1690 3981
@@ -1684,36 +1684,36 @@ L 538 0
 z
 " transform="scale(0.015625)"/>
       </defs>
-      <use xlink:href="#SpaceMono-Regular-1b"/>
-      <use xlink:href="#SpaceMono-Regular-187" transform="translate(61.203125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-16c" transform="translate(122.40625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-d8" transform="translate(183.609375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-17e" transform="translate(244.8125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(306.015625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-fb" transform="translate(367.21875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(428.421875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-3a" transform="translate(489.625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-101" transform="translate(550.828125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(612.03125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-47" transform="translate(673.234375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-47" transform="translate(734.4375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24a" transform="translate(795.640625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-208" transform="translate(856.84375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-207" transform="translate(918.046875 0)"/>
-      <use xlink:href="#SpaceMono-Regular-204" transform="translate(979.25 0)"/>
-      <use xlink:href="#SpaceMono-Regular-207" transform="translate(1040.453125 0)"/>
-      <use xlink:href="#SpaceMono-Regular-24c" transform="translate(1101.65625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-205" transform="translate(1162.859375 0)"/>
-      <use xlink:href="#SpaceMono-Regular-20b" transform="translate(1224.0625 0)"/>
-      <use xlink:href="#SpaceMono-Regular-204" transform="translate(1285.265625 0)"/>
+      <use xlink:href="#SpaceMono-Regular-43"/>
+      <use xlink:href="#SpaceMono-Regular-75" x="61.199997"/>
+      <use xlink:href="#SpaceMono-Regular-72" x="122.399994"/>
+      <use xlink:href="#SpaceMono-Regular-61" x="183.599991"/>
+      <use xlink:href="#SpaceMono-Regular-74" x="244.799988"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="305.999985"/>
+      <use xlink:href="#SpaceMono-Regular-64" x="367.199982"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="428.399979"/>
+      <use xlink:href="#SpaceMono-Regular-46" x="489.599976"/>
+      <use xlink:href="#SpaceMono-Regular-65" x="550.799973"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="611.999969"/>
+      <use xlink:href="#SpaceMono-Regular-49" x="673.199966"/>
+      <use xlink:href="#SpaceMono-Regular-49" x="734.399963"/>
+      <use xlink:href="#SpaceMono-Regular-20" x="795.59996"/>
+      <use xlink:href="#SpaceMono-Regular-34" x="856.799957"/>
+      <use xlink:href="#SpaceMono-Regular-33" x="917.999954"/>
+      <use xlink:href="#SpaceMono-Regular-30" x="979.199951"/>
+      <use xlink:href="#SpaceMono-Regular-33" x="1040.399948"/>
+      <use xlink:href="#SpaceMono-Regular-2e" x="1101.599945"/>
+      <use xlink:href="#SpaceMono-Regular-31" x="1162.799942"/>
+      <use xlink:href="#SpaceMono-Regular-37" x="1223.999939"/>
+      <use xlink:href="#SpaceMono-Regular-30" x="1285.199936"/>
      </g>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p70f40c1d9e">
-   <rect x="56.05" y="11.489231" width="724.83351" height="225.090769"/>
+  <clipPath id="p2f9c09978b">
+   <rect x="49.52" y="10.8" width="731.68" height="233.8675"/>
   </clipPath>
  </defs>
 </svg>

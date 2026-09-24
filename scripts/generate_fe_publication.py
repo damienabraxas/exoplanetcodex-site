@@ -26,6 +26,26 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'assets/data/fe-publication'
 BANDS = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H']
+# RYA-1223 / RYA-1226. Option B (Ryan, 2026-09-19) published the complete bands first and
+# HELD near-UV until RYA-1226 wired its measured uncertainty components. RYA-1226 has now
+# landed (PR #559): six of the eight near-UV Fe rows carry a complete, validated RYA-587
+# budget -- the first products in the feed to carry one at all -- so the band is no longer
+# held and no longer reads "systematic under development".
+#
+# ⚠️ WHAT REMAINS IS NARROWER AND IS SAID PLAINLY RATHER THAN DROPPED. Two Fe I molecfit rows
+# keep a legacy bar because their xi pool MOVED (Fe I 3427.119 A rails at xi = 1.10), so
+# stellar.xi is an honest HOLD and an incomplete budget must not publish. And on the six that
+# did migrate, 81.6% of the published variance is a single term -- profile_ew, measured by
+# RYA-1220 on N I at 8216 A, a different element, band and holding. That is a real property
+# of the published bar, so a reader is told rather than left to infer it from a wide bar.
+#
+# The dict is kept (rather than deleted now that nothing is "held") because a band-level
+# caveat is a recurring need; the next one is a one-line change.
+HELD_BANDS = {'near-UV': 'Uncertainty budget closed for six of eight rows (RYA-1226); '
+                         'two Fe I Kitt Peak/molecfit rows keep a legacy bar pending their '
+                         'microturbulence bracket. On the migrated rows most of the quoted '
+                         'systematic is a conservative profile-width term carried from a '
+                         'measurement in another band.'}
 LABELS = {'harps': 'HARPS', 'crires_plus': 'CRIRES+',
           'kpno_solar_atlas': 'Kitt Peak', 'iag_fts_solar_atlas': 'IAG'}
 CYAN, GOLD, BG = '#63dce6', '#ebc77c', '#081219'
@@ -269,7 +289,9 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
             if ion == 'I' and band == 'VIS':
                 instrument_label = 'Kitt Peak Molecfit' if p['instrument'] == 'kpno_solar_atlas' else 'HARPS'
                 product_label = f"{instrument_label} · Synth · 3D-NLTE · Amarsi · {p['grade']}"
-            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p></article>')
+            hold = HELD_BANDS.get(band)
+            notice = f'<p class="fe-hold">{esc(hold)}</p>' if hold else ''
+            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p>{notice}</article>')
     body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
