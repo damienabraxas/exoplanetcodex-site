@@ -1,8 +1,8 @@
 {
   "generator": "scripts/generate_fe_publication.py",
   "version": "1.0.0",
-  "source_commit": "2481de7efcee54198f12665cf791c686dd7aea3f",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/2481de7efcee54198f12665cf791c686dd7aea3f",
+  "source_commit": "74217457b5a004eac983f9e34eb23d5fc4b89fd7",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/74217457b5a004eac983f9e34eb23d5fc4b89fd7",
   "generated_at": "2026-09-24T16:34:16+00:00",
   "feed_version": "1.223",
   "feed_sha256": "140e81ffc805708f97f1a1caede872c40cd5eef3e05580211ecf0ee6a0e72728",
@@ -10,7 +10,7 @@
   "perline_rows": 6686,
   "resolved_products": 138,
   "held_products": 4,
-  "generator_sha256": "a1a10c0ebd9ae8b3c421f4e3f75debc848e3a0a10db3cd8f2e19171018192f4f",
+  "generator_sha256": "7aba05d232283e317c96ae87e992c389a1298a012b63cde9281c397475582749",
   "pdf_generator": "scripts/element_appendix_pdf.py",
   "pdf_generator_sha256": "b4daae058771c927a8830ff89d39a00b6ab5822f7491f9b3b05ce5920ceb555c",
   "supplemental_sources": [

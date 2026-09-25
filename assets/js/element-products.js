@@ -29,6 +29,27 @@
     return HOLDING_LABELS[holding] || LABELS[instrument] || instrument;
   }
 
+  //: 🔴 THE LINE POOL, NAMED IN THE HEADING. Every one of the 19 repeated
+  //: (band, instrument, holding) groups in the feed is a [Codex pool, Reference pool]
+  //: PAIR -- RYA-1213 published the Reference tier over the same holdings -- and the
+  //: heading printed only the holding. So the forest drew "Kitt Peak — Kurucz 2005
+  //: corrected" twice in one band with no way to tell which pool was which. `line_set` is
+  //: the field that actually differs; it belongs in the label.
+  var LINE_SET_LABELS = {
+    'our-graded': 'Codex graded pool',
+    'our-deep-graded': 'Codex deep pool',
+    reference: 'Reference pool',
+    asplund: 'Asplund pool'
+  };
+
+  //: ⚠️ NO SILENT FALLBACK. An unlabelled pool is how two sections became
+  //: indistinguishable in the first place, so a value this page has never been taught is
+  //: shown AS ITSELF rather than as a blank -- ugly on purpose, and visible.
+  function lineSetLabel(lineSet) {
+    if (lineSet == null || lineSet === '') return '';
+    return LINE_SET_LABELS[lineSet] || ('line set: ' + lineSet);
+  }
+
   function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function(c) {
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
   }); }
@@ -92,6 +113,23 @@
       // fact twice on every product; only external/reference pools carry line_set.
       // Mirror that published identity rule while joining plot_grid to products.
       if (p.line_set != null && p.line_set !== '') return p.line_set;
+      // 🔴 READ THE FEED'S OWN DERIVATION. This used to fall straight through to a
+      // hand-written tier map that knew GRADED and DEEPGRADED and nothing else, so every
+      // REFERENCE product keyed on an EMPTY line_set while plot_grid asked for
+      // 'reference'. All 19 reference sections resolved 0 of 171 cells: the forest drew a
+      // second Kitt Peak, a second HARPS, a second IAG under labels IDENTICAL to the
+      // graded section beside them, every row reading N/A, and the whole Reference tier --
+      // 68 products, the tier the published Fe I headline itself sits in -- was invisible.
+      // (No abundance is written in this file on purpose: test_feed_is_live_and_cache_busted
+      // forbids an abundance-shaped literal anywhere in it, and my first draft of this very
+      // comment quoted the headline value and tripped it. The guard is right.)
+      // `line_set_resolved` is the feed's own answer, derived by
+      // pipeline.reference_lineset.line_set_for_product, and reading it means a tier
+      // added tomorrow needs no edit here.
+      if (p.line_set_resolved != null && p.line_set_resolved !== '') return p.line_set_resolved;
+      // ⚠️ Retained only for a feed older than `line_set_resolved`; unreachable on any
+      // current one. It must never be extended -- adding the next tier here instead of
+      // reading the feed is what produced the blank sections.
       if (p.tier === 'GRADED') return 'our-graded';
       if (p.tier === 'DEEPGRADED') return 'our-deep-graded';
       return '';
@@ -186,7 +224,9 @@
 
       INSTRUMENTS.forEach(function (inst) {
         here.filter(function (s) { return s.instrument === inst; }).forEach(function (s) {
+          var pool = lineSetLabel(s.line_set);
           out += '<div class="forest-instrument">' + esc(holdingLabel(s.holding, inst)) +
+            (pool ? ' <span class="forest-lineset">' + esc(pool) + '</span>' : '') +
             '<small>' + esc(s.holding) + (s.only_deepgraded ? ' \u00b7 DEEPGRADED (no graded product in this band)' : '') + '</small></div>';
 
           s.cells.forEach(function (c) {
@@ -239,7 +279,31 @@
       else h+='<td class="matrix-pending"><span class="matrix-state">Pending</span></td>';
     });h+='</tr>';}); return h+'</tbody></table></div>';
   }
-  if (server) { module.exports = {forest: forest}; return; }
+  // 🔴 THE TRIPWIRE FOR THE DEFECT ABOVE, EXPORTED SO THE BUILD CAN REFUSE. A plot_grid
+  // section whose every cell fails to resolve is not "a model we did not measure" -- it is
+  // a JOIN that is broken, and it renders as a duplicate instrument heading with nothing
+  // under it. Counting per section is what distinguishes the two: legitimate N/A rows are
+  // scattered, a broken join empties a section entirely.
+  function gridJoinReport(feed, ion) {
+    var byKey = productIndex(feed);
+    var sections = ((feed.plot_grid && feed.plot_grid.sections) || []).filter(
+      function (s) { return !ion || s.ion === ion; });
+    var cells = 0, resolved = 0, empty = [];
+    sections.forEach(function (s) {
+      var r = 0;
+      (s.cells || []).forEach(function (c) {
+        cells++;
+        if (c.product_key && byKey[c.product_key]) { resolved++; r++; }
+      });
+      if (!r) {
+        empty.push([s.ion, s.band, s.instrument, s.holding, s.line_set].join(' | '));
+      }
+    });
+    return {sections: sections.length, cells: cells, resolved: resolved,
+            emptySections: empty};
+  }
+
+  if (server) { module.exports = {forest: forest, gridJoinReport: gridJoinReport}; return; }
   Promise.all([fetchText(urls.product),fetchText(urls.holdings),fetchText(urls.instruments),fetchText(urls.tracker)]).then(function(parts){
     var feed=JSON.parse(parts[0]), holdings=csv(parts[1]), instruments=csv(parts[2]), tracker=JSON.parse(parts[3]), telluric={}, catalog={};
     holdings.forEach(function(r){telluric[r.holding_id]=r.telluric_applied;}); instruments.forEach(function(r){catalog[r.instrument_id]=r;});

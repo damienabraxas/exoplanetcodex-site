@@ -293,6 +293,32 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
             notice = f'<p class="fe-hold">{esc(hold)}</p>' if hold else ''
             highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p>{notice}</article>')
     body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
+    # 🔴 REFUSE A FOREST WITH AN EMPTY SECTION. RYA-1213's Reference tier published 19
+    # plot_grid sections whose cells resolved to NOTHING, because the renderer's
+    # line_set fallback knew GRADED and DEEPGRADED and not REFERENCE. The page built, the
+    # tests passed, and the forest drew a SECOND Kitt Peak and a SECOND HARPS under labels
+    # identical to the graded section beside them with every row reading N/A -- 68
+    # products, the whole Reference tier, invisible. A section that resolves zero cells is
+    # a broken join, never "a model nobody measured": real N/A rows are scattered across
+    # sections, a broken join empties one outright. The check runs through the RENDERER's
+    # own index so there is one implementation of the identity key, not two.
+    join = json.loads(subprocess.check_output([
+        'node', '-e',
+        "const fs=require('fs'); const {gridJoinReport}=require('./assets/js/element-products.js'); "
+        "const x=JSON.parse(fs.readFileSync(0,'utf8')); "
+        "process.stdout.write(JSON.stringify(gridJoinReport(x.feed,x.ion)));"
+    ], input=json.dumps({'feed': feed, 'ion': ion}), text=True, cwd=ROOT))
+    if join['emptySections']:
+        raise SystemExit(
+            'REFUSED: %d of %d plot_grid sections for Fe %s resolve NOT ONE product, so the '
+            'forest would render them as duplicate instrument headings with nothing under '
+            'them:\n  %s\nThe plot_grid cell keys and the renderer\'s product index '
+            'disagree on the identity -- fix the join, do not hide the section.'
+            % (len(join['emptySections']), join['sections'], ion,
+               '\n  '.join(join['emptySections'])))
+    print('  forest join: %d/%d cells resolved across %d sections, 0 empty'
+          % (join['resolved'], join['cells'], join['sections']))
+
     # Render the established component with its original band/holding/model hierarchy.
     forest_html = subprocess.check_output([
         'node', '-e',
