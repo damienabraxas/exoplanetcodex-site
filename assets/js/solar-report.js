@@ -409,7 +409,10 @@
         }).join(' · ') + '</small></article>');
     }
     record.staleInputs.forEach(function (f) {
-      items.push('<article><p class="solar-diagnostic-category">stale input</p><h4>' +
+      // A finding may carry its own category: not everything reported here is a stale
+      // input, and calling a full-coverage fact one would assert a defect that is absent.
+      items.push('<article><p class="solar-diagnostic-category">' +
+        esc(f.category || 'stale input') + '</p><h4>' +
         esc(f.artifact) + '</h4><p>' + esc(f.detail) + '</p><small>' + esc(f.engine) + ' · ' +
         esc(f.artifactLineCount) + ' vs ' + esc(f.publishedLineCount) + ' published</small></article>');
     });

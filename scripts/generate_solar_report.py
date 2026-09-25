@@ -159,9 +159,25 @@ def main() -> None:
                 "lineCount": int(row["n_lines"]), "role": "ungraded",
             })
 
-    uv = [r for r in perline if r["element"] == "Fe" and r["ion"] == "I" and r["arm"] == "near-UV"]
-    nist = [r for r in uv if r["gf_grade"].startswith("NIST:")]
-    poor = [r for r in nist if r["gf_grade"].split(":", 1)[1] in POOR_NIST_CLASSES]
+    # 🔴 COUNT LINES, NOT ROWS (RYA-1229). These three counts fed a sentence that says
+    # "near-UV Fe I LINES", and they used to be row counts -- which was the same number
+    # only because the per-line product held one row per line. Since it became a
+    # projection of the feed, a line appears once per PUBLISHED PRODUCT it is evidence
+    # for, and the sentence silently went from "17 of 40" to "430 of 566": the same pool,
+    # counted 14 times over. Dedupe on the line itself, by wavelength AND excitation
+    # potential -- never wavelength alone (RYA-780/852).
+    def _line_key(r):
+        return (round(float(r["wavelength_air_A"]), 3),
+                round(float(r["excitation_potential_eV"]), 3)
+                if (r.get("excitation_potential_eV") or "").strip() not in ("", "nan")
+                else None)
+
+    uv_rows = [r for r in perline
+               if r["element"] == "Fe" and r["ion"] == "I" and r["arm"] == "near-UV"]
+    uv = {_line_key(r): r for r in uv_rows}
+    nist = {k: r for k, r in uv.items() if r["gf_grade"].startswith("NIST:")}
+    poor = {k: r for k, r in nist.items()
+            if r["gf_grade"].split(":", 1)[1] in POOR_NIST_CLASSES}
     provenance = {
         "poolCount": len(uv), "nistClassCount": len(nist), "poorNistClassCount": len(poor),
         "poorClasses": sorted(POOR_NIST_CLASSES),
@@ -171,11 +187,19 @@ def main() -> None:
         ),
     }
 
-    problems = [r for r in perline if r["ion"] == "I" and r["status"] != "in_aggregate"]
+    # ⚠️ AN ARBITRARY EIGHT BECOMES A DIFFERENT ARBITRARY EIGHT. This took the first
+    # eight problem rows in FILE ORDER, which was stable only while the file's order was.
+    # RYA-1229 changed the row set and the shown eight changed with it, for no reason a
+    # reader could see. Ordered by wavelength, so the same eight are shown whatever order
+    # the rows arrive in, and `problemCount` says how many there are in total so that
+    # eight is never mistaken for all of them.
+    problems = sorted(
+        (r for r in perline if r["ion"] == "I" and r["status"] != "in_aggregate"),
+        key=lambda r: (float(r["wavelength_air_A"]), r["reason_code"]))
     diagnostics = []
     diagnostic_keys = set()
     for row in problems:
-        key = (row["wavelength_air_A"], row["reason_code"])
+        key = (round(float(row["wavelength_air_A"]), 3), row["reason_code"])
         if key in diagnostic_keys:
             continue
         diagnostic_keys.add(key)
@@ -187,6 +211,8 @@ def main() -> None:
         })
         if len(diagnostics) == 8:
             break
+    n_problem_lines = len({(round(float(r["wavelength_air_A"]), 3), r["reason_code"])
+                           for r in problems})
 
     # 🔴 RYA-906 — select the secondary product by its PHYSICS, not by the spelling of
     # its label. This was `p["engine"] == "ENGINE-B-NLTE"`, the same compare-against-a-
@@ -366,7 +392,7 @@ def main() -> None:
                     "sigmaBasis":f"Fe.json v{feed['version']} — {anchor['holding']}, "
                                  f"{anchor['grade']}, Amarsi 3D-NLTE (RYA-850 primary)"},
          "secondary":{"value":secondary["value"],"sigmaStat":None,"sigmaSys":None,"sigmaTotal":secondary["sigma"],"lineCount":secondary["lineCount"]},
-         "asplund":float(gold["asplund2021"]),"products":products,"diagnostics":diagnostics,"provenance":provenance,
+         "asplund":float(gold["asplund2021"]),"products":products,"diagnostics":diagnostics,"diagnosticsShown":len(diagnostics),"problemCount":n_problem_lines,"provenance":provenance,
          "downloadPath":"/assets/data/solar/FeI_perline.csv"},
         # RYA-876: Fe II is its own species row and its own page. The value is READ
         # from the post-disposition band product (RYA-877 -> RYA-880); the 7.500 that
@@ -423,8 +449,10 @@ def main() -> None:
     print(f"published RYA-935 tracker snapshot to {live_destination.relative_to(SITE_ROOT)}")
     print(provenance["sentence"])
     for finding in fe2["staleInputs"]:
-        print(f"STALE INPUT: {finding['artifact']} · Fe II {finding['engine']}: "
-              f"{finding['artifactLineCount']} lines vs {finding['publishedLineCount']} published")
+        # the finding names its own category; not all of them are stale inputs
+        print(f"{finding.get('category', 'stale input').upper()}: {finding['artifact']} · "
+              f"Fe II {finding['engine']}: {finding['artifactLineCount']} lines vs "
+              f"{finding['publishedLineCount']} published")
 
 
 if __name__ == "__main__":
