@@ -1,0 +1,31 @@
+{
+  "schema": "codex.cno_reference_supplement/1",
+  "verified_at": "2026-09-13",
+  "purpose": "Bibliographic resolution of sources explicitly named in the pinned science artifacts but missing from data/refs/bibliography.csv; no scientific values or publication decisions.",
+  "references": {
+    "wfd1996": {
+      "citation": "Wiese, W. L.; Fuhr, J. R.; Deters, T. M. (1996). Atomic Transition Probabilities of Carbon, Nitrogen, and Oxygen: A Critical Data Compilation. JPCRD Monograph 7.",
+      "doi": "",
+      "url": "https://srd.nist.gov/JPCRD/jpcrdM7.pdf",
+      "metadata_source": "https://www.nist.gov/publications/atomic-transition-probabilities-carbon-nitrogen-and-oxygen",
+      "evidence_path": "pipeline/cno_gf_pedigree.py",
+      "evidence_marker": "WFD1996_MONOGRAPH7_OPACITY_PROJECT"
+    },
+    "sneden2014_cn": {
+      "citation": "Sneden, C.; Lucatello, S.; Ram, R. S.; Brooke, J. S. A.; Bernath, P. (2014). Line Lists for the Red and Violet Systems of CN, 13C14N, and 12C15N, and Application to Astronomical Spectra. ApJS 214, 26.",
+      "doi": "10.1088/0067-0049/214/2/26",
+      "url": "https://doi.org/10.1088/0067-0049/214/2/26",
+      "metadata_source": "https://digitalcommons.odu.edu/chemistry_fac_pubs/80/",
+      "evidence_path": "data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json",
+      "evidence_marker": "Sneden et al. 2014"
+    },
+    "caffau2015_6300": {
+      "citation": "Caffau, E.; Ludwig, H.-G.; Steffen, M.; Livingston, W.; Bonifacio, P.; Malherbe, J.-M.; Doerr, H.-P.; Schmidt, W. (2015). The photospheric solar oxygen project. III. Investigation of the centre-to-limb variation of the 630 nm [O I]–Ni I blend. A&A 579, A88.",
+      "doi": "",
+      "url": "https://arxiv.org/abs/1506.00931",
+      "metadata_source": "https://arxiv.org/abs/1506.00931",
+      "evidence_path": "data/audit/cno_synthesis/solar_vis_cno_provenance.json",
+      "evidence_marker": "Caffau et al. 2015, A&A 579 A88"
+    }
+  }
+}

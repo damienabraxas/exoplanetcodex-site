@@ -103,3 +103,9 @@ Montana, USA · 2026
 Ryan Schmitt — astrophysics degree (2010), laser engineer, Salesforce AI consultant, and perpetually curious human.
 
 *"The question never went away."*
+
+## Solar CNO appendix snapshots
+
+Generate C, N and O pages and PDFs from the same pinned scientific reporting
+inputs with `scripts/generate_cno_publication.py`. See
+[the admission rules, highlight selectors and build commands](docs/cno-appendices.md).
