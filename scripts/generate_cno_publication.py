@@ -254,13 +254,41 @@ PRELIMINARY = {
 #: order it appeared, rather than being dropped.
 BAND_ORDER = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H', 'J', 'K']
 
+LODDERS_TABLE = 'data/reference/solar/lodders2025_table6.csv'
+
+
+def lodders_comparator(science, element):
+    """Lodders, Bergemann & Palme 2025 Table 6, PRESENT-DAY Sun.
+
+    The Fe forest draws this as a second, yellow band beside the Asplund reference; CNO
+    drew no comparator at all, and .cmp / .cmpband were sitting unused in the stylesheet
+    exactly as .ref was.
+
+    ⚠️ PRESENT-DAY, NOT PROTO-SOLAR. Table 6 publishes both, and the proto-solar column
+    is ~0.09 dex higher across every element -- picking the wrong one would silently shift
+    the comparator by more than our carbon offset from Asplund.
+    """
+    path = science / LODDERS_TABLE
+    if not path.exists():
+        return None
+    with path.open() as fh:
+        for row in csv.DictReader(r for r in fh if not r.startswith('#')):
+            if row.get('element') == element:
+                try:
+                    return {'name': 'Lodders, Bergemann & Palme 2025',
+                            'value': float(row['A_present']),
+                            'sigma': float(row['sigma_present'])}
+                except (TypeError, ValueError, KeyError):
+                    return None
+    return None
+
 
 def in_band_order(bands):
     known = [b for b in BAND_ORDER if b in bands]
     return known + [b for b in bands if b not in BAND_ORDER]
 
 
-def forest(element, products):
+def forest(element, products, cmp=None):
     if not products:
         return '<p class="product-pending">No publication-eligible abundance products. Quarantined entries are documented below without plotted values.</p>'
     out = '<div class="product-forest"><div class="product-forest-inner">'
@@ -278,6 +306,8 @@ def forest(element, products):
         rsig = ASPLUND2021_SIGMA.get(element, 0.0)
         values = [v for pair in extent for v in pair] + (
             [ref - rsig, ref + rsig] if ref is not None else [])
+        if cmp is not None:
+            values += [cmp['value'] - cmp['sigma'], cmp['value'] + cmp['sigma']]
         lo, hi = min(values) - .03, max(values) + .03
         def x(v): return (v-lo)/(hi-lo)*100
         out += f'<div class="forest-band">{esc(band)}</div>'
@@ -297,6 +327,11 @@ def forest(element, products):
                     marks += (f'<i class="ref" style="left:{x(ref-rsig):.6f}%;'
                               f'width:{2*rsig/(hi-lo)*100:.6f}%"></i>'
                               f'<i class="refline" style="left:{x(ref):.6f}%"></i>')
+                if cmp is not None:
+                    marks += (f'<i class="cmpband" title="{esc(cmp["name"])}" '
+                              f'style="left:{x(cmp["value"]-cmp["sigma"]):.6f}%;'
+                              f'width:{2*cmp["sigma"]/(hi-lo)*100:.6f}%"></i>'
+                              f'<i class="cmp" style="left:{x(cmp["value"]):.6f}%"></i>')
                 marks += ''.join(f'<i class="{kind}" style="left:{x(p["A"]-sigma):.6f}%;width:{2*sigma/(hi-lo)*100:.6f}%"></i>' for kind,sigma in [('sysbar',sy),('bar',st)])
                 marks += f'<i class="dot" style="left:{x(p["A"]):.6f}%"></i>'
                 out += (f'<div class="forest" data-product-id="{p["publication_id"]}"{attr}><span class="forest-label">{esc(product_label(p))}'
@@ -403,7 +438,7 @@ def build(science, element, selectors, site=ROOT):
                      f'<strong>{p["A"]:.3f}</strong><p>±{p["sigma_stat"]:.3f} stat · ±{systematic(p):.3f} syst</p>'
                      f'<p>{esc(product_label(p))} · {esc(p["holding"])} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
-    body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element,products)+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
+    body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
     body += section('How this was measured', recipe(element, products))
     body += section('Solar '+NAMES[element].lower()+' context',f'<p>{CONTEXT[element]}</p><p><a href="{base}/docs/co_indicator_strategy.md">C/O indicator strategy</a> · <a href="/method/">Methodology</a>' + (' · <a href="https://linear.app/ryans-adventure-zone/issue/RYA-369">Nitrogen strategy</a>' if element=='N' else '')+'</p>')
     if products:
