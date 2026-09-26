@@ -44,6 +44,45 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def recipe(element, products):
+    """How the number was made -- read off the products, not written as prose.
+
+    The Fe appendix carries per-band detail a reader can follow; CNO had a context
+    paragraph, a forest, and then a JSON dump. This is the missing middle: for each band,
+    which indicators were measured, on which spectrum, with which engine and treatment,
+    how many lines survived, and what dominates the error bar.
+    """
+    if not products:
+        return ''
+    rows = ''
+    for band in dict.fromkeys(p['band'] for p in products):
+        group = [p for p in products if p['band'] == band]
+        sel = sorted({str(p.get('selector') or 'full pool') for p in group})
+        holdings = sorted({p['holding'] for p in group})
+        treat = sorted({f"{p['route']} · {p['treatment']}" for p in group})
+        dom = sorted({str(p.get('dominant_term') or 'not attributed') for p in group})
+        lines = sorted({p['n_lines'] for p in group})
+        excl = sum(p.get('n_excluded') or 0 for p in group)
+        rung = sorted({str(p.get('gf_rung_summary') or 'not recorded') for p in group})
+        rows += (f'<tr><th scope="row">{esc(band)}</th>'
+                 f'<td>{esc(", ".join(sel))}</td>'
+                 f'<td>{esc(", ".join(holdings))}</td>'
+                 f'<td>{esc(", ".join(treat))}</td>'
+                 f'<td>{esc(", ".join(str(n) for n in lines))}'
+                 + (f' <small>({excl} excluded)</small>' if excl else '') + '</td>'
+                 f'<td>{esc(", ".join(dom))}</td>'
+                 f'<td>{esc(", ".join(rung))}</td></tr>')
+    return ('<p class="product-section-intro"><strong>How this was measured.</strong> One row '
+            'per band. The indicator set is what was fitted; the holding is the solar spectrum '
+            'it was fitted against; the engine and treatment say how. <em>Dominant term</em> is '
+            'the largest single contributor to the reported uncertainty, and <em>gf rung</em> is '
+            'the pedigree of the oscillator strengths that pool could reach.</p>'
+            '<div class="table-scroll"><table class="product-recipe">'
+            '<thead><tr><th>Band</th><th>Indicator set</th><th>Holding</th><th>Engine · treatment</th>'
+            '<th>Lines</th><th>Dominant term</th><th>gf rung</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>')
+
+
 def section(title, body):
     return f'<section class="fe-section"><h2>{esc(title)}</h2>{body}</section>'
 
@@ -130,6 +169,17 @@ def product_label(p):
     return f'{indicator} · {p["element"]} {p["ion"]} · {p["display"]} · {p["route"]} · {p["treatment"]} · {line_set}'
 
 
+#: AGSS21 photospheric abundances -- config/constants.SOLAR_ASPLUND2021 in the science
+#: repo, read there and mirrored here so the plot cannot drift from the reference the
+#: rest of the Codex compares against. The Fe forest draws the same line for iron; CNO
+#: was drawing none at all, so a reader had no fixed point to judge a row against.
+#:
+#: ⚠️ VALUE ONLY, NO BAND. Fe shades +/- sigma_external because its tracker supplies one.
+#: AGSS21's published uncertainties are not in the science repo, and inventing a width
+#: would put an unsourced error band on a public plot.
+ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69}
+
+
 def forest(element, products):
     if not products:
         return '<p class="product-pending">No publication-eligible abundance products. Quarantined entries are documented below without plotted values.</p>'
@@ -140,7 +190,13 @@ def forest(element, products):
         rows = [p for p in products if p['band'] == band]
         extent = [(p['A']-max(p['sigma_stat'], systematic(p)),
                    p['A']+max(p['sigma_stat'], systematic(p))) for p in rows]
-        lo, hi = min(v[0] for v in extent)-.03, max(v[1] for v in extent)+.03
+        # The axis ALWAYS spans the Asplund reference. Auto-ranging on the products alone
+        # drops the line whenever a band sits clear of it -- which is precisely the band a
+        # reader most needs it for. C red-optical (8.56-8.98 against a reference of 8.46)
+        # rendered with no reference at all.
+        ref = ASPLUND2021.get(element)
+        values = [v for pair in extent for v in pair] + ([ref] if ref is not None else [])
+        lo, hi = min(values) - .03, max(values) + .03
         def x(v): return (v-lo)/(hi-lo)*100
         out += f'<div class="forest-band">{esc(band)}</div>'
         for holding in dict.fromkeys(p['holding'] for p in rows):
@@ -157,6 +213,11 @@ def forest(element, products):
                         + (' · EXPERIMENTAL-NOT-ADOPTED' if experimental else '')
                         + f'</small></span><span class="track">{marks}</span><span class="forest-value">{p["A"]:.3f}'
                         f'<small>±{st:.3f} stat ±{sy:.3f} syst</small></span></div>')
+        if ref is not None:
+            out += (f'<div class="forest forest-reference"><span class="forest-label">'
+                    f'Asplund, Amarsi &amp; Grevesse 2021<small>photospheric reference</small></span>'
+                    f'<span class="track"><i class="refline" style="left:{x(ref):.6f}%"></i></span>'
+                    f'<span class="forest-value">{ref:.2f}<small>A({element}) reference</small></span></div>')
         ticks = ''.join(f'<span class="tick" style="left:{j*25}%">{lo+(hi-lo)*j/4:.2f}</span>' for j in range(5))
         out += f'<div class="axis"><span></span><span class="ticks">{ticks}</span><span class="forest-value">A({element}) dex</span></div>'
     return out+'</div></div>'
@@ -226,15 +287,19 @@ def build(science, element, selectors, site=ROOT):
                      f'<p>{esc(product_label(p))} · {esc(p["holding"])} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
     body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element,products)+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
+    body += section('How this was measured', recipe(element, products))
     body += section('Solar '+NAMES[element].lower()+' context',f'<p>{CONTEXT[element]}</p><p><a href="{base}/docs/co_indicator_strategy.md">C/O indicator strategy</a> · <a href="/method/">Methodology</a>' + (' · <a href="https://linear.app/ryans-adventure-zone/issue/RYA-369">Nitrogen strategy</a>' if element=='N' else '')+'</p>')
     if products:
-        body += section('Product provenance and caveats', ''.join('<p>'+esc(product_label(p))+': '+esc(json.dumps({k:v for k,v in p.items() if k not in IDENTITY and k not in ('A','publication_id')},ensure_ascii=False,sort_keys=True))+'</p>' for p in products))
+        # The 'Product provenance and caveats' section used to esc(json.dumps(...)) the
+        # whole product record onto the page -- a debug dump, not a caveat. Provenance
+        # belongs in manifest.json and the downloadable feed, both linked below.
+        pass
     if notes:
         body += section('Open provenance decisions', ''.join('<p>'+esc(n)+'</p>' for n in notes)+f'<p><a href="{base}/{AUDIT}cno_gf_adjudication.prov.json">Adjudication record</a> · <a href="{base}/{AUDIT}agss21_indicator_gf_check.csv">Indicator gf checks</a></p>')
     omitted = [r for r in audit if not r['visible']]
-    body += section('Product visibility audit', '<p>Every feed entry is accounted for. Quarantined and archived entries retain their source disposition; their numeric fit outputs are available only in the labelled source download.</p>'
-                    +'<details><summary>Withheld entries and source reasons ('+str(len(omitted))+')</summary><ul>'
-                    +''.join(f'<li data-audit-id="{r["publication_id"]}"><strong>{esc(r["disposition"])}</strong> · '+esc(' · '.join(str(v) for v in r['identity'].values() if v is not None))+f'<br>{esc(r["omission_reason"])}</li>' for r in omitted)+'</ul></details>')
+    # Product visibility audit: machine bookkeeping, not reader-facing. It ships as
+    # visibility.json and is linked under 'Download the evidence'. With every product
+    # visible it rendered an empty <details> anyway.
     pdf = f'solar_{element.lower()}_appendix.pdf'
     body += section('Download the evidence',f'<p><a download href="/assets/docs/appendices/{pdf}">Download PDF — Solar {element} appendix</a></p><ul>'
                     +''.join(f'<li><a download href="/{OUT}/{element}/{name}">{esc(label)}</a></li>' for name,label in [(element+'.json','Source feed — includes quarantined fit outputs, not adopted abundances'),('visibility.json','Complete product visibility audit'),('report.json','Shared website/PDF report'),('manifest.json','Reproducibility manifest'),('references.json','Complete references and product-to-source bindings')])+'</ul>')
