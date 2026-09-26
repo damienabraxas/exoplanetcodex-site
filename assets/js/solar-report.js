@@ -180,6 +180,9 @@
                    (fe.sigmaTotal != null ? ' \u00b1 ' + fe.sigmaTotal.toFixed(3) : '') +
                    ' \u00b7 solar iron anchor', href: '/systems/sol/elements/fe/' });
     }
+    // Elements whose headline is not yet settled. Marked on the card itself so the flag
+    // is visible without clicking through to the appendix.
+    var PRELIM = { N: 'preliminary \u00b7 gf floor owed' };
     ['C', 'N', 'O'].forEach(function (sym) {
       var e = (report.elements || []).filter(function (x) {
         return x.symbol === sym && x.ion === 'I' && x.primaryValue; })[0];
@@ -189,6 +192,7 @@
       cards.push({ label: e.name, value: pv.value.toFixed(3),
                    unit: 'A(' + sym + ')',
                    sub: (pv.sigmaTotal != null ? '\u00b1 ' + pv.sigmaTotal.toFixed(3) + ' \u00b7 ' : '') + d,
+                   flag: PRELIM[sym] || '',
                    href: e.appendixPath });
     });
     if (!cards.length) return;
@@ -198,7 +202,8 @@
           '<span class="sf-label">' + esc(c.label) + '</span>' +
           '<strong class="sf-value">' + esc(c.value) + '</strong>' +
           '<span class="sf-unit">' + esc(c.unit) + '</span>' +
-          '<span class="sf-sub">' + esc(c.sub) + '</span></a>';
+          '<span class="sf-sub">' + esc(c.sub) + '</span>' +
+          (c.flag ? '<span class="sf-flag">' + esc(c.flag) + '</span>' : '') + '</a>';
       }).join('') + '</div>';
   }
 

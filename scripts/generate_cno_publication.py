@@ -232,6 +232,21 @@ ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04}
 #: as "the nitrogen result" would be the worst thing on here.
 REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
 
+#: Per-element standing caveats, shown directly under the headline. Nitrogen's is not a
+#: hedge: the offset has a named cause. The solar phase_c verdict records that the NLTE
+#: debt is CLEARED -- the Amarsi 2020 grid gives -0.0115/-0.0145/-0.0154 per line, because
+#: N I red is near-LTE at the Sun -- and that the surviving ~+0.36 is a gf/data-channel
+#: floor (RYA-161), curation owed, explicitly NOT to be tuned away.
+PRELIMINARY = {
+    'N': ('PRELIMINARY. This value sits +0.36 dex above the Asplund 2021 reference and is '
+          'not yet a settled result. The cause is identified and is not the NLTE treatment: '
+          'the N I NLTE correction is measured and small (-0.0115 / -0.0145 / -0.0154 dex '
+          'per line, because N I red is near-LTE at the Sun), and the surviving offset is a '
+          'gf / data-channel floor on the Kitt Peak red multiplets (RYA-161) that is owed '
+          'curation. It is published because withholding a measured number is not the same '
+          'as correcting it \u2014 but expect it to move.'),
+}
+
 #: Spectral order, matching generate_fe_publication.BANDS. The cards are colour-coded by
 #: spectral region, so emitting them in feed order put red-optical before VIS on oxygen --
 #: the colours then read backwards against the wavelength they encode. K is appended for
@@ -368,9 +383,11 @@ def build(science, element, selectors, site=ROOT):
             ref_html = (f'<p class="fe-anchor-reference">Asplund, Amarsi &amp; Grevesse '
                         f'2021: {aref:.2f} &plusmn; {asig:.2f} &nbsp;&middot;&nbsp; '
                         f'this measurement {mark["A"] - aref:+.3f} dex</p>')
+        caveat = PRELIMINARY.get(element)
+        caveat_html = (f'<p class="fe-anchor-caveat">{esc(caveat)}</p>') if caveat else ''
         body = (f'<p class="fe-anchor">Solar {NAMES[element].lower()}: '
                 f'{mark["A"]:.3f} &plusmn; {total_sigma(mark):.3f}</p>'
-                + ref_html
+                + ref_html + caveat_html
                 + f'<p>{esc(LABELS.get(mark["instrument"], mark["instrument"]))} &middot; '
                 f'{esc(mark["band"])} &middot; {esc(mark["grade"])} &middot; '
                 f'{esc(str(mark.get("selector") or "full pool"))} &middot; '
