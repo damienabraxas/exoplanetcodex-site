@@ -64,3 +64,8 @@
 .product-feed-error{padding:1rem;border:1px solid #ff8d8d;color:#ffb1b1;background:rgba(255,90,90,.06)}
 @media(max-width:900px){.product-headlines{min-width:980px}.product-section:has(.product-headlines){overflow-x:auto}}
 @media(max-width:760px){.forest,.axis{grid-template-columns:180px minmax(260px,1fr) 120px}.product-forest{overflow-x:auto}.product-forest-inner{min-width:620px}}
+
+/* AGSS21 photospheric reference. The band reuses the existing .ref / .refline pair --
+   both were already defined in this file and neither was used by CNO. */
+.forest-reference .forest-label,.forest-reference .forest-value{color:#53d899}
+.forest-reference{opacity:.95}

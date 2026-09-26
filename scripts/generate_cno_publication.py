@@ -24,6 +24,9 @@ OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
 NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen')
+#: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
+LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
+          'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
     'C': 'Carbon is traced by atomic C I, including forbidden [C I], and molecular CH, C₂ and CO indicators. Each probes different line formation and molecular-equilibrium sensitivities. Indicator families and atmospheric treatments remain separate products.',
     'N': 'The nitrogen strategy uses red-optical N I as the primary atomic route, with NH providing an independent molecular check and CN a carbon-dependent cross-check. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
@@ -42,6 +45,43 @@ def esc(v):
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def total_sigma(p):
+    return math.sqrt((p.get('sigma_stat') or 0.0) ** 2 + (systematic(p) or 0.0) ** 2)
+
+
+def eligible_for_headline(p):
+    """A rejected diagnostic stays in the forest but never headlines the page."""
+    return str(p.get('selector') or '') not in REJECTED_SELECTORS
+
+
+def band_highlights(products):
+    """One card per band: the tightest total uncertainty, Reference Grade preferred.
+
+    Fe's rule, with the rejected diagnostics removed first. Without that removal N's VIS
+    card would read 7.384 +/- 1.134 from CN_red -- the route the ratified policy rejects,
+    whose chi2 surface is flat enough that its xi leg did not converge.
+    """
+    out = []
+    for band in dict.fromkeys(p['band'] for p in products):
+        rows = [p for p in products if p['band'] == band and eligible_for_headline(p)]
+        if not rows:
+            continue
+        ref = [p for p in rows if p.get('grade') == 'Reference Grade']
+        out.append(min(ref or rows, key=lambda q: (total_sigma(q), q.get('holding', ''))))
+    return out
+
+
+def landmark(element, products):
+    """The one number at the top: tightest Reference Grade, VIS preferred on a tie."""
+    rows = [p for p in products if eligible_for_headline(p)]
+    if not rows:
+        return None
+    ref = [p for p in rows if p.get('grade') == 'Reference Grade']
+    return min(ref or rows, key=lambda q: (round(total_sigma(q), 4),
+                                           0 if q['band'] == 'VIS' else 1,
+                                           q.get('holding', '')))
 
 
 def recipe(element, products):
@@ -179,6 +219,19 @@ def product_label(p):
 #: would put an unsourced error band on a public plot.
 ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69}
 
+#: AGSS21's OWN published uncertainties (Asplund, Amarsi & Grevesse 2021, Table 2). The Fe
+#: forest shades +/- sigma_external around its reference; CNO now does the same, so the
+#: reference reads as a measurement with a bar rather than an infinitely sharp line.
+#: These are the paper's stated values, not a width invented to make a band appear.
+ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04}
+
+#: Diagnostics the ratified RYA-1220 policy REJECTS as abundance routes. They stay in the
+#: feed and in the forest -- withdrawing evidence is not the same as hiding it -- but they
+#: may never be the headline or a band highlight. CN_red carries a 1.134 dex bar and a
+#: chi2 surface so flat its xi leg would not converge; putting it at the top of the page
+#: as "the nitrogen result" would be the worst thing on here.
+REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
+
 
 def forest(element, products):
     if not products:
@@ -195,7 +248,9 @@ def forest(element, products):
         # reader most needs it for. C red-optical (8.56-8.98 against a reference of 8.46)
         # rendered with no reference at all.
         ref = ASPLUND2021.get(element)
-        values = [v for pair in extent for v in pair] + ([ref] if ref is not None else [])
+        rsig = ASPLUND2021_SIGMA.get(element, 0.0)
+        values = [v for pair in extent for v in pair] + (
+            [ref - rsig, ref + rsig] if ref is not None else [])
         lo, hi = min(values) - .03, max(values) + .03
         def x(v): return (v-lo)/(hi-lo)*100
         out += f'<div class="forest-band">{esc(band)}</div>'
@@ -214,10 +269,13 @@ def forest(element, products):
                         + f'</small></span><span class="track">{marks}</span><span class="forest-value">{p["A"]:.3f}'
                         f'<small>±{st:.3f} stat ±{sy:.3f} syst</small></span></div>')
         if ref is not None:
+            rs = ASPLUND2021_SIGMA.get(element, 0.0)
             out += (f'<div class="forest forest-reference"><span class="forest-label">'
                     f'Asplund, Amarsi &amp; Grevesse 2021<small>photospheric reference</small></span>'
-                    f'<span class="track"><i class="refline" style="left:{x(ref):.6f}%"></i></span>'
-                    f'<span class="forest-value">{ref:.2f}<small>A({element}) reference</small></span></div>')
+                    f'<span class="track">'
+                    f'<i class="ref" style="left:{x(ref-rs):.6f}%;width:{2*rs/(hi-lo)*100:.6f}%"></i>'
+                    f'<i class="refline" style="left:{x(ref):.6f}%"></i></span>'
+                    f'<span class="forest-value">{ref:.2f}<small>&plusmn;{rs:.2f} AGSS21</small></span></div>')
         ticks = ''.join(f'<span class="tick" style="left:{j*25}%">{lo+(hi-lo)*j/4:.2f}</span>' for j in range(5))
         out += f'<div class="axis"><span></span><span class="ticks">{ticks}</span><span class="forest-value">A({element}) dex</span></div>'
     return out+'</div></div>'
@@ -277,13 +335,26 @@ def build(science, element, selectors, site=ROOT):
                 visible_products=len(products), dispositions=dict(Counter(r['disposition'] for r in audit)),
                 highlight_selectors=selectors, status=status)
     no_adopted = 'No adopted Solar '+NAMES[element].lower()+' abundance is available from this feed.'
-    body = f'<p class="fe-stamp">{element}.json v{esc(feed["version"])} · {len(products)} visible products · {len(feed.get("quarantine",[]))} quarantined entries</p>'
-    body += f'<p class="fe-anchor">{esc(status)}</p><p>{esc(no_adopted if status != "products" else "Independent admitted products; no combined headline abundance.")}</p>'
+    # No version stamp at the top. Fe leads with its anchor; CNO led with
+    # "C.json v1.19 · 17 visible products · 0 quarantined entries", which tells a reader
+    # nothing about the Sun. The feed version and hashes live under Reproducibility.
+    mark = landmark(element, products)
+    if mark is not None:
+        body = (f'<p class="fe-anchor">Solar {NAMES[element].lower()}: '
+                f'{mark["A"]:.3f} &plusmn; {total_sigma(mark):.3f}</p>'
+                f'<p>{esc(LABELS.get(mark["instrument"], mark["instrument"]))} &middot; '
+                f'{esc(mark["band"])} &middot; {esc(mark["grade"])} &middot; '
+                f'{esc(str(mark.get("selector") or "full pool"))} &middot; '
+                f'{esc(mark["treatment"])} &middot; n = {mark["n_lines"]}. '
+                f'The tightest admitted product; independent products and engines are '
+                f'not averaged together.</p>')
+    else:
+        body = f'<p class="fe-anchor">{esc(status)}</p><p>{esc(no_adopted)}</p>'
     cards = []
-    for p in highlights:
+    for p in band_highlights(products):
         spectrum = 'uv' if p['band']=='near-UV' else 'visible' if p['band'] in ('VIS','red-optical') else 'ir'
         cards.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(p["band"])}</h3>'
-                     f'<strong>{p["A"]:.3f}</strong><p>±{p["sigma_stat"]:.3f} stat · ±{p.get("sigma_syst_complete",p["sigma_syst"]):.3f} syst</p>'
+                     f'<strong>{p["A"]:.3f}</strong><p>±{p["sigma_stat"]:.3f} stat · ±{systematic(p):.3f} syst</p>'
                      f'<p>{esc(product_label(p))} · {esc(p["holding"])} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
     body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element,products)+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
