@@ -156,7 +156,56 @@
   var alEvidence = report.alEvidence || { products: [], coverageGrid: [] };
   var feEvidence = report.feEvidence || { products: [], coverageGrid: [] };
   var meta = report.reproducibility;
+
+  var findingsRoot = document.getElementById('solar-headline-findings');
+
+  // The top of the Sun page leads with WHAT WAS FOUND: metallicity from the iron
+  // anchor, then C, N and O -- the single best value per element regardless of band,
+  // which is what these already are (each element's headline is the tightest admitted
+  // product). Molecular indicator rows are NOT surfaced here; they live on the element
+  // appendices where the band breakdown gives them context.
+  function renderFindings(report) {
+    if (!findingsRoot) return;
+    // The iron anchor lives on the Fe I ELEMENT entry, not at report.primary -- reading
+    // the latter gave [Fe/H] = -7.460, i.e. the Asplund solar value negated, because
+    // fe.value was undefined and the subtraction ran on nothing.
+    var feEl = (report.elements || []).filter(function (x) {
+      return x.symbol === 'Fe' && x.ion === 'I' && x.primary; })[0];
+    var fe = (feEl && feEl.primary) || {};
+    var feAsplund = (feEl && feEl.asplund != null) ? feEl.asplund : 7.46;
+    var cards = [];
+    if (fe.value != null) {
+      cards.push({ label: 'Metallicity [Fe/H]', value: (fe.value - feAsplund).toFixed(3),
+                   unit: 'dex', sub: 'A(Fe) ' + fe.value.toFixed(3) +
+                   (fe.sigmaTotal != null ? ' \u00b1 ' + fe.sigmaTotal.toFixed(3) : '') +
+                   ' \u00b7 solar iron anchor', href: '/systems/sol/elements/fe/' });
+    }
+    ['C', 'N', 'O'].forEach(function (sym) {
+      var e = (report.elements || []).filter(function (x) {
+        return x.symbol === sym && x.ion === 'I' && x.primaryValue; })[0];
+      if (!e) return;
+      var pv = e.primaryValue;
+      var d = (e.delta != null) ? (e.delta > 0 ? '+' : '') + e.delta.toFixed(3) + ' vs AGSS21' : '';
+      cards.push({ label: e.name, value: pv.value.toFixed(3),
+                   unit: 'A(' + sym + ')',
+                   sub: (pv.sigmaTotal != null ? '\u00b1 ' + pv.sigmaTotal.toFixed(3) + ' \u00b7 ' : '') + d,
+                   href: e.appendixPath });
+    });
+    if (!cards.length) return;
+    findingsRoot.innerHTML =
+      '<div class="solar-findings">' + cards.map(function (c) {
+        return '<a class="solar-finding" href="' + c.href + '">' +
+          '<span class="sf-label">' + esc(c.label) + '</span>' +
+          '<strong class="sf-value">' + esc(c.value) + '</strong>' +
+          '<span class="sf-unit">' + esc(c.unit) + '</span>' +
+          '<span class="sf-sub">' + esc(c.sub) + '</span></a>';
+      }).join('') + '</div>';
+  }
+
+  renderFindings(report);
+
   if (introRoot) {
+
     introRoot.innerHTML =
       '<div class="solar-introduction"><div><p class="solar-kicker">How the Sun is measured</p>' +
       '<p>The Solar record combines direct, high-resolution visible spectroscopy with independent solar atlases spanning the red optical and infrared. Each band and instrument remains a separate data product so differences in resolution, telluric contamination, and analysis method stay visible.</p></div>' +
