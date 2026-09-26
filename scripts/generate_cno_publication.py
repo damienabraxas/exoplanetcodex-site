@@ -261,7 +261,16 @@ def forest(element, products):
                 experimental = p.get('adoption') == 'EXPERIMENTAL-NOT-ADOPTED'
                 attr = ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' if experimental else ''
                 st, sy = p['sigma_stat'], systematic(p)
-                marks = ''.join(f'<i class="{kind}" style="left:{x(p["A"]-sigma):.6f}%;width:{2*sigma/(hi-lo)*100:.6f}%"></i>' for kind,sigma in [('sysbar',sy),('bar',st)])
+                rsig = ASPLUND2021_SIGMA.get(element, 0.0)
+                marks = ''
+                if ref is not None:
+                    # Fe uses axvspan + axvline across the whole plot; the HTML equivalent
+                    # is the same band drawn in every row's track, FIRST so the product
+                    # marks sit on top of it.
+                    marks += (f'<i class="ref" style="left:{x(ref-rsig):.6f}%;'
+                              f'width:{2*rsig/(hi-lo)*100:.6f}%"></i>'
+                              f'<i class="refline" style="left:{x(ref):.6f}%"></i>')
+                marks += ''.join(f'<i class="{kind}" style="left:{x(p["A"]-sigma):.6f}%;width:{2*sigma/(hi-lo)*100:.6f}%"></i>' for kind,sigma in [('sysbar',sy),('bar',st)])
                 marks += f'<i class="dot" style="left:{x(p["A"]):.6f}%"></i>'
                 out += (f'<div class="forest" data-product-id="{p["publication_id"]}"{attr}><span class="forest-label">{esc(product_label(p))}'
                         f'<small>{esc(p["grade"])} · {esc(p.get("tier"))} · n={p["n_lines"]}'
@@ -270,12 +279,9 @@ def forest(element, products):
                         f'<small>±{st:.3f} stat ±{sy:.3f} syst</small></span></div>')
         if ref is not None:
             rs = ASPLUND2021_SIGMA.get(element, 0.0)
-            out += (f'<div class="forest forest-reference"><span class="forest-label">'
-                    f'Asplund, Amarsi &amp; Grevesse 2021<small>photospheric reference</small></span>'
-                    f'<span class="track">'
-                    f'<i class="ref" style="left:{x(ref-rs):.6f}%;width:{2*rs/(hi-lo)*100:.6f}%"></i>'
-                    f'<i class="refline" style="left:{x(ref):.6f}%"></i></span>'
-                    f'<span class="forest-value">{ref:.2f}<small>&plusmn;{rs:.2f} AGSS21</small></span></div>')
+            out += (f'<p class="forest-reference-note">Green band: Asplund, Amarsi &amp; '
+                    f'Grevesse 2021 photospheric reference, A({element}) = {ref:.2f} '
+                    f'&plusmn; {rs:.2f}, drawn behind every row.</p>')
         ticks = ''.join(f'<span class="tick" style="left:{j*25}%">{lo+(hi-lo)*j/4:.2f}</span>' for j in range(5))
         out += f'<div class="axis"><span></span><span class="ticks">{ticks}</span><span class="forest-value">A({element}) dex</span></div>'
     return out+'</div></div>'

@@ -260,6 +260,35 @@ def main() -> None:
         except (TypeError, ValueError):
             return None
 
+    # 🔴 CNO NOW HAS PUBLISHED PRODUCTS, AND THE TABLE MUST NOT DISAGREE WITH THEM.
+    # The tracker carries the phase_c verdict, which for C/N/O measured a different pool
+    # than the published feed: the table read C 8.491 and O 8.735 while the appendix pages
+    # those same rows LINK TO read 8.469 and 8.894. Two carbon abundances on one site.
+    #
+    # data/products/solar/<El>.json is the source of truth for a published product
+    # (RYA-1034: "a product is published HERE or it does not exist"), so the headline for
+    # an element WITH products is taken from it -- the same landmark the appendix shows:
+    # tightest total uncertainty, Reference Grade preferred, rejected diagnostics excluded.
+    # Elements with no published feed keep the tracker verdict exactly as before.
+    REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
+
+    def published_landmark(symbol):
+        feed_path = science / f'data/products/solar/{symbol}.json'
+        if not feed_path.exists():
+            return None
+        feed = json.loads(feed_path.read_text(encoding='utf-8'))
+        rows_ = [p for p in feed.get('products', [])
+                 if str(p.get('selector') or '') not in REJECTED_SELECTORS]
+        if not rows_:
+            return None
+        def total(p):
+            return math.sqrt((p.get('sigma_stat') or 0.0) ** 2 + (p.get('sigma_syst') or 0.0) ** 2)
+        ref = [p for p in rows_ if p.get('grade') == 'Reference Grade']
+        best = min(ref or rows_, key=lambda p: (round(total(p), 4),
+                                                0 if p.get('band') == 'VIS' else 1,
+                                                p.get('holding', '')))
+        return best, total(best), feed.get('version')
+
     other_elements = []
     for row in rows(tracker_path):
         symbol = row["element"]
@@ -280,7 +309,22 @@ def main() -> None:
         }
         if symbol in ("Al", "C", "N", "O") and row["ion"] == "I":
             item["appendixPath"] = f"/systems/sol/elements/{symbol.lower()}/"
-        if value is not None:
+        published = published_landmark(symbol) if row["ion"] == "I" else None
+        if published is not None:
+            best, sigma_total, feed_version = published
+            item["primaryValue"] = {
+                "value": round(best["A"], 4),
+                "sigmaTotal": round(sigma_total, 4),
+                "lineCount": best.get("n_lines"),
+            }
+            item["method"] = (f'{best.get("instrument")} {best.get("band")} · '
+                              f'{best.get("selector") or "full pool"} · {best.get("treatment")} '
+                              f'({best.get("grade")}, {symbol}.json v{feed_version})')
+            item["measurementNote"] = ""
+            asp = asplund_of.get(symbol)
+            item["delta"] = (round(best["A"] - float(asp), 4)
+                             if asp not in (None, "") else None)
+        elif value is not None:
             item["primaryValue"] = {
                 "value": value,
                 "sigmaTotal": optional(row["sigma"]),

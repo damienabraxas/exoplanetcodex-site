@@ -69,3 +69,4 @@
    both were already defined in this file and neither was used by CNO. */
 .forest-reference .forest-label,.forest-reference .forest-value{color:#53d899}
 .forest-reference{opacity:.95}
+.forest-reference-note{color:#53d899;font:.6rem/1.5 var(--mono);margin:.35rem 0 .1rem;opacity:.85}

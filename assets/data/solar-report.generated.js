@@ -139,7 +139,7 @@ window.SOLAR_REPORT = {
         "sigmaSys": 0.0475,
         "sigmaTotal": 0.051617,
         "lineCount": 21,
-        "sigmaBasis": "Fe.json v1.223 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
+        "sigmaBasis": "Fe.json v1.224 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
       },
       "secondary": {
         "value": 7.57,
@@ -1483,8 +1483,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "910381683e0a42fc57c834f3b6345a100e34a333",
-        "scienceGit": "4a49cc11379d3e24020af532d2109a09c7484d8f",
-        "generatedAt": "2026-09-24T19:37:17+00:00"
+        "scienceGit": "22ea65678043e016b12fb0defa596c10a200df88",
+        "generatedAt": "2026-09-26T15:41:08+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1508,56 +1508,56 @@ window.SOLAR_REPORT = {
     {
       "atomicNumber": 6,
       "symbol": "C",
-      "appendixPath": "/systems/sol/elements/c/",
       "ion": "I",
       "name": "Carbon",
       "status": "pass",
       "tier": "gold",
-      "method": "synthesis: CH G-band + C I 5052 + C2 Swan (C I 5380 BAD_FIT-excluded)",
+      "method": "harps VIS · SET-AGSS21 · 1D-LTE (Reference Grade, C.json v1.19)",
       "asplund": 8.46,
       "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.491,
-        "sigmaTotal": 0.054,
-        "lineCount": 5.0
+        "value": 8.469,
+        "sigmaTotal": 0.0433,
+        "lineCount": 3
       },
-      "delta": 0.031
+      "delta": 0.009
     },
     {
       "atomicNumber": 7,
       "symbol": "N",
-      "appendixPath": "/systems/sol/elements/n/",
       "ion": "I",
       "name": "Nitrogen",
       "status": "curation-owed",
       "tier": "owed",
-      "method": "kittpeak: N I red 7468/8216/8683 — NLTE-wired (N_Amarsi2020_PySME, RYA-369/526)",
+      "method": "kpno_solar_atlas red-optical · SET-AGSS21_ENGINE-A · ENGINE-A (Reference Grade, N.json v1.14)",
       "asplund": 7.83,
       "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 8.188,
-        "sigmaTotal": 0.033,
-        "lineCount": 3.0
+        "value": 8.189,
+        "sigmaTotal": 0.0497,
+        "lineCount": 2
       },
-      "delta": 0.358
+      "delta": 0.359
     },
     {
       "atomicNumber": 8,
       "symbol": "O",
-      "appendixPath": "/systems/sol/elements/o/",
       "ion": "I",
       "name": "Oxygen",
       "status": "pass",
       "tier": "gold",
-      "method": "synthesis: O I 777 (primary) + [O I] 6300 (cross-check)",
+      "method": "kpno_solar_atlas red-optical · SET-AGSS21 · 1D-LTE (Reference Grade, O.json v1.9)",
       "asplund": 8.69,
       "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.735,
-        "sigmaTotal": 0.01,
-        "lineCount": 3.0
+        "value": 8.894,
+        "sigmaTotal": 0.0496,
+        "lineCount": 6
       },
-      "delta": 0.045
+      "delta": 0.204
     },
     {
       "atomicNumber": 11,
@@ -3949,7 +3949,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "4a49cc11379d3e24020af532d2109a09c7484d8f",
+    "gitCommit": "22ea65678043e016b12fb0defa596c10a200df88",
     "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-09-24T19:24:31+00:00"
