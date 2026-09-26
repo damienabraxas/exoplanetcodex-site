@@ -343,7 +343,10 @@ def forest(element, products, cmp=None):
             rs = ASPLUND2021_SIGMA.get(element, 0.0)
             out += (f'<p class="forest-reference-note">Green band: Asplund, Amarsi &amp; '
                     f'Grevesse 2021 photospheric reference, A({element}) = {ref:.2f} '
-                    f'&plusmn; {rs:.2f}, drawn behind every row.</p>')
+                    f'&plusmn; {rs:.2f}, drawn behind every row.'
+                    + (f' Yellow band: {esc(cmp["name"])}, {cmp["value"]:.2f} '
+                       f'&plusmn; {cmp["sigma"]:.2f} (present-day Sun).' if cmp else '')
+                    + '</p>')
         ticks = ''.join(f'<span class="tick" style="left:{j*25}%">{lo+(hi-lo)*j/4:.2f}</span>' for j in range(5))
         out += f'<div class="axis"><span></span><span class="ticks">{ticks}</span><span class="forest-value">A({element}) dex</span></div>'
     return out+'</div></div>'
