@@ -64,7 +64,7 @@ def band_highlights(products):
     whose chi2 surface is flat enough that its xi leg did not converge.
     """
     out = []
-    for band in dict.fromkeys(p['band'] for p in products):
+    for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
         rows = [p for p in products if p['band'] == band and eligible_for_headline(p)]
         if not rows:
             continue
@@ -95,7 +95,7 @@ def recipe(element, products):
     if not products:
         return ''
     rows = ''
-    for band in dict.fromkeys(p['band'] for p in products):
+    for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
         group = [p for p in products if p['band'] == band]
         sel = sorted({str(p.get('selector') or 'full pool') for p in group})
         holdings = sorted({p['holding'] for p in group})
@@ -232,6 +232,18 @@ ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04}
 #: as "the nitrogen result" would be the worst thing on here.
 REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
 
+#: Spectral order, matching generate_fe_publication.BANDS. The cards are colour-coded by
+#: spectral region, so emitting them in feed order put red-optical before VIS on oxygen --
+#: the colours then read backwards against the wavelength they encode. K is appended for
+#: the CO band, which Fe has no products in. Anything unrecognised sorts last, in the
+#: order it appeared, rather than being dropped.
+BAND_ORDER = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H', 'J', 'K']
+
+
+def in_band_order(bands):
+    known = [b for b in BAND_ORDER if b in bands]
+    return known + [b for b in bands if b not in BAND_ORDER]
+
 
 def forest(element, products):
     if not products:
@@ -239,7 +251,7 @@ def forest(element, products):
     out = '<div class="product-forest"><div class="product-forest-inner">'
     # Use all actual bands/holdings, including future molecular taxonomy, with no
     # Fe plot_grid tier preference, alternate collapse, or fixed instrument list.
-    for band in dict.fromkeys(p['band'] for p in products):
+    for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
         rows = [p for p in products if p['band'] == band]
         extent = [(p['A']-max(p['sigma_stat'], systematic(p)),
                    p['A']+max(p['sigma_stat'], systematic(p))) for p in rows]
@@ -346,9 +358,20 @@ def build(science, element, selectors, site=ROOT):
     # nothing about the Sun. The feed version and hashes live under Reproducibility.
     mark = landmark(element, products)
     if mark is not None:
+        aref, asig = ASPLUND2021.get(element), ASPLUND2021_SIGMA.get(element, 0.0)
+        # ⚠️ The reference paragraph is built SEPARATELY and concatenated. Inlining it as
+        # `... + (X if cond else '') f'<p>...'` silently swallowed the rest of the header:
+        # `else ''` and the next f-string are adjacent LITERALS, so Python folded them
+        # into the else branch and the true branch returned only the reference line.
+        ref_html = ''
+        if aref is not None:
+            ref_html = (f'<p class="fe-anchor-reference">Asplund, Amarsi &amp; Grevesse '
+                        f'2021: {aref:.2f} &plusmn; {asig:.2f} &nbsp;&middot;&nbsp; '
+                        f'this measurement {mark["A"] - aref:+.3f} dex</p>')
         body = (f'<p class="fe-anchor">Solar {NAMES[element].lower()}: '
                 f'{mark["A"]:.3f} &plusmn; {total_sigma(mark):.3f}</p>'
-                f'<p>{esc(LABELS.get(mark["instrument"], mark["instrument"]))} &middot; '
+                + ref_html
+                + f'<p>{esc(LABELS.get(mark["instrument"], mark["instrument"]))} &middot; '
                 f'{esc(mark["band"])} &middot; {esc(mark["grade"])} &middot; '
                 f'{esc(str(mark.get("selector") or "full pool"))} &middot; '
                 f'{esc(mark["treatment"])} &middot; n = {mark["n_lines"]}. '

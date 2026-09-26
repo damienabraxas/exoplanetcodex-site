@@ -70,3 +70,4 @@
 .forest-reference .forest-label,.forest-reference .forest-value{color:#53d899}
 .forest-reference{opacity:.95}
 .forest-reference-note{color:#53d899;font:.6rem/1.5 var(--mono);margin:.35rem 0 .1rem;opacity:.85}
+.fe-anchor-reference{color:#53d899;font:.72rem/1.5 var(--mono);margin:.1rem 0 .6rem}
