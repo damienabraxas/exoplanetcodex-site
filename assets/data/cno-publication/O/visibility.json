@@ -1,7 +1,7 @@
 [
   {
-    "publication_id": "O-quarantine-361df42bd1f9",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-361df42bd1f9",
+    "source_bucket": "products",
     "source_index": 0,
     "identity": {
       "element": "O",
@@ -16,16 +16,14 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   },
   {
-    "publication_id": "O-quarantine-945c945b31da",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-945c945b31da",
+    "source_bucket": "products",
     "source_index": 1,
     "identity": {
       "element": "O",
@@ -40,16 +38,14 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   },
   {
-    "publication_id": "O-quarantine-e2dedb7ba833",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-e2dedb7ba833",
+    "source_bucket": "products",
     "source_index": 2,
     "identity": {
       "element": "O",
@@ -64,16 +60,14 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   },
   {
-    "publication_id": "O-quarantine-eadb1d33ffa2",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-eadb1d33ffa2",
+    "source_bucket": "products",
     "source_index": 3,
     "identity": {
       "element": "O",
@@ -88,16 +82,14 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   },
   {
-    "publication_id": "O-quarantine-da700d54e88d",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-da700d54e88d",
+    "source_bucket": "products",
     "source_index": 4,
     "identity": {
       "element": "O",
@@ -112,16 +104,14 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   },
   {
-    "publication_id": "O-quarantine-255dd9842275",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-255dd9842275",
+    "source_bucket": "products",
     "source_index": 5,
     "identity": {
       "element": "O",
@@ -136,16 +126,14 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   },
   {
-    "publication_id": "O-quarantine-a69ed2a177ae",
-    "source_bucket": "quarantine",
+    "publication_id": "O-products-a69ed2a177ae",
+    "source_bucket": "products",
     "source_index": 6,
     "identity": {
       "element": "O",
@@ -160,12 +148,9 @@
       "line_set": null,
       "indicator": null
     },
-    "disposition": "quarantine",
-    "quarantine_codes": [
-      "STAT_BASIS_MISMATCH",
-      "NOT_YET_DEFENSIBLE"
-    ],
-    "visible": false,
-    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [STAT_BASIS_MISMATCH] sigma_stat here is a 'curvature_sigma' (SYNTH route, band_products.py:506) while the rest of the feed publishes a 'standard_error' (error_budget.py:609). The feed carries no stat_basis field, so `A +/- sigma_stat` renders as comparable when it is not -- this product's bar reads ~sqrt(n) times worse than it is. [NOT_YET_DEFENSIBLE] O I is outside the ratified real set {Fe I, Fe II, Al}. It is a pilot measurement, not a product."
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
   }
 ]

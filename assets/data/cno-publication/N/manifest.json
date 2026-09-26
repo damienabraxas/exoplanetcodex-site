@@ -1,17 +1,17 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "a1ec12a9cc09472037e2af3b1242db2ce5b37c6b",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/a1ec12a9cc09472037e2af3b1242db2ce5b37c6b",
-  "generated_at": "2026-09-12T23:07:15-06:00",
+  "source_commit": "22ea65678043e016b12fb0defa596c10a200df88",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/22ea65678043e016b12fb0defa596c10a200df88",
+  "generated_at": "2026-09-25T21:53:06-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.10",
-  "feed_updated_at": "2026-09-13T04:26:40Z",
-  "feed_sha256": "c4f33a350616d4309c2b8a6ea71060f062ae75ba518df980262d3b7b1b589ffb",
+  "feed_version": "1.14",
+  "feed_updated_at": "2026-09-25T19:39:46Z",
+  "feed_sha256": "9e4244db27dd4f2683e3cca67fd49973b9da6ac535edf171744ad5a23ec32fe2",
   "source_sha256": {
-    "data/products/solar/N.json": "c4f33a350616d4309c2b8a6ea71060f062ae75ba518df980262d3b7b1b589ffb",
-    "data/refs/bibliography.csv": "8efa4ef9775aaa2155c709c5f5bd8558a20b73e9a680c0b578a1f4904d078a18",
-    "data/catalog/holdings_manifest_registry.csv": "9438a39b63124e87c83576087da92c6c43f25cf28b94ee92aa5926bcf4f42a8c",
+    "data/products/solar/N.json": "9e4244db27dd4f2683e3cca67fd49973b9da6ac535edf171744ad5a23ec32fe2",
+    "data/refs/bibliography.csv": "a747857a0d18970ce7659f2f206f29fb0a38f3ac7301b94cfc097b3b6f923fcd",
+    "data/catalog/holdings_manifest_registry.csv": "39df11d25bfad7b355ca3580d728203113339e91be86cf44c89432a047191307",
     "docs/co_indicator_strategy.md": "497ef9d59f404a386723d90ec826ee03863a13cf7d36780d0d1adf49eabf85e8",
     "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json": "11900b0d8856975da602890b8b95d300e8415c5fb535386a0ba06db2faf04a3b",
     "data/audit/rya1214_cno_products/agss21_indicator_gf_check.csv": "66528cf2edfd2aa11794c877536bfeb495dfe11d92d3a23f9c6248bf4cf91752",
@@ -29,19 +29,19 @@
   "reference_resolver_sha256": "2574799ff5698705b838acd14377c7b0a9661898bb073870ac3b92247684bbe4",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 11,
-  "template_sha256": "64b1eb02f7dd3aad6b69ba10e4aecc74354626cbc3a3969711c08e57ceb1c9e7",
+  "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "b4daae058771c927a8830ff89d39a00b6ab5822f7491f9b3b05ce5920ceb555c",
   "counts": {
-    "products": 0,
-    "quarantine": 10,
+    "products": 12,
+    "quarantine": 0,
     "archive": 0,
     "superseded": 0
   },
-  "visible_products": 0,
+  "visible_products": 12,
   "dispositions": {
-    "quarantine": 10
+    "products": 12
   },
   "highlight_selectors": [],
-  "status": "NOT_YET_DEFENSIBLE"
+  "status": "products"
 }
