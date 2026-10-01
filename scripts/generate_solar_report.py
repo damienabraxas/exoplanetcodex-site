@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import cno_selection  # noqa: E402
 import fe2_record  # noqa: E402
 
 
@@ -267,27 +268,21 @@ def main() -> None:
     #
     # data/products/solar/<El>.json is the source of truth for a published product
     # (RYA-1034: "a product is published HERE or it does not exist"), so the headline for
-    # an element WITH products is taken from it -- the same landmark the appendix shows:
-    # tightest total uncertainty, Reference Grade preferred, rejected diagnostics excluded.
+    # an element WITH products is taken from it -- the same landmark the appendix shows.
     # Elements with no published feed keep the tracker verdict exactly as before.
-    REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
-
+    # RYA-1230: the pick is `cno_selection.headline` -- the SAME function the appendix
+    # header uses, so the Sun table and the element page cannot disagree. Best VIS
+    # Reference Grade product, else the best product of any band; ranked Reference Grade,
+    # then treatment (3D-NLTE first), then line count, then total sigma.
     def published_landmark(symbol):
         feed_path = science / f'data/products/solar/{symbol}.json'
         if not feed_path.exists():
             return None
         feed = json.loads(feed_path.read_text(encoding='utf-8'))
-        rows_ = [p for p in feed.get('products', [])
-                 if str(p.get('selector') or '') not in REJECTED_SELECTORS]
-        if not rows_:
+        best = cno_selection.headline(cno_selection.fill_grades(feed.get('products', []), science))
+        if best is None:
             return None
-        def total(p):
-            return math.sqrt((p.get('sigma_stat') or 0.0) ** 2 + (p.get('sigma_syst') or 0.0) ** 2)
-        ref = [p for p in rows_ if p.get('grade') == 'Reference Grade']
-        best = min(ref or rows_, key=lambda p: (round(total(p), 4),
-                                                0 if p.get('band') == 'VIS' else 1,
-                                                p.get('holding', '')))
-        return best, total(best), feed.get('version')
+        return best, cno_selection.total_sigma(best), feed.get('version')
 
     other_elements = []
     for row in rows(tracker_path):

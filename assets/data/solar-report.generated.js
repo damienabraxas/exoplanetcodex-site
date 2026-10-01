@@ -1483,8 +1483,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "910381683e0a42fc57c834f3b6345a100e34a333",
-        "scienceGit": "22ea65678043e016b12fb0defa596c10a200df88",
-        "generatedAt": "2026-09-26T15:41:08+00:00"
+        "scienceGit": "886a0a3df4beb16f56e3cf3e6ff3220c88b99a38",
+        "generatedAt": "2026-10-01T21:13:08+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1512,16 +1512,16 @@ window.SOLAR_REPORT = {
       "name": "Carbon",
       "status": "pass",
       "tier": "gold",
-      "method": "harps VIS · SET-AGSS21 · 1D-LTE (Reference Grade, C.json v1.19)",
+      "method": "harps VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.57)",
       "asplund": 8.46,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.469,
-        "sigmaTotal": 0.0433,
+        "value": 8.46,
+        "sigmaTotal": 0.0677,
         "lineCount": 3
       },
-      "delta": 0.009
+      "delta": 0.0
     },
     {
       "atomicNumber": 7,
@@ -1530,16 +1530,16 @@ window.SOLAR_REPORT = {
       "name": "Nitrogen",
       "status": "curation-owed",
       "tier": "owed",
-      "method": "kpno_solar_atlas red-optical · SET-AGSS21_ENGINE-A · ENGINE-A (Reference Grade, N.json v1.14)",
+      "method": "kpno_solar_atlas red-optical · SET-LBP25 · ENGINE-A-3DNLTE (Reference Grade, N.json v1.25)",
       "asplund": 7.83,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 8.189,
-        "sigmaTotal": 0.0497,
+        "value": 7.841,
+        "sigmaTotal": 0.0813,
         "lineCount": 2
       },
-      "delta": 0.359
+      "delta": 0.011
     },
     {
       "atomicNumber": 8,
@@ -1548,16 +1548,16 @@ window.SOLAR_REPORT = {
       "name": "Oxygen",
       "status": "pass",
       "tier": "gold",
-      "method": "kpno_solar_atlas red-optical · SET-AGSS21 · 1D-LTE (Reference Grade, O.json v1.9)",
+      "method": "iag_fts_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.27)",
       "asplund": 8.69,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.894,
-        "sigmaTotal": 0.0496,
+        "value": 8.643,
+        "sigmaTotal": 0.0762,
         "lineCount": 6
       },
-      "delta": 0.204
+      "delta": -0.047
     },
     {
       "atomicNumber": 11,
@@ -3949,7 +3949,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "22ea65678043e016b12fb0defa596c10a200df88",
+    "gitCommit": "886a0a3df4beb16f56e3cf3e6ff3220c88b99a38",
     "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-09-24T19:24:31+00:00"

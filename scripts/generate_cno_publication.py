@@ -18,6 +18,8 @@ import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
+from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline,
+                           fill_grades, headline, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
@@ -47,41 +49,25 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def total_sigma(p):
-    return math.sqrt((p.get('sigma_stat') or 0.0) ** 2 + (systematic(p) or 0.0) ** 2)
-
-
-def eligible_for_headline(p):
-    """A rejected diagnostic stays in the forest but never headlines the page."""
-    return str(p.get('selector') or '') not in REJECTED_SELECTORS
-
-
 def band_highlights(products):
-    """One card per band: the tightest total uncertainty, Reference Grade preferred.
+    """One card per band: that band's top product by `cno_selection.rank_key`.
 
-    Fe's rule, with the rejected diagnostics removed first. Without that removal N's VIS
-    card would read 7.384 +/- 1.134 from CN_red -- the route the ratified policy rejects,
-    whose chi2 surface is flat enough that its xi leg did not converge.
+    RYA-1230: Reference Grade, then the most complete treatment (3D-NLTE first), then line
+    count, then tightest total sigma. The rejected diagnostics are removed first; without
+    that N's VIS card would read 7.384 +/- 1.134 from CN_red, the route the ratified policy
+    rejects.
     """
     out = []
     for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
-        rows = [p for p in products if p['band'] == band and eligible_for_headline(p)]
-        if not rows:
-            continue
-        ref = [p for p in rows if p.get('grade') == 'Reference Grade']
-        out.append(min(ref or rows, key=lambda q: (total_sigma(q), q.get('holding', ''))))
+        best = best_in_band(products, band)
+        if best is not None:
+            out.append(best)
     return out
 
 
 def landmark(element, products):
-    """The one number at the top: tightest Reference Grade, VIS preferred on a tie."""
-    rows = [p for p in products if eligible_for_headline(p)]
-    if not rows:
-        return None
-    ref = [p for p in rows if p.get('grade') == 'Reference Grade']
-    return min(ref or rows, key=lambda q: (round(total_sigma(q), 4),
-                                           0 if q['band'] == 'VIS' else 1,
-                                           q.get('holding', '')))
+    """The one number at the top -- the SAME product the Sun table shows (`headline`)."""
+    return headline(products)
 
 
 def recipe(element, products):
@@ -133,10 +119,6 @@ def identity(p):
 
 def finite(v):
     return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)
-
-
-def systematic(p):
-    return p.get('sigma_syst_complete') if p.get('sigma_syst_complete') is not None else p.get('sigma_syst')
 
 
 def audit_feed(feed, telluric):
@@ -230,21 +212,27 @@ ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04}
 #: may never be the headline or a band highlight. CN_red carries a 1.134 dex bar and a
 #: chi2 surface so flat its xi leg would not converge; putting it at the top of the page
 #: as "the nitrogen result" would be the worst thing on here.
-REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
+#: (now `cno_selection.REJECTED_SELECTORS`, shared with the Sun table)
 
-#: Per-element standing caveats, shown directly under the headline. Nitrogen's is not a
-#: hedge: the offset has a named cause. The solar phase_c verdict records that the NLTE
-#: debt is CLEARED -- the Amarsi 2020 grid gives -0.0115/-0.0145/-0.0154 per line, because
-#: N I red is near-LTE at the Sun -- and that the surviving ~+0.36 is a gf/data-channel
-#: floor (RYA-161), curation owed, explicitly NOT to be tuned away.
+#: Per-element standing caveats, shown directly under the headline.
+#:
+#: RYA-1230 REPLACED nitrogen's. The old text blamed "a gf / data-channel floor (RYA-161)"
+#: for +0.36 dex. The RCA refuted that: our log gf equals Amarsi 2020 / Tachiev & Froese
+#: Fischer to 0.002 dex, and the offset was two missing INPUTS -- no molecular (CN) opacity
+#: in the atomic synthesis, and a "pre-normalised" atlas continuum 0.5-1% low around lines
+#: only 0.3-1% deep. Both are now in the synthesis. The literature spread is stated, not
+#: tuned to: AGSS21's atomic 7.77 rests on an empirical CN rescaling that Lodders,
+#: Bergemann & Palme 2025 decline to use, adopting 7.94 +/- 0.11 from the two least-blended
+#: lines instead.
 PRELIMINARY = {
-    'N': ('PRELIMINARY. This value sits +0.36 dex above the Asplund 2021 reference and is '
-          'not yet a settled result. The cause is identified and is not the NLTE treatment: '
-          'the N I NLTE correction is measured and small (-0.0115 / -0.0145 / -0.0154 dex '
-          'per line, because N I red is near-LTE at the Sun), and the surviving offset is a '
-          'gf / data-channel floor on the Kitt Peak red multiplets (RYA-161) that is owed '
-          'curation. It is published because withholding a measured number is not the same '
-          'as correcting it \u2014 but expect it to move.'),
+    'N': ('The solar N I lines are weak (0.3–1% deep) and carry CN absorption inside '
+          'their own profiles, so the result depends on molecular opacity and on continuum '
+          'placement at the 0.1% level. Both are now modelled: CN is synthesised with the '
+          'line, and the continuum is placed locally around every line. For comparison, '
+          'Asplund et al. 2021 give 7.77 from '
+          'N I after empirically rescaling the CN blends, and Lodders, Bergemann & Palme '
+          '2025 adopt 7.94 ± 0.11 from the two least-blended lines. The error bar carries '
+          'the full uncertainty budget, including CN blending and telluric residuals.'),
 }
 
 #: Spectral order, matching generate_fe_publication.BANDS. The cards are colour-coded by
@@ -252,7 +240,7 @@ PRELIMINARY = {
 #: the colours then read backwards against the wavelength they encode. K is appended for
 #: the CO band, which Fe has no products in. Anything unrecognised sorts last, in the
 #: order it appeared, rather than being dropped.
-BAND_ORDER = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H', 'J', 'K']
+#: (now `cno_selection.BAND_ORDER`)
 
 LODDERS_TABLE = 'data/reference/solar/lodders2025_table6.csv'
 
@@ -379,6 +367,7 @@ def build(science, element, selectors, site=ROOT):
     stamp = subprocess.check_output(['git','-C',str(science),'show','-s','--format=%cI','HEAD'],text=True).strip()
     feed = json.loads((science/feed_path).read_text())
     if feed.get('element') != element: raise ValueError('Element identity mismatch')
+    feed = {**feed, 'products': fill_grades(feed.get('products', []), science)}
     with (science/'data/catalog/holdings_manifest_registry.csv').open() as f:
         telluric = {r['holding_id']:r['telluric_applied'] for r in csv.DictReader(f)}
     products, audit = audit_feed(feed, telluric)
@@ -430,7 +419,8 @@ def build(science, element, selectors, site=ROOT):
                 f'{esc(mark["band"])} &middot; {esc(mark["grade"])} &middot; '
                 f'{esc(str(mark.get("selector") or "full pool"))} &middot; '
                 f'{esc(mark["treatment"])} &middot; n = {mark["n_lines"]}. '
-                f'The tightest admitted product; independent products and engines are '
+                f'The top-ranked admitted product (Reference Grade, then the most complete '
+                f'treatment, then line count, then total uncertainty); independent products and engines are '
                 f'not averaged together.</p>')
     else:
         body = f'<p class="fe-anchor">{esc(status)}</p><p>{esc(no_adopted)}</p>'
@@ -438,7 +428,7 @@ def build(science, element, selectors, site=ROOT):
     for p in band_highlights(products):
         spectrum = 'uv' if p['band']=='near-UV' else 'visible' if p['band'] in ('VIS','red-optical') else 'ir'
         cards.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(p["band"])}</h3>'
-                     f'<strong>{p["A"]:.3f}</strong><p>±{p["sigma_stat"]:.3f} stat · ±{systematic(p):.3f} syst</p>'
+                     f'<strong>{p["A"]:.3f} ± {total_sigma(p):.3f}</strong><p>±{p["sigma_stat"]:.3f} stat · ±{systematic(p):.3f} syst</p>'
                      f'<p>{esc(product_label(p))} · {esc(p["holding"])} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
     body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'

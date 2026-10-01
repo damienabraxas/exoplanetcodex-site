@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "22ea65678043e016b12fb0defa596c10a200df88",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/22ea65678043e016b12fb0defa596c10a200df88",
-  "generated_at": "2026-09-25T21:53:06-06:00",
+  "source_commit": "886a0a3df4beb16f56e3cf3e6ff3220c88b99a38",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/886a0a3df4beb16f56e3cf3e6ff3220c88b99a38",
+  "generated_at": "2026-10-01T15:12:46-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.14",
-  "feed_updated_at": "2026-09-25T19:39:46Z",
-  "feed_sha256": "9e4244db27dd4f2683e3cca67fd49973b9da6ac535edf171744ad5a23ec32fe2",
+  "feed_version": "1.25",
+  "feed_updated_at": "2026-10-01T21:07:09Z",
+  "feed_sha256": "68cbedc492af38858ee8f50a119cbdaedf68119e40aeb3459ff31c542e05f493",
   "source_sha256": {
-    "data/products/solar/N.json": "9e4244db27dd4f2683e3cca67fd49973b9da6ac535edf171744ad5a23ec32fe2",
+    "data/products/solar/N.json": "68cbedc492af38858ee8f50a119cbdaedf68119e40aeb3459ff31c542e05f493",
     "data/refs/bibliography.csv": "a747857a0d18970ce7659f2f206f29fb0a38f3ac7301b94cfc097b3b6f923fcd",
     "data/catalog/holdings_manifest_registry.csv": "39df11d25bfad7b355ca3580d728203113339e91be86cf44c89432a047191307",
     "docs/co_indicator_strategy.md": "497ef9d59f404a386723d90ec826ee03863a13cf7d36780d0d1adf49eabf85e8",
@@ -23,10 +23,13 @@
     "data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json": "ee21a31a5dfd7f8060ec29023931caa03ece0c2939a6954849158e33eb944b3e",
     "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json": "42c4b03dcf5de616ed4c123e840bd11470caeb40f08165490c6c726b10b2504d",
     "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json": "454c6167e2fcd704e5fdb1a31c3558a1b2a41d6054d6ef7826a9236cbc98430a",
+    "data/results/rya1230/legs/unit03/nominal/NI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
+    "data/results/rya1230/legs/unit04/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
+    "data/results/rya1230/legs/unit05/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
     "pipeline/band_products.py": "3e883e28b06ae2b9afafcaad323559649ae1106184d8db34944d35419d52ece2"
   },
-  "generator_sha256": "b773736c4e741cf832cebcd43a0558c55a12f5f5dd2e6107988fc966075fab80",
-  "reference_resolver_sha256": "2574799ff5698705b838acd14377c7b0a9661898bb073870ac3b92247684bbe4",
+  "generator_sha256": "368738b5acae4aca7997e81d1f3cc1e443c9506e52470d73c64208bc0eb5ca3d",
+  "reference_resolver_sha256": "c1f08859b4c8d2d81a97f392a56112bdecfe6dcedbe2d529a7da705e00ffa268",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 11,
   "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
@@ -35,12 +38,13 @@
   "counts": {
     "products": 12,
     "quarantine": 0,
-    "archive": 0,
+    "archive": 9,
     "superseded": 0
   },
   "visible_products": 12,
   "dispositions": {
-    "products": 12
+    "products": 12,
+    "archive": 9
   },
   "highlight_selectors": [],
   "status": "products"

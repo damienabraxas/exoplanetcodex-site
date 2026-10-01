@@ -1,0 +1,107 @@
+"""Which C/N/O product the site shows first. ONE rule, imported by both generators.
+
+Ryan, 2026-09-26 (RYA-1230): each band shows its top product at the top of the element
+appendix, and the Sun page's elemental table shows the best VIS number, defaulting to the
+next best band when VIS has none. The showcase is the Asplund-grade product: a Reference
+Grade line set carried through the most complete treatment.
+
+Before this module the appendix and the Sun table each held their own copy of "tightest
+total sigma, Reference Grade preferred". Tightest-sigma ranks a 1D-NLTE product on two
+lines above a 3D-NLTE product on four, which is how the N headline came to read 8.189
+from a 2-line Kitt Peak ENGINE-A row.
+
+Rank, most important first:
+  1. grade        Reference Grade before anything else
+  2. treatment    3D-NLTE > 3D-LTE > 1D-NLTE > 1D-LTE, read off the published `display`
+  3. n_lines      more lines before fewer
+  4. total sigma  tighter first
+  5. holding      deterministic tie-break
+"""
+from __future__ import annotations
+
+import math
+
+#: Rejected abundance routes (RYA-1220 cno_method_policy): they stay in the forest as
+#: diagnostics but never headline a band, the page or the Sun table.
+REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
+
+BAND_ORDER = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H', 'J', 'K']
+
+
+def systematic(p):
+    return p.get('sigma_syst_complete') if p.get('sigma_syst_complete') is not None else p.get('sigma_syst')
+
+
+def total_sigma(p):
+    """The product's total uncertainty. A row carrying a RYA-587 budget states it as
+    `sigma_reported` (the canonical total over all 16 components) -- that is the number,
+    exactly as Fe shows it. Only a legacy row without one falls back to stat (+) syst."""
+    if p.get('sigma_reported') is not None:
+        return float(p['sigma_reported'])
+    return math.sqrt((p.get('sigma_stat') or 0.0) ** 2 + (systematic(p) or 0.0) ** 2)
+
+
+def fill_grades(products, science):
+    """Legacy C/N/O rows predate the publisher's `grade` stamp (RYA-1230) and RYA-587
+    refuses any edit to a legacy row, so the grade is DERIVED here by the science repo's
+    own rule (`pipeline.cno_grade.grade_for`, imported from the pinned checkout, never
+    copied) and marked as derived. A row that carries a grade keeps it."""
+    import sys
+    sys.path.insert(0, str(science))
+    from pipeline.cno_grade import grade_for
+    out = []
+    for p in products:
+        if not p.get('grade'):
+            g = grade_for(p)
+            if g is not None:
+                p = {**p, 'grade': g,
+                     'grade_basis': 'derived at render by pipeline.cno_grade (legacy row)'}
+        out.append(p)
+    return out
+
+
+def treatment_rank(p):
+    """0 = 3D-NLTE ... 3 = 1D-LTE, from the display name the publisher DERIVES
+    (treatment_axes.display_for), never from the treatment token's spelling."""
+    d = str(p.get('display') or '')
+    if '3D-NLTE' in d:
+        return 0
+    if '3D' in d:
+        return 1
+    if 'NLTE' in d:
+        return 2
+    return 3
+
+
+def rank_key(p):
+    return (0 if p.get('grade') == 'Reference Grade' else 1,
+            treatment_rank(p),
+            -(p.get('n_lines') or 0),
+            round(total_sigma(p), 4),
+            p.get('holding', ''))
+
+
+def eligible_for_headline(p):
+    return str(p.get('selector') or '') not in REJECTED_SELECTORS
+
+
+def best_in_band(products, band):
+    rows = [p for p in products if p.get('band') == band and eligible_for_headline(p)]
+    return min(rows, key=rank_key) if rows else None
+
+
+def headline(products):
+    """The Sun-table / appendix-top number: VIS's best Reference Grade product; when VIS has
+    none, the best product of any other band by the same rank.
+
+    A VIS product that is not Reference Grade does not take the headline over a Reference
+    Grade product in another band -- "best VIS number if possible" is read as: if VIS
+    carries a product of headline standard.
+    """
+    rows = [p for p in products if eligible_for_headline(p)]
+    if not rows:
+        return None
+    vis = best_in_band(rows, 'VIS')
+    if vis is not None and vis.get('grade') == 'Reference Grade':
+        return vis
+    return min(rows, key=rank_key)
