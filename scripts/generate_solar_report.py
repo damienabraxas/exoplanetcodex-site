@@ -316,6 +316,10 @@ def main() -> None:
                               f'{best.get("selector") or "full pool"} · {best.get("treatment")} '
                               f'({best.get("grade")}, {symbol}.json v{feed_version})')
             item["measurementNote"] = ""
+            # RYA-1230: a published product's status is the FEED's, not the tracker's
+            # phase_c verdict (N read "curation-owed" for a gf floor the RCA refuted).
+            item["status"] = ("published \u00b7 " + str(best.get("grade") or "graded").lower()
+                              + (" \u00b7 rya-587 budget" if best.get("uncertainty") else ""))
             asp = asplund_of.get(symbol)
             item["delta"] = (round(best["A"] - float(asp), 4)
                              if asp not in (None, "") else None)

@@ -1484,7 +1484,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "910381683e0a42fc57c834f3b6345a100e34a333",
         "scienceGit": "a8369474dbef157366320260731ced27933bec44",
-        "generatedAt": "2026-10-02T03:08:44+00:00"
+        "generatedAt": "2026-10-02T03:17:01+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1510,7 +1510,7 @@ window.SOLAR_REPORT = {
       "symbol": "C",
       "ion": "I",
       "name": "Carbon",
-      "status": "pass",
+      "status": "published · reference grade · rya-587 budget",
       "tier": "gold",
       "method": "harps VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.76)",
       "asplund": 8.46,
@@ -1528,7 +1528,7 @@ window.SOLAR_REPORT = {
       "symbol": "N",
       "ion": "I",
       "name": "Nitrogen",
-      "status": "curation-owed",
+      "status": "published · reference grade · rya-587 budget",
       "tier": "owed",
       "method": "kpno_solar_atlas red-optical · SET-LBP25 · ENGINE-A-3DNLTE (Reference Grade, N.json v1.35)",
       "asplund": 7.83,
@@ -1546,7 +1546,7 @@ window.SOLAR_REPORT = {
       "symbol": "O",
       "ion": "I",
       "name": "Oxygen",
-      "status": "pass",
+      "status": "published · reference grade · rya-587 budget",
       "tier": "gold",
       "method": "iag_fts_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.36)",
       "asplund": 8.69,
