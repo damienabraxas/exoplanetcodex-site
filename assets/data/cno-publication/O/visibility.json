@@ -548,5 +548,159 @@
     "quarantine_codes": [],
     "visible": false,
     "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-edea749b00fb",
+    "source_bucket": "archive",
+    "source_index": 6,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": null,
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-c7cfd0c34281",
+    "source_bucket": "archive",
+    "source_index": 7,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": null,
+      "route": "SYNTH",
+      "treatment": "ENGINE-A-3DNLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-62ebe8037583",
+    "source_bucket": "archive",
+    "source_index": 8,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": null,
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-723a4a23d341",
+    "source_bucket": "archive",
+    "source_index": 9,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-25b87d1e8f27",
+    "source_bucket": "archive",
+    "source_index": 10,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A-3DNLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-ea29436166e1",
+    "source_bucket": "archive",
+    "source_index": 11,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "O-archive-9ed7d6bf6b7b",
+    "source_bucket": "archive",
+    "source_index": 12,
+    "identity": {
+      "element": "O",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "FORB-OI_6300",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
   }
 ]

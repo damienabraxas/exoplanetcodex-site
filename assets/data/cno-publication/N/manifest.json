@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "886a0a3df4beb16f56e3cf3e6ff3220c88b99a38",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/886a0a3df4beb16f56e3cf3e6ff3220c88b99a38",
-  "generated_at": "2026-10-01T15:12:46-06:00",
+  "source_commit": "a8369474dbef157366320260731ced27933bec44",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/a8369474dbef157366320260731ced27933bec44",
+  "generated_at": "2026-10-01T21:08:32-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.25",
-  "feed_updated_at": "2026-10-01T21:07:09Z",
-  "feed_sha256": "68cbedc492af38858ee8f50a119cbdaedf68119e40aeb3459ff31c542e05f493",
+  "feed_version": "1.35",
+  "feed_updated_at": "2026-10-02T03:08:13Z",
+  "feed_sha256": "ef897a83c11446d4cb7b833b9e0ec23b8d22592e6ec1565805916bd95ea7bcb5",
   "source_sha256": {
-    "data/products/solar/N.json": "68cbedc492af38858ee8f50a119cbdaedf68119e40aeb3459ff31c542e05f493",
+    "data/products/solar/N.json": "ef897a83c11446d4cb7b833b9e0ec23b8d22592e6ec1565805916bd95ea7bcb5",
     "data/refs/bibliography.csv": "a747857a0d18970ce7659f2f206f29fb0a38f3ac7301b94cfc097b3b6f923fcd",
     "data/catalog/holdings_manifest_registry.csv": "39df11d25bfad7b355ca3580d728203113339e91be86cf44c89432a047191307",
     "docs/co_indicator_strategy.md": "497ef9d59f404a386723d90ec826ee03863a13cf7d36780d0d1adf49eabf85e8",
@@ -36,15 +36,15 @@
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "b4daae058771c927a8830ff89d39a00b6ab5822f7491f9b3b05ce5920ceb555c",
   "counts": {
-    "products": 12,
+    "products": 13,
     "quarantine": 0,
-    "archive": 9,
+    "archive": 15,
     "superseded": 0
   },
-  "visible_products": 12,
+  "visible_products": 13,
   "dispositions": {
-    "products": 12,
-    "archive": 9
+    "products": 13,
+    "archive": 15
   },
   "highlight_selectors": [],
   "status": "products"
