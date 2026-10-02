@@ -150,7 +150,11 @@ class ReferenceTests(unittest.TestCase):
             refs={r['id']:r for r in bundle['references']}
             self.assertTrue(expected[e] <= refs.keys())
             self.assertEqual(report['references'],bundle['references'])
-            self.assertEqual(len(bundle['product_sources']),len(report['visibility_audit']))
+            # Archived rows are history and are not rendered, so the reconciler binds
+            # products + quarantine only (cno_references.reconcile); RYA-1230 is the first
+            # CNO feed with archived rows, which is when this count diverged.
+            self.assertEqual(len(bundle['product_sources']),
+                             sum(r['source_bucket'] in ('products','quarantine') for r in report['visibility_audit']))
             page=BeautifulSoup(report['body_html'],'html.parser')
             for p in bundle['product_sources']:
                 self.assertTrue(set(p['reference_ids']) <= refs.keys())

@@ -28,6 +28,21 @@ def read_rows(science, path):
         return list(csv.DictReader(stream))
 
 
+def run_provenance(science, p):
+    """The product's OWN run provenance -- the `_provenance.txt` its emitting run wrote beside
+    the products CSV, committed in the science repo (RYA-1230). It names the departure
+    source an NLTE/3D leg actually applied, so it is an explicit per-product model join,
+    not the display label. Returns (repo-relative path, text) or (None, '')."""
+    src = Path(str((p.get('provenance') or {}).get('path') or '')).name
+    if not src.endswith('_products.csv'):
+        return None, ''
+    base = src[:-len('_products.csv')]
+    hits = sorted(Path(science).glob(f'data/results/*/legs/*/nominal/{base}_provenance.txt'))
+    if len(hits) != 1:
+        return None, ''
+    return hits[0].relative_to(science).as_posix(), hits[0].read_text()
+
+
 def reconcile(science, element, feed, audit):
     paths = set()
     def rows(path):
@@ -184,9 +199,25 @@ def reconcile(science, element, feed, audit):
         elif treatment in ('ENGINE-A','ENGINE-A-3DNLTE') and element in ('C','O'):
             keys+=model_refs
             model_note='Registered C/O model lineage; per-product grid provenance must confirm the applied treatment.'
-            if record['visible'] and 'amarsi' not in json.dumps(p.get('provenance',{})).lower():
+            rp_path, rp_text = run_provenance(science, p)
+            if record['visible'] and 'amarsi' not in (json.dumps(p.get('provenance',{}))+rp_text).lower():
                 raise ValueError('Visible NLTE/3D product lacks an explicit model provenance join: '+subject)
-            bind(subject,LAYER_ORDER[2],model_refs,model_note,[COGRID,GRIDS])
+            if rp_path:
+                paths.add(rp_path)
+                model_note += ' Run provenance: '+rp_text.strip().splitlines()[0][:200]
+            bind(subject,LAYER_ORDER[2],model_refs,model_note,[COGRID,GRIDS]+([rp_path] if rp_path else []))
+        elif treatment=='ENGINE-A-3DNLTE' and element=='N':
+            # RYA-1230: N has no Amarsi 2019 grid; the 3D-NLTE leg is Amarsi et al. 2020's
+            # own per-line solar Table 3 correction, named in the run's provenance.
+            rp_path, rp_text = run_provenance(science, p)
+            if record['visible'] and not ('amarsi' in rp_text.lower() and '2020' in rp_text):
+                raise ValueError('Visible N 3D-NLTE product lacks an explicit model provenance join: '+subject)
+            keys+=model_refs
+            model_note=('Feed label: '+str(p.get('display'))+'. Cited per-line solar correction, '
+                        'Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer '
+                        '3D-NLTE result. Run provenance: '+rp_text.strip().splitlines()[0][:200])
+            paths.add(rp_path)
+            bind(subject,LAYER_ORDER[2],model_refs,model_note,[rp_path])
         else:
             model_note='Model reference unresolved for treatment '+treatment
             if record['visible']: raise ValueError(model_note)
