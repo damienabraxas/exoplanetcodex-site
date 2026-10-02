@@ -180,9 +180,10 @@
                    (fe.sigmaTotal != null ? ' \u00b1 ' + fe.sigmaTotal.toFixed(3) : '') +
                    ' \u00b7 solar iron anchor', href: '/systems/sol/elements/fe/' });
     }
-    // Elements whose headline is not yet settled. Marked on the card itself so the flag
-    // is visible without clicking through to the appendix.
-    var PRELIM = { N: 'preliminary \u00b7 gf floor owed' };
+    // Elements whose headline is not yet settled, marked on the card itself. RYA-1230: N's
+    // "gf floor owed" flag is withdrawn -- the RCA measured the gf term at 0.000 dex, and every
+    // C/N/O headline now carries a full RYA-587 budget.
+    var PRELIM = {};
     ['C', 'N', 'O'].forEach(function (sym) {
       var e = (report.elements || []).filter(function (x) {
         return x.symbol === sym && x.ion === 'I' && x.primaryValue; })[0];
