@@ -279,7 +279,7 @@ def main() -> None:
         if not feed_path.exists():
             return None
         feed = json.loads(feed_path.read_text(encoding='utf-8'))
-        best = cno_selection.headline(cno_selection.fill_grades(feed.get('products', []), science))
+        best = cno_selection.headline(cno_selection.fill_grades(feed.get('products', []), science), symbol)
         if best is None:
             return None
         return best, cno_selection.total_sigma(best), feed.get('version')

@@ -1483,8 +1483,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "910381683e0a42fc57c834f3b6345a100e34a333",
-        "scienceGit": "a8369474dbef157366320260731ced27933bec44",
-        "generatedAt": "2026-10-02T03:17:01+00:00"
+        "scienceGit": "5fee27a14f2ab28d433b5f0b20101ce24f5118e1",
+        "generatedAt": "2026-10-03T22:13:51+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1512,16 +1512,16 @@ window.SOLAR_REPORT = {
       "name": "Carbon",
       "status": "published · reference grade · rya-587 budget",
       "tier": "gold",
-      "method": "harps VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.76)",
+      "method": "kpno_solar_atlas VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.163)",
       "asplund": 8.46,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.46,
-        "sigmaTotal": 0.0677,
+        "value": 8.43,
+        "sigmaTotal": 0.0719,
         "lineCount": 3
       },
-      "delta": 0.0
+      "delta": -0.03
     },
     {
       "atomicNumber": 7,
@@ -1530,16 +1530,16 @@ window.SOLAR_REPORT = {
       "name": "Nitrogen",
       "status": "published · reference grade · rya-587 budget",
       "tier": "owed",
-      "method": "kpno_solar_atlas red-optical · SET-LBP25 · ENGINE-A-3DNLTE (Reference Grade, N.json v1.35)",
+      "method": "iag_fts_solar_atlas NIR · MOL-CN_AX_IR · 1D-LTE (Reference Grade, N.json v1.72)",
       "asplund": 7.83,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 7.842,
-        "sigmaTotal": 0.079,
-        "lineCount": 2
+        "value": 7.883,
+        "sigmaTotal": 0.1815,
+        "lineCount": 244
       },
-      "delta": 0.012
+      "delta": 0.053
     },
     {
       "atomicNumber": 8,
@@ -1548,16 +1548,16 @@ window.SOLAR_REPORT = {
       "name": "Oxygen",
       "status": "published · reference grade · rya-587 budget",
       "tier": "gold",
-      "method": "iag_fts_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.36)",
+      "method": "kpno_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.74)",
       "asplund": 8.69,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.643,
-        "sigmaTotal": 0.0762,
+        "value": 8.66,
+        "sigmaTotal": 0.1014,
         "lineCount": 6
       },
-      "delta": -0.047
+      "delta": -0.03
     },
     {
       "atomicNumber": 11,
@@ -3949,7 +3949,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "a8369474dbef157366320260731ced27933bec44",
+    "gitCommit": "5fee27a14f2ab28d433b5f0b20101ce24f5118e1",
     "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-09-24T19:24:31+00:00"

@@ -19,7 +19,7 @@ import subprocess
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
 from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline,
-                           fill_grades, headline, systematic, total_sigma)
+                           fill_grades, headline, rank_key, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
@@ -67,45 +67,111 @@ def band_highlights(products):
 
 def landmark(element, products):
     """The one number at the top -- the SAME product the Sun table shows (`headline`)."""
-    return headline(products)
+    return headline(products, element)
+
+
+#: Reader-facing names for what a product measured. An unknown selector falls through to
+#: its own token rather than raising.
+INDICATOR_NAMES = {
+    'SET-AGSS21': '{el} I lines from Asplund et al. 2021\'s line set',
+    'SET-LBP25': 'N I 8629 + 8683 \u00c5, the two least-blended lines (Magg et al. 2022, adopted by Lodders et al. 2025)',
+    'MOL-CH_Gband': 'CH G-band (molecular band)',
+    'MOL-C2_Swan': 'C\u2082 Swan band (molecular band)',
+    'MOL-CN_AX_IR': 'CN A\u2013X (0\u20130) band, near-infrared (molecular band)',
+    'MOL-CN_red': 'CN red system, visible (molecular band; diagnostic only)',
+    'ATOM-CI_5052': 'C I 5052 \u00c5 (single line)',
+    'ATOM-CI_5380': 'C I 5380 \u00c5 (single line)',
+    'FORB-OI_6300': '[O I] 6300 \u00c5 forbidden line (blended with Ni I)',
+}
+HOLDING_NAMES = {
+    'solar_harps_molecfit_corrected': 'HARPS',
+    'solar_kpno_kurucz2005_corrected': 'Kitt Peak (Kurucz 2005)',
+    'solar_kpno_molecfit_corrected': 'Kitt Peak (1984, molecfit)',
+    'solar_iag': 'IAG FTS',
+    'solar_crires_plus_j_rya1219': 'CRIRES+ J',
+}
+#: RYA-587 budget components in plain words, for the "largest uncertainty terms" column.
+TERM_NAMES = {
+    'measurement': 'fit / line-to-line scatter', 'transition_data': 'line strengths (gf)',
+    'continuum': 'continuum placement', 'profile_ew': 'fit window', 'model_atmosphere': 'model atmosphere',
+    'telluric': 'telluric residual', 'molecular_coupling': 'coupling to the other C/N/O abundances',
+    'holding_instrument': 'spread between spectra', 'stellar.xi': 'microturbulence',
+    'nlte': 'NLTE / 3D correction', 'blends': 'blends', 'pseudo_continuum': 'pseudo-continuum',
+    'stellar.teff': 'effective temperature', 'stellar.logg': 'surface gravity',
+    'stellar.metallicity': 'metallicity', 'hfs_isotopes': 'hyperfine / isotopes',
+}
+
+
+def _treatment_label(p):
+    d = str(p.get('display') or '')
+    for key in ('3D-NLTE', '3D-LTE', '1D-NLTE', '1D-LTE'):
+        if key in d:
+            return key
+    return str(p.get('treatment'))
+
+
+def _largest_terms(p, k=2):
+    comps = [(c['name'], c['sigma_dex']) for c in (p.get('uncertainty') or {}).get('components', [])
+             if c.get('sigma_dex')]
+    comps.sort(key=lambda t: -t[1])
+    return ', '.join(f'{TERM_NAMES.get(n, n)} {v:.2f}' for n, v in comps[:k]) or 'budget not attached'
 
 
 def recipe(element, products):
-    """How the number was made -- read off the products, not written as prose.
+    """How the number was made, for a reader rather than a log.
 
-    The Fe appendix carries per-band detail a reader can follow; CNO had a context
-    paragraph, a forest, and then a JSON dump. This is the missing middle: for each band,
-    which indicators were measured, on which spectrum, with which engine and treatment,
-    how many lines survived, and what dominates the error bar.
+    RYA-1230 (Ryan: "the table is not very well done"): the old version was one row per BAND
+    with comma-joined internal ids, an unlabelled list of line counts, and two columns that
+    read "not attributed" / "not recorded" on every row. Now: the method in plain words, then
+    ONE ROW PER INDICATOR -- what was measured, on which spectra, by which treatments, how
+    many lines, the range of results, and the two largest terms of its actual RYA-587 budget.
     """
     if not products:
         return ''
+    name = NAMES[element].lower()
+    method = (
+        f'<p class="product-section-intro">Every {name} value on this page comes from fitting '
+        f'synthetic spectra to the observed solar spectrum, line by line or band by band, with '
+        f'the {name} abundance as the free parameter. The synthesis includes the atomic lines '
+        f'<em>and</em> the molecular bands (CN, CH, C\u2082, OH and others) in every window, so '
+        f'blended absorption is modelled rather than attributed to the line being measured. '
+        f'The continuum is placed locally around every line by comparing the observation with '
+        f'the synthesis on its own highest pixels, and ground-based spectra are '
+        f'telluric-corrected across their full range.</p>'
+        f'<p class="product-section-intro">Each indicator is measured independently on each '
+        f'solar spectrum and reported separately; nothing is averaged across indicators or '
+        f'instruments. Where a 3D or NLTE correction is published for the lines, it is applied '
+        f'as its own product (1D-LTE, 1D-NLTE and 3D-NLTE are separate rows). Every value '
+        f'carries a full uncertainty budget: fit, line strengths, microturbulence, continuum, '
+        f'fit window, model atmosphere, telluric residual, blends and coupling to the other '
+        f'C/N/O abundances, and the spread between spectra, each measured by refitting with that '
+        f'one input changed. The headline at the top is the Asplund-grade product: a published '
+        f'line set, the most complete treatment, then the most lines.</p>')
+    groups = {}
+    for p in products:
+        groups.setdefault((p['band'], str(p.get('selector') or '')), []).append(p)
+    order = {b: i for i, b in enumerate(BAND_ORDER)}
     rows = ''
-    for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
-        group = [p for p in products if p['band'] == band]
-        sel = sorted({str(p.get('selector') or 'full pool') for p in group})
-        holdings = sorted({p['holding'] for p in group})
-        treat = sorted({f"{p['route']} · {p['treatment']}" for p in group})
-        dom = sorted({str(p.get('dominant_term') or 'not attributed') for p in group})
-        lines = sorted({p['n_lines'] for p in group})
-        excl = sum(p.get('n_excluded') or 0 for p in group)
-        rung = sorted({str(p.get('gf_rung_summary') or 'not recorded') for p in group})
-        rows += (f'<tr><th scope="row">{esc(band)}</th>'
-                 f'<td>{esc(", ".join(sel))}</td>'
-                 f'<td>{esc(", ".join(holdings))}</td>'
-                 f'<td>{esc(", ".join(treat))}</td>'
-                 f'<td>{esc(", ".join(str(n) for n in lines))}'
-                 + (f' <small>({excl} excluded)</small>' if excl else '') + '</td>'
-                 f'<td>{esc(", ".join(dom))}</td>'
-                 f'<td>{esc(", ".join(rung))}</td></tr>')
-    return ('<p class="product-section-intro"><strong>How this was measured.</strong> One row '
-            'per band. The indicator set is what was fitted; the holding is the solar spectrum '
-            'it was fitted against; the engine and treatment say how. <em>Dominant term</em> is '
-            'the largest single contributor to the reported uncertainty, and <em>gf rung</em> is '
-            'the pedigree of the oscillator strengths that pool could reach.</p>'
+    for (band, sel), group in sorted(groups.items(), key=lambda kv: (order.get(kv[0][0], 99), kv[0][1])):
+        what = INDICATOR_NAMES.get(sel, f'{element} I lines selected by the Codex' if not sel else sel)
+        what = what.replace('{el}', element)
+        spectra = ', '.join(sorted({HOLDING_NAMES.get(p['holding'], LABELS.get(p['instrument'], p['instrument']))
+                                    for p in group}))
+        treats = ', '.join(sorted({_treatment_label(p) for p in group}))
+        ns = sorted({int(p['n_lines']) for p in group if p.get('n_lines')})
+        lines = (f'{ns[0]}' if len(ns) == 1 else f'{ns[0]}\u2013{ns[-1]}') if ns else '\u2014'
+        best = min(group, key=rank_key)
+        top = [q for q in group if _treatment_label(q) == _treatment_label(best)]
+        lo, hi = min(q['A'] for q in top), max(q['A'] for q in top)
+        result = (f'{lo:.3f}' if abs(hi - lo) < 5e-4 else f'{lo:.3f}\u2013{hi:.3f}') + f' <small>({_treatment_label(best)})</small>'
+        rows += (f'<tr><th scope="row">{esc(band)}</th><td>{esc(what)}</td><td>{esc(spectra)}</td>'
+                 f'<td>{esc(treats)}</td><td class="num">{esc(lines)}</td><td class="num">{result}</td>'
+                 f'<td>{esc(_largest_terms(best))}</td></tr>')
+    return (method +
             '<div class="table-scroll"><table class="product-recipe">'
-            '<thead><tr><th>Band</th><th>Indicator set</th><th>Holding</th><th>Engine · treatment</th>'
-            '<th>Lines</th><th>Dominant term</th><th>gf rung</th></tr></thead>'
+            '<thead><tr><th>Band</th><th>What was measured</th><th>Solar spectra</th>'
+            '<th>Treatments</th><th>Lines</th><th>Result A(' + esc(element) + ')</th>'
+            '<th>Largest uncertainty terms (dex)</th></tr></thead>'
             f'<tbody>{rows}</tbody></table></div>')
 
 
