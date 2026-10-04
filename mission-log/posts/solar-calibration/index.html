@@ -3,136 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="/assets/js/analytics.js"></script>
-  <title>Solar Calibration · Mission Log · The Exoplanet Codex</title>
-  <meta name="description" content="Before we analyze any exoplanet host star, we prove the pipeline recovers the right answer for the Sun. Solar calibration via direct solar observations — Dumusque HARPS dataset, ESO 1102.D-0954(A).">
+  <title>Solar Calibration → The Sun, Measured · Mission Log · The Exoplanet Codex</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://exoplanetcodex.org/mission-log/posts/sun-fe-cno/">
+  <meta http-equiv="refresh" content="0; url=/mission-log/posts/sun-fe-cno/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/codex.css">
-  <style>
-    .post-meta-hero {
-      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;
-    }
-    .post-tag {
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--accent);
-    }
-    .post-meta-hero time {
-      font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim);
-    }
-    .post-body {
-      max-width: 720px; margin: 0 auto;
-      font-family: var(--serif); font-size: 1.05rem;
-      color: var(--text); line-height: 1.85;
-    }
-    .post-body p { margin: 0 0 1.2rem; }
-    .post-body strong { color: var(--text-bright); font-weight: 600; }
-    .coming-soon-box {
-      border: 1px solid var(--rim); background: var(--deep);
-      padding: 3rem; text-align: center; margin: 2rem 0;
-    }
-    .coming-soon-box .cs-label {
-      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem;
-    }
-    .coming-soon-box .cs-title {
-      font-family: var(--serif); font-size: 1.6rem; font-weight: 300;
-      color: var(--text-bright); margin-bottom: 0.8rem;
-    }
-    .coming-soon-box p {
-      font-size: 0.95rem; color: var(--text-dim); max-width: 480px;
-      margin: 0 auto; line-height: 1.7;
-    }
-    .progress-inline {
-      display: flex; align-items: center; gap: 0.9rem;
-      margin: 2rem auto; max-width: 400px;
-    }
-    .progress-track { flex: 1; height: 2px; background: var(--rim); border-radius: 1px; }
-    .progress-fill { height: 100%; border-radius: 1px; background: var(--accent); width: 0%; }
-    .progress-text { font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim); white-space: nowrap; }
-    .post-nav {
-      max-width: 720px; margin: 3rem auto 0;
-      padding-top: 2rem; border-top: 1px solid var(--rim);
-    }
-    .post-nav a {
-      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em;
-      color: var(--accent); text-decoration: none;
-    }
-    .post-nav a:hover { color: var(--text-bright); }
-
-  </style>
 </head>
 <body>
-  <canvas id="starfield"></canvas>
-
-  <nav class="codex-nav">
-    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
-    <ul class="nav-links">
-      <li><a href="/systems/">Systems</a></li>
-      <li><a href="/glossary/">Glossary</a></li>
-      <li><a href="/method/">Method</a></li>
-      <li><a href="/sources/">Sources</a></li>
-      <li><a href="/mission-log/" class="active">Mission Log</a></li>
-      <li><a href="/origin/">Origin</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/roadmap.html">Roadmap</a></li>
-      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
-    </ul>
-    <div class="breadcrumb"><a href="/">Home</a> / <a href="/mission-log/">Mission Log</a> / <span>Solar Calibration</span></div>
-  </nav>
-
-  <header class="page-hero">
-    <div class="container">
-      <div class="post-meta-hero">
-        <span class="post-tag">Pipeline</span>
-        <time datetime="2026-06">June 2026</time>
-      </div>
-      <h1 class="page-title">Solar Calibration: Validating the Pipeline Against the Sun</h1>
-      <p class="page-subtitle">Before we analyze any exoplanet host star, we prove the pipeline recovers the right answer for a star we already know</p>
-    </div>
-  </header>
-
   <main class="page-content">
     <div class="container">
-      <article class="post-body">
-
-        <div class="coming-soon-box">
-          <p class="cs-label">Entry in progress</p>
-          <p class="cs-title">Coming June 2026</p>
-          <p>This entry will document the solar calibration run — using direct solar observations from the HARPS spectrograph (ESO Program 1102.D-0954(A), PI: Xavier Dumusque, University of Geneva), processed through the full pipeline identically to science targets. These are direct solar feed observations, not reflected sunlight from an asteroid.</p>
-          <div class="progress-inline">
-            <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
-            <div class="progress-text">Pipeline step 2 / 6</div>
-          </div>
-        </div>
-
-        <p>The calibration criterion: our pipeline must recover <strong>A(Fe)☉ = 7.46 ± 0.05</strong> (Asplund et al. 2021) and <strong>C/O☉ = 0.55 ± 0.05</strong> from the solar spectrum. The dataset consists of 10 HARPS S1D solar exposures (ESO Program 1102.D-0954(A), PI: Dumusque) acquired as a <strong>direct solar feed</strong> — the Sun itself, not reflected sunlight from Ceres or Vesta — with SNR 306–309 per exposure. If the pipeline doesn't recover the reference values, there's a systematic error somewhere in the chain — continuum normalization, line list, model atmosphere, or abundance solver — and we go hunting before touching 55 Cancri A.</p>
-
-        <p>This entry will publish when the calibration run is complete and the numbers are in.</p>
-
-      </article>
-
-      <aside class="post-nav">
-        <a href="/mission-log/">← Back to Mission Log</a>
-      </aside>
-
+      <p>The solar calibration is complete. This entry has moved to
+        <a href="/mission-log/posts/sun-fe-cno/">The Sun, Measured: Iron, Carbon, Nitrogen and Oxygen</a>.</p>
     </div>
   </main>
-
-  <footer class="codex-footer">
-    <div class="footer-grid">
-      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
-      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div>
-      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div>
-      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
-    </div>
-    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
-  </footer>
-
-  <script src="/assets/js/starfield.js"></script>
-  <script src="/assets/js/codex.js"></script>
 </body>
 </html>
