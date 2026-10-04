@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/js/analytics.js"></script>
+  <title>The Sun, Measured · Mission Log · The Exoplanet Codex</title>
+  <meta name="description" content="Iron, carbon, nitrogen and oxygen in the Sun, measured end to end by the Codex pipeline with full uncertainty budgets: every headline within 0.053 dex of Asplund et al. (2021).">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <link rel="stylesheet" href="/assets/css/solar-report.css">
+  <link rel="stylesheet" href="/assets/css/element-products.css">
+  <style>
+    .post-meta-hero { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
+    .post-tag { font-family:var(--mono); font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--accent-green); }
+    .post-meta-hero time { font-family:var(--mono); font-size:.65rem; color:var(--text-dim); }
+    .post-wide { max-width:980px; margin:0 auto; }
+    .post-body { max-width:720px; margin:0 auto; font-family:var(--serif); font-size:1.05rem; color:var(--text); line-height:1.85; }
+    .post-body p { margin:0 0 1.2rem; }
+    .post-body strong { color:var(--text-bright); font-weight:600; }
+    .post-body h2 { font-family:var(--serif); font-weight:400; color:var(--text-bright); font-size:1.4rem; margin:2.2rem 0 .8rem; }
+    .panel { border:1px solid var(--rim); background:var(--deep); padding:1.4rem 1.4rem 1.1rem; margin:1.6rem 0 2.4rem; }
+    .panel-eyebrow { font:.62rem/1.4 var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--text-dim); margin:0 0 .3rem; }
+    .panel-title { font:300 1.35rem/1.3 var(--serif); color:var(--text-bright); margin:0 0 .4rem; }
+    .panel-note { font:.6rem/1.6 var(--mono); color:var(--text-dim); margin:.8rem 0 0; }
+    .post-wide .solar-findings { grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); }
+    .forest-label a { color:var(--text-bright); text-decoration:none; }
+    .forest-label a:hover { color:var(--accent); }
+    .post-nav { max-width:720px; margin:3rem auto 0; padding-top:2rem; border-top:1px solid var(--rim); }
+    .post-nav a { font-family:var(--mono); font-size:.75rem; letter-spacing:.08em; color:var(--accent); text-decoration:none; }
+    .post-nav a:hover { color:var(--text-bright); }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/mission-log/" class="active">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/roadmap.html">Roadmap</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/mission-log/">Mission Log</a> / <span>The Sun, Measured</span></div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <div class="post-meta-hero">
+        <span class="post-tag">Science</span>
+        <time datetime="2026-10-03">October 2026</time>
+      </div>
+      <h1 class="page-title">The Sun, Measured: Iron, Carbon, Nitrogen and Oxygen</h1>
+      <p class="page-subtitle">The calibration star is done. Four elements, measured end to end with full uncertainty budgets — every headline within 0.053 dex of Asplund et al. (2021)</p>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="post-wide">
+
+        <section class="panel">
+          <p class="panel-eyebrow">Solar headline findings</p>
+          <p class="panel-title">What the pipeline measured</p>
+          <div class="solar-findings"><a class="solar-finding" href="/systems/sol/elements/fe/"><span class="sf-label">Metallicity [Fe/H]</span><strong class="sf-value">+0.017</strong><span class="sf-unit">dex</span><span class="sf-sub">A(Fe) 7.477 ± 0.052 · AGSS21 7.46</span></a><a class="solar-finding" href="/systems/sol/elements/c/"><span class="sf-label">Carbon</span><strong class="sf-value">8.430</strong><span class="sf-unit">A(C)</span><span class="sf-sub">± 0.072 · −0.030 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/elements/n/"><span class="sf-label">Nitrogen</span><strong class="sf-value">7.883</strong><span class="sf-unit">A(N)</span><span class="sf-sub">± 0.182 · +0.053 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/elements/o/"><span class="sf-label">Oxygen</span><strong class="sf-value">8.660</strong><span class="sf-unit">A(O)</span><span class="sf-sub">± 0.101 · −0.030 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/"><span class="sf-label">C/O ratio</span><strong class="sf-value">0.59</strong><span class="sf-unit">number ratio</span><span class="sf-sub">± 0.17 · AGSS21 0.59</span></a></div>
+          <p class="panel-note">Abundances on the A(X) = log(N<sub>X</sub>/N<sub>H</sub>) + 12 scale. Each ± is the total uncertainty from the published budget. AGSS21 = Asplund, Amarsi &amp; Grevesse 2021, A&amp;A 653, A141. C/O ratio propagated from the C and O totals as independent.</p>
+        </section>
+
+        <section class="panel">
+          <p class="panel-eyebrow">Comparison with Asplund et al. 2021</p>
+          <p class="panel-title">Error forest: our value minus AGSS21</p>
+          <div class="forest-legend"><span>blue solid = statistical σ</span><span>blue wireframe = total σ</span><span style="color:#53d899">green band = AGSS21 ± σ</span></div>
+          <div class="product-forest"><div class="product-forest-inner">
+            <div class="forest"><span class="forest-label"><a href="/systems/sol/elements/fe/">Iron · Fe I</a><small>HARPS (molecfit) · VIS · 3D-NLTE · Reference Grade · n = 21</small></span><span class="track"><i class="ref" style="left:43.33%;width:13.34%"></i><i class="refline" style="left:50.0%"></i><i class="sysbar" style="left:44.25%;width:17.2%"></i><i class="bar" style="left:49.48%;width:6.74%"></i><i class="dot" style="left:52.85%"></i></span><span class="forest-value">+0.017 dex<small>A = 7.477 ± 0.052 · AGSS21 7.46 ± 0.04</small></span></div><div class="forest"><span class="forest-label"><a href="/systems/sol/elements/c/">Carbon · C I</a><small>Kitt Peak (molecfit) · VIS · 3D-NLTE · AGSS21 lines · n = 3</small></span><span class="track"><i class="ref" style="left:43.33%;width:13.34%"></i><i class="refline" style="left:50.0%"></i><i class="sysbar" style="left:33.02%;width:23.96%"></i><i class="bar" style="left:36.28%;width:17.44%"></i><i class="dot" style="left:45.0%"></i></span><span class="forest-value">-0.030 dex<small>A = 8.430 ± 0.072 · AGSS21 8.46 ± 0.04</small></span></div><div class="forest"><span class="forest-label"><a href="/systems/sol/elements/n/">Nitrogen · CN A–X</a><small>IAG FTS · NIR · molecular · Reference Grade · n = 244</small></span><span class="track"><i class="ref" style="left:38.33%;width:23.34%"></i><i class="refline" style="left:50.0%"></i><i class="sysbar" style="left:28.58%;width:60.5%"></i><i class="bar" style="left:52.17%;width:13.33%"></i><i class="dot" style="left:58.83%"></i></span><span class="forest-value">+0.053 dex<small>A = 7.883 ± 0.181 · AGSS21 7.83 ± 0.07</small></span></div><div class="forest"><span class="forest-label"><a href="/systems/sol/elements/o/">Oxygen · O I</a><small>Kitt Peak (Kurucz 2005) · red-optical · 3D-NLTE · n = 6</small></span><span class="track"><i class="ref" style="left:43.33%;width:13.34%"></i><i class="refline" style="left:50.0%"></i><i class="sysbar" style="left:28.1%;width:33.8%"></i><i class="bar" style="left:37.73%;width:14.54%"></i><i class="dot" style="left:45.0%"></i></span><span class="forest-value">-0.030 dex<small>A = 8.660 ± 0.101 · AGSS21 8.69 ± 0.04</small></span></div>
+            <div class="axis"><span></span><span class="ticks"><span class="tick" style="left:0.0%">-0.30</span><span class="tick" style="left:16.67%">-0.20</span><span class="tick" style="left:33.33%">-0.10</span><span class="tick" style="left:50.0%">+0.00</span><span class="tick" style="left:66.67%">+0.10</span><span class="tick" style="left:83.33%">+0.20</span><span class="tick" style="left:100.0%">+0.30</span></span><span class="forest-value">Δ A(X) dex</span></div>
+          </div></div>
+          <p class="panel-note">One headline product per element, chosen by the site's standing rule (Reference Grade first, then the most complete treatment, then line count, then uncertainty). Nitrogen's headline is molecular CN, the indicator that matches the literature's molecular nitrogen; atomic N I gives 7.89–7.91 and agrees.</p>
+        </section>
+
+      </div>
+
+      <article class="post-body">
+        <h2>Why the Sun first</h2>
+        <p>Before the Codex says anything about the stars that host planets, it has to recover the answer for the one star whose composition is already known. If our numbers for the Sun drift from the reference, the error is ours — in the spectra, the line data, the model atmospheres or the code — and it would follow us to every target. So the Sun is the gate.</p>
+
+        <h2>What it took</h2>
+        <p><strong>The spectra are prepared once, then measured.</strong> Every ground-based solar spectrum we use — HARPS, the Kitt Peak and IAG atlases, CRIRES+ — has the Earth's atmosphere removed across its whole range, and each band gets its own continuum placed against the model spectrum. Only then are abundances measured, from the same prepared spectra for every element.</p>
+        <p><strong>The physics follows the literature.</strong> Molecules (CN, CH, C<sub>2</sub>) are synthesised alongside the atomic lines in every band, and the departures from local thermodynamic equilibrium and the 3D atmosphere are applied line by line from published grids. Where a choice had to be made — how to place the continuum, which indicator leads for nitrogen — we checked how Asplund, Amarsi and Lodders did it, and did the same.</p>
+        <p><strong>Every number carries its full uncertainty.</strong> Sixteen components per product: line-to-line scatter, oscillator strengths, microturbulence, continuum placement (including the spread between two independent solar atlases), the atmosphere model, non-LTE and 3D effects (sized the way Asplund et al. 2021 size them), telluric residuals, blends and cross-instrument agreement. Nothing is left blank: a component we cannot price holds the product back instead of being set to zero.</p>
+
+        <h2>The result</h2>
+        <p>Iron, carbon, nitrogen and oxygen all land on the reference: metallicity [Fe/H] = +0.017, carbon −0.030, nitrogen +0.053 and oxygen −0.030 dex from Asplund et al. (2021), each well inside its error bar. The carbon-to-oxygen ratio, the quantity that matters most for the planets, comes out at 0.59 — the same as the reference value.</p>
+        <p>The full evidence — every band, every spectrum, every treatment, with its error budget — is on the <a href="/systems/sol/">Sun page</a> and in the element appendices for <a href="/systems/sol/elements/fe/">iron</a>, <a href="/systems/sol/elements/c/">carbon</a>, <a href="/systems/sol/elements/n/">nitrogen</a> and <a href="/systems/sol/elements/o/">oxygen</a>.</p>
+
+        <h2>What's next</h2>
+        <p>With the Sun calibrated, the same pipeline turns to the stars the Codex exists for, starting with 55 Cancri A.</p>
+      </article>
+
+      <aside class="post-nav">
+        <a href="/mission-log/">← Back to Mission Log</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+
+  <script src="/assets/js/starfield.js"></script>
+  <script src="/assets/js/codex.js"></script>
+</body>
+</html>
