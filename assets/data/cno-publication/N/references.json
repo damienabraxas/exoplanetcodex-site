@@ -118,8 +118,8 @@
       ],
       "roles": [
         "The N I registry uses the Amarsi GALAH/PySME 1D-NLTE departure grid. The solar 3D-NLTE atomic analysis is a separate source, not a full-3D correction applied by this feed.",
-        "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
-        "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
+        "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both",
+        "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
       ]
     },
     {
@@ -139,8 +139,8 @@
       ],
       "roles": [
         "The N I registry uses the Amarsi GALAH/PySME 1D-NLTE departure grid. The solar 3D-NLTE atomic analysis is a separate source, not a full-3D correction applied by this feed.",
-        "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
-        "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
+        "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both",
+        "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
       ]
     },
     {
@@ -160,8 +160,8 @@
       ],
       "roles": [
         "The N I registry uses the Amarsi GALAH/PySME 1D-NLTE departure grid. The solar 3D-NLTE atomic analysis is a separate source, not a full-3D correction applied by this feed.",
-        "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
-        "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
+        "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both",
+        "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
       ]
     },
     {
@@ -382,7 +382,7 @@
       ]
     },
     {
-      "subject": "N-products-7370f18e3abd",
+      "subject": "N-products-ba33ebeb2559",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -395,35 +395,7 @@
       ]
     },
     {
-      "subject": "N-products-7370f18e3abd",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "Amarsi2020_N",
-        "solar_3d_N",
-        "N_grid_deposit"
-      ],
-      "claim": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
-      "evidence": [
-        "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json",
-        "config/constants.py",
-        "data/catalog/model_registry.csv"
-      ]
-    },
-    {
-      "subject": "N-products-13ce607c3f33",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "wiese_fuhr2006",
-        "TachievFroeseFischer2002"
-      ],
-      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
-      "evidence": [
-        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
-      ]
-    },
-    {
-      "subject": "N-products-13ce607c3f33",
+      "subject": "N-products-ba33ebeb2559",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -434,7 +406,7 @@
       ]
     },
     {
-      "subject": "N-products-b03d15bf627a",
+      "subject": "N-products-34b552f38f15",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -447,7 +419,7 @@
       ]
     },
     {
-      "subject": "N-products-b03d15bf627a",
+      "subject": "N-products-34b552f38f15",
       "layer": "Model and grid sources",
       "reference_ids": [
         "Amarsi2020_N",
@@ -460,7 +432,7 @@
       ]
     },
     {
-      "subject": "N-products-e57946a904b1",
+      "subject": "N-products-dacd11127c03",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -473,7 +445,7 @@
       ]
     },
     {
-      "subject": "N-products-e57946a904b1",
+      "subject": "N-products-dacd11127c03",
       "layer": "Model and grid sources",
       "reference_ids": [
         "Amarsi2020_N",
@@ -488,7 +460,7 @@
       ]
     },
     {
-      "subject": "N-products-7f14457e2c24",
+      "subject": "N-products-b8f600945b9a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -501,7 +473,7 @@
       ]
     },
     {
-      "subject": "N-products-7f14457e2c24",
+      "subject": "N-products-b8f600945b9a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -512,7 +484,7 @@
       ]
     },
     {
-      "subject": "N-products-b256601d3d35",
+      "subject": "N-products-5f0e1db99ddf",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -525,7 +497,7 @@
       ]
     },
     {
-      "subject": "N-products-b256601d3d35",
+      "subject": "N-products-5f0e1db99ddf",
       "layer": "Model and grid sources",
       "reference_ids": [
         "Amarsi2020_N",
@@ -538,7 +510,7 @@
       ]
     },
     {
-      "subject": "N-products-fafd6c656b00",
+      "subject": "N-products-0dfb1baa2bbc",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -551,7 +523,7 @@
       ]
     },
     {
-      "subject": "N-products-fafd6c656b00",
+      "subject": "N-products-0dfb1baa2bbc",
       "layer": "Model and grid sources",
       "reference_ids": [
         "Amarsi2020_N",
@@ -566,7 +538,7 @@
       ]
     },
     {
-      "subject": "N-products-009a2e298637",
+      "subject": "N-products-af27659f2bea",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -579,7 +551,7 @@
       ]
     },
     {
-      "subject": "N-products-009a2e298637",
+      "subject": "N-products-af27659f2bea",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -590,7 +562,7 @@
       ]
     },
     {
-      "subject": "N-products-a947093a385f",
+      "subject": "N-products-74c0cd7f098d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -603,7 +575,7 @@
       ]
     },
     {
-      "subject": "N-products-a947093a385f",
+      "subject": "N-products-74c0cd7f098d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "Amarsi2020_N",
@@ -613,6 +585,168 @@
       "claim": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both",
       "evidence": [
         "data/results/rya1230/legs/unit05/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt"
+      ]
+    },
+    {
+      "subject": "N-products-e11f215d2461",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "N-products-e11f215d2461",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "claim": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
+      "evidence": [
+        "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json",
+        "config/constants.py",
+        "data/catalog/model_registry.csv"
+      ]
+    },
+    {
+      "subject": "N-quarantine-fc1525ccd677",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "N-quarantine-fc1525ccd677",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "claim": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
+      "evidence": [
+        "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json",
+        "config/constants.py",
+        "data/catalog/model_registry.csv"
+      ]
+    },
+    {
+      "subject": "N-quarantine-9cb72bc628d8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "N-quarantine-9cb72bc628d8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "claim": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
+      "evidence": [
+        "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json",
+        "config/constants.py",
+        "data/catalog/model_registry.csv"
+      ]
+    },
+    {
+      "subject": "N-quarantine-35945ad2b73d",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "N-quarantine-35945ad2b73d",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "N-quarantine-4d3667606a8f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "N-quarantine-4d3667606a8f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "claim": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both",
+      "evidence": [
+        "data/results/rya1230/legs/unit02/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+      ]
+    },
+    {
+      "subject": "N-quarantine-66d14a326159",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002"
+      ],
+      "claim": "Atomic N I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "N-quarantine-66d14a326159",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "claim": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution.",
+      "evidence": [
+        "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json",
+        "config/constants.py",
+        "data/catalog/model_registry.csv"
       ]
     }
   ],
@@ -722,7 +856,7 @@
       "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "N-products-7370f18e3abd",
+      "publication_id": "N-products-ba33ebeb2559",
       "source_bucket": "products",
       "source_index": 4,
       "identity": {
@@ -732,9 +866,9 @@
         "instrument": "iag_fts_solar_atlas",
         "holding": "solar_iag",
         "tier": "ALL",
-        "selector": "SET-AGSS21",
+        "selector": "SET-LBP25",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -743,14 +877,12 @@
         "nist_asd",
         "wiese_fuhr2006",
         "TachievFroeseFischer2002",
-        "Amarsi2020_N",
-        "solar_3d_N",
-        "N_grid_deposit"
+        "gerber2023"
       ],
-      "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "N-products-13ce607c3f33",
+      "publication_id": "N-products-34b552f38f15",
       "source_bucket": "products",
       "source_index": 5,
       "identity": {
@@ -762,7 +894,7 @@
         "tier": "ALL",
         "selector": "SET-LBP25",
         "route": "SYNTH",
-        "treatment": "1D-LTE",
+        "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
         "indicator": null
       },
@@ -771,12 +903,14 @@
         "nist_asd",
         "wiese_fuhr2006",
         "TachievFroeseFischer2002",
-        "gerber2023"
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
       ],
-      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+      "model_note": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
     },
     {
-      "publication_id": "N-products-b03d15bf627a",
+      "publication_id": "N-products-dacd11127c03",
       "source_bucket": "products",
       "source_index": 6,
       "identity": {
@@ -788,34 +922,6 @@
         "tier": "ALL",
         "selector": "SET-LBP25",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "TachievFroeseFischer2002",
-        "Amarsi2020_N",
-        "solar_3d_N",
-        "N_grid_deposit"
-      ],
-      "model_note": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
-    },
-    {
-      "publication_id": "N-products-e57946a904b1",
-      "source_bucket": "products",
-      "source_index": 7,
-      "identity": {
-        "element": "N",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -832,7 +938,33 @@
       "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
     },
     {
-      "publication_id": "N-products-7f14457e2c24",
+      "publication_id": "N-products-b8f600945b9a",
+      "source_bucket": "products",
+      "source_index": 7,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-LBP25",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "N-products-5f0e1db99ddf",
       "source_bucket": "products",
       "source_index": 8,
       "identity": {
@@ -844,6 +976,62 @@
         "tier": "ALL",
         "selector": "SET-LBP25",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "model_note": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
+    },
+    {
+      "publication_id": "N-products-0dfb1baa2bbc",
+      "source_bucket": "products",
+      "source_index": 9,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-LBP25",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
+    },
+    {
+      "publication_id": "N-products-af27659f2bea",
+      "source_bucket": "products",
+      "source_index": 10,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-LBP25",
+        "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
@@ -858,15 +1046,15 @@
       "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "N-products-b256601d3d35",
+      "publication_id": "N-products-74c0cd7f098d",
       "source_bucket": "products",
-      "source_index": 9,
+      "source_index": 11,
       "identity": {
         "element": "N",
         "ion": "I",
         "band": "red-optical",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "ALL",
         "selector": "SET-LBP25",
         "route": "SYNTH",
@@ -886,9 +1074,147 @@
       "model_note": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
     },
     {
-      "publication_id": "N-products-fafd6c656b00",
+      "publication_id": "N-products-e11f215d2461",
       "source_bucket": "products",
-      "source_index": 10,
+      "source_index": 12,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-LBP25",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
+    },
+    {
+      "publication_id": "N-quarantine-fc1525ccd677",
+      "source_bucket": "quarantine",
+      "source_index": 0,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
+    },
+    {
+      "publication_id": "N-quarantine-9cb72bc628d8",
+      "source_bucket": "quarantine",
+      "source_index": 1,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
+    },
+    {
+      "publication_id": "N-quarantine-35945ad2b73d",
+      "source_bucket": "quarantine",
+      "source_index": 2,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "N-quarantine-4d3667606a8f",
+      "source_bucket": "quarantine",
+      "source_index": 3,
+      "identity": {
+        "element": "N",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "TachievFroeseFischer2002",
+        "Amarsi2020_N",
+        "solar_3d_N",
+        "N_grid_deposit"
+      ],
+      "model_note": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
+    },
+    {
+      "publication_id": "N-quarantine-66d14a326159",
+      "source_bucket": "quarantine",
+      "source_index": 4,
       "identity": {
         "element": "N",
         "ion": "I",
@@ -912,60 +1238,6 @@
         "N_grid_deposit"
       ],
       "model_note": "Feed label: Synth · 1D-NLTE · Bergemann. Registered source: Amarsi/PySME N I 1D-NLTE. The generic Bergemann label is retained as supplied and is not used as a bibliographic attribution."
-    },
-    {
-      "publication_id": "N-products-009a2e298637",
-      "source_bucket": "products",
-      "source_index": 11,
-      "identity": {
-        "element": "N",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-LBP25",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "TachievFroeseFischer2002",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
-    },
-    {
-      "publication_id": "N-products-a947093a385f",
-      "source_bucket": "products",
-      "source_index": 12,
-      "identity": {
-        "element": "N",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-LBP25",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "TachievFroeseFischer2002",
-        "Amarsi2020_N",
-        "solar_3d_N",
-        "N_grid_deposit"
-      ],
-      "model_note": "Feed label: Synth · 3D-NLTE · Amarsi. Cited per-line solar correction, Amarsi et al. 2020 Table 3 (3D non-LTE minus 1D LTE); not an in-transfer 3D-NLTE result. Run provenance: Amarsi, Grevesse, Grumer, Asplund, Barklem & Collet 2020, A&A 636, A120, Table 3 (solar, disk-centre EWs) -- 3D non-LTE (STAGGER) - 1D LTE (MARCS); SOLAR per-line additive correction, same EWs in both"
     }
   ],
   "source_paths": [
@@ -979,6 +1251,7 @@
     "data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json",
     "data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json",
     "data/refs/bibliography.csv",
+    "data/results/rya1230/legs/unit02/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1230/legs/unit03/nominal/NI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1230/legs/unit04/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1230/legs/unit05/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt",

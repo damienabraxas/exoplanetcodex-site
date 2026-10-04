@@ -25,6 +25,17 @@ import math
 #: diagnostics but never headline a band, the page or the Sun table.
 REJECTED_SELECTORS = ('MOL-CN_red', 'MOL-NH_AX')
 
+#: PRIMARY INDICATOR per element (Ryan, 2026-10-03, RYA-1232). When an element has an
+#: entry, the HEADLINE is the best product of that indicator; the others stay on the
+#: appendix. Nitrogen, checked against the LOCAL literature: Asplund+2021 (Table 3) and
+#: Amarsi+2021 COMBINE atomic N I (7.77, 3D-NLTE) and molecular CN/NH (7.88/7.91) into 7.83;
+#: Lodders+2025 use the two least-blended N I lines 8629/8683 (7.94); Mashonkina+2024 7.88.
+#: Our CN A-X (7.84-7.98) agrees with the literature's molecular value; our atomic N I
+#: (8.08-8.15 on the IAG-anchored continuum) sits 0.15-0.38 dex ABOVE every published N I
+#: value -- an unresolved defect of ours (line choice in the CN forest is the first suspect),
+#: not literature practice. Until it is resolved, only the validated indicator headlines.
+PRIMARY_SELECTORS = {'N': ('MOL-CN_AX_IR',)}
+
 BAND_ORDER = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H', 'J', 'K']
 
 
@@ -90,15 +101,19 @@ def best_in_band(products, band):
     return min(rows, key=rank_key) if rows else None
 
 
-def headline(products):
+def headline(products, element=None):
     """The Sun-table / appendix-top number: VIS's best Reference Grade product; when VIS has
-    none, the best product of any other band by the same rank.
+    none, the best product of any other band by the same rank. For an element with a
+    PRIMARY_SELECTORS entry, only that indicator's products compete.
 
     A VIS product that is not Reference Grade does not take the headline over a Reference
     Grade product in another band -- "best VIS number if possible" is read as: if VIS
     carries a product of headline standard.
     """
     rows = [p for p in products if eligible_for_headline(p)]
+    prim = PRIMARY_SELECTORS.get(element or (rows[0].get('element') if rows else None))
+    if prim:
+        rows = [p for p in rows if str(p.get('selector') or '') in prim] or rows
     if not rows:
         return None
     vis = best_in_band(rows, 'VIS')
