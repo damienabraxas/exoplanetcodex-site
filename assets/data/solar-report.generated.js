@@ -1482,9 +1482,9 @@ window.SOLAR_REPORT = {
         "registry": "data/registry/problem_children.csv",
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
-        "registryCommit": "e60a7e928343b1b74fef4c88698fff9ac2af8f89",
-        "scienceGit": "c971602d5bc290c1a5567b4c8d8b809cded46ced",
-        "generatedAt": "2026-10-09T00:19:01+00:00"
+        "registryCommit": "1b1818d01100224fe984eb79cbd2fc6feb74e467",
+        "scienceGit": "1b1818d01100224fe984eb79cbd2fc6feb74e467",
+        "generatedAt": "2026-10-09T00:44:14+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv"
     },
@@ -1600,7 +1600,7 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "published · reference grade · rya-587 budget",
       "tier": "gf_floor",
-      "method": "kpno_solar_atlas VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.136)",
+      "method": "kpno_solar_atlas VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.138)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
@@ -3950,7 +3950,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "c971602d5bc290c1a5567b4c8d8b809cded46ced",
+    "gitCommit": "1b1818d01100224fe984eb79cbd2fc6feb74e467",
     "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-09-24T19:24:31+00:00"
