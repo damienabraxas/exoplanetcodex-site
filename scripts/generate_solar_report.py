@@ -79,6 +79,48 @@ def git_head(root: Path) -> str:
     ).strip()
 
 
+#: Ryan, 2026-10-09: the Sun table's Status column is for VISITORS -- no Linear tickets, no
+#: internal verdict jargon ("rya-587 budget", "gold · generated", "arbiter"). Four words,
+#: derived from the data, never typed per element.
+PUBLIC_STATUS = ("Published", "In progress", "Pending", "Curation owed")
+
+
+def public_status(item: dict, science: Path) -> dict:
+    """Published  -- the row's value comes from a published feed product, or the element has
+                     its published appendix page (Fe I / Fe II);
+       In progress -- a feed or appendix exists but nothing is published yet (we are on it);
+       Pending    -- measured with a passing verdict, not yet through the publication pipeline;
+       Curation owed -- everything else.
+    The internal status is kept as `statusDetail` (search text, never rendered)."""
+    raw = str(item.get("status") or "")
+    sym = item.get("symbol")
+    feed = science / f"data/products/solar/{sym}.json"
+    if raw.startswith("published") or raw in ("gold \u00b7 generated", "arbiter \u00b7 generated"):
+        label = "Published"
+    elif item.get("appendixPath") or feed.exists():
+        label = "In progress"
+    elif raw == "pass":
+        label = "Pending"
+    else:
+        label = "Curation owed"
+    return {**item, "status": label, "statusDetail": raw}
+
+
+def stamp_cache_bust(site: Path = SITE_ROOT) -> None:
+    """Rewrite the Sun page's `?v=` on the report data + renderer to each file's own content
+    hash. RYA-1230 added the cache-bust BY HAND (`?v=5fee27a1`) and nothing ever updated it,
+    so every regenerated report since was masked by the cached copy -- Si published with its
+    appendix and the live Sun table still rendered the pre-Si data (2026-10-09)."""
+    import hashlib
+    import re as _re
+    page = site / "systems/sol/index.html"
+    html = page.read_text(encoding="utf-8")
+    for rel in ("assets/data/solar-report.generated.js", "assets/js/solar-report.js"):
+        h = hashlib.sha256((site / rel).read_bytes()).hexdigest()[:12]
+        html = _re.sub(r'(/' + _re.escape(rel) + r')\?v=[0-9A-Za-z]+', r'\1?v=' + h, html)
+    page.write_text(html, encoding="utf-8")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--science-root", required=True, type=Path)
@@ -465,7 +507,7 @@ def main() -> None:
         },
         "pageReferenceKeys":["asplund2021","lodders2025","reiners2016","hase2010"],
         "references":[{"name":"Asplund et al. 2021","value":7.46,"sigma":0.04},{"name":"Lodders et al. 2025","value":7.51,"sigma":0.05}],
-        "elements": iron_rows + other_elements,
+        "elements": [public_status(e, science) for e in iron_rows + other_elements],
         "alEvidence": {
             "products": al_products,
             "coverageGrid": al_coverage,
@@ -500,3 +542,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    stamp_cache_bust()

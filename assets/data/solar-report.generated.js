@@ -125,7 +125,7 @@ window.SOLAR_REPORT = {
       "symbol": "Fe",
       "ion": "I",
       "name": "Iron",
-      "status": "gold · generated",
+      "status": "Published",
       "appendixPath": "/systems/sol/elements/fe/",
       "referenceKeys": [
         "asplund2021",
@@ -306,7 +306,8 @@ window.SOLAR_REPORT = {
         ],
         "sentence": "44 of 58 near-UV Fe I lines carry a citable NIST accuracy class; 20 of those are in the C/C+/D/D+/E classes."
       },
-      "downloadPath": "/assets/data/solar/FeI_perline.csv"
+      "downloadPath": "/assets/data/solar/FeI_perline.csv",
+      "statusDetail": "gold · generated"
     },
     {
       "atomicNumber": 26,
@@ -314,7 +315,7 @@ window.SOLAR_REPORT = {
       "ion": "II",
       "name": "Iron",
       "childOf": "Fe I",
-      "status": "arbiter · generated",
+      "status": "Published",
       "measurementRole": "ionization arbiter / diagnostic",
       "appendixPath": "/systems/sol/elements/fe-ii/",
       "referenceKeys": [
@@ -1484,16 +1485,17 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "1b1818d01100224fe984eb79cbd2fc6feb74e467",
         "scienceGit": "1b1818d01100224fe984eb79cbd2fc6feb74e467",
-        "generatedAt": "2026-10-09T00:44:14+00:00"
+        "generatedAt": "2026-10-09T00:57:30+00:00"
       },
-      "downloadPath": "/assets/data/solar/FeII_perline.csv"
+      "downloadPath": "/assets/data/solar/FeII_perline.csv",
+      "statusDetail": "arbiter · generated"
     },
     {
       "atomicNumber": 3,
       "symbol": "Li",
       "ion": "I",
       "name": "Lithium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "upper_limit",
       "method": "EW: Li I 6707 (single line, UPPER LIMIT)",
       "asplund": 1.05,
@@ -1503,14 +1505,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": null,
         "lineCount": 1.0
       },
-      "delta": -0.323
+      "delta": -0.323,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 6,
       "symbol": "C",
       "ion": "I",
       "name": "Carbon",
-      "status": "published · reference grade · rya-587 budget",
+      "status": "Published",
       "tier": "gold",
       "method": "kpno_solar_atlas VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.163)",
       "asplund": 8.46,
@@ -1521,14 +1524,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.0719,
         "lineCount": 3
       },
-      "delta": -0.03
+      "delta": -0.03,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 7,
       "symbol": "N",
       "ion": "I",
       "name": "Nitrogen",
-      "status": "published · reference grade · rya-587 budget",
+      "status": "Published",
       "tier": "owed",
       "method": "iag_fts_solar_atlas NIR · MOL-CN_AX_IR · 1D-LTE (Reference Grade, N.json v1.72)",
       "asplund": 7.83,
@@ -1539,14 +1543,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.1815,
         "lineCount": 244
       },
-      "delta": 0.053
+      "delta": 0.053,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 8,
       "symbol": "O",
       "ion": "I",
       "name": "Oxygen",
-      "status": "published · reference grade · rya-587 budget",
+      "status": "Published",
       "tier": "gold",
       "method": "kpno_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.74)",
       "asplund": 8.69,
@@ -1557,48 +1562,52 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.1014,
         "lineCount": 6
       },
-      "delta": -0.03
+      "delta": -0.03,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 11,
       "symbol": "Na",
       "ion": "I",
       "name": "Sodium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 6.24,
-      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank"
+      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 12,
       "symbol": "Mg",
       "ion": "I",
       "name": "Magnesium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW present; no independent-gf line survives the graded cull",
       "asplund": 7.55,
-      "measurementNote": "EW present; no independent-gf line survives the graded cull"
+      "measurementNote": "EW present; no independent-gf line survives the graded cull",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 13,
       "symbol": "Al",
       "ion": "I",
       "name": "Aluminium",
-      "status": "curation-owed",
+      "status": "In progress",
       "tier": "owed",
       "method": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 6.43,
       "measurementNote": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
-      "appendixPath": "/systems/sol/elements/al/"
+      "appendixPath": "/systems/sol/elements/al/",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 14,
       "symbol": "Si",
       "ion": "I",
       "name": "Silicon",
-      "status": "published · reference grade · rya-587 budget",
+      "status": "Published",
       "tier": "gf_floor",
       "method": "kpno_solar_atlas VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.138)",
       "asplund": 7.51,
@@ -1609,14 +1618,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.0736,
         "lineCount": 7
       },
-      "delta": -0.021
+      "delta": -0.021,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 15,
       "symbol": "P",
       "ion": "I",
       "name": "Phosphorus",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "kittpeak: P I 10581/10596 near-IR multiplet",
       "asplund": 5.41,
@@ -1626,14 +1636,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": null,
         "lineCount": 2.0
       },
-      "delta": 1.2
+      "delta": 1.2,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 16,
       "symbol": "S",
       "ion": "I",
       "name": "Sulfur",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "synthesis: S I 6743.53 + 6757.15 windows, gf=Costa Silva+2020 (A&A 634 A136) Table1, NLTE Amarsi 2025 (RYA-492)",
       "asplund": 7.12,
@@ -1643,14 +1654,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.045,
         "lineCount": 2.0
       },
-      "delta": 0.366
+      "delta": 0.366,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 19,
       "symbol": "K",
       "ion": "I",
       "name": "Potassium",
-      "status": "pass",
+      "status": "Pending",
       "tier": "gold",
       "method": "kittpeak: K I 7699 (clean; 7665 in the telluric O2 A-band) — NLTE-wired",
       "asplund": 5.07,
@@ -1660,25 +1672,27 @@ window.SOLAR_REPORT = {
         "sigmaTotal": null,
         "lineCount": 1.0
       },
-      "delta": 0.029
+      "delta": 0.029,
+      "statusDetail": "pass"
     },
     {
       "atomicNumber": 20,
       "symbol": "Ca",
       "ion": "I",
       "name": "Calcium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 6.3,
-      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank"
+      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 21,
       "symbol": "Sc",
       "ion": "II",
       "name": "Scandium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "gold",
       "method": "kittpeak: Sc II 4246 (blue-edge, HFS)",
       "asplund": 3.14,
@@ -1688,25 +1702,27 @@ window.SOLAR_REPORT = {
         "sigmaTotal": null,
         "lineCount": 1.0
       },
-      "delta": 0.063
+      "delta": 0.063,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 22,
       "symbol": "Ti",
       "ion": "I",
       "name": "Titanium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW: 10 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 4.97,
-      "measurementNote": "EW: 10 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank"
+      "measurementNote": "EW: 10 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 23,
       "symbol": "V",
       "ion": "I",
       "name": "Vanadium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "HFS synthesis LTE: V I 6 lines — NLTE-VOID (no model atom)",
       "asplund": 3.9,
@@ -1716,14 +1732,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.029,
         "lineCount": 6.0
       },
-      "delta": 0.017
+      "delta": 0.017,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 24,
       "symbol": "Cr",
       "ion": "I",
       "name": "Chromium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "gf_floor",
       "method": "EW: 7 line(s)",
       "asplund": 5.62,
@@ -1733,14 +1750,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": null,
         "lineCount": 7.0
       },
-      "delta": 0.402
+      "delta": 0.402,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 25,
       "symbol": "Mn",
       "ion": "I",
       "name": "Manganese",
-      "status": "pass",
+      "status": "Pending",
       "tier": "gold",
       "method": "HFS synthesis: Mn I 3 lines (6013/6016/6021, Den Hartog e6S→z6P), gf=Den Hartog+2011 (MED), NLTE live Amarsi HFS-resolved",
       "asplund": 5.42,
@@ -1750,14 +1768,15 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.154,
         "lineCount": 3.0
       },
-      "delta": 0.046
+      "delta": 0.046,
+      "statusDetail": "pass"
     },
     {
       "atomicNumber": 27,
       "symbol": "Co",
       "ion": "I",
       "name": "Cobalt",
-      "status": "pass",
+      "status": "Pending",
       "tier": "owed",
       "method": "synthesis: Co I red HFS-resolved flux fit (5 lines, HARPS; blends modelled) + per-line Gerber 1D-NLTE (RYA-534 deck)",
       "asplund": 4.94,
@@ -1767,25 +1786,27 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.063,
         "lineCount": 5.0
       },
-      "delta": 0.02
+      "delta": 0.02,
+      "statusDetail": "pass"
     },
     {
       "atomicNumber": 28,
       "symbol": "Ni",
       "ion": "I",
       "name": "Nickel",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 6.2,
-      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank"
+      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 29,
       "symbol": "Cu",
       "ion": "I",
       "name": "Copper",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "HFS synthesis: Cu I 5 lines (5105/5218/5220/5700/5782), gf=Kock&Richter, NLTE vendored RYA-402 b-factor (live .grd offline)",
       "asplund": 4.18,
@@ -1795,47 +1816,51 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.139,
         "lineCount": 5.0
       },
-      "delta": 0.165
+      "delta": 0.165,
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 38,
       "symbol": "Sr",
       "ion": "II",
       "name": "Strontium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
       "asplund": 2.83,
-      "measurementNote": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank"
+      "measurementNote": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 39,
       "symbol": "Y",
       "ion": "II",
       "name": "Yttrium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW present; no independent-gf line survives the graded cull",
       "asplund": 2.21,
-      "measurementNote": "EW present; no independent-gf line survives the graded cull"
+      "measurementNote": "EW present; no independent-gf line survives the graded cull",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 40,
       "symbol": "Zr",
       "ion": "II",
       "name": "Zirconium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW present; no independent-gf line survives the graded cull",
       "asplund": 2.59,
-      "measurementNote": "EW present; no independent-gf line survives the graded cull"
+      "measurementNote": "EW present; no independent-gf line survives the graded cull",
+      "statusDetail": "curation-owed"
     },
     {
       "atomicNumber": 56,
       "symbol": "Ba",
       "ion": "II",
       "name": "Barium",
-      "status": "pass",
+      "status": "Pending",
       "tier": "owed",
       "method": "synthesis: Ba II 5853.668 in-window blend fit (Turbospectrum, HFS + full VALD3 in-window block, chi2 profile fit) + Engine-A Korotin2015 1D-NLTE delta",
       "asplund": 2.27,
@@ -1845,18 +1870,20 @@ window.SOLAR_REPORT = {
         "sigmaTotal": 0.016,
         "lineCount": 1.0
       },
-      "delta": -0.033
+      "delta": -0.033,
+      "statusDetail": "pass"
     },
     {
       "atomicNumber": 63,
       "symbol": "Eu",
       "ion": "II",
       "name": "Europium",
-      "status": "curation-owed",
+      "status": "Curation owed",
       "tier": "owed",
       "method": "EW present; no independent-gf line survives the graded cull",
       "asplund": 0.52,
-      "measurementNote": "EW present; no independent-gf line survives the graded cull"
+      "measurementNote": "EW present; no independent-gf line survives the graded cull",
+      "statusDetail": "curation-owed"
     }
   ],
   "alEvidence": {

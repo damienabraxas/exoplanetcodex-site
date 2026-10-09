@@ -52,7 +52,7 @@
       var role = element.measurementRole
         ? '<span class="solar-row-role">' + esc(element.measurementRole) + lineCount + '</span>'
         : (element.tier ? '<span class="solar-row-tier">' + esc(element.tier) + lineCount + '</span>' : '');
-      var searchText = [element.symbol, element.ion, element.name, element.status, element.tier, element.measurementNote].join(' ').toLowerCase();
+      var searchText = [element.symbol, element.ion, element.name, element.status, element.statusDetail, element.tier, element.measurementNote].join(' ').toLowerCase();
       return '<tr data-element-search="' + esc(searchText) + '" class="' + (hasAppendix ? 'has-appendix' : 'no-appendix') + (element.childOf ? ' solar-species-child' : '') + '">' +
         '<td class="solar-z">' + esc(element.atomicNumber) + '</td>' +
         '<td>' + label + '</td><td>' + esc(element.name) + role + '</td>' +
@@ -184,10 +184,13 @@
     // "gf floor owed" flag is withdrawn -- the RCA measured the gf term at 0.000 dex, and every
     // C/N/O headline now carries a full RYA-587 budget.
     var PRELIM = {};
-    ['C', 'N', 'O'].forEach(function (sym) {
-      var e = (report.elements || []).filter(function (x) {
-        return x.symbol === sym && x.ion === 'I' && x.primaryValue; })[0];
-      if (!e) return;
+    // Every PUBLISHED element with an appendix page gets a card (was hard-coded C/N/O, so
+    // Si -- published with its own appendix -- had no way in from the top of the page).
+    (report.elements || []).filter(function (x) {
+      return x.symbol !== 'Fe' && x.ion === 'I' && x.primaryValue && x.appendixPath &&
+             x.status === 'Published';
+    }).forEach(function (e) {
+      var sym = e.symbol;
       var pv = e.primaryValue;
       var d = (e.delta != null) ? (e.delta > 0 ? '+' : '') + e.delta.toFixed(3) + ' vs AGSS21' : '';
       cards.push({ label: e.name, value: pv.value.toFixed(3),
