@@ -2,7 +2,7 @@
 %ìåãû ReportLab Generated PDF document (opensource)
 1 0 obj
 <<
-/F1 2 0 R /F2+0 185 0 R /F3+0 189 0 R
+/F1 2 0 R /F2+0 180 0 R /F3+0 184 0 R
 >>
 endobj
 2 0 obj
@@ -12,7 +12,7 @@ endobj
 endobj
 3 0 obj
 <<
-/Contents 193 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 192 0 R /Resources <<
+/Contents 188 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 187 0 R /Resources <<
 /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >> /Rotate 0 /Trans <<
 
@@ -22,7 +22,7 @@ endobj
 endobj
 4 0 obj
 <<
-/Contents 194 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 192 0 R /Resources <<
+/Contents 189 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 187 0 R /Resources <<
 /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >> /Rotate 0 /Trans <<
 
@@ -33,7 +33,7 @@ endobj
 5 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/docs/co_indicator_strategy.md)
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/docs/co_indicator_strategy.md)
 >> /Border [ 0 0 0 ] /Rect [ 46 506.0898 145.2769 516.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -54,14 +54,14 @@ endobj
 8 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json)
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json)
 >> /Border [ 0 0 0 ] /Rect [ 46 423.0898 133.9565 433.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 9 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/audit/rya1214_cno_products/agss21_indicator_gf_check.csv)
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/audit/rya1214_cno_products/agss21_indicator_gf_check.csv)
 >> /Border [ 0 0 0 ] /Rect [ 142.5391 423.0898 227.9512 433.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -110,14 +110,14 @@ endobj
 16 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/products/solar/N.json)
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/products/solar/N.json)
 >> /Border [ 0 0 0 ] /Rect [ 46 138.7648 152.418 151.7648 ] /Subtype /Link /Type /Annot
 >>
 endobj
 17 0 obj
 <<
 /Annots [ 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 
-  15 0 R 16 0 R ] /Contents 195 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 192 0 R /Resources <<
+  15 0 R 16 0 R ] /Contents 190 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 187 0 R /Resources <<
 /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >> /Rotate 0 
   /Trans <<
@@ -325,35 +325,35 @@ endobj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 476.519 295.0898 489.2676 305.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 92.65234 282.0898 105.4009 292.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 47 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2021_Table2)
->> /Border [ 0 0 0 ] /Rect [ 494.9893 295.0898 507.7378 305.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 111.1226 282.0898 123.8711 292.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 48 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
->> /Border [ 0 0 0 ] /Rect [ 513.4595 295.0898 526.208 305.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 129.5928 282.0898 142.3413 292.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 49 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Brooke2014_CN)
->> /Border [ 0 0 0 ] /Rect [ 46 282.0898 64.47461 292.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 148.063 282.0898 166.5376 292.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 50 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-sneden2014_cn)
->> /Border [ 0 0 0 ] /Rect [ 70.19629 282.0898 88.6709 292.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 172.2593 282.0898 190.7339 292.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 51 0 obj
@@ -395,255 +395,269 @@ endobj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 51.72168 216.0898 64.47021 226.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 488.0063 229.0898 500.7549 239.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 57 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2021_Table2)
->> /Border [ 0 0 0 ] /Rect [ 70.19189 216.0898 82.94043 226.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 506.4766 229.0898 519.2251 239.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 58 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
->> /Border [ 0 0 0 ] /Rect [ 88.66211 216.0898 101.4106 226.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 524.9468 229.0898 537.6953 239.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 59 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Brooke2014_CN)
->> /Border [ 0 0 0 ] /Rect [ 107.1323 216.0898 125.6069 226.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 46 216.0898 58.74854 226.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 60 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-sneden2014_cn)
->> /Border [ 0 0 0 ] /Rect [ 131.3286 216.0898 149.8032 226.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
+>> /Border [ 0 0 0 ] /Rect [ 64.47021 216.0898 77.21875 226.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 61 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 490.9287 196.0898 503.6772 206.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 46 183.0898 58.74854 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 62 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 509.3989 196.0898 522.1475 206.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 64.47021 183.0898 77.21875 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 63 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 527.8691 196.0898 540.6177 206.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 82.94043 183.0898 95.68896 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 64 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 46 183.0898 58.74854 193.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 101.4106 183.0898 114.1592 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 65 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
->> /Border [ 0 0 0 ] /Rect [ 64.47021 183.0898 77.21875 193.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 119.8809 183.0898 132.6294 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 66 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 46 150.0898 58.74854 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 138.3511 183.0898 151.0996 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 67 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 64.47021 150.0898 77.21875 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 156.8213 183.0898 169.5698 193.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 68 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 82.94043 150.0898 95.68896 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
+>> /Border [ 0 0 0 ] /Rect [ 502.873 163.0898 515.6216 173.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 69 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 101.4106 150.0898 114.1592 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 521.3433 163.0898 534.0918 173.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 70 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 119.8809 150.0898 132.6294 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 46 150.0898 58.74854 160.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 71 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 138.3511 150.0898 151.0996 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 64.47021 150.0898 77.21875 160.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 72 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 156.8213 150.0898 169.5698 160.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 82.94043 150.0898 95.68896 160.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 73 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 501.5327 130.0898 514.2812 140.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 101.4106 150.0898 114.1592 160.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 74 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 520.0029 130.0898 532.7515 140.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 119.8809 150.0898 132.6294 160.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 75 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 46 117.0898 58.74854 127.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
+>> /Border [ 0 0 0 ] /Rect [ 110.2524 117.0898 123.001 127.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 76 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 64.47021 117.0898 77.21875 127.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 128.7227 117.0898 141.4712 127.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 77 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 82.94043 117.0898 95.68896 127.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 147.1929 117.0898 159.9414 127.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 78 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 101.4106 117.0898 114.1592 127.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 165.6631 117.0898 178.4116 127.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 79 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 119.8809 117.0898 132.6294 127.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
+>> /Border [ 0 0 0 ] /Rect [ 184.1333 117.0898 196.8818 127.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 80 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 110.2524 84.08976 123.001 94.88976 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 201.54 84.08976 214.2886 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 81 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 128.7227 84.08976 141.4712 94.88976 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 220.0103 84.08976 232.7588 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 82 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 147.1929 84.08976 159.9414 94.88976 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 238.4805 84.08976 251.229 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 83 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 165.6631 84.08976 178.4116 94.88976 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 256.9507 84.08976 269.6992 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 84 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
->> /Border [ 0 0 0 ] /Rect [ 184.1333 84.08976 196.8818 94.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 275.4209 84.08976 288.1694 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 85 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 201.54 51.08976 214.2886 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 293.8911 84.08976 306.6396 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 86 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 220.0103 51.08976 232.7588 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 312.3613 84.08976 325.1099 94.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 87 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 238.4805 51.08976 251.229 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
+>> /Border [ 0 0 0 ] /Rect [ 110.2524 51.08976 123.001 61.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 88 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 256.9507 51.08976 269.6992 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 128.7227 51.08976 141.4712 61.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 89 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 275.4209 51.08976 288.1694 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 147.1929 51.08976 159.9414 61.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 90 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 293.8911 51.08976 306.6396 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 165.6631 51.08976 178.4116 61.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 91 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 312.3613 51.08976 325.1099 61.88976 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 184.1333 51.08976 196.8818 61.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 92 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 202.6035 51.08976 215.3521 61.88976 ] /Subtype /Link /Type /Annot
+>>
+endobj
+93 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 221.0737 51.08976 233.8223 61.88976 ] /Subtype /Link /Type /Annot
+>>
+endobj
+94 0 obj
 <<
 /Annots [ 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 
   28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 
@@ -652,7 +666,7 @@ endobj
   58 0 R 59 0 R 60 0 R 61 0 R 62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 
   68 0 R 69 0 R 70 0 R 71 0 R 72 0 R 73 0 R 74 0 R 75 0 R 76 0 R 77 0 R 
   78 0 R 79 0 R 80 0 R 81 0 R 82 0 R 83 0 R 84 0 R 85 0 R 86 0 R 87 0 R 
-  88 0 R 89 0 R 90 0 R 91 0 R ] /Contents 196 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 192 0 R /Resources <<
+  88 0 R 89 0 R 90 0 R 91 0 R 92 0 R 93 0 R ] /Contents 191 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 187 0 R /Resources <<
 /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >> /Rotate 0 
   /Trans <<
@@ -660,633 +674,584 @@ endobj
 >> /Type /Page
 >>
 endobj
-93 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 110.2524 776.0898 123.001 786.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
-94 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 128.7227 776.0898 141.4712 786.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
 95 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 147.1929 776.0898 159.9414 786.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
+>> /Border [ 0 0 0 ] /Rect [ 92.65234 776.0898 105.4009 786.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 96 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 165.6631 776.0898 178.4116 786.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 111.1226 776.0898 123.8711 786.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 97 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 184.1333 776.0898 196.8818 786.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 129.5928 776.0898 142.3413 786.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 98 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 202.6035 776.0898 215.3521 786.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 148.063 776.0898 160.8115 786.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 99 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 221.0737 776.0898 233.8223 786.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
+>> /Border [ 0 0 0 ] /Rect [ 166.5332 776.0898 179.2817 786.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 100 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 92.65234 743.0898 105.4009 753.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 201.54 743.0898 214.2886 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 101 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 111.1226 743.0898 123.8711 753.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 220.0103 743.0898 232.7588 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 102 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 129.5928 743.0898 142.3413 753.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 238.4805 743.0898 251.229 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 103 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 148.063 743.0898 160.8115 753.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 256.9507 743.0898 269.6992 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 104 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
->> /Border [ 0 0 0 ] /Rect [ 166.5332 743.0898 179.2817 753.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 275.4209 743.0898 288.1694 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 105 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 201.54 710.0898 214.2886 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 293.8911 743.0898 306.6396 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 106 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 220.0103 710.0898 232.7588 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 312.3613 743.0898 325.1099 753.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 107 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 238.4805 710.0898 251.229 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
+>> /Border [ 0 0 0 ] /Rect [ 110.2524 710.0898 123.001 720.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 108 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 256.9507 710.0898 269.6992 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 128.7227 710.0898 141.4712 720.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 109 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 275.4209 710.0898 288.1694 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 147.1929 710.0898 159.9414 720.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 110 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 293.8911 710.0898 306.6396 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 165.6631 710.0898 178.4116 720.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 111 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 312.3613 710.0898 325.1099 720.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 184.1333 710.0898 196.8818 720.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 112 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 202.6035 710.0898 215.3521 720.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+113 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 221.0737 710.0898 233.8223 720.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+114 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
 >> /Border [ 0 0 0 ] /Rect [ 92.65234 677.0898 105.4009 687.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
-113 0 obj
+115 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
 >> /Border [ 0 0 0 ] /Rect [ 111.1226 677.0898 123.8711 687.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
-114 0 obj
+116 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
 >> /Border [ 0 0 0 ] /Rect [ 129.5928 677.0898 142.3413 687.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
-115 0 obj
+117 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
 >> /Border [ 0 0 0 ] /Rect [ 148.063 677.0898 160.8115 687.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
-116 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 166.5332 677.0898 179.2817 687.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
-117 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 185.0034 677.0898 197.752 687.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
 118 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 203.4736 677.0898 216.2222 687.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
+>> /Border [ 0 0 0 ] /Rect [ 166.5332 677.0898 179.2817 687.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 119 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 525.6016 657.0898 538.3501 667.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 201.54 644.0898 214.2886 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 120 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 46 644.0898 58.74854 654.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 220.0103 644.0898 232.7588 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 121 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 64.47021 644.0898 77.21875 654.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 238.4805 644.0898 251.229 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 122 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 82.94043 644.0898 95.68896 654.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 256.9507 644.0898 269.6992 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 123 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 101.4106 644.0898 114.1592 654.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 275.4209 644.0898 288.1694 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 124 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 119.8809 644.0898 132.6294 654.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 293.8911 644.0898 306.6396 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 125 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 138.3511 644.0898 151.0996 654.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 312.3613 644.0898 325.1099 654.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 126 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 162.7056 611.0898 175.4541 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 92.65234 611.0898 105.4009 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 127 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 181.1758 611.0898 193.9243 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 111.1226 611.0898 123.8711 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 128 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 199.646 611.0898 212.3945 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 129.5928 611.0898 142.3413 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 129 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 218.1162 611.0898 230.8647 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 148.063 611.0898 160.8115 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 130 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 236.5864 611.0898 249.335 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 166.5332 611.0898 179.2817 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 131 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 255.0566 611.0898 267.8052 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 185.0034 611.0898 197.752 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 132 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 273.5269 611.0898 286.2754 621.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 203.4736 611.0898 216.2222 621.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 133 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 110.2524 578.0898 123.001 588.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 525.6016 591.0898 538.3501 601.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 134 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 128.7227 578.0898 141.4712 588.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 46 578.0898 58.74854 588.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 135 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 147.1929 578.0898 159.9414 588.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 64.47021 578.0898 77.21875 588.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 136 0 obj
 <<
 /A <<
 /S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 165.6631 578.0898 178.4116 588.8898 ] /Subtype /Link /Type /Annot
+>> /Border [ 0 0 0 ] /Rect [ 82.94043 578.0898 95.68896 588.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 137 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-gerber2023)
->> /Border [ 0 0 0 ] /Rect [ 184.1333 578.0898 196.8818 588.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 101.4106 578.0898 114.1592 588.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 138 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 201.54 545.0898 214.2886 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 119.8809 578.0898 132.6294 588.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 139 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 220.0103 545.0898 232.7588 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 138.3511 578.0898 151.0996 588.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 140 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 238.4805 545.0898 251.229 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
+>> /Border [ 0 0 0 ] /Rect [ 162.7056 545.0898 175.4541 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 141 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 256.9507 545.0898 269.6992 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
+>> /Border [ 0 0 0 ] /Rect [ 181.1758 545.0898 193.9243 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 142 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 275.4209 545.0898 288.1694 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
+>> /Border [ 0 0 0 ] /Rect [ 199.646 545.0898 212.3945 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 143 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 293.8911 545.0898 306.6396 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
+>> /Border [ 0 0 0 ] /Rect [ 218.1162 545.0898 230.8647 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 144 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 312.3613 545.0898 325.1099 555.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
+>> /Border [ 0 0 0 ] /Rect [ 236.5864 545.0898 249.335 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 145 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-asplund2021)
->> /Border [ 0 0 0 ] /Rect [ 162.7056 512.0898 175.4541 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
+>> /Border [ 0 0 0 ] /Rect [ 255.0566 545.0898 267.8052 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 146 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-nist_asd)
->> /Border [ 0 0 0 ] /Rect [ 181.1758 512.0898 193.9243 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
+>> /Border [ 0 0 0 ] /Rect [ 273.5269 545.0898 286.2754 555.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 147 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-wiese_fuhr2006)
->> /Border [ 0 0 0 ] /Rect [ 199.646 512.0898 212.3945 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202140445)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 483.0898 538.5742 493.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 148 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-TachievFroeseFischer2002)
->> /Border [ 0 0 0 ] /Rect [ 218.1162 512.0898 230.8647 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202140445)
+>> /Border [ 0 0 0 ] /Rect [ 46 470.0898 92.23486 480.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 149 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-Amarsi2020_N)
->> /Border [ 0 0 0 ] /Rect [ 236.5864 512.0898 249.335 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/refs/bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 267.2515 470.0898 329.3022 480.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 150 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-solar_3d_N)
->> /Border [ 0 0 0 ] /Rect [ 255.0566 512.0898 267.8052 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202141384)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 450.0898 229.2563 460.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 151 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://exoplanetcodex.org/systems/sol/elements/n/#ref-N_grid_deposit)
->> /Border [ 0 0 0 ] /Rect [ 273.5269 512.0898 286.2754 522.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/audit/rya1136_cno_intake/source_bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 404.2729 450.0898 466.3237 460.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 152 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202140445)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 450.0898 538.5742 460.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.18434/T4W30F)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 408.0898 541.8657 418.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 153 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202140445)
->> /Border [ 0 0 0 ] /Rect [ 46 437.0898 92.23486 447.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.18434/T4W30F)
+>> /Border [ 0 0 0 ] /Rect [ 46 395.0898 395.9849 405.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 154 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/refs/bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 267.2515 437.0898 329.3022 447.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/refs/bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 509.856 395.0898 539.9409 405.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 155 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202141384)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 417.0898 229.2563 427.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/refs/bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 46 382.0898 75.10498 392.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 156 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/audit/rya1136_cno_intake/source_bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 404.2729 417.0898 466.3237 427.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://ntrs.nasa.gov/citations/20060052476)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 362.0898 537.0537 372.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 157 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.18434/T4W30F)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 375.0898 541.8657 385.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://ntrs.nasa.gov/citations/20060052476)
+>> /Border [ 0 0 0 ] /Rect [ 46 349.0898 528.6294 359.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 158 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.18434/T4W30F)
->> /Border [ 0 0 0 ] /Rect [ 46 362.0898 395.9849 372.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://ntrs.nasa.gov/citations/20060052476)
+>> /Border [ 0 0 0 ] /Rect [ 46 336.0898 229.7969 346.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 159 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/refs/bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 509.856 362.0898 539.9409 372.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/refs/bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 232.6577 336.0898 294.7085 346.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 160 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/refs/bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 46 349.0898 75.10498 359.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361:20011816)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 316.0898 281.9995 326.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 161 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://ntrs.nasa.gov/citations/20060052476)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 329.0898 537.0537 339.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json)
+>> /Border [ 0 0 0 ] /Rect [ 451.29 316.0898 513.3408 326.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 162 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://ntrs.nasa.gov/citations/20060052476)
->> /Border [ 0 0 0 ] /Rect [ 46 316.0898 528.6294 326.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202038650)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 274.0898 223.5303 284.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 163 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://ntrs.nasa.gov/citations/20060052476)
->> /Border [ 0 0 0 ] /Rect [ 46 303.0898 229.7969 313.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/audit/rya1136_cno_intake/source_bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 398.5469 274.0898 460.5977 284.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 164 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/refs/bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 232.6577 303.0898 294.7085 313.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202037890)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 254.0898 417.896 264.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 165 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361:20011816)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 283.0898 281.9995 293.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/curation/threednlte_availability.csv)
+>> /Border [ 0 0 0 ] /Rect [ 195.5942 241.0898 257.645 251.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 166 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/reference/cno_atomic_primary/derived/agss21_cno_atomic_gf.prov.json)
->> /Border [ 0 0 0 ] /Rect [ 451.29 283.0898 513.3408 293.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://zenodo.org/records/3982506)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 221.0898 420.9326 231.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 167 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202038650)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 241.0898 223.5303 251.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json)
+>> /Border [ 0 0 0 ] /Rect [ 167.6055 208.0898 229.6563 218.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 168 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/audit/rya1136_cno_intake/source_bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 398.5469 241.0898 460.5977 251.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202243673)
+>> /Border [ 0 0 0 ] /Rect [ 75.21045 166.0898 519.6206 176.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 169 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202037890)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 221.0898 417.896 231.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202243673)
+>> /Border [ 0 0 0 ] /Rect [ 46 153.0898 286.1875 163.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 170 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/curation/threednlte_availability.csv)
->> /Border [ 0 0 0 ] /Rect [ 195.5942 208.0898 257.645 218.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/refs/bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 461.2041 153.0898 523.2549 163.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 171 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://zenodo.org/records/3982506)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 188.0898 420.9326 198.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1088/0067-0049/210/2/23)
+>> /Border [ 0 0 0 ] /Rect [ 81.47266 133.0898 227.7095 143.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 172 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/nlte_grids/amarsi_galah/N_amarsi2020_v3.prov.json)
->> /Border [ 0 0 0 ] /Rect [ 167.6055 175.0898 229.6563 185.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/audit/rya1136_cno_intake/source_bibliography.csv)
+>> /Border [ 0 0 0 ] /Rect [ 391.6123 133.0898 453.6631 143.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 173 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202243673)
->> /Border [ 0 0 0 ] /Rect [ 75.21045 133.0898 519.6206 143.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1088/0067-0049/214/2/26)
+>> /Border [ 0 0 0 ] /Rect [ 81.47266 113.0898 525.3071 123.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 174 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1051/0004-6361/202243673)
->> /Border [ 0 0 0 ] /Rect [ 46 120.0898 286.1875 130.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://doi.org/10.1088/0067-0049/214/2/26)
+>> /Border [ 0 0 0 ] /Rect [ 46 100.0898 496.4614 110.8898 ] /Subtype /Link /Type /Annot
 >>
 endobj
 175 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/refs/bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 461.2041 120.0898 523.2549 130.8898 ] /Subtype /Link /Type /Annot
+/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07/data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json)
+>> /Border [ 0 0 0 ] /Rect [ 184.4805 87.08976 246.5313 97.88976 ] /Subtype /Link /Type /Annot
 >>
 endobj
 176 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1088/0067-0049/210/2/23)
->> /Border [ 0 0 0 ] /Rect [ 81.47266 100.0898 227.7095 110.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
-177 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/audit/rya1136_cno_intake/source_bibliography.csv)
->> /Border [ 0 0 0 ] /Rect [ 391.6123 100.0898 453.6631 110.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
-178 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1088/0067-0049/214/2/26)
->> /Border [ 0 0 0 ] /Rect [ 81.47266 80.08976 525.3071 90.88976 ] /Subtype /Link /Type /Annot
->>
-endobj
-179 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://doi.org/10.1088/0067-0049/214/2/26)
->> /Border [ 0 0 0 ] /Rect [ 46 67.08976 496.4614 77.88976 ] /Subtype /Link /Type /Annot
->>
-endobj
-180 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://github.com/damienabraxas/exoplanetcodex/blob/5fee27a14f2ab28d433b5f0b20101ce24f5118e1/data/linelists/molecular/turbospectrum/MOLECULAR_MANIFEST.json)
->> /Border [ 0 0 0 ] /Rect [ 184.4805 54.08976 246.5313 64.88976 ] /Subtype /Link /Type /Annot
->>
-endobj
-181 0 obj
-<<
-/Annots [ 93 0 R 94 0 R 95 0 R 96 0 R 97 0 R 98 0 R 99 0 R 100 0 R 101 0 R 102 0 R 
-  103 0 R 104 0 R 105 0 R 106 0 R 107 0 R 108 0 R 109 0 R 110 0 R 111 0 R 112 0 R 
-  113 0 R 114 0 R 115 0 R 116 0 R 117 0 R 118 0 R 119 0 R 120 0 R 121 0 R 122 0 R 
-  123 0 R 124 0 R 125 0 R 126 0 R 127 0 R 128 0 R 129 0 R 130 0 R 131 0 R 132 0 R 
-  133 0 R 134 0 R 135 0 R 136 0 R 137 0 R 138 0 R 139 0 R 140 0 R 141 0 R 142 0 R 
-  143 0 R 144 0 R 145 0 R 146 0 R 147 0 R 148 0 R 149 0 R 150 0 R 151 0 R 152 0 R 
-  153 0 R 154 0 R 155 0 R 156 0 R 157 0 R 158 0 R 159 0 R 160 0 R 161 0 R 162 0 R 
-  163 0 R 164 0 R 165 0 R 166 0 R 167 0 R 168 0 R 169 0 R 170 0 R 171 0 R 172 0 R 
-  173 0 R 174 0 R 175 0 R 176 0 R 177 0 R 178 0 R 179 0 R 180 0 R ] /Contents 197 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 192 0 R /Resources <<
+/Annots [ 95 0 R 96 0 R 97 0 R 98 0 R 99 0 R 100 0 R 101 0 R 102 0 R 103 0 R 104 0 R 
+  105 0 R 106 0 R 107 0 R 108 0 R 109 0 R 110 0 R 111 0 R 112 0 R 113 0 R 114 0 R 
+  115 0 R 116 0 R 117 0 R 118 0 R 119 0 R 120 0 R 121 0 R 122 0 R 123 0 R 124 0 R 
+  125 0 R 126 0 R 127 0 R 128 0 R 129 0 R 130 0 R 131 0 R 132 0 R 133 0 R 134 0 R 
+  135 0 R 136 0 R 137 0 R 138 0 R 139 0 R 140 0 R 141 0 R 142 0 R 143 0 R 144 0 R 
+  145 0 R 146 0 R 147 0 R 148 0 R 149 0 R 150 0 R 151 0 R 152 0 R 153 0 R 154 0 R 
+  155 0 R 156 0 R 157 0 R 158 0 R 159 0 R 160 0 R 161 0 R 162 0 R 163 0 R 164 0 R 
+  165 0 R 166 0 R 167 0 R 168 0 R 169 0 R 170 0 R 171 0 R 172 0 R 173 0 R 174 0 R 
+  175 0 R ] /Contents 192 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 187 0 R /Resources <<
 /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >> /Rotate 0 
   /Trans <<
@@ -1294,14 +1259,14 @@ endobj
 >> /Type /Page
 >>
 endobj
-182 0 obj
+177 0 obj
 <<
 /Filter [ /FlateDecode ] /Length 689
 >>
 stream
 xúm’Ko⁄@Ü·=ø¬ÀV]¿Ãπ•B •ë≤ËEM’ΩCJU2∞»øÔ||(µEÇÛÇmxdgz˚p˜0lé›ÙÀ∏[>ñc∑ﬁ´±vßqY∫ßÚº&)w´ÕÚxyw~]n˚˝dZ/~|9ÀˆaXÔ&Ûy7˝Zé„K˜Ê˙¸xwW~ˆﬂOè˝px;ô~We‹œˇ?˙x⁄Ôïmé›l≤Xt´≤Æ?Ò±ﬂÍ∑•õ˛s…üæΩÏKóœÔïÀ›™ˆ˝≤å˝\&ÛŸl—Õ„~1)√ÍØc)_ÒößıÚG?^Œù’«¢v:˜M†3;°•vû%AÎπØ2⁄¯π¢Ω˘ûh˙™È˜M_7}”Ùm”wMh˙˛Oß∆üR”πiiZõ∂¶j¸©Òß∆üj¸©Òß∆üj¸ô˛|n˙3Óy¶?„>g˙3Ó¶?„ûg˙Î®MµÈœ¯3˝u‘¶øé⁄Ù◊Qõ˛:j”_Gm˙Î®MµÈØc2˙~°_‡˙~°_‡˙~°_‡˙~°_‡˙~°_‡˙~°_‡˙~°_‡˙~°_‡W˙~•_·W˙~•_·W˙~•_·W˙~•_·W˙~•_·W˙~•_·W˙~•_·W˙~•_·7˙~£ﬂ‡7˙~£ﬂ‡7˙~£ﬂ‡7˙~£ﬂ‡7˙~£ﬂ‡7˙~£ﬂ‡7˙~£ﬂ‡7˙~£ﬂ‡w˙~ßﬂ·w˙~ßﬂ·w˙~ßﬂ·w˙~ßﬂ·w˙~ßﬂ·w˙~ßﬂ·w˙~ßﬂ·w˙~ßﬂ·˙˛†?‡˙˛†?‡˙˛†?‡˙˛†?‡˙˛†?‡˙˛†?‡˙˛†?‡˙˛†ˇ≤!.õ ª{Óu-O„X◊”yûVŒf(Ø˚rø€„*<¢éû‰endstream
 endobj
-183 0 obj
+178 0 obj
 <<
 /Filter [ /FlateDecode ] /Length 18909 /Length1 35924
 >>
@@ -1368,16 +1333,16 @@ g¬d0äZÎæ≤p&´È@≥õA…û`XU]CÊTó◊Ç3Q
 ªã…”ªÏ¬”ëdóùÏ§w^%;TÚîJ∂´dõùlU…ìOòÖ'…fÚx1iÜ.ÕÎ»ïl~Ã(lV…cF≤ÈQ?aS1yt£Ux‘èl¥í2yD%Î◊ôÑı*Yg"M0®iYª∆,¨ÌA÷ò…√W…ÍU/´U≤™qä∞Í≤jﬂ¯P§–8Ö4∫¯á"…É*Yπ"NX©íq‰ ÛÅT≤¸~É∞‹AÓ7ê∏—PLÍÅSıëdôç‹ßí•Kl¬Rï,±ë≈*Y§íÖ*q]øw¡·^ï,X@Ó)&Ûsù¬¸H2O%sUr∑ôÃ1íŸ2©SIÌURsïT_%w]%U*©TIÖJfÜí;U2√ñ&ÃO UR∂ÄLáãRïî®§X%E*ô¶í¬Å§‡*ôj$STrõJ&´$í,‰_%ìd2—€OòòHÚT2fûêFrùd<∂
 „}…8πuîóp´Jrd¨J≤«XÖlïå±í,ïåÜ'£U2*”*åÚ"ôA&!”JFö»ïd¨#ÈÎ»pï„z√Æí¥HÍh‚R…Pïπ≈.qê[[Ñ[Ïd ì0ÿu›Bô»@ï§®d@á0‡*Èﬂœ*Ùwê~…°üï$Hﬂ`íd"â}B¢J˙HBºAH0ëxâÎ≠‚¨§∑ûƒ&í^=#Ö^≈§gå]ËIbÏ§Gt§–#ïDGí®HÉe!ë°ípïÑYH(–j'J1	πJÇÅÑ‡bd"Å¿¡@ï\%˛iƒ.¸T‚[L|ÄS>*ÒÜAﬁ~ƒ©áJºTbávïÿÄV[±. ñbbVâ…Ë-òTbÑﬁFobPâl%zïH–MRâŒAƒb¬√C4¿I‡.Q	◊\oÇ≠©∑‡‚e‚^ˇ/¸†ˇ4?˙Ùˇ¬h›hendstream
 endobj
-184 0 obj
+179 0 obj
 <<
-/Ascent 759.7656 /CapHeight 759.7656 /Descent -240.2344 /Flags 4 /FontBBox [ -1020.508 -462.8906 1793.457 1232.422 ] /FontFile2 183 0 R 
+/Ascent 759.7656 /CapHeight 759.7656 /Descent -240.2344 /Flags 4 /FontBBox [ -1020.508 -462.8906 1793.457 1232.422 ] /FontFile2 178 0 R 
   /FontName /AAAAAA+DejaVuSans /ItalicAngle 0 /MissingWidth 600.0977 /StemV 87 /Type /FontDescriptor
 >>
 endobj
-185 0 obj
+180 0 obj
 <<
-/BaseFont /AAAAAA+DejaVuSans /FirstChar 0 /FontDescriptor 184 0 R /LastChar 127 /Name /F2+0 /Subtype /TrueType 
-  /ToUnicode 182 0 R /Type /Font /Widths [ 600.0977 317.8711 837.8906 500 400.8789 1000 600.0977 600.0977 600.0977 600.0977 
+/BaseFont /AAAAAA+DejaVuSans /FirstChar 0 /FontDescriptor 179 0 R /LastChar 127 /Name /F2+0 /Subtype /TrueType 
+  /ToUnicode 177 0 R /Type /Font /Widths [ 600.0977 317.8711 837.8906 500 400.8789 1000 600.0977 600.0977 600.0977 600.0977 
   600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 
   600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 
   600.0977 600.0977 317.8711 400.8789 459.9609 837.8906 636.2305 950.1953 779.7852 274.9023 
@@ -1392,7 +1357,7 @@ endobj
   591.7969 591.7969 524.9023 636.2305 336.9141 636.2305 837.8906 600.0977 ]
 >>
 endobj
-186 0 obj
+181 0 obj
 <<
 /Filter [ /FlateDecode ] /Length 689
 >>
@@ -1407,7 +1372,7 @@ xú}’Kã⁄P∆Ò}>Eñ-•Ë…{õÇsÈ¿,z°ñÓ=N-cQÛÌ{ôJi@ﬂHÇ?‚‚ù‹>‹=Ù€c;˘:ÓWã|l7€~=Ê√˛4
 ø“Ø+˝
 ø—o˝ø—o˝ø—o˝ø—o˝ø—o˝ø—o˝ø—o˝ø—o˝ø”Ô;˝ø”Ô;˝ø”Ô;˝ø”Ô;˝ø”Ô;˝ø”Ô;˝ø”Ô;˝ø”Ô;˝–˝–˝–˝–˝–˝–˝–˝–˝óqŸÿX{Øãhu«≤£ŒªÒºx∞r∂}~]ü√~¿S¯¸Ë£…endstream
 endobj
-187 0 obj
+182 0 obj
 <<
 /Filter [ /FlateDecode ] /Length 18292 /Length1 35352
 >>
@@ -1504,16 +1469,16 @@ oÄO••æÍZËN;4T t‡≤∑¶∏«Xó¿ ‘‚˙z_ie1Ãßî˘J´Ω5≈üÚ *R/
 £…ƒRpïK(h%W¡É´\$ÇK»o%ÚÏ¬…≥ìÒ—$w\àêÎ „∆⁄Öq!dléEk'92¶ïåŒF;Hv…j%£FZÑQV2“BFd∫Ö≠$`f∫âg∏Uhd¯ïa∏ï\i!√ÜöÖaN2‘LÜîë¡…!WhdP0ò.tìÙ!Bz8I?ƒPÃ¬Ä2`ﬂ?Õ$Ù!˝=|öâÙK›*Ù”H*¿O›JRL$9òÙM,Ùm%I∑ê4òÙ)#ΩÀH¢Fz9HB®]Hà&=U‚é&=‚Å}zDìx;âCf!ÆïƒZI¨áWCHåB¢£IT§KàrìHk∞È"ë{¡g‹√GòI∏kúæÑ∏`R◊8¶ëP;q¬lŒV‚Ä{7	)#¡v§;\€5b+#VãM∞Î!ﬁb#ñeºûò[â)çÅ4£ìóÒäô(^÷à§ÉFDADç
 <<ﬂJH·`ßÅ˜2ÿNêô‡Ω∏Ï¶Â∏œˇ?~–Å„O˙øÚÄFendstream
 endobj
-188 0 obj
+183 0 obj
 <<
-/Ascent 759.7656 /CapHeight 759.7656 /Descent -240.2344 /Flags 262148 /FontBBox [ -1069.336 -415.0391 1975.098 1174.316 ] /FontFile2 187 0 R 
+/Ascent 759.7656 /CapHeight 759.7656 /Descent -240.2344 /Flags 262148 /FontBBox [ -1069.336 -415.0391 1975.098 1174.316 ] /FontFile2 182 0 R 
   /FontName /AAAAAA+DejaVuSans-Bold /ItalicAngle 0 /MissingWidth 600.0977 /StemV 165 /Type /FontDescriptor
 >>
 endobj
-189 0 obj
+184 0 obj
 <<
-/BaseFont /AAAAAA+DejaVuSans-Bold /FirstChar 0 /FontDescriptor 188 0 R /LastChar 127 /Name /F3+0 /Subtype /TrueType 
-  /ToUnicode 186 0 R /Type /Font /Widths [ 600.0977 837.8906 1000 500 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 
+/BaseFont /AAAAAA+DejaVuSans-Bold /FirstChar 0 /FontDescriptor 183 0 R /LastChar 127 /Name /F3+0 /Subtype /TrueType 
+  /ToUnicode 181 0 R /Type /Font /Widths [ 600.0977 837.8906 1000 500 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 
   600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 
   600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 
   600.0977 600.0977 348.1445 456.0547 520.9961 837.8906 695.8008 1001.953 872.0703 306.1523 
@@ -1528,59 +1493,59 @@ endobj
   645.0195 651.8555 582.0312 711.9141 365.2344 711.9141 837.8906 600.0977 ]
 >>
 endobj
-190 0 obj
+185 0 obj
 <<
-/PageMode /UseNone /Pages 192 0 R /Type /Catalog
+/PageMode /UseNone /Pages 187 0 R /Type /Catalog
 >>
 endobj
-191 0 obj
+186 0 obj
 <<
 /Author (Exoplanet Codex) /CreationDate (D:20000101000000+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
   /Subject (\(unspecified\)) /Title (Solar N appendix) /Trapped /False
 >>
 endobj
+187 0 obj
+<<
+/Count 5 /Kids [ 3 0 R 4 0 R 17 0 R 94 0 R 176 0 R ] /Type /Pages
+>>
+endobj
+188 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2756
+>>
+stream
+Gb"/(D0+L@&cR6o@_\^K4$F?3"@5)4&$i;sC/rfhDE@/a*=[FMAB$b&6Ll>thtI0HFsinWdRd4)+et/g&B+!GpXs0qYTSrJiW#H%LgJBjY<N:*P%GLU!Z'/LQk!aBVPMRI9MEDK2\E;[8!+4Y\t!/bkbJ?OUo)fH1?>p7N"Zi317k#%GuE#r--N,:dd5F]Rf,pdB285j"Ka\BUqBih=BkOCA5F8/0q(O.*+9eR?pYa12),]\E'm;K4G;>Qjj^8,:a9GI8)A"J:\`VmXS:*^N#VDHKk_@+$9I3P5e$cWQ<-L]->E$7[s,/J4f1*n%7SiIjeXP8OC;!'3l<4_L^\GF,1[5!;Hp3]AcoN0F&4O]<KTJCK1/\g)?#9G<;'Btf9R\K_V:u7o=1LFL"(LkC0K8c?<)/WMh\sbX9pDa4$=H2Ia\L_$2a*tp;'Y_@I&a?XKXQ.Q)-"#I&+(rS10i,`&FpF0$g+e;PZ-FWp2CR!Z9hHA[Q?[ZCn:tZd`Gs2QI)pTk.51A@\h76bIb?Q*",5e*l`sC)qD2_V.GHg\K"F:bIrWepR0p0JP5=-7`,t"YK=VhRY1N]JN%R)p7.*SC,Ncq;@5bat!`jD4]MSKekE`#CZ:.!pf-Q[OGKn=Q$!brBBu0gh9ZBn9BpAjlJVHF')D,#W+gj[dKG9qOt!pA?eh.X=algTEPF#(n%]rYlb&5B"qN"_&0b^b(]S4Em`NslscA_=fVWG_F%@/H>?nP;@G0m%6Q8le5dF![+2!Y,Xha@]hS'OLRK:6-#'o+TILG+Zk0?;-a^E6iO,J!VI$^cTF3b)LBCa\f[>,b_*p<c'&8Y.<M%[>R+nW4Z3%jf^Ig.ro,JpGkGo<Z%_@"Nh%mY%&W%6GkB</fX!Fn%/put5fRkUehbFo9c^KUFH5M#*3dTCA]X&E_ZIf\.2$%7dbCBH]Gl$^dr8?JqrFb-_oQYQ34r<iS_1pN69t?cp8b!D,9@=!.huR4]=7[$ZB2>[EH1"p?G^h?g](*;PD$+L;9c=9'mL'g@bcZ[::"^d2r]bc+*F.L!&(V1N3u_r'H!=M`WEbYf,]K5X_U8Y$$+\US5j3Ut&Zh6MjTAq=+F_Ne5NMT^NdBFt\Pp,'&(JnZB#/8dCcY!S\.m\s<'4"A3qSM^+F=V>c=F/c.L#>E'OSnnbBP:[&5_25.(ofO4!$qm5M+.T;fo[-.5&bI9D.7[HLU(h</SD>3,0O1*>>oClLjd[aKht'[bq#GAG0O1G^/fAki?]/0NG<sDge)(?s3g'HF7#?):7KB7`'@LmJQ"M.*m<m\]C62H!+-jhK5ArVh1JR;<AHV#r:569KZ/)-5a?18_i/HWV?LO[tBgd0>T&GFXn;/\.8i#"NE+jI2a0X3I_Khl`Y42*o.=9!Lrf`Sl1Wk`J:V7:L/fIpL7!UhWEqF0Z[XS'4Mga3/aKBLq3ECc<gLs<F>if@2`-D)BI7*7B$')nSH(UYgu'hP\UpuFpGQ8D'5K'Xf[D,CE)'_g4#/qs#N2XH_:m@[B."8pua40nkS\j3B2A+Jkd-,pihsM67]!:gigN(L#L;%U2AISao%:H)0UedgpjO@]!$J1<^"=n_sDobXk4Zgr<f+eVtHqNi:shJJ%jgZ)cF0e'5mLd_1>)Y,Qu\\"p"mRUsb.W^$upO"CHfpon^X*jE0ZpA`sI/n[SXs3Yt4>(U6IgPFX,XTD>;ni`78'Vnfi-+GDMKcp531%&!@cRCBJe]h<rt"Gp[sV@<X\g,;QZ_nbc'L(&lk0VS4&H.fDA+6Y*s`pj4K\1Sei&PIgqI#ED77>)**$"gl%rSS%c\T>9((Ejd_b/-%FORQUKidYoq$<[D",`RW%OO6`j+[?=;_497Kq(-._GVua1,XTduCf%:G9YZL98YdJ\#KAL6@VqoC&At=Y+^p$0"*`FNO[&s;o56CWQl$u7p$b<^@5Aj\a#DFp4H*YrO)Pa#QcDdZU>93@)>*d9_5r+I]%Q\3hs>Y!W!GD6^c9)FTs0<6J,sK'0hWO\+c)fC^8afAFD,PAW.2_Rc]^O#R85<!A_m[t%u*;M4uYLk2%Vb9i3fC*LnQ"tT2K-Z>1GWGgYNs'3spGq3Og@[c,-WY1^n"]rtI19D0aHI1lW3`qa/A,$NT(X[L)oZieFO_eEXJcY\C.CQ<^"g2"c,ukE7/fqO32-*TbO"j3&CI-/)5PU.6kTmY#QWnh'e1)cX;Ka8WIR-gsmhIZFPC=<Jh?N@SrKYT3eTpFC1q>T'8<q>)fS*im)Y8_4!Wd#kkWJ^]4iE=An5-_P@]GCbZ_Ud,ECK8,4m.(`Q3K79RApLQ'eYsrQkr@4<IiPPr"p(_HbogMJgL'in2\1_<1RV_0A$E#2udI=*("h.iC4hPcgBH6]!C09rifH@i/EJ%jf2]+G(>r-k0NJkP<N<AE_ei90>0fdan]A-e15<jO4MRp\G`kYGq^WUk$iX5Z1Y!5$g.ETFtK5:0,XoP"'8,hpP>QO%3dOn4R\AhBA4[Hlj_-s4;-87#ik?Hq4>H#@iEAu(g9l-sRhDfZr7m6_XlQ%tp_HZ"<2#Fi"Y[QdbiOan=IgtDs_8D,qGA=6L%N>@GBnNUt>f/`4B8Jk8A\t((Fh_5j3?/AG4nkhTLr%u"H9eY;G(Bs*X47`8?:j-q.nt57TXj[NaB()+F$/Y=)INp0=?F1bCt0%#`p"<::9"u_2-IUj5Ll5[oN7m)^\'HNXRuKcFcU<kB]C-WC+g4T7'JBXN"^EIGR2iE>lSM)PQ(_3`Ca8~>endstream
+endobj
+189 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3360
+>>
+stream
+Gb"/*D0+IA&cV3*JWIN%7e'(P^$,dbio\[/ID+8Tg1`Sh>,#j[&uDA%`9sht"+UA#q'D?aig\D-Ci]XF@^,p)h8M.>0`9u1pL$>/Rj7Le^N%*o3BAHk;+6N=akkD\Q%J>G&h7b<E^QeR`X##uZRrEN<f1?SBQ>q\%.P]7E[Sd.);BqqED_o%;Tr`a2&op"5`S$jUK:38:P./V)Biu6,C4aPD5De>Oss.cYm/ZB#IVDub^s#0RJZ$Op?G\=5oZQ/VBXV0fo_$=,rpC]`OrQ3-#WtLXWUddoS,`.%KlBGa,b4DF0@%S1)F-SYD)4]6A<?F#4[d,0s+K&Qr[K&GG_]Y1apB),D4".B@ZX!mVI&O1ui%?_R"1[]VlX!rs?^;nR,PPje+&XhCQr)gUeQ:%mKtXL?6C8Upq8d8PX=5RF4oGHIhs.s8#YLf?Hhll;thOqi*W3V/gLH[Vp(+mN(]]^\K6NL#G&CrdB#N]W@RnnAsMTllYW&c2TseqY<a)e9H=&W_,$")cBBL11/7;j&(<[+3N'</uq90hUTTL%!$OcpVTAk=)m9M"_X'@f\H8H6]KUJ4G9.sj9h*i7[I;A&+@Bl+g=E_-r\?A(m@=rh/`'$N-Ln'YI-hTQ>u5LZUI;59#jjU['Du,:6dM:j?sW[BU35^bM;R-2m9l_61ulCKVEb3o*c6Y*?g#PSHPF]S7Nt:%)_V(p?HqVcl=^s=;/jH#'<t4Y(6hg2YhLlh'PI0C9<3@:;K>';33ejCBlF"a-^II)'Im&K(/fWoL$^:.7ZHp9hkhd\[<7_gC<Fq>EhANb0Wgpf^.P=Y`Y?:(:udR^g/4%3AY?bEeb'e*[RekYURt_$7,_5^sCf\2\5kI)JfH47)gbg['GoJF*B2;Dg)njRMg`HM#<R]::MMk4-&\)P%'9UVtaZC:Ubf`Uqo(<kd0V:CjQF#j>[j^40&kM(hHs8GuHPq-']VEbB\.:7&fVU;=a,"6,KSV8Q!f(X*Bm`C@C*:qh)SQh&Z="j*>t/;B+P?n\?GjDOHddhS9<pc)'Jb/5ao3XK>S8\<NeP=^_ANF]<r65riFWX8ktRAt_EhQaGC]L:=rEEMSr3],$/S*>QsLnN1\^_?4bROaUS7/@+sa^C@^F'*+B(l7-bX21b'TKiT2u]d`9RE`,le11'W?XpA<oJm&!]_:Agr?9Dae)r3U,_A5Z<,p!%h87%rUMcc*4J<a!6F5=i:8lOla"'u!bcmNAY.B$M6N=@)i:EXt>'::p*[=VVaMM(c.W)@*k'YY$UpeuiJ>hgF#rf3UH>OhVgJ"5<ink-EO61O-=5F%!!Xjs;pT\S+=*GVQ@FWF-BXPJaa(l8Z-b*9`GF@iV'SD9&#Tuk!X2U6]IjF/j)Q\3aao9cMj?r,d4G2F;]!a/hpE\G2pDZng>S/:X64LTk7^(*YPB4L>uR,ieYS27lkEc5ZH*4b`%*L2e76PWMc2@A$'o4fiP*5If]Qt[QR/1O]1;i>]-*L/DPaR9f;.(i:Bj2eqf.@+(_MVmQA`07^&N30Z4mX38_5r-d#$VK6Hh^=(\$BcJe^V9konSEh`0-7_:]tdr0^GgBTW0T7*D^KN8+:q/J)(bqST`T/Mj[>r4=&[5CC/]Gs\0gjW!Af=8RI_3<'W6>4414jF3Dh6tNVmW++,%*hEu`m--,gL4:[qZ,k56[DMre$V9<AS.f+s%2,K0Fr8cB__-F#or_"H-,b?3r/V7_;Hmj92E<m0=I/%-dD@BWM$>d!LFX.pm2+H3'haqgGIV-41f8h(UtWT1snc):r>Oh#7Ii6kI7Hm61TVBe4<<Z9SPSQ_/^YP,*&,p+/9gh#u?FC0iHA$/PRG>n-^q$;\q!hufF8C<c:=?so<S@q4iR29W)Iq;i;lDS%:f:"7fK`\Bj]1iZa,##kDZ0%N/1NtEfc*sNIDAW+sl5,/PR]dgcG9sYC#po$c5BFqJ?#q*%2C76TanH;I>EZN)*:],JYK8Yfjo4?TjZXdFZ$qk7?4k+(.9"5&5-=&V^*Z3>g(o(lG;Dn9?&LB2-E:/:%K&EQMo&E/f+75[P$0:Tm&Bs]p"h4Pi25ACWV?B8n4HQLF7FcK0ZIf;WV;:?iuH!hDbKaQ^+9p(Z';l[k?5"LbFl:<G\1!d;bMIiePa)\Dr>PB.0r^\h_9(Tp(]*Z4iO&.n9a9jrCI@2Jh7^X*>pB?4Bq)kAEjfN?)$Y2W_0S8C>;c[Q?g6.I&!ZBYab@$7pe$$^UWTEZ@DC5f`6uVRtN/AbnH]\&[Y?^OKPC+ZTE`;FaiNMpOgZHO'MWIGlJpd]a+5/0'C9]nKJa]HS*:1NpFl?$f:bSoU9fEVF%gtki_TPs7g/TkGNsmh1$H#\ZBkSOaM)^qk<H/gcYQ(l>S&D4D\s#4pK4Fj4ClK>PPV0)m\%a7H1T-D,7`dGFf"oAkdK=,<+d'HC]YE\=^C`):bt'b7?-J'rf-_"X?G>4IGlOnGJ0u22g:\_0K_3j0`Zu\nfoVjpE#QJ'&X*`V0UUbF*J03n`/D'=Pau>D.Jf;Vg_Sb9&?<>N,,3[2h:"7E%==:@[N?[K(?IYB\fLkur^,Z%m\\]=BtrlqOVmZ/"g*BftCQ;B+NPn!<agGPqGgLPmP9#HB'D0WG/GlhM#BWQ^=nW>YcaZ?7r\XLs9ND"&Gc("#7`EcMb51YBp)rq8f$_6:)?odko:q(d0Gi]iZ"<4^\Ar9_O$6$Vl>Bk0_WMFH+1im40pR4Pu042fRF#2I@6o,Ts*nUk&Kjl<40%a\^3Pc:#kjYf;*'pBgq`'d2S0g3[H;`;t)=YOY([p8K!0$&?mrO^fK:VW')MA&hq8TP@HE]QXldSR,;Qsp#;Z<%I[8I[#Z3X%j2WaY/kVfPuuA6)K]Ma?qQ&*:I*^Po0K12>t4Uo9$Oan^$@7*B@D<bK5Af*V*n!bl4%XU3iW\515<IrFaZ]6@#.aU#$LbrE[Bq5"35IMHMWOHRNGGVm?`2&thjS(W(tloX!IDB"Vu+dH?KK@EUMWg_*Qa]G9PVfa^CYMo2e[@DbgctB*6aM$)eGZ)aU60FuRm*0N(S]o)b;j+Gh0o_C9n-mUEL<*4\MPbr10aa5`N=#d:i7R2E'QYO]-fqWpc:g=+l#c9nrhZ\'kk*U)au!W_1\klbN(7c/jd0Gh-lP%cH&4s"lMbnp$^o9FU[cu@GM^-7Si,]5H)FETEH+m:a5B<eK'-k8hRnNSdEjm]RR[3t;:J%b?rS]OBef0@0Eg`"XWY/n4lk+0M0#a9`091k;%9)aA5^pLZ/uk/Z5u`ERu24@:\/7rncEkSN1+a!=/TI]SB`%^qYR#l)kgD"o/_U2F)N.68t\OM?=7u3:"(XC[m-@V`]D?.b./a$rs)IO*7O~>endstream
+endobj
+190 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2289
+>>
+stream
+Gatm<?#SIU'RfGR\5/U+fnqsF.=94#Ft'Z+?#*i`:gfqA>%T.?)G.om^Yc_h/3-J-@=]"9E\*@Il^W#Ljai=ST)G/I!.J7leQWPH+4_D#677HZYOH0&apEGK>,L3\l-bP)E5F"pr")j'$C?#9/tiZ%"R@)riW&+.9Ud<`*j\YJ@L?/ORYKFJq"bo[?XWg7D18iZ'Y-uuqrbEpNn41#C,!;R3:WOb8J;L7D`D&7qb[KVQ_NLp3.?B"Q7)[C&9_Xe1ue`tk1H-5Q[:DjTjc8(lo<Iril.&Ehsoldq.1JZ^cZ4N#W&mN")In\"':O[$_q7SCNs5eb<a^M9+<C3jDr9uCm<_k7MmB8'(f[N[bQZYFMi0p(`8)[E+,WSHJes?>D)?]]:2/6C(AqW+g.73?Rj-!?/YJN3etC&>J&5>&'N\<@!0`qZU8ppMKAD_YoPc.3O$Nl3d3DA/F'l_$f4%hN809fM+J.eO)FAr`UfCc,h!YqcYcg*\@or?c`S54iVgH<<oV"hIt!A]"1PhpMn5#I3JIfBK`K#(=f/$1N53*"'0B@dWZ$dT;iEV#ZO?pk7Z"3(\>mkXQPrVE4d<\h/!i,*]5;c!BiD8Vf2OM<<V6Vk8PDhHd:mX+@[J=mE3'APh@0c4;arqi]^0FdMA!Z[d"nm<dW6@WBalXLVQ$SD[@-$,0nZa>9&tn8.YY>\*P%?eej(Y9ZrI9eeKoF::`ZCs$W*DhB2HkD/QSqa3J'NLU@bF]D`R%`Y79V+UZ_:9;nUi*'lTnBE&8rT@@WBC6&g,^`!SXQJ7/nK-UZO==\Sl4[AFtlRWdU"KE:'FJigQOqK;`@qQ0A:C"fX$HAe80U`.U2V%DdGael$?=k#h+)C:;"2i(u4DLibQ!O(&U`=a.SU\R8:T]@/Fm6E$"*V4?LPTZFI\d\jJA=t\Oe-;o+(*tok,R-E80g]35ArD*^iKQ1$b$(T1cK?F.kHnV>O6$Y1@4-1b8X[Hs7jDd\Sjgi&Gt53$]")W3F@(.(30m^V=0&CrUK7$6[5`(=B;dN>loE3[&)__7oM`/gTb&Z%&@nA_bTKG9f!/oujBD\+cd+32Cu`Q+aHhqteW;uOkb]QXP_p4R:n)7El<%Ft3>g<eF4nYJnrNQMTtCEg'iTe<YrD"=$&a[T4tU-YVfPS4CT2q9;c3?l1MP_W?=6!:^Wks7EDJj0+ahI'BJgtKlaMtS]r6kAoA:Sb7&.\\+fr:&J65=`m2O:7Sgs:R$E>jRnrY+)"W?&^^?,1J(/MD!;@l,L=YGLE?qJ,;:H<Am6X(dSAOT<).?)3-U]<q++uM,@\!FZFV.AY.JJ$i=P;Ef#T!#GISE]4ulr*&WWU$BR*2dbe9(3`F0%L"Qn;VPI,+D'p4QP6XEP@Si"72O!FH;tO2uAT(XXn!/0=U'.'H9sW$fdR=o,KXE,7lDtG\uW.K',IqSEi`_6MFa0B\T4ok;2_BBWH?Lf%0!MqsL11+0;V\\G>n(egPir5@BOSIt2Y]`%K13:%>'fV'\6*#*k.Y<^-X`qmKu9MQ(Dl:(;lPBJ2p5YoaH(52m/'`($\rSN8+F)u=2'nP]">!F\pGjsjAN.@e'j85X7cAXG#iOLc5rg)]n_9!YV)ERZZ,Y`n50-g&apohG%U=WOSn\9gm%MI>G6p"YhrK!'LdE4FjTRF[R1m/O!&d=qjc?>NL3Z#+97;`L`B3%%CG**gkNgI"IqN+ig$&XfR#c;P.f3n[+-muk6917Egh4O_1:.k5-ikY?E]V\f!`,O^e7Lk!H[Z,'qjU]ZrOnk]abol0OK+P?\Mf4JIPU0"pbRUBDriku?\amkSU9H!PukaZ[:L]&%]OC*7WWIYi@H/B*0U*_eSY284*KBGj(@[F3"UUSZ2cr1N(f%gVk=j2/]"M(/:@?cF2OCW6k'oC7B0*sP+4Bc=trY+#iG/[\Fo#gd&;6h9+-Vc`hDO\Lhj1G;2iOK=T?+\4dRpQ!NTB"qYlf7/Uqcp^OQe/Bu4\m03$:a@nEu<9ef-amP]"_DC&P:R%gRs4?%p]YB0M"O%Kk]I^_D$&KTZA?!VCYuL9:!Q0L_AjhCm23T%lTAZchsP8.T`?!qPrmFr[Y26?hR1?[4A/#V!q[1SZI2M?&f@9])(\s@,D_=HDb6d2<fX<(4'98NrKc<ha%0+`[eQ/L;A*'Rlr'@(n2dZCu<=QbPt)LDU^`!?hBQ2Z@,Br^!TZ$2K7S!082<S`3`L<43u=?1/a:q2H0r_ep(d?\V<H)7O1f[;"s9goDeTo$aE#OMu%MoplaQWQ@`3<!jrR/mJ~>endstream
+endobj
+191 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2477
+>>
+stream
+Gb"/(>uTM!&q/*0kbh_L?6o.p)4h6r/61WQ@b2r,b:RHSNQhStUH=V]^;'[@N';(1fP=r[O:"F.OYkP91["DpDV5-pIn]Ms8car!YlDuOdt5[U9Lj;7EXp"/)r7qrfB\',pH?D)5^2!+YT+4\2`ScmX>gDd/kf0M@K"p\?Q'5c)ndt%Lk$)!4Ju?+5/2fn-^ag))IKf.\qV8.enR"dd_,Uokna!.pME&!q>kI9+6]Th>HS@Ffgj)2cn-4:n/hC`s*_G<B'>!<flG^=c(]W/!-[`jV,6#F.!R$^$5kL2!E1W#c'T4lbG(0i$pn.S;jr91;^uI8@hY/*18@+?=H+p:-"T]T&kGu&,Y@,X38u-Z0sD'7M/M#V)Ub&1Pi<>r0BW,ZcMt\PLV%cFB(sU1O<<gJ@`iu\F>!>/c%s#;hYp\c/7Zeg0-#2Lb\ANQ-2Xr?MEN5dZC&#%0r.Z79#Q9k,afIUW/p02)hO)t,u7[NTCRY)Q+XN/Z&BA``/FPJ$5U#gm1hH.=NTu53Br1QV`>?j5g0mB;F/GtcolY23$1]8o+GInjtZhIE*>ajj9ZS,TWIEJh_=pK`Y+#,J=g^ei"=$4kl#)lV]N2@OEu6mR'HYDbZ\=uJ\Q7W#7:Ti8P.EGc_`t-nqIN7hDH-F0RUH6)8Y#*fbrj-Ai#"saU/bh#YN30!i**l">5^aHO!Q2lX5t*+qcHFRGkf2oE-^9i>6`?h2"FkG9j/D`!n;<0padETXeGZ_97Lb>Y(m=E@?b0;\?E]K;c+.U9=)c&="ZCB>%[<O$_h5&dK-'_;u4TW/$>g_,YFE*[\Vg)cps#(rW$r't,Z_W>T59=B:Xl*+G488^]n`f0&ApX,u=GhQs/;<K)AVZ]WbtLhBX5;BghmHf41,MlRGk_UUQY'%[L*YbX`fYdc^4oar\4&9NXu&`]ZR9ic6o^^)D,S.<gL^[8e.O"Z5qSnOnjaUf[q"tduq>!l@\$7XRIL3>AY(@O`Z&Qns$&5o#N,J83&d9r=c#rMM^;&-#I.QM"tOYA']2,@apI1jo`DLhF>0[oH<XeB,q`jecn'k86\Wu9Au<gc`"ML[fuGI/r2^;-<"Od_uC)=?ViH!;D'"7>+L*!so/.8[rAdD7S3#PMSr;%2@DRiQFM0`$(:F.Vk=$AqfC$W7[<+;n\kB8Huh4ns);I\MOlT^eU'k:fb41(W0Hncm`+VpYL>&g<PD80q-0-qC17KN'Lg[HnC0hOkXj?g<[QG[>k1#*++faXH+9VD"HI6-8)OUAbE]c/SqVc1DhZ>Tc`ql_*otE^pe3c-Qh9;EVR;$Wi)A8f`P]L7s;:ZULs#%L4?t6TpF$6L5/=KM@9Yhi/N&fTD^68uVFQ@<t#]PYY9.GI%)6HA2MNR](mp-upFVEW;`LTr:Bd@4BL$]+_jIY]].mjDe*U(%VhuPbb1%6KM*@:P0UZ^\5%*^j[_T8Ma)<13Iu"%8PWAU^T>nY3P(N12esD;2*X.Q7*a<n4@ib(s,r1M!?#m,kU%/BA]Q(fV!?a(6sbeR]DNn]l+`h=O>OX!613#;HHS+.h-Vuf.8s&1RSUrMCPI%g12Ytp=eN'c356T..LD_OYEJ:A&?#Pc$1S1(K-Q!"bnej`RW_\[VKDV9p7"UJ*Vo`7?s)u>ZTNU-[sDn\O\`YK&0?uD0p5ZED6TtKkU\ec94-2iYH#BgRMcF,j;%G%%faZ;RV?>:&/J][+_S'M76Y66\3,D""$pm1j$!,^"q=@D`eo-SdmF8Lh;9ao3uZa4I-p,s*d/A>b!'rA(a]-#DZHD<%T<OL4gOtq2#J9gN1,R8\ZHGbiM)MU1-SjP+eaYWlgsVP-)1J;RItM;,TL,1cFWVImu6i[UimJ?;tMb5tgS4clso8A=FcL^&P)/F)3V]1BJ^-'?4[:j>XA?.-j2p-F.O:QcZ*6b\YNMa5,PZ_Y8Z&<E*]Zf:'ugG1*#7Y&@KJVt\5LN3p6@UsPui&R)&Gg0s3sXDB!/=/3+Fq@=ldf9'GhXk+t``V$-E0dii0p?M_q^Ro;^U[,b:lZPm+FObk6_R1Xo1`Gr,97!H/"'=e=k[XE=HduEK-UcZJVAFuY&T'e*gH=NJWWATpo"%D"W'ZscB^n^*<O5a.4[4Lfm@1XD">ZLoEag]-@df6OoB4eOR6W]!jMa><8@7!Pr-8>@0t2'sfC1/,*GWW7jP//A9Dh(.BKRqN7$;+&0f#d_a2<aWIe;K;f;G]gb`m%u[r,0,DpZ$YJ[m:u@KtS:rOIY3I@'Td+SO#-1j?a"iTToM1t2_uI54u#R>ju9a!8iH??U-ok!_0AWsJ'.s./Ts!rGaV`1\!Ye0@%#n.-[c)o^2TF2+0Sk4[\LYEN9*]<:PrnIu4Hc<SmOgfC/,rb!+'qmb?aS[t.oYe=^Ns);_c5(Nt(osF0N'8u3+%8AdS80[*)=O]'<Zh45hVk6F&S`!Ym*Ea/#6Ze*<iNl,:K9ZBcP!:=piQ_B'7M>Ua~>endstream
+endobj
 192 0 obj
 <<
-/Count 5 /Kids [ 3 0 R 4 0 R 17 0 R 92 0 R 181 0 R ] /Type /Pages
->>
-endobj
-193 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2727
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2196
 >>
 stream
-Gb"/(>BAOW(4Ol=^e8mAeA;80GX4B=YS/DWNn7!8c-GaYG<Cfi.;UG2-)is$p\b*]-<ldIak?B]j)Ia(4;Subk;rnS-O`5pr]=BsE]P@nJ'/-7A25B7;Fr2OjD6TGT&>'j#k_04_MD%Q8!/n/S<"f0)_I3biKM@b3lJLdKLSPoF<"R$=^7+_&hfS4:X[QBaQ-thH"iKR2#'80OUr&(i<-Vt8"JUhKV;2:84?Vb-7JUTiVS:K"iitsKnkHANk^N0AiuI>b1I;eHM\A)eh-dr=I/meX^UWX_lK;41WEkXr^i"%4=fD:rg;s+]^_TB)]OMoXik1Vo2d2jC<njd#bsKp>92Zi8+'T&-6@>LK0(I210`k^0f`CTAX/FnOa!Z$9imT,JdH>nleGtnE?QV#VmIWU*ET:>06CNaD_^R),gfg@)0kMA"X"KP>J]Ba-<5]#F-<B1Y"2f4Ei\5-aRp.?*aJF62t0NpY@!AN:WP@Fb:hp6_"b/ab%7+Z3D&fl9f,nJduj\TA6B\S1t0u0e=5'ceC?%Lg[uR5g-DP[OBiQgT!""_`A4$^obVBI'@S//dsSQ,OC]2'?)Zc:C;Xq=6ScS@UZAe\5?XoUiYKZLSRjj-AK4CEc<g/iLKp*F3[(s]"H4,&hIC?GN-]Qt*c!JR=YYoB$m(Z;2O_E(Q>XVhH!?LE=Y/SgXbn)8E*se,:1gjhCk+e5l#.JJ#X^?tMhR.54KETroO=5SWO%-]i??J/ef2,['LR\HK,6t>kRrMH?-`*ec?#ZGI@Ml?eGRTsS.s-bVNgGqJif_sBmj2.C2m77X_tI1ZfRDg*9a]HP!3=sbRUO9Je=EQZAbmUW@mKrc*98N=34_!a4Trs[S#IqB=i<>/AVN*40cZfbf\@E'k\9;L2T;>HSC/o2H.TjaZK':En-9'q$6Z`6-jYPYo7.f%)CS`s8;Crr;-!HjPMo`BDg$L@WLV&F7MIr=Lo@"`H#5'q(IP/S1N+"`WMm*XJS.fYE/*R3AuH4D)<%t<Ems`\q[Xka0gJ@o7bj+bc\MnF]$1pdD(/#*<P\m#BHB[`eV^V?0Cf3On/Wn"DZsW4KZGgcs(DF#(N7^OFtF3fkh#^2Z/Z^5@sUIJU635\^e8=%^aMdX'i&r3Z0.a9S.+=aq$<i"<MTE8I$87PG2oKV)lE]?,W4[7j1.uWZ!^.4_W\D6)lS<^"!j)mGWrUjc+ujCbi^aI?1h9BcbRU_j-p(pZT:.?Zo#l'N"PKIkE*5\Atr!GNY<*j--bBVZ54Z8HkP?fWJ8uAX3C&G06,VRl$_k@@&!Yno8F^]^Qg/#N"-KN#u_L*Ht42`#nH%4EZ25#B2'Zj,Tnm4bc$OHq%3*1\iBY%G?.0[c-PC0m:%#CgF&''O*q:4Yu2GCs"Ur&WO*e4tF'2=p/VOUP+di=.rPhbks3Y.!pKe+b1f&O+(5bIR(nZKF1Id01X59Et6o6RDZUL%V5`XTT]h%.Z\D8.N`M+mj6DscECJ;o-l;Y<O2r(q8Tk(Za@H7(1jJC-o<gf2XsSGO"ShfU9X]X`1PH.GuV>7QI-h"3*9^TpHh]'4>W#bct8'qlWNh%Mp/Iqd=/Ul(i:K]qfTYC(]8R2iga7Y1u6CM>fd3e0"C-^&S;C`*+"#CK[;+Y+Z:%u&K]4H+5U.ZE.V0l;oj??5t8!cX?pq86%$t/W?t#q@U*&H;phQ7g[i&HV/dJO$UIup&eEaX"X0rd_uP+]0<LR9pGNI%>R_h<_6n/'S8Z(F(!)I?Us":Eo.][9HWE'f`s7&-&^'SHI(63tRA#:hc?b+m>?(e?]`r)NKC.TgK?OJR2jYEkkt2&e%FFTO62:Hkq?4ATK&d4Nik/(#0YdpD)Ou(XOj.ka!j/.O69JZ*=!?j+PNTP+(e#KF0H$>W?OTCFPmRO<&^lC)5alI-N&YBdhMe>,:gjHkkD!Du?!J'2h[&gn2hIgKPdsh";6O&<#1HF^f?SMV[?<ndV^&h+@0Urg1'$'<ij+-N%\\CaTF(H720<H=0^?fXi7&8YXI0%'n'@ae#H:EHP@N/M!tL2Q[l-#[d+-N&CVY)-*Xitc]2NaB1I)VD9ku]cD$]p%ARJ"s4q5#K$7S_ip*l^il<)@d2!G<o>@hj\7f[dhb/XBI9,hpF=_ldMOQ(!pHAe7q?/<"?(Y;epoj,V(iYKth(:OQ`];;r)cX,CMkk:XP[V\.D&*hoeNGi1[reU+LD?EF`!;?`6.h@0DVj01YJ3cNdW^f!mY4=Ktc5EOB0>/a"2c-$+^l'd_m9m^"#$+e\OJ]eod"[LlV\M1Uf.c-sX`+X&W$F2^WPWX%Yrjl![_h^4[R^Ek"uEtD@O>c[STbfD.<%-(9uU$C%59f(mbaBue;r<Me]F:AegYf#Y-[KW>/sgoU#XmBSGERM%]$^Cj4:CZG.N[cI!YSA'Xbi47)r0:?VER4EQPtOlVC;]!QSMtDY>D0o^b\.k[sN80(cZja'@Ae]>:-pB/0f4@KIA@G.R"_)%JZD@icha6eUm]D9L\MTIY6'[e4MPG?qa8g2uFc9lT%[2SSas#%'*13+)VM*E>lurVm5,dF<oOe7YI)ro^p[pku,C`)IitFBDtYIuD9bN)Jp@VSWZAVOBT"DU>d^!L8U4D$qYPXK&lu;##o<I`#,W:pDY-^9HEn46W-6<nPbrX4T.,B@K\a/p2cZ_uK2["6K@U1Y!.V&#-JtK?2jjQjL;]+o@,PmMj$95GeB:,,=#rg:]<%~>endstream
-endobj
-194 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 3032
->>
-stream
-Gb"/*gN))Z&Ui84i)/fB#QOo/OKCXtCW5Tk7@U^XOAq`J;)=G)H\O=LEbm13T*'TDWR8\rfWqiTEnOn(lpdbt3!To8S1sm"rnkhfOQQl0c[Xu.$Z^2[\>59-m#g+V/Xd!KE_C(XF/BD?;Ag])Bhl+0_L!er&Y[:^*&ba-(t$Wb#r]6L/7q=<p.;MoQM%UGqgfa",6q#7nW=!O(c=WbDao]XIc!a"k9QCa)Ij5RJIZFKQ'_`_dPCR7H0sFiSUrUbECGR^3SDL_BhEFDA;b_K@7i]jbXXtk0c1@T7MQ+Gq2W50H-O%#P\4/JKqB-SdtESe%lqkOG(s`(f#+k`Ek8SZG1ECUOgb`?^L,QM_q)fnYio[f9>\#RI_TVuPQ)!0eDXrc2!(M`V`lXa0&+_/DXY@=JP=7n+%^HQ[7!ra_.I:-1Sa14L-O]IRB'pF"SF;(SGgBrr)1)7O8HDqhs;ENlok@R6A=AYf)AZoG]R28Vr<cQf\&@=m@4-`J+3'+k32@/XK"qAQ5uq@*GJTujfB@rqfR0h2J#$#aigQKQGLkQ]tNo3s&E;cFhnsW*&0B9H)Sh!P(ukt$S=)9,^Q=Co(lq=*J.tcJhkG!KGf'qdS5pd:rMZ>\^h#-=N7HNc5%/..2@&h:soQ+4EG4pPg>H.eF4IBaF-NAJ)]8m[VrAmF"48W*#@[h+G+Na"e/00EftU#iEYQg]B=%KF1d$?9dmmun6t-6B@pZcAlnePP6n:h&/+fu*)+3q#FPt0EmV\-NG0H"!>bYd#lbE%5D:\kBu]c"!#:UBDSnQNS3*?$j`eIN'[r2]BlQn5QC1)5#6_PrKe7)>bdk"h)<N.mUXC?``#:+id(.%i83,4ohas"`lX5LYnU7U:Ce["!#krM*(fedfZ:Ws%CbY8[]H'N9IEAai3c]VRjek2s#FWCl;!>7P.VsG;&nl(g47#t&E/ZQDOgZc$dYjJkHerp)5a;0b&='r]fhWIXCgJr8[>n;pUNZB=^=qK#H+&pM(j*JSE6/Q.IIk7NE[m'a)<ANIV)d[JQj57%I;U>^g^1KtEO0f'jFD$-,4kk>,r[^id%hC#Xs8m"[PUa3=WW,fB8FPrmF:.BAWS,4,^fnma`mfg1pZRCN[<5<j#7"*q?"HDXLnsHm#JmSQ&\lI#!FW/PB(!ZogQM3*P!A9I2:&d[lA2@+R<6eX;%FV6^EGIYs.o:/<_<E>kD[26&M=F'\,gs*i+b5gA1^J=[l5i)=PmT#,f-lmF:-7AWS,(,^fnja`r?;1pZRCN[<5<j#97>rt8rr0('6Q^YnRmXgetBhcF]jGpcjO?lcLcDL3:V*(tE2,aW#D6XJu<6cXn(f&u*4=JD&+Z;euMF\*.bG>dPK(UJ.&>]lMSIoGBW?bD$O*_+3m;W9KHV"Q)uVWO68::.nV6PPmpZnk7P8-cCkSt!HM2o'I26n7_JMK<[4qHi8QE4nh)[>8cFcqC?5O8?SLO2h&05E>*K_6Kq"G5T`\I!Gn_Qq`FP.Ik.dget'd2:q^(k@Hr#P=)q]H.hRFG<Hkib=P;p3rHi4WJ@?mR2S_G*3PAE]^M+B?dhb%,$YEG;QA3@^+\NAn\2r&,Q%(QE\*cJ7uff_M6AiarhdX6*[*&[>[67*]cjF@X$*8qB?1=G.f<UF2*+c8j:RSL7^LJ!=83&pP^"eP12$H8G&$O^IZb?17"(+gd<K$Wa-$6+T<5)Q*.RknTD`+upbLIQ<qo:J/,X0-Z\Gi/r!NTCU,=R7?*4#@?RuF!_b_O@iCFr\Cj:!>1`8pQlbPe5RF\j]Qd?8VQFQLEI/dE-rE$2?D8`6LR^,(]c;sHZ@aoGnm]\])\D[)#CPZ5LCC$UTP:Q\4le]o_qhNMsGo5[aQ]$[<PiM1eP,#R:qHoL/KakR!m`8YQWpE@S\VV@n'3_WU5"YNcoJfrSQ3(@FQ1TKg$2:\Q"8I3JPAot(^!nYIr]@iYLr\?8&X7mk%9F->+rZK+mW]ITW:\a^Xs0SS)3-M49bQp)3E+jG`Zm]g-E1Cm`nlZ[2=9$?r7b'emLspFE8Ak[&,_ea%Xla06$7/EEV\"lm;e%*c%Y%5i'?7VoAf5j0$EX)Ca\T:Ir"G@jc-9"3BZ``.k\-TZXJbf?iN[-@>d>M>I_plX=pHP6="#Z^)L9)5r3#QqhtdsBJ,:in&?-R!`$j2#IYJFM"dj)&HpY9:T47\kRVKlF/h[[;b7HA?W0]O%abM1,(<L8I#q#,Y"7UL^>r>C*4c%#[1pWq`"eG@j9kj!>Tq>!h`_4UrO:*kQ7G/Z(XEP9Gk0d^;WEg'*X4.Fs*c)'3Hhg;G9d\j!O.,q!8pQBr/P,I!RehOY:#AV-2^8U@(>Gc(BEi&kjQUq\7ofU(1ga>N4"EVL[g"]3$@L5MMT9!qM6Bn^>rBo*BF,_oV!pf4:q;lqQQ#^C2eOe`>U\-q-qTWHG!(t<Ou!GY0g4]7cQ$`@61m0:p\S1MrW.F"Z+"K=*?)0ZJK$ime4tbO/,uf7henMSUs4h(JWS+eGBhi3.@Fb(6_\F5RFVH!7Fk1/_tn_.dN*GS&KJ,l(6n.Cs1s.<M,AQCWTFN:S3g!`GCEtVkgCi!:N\snA@XO.Cqr8n6U]q8p:/[X`#6:3A0G/fDs1K`HD!MKGsh=:<G"3D\fZoMX_U(kc(')BmGh)gitF\X#=43Y!=1*=&a<drZh5@2<AgVbf_NDIC>G_BMQQ>PT73"7M_&B[L,27p%`9]PJqo0/%^t/9nR."XemK([g"1[RM9%_\7-.'Kc:a-VLdK*,Xje/Wh]-Z4"a2gbJdrQUAgjf$i'ADd:F4OKUMbP.V=s8?2:1]XbtC5E`uq7K=aA8s%4'oUmfPUFP@;<HIAAXiE\DRB>m_.Rm@Q4'0IodpZ=L&<E$rS1l_:bWb@:$_l-]*j.c**#R'.pW+!5U4lk7l`$s7Gk"0R"Wi+-d1,#*j=S&k1fi3$';_a4+eA`o%B:/Rll=NCgSVP1+Z0^92mo:A@Tj,A)-CtcP+!5`"i'US;+Zi'>FK=-WB3-olLR,+140nNDm_!6t~>endstream
-endobj
-195 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2295
->>
-stream
-Gatm<?#SIU'RfGR\5/U+fnqsEai^3\Ug4=DDV#dD0GG?PM3?Q6U./%#oC$lV,tj7sCKOsIM&]1LrAs,s96oITO(\K)4+Nq^E:qcac\G3qhU5QDk#Zf6H0#1C(Ie]j5n^`u$Ck\;>5:ffjXXTqot)b\n3bjpE"Dt=(Ll*/ea5*g,V,a"%BO8gSVs\T@IjX\5LAO_4+s<nXF1'G2SmePIpNS=,D]F8ZW\Y*$j1E-?4d!B#`b7Ej"WNBJ01L!IpH0"AcagL"ZGMqR^nc30O(5ZcSXuJe#hX*Om1cnkDB!_M-jX31HL2W=S%)$s5nm58#V,=ZK*l*Yc?e-lcu>]PoMQiiu/7NG>JQT6sYCnXNd%MOb%CpAeY=lE<Rsg2-1;N#An8'h/.@WW'nlRI6>G*Zi<Z%.B@OfhHoBL(M7IW)>moW>N`*53+-pn:8'X;^D,FB_j(<Cr2t*2UVihOW]'%rUWgfMaI\dK5kaF(:0'Jma[n7iiUcDZ4bqd=r;Gunb;m5M\'IZo=R"/8EGOJj=*mg-E^.SU+fu;`(bJCg</hKW2frLVF'_jV&SI!K->8]R5fP47[K]h+3U9S\.BeNtG@>'g`b`-ON](`(QJn9)Aur!RJLQG4krh(%/liB:6lV.D@Fi%6_.1X/B7lP!%9l]hG6SuUPui9Lj"IO.7ERGe[BDJeHn].delIWDO\)D=2PhWs;VN)q"[uWqTNGK?B+!0tP.UeF/,p$X=gl;,jW[&'-sMp"[Ic$u?/W-,4C[rQSpcJt)nFsf<"tATKK"k]nL(7I&!U1iLBK<4!V0b,HSDK,i1ef0,?iP+r.-Oe>XEC"\(8<3hE[^@*]d#b<^L_EZU1Ym*EWYWSsX>_8ruJ)e?2Y(D_m#*p?i^+nJq%5/Pn"7iA6oeKEFj7&_IS8'$r?t@nI'%M65N?YXJaG_aJ@'Wbl'_F%p,jo,8k7F_S;J-PB0Ge#KcDC1M]UJp:#u#4blV+;o?#2jBOe*,ma?#2tuZXI=>il_p;p(.0H[pOZnCFaLO1H9Z.5%pb+b7WF.i_p+dJSFcfQG==_rgDL?\iWkV3\\\c,KOZ$lej-Yi+SYfhim'H2I"Z;Rfh`.Bj,Iq+U.qUhc4@=n`iP1(VNldBbqYQU/0Y%L^D4m1?sYQVL`LiK*hT[8R-%?>&jDk%;I)p9<1/Wd^R@akIddF9Jbs:JDiT/G_@>I.5!l:^WE?oh7.!EK`1I"scmK_XFpqg82$(WV8oENof(W.+#E_rM;3HtS@494L*jRBDrjI'_`K>`XP0/)*X8koiKmh*pRi:!!JL`6cJk0;qN[+cnl4BqW!P5]"eL2^gT6#qkn"6D$!;(B0h;_0n05$V<a%]elM/]!%l"Yq(E91O<YQE]QpFW[b<6mqGXV9kJ#rBBBks>'rH#p=L\Co#0<q:98Y"u;WQ*=it&nml3`d7i?`=oHBS<EJ;BU!R$l,(k3=#8QR.,+L@4>5Fbh5?7?3W$P&BZgX]lPaY)^4?`NT&:.3,;pWO'*kd8npcjQBl0i+%[KC,UTW..JCM=#R"/Wq>Er%f+Xu+QP'?8J",`.a6jccs[BifP,^PgVfhB$m]jj=[<3`u+Q!Xl2mfl[S7AgQXAI]@IJk3Mk5$pn42)^Kk73-R"I/Lq\fsnb1r\U[.oac7b.9drhS?ng!&miqM:E9oQNfn*>)92Z*=r_Bmi98,q<?Ku([Q&tnb)UP[UrU:T4ha($oY['iJ/XQ-9&MhN&?M(t2"3,c].Kd,GgB;?%)8NGG(]4I#C^\Z%mKP:$&A;"X;1s\4!kuX,a*pli2h^/-NV'WpV&Nn,8\&AV:5Y6EY9c!nratW8^<Q/0+?/UB6W!X5nEdFf:3amhOXE.+=1c3e*Zupc9?KU'I@qURPfCAN<;<YEFRa`+J+9X9g<7HZLD#^YOZ69Ug`5Z^?`=9`r0H\HJXO+G(ErhQFOSN^1`bt#LA8*:6=3W\)-n_+"]U!i<C7Y^\5<U5PfG+4F2GJS/5IXrcJc(h!!I7Z01@]=2B\5@L`M:r;+?i:\QdU5E$^k-=4QIeBP<RA;(u!\aP8E>,4:>TuZ1Aamp0j0fGYXKbsR.,k<s"\M9#tS3?J)7]B(<`osJ/p\:qnQ@IRD6.`90k)mN)*I"g[6$PCJI-Bjr1P'sY'_G/@->Ls0pFPsJVB,[ao"K\QJW*ZL`sdUhi&?!TlnC=h_UuSbMkg;B_J[jaf3e06e$=Bpe\0@,GW'O!,;4a/SA_d6U-$]KlS;A$j#3,0<n;M-':FS[g.!>aIo,n*BCl/u[L9?,08o[JrqMZ7FI%M[rrUW?nk/~>endstream
-endobj
-196 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2485
->>
-stream
-Gb"/(D,]1[')nJ0d@^-&4!aGN)*SpW=K90+`NJ%!3j,ED1bo_TNHQR5I(t,W7P?Y>G3mkNOBdYG,AF$QB:c#nmZpR$nAeMCUD^kh":j=W?s56U^iXZ'-C6EV][:T>FM0m%G2G+R!-H6j!m:U!I=kJB`en8VjhbP_2QVBGi(G:\D50&P.1n68P34Z[fuLQUq#HV.9&iP[>h@=)b?Ac&=do*JRr2XFI,EM-THE)Mn:>K2^?)r!RsfD6#Ml]U&+>q$ptqG(BSLF"Sh50bfIY`X#@Q/d;[VV,Kn<AMU6+o.(6EL/DT8b+=Vd9]B+WM^OjXX@9rO^&N_NYGaclkK@Pt_2Pa!tmPsD(L,&'*Y_%@J<NIbY+8T`R%d#cQF&rKJ(]U8"X49$%FT'kJ6SD?8b6[l>uLahM`e%+BI1aDR3H2DB*Z&Bu9?9%A!RFP',9D3Fn'RNAQAMIn)@n<ANP_]F`83/D;;'43cD?r;oQ$gTG_\l6a<68>P)p:bq7(gV0W*iK7d9],FJsG\RQ1JLApadeE'o7.X8h*A7$$m_T#3Q)FH!V\2V`^gu(Ja;[L-3<3#aA?FkSn-k_cXe&$LlLR$p4T:!53lOs/F&?5,@&O#%jr4Rp!ob0C\^rjZn@s0e%r?m:cWt.dsm_j'@;r"N.-qPn@7@?<f`j@l>&=SubcIKqOZhUbK@s:Z1O1kBBba\.1tW/L&"tS/KU68:S\A./X5:W]P2/oRWeQOgq)20':TZ">gp27dr/Z+W$:kEu`>3\h0ZMILpXF7FZHd$_e7[orRnKqP0.^K#@ZnG&TTt$0i\/%rg!e]SD>^qo6lb*<u%h8qek?VJ6='&sa7Y!f*0)<LS(Bj#,.DkpiJgQ]E\4@MPZ1b%r?r39")X`/I51ru/DY]AdQ.X)PJ+cc#J`"Y?bf'eF5tEIEL43!>d];T(Po:m4ma%PWJA#3UW^_9[o*kMrTdQtP.:E\bSSPX15uWRfF]O[@35LS<O_XMqd`HNY,a&VLjrb6Y;BCGZk@,_9R"+fYT$6R?@r4Ar$ZT]V*TXBP_mm0@<S"#K?$f,>!>A;ojH=#%_"5FXBEAsN16Ta8^ap-@@Vjot1CNmnJ3c"KThakHkO)ea^@_27+JScV?.;]RF,FPm_M)9))N^=i&=#,@fW4Qe/cU7b'=\0=@-"d2.uE0dM35ChVqQY0Jm$5t"bEXiaO-1ens/+8"JEuH&o.M6,]J5d03%-?]CMNE_7ZBj<Tef3+Jp/CoE!70sQ^qd490c?gXaRk0"/1<O6;q)n_cgj'7?W0*W!Z+C+bW9G9OZ_!TAlJ=gL(qsOhSP7\\5LA?WF9J6`G?,:f>GGXePMmWgCS^a,%2-op\/1;2"kHmK+_pII$idI1Zap[qG()k?-dI872(sU(e"q1,T]-L3#&bK-#A<WlL"dn4Dc*b:O1_p9uT64%je3]4Jd(tmF0ttkc[-d-a6rN?.)E1WD">iEJ'I@O;YrrXfFL.QHn6D;cFnuJgCbZ3df?r3C^;T$DP*:":9MO^tDd<0fCF#^I4pXR-#lo?1/0@'c-Eu4bBqL^XQ6sg.F_<e2<-oVbH4SM5!UVW]"";\q@H$WH1?14%_W$>pN)mfU+?H;DXodk_0ntWWGO*nD`TtESE@VXJSR@b256(BMkV&%bF^he;58)9.j,f\Y'HI;qh>C@pDr`:15'W^@M>"Lq(Km`]!"EV^XYU*Q.'dPEbIn9iF5Z33DnSEoObJa\\War#HG"BH"J7Xkms^VDk(TcHh9tE^[6"]QlBE4rqh+NdnSZ>VAj8`3F-Wl''"9a@n00hhHe(Jb_M_ctq&,g*Q]T5V\T-jb/L?SWO=<m93Nh<0h@.jd)o@d>sIEZ)4d'=8Z!cagWi0>P4^G6O?q*GD?r*JKih_n`p'Kh4J2@Tq2i%=dUs.'dUPXI6q'QE\`c"MnVqED.$sg/iiA!?4age4KbDV/%O5Qf!:M=\9<;Lg,Zi2G@RH1[3LBk"@d'mVJ1gZ?aI%d<*tV;Y3S<:UtnLlTsW[N6l*6RDT/-5QJ&GH>lA]BSW7RmJ)%J2lCt?Y>8"(biM+_]:L;L#]l1Da?U5dW?eMLJK0F0D9l(j;^`gu-oO2:A/Qq#D--8WUn4V0IftCs$6^'L8I;4PEn&=]!1qCpgI]N>;KU'#@Q.&XiPLN`_oC1R7kS<?@\U,.(L-U2!GY-mSNo_Q?&a6]^nM5[`LrbKM0hA\'5P!=UkDpMIrnZ`Ure/4uBh1U]gOG&Ea9@Rd-&Y=j@_N`k-ed\(Hcph;am'8JhUj5ZD=E-e$g+U$MR31=X)")34/(tDM&dl(MlCGaV@5uX(SdZ^d-S*dC<C?n$@Hojg!;ab:!C8mSoYWtc/$-*?<:p).)q"enfu'/,D!T9Z.g[eIPCM;R2`+!cbB-t-0ZQB%&<:$@@qAP>h(F]=/(TOCDhm(]\6S\\sM9k^1p\uF)&?OJNL^*as&c!W#:BhIN6,T.dVdV*HO,3mm$%.4\I'5q$Sqod1c~>endstream
-endobj
-197 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2251
->>
-stream
-Gb"/)D0+Gi')nJ0Z(G4].T$1:Jn4^LI]ZgCbscG(GNV^*,U&"WMGQUeXn1kj+>$$=:U2QLf?QdZYlqdK$1.9MZO>+o#_$Ic*R=a]6KhcQTFA[D:rdT!*5[!r_Qk&%GlX-NE8p\$3Nhg,#P@WlG+nY2*!4?<E/lj/G6C$<`,BI6`[VW?7N`HSR4%5@0-U6HK`<aGf.=EaZ$aPLRrR'VrUs^n?k/c@>J;3S3"<O)AeP,+@uT-]J44=9\M!jc3$SqbAn-JR7.-Z_e2+;sm>Q?!Xcb.dM]PG:&WMHO;&$o*+V^6/RNjDJSm%@m/@+D+@HRIGAs',)2jLQ*O,OYE6`dY\E@I+6VX\ra)kO^Yg"(rAUW]^cH#HM$/LT8o<=)+%=Cg[%>CFU;!MKNa-kI7<IpJ])>g,l&s.R1cpM?F<Vu$TQFus<+G0IJ`R,RG"n_,_Xs1656J)]X4<]fB(X;2K3EAs8h8;cT9HEK"@:X\eG:=HQ+0Ka:-aQ+):O,Rt;dD9u9&atf$nsl)cM)QT/T,`SQ/']^=Z"K\gek("Ka0/G`\`Xrqg60kjG"A"<l%.pcZ]oqRa<RU647iNCriHf:jCOe'hB\sNF5o7=T%B(ie&AH%:;ui=LBj1+0r#[YHk8SM3pfJq^GUFrIouOOETFAQk0-X!B@6G[CU#`p5:ARQe]-39D:`h>95WDm**4C:o'GH5eD=5GXK2$JMX7jnn<^5t>_a>c85<W8mW$*t5<0RCNm"`':i>2M#nG-sc4fIKRrR]ts$(rSM>agqg[WmP^%kg'F5H`b/n:I"VeWreA1>bROUR'bAJ1^ob#1+I@PPLL3Y:`H4qJY<6:pd'BC4N6LoNQLH&MjJ'1h]ta&FNNT8W'=ON#f@f_]U*fO+Dd))VpfB>VrB*6^^RaDaaWG\qj>K=T>tg4b)X+'r]-.uQ`;@:[2sLCm"Z?Wn#d,fDK!YB=>-DIfqSJ=8`[kJpU%$3l$i'"CYo<94l(l9TO+Bmp7:al'=]O.m,4Pa$.\o@5@E_kP)GI6rb=j#3f`1EqT6Nb^dAd6^hO@7)VF3nXiRh$B4N.nXVbP\OSkQ67s+GaETgF=V<sUGo0cT/Wb:4)K9W41#iXK2Nl[+;(HK")p:%;3`r6dk]`#I($pOTk]cs@C>i_od;?RBd-6dI1L6bL/F5nW%S"K1<39<;Kq(iClba=+UlA'&5"Zq6I@N]fUQlM11"@WecO.D3KY^Da*2Et2BfSf37jn3O'f!V.n[I/+afOkAQi+_Z5CO?')a;%;Uk[TAN\.9VP\QC\.gA]\1XLJ:JiaiT#!3)V6:t%mqm+8A8\LRr</.CN@t9Ua4AoWg\460<6k4R$k^:5C0!\.D]9uK]S8]N%]>&n7S-=S9=#P$_B<h/CPX9@Od`WG7]T'JBi^E<-CAsGZ9lX=Q*1U.j#!B?GAsDLoHRCDVa<m'7gVsaXel_8k,'YGPSjqM;C:%i=:4h:0HS#+6qWr]FpEX$]4%Ecd^Xi%9&C==[9,T\\jN#0]'r$U)N2d#0Ji%30;IL</m9^^SXbSsqW6aBBhr`9^QAselaOJR)+"q];L&Z-^kGh1$b/_8%!HLc`?%X^mCQZn.,S%I?_LUpIEL;DEp!3M.f!kFaK3d.SL2^B@]P):HfM!fcFEGRo.p+`H.cU[i,#$m9Pg?5UfB+jrnDN*]]li`c0eckH)[jTaapKBogJ#59[5AS:0!#VK2"P=\LB*JH(*>dHFCZeSfb?)IHp47\+RQ6IQLg6[di<&7V1KD<&KHg_S9Zb'!+gqCC7:#O-tZP[F[5mAH]Df&ttG5!t)U_P?<Q%7Jsp=^h#^sJ#j`*fn%ISd]/I-QaEc'R>`Z&36]Ulb,R?gI7qsj>F2:Qmf.2Q%u:e`8VBa9USdO^=+RQo'^NGRCq[sO7gq\"SObo/F-5Y1]($#nQDV\Uf`!nKad[q0>Yp=^L@K]>_sFtu;0d*%X1H"Y8W$NoXb>,e3YT_p^LO)H@>0D.;&?Xjr4siq3"I^]S\:=Nbd"]k[n3]p`m`sb-7MR\"S>)4FX'+^.I*Sh(-dh1;:JA7//S.H\r_8%FCW\<rdE@1Xa8?j)a1]X0i.Q"-5ku%0t$U%P'U6LU6Jf8@Q:OBD=a4TVVQL.%\9k)YNdf>E`(,nn>;$C>-H\87Oa(+;)W!udF#F*X(14l_W"k$9R[r<'r@GPjn\/>Mk`J4cD[`$.6FBoI='=WO4DF,;DhI$Y*pr2qh:`O`#R0;gtF&1IK@/m^u&4]iPhF_H`Pd~>endstream
+Gb"/)CNJ7=')eD/Z(G3r=/,1,81OQ`5O2?Idtg`\hWmo@,U&"%7Aq?n?K]pa6!B-Y?eLH-c#fg$NCE>f-*ZS!f`bmn"@'9mNY_[C+nRE9:^5kmW9^r)No3$IiG_8?2ZSUD4Q6V(\0;3G$YK)6]?kmT/cd:A>bDQ"0*8jF&i;L-':h\sA!"m1b*2II0-U66_XFSr%1>K6-X^c&)6qTXNu.*uHf4eV$%bHne%cnA-LoEk`[J;#*6N[V"<Ie-,9IoFZ/OY0mb]q$B3mgW)>BFd-WOCe4\iMV\;\k'6uYj+L"3<fbc%>8QXq)YXLV0[q0ohVk5)t^B.BLMjbHqWUZ,/tbp/GDYW'4b9GhWlkuhp=Si?%AQ`HNtMJB]GdT*LIZ9nhL%QqZ1@0uEO!eM)je*-^rrmj3<IB&k+1X,?3bdd&-&abr'r3ena?h!YIM-P'l&ks60rcfJq#s/]Tetb;J?XA`<Hc$mh)fN"hNbiHk9jTnnr-$9eO)pfcLZGm>AOJ]'=VStF$06umT/6F:l@1Fc4l8CJW?\+2-mGpgcrL<sFRfVdS7C"I>9nXCV$B`kK$,PZnAnPf0H<.9r1cAlTf*2e8So&671u@dOuPI`4FWUeNrjUf1^IG.JCB!Id`B'pF4Hc"<%np)M<FaF\N\hsPh2n)4elmXQlrT&G,4TaR_CC9/:@bCjKg9.=HEYm7Gh:7D^n])*uQ6]CH!/le]'hFg2)u,gY_ZaleP>u]pkNUeVe"98nBr?1SecM.>ZD#9D-NMjo"PoJIo-a5WB7,P%O`@A*7#b<M%8o`W>0-Uj7Q%.Q(PYATh.Rij&$`hYp_4r!WP+U?804CtOTB_&O66%&_U/f?X+E>Y%eh>o5Wql(q7dW[Lg_`XZ6t(h*(5V$#[]5s/5,=udAh7eNc-kUDa@I8]11?jQNUJ_RP&Fmd&L*^o1\jtL%5L*nspMRrFO;Sq,5=0E/FLCuoMKFkWUEKBh\Lg8rN_KgI%Krtj$L0CHKngI3"<g_ZJ;.BEs<!*6&"IV:$]<qI3>JUsoHB[pu]LdD,[d$R6=q&8VWKD@caAURi31GN$b.0EER6D[>g`L?"Q'5K^ja4l@PECb[OZ).3LUT%VW60%#(]I^nF!VK2]'prQa&eH9L6FD!Q!?/>kh8jLXuB+D/29j<$"rIl8/@TS41EAb&6q_qE%(,6(T[GU'(967?fa_EQ5,9.#4\KW^Ij\([=:OYcZ>ZAfj,CHAVq(;MPr9dP`)lOi*"uY[i`3M3OsAm\(61\RU_k+rR#P-Cu%7ZI?0%Lja?O4#Q_T:ju&Cm[S]r^eI\ZDiRDo".]H-bBi]ja==!<C%C'Rs;L9/8(`g^Hc"aQ%'[t?0<=!lYp6EU5P30+;%^'oFI`1O;<16A@.,elSoLr]:5'1A;18DZfW<>9s.fg_&-US`m8/n&MmU0.)2b^SI)AhmLS"!liQg=BOGGs7`(LF&]@!R#&G%P%TFZb!%74SPS;_qQ]^O2J#m3rOC>M66eIZ$A2&B]6hWa#6&/rW8+^dVF7YT)m]p/&nW+M-K0Dc\B;Kk;bCW7Ro0ZN4o?a^=@%AW;G61kB6QO"*-\[r0R\N2tQR?7,\"0=qXI*nr%o'-;CMZjJ/;InT9^2uQdig"iSg028jY3H/9#Sk*pdW<ELSWQoHkYg)@dZ_\rmch%!:caJ)U%gMEITBs=<ot^Gj4'_cnn_kc`A`*K7d%#Oms&$=%YVs%q.=bnLZO$_LY?>V`#g.K$Ti$(;$G%BZ=GAq.r4g08Y^lF3eh;.?+CKf.WamsEXX[JNilWk`1V:-%Y"_dN;KUKb92mD7s%eg`6l>8^KM,mNVXUZgJZn/Dlb.@U]uebo$pe^#-o4d0RHMi+nHY>F[`>T(r].m<gQU"@d*!_inU8g&G[9t*]XQm#?/NaL`N&*%6"ru_.;$O`Z-n<0_SW.JMqVq9?kj!>2o#uKpKHu=Q[:o7Q!/PcTK=MM9(iD[`+XRo5%Q2.U?@h,:4Q3k:A.[?$j(OEkP*>_K0K"tZT`0TK0fH7^@/I5bgV!L8LCu?D!cV-U`NO@/6/"0(f'@=gS/;iD)\&h6YGE.X#c3(>aFt6]P1i*f'Bc,<JjXWPYE$6Fn@9:l52PIY]uLLS)5Q:7B%&FH%%gBii#YP4)SeXb"eqGD\&?)Z$Mg7lDA=BFgFMX^G'b1Qm;IOF*>Za?\%TKnFoppGjuS7_>qg~>endstream
 endobj
 xref
-0 198
+0 193
 0000000000 65535 f 
 0000000061 00000 n 
 0000000120 00000 n 
@@ -1628,167 +1593,162 @@ xref
 0000009502 00000 n 
 0000009723 00000 n 
 0000009944 00000 n 
-0000010162 00000 n 
-0000010387 00000 n 
-0000010604 00000 n 
-0000010819 00000 n 
-0000011039 00000 n 
-0000011258 00000 n 
-0000011483 00000 n 
-0000011701 00000 n 
-0000011921 00000 n 
-0000012142 00000 n 
-0000012361 00000 n 
-0000012586 00000 n 
-0000012804 00000 n 
-0000013025 00000 n 
-0000013246 00000 n 
-0000013465 00000 n 
-0000013681 00000 n 
-0000013903 00000 n 
-0000014129 00000 n 
-0000014347 00000 n 
-0000014560 00000 n 
-0000014776 00000 n 
-0000014998 00000 n 
-0000015230 00000 n 
-0000015450 00000 n 
-0000015668 00000 n 
-0000015890 00000 n 
-0000016109 00000 n 
-0000016325 00000 n 
-0000016541 00000 n 
-0000016773 00000 n 
-0000016993 00000 n 
-0000017211 00000 n 
-0000017433 00000 n 
-0000017651 00000 n 
-0000017867 00000 n 
-0000018089 00000 n 
-0000018321 00000 n 
-0000018539 00000 n 
-0000018756 00000 n 
-0000018972 00000 n 
-0000019193 00000 n 
-0000019425 00000 n 
-0000019645 00000 n 
-0000019863 00000 n 
-0000020085 00000 n 
-0000020844 00000 n 
-0000021062 00000 n 
-0000021278 00000 n 
-0000021500 00000 n 
-0000021732 00000 n 
-0000021952 00000 n 
-0000022170 00000 n 
-0000022392 00000 n 
-0000022612 00000 n 
-0000022829 00000 n 
-0000023052 00000 n 
-0000023284 00000 n 
-0000023503 00000 n 
-0000023721 00000 n 
-0000023938 00000 n 
-0000024160 00000 n 
-0000024393 00000 n 
-0000024614 00000 n 
-0000024833 00000 n 
-0000025056 00000 n 
-0000025276 00000 n 
-0000025493 00000 n 
-0000025716 00000 n 
-0000025948 00000 n 
-0000026169 00000 n 
-0000026387 00000 n 
-0000026610 00000 n 
-0000026830 00000 n 
-0000027041 00000 n 
-0000027264 00000 n 
-0000027497 00000 n 
-0000027718 00000 n 
-0000027937 00000 n 
-0000028160 00000 n 
-0000028380 00000 n 
-0000028597 00000 n 
-0000028819 00000 n 
-0000029052 00000 n 
-0000029272 00000 n 
-0000029491 00000 n 
-0000029714 00000 n 
-0000029933 00000 n 
-0000030150 00000 n 
-0000030373 00000 n 
-0000030606 00000 n 
-0000030825 00000 n 
-0000031043 00000 n 
-0000031260 00000 n 
-0000031482 00000 n 
-0000031715 00000 n 
-0000031936 00000 n 
-0000032155 00000 n 
-0000032378 00000 n 
-0000032598 00000 n 
-0000032815 00000 n 
-0000033037 00000 n 
-0000033270 00000 n 
-0000033490 00000 n 
-0000033709 00000 n 
-0000033932 00000 n 
-0000034129 00000 n 
-0000034320 00000 n 
-0000034594 00000 n 
-0000034791 00000 n 
-0000035092 00000 n 
-0000035277 00000 n 
-0000035456 00000 n 
-0000035729 00000 n 
-0000035997 00000 n 
-0000036194 00000 n 
-0000036385 00000 n 
-0000036576 00000 n 
-0000036850 00000 n 
-0000037046 00000 n 
-0000037364 00000 n 
-0000037561 00000 n 
-0000037862 00000 n 
-0000038058 00000 n 
-0000038346 00000 n 
-0000038534 00000 n 
-0000038836 00000 n 
-0000039033 00000 n 
-0000039224 00000 n 
-0000039498 00000 n 
-0000039694 00000 n 
-0000039995 00000 n 
-0000040191 00000 n 
-0000040381 00000 n 
-0000040691 00000 n 
-0000041633 00000 n 
-0000042399 00000 n 
-0000061402 00000 n 
-0000061663 00000 n 
-0000062996 00000 n 
-0000063762 00000 n 
-0000082148 00000 n 
-0000082420 00000 n 
-0000083768 00000 n 
-0000083840 00000 n 
-0000084127 00000 n 
-0000084216 00000 n 
-0000087036 00000 n 
-0000090161 00000 n 
-0000092549 00000 n 
-0000095127 00000 n 
+0000010163 00000 n 
+0000010388 00000 n 
+0000010606 00000 n 
+0000010826 00000 n 
+0000011047 00000 n 
+0000011266 00000 n 
+0000011491 00000 n 
+0000011709 00000 n 
+0000011929 00000 n 
+0000012150 00000 n 
+0000012369 00000 n 
+0000012585 00000 n 
+0000012807 00000 n 
+0000013033 00000 n 
+0000013251 00000 n 
+0000013464 00000 n 
+0000013680 00000 n 
+0000013902 00000 n 
+0000014134 00000 n 
+0000014354 00000 n 
+0000014572 00000 n 
+0000014794 00000 n 
+0000015012 00000 n 
+0000015228 00000 n 
+0000015444 00000 n 
+0000015676 00000 n 
+0000015896 00000 n 
+0000016114 00000 n 
+0000016336 00000 n 
+0000016554 00000 n 
+0000016770 00000 n 
+0000016992 00000 n 
+0000017224 00000 n 
+0000017442 00000 n 
+0000017659 00000 n 
+0000017875 00000 n 
+0000018096 00000 n 
+0000018328 00000 n 
+0000018548 00000 n 
+0000018766 00000 n 
+0000018988 00000 n 
+0000019206 00000 n 
+0000019422 00000 n 
+0000019644 00000 n 
+0000019876 00000 n 
+0000020096 00000 n 
+0000020314 00000 n 
+0000020536 00000 n 
+0000021309 00000 n 
+0000021528 00000 n 
+0000021744 00000 n 
+0000021966 00000 n 
+0000022197 00000 n 
+0000022415 00000 n 
+0000022633 00000 n 
+0000022850 00000 n 
+0000023072 00000 n 
+0000023305 00000 n 
+0000023526 00000 n 
+0000023745 00000 n 
+0000023968 00000 n 
+0000024187 00000 n 
+0000024404 00000 n 
+0000024627 00000 n 
+0000024860 00000 n 
+0000025081 00000 n 
+0000025300 00000 n 
+0000025523 00000 n 
+0000025743 00000 n 
+0000025960 00000 n 
+0000026183 00000 n 
+0000026415 00000 n 
+0000026634 00000 n 
+0000026852 00000 n 
+0000027069 00000 n 
+0000027291 00000 n 
+0000027524 00000 n 
+0000027745 00000 n 
+0000027964 00000 n 
+0000028187 00000 n 
+0000028407 00000 n 
+0000028624 00000 n 
+0000028847 00000 n 
+0000029079 00000 n 
+0000029300 00000 n 
+0000029518 00000 n 
+0000029741 00000 n 
+0000029961 00000 n 
+0000030172 00000 n 
+0000030395 00000 n 
+0000030628 00000 n 
+0000030849 00000 n 
+0000031068 00000 n 
+0000031291 00000 n 
+0000031511 00000 n 
+0000031728 00000 n 
+0000031950 00000 n 
+0000032183 00000 n 
+0000032403 00000 n 
+0000032622 00000 n 
+0000032845 00000 n 
+0000033042 00000 n 
+0000033233 00000 n 
+0000033507 00000 n 
+0000033704 00000 n 
+0000034005 00000 n 
+0000034190 00000 n 
+0000034369 00000 n 
+0000034642 00000 n 
+0000034910 00000 n 
+0000035107 00000 n 
+0000035298 00000 n 
+0000035489 00000 n 
+0000035763 00000 n 
+0000035959 00000 n 
+0000036277 00000 n 
+0000036474 00000 n 
+0000036775 00000 n 
+0000036971 00000 n 
+0000037259 00000 n 
+0000037447 00000 n 
+0000037749 00000 n 
+0000037946 00000 n 
+0000038137 00000 n 
+0000038411 00000 n 
+0000038607 00000 n 
+0000038908 00000 n 
+0000039104 00000 n 
+0000039294 00000 n 
+0000039604 00000 n 
+0000040492 00000 n 
+0000041258 00000 n 
+0000060261 00000 n 
+0000060522 00000 n 
+0000061855 00000 n 
+0000062621 00000 n 
+0000081007 00000 n 
+0000081279 00000 n 
+0000082627 00000 n 
+0000082699 00000 n 
+0000082986 00000 n 
+0000083075 00000 n 
+0000085924 00000 n 
+0000089377 00000 n 
+0000091759 00000 n 
+0000094329 00000 n 
 trailer
 <<
 /ID 
 [<e28a0411b29dd35ee21e42db0bf49490><e28a0411b29dd35ee21e42db0bf49490>]
 % ReportLab generated PDF document -- digest (opensource)
 
-/Info 191 0 R
-/Root 190 0 R
-/Size 198
+/Info 186 0 R
+/Root 185 0 R
+/Size 193
 >>
 startxref
-97471
+96618
 %%EOF

@@ -544,6 +544,8 @@ def main():
     parser.add_argument('--highlight-selectors',type=Path,default=ROOT/'scripts/cno-highlight-selectors.json')
     args=parser.parse_args()
     selectors=json.loads(args.highlight_selectors.read_text())
+    import cno_selection
+    cno_selection.set_line_table(args.science_root.resolve())
     failures=[]
     for element in args.elements:
         try:

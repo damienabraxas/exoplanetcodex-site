@@ -85,6 +85,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=SITE_ROOT / "assets/data/solar-report.generated.js")
     args = parser.parse_args()
     science = args.science_root.resolve()
+    cno_selection.set_line_table(science)   # RYA-1232: headline ranks by resolved lines
 
     perline_path = science / "data/products/solar/Fe_perline.csv"
     gold_path = science / "data/reference/solar/solar_abundances_v5.csv"
