@@ -291,7 +291,7 @@
       ]
     },
     {
-      "subject": "O-products-0ba7067733f9",
+      "subject": "O-products-2f26fcc4de61",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -304,7 +304,241 @@
       ]
     },
     {
-      "subject": "O-products-0ba7067733f9",
+      "subject": "O-products-2f26fcc4de61",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-products-ee093b5cd43b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-ee093b5cd43b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)",
+      "evidence": [
+        "data/nlte_grids/amarsi2019_cno/provenance.json",
+        "data/curation/threednlte_availability.csv",
+        "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+      ]
+    },
+    {
+      "subject": "O-products-dcccc1bf145a",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-dcccc1bf145a",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)",
+      "evidence": [
+        "data/nlte_grids/amarsi2019_cno/provenance.json",
+        "data/curation/threednlte_availability.csv",
+        "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+      ]
+    },
+    {
+      "subject": "O-products-7570ea595567",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-7570ea595567",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-products-34b4e514053b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-34b4e514053b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)",
+      "evidence": [
+        "data/nlte_grids/amarsi2019_cno/provenance.json",
+        "data/curation/threednlte_availability.csv",
+        "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+      ]
+    },
+    {
+      "subject": "O-products-f76024e80aca",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-f76024e80aca",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)",
+      "evidence": [
+        "data/nlte_grids/amarsi2019_cno/provenance.json",
+        "data/curation/threednlte_availability.csv",
+        "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+      ]
+    },
+    {
+      "subject": "O-products-97dff9c24866",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-97dff9c24866",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry. Turbospectrum is the synthesis implementation.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "O-products-4ce6582718b9",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-4ce6582718b9",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)",
+      "evidence": [
+        "data/nlte_grids/amarsi2019_cno/provenance.json",
+        "data/curation/threednlte_availability.csv",
+        "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+      ]
+    },
+    {
+      "subject": "O-products-dbd116adb0fe",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-dbd116adb0fe",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "claim": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)",
+      "evidence": [
+        "data/nlte_grids/amarsi2019_cno/provenance.json",
+        "data/curation/threednlte_availability.csv",
+        "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+      ]
+    },
+    {
+      "subject": "O-products-951619c74bb3",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996"
+      ],
+      "claim": "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join.",
+      "evidence": [
+        "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
+      ]
+    },
+    {
+      "subject": "O-products-951619c74bb3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -315,7 +549,7 @@
       ]
     },
     {
-      "subject": "O-products-0ba7067733f9",
+      "subject": "O-products-951619c74bb3",
       "layer": "Special diagnostics",
       "reference_ids": [
         "johansson2003",
@@ -328,7 +562,7 @@
       ]
     },
     {
-      "subject": "O-products-d00ae41a9b00",
+      "subject": "O-products-400d2fb23109",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -341,7 +575,7 @@
       ]
     },
     {
-      "subject": "O-products-d00ae41a9b00",
+      "subject": "O-products-400d2fb23109",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -352,7 +586,7 @@
       ]
     },
     {
-      "subject": "O-products-a911fb18ea46",
+      "subject": "O-products-b43c168af108",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -365,7 +599,7 @@
       ]
     },
     {
-      "subject": "O-products-a911fb18ea46",
+      "subject": "O-products-b43c168af108",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -379,7 +613,7 @@
       ]
     },
     {
-      "subject": "O-products-bbeb69b508ea",
+      "subject": "O-products-14585017d015",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -392,7 +626,7 @@
       ]
     },
     {
-      "subject": "O-products-bbeb69b508ea",
+      "subject": "O-products-14585017d015",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -406,7 +640,7 @@
       ]
     },
     {
-      "subject": "O-products-c4bdfbe8ac19",
+      "subject": "O-products-4b0ab56d8136",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -419,7 +653,7 @@
       ]
     },
     {
-      "subject": "O-products-c4bdfbe8ac19",
+      "subject": "O-products-4b0ab56d8136",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -430,7 +664,7 @@
       ]
     },
     {
-      "subject": "O-products-f02b3eb1b0e5",
+      "subject": "O-products-b35970fb8af7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -443,7 +677,7 @@
       ]
     },
     {
-      "subject": "O-products-f02b3eb1b0e5",
+      "subject": "O-products-b35970fb8af7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -457,7 +691,7 @@
       ]
     },
     {
-      "subject": "O-products-1a72432a141c",
+      "subject": "O-products-9f2918c00938",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -470,7 +704,7 @@
       ]
     },
     {
-      "subject": "O-products-1a72432a141c",
+      "subject": "O-products-9f2918c00938",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -484,7 +718,7 @@
       ]
     },
     {
-      "subject": "O-products-711c33d498f6",
+      "subject": "O-products-b87159d4fc51",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -497,7 +731,7 @@
       ]
     },
     {
-      "subject": "O-products-711c33d498f6",
+      "subject": "O-products-b87159d4fc51",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -508,7 +742,7 @@
       ]
     },
     {
-      "subject": "O-products-297d2f9df123",
+      "subject": "O-products-1a0fed49853d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -521,7 +755,7 @@
       ]
     },
     {
-      "subject": "O-products-297d2f9df123",
+      "subject": "O-products-1a0fed49853d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -535,7 +769,7 @@
       ]
     },
     {
-      "subject": "O-products-24673d0fe3f0",
+      "subject": "O-products-30cc32d77032",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -548,7 +782,7 @@
       ]
     },
     {
-      "subject": "O-products-24673d0fe3f0",
+      "subject": "O-products-30cc32d77032",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -562,7 +796,7 @@
       ]
     },
     {
-      "subject": "O-products-4961ac96e190",
+      "subject": "O-products-5dd7a576c91e",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -575,7 +809,7 @@
       ]
     },
     {
-      "subject": "O-products-4961ac96e190",
+      "subject": "O-products-5dd7a576c91e",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -586,7 +820,7 @@
       ]
     },
     {
-      "subject": "O-products-e0acb098043b",
+      "subject": "O-products-fabf2e672c03",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -599,7 +833,7 @@
       ]
     },
     {
-      "subject": "O-products-e0acb098043b",
+      "subject": "O-products-fabf2e672c03",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -613,7 +847,7 @@
       ]
     },
     {
-      "subject": "O-products-294d60b5a66b",
+      "subject": "O-products-b90f07a8459c",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -626,7 +860,7 @@
       ]
     },
     {
-      "subject": "O-products-294d60b5a66b",
+      "subject": "O-products-b90f07a8459c",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -640,7 +874,7 @@
       ]
     },
     {
-      "subject": "O-products-1d0c52443ad4",
+      "subject": "O-products-192c0fab28e1",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -653,7 +887,7 @@
       ]
     },
     {
-      "subject": "O-products-1d0c52443ad4",
+      "subject": "O-products-192c0fab28e1",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -664,7 +898,7 @@
       ]
     },
     {
-      "subject": "O-products-84774ef30efe",
+      "subject": "O-products-882b5f8ac19f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -677,7 +911,7 @@
       ]
     },
     {
-      "subject": "O-products-84774ef30efe",
+      "subject": "O-products-882b5f8ac19f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -687,11 +921,11 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit24/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
-      "subject": "O-products-faf80741533b",
+      "subject": "O-products-6fccf43002bd",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -704,7 +938,7 @@
       ]
     },
     {
-      "subject": "O-products-faf80741533b",
+      "subject": "O-products-6fccf43002bd",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -714,11 +948,11 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit24/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
-      "subject": "O-products-e7b874120b2b",
+      "subject": "O-products-e1b890ab2006",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -731,7 +965,7 @@
       ]
     },
     {
-      "subject": "O-products-e7b874120b2b",
+      "subject": "O-products-e1b890ab2006",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -742,7 +976,7 @@
       ]
     },
     {
-      "subject": "O-products-093a3dc3a2d6",
+      "subject": "O-products-d115064cbf77",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -755,7 +989,7 @@
       ]
     },
     {
-      "subject": "O-products-093a3dc3a2d6",
+      "subject": "O-products-d115064cbf77",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -765,11 +999,11 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit23/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232/legs/unit06/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
-      "subject": "O-products-b0c45bc56d31",
+      "subject": "O-products-0d45f4f81b47",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -782,7 +1016,7 @@
       ]
     },
     {
-      "subject": "O-products-b0c45bc56d31",
+      "subject": "O-products-0d45f4f81b47",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2019",
@@ -792,15 +1026,255 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit23/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A_provenance.txt"
+        "data/results/rya1232/legs/unit06/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A_provenance.txt"
       ]
     }
   ],
   "product_sources": [
     {
-      "publication_id": "O-products-0ba7067733f9",
+      "publication_id": "O-products-2f26fcc4de61",
       "source_bucket": "products",
       "source_index": 0,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-products-ee093b5cd43b",
+      "source_bucket": "products",
+      "source_index": 1,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-dcccc1bf145a",
+      "source_bucket": "products",
+      "source_index": 2,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-7570ea595567",
+      "source_bucket": "products",
+      "source_index": 3,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-products-34b4e514053b",
+      "source_bucket": "products",
+      "source_index": 4,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-f76024e80aca",
+      "source_bucket": "products",
+      "source_index": 5,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-97dff9c24866",
+      "source_bucket": "products",
+      "source_index": 6,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-products-4ce6582718b9",
+      "source_bucket": "products",
+      "source_index": 7,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-dbd116adb0fe",
+      "source_bucket": "products",
+      "source_index": 8,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-951619c74bb3",
+      "source_bucket": "products",
+      "source_index": 9,
       "identity": {
         "element": "O",
         "ion": "I",
@@ -827,257 +1301,17 @@
       "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "O-products-d00ae41a9b00",
-      "source_bucket": "products",
-      "source_index": 1,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
-    },
-    {
-      "publication_id": "O-products-a911fb18ea46",
-      "source_bucket": "products",
-      "source_index": 2,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "amarsi2019",
-        "solar_3d_O"
-      ],
-      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
-    },
-    {
-      "publication_id": "O-products-bbeb69b508ea",
-      "source_bucket": "products",
-      "source_index": 3,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "amarsi2019",
-        "solar_3d_O"
-      ],
-      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
-    },
-    {
-      "publication_id": "O-products-c4bdfbe8ac19",
-      "source_bucket": "products",
-      "source_index": 4,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": null,
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
-    },
-    {
-      "publication_id": "O-products-f02b3eb1b0e5",
-      "source_bucket": "products",
-      "source_index": 5,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": null,
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "amarsi2019",
-        "solar_3d_O"
-      ],
-      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
-    },
-    {
-      "publication_id": "O-products-1a72432a141c",
-      "source_bucket": "products",
-      "source_index": 6,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": null,
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "amarsi2019",
-        "solar_3d_O"
-      ],
-      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
-    },
-    {
-      "publication_id": "O-products-711c33d498f6",
-      "source_bucket": "products",
-      "source_index": 7,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
-    },
-    {
-      "publication_id": "O-products-297d2f9df123",
-      "source_bucket": "products",
-      "source_index": 8,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "amarsi2019",
-        "solar_3d_O"
-      ],
-      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
-    },
-    {
-      "publication_id": "O-products-24673d0fe3f0",
-      "source_bucket": "products",
-      "source_index": 9,
-      "identity": {
-        "element": "O",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd",
-        "wiese_fuhr2006",
-        "wfd1996",
-        "amarsi2019",
-        "solar_3d_O"
-      ],
-      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
-    },
-    {
-      "publication_id": "O-products-4961ac96e190",
+      "publication_id": "O-products-400d2fb23109",
       "source_bucket": "products",
       "source_index": 10,
       "identity": {
         "element": "O",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "ALL",
-        "selector": null,
+        "selector": "SET-AGSS21",
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -1093,17 +1327,17 @@
       "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "O-products-e0acb098043b",
+      "publication_id": "O-products-b43c168af108",
       "source_bucket": "products",
       "source_index": 11,
       "identity": {
         "element": "O",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "ALL",
-        "selector": null,
+        "selector": "SET-AGSS21",
         "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
@@ -1120,17 +1354,17 @@
       "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
     },
     {
-      "publication_id": "O-products-294d60b5a66b",
+      "publication_id": "O-products-14585017d015",
       "source_bucket": "products",
       "source_index": 12,
       "identity": {
         "element": "O",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "ALL",
-        "selector": null,
+        "selector": "SET-AGSS21",
         "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
@@ -1147,17 +1381,17 @@
       "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
     },
     {
-      "publication_id": "O-products-1d0c52443ad4",
+      "publication_id": "O-products-4b0ab56d8136",
       "source_bucket": "products",
       "source_index": 13,
       "identity": {
         "element": "O",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "ALL",
-        "selector": "SET-AGSS21",
+        "selector": null,
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -1173,17 +1407,17 @@
       "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "O-products-84774ef30efe",
+      "publication_id": "O-products-b35970fb8af7",
       "source_bucket": "products",
       "source_index": 14,
       "identity": {
         "element": "O",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "ALL",
-        "selector": "SET-AGSS21",
+        "selector": null,
         "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
@@ -1200,17 +1434,17 @@
       "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
     },
     {
-      "publication_id": "O-products-faf80741533b",
+      "publication_id": "O-products-9f2918c00938",
       "source_bucket": "products",
       "source_index": 15,
       "identity": {
         "element": "O",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "ALL",
-        "selector": "SET-AGSS21",
+        "selector": null,
         "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
@@ -1227,7 +1461,7 @@
       "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
     },
     {
-      "publication_id": "O-products-e7b874120b2b",
+      "publication_id": "O-products-b87159d4fc51",
       "source_bucket": "products",
       "source_index": 16,
       "identity": {
@@ -1235,6 +1469,246 @@
         "ion": "I",
         "band": "red-optical",
         "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-products-1a0fed49853d",
+      "source_bucket": "products",
+      "source_index": 17,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-30cc32d77032",
+      "source_bucket": "products",
+      "source_index": 18,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-5dd7a576c91e",
+      "source_bucket": "products",
+      "source_index": 19,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-products-fabf2e672c03",
+      "source_bucket": "products",
+      "source_index": 20,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-b90f07a8459c",
+      "source_bucket": "products",
+      "source_index": 21,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": null,
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-192c0fab28e1",
+      "source_bucket": "products",
+      "source_index": 22,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
+    },
+    {
+      "publication_id": "O-products-882b5f8ac19f",
+      "source_bucket": "products",
+      "source_index": 23,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-6fccf43002bd",
+      "source_bucket": "products",
+      "source_index": 24,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd",
+        "wiese_fuhr2006",
+        "wfd1996",
+        "amarsi2019",
+        "solar_3d_O"
+      ],
+      "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 1D non-LTE - 1D LTE (table5 C I / table6 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
+    },
+    {
+      "publication_id": "O-products-e1b890ab2006",
+      "source_bucket": "products",
+      "source_index": 25,
+      "identity": {
+        "element": "O",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
         "tier": "ALL",
         "selector": null,
@@ -1253,9 +1727,9 @@
       "model_note": "Feed treatment: 1D-LTE; no NLTE/3D correction is claimed for this entry."
     },
     {
-      "publication_id": "O-products-093a3dc3a2d6",
+      "publication_id": "O-products-d115064cbf77",
       "source_bucket": "products",
-      "source_index": 17,
+      "source_index": 26,
       "identity": {
         "element": "O",
         "ion": "I",
@@ -1280,9 +1754,9 @@
       "model_note": "Registered C/O model lineage; per-product grid provenance must confirm the applied treatment. Run provenance: Amarsi, Nissen & Skuladottir 2019, A&A 630, A104 — 3D non-LTE - 1D LTE on STAGGER (table2 C I / table3 O I); PER-LINE additive correction, grid lines only (match <= 0.05 A)"
     },
     {
-      "publication_id": "O-products-b0c45bc56d31",
+      "publication_id": "O-products-0d45f4f81b47",
       "source_bucket": "products",
-      "source_index": 18,
+      "source_index": 27,
       "identity": {
         "element": "O",
         "ion": "I",
@@ -1325,10 +1799,16 @@
     "data/results/rya1230/legs/unit21/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_ENGINE-A_provenance.txt",
     "data/results/rya1230/legs/unit22/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1230/legs/unit22/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
-    "data/results/rya1230/legs/unit23/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1230/legs/unit23/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A_provenance.txt",
-    "data/results/rya1230/legs/unit24/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1230/legs/unit24/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232/legs/unit06/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232/legs/unit06/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A_provenance.txt",
+    "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
     "docs/co_indicator_strategy.md",
     "pipeline/band_products.py",
     "pipeline/cno_gf_pedigree.py"

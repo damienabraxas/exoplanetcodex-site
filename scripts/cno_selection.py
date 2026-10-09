@@ -115,10 +115,39 @@ def treatment_rank(p):
     return 3
 
 
+#: RYA-1232 (Ryan, option 1): rank by RESOLVED lines, not fine-structure components. O I
+#: 926 nm is 3 lines (926.1/926.3/926.6 nm, as AGSS21 prints them) carried as 9 components;
+#: counting components let it outrank the 6-line red-optical O I set on a counting artefact.
+#: Components closer than RESOLVE_A merge. Needs the science repo's canonical_gf
+#: (set_line_table); a row whose ids do not resolve falls back to n_lines.
+RESOLVE_A = 0.5
+_LINE_WAVE: dict = {}
+
+
+def set_line_table(science_root) -> None:
+    import csv
+    from pathlib import Path as _P
+    with open(_P(science_root) / 'data/linelists/canonical_gf.csv', newline='') as fh:
+        for r in csv.DictReader(fh):
+            if r.get('physical_id') and r.get('wavelength_air_A'):
+                _LINE_WAVE[r['physical_id']] = float(r['wavelength_air_A'])
+
+
+def resolved_lines(p) -> int:
+    ids = p.get('uncertainty_indicator_ids') or []
+    waves = sorted(_LINE_WAVE[i] for i in ids if i in _LINE_WAVE)
+    if not waves or len(waves) != len(ids):
+        return int(p.get('n_lines') or 0)
+    n = 1
+    for a, b in zip(waves, waves[1:]):
+        n += (b - a) > RESOLVE_A
+    return n
+
+
 def rank_key(p):
     return (0 if p.get('grade') == 'Reference Grade' else 1,
             treatment_rank(p),
-            -(p.get('n_lines') or 0),
+            -resolved_lines(p),
             round(total_sigma(p), 4),
             p.get('holding', ''))
 

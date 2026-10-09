@@ -44,6 +44,11 @@ def run_provenance(science, p):
         return None, ''
     base = src[:-len('_products.csv')]
     hits = sorted(Path(science).glob(f'data/results/*/legs/*/nominal/{base}_provenance.txt'))
+    #: RYA-1232: a stem rerun under a later ticket exists under both tickets; the product's
+    #: own committed copy (provenance.copied_to = data/results/<ticket>/...) names its run.
+    ticket = Path(str((p.get('provenance') or {}).get('copied_to') or '')).parts[2:3]
+    if len(hits) > 1 and ticket:
+        hits = [h for h in hits if h.relative_to(science).parts[2] == ticket[0]]
     if len(hits) != 1:
         return None, ''
     return hits[0].relative_to(science).as_posix(), hits[0].read_text()
