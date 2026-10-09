@@ -18,18 +18,25 @@ import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
-from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline,
+from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
                            fill_grades, headline, rank_key, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon')
+#: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
+CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Si': ('Silicon is traced by Si I lines from the blue to the H band and by the single '
+           'Si II 6371 \u00c5 line. The optical lines are Asplund et al. 2021\'s set (Amarsi & '
+           'Asplund 2017) with the gf the authors used; the infrared lines are the published '
+           'sets of Deshmukh et al. 2022 and Elgueta et al. 2026 on Pehlivan Rhodin et al. 2024 '
+           'oscillator strengths. Each set, spectrum and treatment remains a separate product.'),
     'C': 'Carbon is traced by atomic C I, including forbidden [C I], and molecular CH, C₂ and CO indicators. Each probes different line formation and molecular-equilibrium sensitivities. Indicator families and atmospheric treatments remain separate products.',
     'N': 'The nitrogen strategy uses red-optical N I as the primary atomic route, with NH providing an independent molecular check and CN a carbon-dependent cross-check. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
     'O': 'Oxygen is traced by forbidden [O I], permitted O I and molecular OH indicators where available. Blends, departures from LTE and atmospheric structure affect these families differently, so their results retain separate identities.'}
@@ -82,6 +89,9 @@ INDICATOR_NAMES = {
     'ATOM-CI_5052': 'C I 5052 \u00c5 (single line)',
     'ATOM-CI_5380': 'C I 5380 \u00c5 (single line)',
     'FORB-OI_6300': '[O I] 6300 \u00c5 forbidden line (blended with Ni I)',
+    'SET-SI_AGSS21': '{el} lines from Asplund et al. 2021\'s set (Amarsi & Asplund 2017)',
+    'SET-SI_DESHMUKH2022': 'Si I infrared lines from Deshmukh et al. 2022\'s set',
+    'SET-SI_ELGUETA2026': 'Si I infrared lines from Elgueta et al. 2026 (solar-graded)',
 }
 HOLDING_NAMES = {
     'solar_harps_molecfit_corrected': 'HARPS',
@@ -89,6 +99,9 @@ HOLDING_NAMES = {
     'solar_kpno_molecfit_corrected': 'Kitt Peak (1984, molecfit)',
     'solar_iag': 'IAG FTS',
     'solar_crires_plus_j_rya1219': 'CRIRES+ J',
+    'solar_crires_plus_y_rya794': 'CRIRES+ Y',
+    'solar_crires_plus_y_wide_rya1054': 'CRIRES+ Y (full arm)',
+    'solar_crires_plus_h_rya1094': 'CRIRES+ H',
 }
 #: RYA-587 budget components in plain words, for the "largest uncertainty terms" column.
 TERM_NAMES = {
@@ -133,7 +146,9 @@ def recipe(element, products):
         f'<p class="product-section-intro">Every {name} value on this page comes from fitting '
         f'synthetic spectra to the observed solar spectrum, line by line or band by band, with '
         f'the {name} abundance as the free parameter. The synthesis includes the atomic lines '
-        f'<em>and</em> the molecular bands (CN, CH, C\u2082, OH and others) in every window, so '
+        + (f'<em>and</em> the molecular bands (CN, CH, C\u2082, OH and others) ' if element in CNO
+           else 'and the molecular opacity ') +
+        f'in every window, so '
         f'blended absorption is modelled rather than attributed to the line being measured. '
         f'The continuum is placed locally around every line by comparing the observation with '
         f'the synthesis on its own highest pixels, and ground-based spectra are '
@@ -143,8 +158,9 @@ def recipe(element, products):
         f'instruments. Where a 3D or NLTE correction is published for the lines, it is applied '
         f'as its own product (1D-LTE, 1D-NLTE and 3D-NLTE are separate rows). Every value '
         f'carries a full uncertainty budget: fit, line strengths, microturbulence, continuum, '
-        f'fit window, model atmosphere, telluric residual, blends and coupling to the other '
-        f'C/N/O abundances, and the spread between spectra, each measured by refitting with that '
+        f'fit window, model atmosphere, telluric residual'
+        + (', blends and coupling to the other C/N/O abundances' if element in CNO else '') +
+        f', and the spread between spectra, each measured by refitting with that '
         f'one input changed. The headline at the top is the Asplund-grade product: a published '
         f'line set, the most complete treatment, then the most lines.</p>')
     groups = {}
@@ -219,7 +235,7 @@ def audit_feed(feed, telluric):
                 if p.get('element') != feed['element']:
                     reasons.append('product element differs from feed')
                 sy = systematic(p)
-                if not finite(p.get('sigma_stat')) or p['sigma_stat'] <= 0 or not finite(sy) or sy < 0:
+                if not finite(statistical(p)) or statistical(p) <= 0 or not finite(sy) or sy < 0:
                     reasons.append('missing, nonfinite or invalid uncertainty; no zero substitution')
                 if telluric.get(p.get('holding')) != 'applied':
                     reasons.append('telluric correction not verified by holding registry')
@@ -265,13 +281,13 @@ def product_label(p):
 #: ⚠️ VALUE ONLY, NO BAND. Fe shades +/- sigma_external because its tracker supplies one.
 #: AGSS21's published uncertainties are not in the science repo, and inventing a width
 #: would put an unsourced error band on a public plot.
-ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69}
+ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51}
 
 #: AGSS21's OWN published uncertainties (Asplund, Amarsi & Grevesse 2021, Table 2). The Fe
 #: forest shades +/- sigma_external around its reference; CNO now does the same, so the
 #: reference reads as a measurement with a bar rather than an infinitely sharp line.
 #: These are the paper's stated values, not a width invented to make a band appear.
-ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04}
+ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03}
 
 #: Diagnostics the ratified RYA-1220 policy REJECTS as abundance routes. They stay in the
 #: feed and in the forest -- withdrawing evidence is not the same as hiding it -- but they
@@ -350,8 +366,8 @@ def forest(element, products, cmp=None):
     # Fe plot_grid tier preference, alternate collapse, or fixed instrument list.
     for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
         rows = [p for p in products if p['band'] == band]
-        extent = [(p['A']-max(p['sigma_stat'], systematic(p)),
-                   p['A']+max(p['sigma_stat'], systematic(p))) for p in rows]
+        extent = [(p['A']-max(statistical(p), systematic(p)),
+                   p['A']+max(statistical(p), systematic(p))) for p in rows]
         # The axis ALWAYS spans the Asplund reference. Auto-ranging on the products alone
         # drops the line whenever a band sits clear of it -- which is precisely the band a
         # reader most needs it for. C red-optical (8.56-8.98 against a reference of 8.46)
@@ -371,7 +387,7 @@ def forest(element, products, cmp=None):
             for p in group:
                 experimental = p.get('adoption') == 'EXPERIMENTAL-NOT-ADOPTED'
                 attr = ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' if experimental else ''
-                st, sy = p['sigma_stat'], systematic(p)
+                st, sy = statistical(p), systematic(p)
                 rsig = ASPLUND2021_SIGMA.get(element, 0.0)
                 marks = ''
                 if ref is not None:
@@ -407,6 +423,12 @@ def forest(element, products, cmp=None):
 
 
 def source_evidence(science, element):
+    if element not in CNO:
+        # RYA-1233: an atomic-only element's evidence is its line-set registry, the gf error
+        # model and its literature scan -- none of the C/N/O campaign files apply.
+        return (['data/refs/bibliography.csv', 'data/catalog/holdings_manifest_registry.csv',
+                 'data/reference/line_sets/REGISTRY.csv', 'data/reference/gf_error_model.csv',
+                 f'data/reference/litscan/{element}.yaml'], [])
     paths = ['data/refs/bibliography.csv', 'data/catalog/holdings_manifest_registry.csv', 'docs/co_indicator_strategy.md',
              AUDIT+'cno_gf_adjudication.prov.json', AUDIT+'agss21_indicator_gf_check.csv']
     pedigree = json.loads((science/paths[3]).read_text())
@@ -438,7 +460,11 @@ def build(science, element, selectors, site=ROOT):
         telluric = {r['holding_id']:r['telluric_applied'] for r in csv.DictReader(f)}
     products, audit = audit_feed(feed, telluric)
     highlights = select_highlights(products, selectors)
-    reference_bundle = reconcile(science, element, feed, audit)
+    if element in CNO:
+        reference_bundle = reconcile(science, element, feed, audit)
+    else:
+        from element_references import reconcile_atomic
+        reference_bundle = reconcile_atomic(science, element, feed, audit)
     refs = reference_bundle["references"]
     paths = list(dict.fromkeys(paths + reference_bundle["source_paths"]))
     dirty = subprocess.check_output(["git", "-C", str(science), "status", "--porcelain", "--", *paths], text=True)
@@ -494,12 +520,15 @@ def build(science, element, selectors, site=ROOT):
     for p in band_highlights(products):
         spectrum = 'uv' if p['band']=='near-UV' else 'visible' if p['band'] in ('VIS','red-optical') else 'ir'
         cards.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(p["band"])}</h3>'
-                     f'<strong>{p["A"]:.3f} ± {total_sigma(p):.3f}</strong><p>±{p["sigma_stat"]:.3f} stat · ±{systematic(p):.3f} syst</p>'
+                     f'<strong>{p["A"]:.3f} ± {total_sigma(p):.3f}</strong><p>±{statistical(p):.3f} stat · ±{systematic(p):.3f} syst</p>'
                      f'<p>{esc(product_label(p))} · {esc(p["holding"])} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
     body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
     body += section('How this was measured', recipe(element, products))
-    body += section('Solar '+NAMES[element].lower()+' context',f'<p>{CONTEXT[element]}</p><p><a href="{base}/docs/co_indicator_strategy.md">C/O indicator strategy</a> · <a href="/method/">Methodology</a>' + (' · <a href="https://linear.app/ryans-adventure-zone/issue/RYA-369">Nitrogen strategy</a>' if element=='N' else '')+'</p>')
+    strategy = (f'<a href="{base}/docs/co_indicator_strategy.md">C/O indicator strategy</a>' if element in CNO
+                else f'<a href="{base}/data/reference/line_sets/REGISTRY.csv">Published line sets</a> · '
+                     f'<a href="{base}/data/reference/gf_error_model.csv">gf uncertainty model</a>')
+    body += section('Solar '+NAMES[element].lower()+' context',f'<p>{CONTEXT[element]}</p><p>{strategy} · <a href="/method/">Methodology</a>' + (' · <a href="https://linear.app/ryans-adventure-zone/issue/RYA-369">Nitrogen strategy</a>' if element=='N' else '')+'</p>')
     if products:
         # The 'Product provenance and caveats' section used to esc(json.dumps(...)) the
         # whole product record onto the page -- a debug dump, not a caveat. Provenance
@@ -514,7 +543,7 @@ def build(science, element, selectors, site=ROOT):
     pdf = f'solar_{element.lower()}_appendix.pdf'
     body += section('Download the evidence',f'<p><a download href="/assets/docs/appendices/{pdf}">Download PDF — Solar {element} appendix</a></p><ul>'
                     +''.join(f'<li><a download href="/{OUT}/{element}/{name}">{esc(label)}</a></li>' for name,label in [(element+'.json','Source feed — includes quarantined fit outputs, not adopted abundances'),('visibility.json','Complete product visibility audit'),('report.json','Shared website/PDF report'),('manifest.json','Reproducibility manifest'),('references.json','Complete references and product-to-source bindings')])+'</ul>')
-    body += section('Reproducibility',f'<p>Generated from the pinned CNO campaign snapshot. Source commit <code>{commit}</code><br>Feed {element}.json v{esc(feed["version"])} · updated {esc(feed["updated_at"])}<br>Generated {esc(stamp)} (source commit timestamp)<br>Feed SHA-256 <code>{meta["feed_sha256"]}</code><br>Generator {meta["generator"]} v{meta["version"]}</p><p><a href="{base}/{feed_path}">Pinned scientific source</a></p>')
+    body += section('Reproducibility',f'<p>Generated from the pinned science snapshot. Source commit <code>{commit}</code><br>Feed {element}.json v{esc(feed["version"])} · updated {esc(feed["updated_at"])}<br>Generated {esc(stamp)} (source commit timestamp)<br>Feed SHA-256 <code>{meta["feed_sha256"]}</code><br>Generator {meta["generator"]} v{meta["version"]}</p><p><a href="{base}/{feed_path}">Pinned scientific source</a></p>')
     body += section('References / Data & Model Sources', render_references(reference_bundle, base))
     report = make_report('Solar '+element+' appendix','Sun',element,'',body,meta,products)
     report['site_url'] = f'https://exoplanetcodex.org/systems/sol/elements/{element.lower()}/'
