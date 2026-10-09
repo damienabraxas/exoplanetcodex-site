@@ -89,9 +89,9 @@ INDICATOR_NAMES = {
     'ATOM-CI_5052': 'C I 5052 \u00c5 (single line)',
     'ATOM-CI_5380': 'C I 5380 \u00c5 (single line)',
     'FORB-OI_6300': '[O I] 6300 \u00c5 forbidden line (blended with Ni I)',
-    'SET-SI_AGSS21': '{el} lines from Asplund et al. 2021\'s set (Amarsi & Asplund 2017)',
-    'SET-SI_DESHMUKH2022': 'Si I infrared lines from Deshmukh et al. 2022\'s set',
-    'SET-SI_ELGUETA2026': 'Si I infrared lines from Elgueta et al. 2026 (solar-graded)',
+    'SET-SI_AGSS21': '{el} · Asplund et al. 2021 lines',
+    'SET-SI_DESHMUKH2022': '{el} · Deshmukh et al. 2022 lines',
+    'SET-SI_ELGUETA2026': '{el} · Elgueta et al. 2026 lines',
 }
 HOLDING_NAMES = {
     'solar_harps_molecfit_corrected': 'HARPS',
@@ -191,6 +191,29 @@ def recipe(element, products):
             f'<tbody>{rows}</tbody></table></div>')
 
 
+def grades_section(element, products):
+    """The three line grades, what each means, and what this element has in each."""
+    from collections import defaultdict
+    have = defaultdict(list)
+    for p in products:
+        have[p.get('grade') or 'ungraded'].append(p)
+    rows = ''
+    for g in ('Reference Grade', 'Codex Grade', 'Deep Grade'):
+        ps = have.get(g, [])
+        if ps:
+            sets = sorted({lines_name(p) for p in ps})
+            what = f'{len(ps)} product{"s" if len(ps) != 1 else ""} -- ' + '; '.join(sets)
+        else:
+            what = 'none published for this element yet'
+        rows += (f'<tr><th scope="row">{esc(g)}</th><td>{esc(GRADE_EXPLAINED[g])}</td>'
+                 f'<td>{esc(what)}</td></tr>')
+    return ('<p class="product-section-intro">Every product is measured on one of three '
+            'grades of spectral lines and the grades are never mixed in one number.</p>'
+            '<div class="table-scroll"><table class="product-recipe"><thead><tr><th>Grade</th>'
+            '<th>What it means</th><th>This element</th></tr></thead><tbody>'
+            + rows + '</tbody></table></div>')
+
+
 def section(title, body):
     return f'<section class="fe-section"><h2>{esc(title)}</h2>{body}</section>'
 
@@ -267,10 +290,50 @@ def select_highlights(products, selectors):
     return result
 
 
+#: Ryan, 2026-10-09: "our naming has lost all meaning and looks like AI slop" -- the label
+#: was a dump of internal ids (SET-SI_DESHMUKH2022 · Si I · Synth · 1D-LTE · SYNTH · 1D-LTE ·
+#: line set not supplied). A reader needs WHICH LINES and WHICH TREATMENT, in words.
+#: The three line grades (docs/catalog/model_registry_notes.md):
+GRADE_EXPLAINED = {
+    'Reference Grade': 'lines from a published solar line set (Asplund et al. 2021 and similar), '
+                       'measured with the oscillator strengths the authors used',
+    'Codex Grade': 'lines chosen by the Codex: laboratory-measured oscillator strengths, '
+                   'no deeper than 60% of the continuum',
+    'Deep Grade': 'laboratory-measured oscillator strengths on lines deeper than 60% -- '
+                  'stronger lines, more sensitive to damping and the model atmosphere',
+}
+#: Selector tokens for the Codex's own pools, in words.
+POOL_NAMES = {'GRADED': '{el} · Codex-graded lines', 'DEEPGRADED': '{el} · Deep-graded lines',
+              'DEEPGRADED-LOCALRENORM': '{el} · Deep-graded lines (local continuum)',
+              'REFERENCE': '{el} · reference lines'}
+
+
+def lines_name(p):
+    sel = str(p.get('selector') or p.get('indicator') or '')
+    el = f'{p["element"]} {p["ion"]}'
+    if sel in INDICATOR_NAMES:
+        return INDICATOR_NAMES[sel].replace('{el}', el)
+    if sel in POOL_NAMES:
+        return POOL_NAMES[sel].replace('{el}', el)
+    return f'{el} lines' if not sel else sel
+
+
+def treatment_name(p):
+    """'1D LTE', '1D NLTE (Amarsi)', '3D NLTE' ... from the derived display name."""
+    d = str(p.get('display') or '')
+    scale = next((k for k in ('3D-NLTE', '3D-LTE', '1D-NLTE', '1D-LTE', '<3D>-NLTE', '<3D>-LTE')
+                  if k in d), str(p.get('treatment') or ''))
+    model = next((m for m in ('Amarsi', 'Bergemann', 'Gerber') if m in d), '')
+    out = scale.replace('-', ' ') + (f' ({model})' if model else '')
+    return out + (' · line-profile fit' if str(p.get('route')) == 'PROFILEFIT' else '')
+
+
 def product_label(p):
-    indicator = p.get('indicator') or p.get('selector') or 'indicator not supplied'
-    line_set = p.get('line_set') or 'line set not supplied'
-    return f'{indicator} · {p["element"]} {p["ion"]} · {p["display"]} · {p["route"]} · {p["treatment"]} · {line_set}'
+    return f'{lines_name(p)} · {treatment_name(p)}'
+
+
+def holding_name(p):
+    return HOLDING_NAMES.get(p.get('holding'), LABELS.get(p.get('instrument'), p.get('instrument')))
 
 
 #: AGSS21 photospheric abundances -- config/constants.SOLAR_ASPLUND2021 in the science
@@ -383,7 +446,7 @@ def forest(element, products, cmp=None):
         out += f'<div class="forest-band">{esc(band)}</div>'
         for holding in dict.fromkeys(p['holding'] for p in rows):
             group = [p for p in rows if p['holding'] == holding]
-            out += f'<div class="forest-instrument">{esc(group[0]["instrument"])}<small>{esc(holding)}</small></div>'
+            out += f'<div class="forest-instrument">{esc(holding_name(group[0]))}</div>'
             for p in group:
                 experimental = p.get('adoption') == 'EXPERIMENTAL-NOT-ADOPTED'
                 attr = ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' if experimental else ''
@@ -405,7 +468,7 @@ def forest(element, products, cmp=None):
                 marks += ''.join(f'<i class="{kind}" style="left:{x(p["A"]-sigma):.6f}%;width:{2*sigma/(hi-lo)*100:.6f}%"></i>' for kind,sigma in [('sysbar',sy),('bar',st)])
                 marks += f'<i class="dot" style="left:{x(p["A"]):.6f}%"></i>'
                 out += (f'<div class="forest" data-product-id="{p["publication_id"]}"{attr}><span class="forest-label">{esc(product_label(p))}'
-                        f'<small>{esc(p["grade"])} · {esc(p.get("tier"))} · n={p["n_lines"]}'
+                        f'<small>{esc(p["grade"])} · {p["n_lines"]} line{"s" if p["n_lines"] != 1 else ""}'
                         + (' · EXPERIMENTAL-NOT-ADOPTED' if experimental else '')
                         + f'</small></span><span class="track">{marks}</span><span class="forest-value">{p["A"]:.3f}'
                         f'<small>±{st:.3f} stat ±{sy:.3f} syst</small></span></div>')
@@ -521,8 +584,9 @@ def build(science, element, selectors, site=ROOT):
         spectrum = 'uv' if p['band']=='near-UV' else 'visible' if p['band'] in ('VIS','red-optical') else 'ir'
         cards.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(p["band"])}</h3>'
                      f'<strong>{p["A"]:.3f} ± {total_sigma(p):.3f}</strong><p>±{statistical(p):.3f} stat · ±{systematic(p):.3f} syst</p>'
-                     f'<p>{esc(product_label(p))} · {esc(p["holding"])} · {esc(p["grade"])}</p></article>')
+                     f'<p>{esc(product_label(p))} · {esc(holding_name(p))} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
+    body += section('Line grades', grades_section(element, products))
     body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
     body += section('How this was measured', recipe(element, products))
     strategy = (f'<a href="{base}/docs/co_indicator_strategy.md">C/O indicator strategy</a>' if element in CNO
