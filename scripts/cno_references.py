@@ -23,6 +23,12 @@ LAYER_ORDER = ['Solar abundance and indicator analyses', 'Atomic data and gf aut
                'Model and grid sources', 'Molecular line data and delivery', 'Special diagnostics']
 
 
+def public(text):
+    """Internal workflow wording (ticket ids, who a decision was referred to) is not for readers."""
+    text=re.sub(r'\s*\((?:see )?RYA-\d+[^)]*\)','',text)
+    return re.sub(r'referred to Ryan','under review',text.replace(' (this script)',''))
+
+
 def read_rows(science, path):
     with (science/path).open() as stream:
         return list(csv.DictReader(stream))
@@ -122,7 +128,7 @@ def reconcile(science, element, feed, audit):
         decision=rows(path)
         if not decision: raise ValueError('Missing O I source decision rows')
         bind('oxygen-777-source-decision',LAYER_ORDER[1],[main('nist_asd'),atom('TachievFroeseFischer2002')],
-             'O I triplet source record: '+ '; '.join(dict.fromkeys(r['adopted_here']+'; '+r['decision'] for r in decision)),[path,ADJUDICATION])
+             'O I triplet source record: '+ '; '.join(dict.fromkeys(public(r['adopted_here']+'; '+r['decision']) for r in decision)),[path,ADJUDICATION])
 
     # Registered model lineage is explicitly labelled as such; a grid citation
     # never silently turns a 1D-LTE feed entry into a corrected product.
@@ -244,7 +250,9 @@ def reconcile(science, element, feed, audit):
                 policy='Current product identity and committed provenance select sources. Registered models, comparison anchors and quarantined diagnostics are not adopted results.')
 
 
-def render_references(bundle, source_url):
+def render_references(bundle, source_url, label_of=None):
+    """`label_of(publication_id)` -> the product's readable name (the appendix's own naming);
+    without it the raw identity tokens are listed."""
     esc=lambda v:html.escape(str(v))
     refs={r['id']:r for r in bundle['references']}
     numbers={key:index+1 for index,key in enumerate(refs)}
@@ -263,8 +271,9 @@ def render_references(bundle, source_url):
         body+=f'<p><strong>{esc(b["layer"])}.</strong> {esc(b["claim"])} Sources: {links(b["reference_ids"])}.</p>'
     body+='</details><details><summary>Product-to-source index</summary><ul>'
     for p in bundle['product_sources']:
-        label=' · '.join(str(p['identity'].get(k) or 'not supplied') for k in ('band','holding','selector','treatment','line_set'))
-        body+=f'<li><code>{esc(p["publication_id"])}</code> · {esc(p["source_bucket"])} · {esc(label)} · {links(p["reference_ids"])}</li>'
+        label=(label_of(p['publication_id']) if label_of else None) or ' · '.join(
+            str(p['identity'].get(k) or 'not supplied') for k in ('band','holding','selector','treatment','line_set'))
+        body+=f'<li>{esc(label)} · {links(p["reference_ids"])} <small><code>{esc(p["publication_id"])}</code></small></li>'
     body+='</ul></details><details open><summary>Complete applicable bibliography</summary>'
     for layer in LAYER_ORDER:
         # One bibliographic record per source, grouped by its first role.

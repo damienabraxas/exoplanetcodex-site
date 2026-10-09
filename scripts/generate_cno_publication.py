@@ -80,7 +80,7 @@ def landmark(element, products):
 #: Reader-facing names for what a product measured. An unknown selector falls through to
 #: its own token rather than raising.
 INDICATOR_NAMES = {
-    'SET-AGSS21': '{el} I lines from Asplund et al. 2021\'s line set',
+    'SET-AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-LBP25': 'N I 8629 + 8683 \u00c5, the two least-blended lines (Magg et al. 2022, adopted by Lodders et al. 2025)',
     'MOL-CH_Gband': 'CH G-band (molecular band)',
     'MOL-C2_Swan': 'C\u2082 Swan band (molecular band)',
@@ -169,8 +169,7 @@ def recipe(element, products):
     order = {b: i for i, b in enumerate(BAND_ORDER)}
     rows = ''
     for (band, sel), group in sorted(groups.items(), key=lambda kv: (order.get(kv[0][0], 99), kv[0][1])):
-        what = INDICATOR_NAMES.get(sel, f'{element} I lines selected by the Codex' if not sel else sel)
-        what = what.replace('{el}', element)
+        what = '; '.join(sorted({lines_name(p) for p in group}))
         spectra = ', '.join(sorted({HOLDING_NAMES.get(p['holding'], LABELS.get(p['instrument'], p['instrument']))
                                     for p in group}))
         treats = ', '.join(sorted({_treatment_label(p) for p in group}))
@@ -204,7 +203,8 @@ def grades_section(element, products):
             sets = sorted({lines_name(p) for p in ps})
             what = f'{len(ps)} product{"s" if len(ps) != 1 else ""} -- ' + '; '.join(sets)
         else:
-            what = 'none published for this element yet'
+            what = ('none for the Sun: every line in this grade is excluded as saturated or an '
+                    'outlier (see Excluded lines)' if g == 'Deep Grade' else 'none published for this element yet')
         rows += (f'<tr><th scope="row">{esc(g)}</th><td>{esc(GRADE_EXPLAINED[g])}</td>'
                  f'<td>{esc(what)}</td></tr>')
     return ('<p class="product-section-intro">Every product is measured on one of three '
@@ -212,6 +212,59 @@ def grades_section(element, products):
             '<div class="table-scroll"><table class="product-recipe"><thead><tr><th>Grade</th>'
             '<th>What it means</th><th>This element</th></tr></thead><tbody>'
             + rows + '</tbody></table></div>')
+
+
+#: problem_children classes that remove a line from the Sun's measurement, in words.
+EXCLUSION_REASON = {
+    'SATURATION_COG': ('saturated', 'on the flat part of the curve of growth, so the line barely '
+                       'responds to the abundance (reduced width log W/λ above -4.9)'),
+    'ABUND_OUTLIER': ('abundance outlier', 'disagrees with the other lines well beyond its error, '
+                      'and no solar analysis in the literature uses it'),
+    'DATA_GAP': ('not measurable', 'the line falls in a data gap or a saturated telluric band'),
+    'BLEND': ('unmodelled blend', 'a blend the spectrum synthesis cannot model'),
+}
+
+
+def excluded_lines_section(science, element):
+    """The lines removed from the Sun's measurement (the cull protocol): every one stays in the
+    line lists for other stars. Read from the science repo's problem-children registry."""
+    import csv
+    import re
+    path = science / 'data/registry/problem_children.csv'
+    if not path.exists():
+        return ''
+    rows, seen = [], set()
+    with path.open(newline='', encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            sp = r['species'].strip()
+            if (sp.split()[0] != element or r['required_treatment'].strip() != 'exclude'
+                    or r['status'].strip() != 'active'
+                    or 'Sun' not in [o.strip() for o in r['observed_in'].split(';')]):
+                continue
+            m = re.match(r'\s*([0-9]+\.[0-9]+)', r['lambda_or_scope'])
+            if not m:
+                continue
+            rew = re.search(r'log\(W/lambda\) = (-?[0-9.]+)', r['notes'])
+            cls = r['problem_class'].strip()
+            reason = EXCLUSION_REASON.get(cls, (cls.lower(), ''))[0]
+            if rew:
+                reason += f' (log W/λ = {float(rew.group(1)):.2f})'
+            seen.add(cls)
+            rows.append((float(m.group(1)), sp, reason))
+    if not rows:
+        return ''
+    rows.sort()
+    body = ''.join(f'<tr><td>{esc(sp)}</td><td class="solar-number">{w:.3f}</td><td>{esc(why)}</td></tr>'
+                   for w, sp, why in rows)
+    return ('<p class="product-section-intro">These lines are left out of the Sun\'s measurement. '
+            'They stay in the line lists: a cooler or more evolved star may measure them well. '
+            'Blended lines are not excluded -- the spectrum synthesis models the blend. '
+            f'{len(rows)} lines.</p><ul>'
+            + ''.join(f'<li><strong>{esc(EXCLUSION_REASON[c][0].capitalize())}</strong>: '
+                      f'{esc(EXCLUSION_REASON[c][1])}.</li>' for c in sorted(seen) if c in EXCLUSION_REASON)
+            + '</ul><div class="table-scroll"><table class="product-recipe"><thead><tr>'
+            '<th>Species</th><th>Wavelength (Å, air)</th><th>Why it is excluded</th></tr></thead><tbody>'
+            + body + '</tbody></table></div>')
 
 
 def section(title, body):
@@ -297,11 +350,13 @@ def select_highlights(products, selectors):
 GRADE_EXPLAINED = {
     'Reference Grade': 'lines from a published solar line set (Asplund et al. 2021 and similar), '
                        'measured with the oscillator strengths the authors used',
-    'Codex Grade': 'lines chosen by the Codex: laboratory-measured oscillator strengths, '
-                   'no deeper than 60% of the continuum',
-    'Deep Grade': 'laboratory-measured oscillator strengths on lines deeper than 60% -- '
-                  'stronger lines, more sensitive to damping and the model atmosphere',
+    'Codex Grade': 'lines chosen by the Codex whose oscillator strength carries a published '
+                   'uncertainty (laboratory measurement, NIST accuracy class A-C, or the '
+                   'paper\'s own stated error), between 5% and 60% deep',
+    'Deep Grade': 'the same oscillator-strength rule on lines deeper than 60% -- stronger '
+                  'lines, more sensitive to damping and the model atmosphere',
 }
+GRADE_POOL = {'Codex Grade': 'GRADED', 'Deep Grade': 'DEEPGRADED'}
 #: Selector tokens for the Codex's own pools, in words.
 POOL_NAMES = {'GRADED': '{el} · Codex-graded lines', 'DEEPGRADED': '{el} · Deep-graded lines',
               'DEEPGRADED-LOCALRENORM': '{el} · Deep-graded lines (local continuum)',
@@ -315,6 +370,9 @@ def lines_name(p):
         return INDICATOR_NAMES[sel].replace('{el}', el)
     if sel in POOL_NAMES:
         return POOL_NAMES[sel].replace('{el}', el)
+    if not sel and p.get('grade') in GRADE_POOL:
+        # No selector: the Codex's own line selection, named by the grade it was given.
+        return POOL_NAMES[GRADE_POOL[p['grade']]].replace('{el}', el)
     return f'{el} lines' if not sel else sel
 
 
@@ -467,7 +525,7 @@ def forest(element, products, cmp=None):
                               f'<i class="cmp" style="left:{x(cmp["value"]):.6f}%"></i>')
                 marks += ''.join(f'<i class="{kind}" style="left:{x(p["A"]-sigma):.6f}%;width:{2*sigma/(hi-lo)*100:.6f}%"></i>' for kind,sigma in [('sysbar',sy),('bar',st)])
                 marks += f'<i class="dot" style="left:{x(p["A"]):.6f}%"></i>'
-                out += (f'<div class="forest" data-product-id="{p["publication_id"]}"{attr}><span class="forest-label">{esc(product_label(p))}'
+                out += (f'<div class="forest" data-product-id="{p["publication_id"]}" data-selector="{esc(str(p.get("selector") or ""))}" data-line-set="{esc(str(p.get("line_set") or ""))}"{attr}><span class="forest-label">{esc(product_label(p))}'
                         f'<small>{esc(p["grade"])} · {p["n_lines"]} line{"s" if p["n_lines"] != 1 else ""}'
                         + (' · EXPERIMENTAL-NOT-ADOPTED' if experimental else '')
                         + f'</small></span><span class="track">{marks}</span><span class="forest-value">{p["A"]:.3f}'
@@ -522,6 +580,8 @@ def build(science, element, selectors, site=ROOT):
     with (science/'data/catalog/holdings_manifest_registry.csv').open() as f:
         telluric = {r['holding_id']:r['telluric_applied'] for r in csv.DictReader(f)}
     products, audit = audit_feed(feed, telluric)
+    by_pid = {r['publication_id']: feed[r['source_bucket']][r['source_index']] for r in audit
+              if r['source_bucket'] in ('products', 'quarantine')}
     highlights = select_highlights(products, selectors)
     if element in CNO:
         reference_bundle = reconcile(science, element, feed, audit)
@@ -570,10 +630,9 @@ def build(science, element, selectors, site=ROOT):
         body = (f'<p class="fe-anchor">Solar {NAMES[element].lower()}: '
                 f'{mark["A"]:.3f} &plusmn; {total_sigma(mark):.3f}</p>'
                 + ref_html + caveat_html
-                + f'<p>{esc(LABELS.get(mark["instrument"], mark["instrument"]))} &middot; '
+                + f'<p>{esc(holding_name(mark))} &middot; '
                 f'{esc(mark["band"])} &middot; {esc(mark["grade"])} &middot; '
-                f'{esc(str(mark.get("selector") or "full pool"))} &middot; '
-                f'{esc(mark["treatment"])} &middot; n = {mark["n_lines"]}. '
+                f'{esc(product_label(mark))} &middot; n = {mark["n_lines"]}. '
                 f'The top-ranked admitted product (Reference Grade, then the most complete '
                 f'treatment, then line count, then total uncertainty); independent products and engines are '
                 f'not averaged together.</p>')
@@ -589,6 +648,9 @@ def build(science, element, selectors, site=ROOT):
     body += section('Line grades', grades_section(element, products))
     body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
     body += section('How this was measured', recipe(element, products))
+    excl = excluded_lines_section(science, element)
+    if excl:
+        body += section('Excluded lines', excl)
     strategy = (f'<a href="{base}/docs/co_indicator_strategy.md">C/O indicator strategy</a>' if element in CNO
                 else f'<a href="{base}/data/reference/line_sets/REGISTRY.csv">Published line sets</a> · '
                      f'<a href="{base}/data/reference/gf_error_model.csv">gf uncertainty model</a>')
@@ -608,7 +670,9 @@ def build(science, element, selectors, site=ROOT):
     body += section('Download the evidence',f'<p><a download href="/assets/docs/appendices/{pdf}">Download PDF — Solar {element} appendix</a></p><ul>'
                     +''.join(f'<li><a download href="/{OUT}/{element}/{name}">{esc(label)}</a></li>' for name,label in [(element+'.json','Source feed — includes quarantined fit outputs, not adopted abundances'),('visibility.json','Complete product visibility audit'),('report.json','Shared website/PDF report'),('manifest.json','Reproducibility manifest'),('references.json','Complete references and product-to-source bindings')])+'</ul>')
     body += section('Reproducibility',f'<p>Generated from the pinned science snapshot. Source commit <code>{commit}</code><br>Feed {element}.json v{esc(feed["version"])} · updated {esc(feed["updated_at"])}<br>Generated {esc(stamp)} (source commit timestamp)<br>Feed SHA-256 <code>{meta["feed_sha256"]}</code><br>Generator {meta["generator"]} v{meta["version"]}</p><p><a href="{base}/{feed_path}">Pinned scientific source</a></p>')
-    body += section('References / Data & Model Sources', render_references(reference_bundle, base))
+    body += section('References / Data & Model Sources', render_references(reference_bundle, base,
+        label_of=lambda pid: (lambda p: p and f'{p["band"]} · {holding_name(p)} · {product_label(p)}')(
+            by_pid.get(pid))))
     report = make_report('Solar '+element+' appendix','Sun',element,'',body,meta,products)
     report['site_url'] = f'https://exoplanetcodex.org/systems/sol/elements/{element.lower()}/'
     report.update(references=refs, reference_bindings=reference_bundle["bindings"], product_sources=reference_bundle["product_sources"], visibility_audit=audit, highlighted_products=highlights)

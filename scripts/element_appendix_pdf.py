@@ -152,6 +152,32 @@ def render_pdf(report, output, site_root):
         classes = node.get('class', [])
         if 'product-forest' in classes:
             forest(node); return
+        if node.name == 'table':
+            # HTML tables (Line grades, How this was measured, Excluded lines) were walked
+            # cell-less and vanished from the PDF; render them as tables.
+            data = [[paragraph(c, small) for c in tr.find_all(['th', 'td'], recursive=False)]
+                    for tr in node.find_all('tr')]
+            data = [r for r in data if r]
+            if data:
+                n = max(len(r) for r in data)
+                data = [r + [''] * (n - len(r)) for r in data]
+                # Each column at least its longest word (measured in points, so no word breaks
+                # mid-way); the remaining width shared in proportion to each column's text.
+                cells = [[c.get_text(strip=True) for c in tr.find_all(['th', 'td'], recursive=False)]
+                         for tr in node.find_all('tr')]
+                col = lambda i: [r[i] for r in cells if len(r) > i]
+                floor = [max((pdfmetrics.stringWidth(w, 'Appendix', small.fontSize) for s in col(i)
+                              for w in s.split()), default=0) + 10 for i in range(n)]
+                share = [min(60, max((len(s) for s in col(i)), default=1)) for i in range(n)]
+                spare = max(0.0, width - sum(floor))
+                widths = [f + spare * s / sum(share) for f, s in zip(floor, share)]
+                t = Table(data, colWidths=widths, repeatRows=1, hAlign='LEFT')
+                t.setStyle(TableStyle([
+                    ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#edf2f5')),
+                    ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+                    ('LINEBELOW', (0, 0), (-1, -1), .25, colors.HexColor('#e1e6e9'))]))
+                story.extend([t, Spacer(1, 8)])
+            return
         if node.name in ['h1','h2','h3']:
             story.append(paragraph(node, heading if node.name in ['h1','h2'] else subhead)); return
         if node.name in ['p','figcaption','li','summary']:

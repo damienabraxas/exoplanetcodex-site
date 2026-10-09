@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from bs4 import BeautifulSoup
 import pymupdf
-from generate_cno_publication import audit_feed, select_highlights, forest, OUT
+from generate_cno_publication import audit_feed, select_highlights, forest, lines_name, OUT
 from element_appendix_pdf import make_report, render_pdf
 
 
@@ -67,7 +67,9 @@ class AdmissionTests(unittest.TestCase):
             pdf=Path(tmp)/'forest.pdf'
             render_pdf(make_report('Solar C appendix','Sun','C','',markup,{},live),pdf,ROOT)
             text=' '.join(p.get_text() for p in pymupdf.open(pdf))
-            self.assertIn('MOL-CH_IR',text)
+            # The paper shows the readable indicator name (a token with no name yet falls back
+            # to itself); the token always stays in the markup's data-selector attribute.
+            self.assertIn(lines_name(live[4]),text)
             self.assertIn('A(C)',text)
             self.assertIn('8.321',text)
 
