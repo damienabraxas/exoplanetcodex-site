@@ -302,7 +302,7 @@ def main() -> None:
             # rather than being dropped from the table.
             "measurementNote": "" if value is not None else (row["method"] or ""),
         }
-        if symbol in ("Al", "C", "N", "O") and row["ion"] == "I":
+        if symbol in ("Al", "C", "N", "O", "Si") and row["ion"] == "I":
             item["appendixPath"] = f"/systems/sol/elements/{symbol.lower()}/"
         published = published_landmark(symbol) if row["ion"] == "I" else None
         if published is not None:

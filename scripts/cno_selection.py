@@ -19,6 +19,7 @@ Rank, most important first:
 """
 from __future__ import annotations
 
+import json
 import math
 
 #: Rejected abundance routes (RYA-1220 cno_method_policy): they stay in the forest as
@@ -39,7 +40,37 @@ PRIMARY_SELECTORS = {'N': ('MOL-CN_AX_IR',)}
 BAND_ORDER = ['near-UV', 'VIS', 'red-optical', 'NIR', 'H', 'J', 'K']
 
 
+def _budget(p):
+    u = p.get('uncertainty')
+    if isinstance(u, str):
+        try:
+            u = json.loads(u)
+        except ValueError:
+            return None
+    return u if isinstance(u, dict) and u.get('components') else None
+
+
+def statistical(p):
+    """The statistical part shown beside the total. RYA-1233: a row carrying a RYA-587
+    budget takes it FROM THE BUDGET (its `measurement` term), not from the band route's own
+    `stat_dex` -- Si's VIS card read '+/-0.021 stat, +/-0.170 syst' under a total of 0.074,
+    because `sigma_syst` is the route's pre-budget systematic estimate, not the budget's."""
+    b = _budget(p)
+    if b is not None and p.get('sigma_reported') is not None:
+        m = next((c.get('sigma_dex') for c in b['components']
+                  if c.get('name') == 'measurement' and c.get('sigma_dex') is not None), None)
+        if m is not None:
+            return float(m)
+    return p.get('sigma_stat')
+
+
 def systematic(p):
+    """Everything in the total that is not the statistical term: for a budgeted row,
+    sqrt(sigma_reported^2 - stat^2), so stat (+) syst IS the total shown."""
+    b = _budget(p)
+    if b is not None and p.get('sigma_reported') is not None:
+        st = statistical(p) or 0.0
+        return math.sqrt(max(float(p['sigma_reported']) ** 2 - st ** 2, 0.0))
     return p.get('sigma_syst_complete') if p.get('sigma_syst_complete') is not None else p.get('sigma_syst')
 
 
