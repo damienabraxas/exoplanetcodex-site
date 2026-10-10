@@ -338,7 +338,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232_o/legs/unit03/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
@@ -365,7 +365,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232_o/legs/unit03/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
@@ -416,7 +416,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232_o/legs/unit04/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
@@ -443,7 +443,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232_o/legs/unit04/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
@@ -494,7 +494,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232_o/legs/unit05/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
@@ -521,7 +521,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232_o/legs/unit05/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
@@ -609,7 +609,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit20/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232_o/legs/unit00/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
@@ -636,7 +636,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit20/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232_o/legs/unit00/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
@@ -765,7 +765,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit22/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232_o/legs/unit01/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
@@ -792,7 +792,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1230/legs/unit22/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232_o/legs/unit01/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
@@ -921,7 +921,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
+        "data/results/rya1232_o/legs/unit02/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt"
       ]
     },
     {
@@ -948,7 +948,7 @@
       "evidence": [
         "data/nlte_grids/amarsi2019_cno/provenance.json",
         "data/curation/threednlte_availability.csv",
-        "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
+        "data/results/rya1232_o/legs/unit02/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt"
       ]
     },
     {
@@ -1793,22 +1793,22 @@
     "data/refs/bibliography.csv",
     "data/results/rya1230/legs/unit19/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1230/legs/unit19/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_ENGINE-A_provenance.txt",
-    "data/results/rya1230/legs/unit20/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1230/legs/unit20/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
     "data/results/rya1230/legs/unit21/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1230/legs/unit21/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_ENGINE-A_provenance.txt",
-    "data/results/rya1230/legs/unit22/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1230/legs/unit22/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
     "data/results/rya1232/legs/unit06/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A-3DNLTE_provenance.txt",
     "data/results/rya1232/legs/unit06/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_ENGINE-A_provenance.txt",
-    "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1232/legs/unit07/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
-    "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1232/legs/unit20/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
-    "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1232/legs/unit22/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
-    "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
-    "data/results/rya1232/legs/unit24/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232_o/legs/unit00/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232_o/legs/unit00/nominal/OI_6910_9199_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232_o/legs/unit01/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232_o/legs/unit01/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232_o/legs/unit02/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232_o/legs/unit02/nominal/OI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232_o/legs/unit03/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232_o/legs/unit03/nominal/OI_9199_9998_iag_fts_solar_atlas_solar_iag_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232_o/legs/unit04/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232_o/legs/unit04/nominal/OI_9199_10008_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
+    "data/results/rya1232_o/legs/unit05/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt",
+    "data/results/rya1232_o/legs/unit05/nominal/OI_9199_12976_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A_provenance.txt",
     "docs/co_indicator_strategy.md",
     "pipeline/band_products.py",
     "pipeline/cno_gf_pedigree.py"

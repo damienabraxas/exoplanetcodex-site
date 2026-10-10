@@ -1,9 +1,9 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "7ee783c2c04584338b0dbd82e0183ffc56b32e07",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/7ee783c2c04584338b0dbd82e0183ffc56b32e07",
-  "generated_at": "2026-10-09T02:09:29-06:00",
+  "source_commit": "56719920b830f9778d50a22bd7a9604a6ddc7c28",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/56719920b830f9778d50a22bd7a9604a6ddc7c28",
+  "generated_at": "2026-10-10T09:46:17-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
   "feed_version": "1.200",
   "feed_updated_at": "2026-10-09T08:06:38Z",
