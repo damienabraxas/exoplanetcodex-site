@@ -198,7 +198,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "N-products-3034d4211c0b",
+    "publication_id": "N-products-db4e37f1c3b3",
     "source_bucket": "products",
     "source_index": 9,
     "identity": {
@@ -208,7 +208,7 @@
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
-      "selector": "SET-AGSS21",
+      "selector": "SET-LBP25",
       "route": "SYNTH",
       "treatment": "1D-LTE",
       "line_set": null,
@@ -220,7 +220,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "N-products-f201c06612d2",
+    "publication_id": "N-products-8abe06adf8d9",
     "source_bucket": "products",
     "source_index": 10,
     "identity": {
@@ -230,7 +230,7 @@
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
-      "selector": "SET-AGSS21",
+      "selector": "SET-LBP25",
       "route": "SYNTH",
       "treatment": "ENGINE-A-3DNLTE",
       "line_set": null,
@@ -242,75 +242,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "N-products-71ab16a32bba",
+    "publication_id": "N-products-ed75c72efb5b",
     "source_bucket": "products",
     "source_index": 11,
-    "identity": {
-      "element": "N",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "N-products-b5ebbb0c7d12",
-    "source_bucket": "products",
-    "source_index": 12,
-    "identity": {
-      "element": "N",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-LBP25",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "N-products-f53ab893b6e5",
-    "source_bucket": "products",
-    "source_index": 13,
-    "identity": {
-      "element": "N",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-LBP25",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A-3DNLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "N-products-5bf5dcb5e0cd",
-    "source_bucket": "products",
-    "source_index": 14,
     "identity": {
       "element": "N",
       "ion": "I",
@@ -376,6 +310,78 @@
     ],
     "visible": false,
     "omission_reason": "RYA-1092 live-eligibility gate: [ANOMALOUS_SCATTER] line-to-line scatter 0.4822 dex is 34.10x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0). Moved, not deleted -- every published field is carried across unchanged and this product returns to products[] the moment it passes the gate."
+  },
+  {
+    "publication_id": "N-quarantine-35945ad2b73d",
+    "source_bucket": "quarantine",
+    "source_index": 2,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1092 eligibility gate, evaluated with peers (RYA-1232): [ANOMALOUS_SCATTER] line-to-line scatter 0.2468 dex is 9.97x the median of the 5 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "N-quarantine-4d3667606a8f",
+    "source_bucket": "quarantine",
+    "source_index": 3,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A-3DNLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1092 eligibility gate, evaluated with peers (RYA-1232): [ANOMALOUS_SCATTER] line-to-line scatter 0.2499 dex is 10.10x the median of the 5 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "N-quarantine-66d14a326159",
+    "source_bucket": "quarantine",
+    "source_index": 4,
+    "identity": {
+      "element": "N",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-AGSS21",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "quarantine",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1092 eligibility gate, evaluated with peers (RYA-1232): [ANOMALOUS_SCATTER] line-to-line scatter 0.3145 dex is 12.71x the median of the 5 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
   },
   {
     "publication_id": "N-archive-92f4078d16e7",
