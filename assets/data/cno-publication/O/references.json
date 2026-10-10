@@ -55,7 +55,7 @@
       ],
       "roles": [
         "The recorded O I/O II base pedigree is Wiese–Fuhr–Deters / Opacity Project theory. Per-transition exceptions and the open O I source decisions remain explicit.",
-        "O I triplet source record: NIST (this script) — Tachiev NOT adopted; OPEN — referred to Ryan (RYA-1214 EOS)",
+        "O I triplet source record: NIST — Tachiev NOT adopted; OPEN — under review",
         "Atomic O I entry; source-family pedigree only, not a substitute for a per-transition gf join."
       ]
     },
@@ -115,7 +115,7 @@
         "Atomic data and gf authorities"
       ],
       "roles": [
-        "O I triplet source record: NIST (this script) — Tachiev NOT adopted; OPEN — referred to Ryan (RYA-1214 EOS)"
+        "O I triplet source record: NIST — Tachiev NOT adopted; OPEN — under review"
       ]
     },
     {
@@ -271,7 +271,7 @@
         "nist_asd",
         "TachievFroeseFischer2002"
       ],
-      "claim": "O I triplet source record: NIST (this script) — Tachiev NOT adopted; OPEN — referred to Ryan (RYA-1214 EOS)",
+      "claim": "O I triplet source record: NIST — Tachiev NOT adopted; OPEN — under review",
       "evidence": [
         "data/audit/rya1214_cno_products/oi_tachiev_vs_nist.csv",
         "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json"
