@@ -73,8 +73,10 @@ def band_highlights(products):
 
 
 def landmark(element, products):
-    """The one number at the top -- the SAME product the Sun table shows (`headline`)."""
-    return headline(products, element)
+    """The one number at the top -- the SAME combination the Sun table shows: Asplund+2021's
+    weighted combination of indicator families (RYA-1232), not a single picked product."""
+    from cno_selection import asplund_headline
+    return asplund_headline(products, element)
 
 
 #: Reader-facing names for what a product measured. An unknown selector falls through to
@@ -627,15 +629,18 @@ def build(science, element, selectors, site=ROOT):
                         f'this measurement {mark["A"] - aref:+.3f} dex</p>')
         caveat = PRELIMINARY.get(element)
         caveat_html = (f'<p class="fe-anchor-caveat">{esc(caveat)}</p>') if caveat else ''
+        fam_html = ''.join(
+            f'<li>{esc(f["family"])}: {f["A"]:.3f} &plusmn; {f["sigma"]:.3f} &middot; '
+            f'{esc(holding_name(f["product"]))} &middot; {esc(f["product"]["band"])} &middot; '
+            f'{esc(product_label(f["product"]))}</li>' for f in mark['families'])
+        miss = (f'<p>Not measurable in our spectra: {esc(", ".join(mark["missing"]))}.</p>'
+                if mark['missing'] else '')
         body = (f'<p class="fe-anchor">Solar {NAMES[element].lower()}: '
-                f'{mark["A"]:.3f} &plusmn; {total_sigma(mark):.3f}</p>'
+                f'{mark["A"]:.3f} &plusmn; {mark["sigma"]:.3f}</p>'
                 + ref_html + caveat_html
-                + f'<p>{esc(holding_name(mark))} &middot; '
-                f'{esc(mark["band"])} &middot; {esc(mark["grade"])} &middot; '
-                f'{esc(product_label(mark))} &middot; n = {mark["n_lines"]}. '
-                f'The top-ranked admitted product (Reference Grade, then the most complete '
-                f'treatment, then line count, then total uncertainty); independent products and engines are '
-                f'not averaged together.</p>')
+                + f'<p>Combined the way Asplund, Amarsi &amp; Grevesse (2021) combine it: '
+                f'{esc(mark["rule"])}. Each indicator is represented by our best analysis of it.</p>'
+                f'<ul class="fe-anchor-families">{fam_html}</ul>' + miss)
     else:
         body = f'<p class="fe-anchor">{esc(status)}</p><p>{esc(no_adopted)}</p>'
     cards = []
@@ -701,6 +706,8 @@ def main():
     parser.add_argument('--highlight-selectors',type=Path,default=ROOT/'scripts/cno-highlight-selectors.json')
     args=parser.parse_args()
     selectors=json.loads(args.highlight_selectors.read_text())
+    import cno_selection
+    cno_selection.set_line_table(args.science_root.resolve())
     failures=[]
     for element in args.elements:
         try:

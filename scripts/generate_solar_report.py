@@ -127,6 +127,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=SITE_ROOT / "assets/data/solar-report.generated.js")
     args = parser.parse_args()
     science = args.science_root.resolve()
+    cno_selection.set_line_table(science)   # RYA-1232: headline ranks by resolved lines
 
     perline_path = science / "data/products/solar/Fe_perline.csv"
     gold_path = science / "data/reference/solar/solar_abundances_v5.csv"
@@ -321,7 +322,17 @@ def main() -> None:
         if not feed_path.exists():
             return None
         feed = json.loads(feed_path.read_text(encoding='utf-8'))
-        best = cno_selection.headline(cno_selection.fill_grades(feed.get('products', []), science), symbol)
+        prods = cno_selection.fill_grades(feed.get('products', []), science)
+        if symbol in ('C', 'N', 'O'):
+            # RYA-1232: Asplund+2021's family combination, the SAME function the element page uses
+            comb = cno_selection.asplund_headline(prods, symbol)
+            if comb is None:
+                return None
+            n_lines = sum(int(f['product'].get('n_lines') or 0) for f in comb['families'])
+            best = {'A': comb['A'], 'n_lines': n_lines, 'grade': 'Reference Grade',
+                    'uncertainty': True, '_asplund': comb}
+            return best, comb['sigma'], feed.get('version')
+        best = cno_selection.headline(prods, symbol)
         if best is None:
             return None
         return best, cno_selection.total_sigma(best), feed.get('version')
@@ -354,9 +365,14 @@ def main() -> None:
                 "sigmaTotal": round(sigma_total, 4),
                 "lineCount": best.get("n_lines"),
             }
-            item["method"] = (f'{best.get("instrument")} {best.get("band")} · '
-                              f'{best.get("selector") or "full pool"} · {best.get("treatment")} '
-                              f'({best.get("grade")}, {symbol}.json v{feed_version})')
+            if best.get("_asplund"):
+                _c = best["_asplund"]
+                item["method"] = ("Asplund+2021 combination of " + ", ".join(
+                    f'{f["family"]} {f["A"]:.3f}' for f in _c["families"]) + f' ({symbol}.json v{feed_version})')
+            else:
+                item["method"] = (f'{best.get("instrument")} {best.get("band")} · '
+                                  f'{best.get("selector") or "full pool"} · {best.get("treatment")} '
+                                  f'({best.get("grade")}, {symbol}.json v{feed_version})')
             item["measurementNote"] = ""
             # RYA-1230: a published product's status is the FEED's, not the tracker's
             # phase_c verdict (N read "curation-owed" for a gf floor the RCA refuted).

@@ -115,10 +115,39 @@ def treatment_rank(p):
     return 3
 
 
+#: RYA-1232 (Ryan, option 1): rank by RESOLVED lines, not fine-structure components. O I
+#: 926 nm is 3 lines (926.1/926.3/926.6 nm, as AGSS21 prints them) carried as 9 components;
+#: counting components let it outrank the 6-line red-optical O I set on a counting artefact.
+#: Components closer than RESOLVE_A merge. Needs the science repo's canonical_gf
+#: (set_line_table); a row whose ids do not resolve falls back to n_lines.
+RESOLVE_A = 0.5
+_LINE_WAVE: dict = {}
+
+
+def set_line_table(science_root) -> None:
+    import csv
+    from pathlib import Path as _P
+    with open(_P(science_root) / 'data/linelists/canonical_gf.csv', newline='') as fh:
+        for r in csv.DictReader(fh):
+            if r.get('physical_id') and r.get('wavelength_air_A'):
+                _LINE_WAVE[r['physical_id']] = float(r['wavelength_air_A'])
+
+
+def resolved_lines(p) -> int:
+    ids = p.get('uncertainty_indicator_ids') or []
+    waves = sorted(_LINE_WAVE[i] for i in ids if i in _LINE_WAVE)
+    if not waves or len(waves) != len(ids):
+        return int(p.get('n_lines') or 0)
+    n = 1
+    for a, b in zip(waves, waves[1:]):
+        n += (b - a) > RESOLVE_A
+    return n
+
+
 def rank_key(p):
     return (0 if p.get('grade') == 'Reference Grade' else 1,
             treatment_rank(p),
-            -(p.get('n_lines') or 0),
+            -resolved_lines(p),
             round(total_sigma(p), 4),
             p.get('holding', ''))
 
@@ -151,3 +180,72 @@ def headline(products, element=None):
     if vis is not None and vis.get('grade') == 'Reference Grade':
         return vis
     return min(rows, key=rank_key)
+
+
+# ── RYA-1232: the headline IS Asplund, Amarsi & Grevesse 2021's method (Sect. 2.3) ────────
+#
+# Not a single "best" product. Each element's solar value combines its INDICATOR FAMILIES:
+#   C  weighted mean and error of [C I], C I, C2, CH, CO (CH and CO groups first combined)
+#   N  UNWEIGHTED mean of atomic N I and the weighted mean of the molecular results (NH, CN);
+#      uncertainty = standard error of that mean = half the range of the two
+#   O  weighted mean and error of [O I], O I, OH (OH groups first combined)
+# Each family is represented by OUR best analysis of that indicator (rank_key: Reference
+# Grade, most complete treatment, resolved lines, sigma); independent spectra of the SAME
+# lines are not averaged as if independent. Weights are 1/sigma_total^2.
+FAMILY_BY_SELECTOR = {'MOL-C2_Swan': 'C2', 'MOL-CH_Gband': 'CH', 'MOL-CO_K': 'CO',
+                      'MOL-CN_AX_IR': 'CN', 'MOL-NH': 'NH', 'MOL-OH': 'OH'}
+ASPLUND_FAMILIES = {'C': ('[C I]', 'C I', 'C2', 'CH', 'CO'),
+                    'N': ('N I', 'NH', 'CN'),
+                    'O': ('[O I]', 'O I', 'OH')}
+
+
+def indicator_family(p):
+    sel = str(p.get('selector') or '')
+    el = str(p.get('element') or '')
+    if sel.startswith('MOL-'):
+        return FAMILY_BY_SELECTOR.get(sel)          # CN_red etc. are not Asplund families
+    if sel.startswith('FORB-'):
+        return f'[{el} I]'
+    if str(p.get('ion') or 'I').strip() not in ('I', '1'):
+        return None
+    return f'{el} I'
+
+
+def _wmean(rows):
+    w = [1.0 / s ** 2 for _, s in rows]
+    return sum(a * wi for (a, _), wi in zip(rows, w)) / sum(w), (1.0 / sum(w)) ** 0.5
+
+
+def asplund_headline(products, element):
+    """Asplund+2021's combination of this element's indicator families, from OUR products.
+    Returns {A, sigma, rule, families: [{family, A, sigma, product}], missing: [...]}."""
+    fams = {}
+    for p in products:
+        if not eligible_for_headline(p) or not p.get('sigma_reported') and not total_sigma(p):
+            continue
+        f = indicator_family(p)
+        if f in ASPLUND_FAMILIES.get(element, ()):
+            fams.setdefault(f, []).append(p)
+    rep = {f: min(ps, key=rank_key) for f, ps in fams.items()}
+    rows = {f: (float(p['A']), float(total_sigma(p))) for f, p in rep.items()}
+    if not rows:
+        return None
+    if element == 'N':
+        mol = [rows[f] for f in ('NH', 'CN') if f in rows]
+        parts = ([rows['N I']] if 'N I' in rows else []) + ([_wmean(mol)] if mol else [])
+        if len(parts) == 2:
+            a = (parts[0][0] + parts[1][0]) / 2.0
+            s = abs(parts[0][0] - parts[1][0]) / 2.0
+            rule = ('unweighted mean of atomic N I and the weighted molecular mean (NH, CN); '
+                    'uncertainty half the range (Asplund+2021 Sect. 2.3)')
+        else:
+            a, s = parts[0]
+            rule = 'only one of atomic / molecular N available'
+    else:
+        a, s = _wmean(list(rows.values()))
+        rule = ('weighted mean and error of the indicator families '
+                + ', '.join(ASPLUND_FAMILIES[element]) + ' (Asplund+2021 Sect. 2.3)')
+    return {'element': element, 'A': a, 'sigma': s, 'rule': rule,
+            'families': [{'family': f, 'A': rows[f][0], 'sigma': rows[f][1], 'product': rep[f]}
+                         for f in ASPLUND_FAMILIES[element] if f in rep],
+            'missing': [f for f in ASPLUND_FAMILIES[element] if f not in rep]}
