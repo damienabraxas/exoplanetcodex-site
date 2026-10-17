@@ -220,7 +220,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-8d77b8828ac4",
+    "publication_id": "Si-products-e636e6942aaf",
     "source_bucket": "products",
     "source_index": 10,
     "identity": {
@@ -228,11 +228,11 @@
       "ion": "I",
       "band": "H",
       "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1094",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_crires_plus_h_rya1232",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -242,7 +242,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-480a01b14cac",
+    "publication_id": "Si-products-50ccbe6c093c",
     "source_bucket": "products",
     "source_index": 11,
     "identity": {
@@ -254,28 +254,6 @@
       "tier": "ALL",
       "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-833ce871c015",
-    "source_bucket": "products",
-    "source_index": 12,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1232",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
-      "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
@@ -286,7 +264,29 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-988febb3f831",
+    "publication_id": "Si-products-78ada3f9735b",
+    "source_bucket": "products",
+    "source_index": 12,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_j_rya1219",
+      "tier": "ALL",
+      "selector": "SET-SI_DESHMUKH2022",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-b8216b0c9359",
     "source_bucket": "products",
     "source_index": 13,
     "identity": {
@@ -298,6 +298,28 @@
       "tier": "ALL",
       "selector": "SET-SI_DESHMUKH2022",
       "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-d56ffa9cfc5d",
+    "source_bucket": "products",
+    "source_index": 14,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_j_rya1219",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
@@ -308,15 +330,59 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-c79e28a0358d",
+    "publication_id": "Si-products-6087fbe44c59",
     "source_bucket": "products",
-    "source_index": 14,
+    "source_index": 15,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
       "instrument": "crires_plus",
       "holding": "solar_crires_plus_j_rya1219",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-68a0da419260",
+    "source_bucket": "products",
+    "source_index": 16,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_rya794",
+      "tier": "ALL",
+      "selector": "SET-SI_DESHMUKH2022",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-fe06e8201b25",
+    "source_bucket": "products",
+    "source_index": 17,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_rya794",
       "tier": "ALL",
       "selector": "SET-SI_DESHMUKH2022",
       "route": "SYNTH",
@@ -330,73 +396,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-3e56dd425dff",
-    "source_bucket": "products",
-    "source_index": 15,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_j_rya1219",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-a2dacc31a9b8",
-    "source_bucket": "products",
-    "source_index": 16,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_j_rya1219",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-f8c04f303620",
-    "source_bucket": "products",
-    "source_index": 17,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_j_rya1219",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-7770c7552175",
+    "publication_id": "Si-products-d01c0de482f8",
     "source_bucket": "products",
     "source_index": 18,
     "identity": {
@@ -404,11 +404,11 @@
       "ion": "I",
       "band": "NIR",
       "instrument": "crires_plus",
-      "holding": "solar_crires_plus_j_rya1219",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_crires_plus_y_rya794",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -418,7 +418,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-51501961dd6c",
+    "publication_id": "Si-products-bcdae8eb6758",
     "source_bucket": "products",
     "source_index": 19,
     "identity": {
@@ -428,9 +428,9 @@
       "instrument": "crires_plus",
       "holding": "solar_crires_plus_y_rya794",
       "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -440,7 +440,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-f3a179a66e75",
+    "publication_id": "Si-products-02cc90577c3c",
     "source_bucket": "products",
     "source_index": 20,
     "identity": {
@@ -449,10 +449,10 @@
       "band": "NIR",
       "instrument": "crires_plus",
       "holding": "solar_crires_plus_y_rya794",
-      "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -462,7 +462,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-59dfde4f2e01",
+    "publication_id": "Si-products-d9c04fe0bb0b",
     "source_bucket": "products",
     "source_index": 21,
     "identity": {
@@ -471,10 +471,10 @@
       "band": "NIR",
       "instrument": "crires_plus",
       "holding": "solar_crires_plus_y_rya794",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -484,7 +484,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-56796d11509c",
+    "publication_id": "Si-products-115af02fe503",
     "source_bucket": "products",
     "source_index": 22,
     "identity": {
@@ -492,9 +492,31 @@
       "ion": "I",
       "band": "NIR",
       "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
+      "holding": "solar_crires_plus_y_wide_rya1054",
       "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
+      "selector": "SET-SI_DESHMUKH2022",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-e9b064f45645",
+    "source_bucket": "products",
+    "source_index": 23,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-SI_DESHMUKH2022",
       "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
@@ -506,15 +528,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-8de5767de19c",
+    "publication_id": "Si-products-f29c5165a798",
     "source_bucket": "products",
-    "source_index": 23,
+    "source_index": 24,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
       "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
+      "holding": "solar_crires_plus_y_wide_rya1054",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -528,29 +550,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-e7ba718b7d32",
-    "source_bucket": "products",
-    "source_index": 24,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-f0d0bcfa710d",
+    "publication_id": "Si-products-ef230dcf5d1d",
     "source_bucket": "products",
     "source_index": 25,
     "identity": {
@@ -559,10 +559,10 @@
       "band": "NIR",
       "instrument": "crires_plus",
       "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -572,19 +572,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-916b06185fb6",
+    "publication_id": "Si-products-dab7a7917e06",
     "source_bucket": "products",
     "source_index": 26,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -594,19 +594,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-94ff9cc87e04",
+    "publication_id": "Si-products-319f483148d1",
     "source_bucket": "products",
     "source_index": 27,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "ALL",
       "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -616,19 +616,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-cb2760b775fd",
+    "publication_id": "Si-products-aa27575bc65f",
     "source_bucket": "products",
     "source_index": 28,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -638,19 +638,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-ff340c51703e",
+    "publication_id": "Si-products-703e8de44fc8",
     "source_bucket": "products",
     "source_index": 29,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -660,19 +660,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-e63f997a830c",
+    "publication_id": "Si-products-b1291f7f286b",
     "source_bucket": "products",
     "source_index": 30,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -682,19 +682,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-4df3a1a5c5a7",
+    "publication_id": "Si-products-f403a4693354",
     "source_bucket": "products",
     "source_index": 31,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
       "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -704,15 +704,81 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-938fcc222035",
+    "publication_id": "Si-products-09438da36aef",
     "source_bucket": "products",
     "source_index": 32,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-63a93f8943d7",
+    "source_bucket": "products",
+    "source_index": 33,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-1a21e353cd5f",
+    "source_bucket": "products",
+    "source_index": 34,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-SI_DESHMUKH2022",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-939560fefceb",
+    "source_bucket": "products",
+    "source_index": 35,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
       "selector": "SET-SI_DESHMUKH2022",
       "route": "SYNTH",
@@ -726,85 +792,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-01ee4f11a290",
-    "source_bucket": "products",
-    "source_index": 33,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-e70495a7f701",
-    "source_bucket": "products",
-    "source_index": 34,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-6bada5f8818b",
-    "source_bucket": "products",
-    "source_index": 35,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-04af8abbd9ef",
+    "publication_id": "Si-products-01a5009be9be",
     "source_bucket": "products",
     "source_index": 36,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -814,7 +814,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-46d469b21905",
+    "publication_id": "Si-products-724d64a49bde",
     "source_bucket": "products",
     "source_index": 37,
     "identity": {
@@ -822,11 +822,11 @@
       "ion": "I",
       "band": "NIR",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
       "selector": "SET-SI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -836,7 +836,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-730f0a363fa9",
+    "publication_id": "Si-products-a23c25d935d8",
     "source_bucket": "products",
     "source_index": 38,
     "identity": {
@@ -844,11 +844,11 @@
       "ion": "I",
       "band": "NIR",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -858,7 +858,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-ffbb5652fbed",
+    "publication_id": "Si-products-83f80d5ca2c1",
     "source_bucket": "products",
     "source_index": 39,
     "identity": {
@@ -866,11 +866,11 @@
       "ion": "I",
       "band": "NIR",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -880,19 +880,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-b631ad4e356e",
+    "publication_id": "Si-products-b2f34d015eab",
     "source_bucket": "products",
     "source_index": 40,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -902,19 +902,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-8d2d8e5da7c5",
+    "publication_id": "Si-products-04b5965513ce",
     "source_bucket": "products",
     "source_index": 41,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
       "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -924,19 +924,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-0e1b12994e88",
+    "publication_id": "Si-products-93a85c979084",
     "source_bucket": "products",
     "source_index": 42,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_DESHMUKH2022",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -946,19 +946,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-bd07a6dbcb90",
+    "publication_id": "Si-products-ea8e9f9add24",
     "source_bucket": "products",
     "source_index": 43,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -968,17 +968,39 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-ee2d560f28da",
+    "publication_id": "Si-products-69325d3ca3fa",
     "source_bucket": "products",
     "source_index": 44,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
+      "band": "VIS",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "ALL",
-      "selector": "SET-SI_ELGUETA2026",
+      "selector": "SET-SI_AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-ae649028ea9a",
+    "source_bucket": "products",
+    "source_index": 45,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
@@ -990,15 +1012,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-ffb147d49b18",
+    "publication_id": "Si-products-b8d5fe63d15d",
     "source_bucket": "products",
-    "source_index": 45,
+    "source_index": 46,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
+      "band": "VIS",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -1012,41 +1034,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-7761a491d460",
-    "source_bucket": "products",
-    "source_index": 46,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-33e11b36d848",
+    "publication_id": "Si-products-4ac612585049",
     "source_bucket": "products",
     "source_index": 47,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -1056,19 +1056,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-00b53487a641",
+    "publication_id": "Si-products-71ea831123e9",
     "source_bucket": "products",
     "source_index": 48,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
       "tier": "ALL",
       "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1078,19 +1078,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-5a875f2d8136",
+    "publication_id": "Si-products-fab5c8319865",
     "source_bucket": "products",
     "source_index": 49,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -1100,19 +1100,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-a87ca7909bec",
+    "publication_id": "Si-products-47f5784280f5",
     "source_bucket": "products",
     "source_index": 50,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1122,19 +1122,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-93bf514afb25",
+    "publication_id": "Si-products-c16c0efa9866",
     "source_bucket": "products",
     "source_index": 51,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -1144,15 +1144,37 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-f73920b38c09",
+    "publication_id": "Si-products-e2f56f577f7c",
     "source_bucket": "products",
     "source_index": 52,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-SI_AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Si-products-a54926dacc0b",
+    "source_bucket": "products",
+    "source_index": 53,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
       "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
@@ -1166,15 +1188,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-14dd96339711",
+    "publication_id": "Si-products-784a936bcab2",
     "source_bucket": "products",
-    "source_index": 53,
+    "source_index": 54,
     "identity": {
       "element": "Si",
       "ion": "I",
       "band": "VIS",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -1188,29 +1210,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-6155ce7e6213",
-    "source_bucket": "products",
-    "source_index": 54,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-c45dcc3aba67",
+    "publication_id": "Si-products-dcd2f1d1bede",
     "source_bucket": "products",
     "source_index": 55,
     "identity": {
@@ -1218,11 +1218,11 @@
       "ion": "I",
       "band": "VIS",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -1232,19 +1232,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-578d55fc97e1",
+    "publication_id": "Si-products-e040cb5e6430",
     "source_bucket": "products",
     "source_index": 56,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "ALL",
       "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1254,19 +1254,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-0c098c0f53a7",
+    "publication_id": "Si-products-0b7df139857f",
     "source_bucket": "products",
     "source_index": 57,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -1276,19 +1276,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-06ee9783f5e6",
+    "publication_id": "Si-products-c31c1e8e3ffd",
     "source_bucket": "products",
     "source_index": 58,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "VIS",
+      "band": "red-optical",
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "tier": "ALL",
+      "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1298,19 +1298,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-56dfcc38ce4a",
+    "publication_id": "Si-products-8fce3970b2cc",
     "source_bucket": "products",
     "source_index": 59,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "VIS",
+      "band": "red-optical",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
+      "holding": "solar_kpno_kurucz2005_corrected",
       "tier": "ALL",
       "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -1320,19 +1320,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-954171c9a232",
+    "publication_id": "Si-products-4eadb43adaf9",
     "source_bucket": "products",
     "source_index": 60,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "VIS",
+      "band": "red-optical",
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
       "selector": "SET-SI_AGSS21",
       "route": "SYNTH",
-      "treatment": "ENGINE-A",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1342,237 +1342,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Si-products-6b601e89cb83",
+    "publication_id": "Si-products-ae5c932e8b0b",
     "source_bucket": "products",
     "source_index": 61,
     "identity": {
       "element": "Si",
       "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-2985724f93f0",
-    "source_bucket": "products",
-    "source_index": 62,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-c1417b3b31e1",
-    "source_bucket": "products",
-    "source_index": 63,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-03a7d90ebec2",
-    "source_bucket": "products",
-    "source_index": 64,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-7d868e7dac37",
-    "source_bucket": "products",
-    "source_index": 65,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-5c92ac09d602",
-    "source_bucket": "products",
-    "source_index": 66,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-35d450bb7320",
-    "source_bucket": "products",
-    "source_index": 67,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-84ba64eb5caf",
-    "source_bucket": "products",
-    "source_index": 68,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-f1f74f9f5c8a",
-    "source_bucket": "products",
-    "source_index": 69,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
       "band": "red-optical",
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
       "selector": "SET-SI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-95502019a5f6",
-    "source_bucket": "products",
-    "source_index": 70,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-SI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Si-products-13698c13cdd6",
-    "source_bucket": "products",
-    "source_index": 71,
-    "identity": {
-      "element": "Si",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
       "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
@@ -4876,5 +4656,321 @@
     ],
     "visible": false,
     "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede the existing live record. [ANOMALOUS_SCATTER] line-to-line scatter 0.0915 dex is 6.47x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "Si-archive-2c1c72054245",
+    "source_bucket": "archive",
+    "source_index": 145,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede the existing live record. [ANOMALOUS_SCATTER] line-to-line scatter 0.0505 dex is 5.05x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "Si-archive-86ee32067b0c",
+    "source_bucket": "archive",
+    "source_index": 146,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede the existing live record. [ANOMALOUS_SCATTER] line-to-line scatter 0.0510 dex is 5.10x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "Si-archive-d25fceac2bc6",
+    "source_bucket": "archive",
+    "source_index": 147,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_j_rya1219",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede the existing live record. [ANOMALOUS_SCATTER] line-to-line scatter 0.0924 dex is 6.53x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "Si-archive-277e9e7058c5",
+    "source_bucket": "archive",
+    "source_index": 148,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_j_rya1219",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [
+      "ANOMALOUS_SCATTER"
+    ],
+    "visible": false,
+    "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede the existing live record. [ANOMALOUS_SCATTER] line-to-line scatter 0.0915 dex is 6.47x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "Si-archive-b26ee26826ef",
+    "source_bucket": "archive",
+    "source_index": 149,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1094",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-830b4a5722e1",
+    "source_bucket": "archive",
+    "source_index": 150,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-SI_DESHMUKH2022",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-91cfa5d601a1",
+    "source_bucket": "archive",
+    "source_index": 151,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-SI_DESHMUKH2022",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-d25f9c4aba8d",
+    "source_bucket": "archive",
+    "source_index": 152,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-844e575c74ba",
+    "source_bucket": "archive",
+    "source_index": 153,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-d5f9200f4e76",
+    "source_bucket": "archive",
+    "source_index": 154,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-98b936948ad4",
+    "source_bucket": "archive",
+    "source_index": 155,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_j_rya1219",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-bfb6f18c7563",
+    "source_bucket": "archive",
+    "source_index": 156,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_j_rya1219",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-8af35907bdfb",
+    "source_bucket": "archive",
+    "source_index": 157,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
+  },
+  {
+    "publication_id": "Si-archive-2858c62fc687",
+    "source_bucket": "archive",
+    "source_index": 158,
+    "identity": {
+      "element": "Si",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-SI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
   }
 ]

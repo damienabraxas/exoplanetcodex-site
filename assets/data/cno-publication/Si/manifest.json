@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "031609d6bca709891067b8e5ec9a1d6a6a36b487",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/031609d6bca709891067b8e5ec9a1d6a6a36b487",
-  "generated_at": "2026-10-17T12:28:41-06:00",
+  "source_commit": "ccc31e67aa934991efdb45b6be7c246c8a7d733c",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/ccc31e67aa934991efdb45b6be7c246c8a7d733c",
+  "generated_at": "2026-10-17T17:26:35-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.271",
-  "feed_updated_at": "2026-10-17T18:26:39Z",
-  "feed_sha256": "e6bc2394036542377476a7a62338f14bd5a111e5615be1691834bc0ae829fe0a",
+  "feed_version": "1.278",
+  "feed_updated_at": "2026-10-17T23:20:32Z",
+  "feed_sha256": "7c1195f65f701ad6d0d6dbd97f55dee5cfdd7b07b6f7a1291b6ab2ce2619f708",
   "source_sha256": {
-    "data/products/solar/Si.json": "e6bc2394036542377476a7a62338f14bd5a111e5615be1691834bc0ae829fe0a",
+    "data/products/solar/Si.json": "7c1195f65f701ad6d0d6dbd97f55dee5cfdd7b07b6f7a1291b6ab2ce2619f708",
     "data/refs/bibliography.csv": "27ea81cf69b597e79ddb5715424c4633c8c29d7ff86e044bb12c951b7d369fbe",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "be032162e0a50bf1c7009cd746cc567e4ccc4eddf85e19e488c929a02552da95",
@@ -25,16 +25,16 @@
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "701f640e900359f1a3192d285f642f4da674a912b8b5816e754c307d3d30acce",
   "counts": {
-    "products": 72,
+    "products": 62,
     "quarantine": 4,
-    "archive": 145,
+    "archive": 159,
     "superseded": 0
   },
-  "visible_products": 72,
+  "visible_products": 62,
   "dispositions": {
-    "products": 72,
+    "products": 62,
     "quarantine": 4,
-    "archive": 145
+    "archive": 159
   },
   "highlight_selectors": [],
   "status": "products"
