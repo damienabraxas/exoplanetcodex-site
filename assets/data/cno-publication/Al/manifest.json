@@ -1,0 +1,40 @@
+{
+  "generator": "scripts/generate_cno_publication.py",
+  "version": "1.0.0",
+  "source_commit": "031609d6bca709891067b8e5ec9a1d6a6a36b487",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/031609d6bca709891067b8e5ec9a1d6a6a36b487",
+  "generated_at": "2026-10-17T12:28:41-06:00",
+  "timestamp_basis": "source commit timestamp (deterministic build)",
+  "feed_version": "1.67",
+  "feed_updated_at": "2026-10-16T12:38:38Z",
+  "feed_sha256": "09b3bed9e91ec7f33ab4903c5bd78089abe4f87946052bba1bff91c864638978",
+  "source_sha256": {
+    "data/products/solar/Al.json": "09b3bed9e91ec7f33ab4903c5bd78089abe4f87946052bba1bff91c864638978",
+    "data/refs/bibliography.csv": "27ea81cf69b597e79ddb5715424c4633c8c29d7ff86e044bb12c951b7d369fbe",
+    "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
+    "data/reference/line_sets/REGISTRY.csv": "be032162e0a50bf1c7009cd746cc567e4ccc4eddf85e19e488c929a02552da95",
+    "data/reference/gf_error_model.csv": "9ed26c5cb8b0938c77b710d2b39561f30a30af1c69544902fc7c61155b434ad2",
+    "data/reference/litscan/Al.yaml": "0d2ee0d21be36de82d07d80fda81a4a8199aca0b7e901e8242f8aca0a42303aa",
+    "data/nlte_grids/Al_Amarsi2020_PySME.prov.json": "d9daaf1c48d5429e20710daa0a7a227babc2b41c91863ce7a126c00859818c92"
+  },
+  "generator_sha256": "f763f5e73d003e514083a3eb2cbe550f2f3f53e02a1e266440e12b0252f564ac",
+  "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
+  "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
+  "reference_count": 5,
+  "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
+  "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "pdf_generator_sha256": "701f640e900359f1a3192d285f642f4da674a912b8b5816e754c307d3d30acce",
+  "counts": {
+    "products": 30,
+    "quarantine": 0,
+    "archive": 37,
+    "superseded": 0
+  },
+  "visible_products": 30,
+  "dispositions": {
+    "products": 30,
+    "archive": 37
+  },
+  "highlight_selectors": [],
+  "status": "products"
+}

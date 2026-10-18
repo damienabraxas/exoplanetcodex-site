@@ -1,23 +1,23 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "5f2969001365720a1081e4f91bdc1717b0e449d1",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/5f2969001365720a1081e4f91bdc1717b0e449d1",
-  "generated_at": "2026-10-10T16:00:52-06:00",
+  "source_commit": "ccc31e67aa934991efdb45b6be7c246c8a7d733c",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/ccc31e67aa934991efdb45b6be7c246c8a7d733c",
+  "generated_at": "2026-10-17T17:26:35-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.165",
-  "feed_updated_at": "2026-10-09T22:31:47Z",
-  "feed_sha256": "f5230bddfe2fd5b1062d15db46d75291aa384dd706693a30c9ec3062e31f81ec",
+  "feed_version": "1.278",
+  "feed_updated_at": "2026-10-17T23:20:32Z",
+  "feed_sha256": "7c1195f65f701ad6d0d6dbd97f55dee5cfdd7b07b6f7a1291b6ab2ce2619f708",
   "source_sha256": {
-    "data/products/solar/Si.json": "f5230bddfe2fd5b1062d15db46d75291aa384dd706693a30c9ec3062e31f81ec",
+    "data/products/solar/Si.json": "7c1195f65f701ad6d0d6dbd97f55dee5cfdd7b07b6f7a1291b6ab2ce2619f708",
     "data/refs/bibliography.csv": "27ea81cf69b597e79ddb5715424c4633c8c29d7ff86e044bb12c951b7d369fbe",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "be032162e0a50bf1c7009cd746cc567e4ccc4eddf85e19e488c929a02552da95",
     "data/reference/gf_error_model.csv": "9ed26c5cb8b0938c77b710d2b39561f30a30af1c69544902fc7c61155b434ad2",
     "data/reference/litscan/Si.yaml": "206be9f996773067bb3ab9741808e6ea60039ce3619f85f28c323c7116d62bf6",
-    "data/nlte_grids/Si_Amarsi2020_PySME.prov.json": "cb1a8c1c817fc2f9d82757898e507617df200471ed6bb084908f077242b6f8a8"
+    "data/nlte_grids/Si_Amarsi2020_PySME.prov.json": "a6f3f1dd14b815b97b034b8f15a5501d36782741b13fa009d794f01e09e99cf2"
   },
-  "generator_sha256": "6d5d85f75a5cbffca523ee0c74973d3e1693be2e89fbd9f2948a607be3911f41",
+  "generator_sha256": "f763f5e73d003e514083a3eb2cbe550f2f3f53e02a1e266440e12b0252f564ac",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 11,
@@ -25,15 +25,16 @@
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "701f640e900359f1a3192d285f642f4da674a912b8b5816e754c307d3d30acce",
   "counts": {
-    "products": 69,
-    "quarantine": 0,
-    "archive": 46,
+    "products": 62,
+    "quarantine": 4,
+    "archive": 159,
     "superseded": 0
   },
-  "visible_products": 69,
+  "visible_products": 62,
   "dispositions": {
-    "products": 69,
-    "archive": 46
+    "products": 62,
+    "quarantine": 4,
+    "archive": 159
   },
   "highlight_selectors": [],
   "status": "products"

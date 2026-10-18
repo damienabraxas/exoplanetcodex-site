@@ -25,13 +25,18 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Al': ('Aluminium is traced by Al I lines in the optical and near-infrared. The reference lines '
+           'are the six Asplund et al. 2021 used (Nordlander & Lind 2017: 6696, 6698, 7835, 8912, '
+           '10768 and 10872 \u00c5) with the oscillator strengths and uncertainties those authors '
+           'adopted. Al I departs from LTE, so each spectrum also carries a non-LTE-corrected '
+           'product; each set, spectrum and treatment remains a separate product.'),
     'Si': ('Silicon is traced by Si I lines from the blue to the H band and by the single '
            'Si II 6371 \u00c5 line. The optical lines are Asplund et al. 2021\'s set (Amarsi & '
            'Asplund 2017) with the gf the authors used; the infrared lines are the published '
@@ -104,6 +109,7 @@ HOLDING_NAMES = {
     'solar_crires_plus_y_rya794': 'CRIRES+ Y',
     'solar_crires_plus_y_wide_rya1054': 'CRIRES+ Y (full arm)',
     'solar_crires_plus_h_rya1094': 'CRIRES+ H',
+    'solar_crires_plus_h_rya1232': 'CRIRES+ H (full arm, telluric-corrected)',
 }
 #: RYA-587 budget components in plain words, for the "largest uncertainty terms" column.
 TERM_NAMES = {
@@ -404,13 +410,13 @@ def holding_name(p):
 #: ⚠️ VALUE ONLY, NO BAND. Fe shades +/- sigma_external because its tracker supplies one.
 #: AGSS21's published uncertainties are not in the science repo, and inventing a width
 #: would put an unsourced error band on a public plot.
-ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51}
+ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51, 'Al': 6.43}
 
 #: AGSS21's OWN published uncertainties (Asplund, Amarsi & Grevesse 2021, Table 2). The Fe
 #: forest shades +/- sigma_external around its reference; CNO now does the same, so the
 #: reference reads as a measurement with a bar rather than an infinitely sharp line.
 #: These are the paper's stated values, not a width invented to make a band appear.
-ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03}
+ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03}
 
 #: Diagnostics the ratified RYA-1220 policy REJECTS as abundance routes. They stay in the
 #: feed and in the forest -- withdrawing evidence is not the same as hiding it -- but they

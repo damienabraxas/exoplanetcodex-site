@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "0ff8336536290238eb66f23238a2228929edce6c",
-        "scienceGit": "5f2969001365720a1081e4f91bdc1717b0e449d1",
-        "generatedAt": "2026-10-10T22:01:10+00:00"
+        "scienceGit": "ccc31e67aa934991efdb45b6be7c246c8a7d733c",
+        "generatedAt": "2026-10-17T23:27:30+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1594,13 +1594,19 @@ window.SOLAR_REPORT = {
       "symbol": "Al",
       "ion": "I",
       "name": "Aluminium",
-      "status": "In progress",
+      "status": "Published",
       "tier": "owed",
-      "method": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "method": "kpno_solar_atlas VIS · SET-AL_AGSS21 · ENGINE-A (Reference Grade, Al.json v1.67)",
       "asplund": 6.43,
-      "measurementNote": "EW: 1 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
-      "statusDetail": "curation-owed"
+      "primaryValue": {
+        "value": 6.429,
+        "sigmaTotal": 0.081,
+        "lineCount": 2
+      },
+      "delta": -0.001,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 14,
@@ -1609,7 +1615,7 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "gf_floor",
-      "method": "kpno_solar_atlas VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.165)",
+      "method": "kpno_solar_atlas VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.278)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
@@ -3977,7 +3983,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "5f2969001365720a1081e4f91bdc1717b0e449d1",
+    "gitCommit": "ccc31e67aa934991efdb45b6be7c246c8a7d733c",
     "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-09-24T19:24:31+00:00"

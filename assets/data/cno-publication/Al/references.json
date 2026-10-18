@@ -1,0 +1,1704 @@
+{
+  "references": [
+    {
+      "id": "asplund2021",
+      "citation": "Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). The chemical make-up of the Sun: A 2020 vision. A&A 653, A141",
+      "doi": "10.1051/0004-6361/202140445",
+      "url": "https://doi.org/10.1051/0004-6361/202140445",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "asplund2021"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar Al comparison literature; not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "lodders2025",
+      "citation": "Lodders, K.; Bergemann, M.; Palme, H. (2025). Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites. Space Science Reviews 221",
+      "doi": "10.1007/s11214-025-01146-w",
+      "url": "https://doi.org/10.1007/s11214-025-01146-w",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "lodders2025"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar Al comparison literature; not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "nordlander_lind2017",
+      "citation": "Nordlander, T.; Lind, K. (2017). Non-LTE aluminium abundances in late-type stars. A&A 607, A75",
+      "doi": "10.1051/0004-6361/201730427",
+      "url": "https://doi.org/10.1051/0004-6361/201730427",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "nordlander_lind2017"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses",
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "Published line set AL_AGSS21 (the line selection).",
+        "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    },
+    {
+      "id": "gerber2023",
+      "citation": "Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). Non-LTE radiative transfer with Turbospectrum. A&A 669, A43",
+      "doi": "10.1051/0004-6361/202243673",
+      "url": "https://doi.org/10.1051/0004-6361/202243673",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "gerber2023"
+        }
+      ],
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      ]
+    },
+    {
+      "id": "amarsi2020_galah",
+      "citation": "Amarsi, A. M.; Lind, K.; Osorio, Y.; Nordlander, T.; Bergemann, M.; et al. (2020). The GALAH Survey: non-LTE departure coefficients for large spectroscopic surveys. A&A 642, A62",
+      "doi": "10.1051/0004-6361/202038650",
+      "url": "https://www.aanda.org/articles/aa/abs/2020/10/aa38650-20/aa38650-20.html",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "amarsi2020_galah"
+        }
+      ],
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "subject": "element-context",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025"
+      ],
+      "claim": "Solar Al comparison literature; not an adopted Codex abundance.",
+      "evidence": [
+        "data/refs/bibliography.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-3dced287aa93",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-3dced287aa93",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-3dced287aa93",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-6a4b66082042",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-6a4b66082042",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6a4b66082042",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e1f71442de77",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-e1f71442de77",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e1f71442de77",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-9443d9b76f0f",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-9443d9b76f0f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-9443d9b76f0f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-2c817b8eea2e",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-2c817b8eea2e",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-fcec422376c8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-fcec422376c8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-49c83f2985f1",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-49c83f2985f1",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-49c83f2985f1",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-cfa1cc6e0651",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-cfa1cc6e0651",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-cfa1cc6e0651",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-8d6674191138",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-8d6674191138",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-f02ef045fac9",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f02ef045fac9",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0f1b0ce78149",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-0f1b0ce78149",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0f1b0ce78149",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-b53b771ad05b",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-b53b771ad05b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b53b771ad05b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5413d8634cb7",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5413d8634cb7",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-eaef832d7490",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-eaef832d7490",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b526417c1fab",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-b526417c1fab",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b526417c1fab",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-45912dd2d4c8",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-45912dd2d4c8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-45912dd2d4c8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-fd94f2a34bc8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-fd94f2a34bc8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-0ecd4c989e62",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0ecd4c989e62",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f1ad198137d1",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-f1ad198137d1",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f1ad198137d1",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-e549e5560416",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-e549e5560416",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e549e5560416",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-ed888010e686",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-ed888010e686",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-4113208fe244",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-4113208fe244",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5de0eeb4504d",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-5de0eeb4504d",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5de0eeb4504d",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-4bf5a2c2271c",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-4bf5a2c2271c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-4bf5a2c2271c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-368a6a5eb1f5",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-368a6a5eb1f5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-a86d8aaf060b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-a86d8aaf060b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b130e20bd3cc",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-b130e20bd3cc",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b130e20bd3cc",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-0d64d566a885",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-0d64d566a885",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0d64d566a885",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-512ac5762764",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-512ac5762764",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-1636173039ab",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1636173039ab",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    }
+  ],
+  "product_sources": [
+    {
+      "publication_id": "Al-products-3dced287aa93",
+      "source_bucket": "products",
+      "source_index": 0,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-6a4b66082042",
+      "source_bucket": "products",
+      "source_index": 1,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-e1f71442de77",
+      "source_bucket": "products",
+      "source_index": 2,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-9443d9b76f0f",
+      "source_bucket": "products",
+      "source_index": 3,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-2c817b8eea2e",
+      "source_bucket": "products",
+      "source_index": 4,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-fcec422376c8",
+      "source_bucket": "products",
+      "source_index": 5,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-49c83f2985f1",
+      "source_bucket": "products",
+      "source_index": 6,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-cfa1cc6e0651",
+      "source_bucket": "products",
+      "source_index": 7,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-8d6674191138",
+      "source_bucket": "products",
+      "source_index": 8,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-f02ef045fac9",
+      "source_bucket": "products",
+      "source_index": 9,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-0f1b0ce78149",
+      "source_bucket": "products",
+      "source_index": 10,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-b53b771ad05b",
+      "source_bucket": "products",
+      "source_index": 11,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-5413d8634cb7",
+      "source_bucket": "products",
+      "source_index": 12,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-eaef832d7490",
+      "source_bucket": "products",
+      "source_index": 13,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-b526417c1fab",
+      "source_bucket": "products",
+      "source_index": 14,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-45912dd2d4c8",
+      "source_bucket": "products",
+      "source_index": 15,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-fd94f2a34bc8",
+      "source_bucket": "products",
+      "source_index": 16,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-0ecd4c989e62",
+      "source_bucket": "products",
+      "source_index": 17,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-f1ad198137d1",
+      "source_bucket": "products",
+      "source_index": 18,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-e549e5560416",
+      "source_bucket": "products",
+      "source_index": 19,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-ed888010e686",
+      "source_bucket": "products",
+      "source_index": 20,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-4113208fe244",
+      "source_bucket": "products",
+      "source_index": 21,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-5de0eeb4504d",
+      "source_bucket": "products",
+      "source_index": 22,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-4bf5a2c2271c",
+      "source_bucket": "products",
+      "source_index": 23,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-368a6a5eb1f5",
+      "source_bucket": "products",
+      "source_index": 24,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-a86d8aaf060b",
+      "source_bucket": "products",
+      "source_index": 25,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-b130e20bd3cc",
+      "source_bucket": "products",
+      "source_index": 26,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-0d64d566a885",
+      "source_bucket": "products",
+      "source_index": 27,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-512ac5762764",
+      "source_bucket": "products",
+      "source_index": 28,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-1636173039ab",
+      "source_bucket": "products",
+      "source_index": 29,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    }
+  ],
+  "source_paths": [
+    "data/nlte_grids/Al_Amarsi2020_PySME.prov.json",
+    "data/reference/line_sets/REGISTRY.csv",
+    "data/refs/bibliography.csv"
+  ],
+  "policy": "Sources resolved from the science repo records: line-set registry, the products' own gf sources, and the engine of each treatment."
+}
