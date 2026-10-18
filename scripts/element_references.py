@@ -14,6 +14,7 @@ cites a source it cannot resolve.
 import csv
 import json
 import re
+import yaml
 
 from cno_references import LAYER_ORDER
 
@@ -34,6 +35,20 @@ def reconcile_atomic(science, element, feed, audit):
         set_key = {r['set_name']: r['bibliography_key'] for r in csv.DictReader(fh)
                    if r['element'] == element}
     sources, bindings, product_sources = {}, [], []
+    table_registry = 'data/reference/solar_nlte_tables.yaml'
+    declared = (yaml.safe_load((science / table_registry).read_text()).get('tables', [])
+                if (science / table_registry).exists() else [])
+
+    def applied_tables(product):
+        artifact = (product.get('provenance') or {}).get('copied_to')
+        if not artifact or not (science / artifact).exists():
+            return []
+        with (science / artifact).open(newline='') as fh:
+            provenance = ' '.join(str(r.get('provenance') or '') for r in csv.DictReader(fh)
+                                  if r.get('treatment') == product.get('treatment'))
+        return [t for t in declared if t['element'] == element
+                and str(product.get('ion')) in t['ions'] and t['citation'] in provenance]
+
 
     def ref(key):
         if key not in bib:
@@ -96,7 +111,22 @@ def reconcile_atomic(science, element, feed, audit):
                  f'own uncertainty budget records them (with their lineage).',
                  [f'data/products/solar/{element}.json'])
         t = p.get('treatment', '')
-        if t == '1D-LTE':
+        cited = applied_tables(p) if t in ('ENGINE-A', 'ENGINE-A-3DNLTE') else []
+        if cited:
+            refs_here = [ref(table['bibliography_key']) for table in cited]
+            keys += refs_here
+            evidence = [table_registry] + [table['source'] for table in cited]
+            paths.update(evidence)
+            note = ('Cited solar abundance differences from the published model columns, '
+                    'applied additively to our LTE fits; not a new in-transfer 3D calculation. '
+                    'Baseline atmosphere: ' + ', '.join(table['baseline'] for table in cited))
+            bind(subject, LAYER_ORDER[2], refs_here, note, evidence)
+        elif t in ('synth-1D-LTE-gerber', 'ENGINE-B-NLTE'):
+            keys.append(ref('gerber2023'))
+            note = ('Feed treatment: ' + t + '; Turbospectrum on the registered Gerber deck. '
+                    'The product retains its own atmosphere and ion identity.')
+            bind(subject, LAYER_ORDER[2], ['gerber2023'], note, ['pipeline/gerber_nlte.py'])
+        elif t == '1D-LTE':
             keys.append(ref('gerber2023'))
             note = 'Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.'
             bind(subject, LAYER_ORDER[2], ['gerber2023'], note, ['pipeline/band_products.py'])
