@@ -1485,7 +1485,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "0ff8336536290238eb66f23238a2228929edce6c",
         "scienceGit": "ccc31e67aa934991efdb45b6be7c246c8a7d733c",
-        "generatedAt": "2026-10-17T23:27:30+00:00"
+        "generatedAt": "2026-10-18T14:24:48+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1596,16 +1596,16 @@ window.SOLAR_REPORT = {
       "name": "Aluminium",
       "status": "Published",
       "tier": "owed",
-      "method": "kpno_solar_atlas VIS · SET-AL_AGSS21 · ENGINE-A (Reference Grade, Al.json v1.67)",
+      "method": "Asplund+2021 line set, 6 lines on kpno_solar_atlas: Al I VIS 6.428, Al I red-optical 6.450, Al I NIR 6.552 (Al.json v1.67)",
       "asplund": 6.43,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
       "primaryValue": {
-        "value": 6.429,
-        "sigmaTotal": 0.081,
-        "lineCount": 2
+        "value": 6.4547,
+        "sigmaTotal": 0.054,
+        "lineCount": 6
       },
-      "delta": -0.001,
+      "delta": 0.0247,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -1615,16 +1615,16 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "gf_floor",
-      "method": "kpno_solar_atlas VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.278)",
+      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.489, Si II VIS 7.518, Si I red-optical 7.577 (Si.json v1.278)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
       "primaryValue": {
-        "value": 7.489,
-        "sigmaTotal": 0.0736,
-        "lineCount": 7
+        "value": 7.5122,
+        "sigmaTotal": 0.0588,
+        "lineCount": 10
       },
-      "delta": -0.021,
+      "delta": 0.0022,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -3983,7 +3983,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "ccc31e67aa934991efdb45b6be7c246c8a7d733c",
+    "gitCommit": "67a3cb4f0c66b8719fb12fe68fa9d992503d35eb",
     "productCommit": "5e22b3d06f6c8899d683b187d52664e6a0519e64",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-09-24T19:24:31+00:00"

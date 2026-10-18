@@ -78,10 +78,21 @@ def band_highlights(products):
 
 
 def landmark(element, products):
-    """The one number at the top -- the SAME combination the Sun table shows: Asplund+2021's
-    weighted combination of indicator families (RYA-1232), not a single picked product."""
-    from cno_selection import asplund_headline
-    return asplund_headline(products, element)
+    """The one number at the top -- the SAME value the Sun table shows. Asplund+2021's own
+    method where we have its recipe (RYA-1232 families for C/N/O; RYA-1233 line set for
+    Si/Al); otherwise the best single product, marked as such (`kind: best_product`)."""
+    from cno_selection import literature_headline
+    mark = literature_headline(products, element)
+    if mark is not None:
+        return mark
+    best = headline(products, element)
+    if best is None:
+        return None
+    return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
+            'kind': 'best_product', 'rule': 'no Asplund et al. 2021 recipe in our products',
+            'families': [{'family': best.get('band'), 'A': float(best['A']),
+                          'sigma': float(total_sigma(best)), 'product': best}],
+            'missing': []}
 
 
 #: Reader-facing names for what a product measured. An unknown selector falls through to
@@ -97,6 +108,7 @@ INDICATOR_NAMES = {
     'ATOM-CI_5380': 'C I 5380 \u00c5 (single line)',
     'FORB-OI_6300': '[O I] 6300 \u00c5 forbidden line (blended with Ni I)',
     'SET-SI_AGSS21': '{el} · Asplund et al. 2021 lines',
+    'SET-AL_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-SI_DESHMUKH2022': '{el} · Deshmukh et al. 2022 lines',
     'SET-SI_ELGUETA2026': '{el} · Elgueta et al. 2026 lines',
 }
@@ -641,12 +653,20 @@ def build(science, element, selectors, site=ROOT):
             f'{esc(product_label(f["product"]))}</li>' for f in mark['families'])
         miss = (f'<p>Not measurable in our spectra: {esc(", ".join(mark["missing"]))}.</p>'
                 if mark['missing'] else '')
+        kind = mark.get('kind')
+        if kind == 'line_set':
+            method_html = (f'<p>Measured the way Asplund, Amarsi &amp; Grevesse (2021) measure it: '
+                           f'{esc(mark["rule"])}.</p>')
+        elif kind == 'best_product':
+            method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can '
+                           'repeat for this element, so this is our best single product.</p>')
+        else:
+            method_html = (f'<p>Combined the way Asplund, Amarsi &amp; Grevesse (2021) combine it: '
+                           f'{esc(mark["rule"])}. Each indicator is represented by our best analysis of it.</p>')
         body = (f'<p class="fe-anchor">Solar {NAMES[element].lower()}: '
                 f'{mark["A"]:.3f} &plusmn; {mark["sigma"]:.3f}</p>'
                 + ref_html + caveat_html
-                + f'<p>Combined the way Asplund, Amarsi &amp; Grevesse (2021) combine it: '
-                f'{esc(mark["rule"])}. Each indicator is represented by our best analysis of it.</p>'
-                f'<ul class="fe-anchor-families">{fam_html}</ul>' + miss)
+                + method_html + f'<ul class="fe-anchor-families">{fam_html}</ul>' + miss)
     else:
         body = f'<p class="fe-anchor">{esc(status)}</p><p>{esc(no_adopted)}</p>'
     cards = []

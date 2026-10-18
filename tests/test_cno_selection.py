@@ -5,7 +5,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from cno_selection import best_in_band, headline, rank_key  # noqa: E402
+from cno_selection import best_in_band, headline, literature_headline, rank_key  # noqa: E402
 from generate_cno_publication import band_highlights, landmark  # noqa: E402
 
 
@@ -57,6 +57,37 @@ class SelectionTests(unittest.TestCase):
     def test_rank_is_deterministic_on_ties(self):
         a, b = p(holding='a'), p(holding='b')
         self.assertLess(rank_key(a), rank_key(b))
+
+
+class LineSetTests(unittest.TestCase):
+    """RYA-1233: Si/Al follow Asplund+2021's line-set recipe -- the whole set, on ONE spectrum."""
+
+    def si(self, **kw):
+        base = dict(element='Si', selector='SET-SI_AGSS21', display='Synth · 1D-NLTE · Amarsi',
+                    holding='kp', band='VIS', ion='I', A=7.50, sigma_reported=0.08, n_lines=7)
+        base.update(kw)
+        return p(**base)
+
+    def test_whole_set_on_one_spectrum_weighted(self):
+        rows = [self.si(), self.si(band='red-optical', A=7.60, sigma_reported=0.16, n_lines=2),
+                self.si(ion='II', display='Synth · 1D-LTE', A=7.52, sigma_reported=0.16, n_lines=1),
+                self.si(holding='harps', A=7.0, sigma_reported=0.01)]   # covers 7 lines only
+        m = literature_headline(rows, 'Si')
+        self.assertEqual(m['kind'], 'line_set')
+        self.assertEqual(m['n_lines'], 10)
+        self.assertEqual({f['product']['holding'] for f in m['families']}, {'kp'})
+        self.assertAlmostEqual(m['A'], (7.50 * 4 + 7.60 + 7.52) / 6, places=9)
+
+    def test_best_treatment_per_band_and_ion(self):
+        rows = [self.si(), self.si(display='Synth · 1D-LTE', A=7.53)]
+        m = literature_headline(rows, 'Si')
+        self.assertEqual(len(m['families']), 1)
+        self.assertEqual(m['A'], 7.50)
+
+    def test_no_recipe_falls_back_to_best_product(self):
+        rows = [p(element='Mg', selector='SET-OTHER')]
+        self.assertIsNone(literature_headline(rows, 'Mg'))
+        self.assertEqual(landmark('Mg', rows)['kind'], 'best_product')
 
 
 if __name__ == '__main__':

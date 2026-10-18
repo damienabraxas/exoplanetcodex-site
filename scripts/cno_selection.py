@@ -249,3 +249,60 @@ def asplund_headline(products, element):
             'families': [{'family': f, 'A': rows[f][0], 'sigma': rows[f][1], 'product': rep[f]}
                          for f in ASPLUND_FAMILIES[element] if f in rep],
             'missing': [f for f in ASPLUND_FAMILIES[element] if f not in rep]}
+
+
+# ── RYA-1233: Asplund's LINE-SET recipe (Si, Al) ─────────────────────────────────────────
+#
+# Asplund+2021 Sect. 3 does not combine indicator families for Si or Al. Each value is ONE
+# analysis of a published line set, weighted line by line:
+#   Si 7.51 +/- 0.03  nine Si I + one Si II line (Amarsi & Asplund 2017, Scott+2015b data)
+#   Al 6.43 +/- 0.03  Nordlander & Lind 2017 Table A.1 (1089.1 nm dropped for tellurics)
+# Our set is carried as one product per band x ion, so the recipe is: on ONE spectrum, take
+# each band x ion's best analysis (rank_key -- most complete treatment first), and combine
+# them by 1/sigma^2. The spectrum is the one that covers the most of the set, then the
+# tightest. Splitting the set across spectra would average holdings as if independent.
+LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21'}
+LINE_SET_SOURCE = {'Si': 'Amarsi & Asplund 2017: nine Si I and one Si II line',
+                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1'}
+
+
+def asplund_line_set(products, element):
+    sel = LINE_SET_SELECTORS.get(element)
+    if sel is None:
+        return None
+    by_holding = {}
+    for p in products:
+        if eligible_for_headline(p) and str(p.get('selector') or '') == sel and total_sigma(p):
+            by_holding.setdefault(p.get('holding'), []).append(p)
+    best = None
+    for holding, ps in by_holding.items():
+        parts = {}
+        for p in ps:
+            parts.setdefault((p.get('band'), str(p.get('ion') or 'I').strip()), []).append(p)
+        rep = sorted((min(v, key=rank_key) for v in parts.values()),
+                     key=lambda p: (BAND_ORDER.index(p['band']) if p.get('band') in BAND_ORDER
+                                    else len(BAND_ORDER), str(p.get('ion') or 'I')))
+        a, s = _wmean([(float(p['A']), float(total_sigma(p))) for p in rep])
+        n = sum(resolved_lines(p) for p in rep)
+        key = (-n, round(s, 6), str(holding))
+        if best is None or key < best[0]:
+            best = (key, a, s, n, rep)
+    if best is None:
+        return None
+    _, a, s, n, rep = best
+    return {'element': element, 'A': a, 'sigma': s, 'n_lines': n, 'kind': 'line_set',
+            'rule': (f'the Asplund et al. 2021 line set ({LINE_SET_SOURCE[element]}), '
+                     f'{n} lines measured on one spectrum, each part weighted by its uncertainty'),
+            'families': [{'family': f'{element} {str(p.get("ion") or "I").strip()}',
+                          'A': float(p['A']), 'sigma': float(total_sigma(p)), 'product': p}
+                         for p in rep],
+            'missing': []}
+
+
+def literature_headline(products, element):
+    """Asplund+2021's own method where we have its recipe: the family combination (C, N, O)
+    or the line-set analysis (Si, Al). None when the element has no Asplund recipe, or none
+    of its products qualify -- the caller then shows the best single product (`headline`)."""
+    if element in ASPLUND_FAMILIES:
+        return asplund_headline(products, element)
+    return asplund_line_set(products, element)
