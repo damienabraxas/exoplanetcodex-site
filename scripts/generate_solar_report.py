@@ -323,11 +323,10 @@ def main() -> None:
             return None
         feed = json.loads(feed_path.read_text(encoding='utf-8'))
         prods = cno_selection.fill_grades(feed.get('products', []), science)
-        if symbol in ('C', 'N', 'O'):
-            # RYA-1232: Asplund+2021's family combination, the SAME function the element page uses
-            comb = cno_selection.asplund_headline(prods, symbol)
-            if comb is None:
-                return None
+        # RYA-1232/1233: Asplund+2021's own method where we have its recipe (C/N/O families,
+        # Si/Al line set) -- the SAME function the element page uses; else the best product.
+        comb = cno_selection.literature_headline(prods, symbol)
+        if comb is not None:
             n_lines = sum(int(f['product'].get('n_lines') or 0) for f in comb['families'])
             best = {'A': comb['A'], 'n_lines': n_lines, 'grade': 'Reference Grade',
                     'uncertainty': True, '_asplund': comb}
@@ -367,8 +366,14 @@ def main() -> None:
             }
             if best.get("_asplund"):
                 _c = best["_asplund"]
-                item["method"] = ("Asplund+2021 combination of " + ", ".join(
-                    f'{f["family"]} {f["A"]:.3f}' for f in _c["families"]) + f' ({symbol}.json v{feed_version})')
+                if _c.get("kind") == "line_set":
+                    item["method"] = (f'Asplund+2021 line set, {_c["n_lines"]} lines on '
+                                      f'{_c["families"][0]["product"].get("instrument")}: ' + ", ".join(
+                        f'{f["family"]} {f["product"].get("band")} {f["A"]:.3f}' for f in _c["families"])
+                        + f' ({symbol}.json v{feed_version})')
+                else:
+                    item["method"] = ("Asplund+2021 combination of " + ", ".join(
+                        f'{f["family"]} {f["A"]:.3f}' for f in _c["families"]) + f' ({symbol}.json v{feed_version})')
             else:
                 item["method"] = (f'{best.get("instrument")} {best.get("band")} · '
                                   f'{best.get("selector") or "full pool"} · {best.get("treatment")} '
