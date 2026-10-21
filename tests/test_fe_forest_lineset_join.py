@@ -127,7 +127,10 @@ class ForestJoinTests(unittest.TestCase):
 
     def test_the_pool_label_appears_and_names_every_pool_the_feed_uses(self):
         js = (ROOT / 'assets/js/element-products.js').read_text()
-        labelled = set(re.findall(r"'?([a-z-]+)'?\s*:\s*'[^']*pool'", js))
+        #: the LINE_SET_LABELS map itself (RYA-1232: the Reference Grade labels no longer all end
+        #: in "pool" -- "Reference Grade · Asplund replication")
+        block = re.search(r"var LINE_SET_LABELS = \{(.*?)\};", js, re.S).group(1)
+        labelled = set(re.findall(r"^\s*'?([a-z-]+)'?\s*:", block, re.M))
         used = {s.get('line_set') for s in self.feed['plot_grid']['sections'] if s.get('line_set')}
         self.assertTrue(used <= labelled,
                         f'plot_grid uses line sets this page cannot name: {sorted(used - labelled)}')
