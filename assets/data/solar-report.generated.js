@@ -139,7 +139,7 @@ window.SOLAR_REPORT = {
         "sigmaSys": 0.0475,
         "sigmaTotal": 0.051617,
         "lineCount": 21,
-        "sigmaBasis": "Fe.json v1.508 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
+        "sigmaBasis": "Fe.json v1.529 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
       },
       "secondary": {
         "value": 7.57,
@@ -249,15 +249,33 @@ window.SOLAR_REPORT = {
           "status": "excluded"
         },
         {
+          "line": "3427.119 Å",
+          "category": "deriver excluded",
+          "caption": "SYNTHESIS: edge_pinned",
+          "status": "excluded"
+        },
+        {
+          "line": "3475.863 Å",
+          "category": "deriver excluded",
+          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): core: SYNTHESIS: edge_pinned",
+          "status": "excluded"
+        },
+        {
+          "line": "3526.238 Å",
+          "category": "deriver excluded",
+          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): core: FIT-NOT-PHYSICAL: A(Fe) = 8.996 is 1.54 dex from solar 7.46, outside the +/-1.5 dex validi",
+          "status": "excluded"
+        },
+        {
           "line": "3540.121 Å",
           "category": "deriver excluded",
-          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): excluded from the budgeted pool",
+          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): core: FIT-NOT-PHYSICAL: A(Fe) = 9.370 is 1.91 dex from solar 7.46, outside the +/-1.5 dex validi",
           "status": "excluded"
         },
         {
           "line": "3603.681 Å",
           "category": "deriver excluded",
-          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): excluded from the budgeted pool",
+          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): xi_plus: FIT-NOT-PHYSICAL: A(Fe) = 8.966 is 1.51 dex from solar 7.46, outside the +/-1.5 dex validi; marcs: FIT-NOT-PHYSICAL: A(Fe) = 9.004 is 1.54 dex from solar 7.46, outside the +/-1.5 dex validi",
           "status": "excluded"
         },
         {
@@ -267,32 +285,14 @@ window.SOLAR_REPORT = {
           "status": "excluded"
         },
         {
-          "line": "3730.386 Å",
+          "line": "3623.773 Å",
           "category": "deriver excluded",
-          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): excluded from the budgeted pool",
-          "status": "excluded"
-        },
-        {
-          "line": "3735.324 Å",
-          "category": "deriver excluded",
-          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 9.428 is 1.97 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
-          "status": "excluded"
-        },
-        {
-          "line": "3742.617 Å",
-          "category": "deriver excluded",
-          "caption": "FIT-NOT-PHYSICAL: A(Fe) = 9.560 is 2.10 dex from solar 7.46, outside the +/-1.5 dex validity bound. This is a NON-CONVERGENT FIT, not an outlier: the bound spans a factor of ~1000 in abundance and cannot shape a result (RYA-1191).",
-          "status": "excluded"
-        },
-        {
-          "line": "4203.938 Å",
-          "category": "deriver excluded",
-          "caption": "transition energy Eup-Elo 2.9485 eV outside training [1.8190, 2.5898] (gt02, n=154);   -> that is a WAVELENGTH statement: the network saw 4787.8-6810.3 A only, and Eup-Elo is hc/lambda_vac by construction",
+          "caption": "LEG-UNSTABLE (RYA-1232 budget assembly): core: FIT-NOT-PHYSICAL: A(Fe) = 9.079 is 1.62 dex from solar 7.46, outside the +/-1.5 dex validi",
           "status": "excluded"
         }
       ],
       "diagnosticsShown": 8,
-      "problemCount": 238,
+      "problemCount": 243,
       "provenance": {
         "poolCount": 58,
         "nistClassCount": 44,
@@ -1473,7 +1473,7 @@ window.SOLAR_REPORT = {
           "engine": "this page's products",
           "publishedLineCount": 3,
           "artifactLineCount": 0,
-          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 38 of the 54 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
+          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 40 of the 56 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
         }
       ],
       "reproducibility": {
@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "0ff8336536290238eb66f23238a2228929edce6c",
-        "scienceGit": "81d039b0f0af04761b68a3c2e240318849b09182",
-        "generatedAt": "2026-10-21T23:25:30+00:00"
+        "scienceGit": "14fd940fdd73965013dc2471ee07dccd10e6449b",
+        "generatedAt": "2026-10-22T03:24:07+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -4776,15 +4776,135 @@ window.SOLAR_REPORT = {
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_kurucz2005_corrected",
+        "engine": "1D-LTE",
+        "method": "",
+        "displayName": "Synth · 1D-LTE",
+        "telluric": "not declared",
+        "value": 7.515,
+        "sigma": 0.06064010623341618,
+        "sigmaStat": 0.0561,
+        "sigmaSys": 0.023022,
+        "lineCount": 48,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "engine": "ENGINE-A",
+        "method": "",
+        "displayName": "Synth · 1D-NLTE · Bergemann",
+        "telluric": "not declared",
+        "value": 7.523,
+        "sigma": 0.06763030711892412,
+        "sigmaStat": 0.0561,
+        "sigmaSys": 0.037771,
+        "lineCount": 48,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "engine": "ENGINE-B-NLTE",
+        "method": "",
+        "displayName": "Synth · 1D-NLTE · Gerber",
+        "telluric": "not declared",
+        "value": 7.559,
+        "sigma": 0.05057513144817322,
+        "sigmaStat": 0.0494,
+        "sigmaSys": 0.010839,
+        "lineCount": 51,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "engine": "synth-1D-LTE-gerber",
         "method": "",
         "displayName": "Synth · 1D-LTE · Gerber",
         "telluric": "not declared",
-        "value": 7.532,
-        "sigma": 0.06442293971094458,
-        "sigmaStat": 0.0498,
-        "sigmaSys": 0.040869,
+        "value": 7.494,
+        "sigma": 0.051623058762533626,
+        "sigmaStat": 0.0494,
+        "sigmaSys": 0.014986,
+        "lineCount": 51,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "engine": "synth-mean3D-LTE-gerber-stagger",
+        "method": "",
+        "displayName": "Synth · <3D>-LTE · Gerber · stagger",
+        "telluric": "not declared",
+        "value": 7.588,
+        "sigma": 0.05463981626067204,
+        "sigmaStat": 0.0539,
+        "sigmaSys": 0.008961,
+        "lineCount": 52,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "engine": "synth-mean3D-NLTE-gerber-stagger",
+        "method": "",
+        "displayName": "Synth · <3D>-NLTE · Gerber · stagger",
+        "telluric": "not declared",
+        "value": 7.678,
+        "sigma": 0.052923354022586286,
+        "sigmaStat": 0.0521,
+        "sigmaSys": 0.009299,
         "lineCount": 53,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "engine": "1D-LTE",
+        "method": "",
+        "displayName": "Synth · 1D-LTE",
+        "telluric": "not declared",
+        "value": 7.38,
+        "sigma": 0.06575538499621153,
+        "sigmaStat": 0.0607,
+        "sigmaSys": 0.025284,
+        "lineCount": 46,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "engine": "ENGINE-A",
+        "method": "",
+        "displayName": "Synth · 1D-NLTE · Bergemann",
+        "telluric": "not declared",
+        "value": 7.389,
+        "sigma": 0.07226606849690939,
+        "sigmaStat": 0.0607,
+        "sigmaSys": 0.039216,
+        "lineCount": 46,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "engine": "ENGINE-B-NLTE",
+        "method": "",
+        "displayName": "Synth · 1D-NLTE · Gerber",
+        "telluric": "not declared",
+        "value": 7.452,
+        "sigma": 0.05093736169060977,
+        "sigmaStat": 0.0471,
+        "sigmaSys": 0.019396,
+        "lineCount": 51,
         "role": "RYA-935 evidence"
       },
       {
@@ -4795,10 +4915,40 @@ window.SOLAR_REPORT = {
         "method": "",
         "displayName": "Synth · 1D-LTE · Gerber",
         "telluric": "not declared",
-        "value": 7.435,
-        "sigma": 0.06852679931968222,
-        "sigmaStat": 0.0573,
-        "sigmaSys": 0.037585,
+        "value": 7.398,
+        "sigma": 0.05071290787363706,
+        "sigmaStat": 0.0479,
+        "sigmaSys": 0.016655,
+        "lineCount": 50,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "engine": "synth-mean3D-LTE-gerber-stagger",
+        "method": "",
+        "displayName": "Synth · <3D>-LTE · Gerber · stagger",
+        "telluric": "not declared",
+        "value": 7.5,
+        "sigma": 0.0515938525892378,
+        "sigmaStat": 0.05,
+        "sigmaSys": 0.012725,
+        "lineCount": 51,
+        "role": "RYA-935 evidence"
+      },
+      {
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "engine": "synth-mean3D-NLTE-gerber-stagger",
+        "method": "",
+        "displayName": "Synth · <3D>-NLTE · Gerber · stagger",
+        "telluric": "not declared",
+        "value": 7.543,
+        "sigma": 0.044740172596895514,
+        "sigmaStat": 0.0432,
+        "sigmaSys": 0.011638,
         "lineCount": 51,
         "role": "RYA-935 evidence"
       },
@@ -5561,9 +5711,9 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "81d039b0f0af04761b68a3c2e240318849b09182",
-    "productCommit": "cc833cf47c522459b51f4d8620f0a4cc6ff6af57",
+    "gitCommit": "14fd940fdd73965013dc2471ee07dccd10e6449b",
+    "productCommit": "c9784f9ed8e9f8533444d6cf9e1e94c6cf8ba65c",
     "goldVersion": "Fe_I=v5",
-    "generatedAt": "2026-10-21T23:24:41+00:00"
+    "generatedAt": "2026-10-22T03:09:51+00:00"
   }
 };
