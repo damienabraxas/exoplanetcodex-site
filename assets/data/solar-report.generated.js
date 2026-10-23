@@ -139,7 +139,7 @@ window.SOLAR_REPORT = {
         "sigmaSys": 0.0475,
         "sigmaTotal": 0.051617,
         "lineCount": 21,
-        "sigmaBasis": "Fe.json v1.529 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
+        "sigmaBasis": "Fe.json v1.530 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
       },
       "secondary": {
         "value": 7.57,
@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "0ff8336536290238eb66f23238a2228929edce6c",
-        "scienceGit": "14fd940fdd73965013dc2471ee07dccd10e6449b",
-        "generatedAt": "2026-10-22T03:24:07+00:00"
+        "scienceGit": "be01777a11d5f0ccdf5cf2910d94003c9f911de1",
+        "generatedAt": "2026-10-23T09:39:03+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -5711,9 +5711,9 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "14fd940fdd73965013dc2471ee07dccd10e6449b",
-    "productCommit": "c9784f9ed8e9f8533444d6cf9e1e94c6cf8ba65c",
+    "gitCommit": "be01777a11d5f0ccdf5cf2910d94003c9f911de1",
+    "productCommit": "37d4158a0359d7587d297c7be5f9084b6ed114c7",
     "goldVersion": "Fe_I=v5",
-    "generatedAt": "2026-10-22T03:09:51+00:00"
+    "generatedAt": "2026-10-23T09:38:53+00:00"
   }
 };
