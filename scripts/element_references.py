@@ -100,6 +100,11 @@ def reconcile_atomic(science, element, feed, audit):
             if key is None:
                 hit = [k for d, k in by_doi.items() if d and d in str(s).lower()]
                 key = hit[0] if hit else None
+            # Product uncertainty budgets preserve the human-readable NIST
+            # class evidence rather than repeating the DOI.  Resolve that
+            # declared source to the canonical bibliography record.
+            if key is None and 'nist asd' in str(s).lower():
+                key = 'nist_asd'
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]

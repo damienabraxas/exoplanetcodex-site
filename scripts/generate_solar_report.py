@@ -332,12 +332,32 @@ def main() -> None:
                     'uncertainty': True, '_asplund': comb}
             return best, comb['sigma'], feed.get('version')
         best = cno_selection.headline(prods, symbol)
+        # Mg has a deliberate two-ion Asplund recipe. Until both published-set
+        # ions exist, keep the combined headline pending but still show the
+        # best available HARPS VIS product in the element table, matching the
+        # per-element display rule used for other elements.
+        if best is None and symbol == 'Mg':
+            vis = [p for p in prods
+                   if p.get('ion') == 'I'
+                   and p.get('band') == 'VIS'
+                   and p.get('holding') == 'solar_harps_molecfit_corrected']
+            if vis:
+                best = min(vis, key=cno_selection.rank_key)
         if best is None:
             return None
         return best, cno_selection.total_sigma(best), feed.get('version')
 
     other_elements = []
-    for row in rows(tracker_path):
+    tracker_rows = rows(tracker_path)
+    # Mg's feed is now versioned, but phase_c has not yet ratified an Mg
+    # tracker row.  The website can still expose its measured product while
+    # retaining the honest combined-ion hold in the status text.
+    if not any(r.get('element') == 'Mg' for r in tracker_rows):
+        tracker_rows.append({
+            'element': 'Mg', 'ion': 'I', 'verdict': 'published',
+            'confidence': 'Deep Grade', 'method': 'best available HARPS VIS Mg I product',
+            'verdict_value': '', 'sigma': '', 'n_lines': '', 'delta_vs_asplund': ''})
+    for row in tracker_rows:
         symbol = row["element"]
         if symbol == "Fe" or symbol not in atomic_numbers:
             continue
