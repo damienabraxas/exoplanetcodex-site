@@ -38,8 +38,10 @@
   var LINE_SET_LABELS = {
     'our-graded': 'Codex graded pool',
     'our-deep-graded': 'Codex deep pool',
-    reference: 'Reference pool',
-    asplund: 'Asplund pool'
+    //: RYA-1213 / Ryan 2026-10-21: ONE grade, two pools -- Reference Grade is the Asplund
+    //: replication plus every lab-gf line. Both say Reference Grade; the suffix says which.
+    reference: 'Reference Grade · full lab pool',
+    asplund: 'Reference Grade · Asplund replication'
   };
 
   //: ⚠️ NO SILENT FALLBACK. An unlabelled pool is how two sections became
@@ -192,11 +194,15 @@
     var out = '<div class="forest-legend"><span>blue solid = statistical \u03c3</span>' +
       '<span>wireframe = systematic \u03c3</span><span>blue = regular model result</span>' +
       '<span style="color:#f07848">reddish orange = experimental Frankenstein / Gerber mean-3D; not adopted</span>' +
-      '<span>green = Asplund; gold = Lodders</span><span>N/A = no product for this model</span></div>' +
+      '<span>green = Asplund; gold = Lodders</span></div>' +
       '<div class="product-forest"><div class="product-forest-inner">';
 
     BANDS.forEach(function (band) {
-      var here = sections.filter(function (s) { return s.band === band; });
+      //: Ryan 2026-10-21: show only what we have -- a section (and a band) with no product
+      //: is left out instead of drawing rows of N/A.
+      var here = sections.filter(function (s) {
+        return s.band === band && s.cells.some(function (c) { return c.product_key && byKey[c.product_key]; });
+      });
       if (!here.length) return;
 
       // Scale from the products actually plotted in this band, plus the literature marks.
@@ -231,14 +237,7 @@
 
           s.cells.forEach(function (c) {
             var p = c.product_key && byKey[c.product_key];
-            if (!p) {
-              // 🔴 THE N/A ROW. Present, labelled, and empty -- "we did not measure this"
-              // is a fact, and a row that is simply absent cannot state it.
-              out += '<div class="forest forest-na"><span class="forest-label">' + esc(c.row) +
-                '<small>no product</small></span><span class="track"></span>' +
-                '<span class="forest-value">N/A</span></div>';
-              return;
-            }
+            if (!p) return;   // only products are drawn (Ryan 2026-10-21); coverage lives in the tracker
             var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0));
             var sl = x(Number(p.A) - st), sw = x(Number(p.A) + st) - sl;
             var yl = x(Number(p.A) - sy), yw = x(Number(p.A) + sy) - yl;
@@ -303,7 +302,7 @@
             emptySections: empty};
   }
 
-  if (server) { module.exports = {forest: forest, gridJoinReport: gridJoinReport}; return; }
+  if (server) { module.exports = {forest: forest, gridJoinReport: gridJoinReport, productIndexKeys: function (f) { return Object.keys(productIndex(f)); }}; return; }
   Promise.all([fetchText(urls.product),fetchText(urls.holdings),fetchText(urls.instruments),fetchText(urls.tracker)]).then(function(parts){
     var feed=JSON.parse(parts[0]), holdings=csv(parts[1]), instruments=csv(parts[2]), tracker=JSON.parse(parts[3]), telluric={}, catalog={};
     holdings.forEach(function(r){telluric[r.holding_id]=r.telluric_applied;}); instruments.forEach(function(r){catalog[r.instrument_id]=r;});
@@ -317,7 +316,7 @@
     var pending=INSTRUMENTS.filter(function(i){return !top.some(function(p){return p.instrument===i;});}).map(function(i){return LABELS[i];});
     root.innerHTML='<p class="product-feed-meta">Live source: <strong>codex.element_product/1 · '+esc(element)+'.json v'+esc(feed.version)+'</strong> · updated '+esc(feed.updated_at)+' · cache-busted on every load · '+excluded.length+' telluric-ineligible live rows refused</p>'+
       '<section class="product-section"><h2>Highlighted band products</h2><p class="product-section-intro">The only near-UV product we were able to derive is the Kitt Peak DEEPGRADED line product; the highlighted VIS and NIR products are GRADED. Every value is read directly from the merged science feed.</p><div class="product-headlines">'+top.map(function(p){return card(p,telluric);}).join('')+'</div>'+(pending.length?'<p class="product-pending">Pending graded instruments: '+esc(pending.join(', '))+'</p>':'')+'</section>'+
-      '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Every instrument section shows the same fixed model axis in the same order, so a model with no product for that instrument and band reads N/A rather than vanishing. Rows, ordering and tier policy come from the science feed (plot_grid), not from this page.</p>'+forest(feed,'I',tracker.reference&&tracker.reference.FeI)+'</section>'+
+      '<section class="product-section"><h2>Error-bar forest</h2><p class="product-section-intro">Only models with a published product are drawn; the live tracker lists every cell, including the ones without a product. Rows, ordering and tier policy come from the science feed (plot_grid), not from this page.</p>'+forest(feed,'I',tracker.reference&&tracker.reference.FeI)+'</section>'+
       '<section class="product-section"><h2>Band × instrument matrix</h2><p class="product-section-intro">Finished, Pending, out-of-band blank, closed N/A with reason, and quarantined Problem are distinct states.</p>'+matrix(live,feed.quarantine||[],feed.gaps||[],catalog)+'</section>'+
       '<section class="product-section"><h2>Deepgraded and consistent matrix</h2><p class="product-section-intro">Secondary tiers use the same band × instrument structure. Missing CONSISTENT products remain explicitly Pending.</p>'+matrix(secondary,(feed.quarantine||[]).filter(function(p){return p.ion==='I'&&(p.tier==='DEEPGRADED'||p.tier==='CONSISTENT');}),feed.gaps||[],catalog,['DEEPGRADED','CONSISTENT'])+'</section>';
   }).catch(function(err){root.innerHTML='<p class="product-feed-error"><strong>PROBLEM:</strong> '+esc(element)+' feed could not be loaded. This element failed in isolation; other element pages remain available.<br><small>'+esc(err.message)+'</small></p>';});
