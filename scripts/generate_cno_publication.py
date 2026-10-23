@@ -25,13 +25,17 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Mg': ('Magnesium is measured separately from neutral Mg I and ionized Mg II. '
+           'Asplund et al. 2021 use eight Mg I and six Mg II features, average the lines '
+           'within each ion, then weight the two ion means by their total uncertainties. '
+           'Both ion results are required for the combined abundance.'),
     'Al': ('Aluminium is traced by Al I lines in the optical and near-infrared. The reference lines '
            'are the six Asplund et al. 2021 used (Nordlander & Lind 2017: 6696, 6698, 7835, 8912, '
            '10768 and 10872 \u00c5) with the oscillator strengths and uncertainties those authors '
@@ -108,6 +112,7 @@ INDICATOR_NAMES = {
     'ATOM-CI_5380': 'C I 5380 \u00c5 (single line)',
     'FORB-OI_6300': '[O I] 6300 \u00c5 forbidden line (blended with Ni I)',
     'SET-SI_AGSS21': '{el} · Asplund et al. 2021 lines',
+    'SET-MG_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-AL_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-SI_DESHMUKH2022': '{el} · Deshmukh et al. 2022 lines',
     'SET-SI_ELGUETA2026': '{el} · Elgueta et al. 2026 lines',
@@ -422,13 +427,13 @@ def holding_name(p):
 #: ⚠️ VALUE ONLY, NO BAND. Fe shades +/- sigma_external because its tracker supplies one.
 #: AGSS21's published uncertainties are not in the science repo, and inventing a width
 #: would put an unsourced error band on a public plot.
-ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51, 'Al': 6.43}
+ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51, 'Al': 6.43, 'Mg': 7.55}
 
 #: AGSS21's OWN published uncertainties (Asplund, Amarsi & Grevesse 2021, Table 2). The Fe
 #: forest shades +/- sigma_external around its reference; CNO now does the same, so the
 #: reference reads as a measurement with a bar rather than an infinitely sharp line.
 #: These are the paper's stated values, not a width invented to make a band appear.
-ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03}
+ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03, 'Mg': 0.03}
 
 #: Diagnostics the ratified RYA-1220 policy REJECTS as abundance routes. They stay in the
 #: feed and in the forest -- withdrawing evidence is not the same as hiding it -- but they
@@ -448,6 +453,10 @@ ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03}
 #: Bergemann & Palme 2025 decline to use, adopting 7.94 +/- 0.11 from the two least-blended
 #: lines instead.
 PRELIMINARY = {
+    'Mg': ('The published Mg I line set still lacks resolved oscillator-strength uncertainties. '
+           'Available Mg II NLTE products use line-specific corrections from Asplund et al. '
+           '2021 on our LTE fits; they are not a new three-dimensional transfer calculation. '
+           'Individual products remain visible while the combined abundance is pending.'),
     'N': ('The solar N I lines are weak (0.3–1% deep) and carry CN absorption inside '
           'their own profiles, so the result depends on molecular opacity and on continuum '
           'placement at the 0.1% level. Both are now modelled: CN is synthesised with the '
@@ -668,7 +677,14 @@ def build(science, element, selectors, site=ROOT):
                 + ref_html + caveat_html
                 + method_html + f'<ul class="fe-anchor-families">{fam_html}</ul>' + miss)
     else:
-        body = f'<p class="fe-anchor">{esc(status)}</p><p>{esc(no_adopted)}</p>'
+        from cno_selection import headline_hold
+        hold = headline_hold(products, element)
+        body = f'<p class="fe-anchor">{esc(hold or status)}</p><p>{esc(no_adopted)}</p>'
+        if element in ASPLUND2021:
+            body += (f'<p class="fe-anchor-reference">Asplund, Amarsi &amp; Grevesse 2021: '
+                     f'{ASPLUND2021[element]:.2f} &plusmn; {ASPLUND2021_SIGMA[element]:.2f}</p>')
+        if PRELIMINARY.get(element):
+            body += f'<p>{esc(PRELIMINARY[element])}</p>'
     cards = []
     for p in band_highlights(products):
         spectrum = 'uv' if p['band']=='near-UV' else 'visible' if p['band'] in ('VIS','red-optical') else 'ir'

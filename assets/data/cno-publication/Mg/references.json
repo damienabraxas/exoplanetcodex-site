@@ -1,0 +1,822 @@
+{
+  "references": [
+    {
+      "id": "asplund2021",
+      "citation": "Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). The chemical make-up of the Sun: A 2020 vision. A&A 653, A141",
+      "doi": "10.1051/0004-6361/202140445",
+      "url": "https://doi.org/10.1051/0004-6361/202140445",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "asplund2021"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar Mg comparison literature; not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "lodders2025",
+      "citation": "Lodders, K.; Bergemann, M.; Palme, H. (2025). Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites. Space Science Reviews 221",
+      "doi": "10.1007/s11214-025-01146-w",
+      "url": "https://doi.org/10.1007/s11214-025-01146-w",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "lodders2025"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar Mg comparison literature; not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "nist_asd",
+      "citation": "Kramida, A.; Ralchenko, Yu.; Reader, J.; NIST ASD Team (2024). NIST Atomic Spectra Database (version 5.11/5.12). National Institute of Standards and Technology, Gaithersburg, MD",
+      "doi": "10.18434/T4W30F",
+      "url": "https://doi.org/10.18434/T4W30F",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "nist_asd"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    },
+    {
+      "id": "gerber2023",
+      "citation": "Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). Non-LTE radiative transfer with Turbospectrum. A&A 669, A43",
+      "doi": "10.1051/0004-6361/202243673",
+      "url": "https://doi.org/10.1051/0004-6361/202243673",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "gerber2023"
+        }
+      ],
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+        "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+      ]
+    },
+    {
+      "id": "amarsi2020_galah",
+      "citation": "Amarsi, A. M.; Lind, K.; Osorio, Y.; Nordlander, T.; Bergemann, M.; et al. (2020). The GALAH Survey: non-LTE departure coefficients for large spectroscopic surveys. A&A 642, A62",
+      "doi": "10.1051/0004-6361/202038650",
+      "url": "https://www.aanda.org/articles/aa/abs/2020/10/aa38650-20/aa38650-20.html",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "amarsi2020_galah"
+        }
+      ],
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv)."
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "subject": "element-context",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025"
+      ],
+      "claim": "Solar Mg comparison literature; not an adopted Codex abundance.",
+      "evidence": [
+        "data/refs/bibliography.csv"
+      ]
+    },
+    {
+      "subject": "Mg-products-5093715ecd72",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-5093715ecd72",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-2c6ef808b54b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-2c6ef808b54b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-d8cfcd3db986",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-d8cfcd3db986",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-a56bb1de251b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-a56bb1de251b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-278b5341908f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-278b5341908f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-414d659d84d7",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-414d659d84d7",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-8050fd8e7b46",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-8050fd8e7b46",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-27a737e5fece",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-27a737e5fece",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-ffeefe99a53e",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-ffeefe99a53e",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-e4c5bb7f02a1",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-e4c5bb7f02a1",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-545a47cc5066",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-545a47cc5066",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-1b39297153e7",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-1b39297153e7",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-c1b388b1a991",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-c1b388b1a991",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Mg-products-1d6f33811f37",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-1d6f33811f37",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-2523a9b1628c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Mg I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Mg.json"
+      ]
+    },
+    {
+      "subject": "Mg-products-2523a9b1628c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    }
+  ],
+  "product_sources": [
+    {
+      "publication_id": "Mg-products-5093715ecd72",
+      "source_bucket": "products",
+      "source_index": 0,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Mg-products-2c6ef808b54b",
+      "source_bucket": "products",
+      "source_index": 1,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Mg-products-d8cfcd3db986",
+      "source_bucket": "products",
+      "source_index": 2,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Mg-products-a56bb1de251b",
+      "source_bucket": "products",
+      "source_index": 3,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag_reiners2016",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Mg-products-278b5341908f",
+      "source_bucket": "products",
+      "source_index": 4,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag_reiners2016",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Mg-products-414d659d84d7",
+      "source_bucket": "products",
+      "source_index": 5,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag_reiners2016",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Mg-products-8050fd8e7b46",
+      "source_bucket": "products",
+      "source_index": 6,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Mg-products-27a737e5fece",
+      "source_bucket": "products",
+      "source_index": 7,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Mg-products-ffeefe99a53e",
+      "source_bucket": "products",
+      "source_index": 8,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Mg-products-e4c5bb7f02a1",
+      "source_bucket": "products",
+      "source_index": 9,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Mg-products-545a47cc5066",
+      "source_bucket": "products",
+      "source_index": 10,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Mg-products-1b39297153e7",
+      "source_bucket": "products",
+      "source_index": 11,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Mg-products-c1b388b1a991",
+      "source_bucket": "products",
+      "source_index": 12,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Mg-products-1d6f33811f37",
+      "source_bucket": "products",
+      "source_index": 13,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Mg_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Mg-products-2523a9b1628c",
+      "source_bucket": "products",
+      "source_index": 14,
+      "identity": {
+        "element": "Mg",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    }
+  ],
+  "source_paths": [
+    "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json",
+    "data/reference/line_sets/REGISTRY.csv",
+    "data/refs/bibliography.csv"
+  ],
+  "policy": "Sources resolved from the science repo records: line-set registry, the products' own gf sources, and the engine of each treatment."
+}

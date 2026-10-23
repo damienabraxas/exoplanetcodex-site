@@ -170,6 +170,8 @@ def headline(products, element=None):
     Grade product in another band -- "best VIS number if possible" is read as: if VIS
     carries a product of headline standard.
     """
+    if headline_hold(products, element):
+        return None
     rows = [p for p in products if eligible_for_headline(p)]
     prim = PRIMARY_SELECTORS.get(element or (rows[0].get('element') if rows else None))
     if prim:
@@ -196,7 +198,25 @@ FAMILY_BY_SELECTOR = {'MOL-C2_Swan': 'C2', 'MOL-CH_Gband': 'CH', 'MOL-CO_K': 'CO
                       'MOL-CN_AX_IR': 'CN', 'MOL-NH': 'NH', 'MOL-OH': 'OH'}
 ASPLUND_FAMILIES = {'C': ('[C I]', 'C I', 'C2', 'CH', 'CO'),
                     'N': ('N I', 'NH', 'CN'),
-                    'O': ('[O I]', 'O I', 'OH')}
+                    'O': ('[O I]', 'O I', 'OH'),
+                    'Mg': ('Mg I', 'Mg II')}
+
+
+# An ion combination requires both published-set NLTE analyses. Other pools stay
+# visible as independent products and cannot silently replace a missing ion.
+REQUIRED_FAMILY_SELECTORS = {'Mg': 'SET-MG_AGSS21'}
+
+
+def headline_hold(products, element):
+    selector = REQUIRED_FAMILY_SELECTORS.get(element)
+    if selector is None:
+        return ''
+    available = {indicator_family(p) for p in products
+                 if p.get('selector') == selector and treatment_rank(p) in (0, 2)
+                 and p.get('A') is not None and total_sigma(p) > 0}
+    missing = [f for f in ASPLUND_FAMILIES[element] if f not in available]
+    return ('Combined abundance pending: published-set NLTE result required for '
+            + ', '.join(missing)) if missing else ''
 
 
 def indicator_family(p):
@@ -206,9 +226,9 @@ def indicator_family(p):
         return FAMILY_BY_SELECTOR.get(sel)          # CN_red etc. are not Asplund families
     if sel.startswith('FORB-'):
         return f'[{el} I]'
-    if str(p.get('ion') or 'I').strip() not in ('I', '1'):
-        return None
-    return f'{el} I'
+    ion = str(p.get('ion') or 'I').strip()
+    ion = {'1': 'I', '2': 'II'}.get(ion, ion)
+    return f'{el} {ion}'
 
 
 def _wmean(rows):
@@ -219,8 +239,13 @@ def _wmean(rows):
 def asplund_headline(products, element):
     """Asplund+2021's combination of this element's indicator families, from OUR products.
     Returns {A, sigma, rule, families: [{family, A, sigma, product}], missing: [...]}."""
+    if headline_hold(products, element):
+        return None
     fams = {}
     for p in products:
+        required = REQUIRED_FAMILY_SELECTORS.get(element)
+        if required and (p.get('selector') != required or treatment_rank(p) not in (0, 2)):
+            continue
         if not eligible_for_headline(p) or not p.get('sigma_reported') and not total_sigma(p):
             continue
         f = indicator_family(p)
@@ -244,7 +269,10 @@ def asplund_headline(products, element):
     else:
         a, s = _wmean(list(rows.values()))
         rule = ('weighted mean and error of the indicator families '
-                + ', '.join(ASPLUND_FAMILIES[element]) + ' (Asplund+2021 Sect. 2.3)')
+                + ', '.join(ASPLUND_FAMILIES[element])
+                + (' (Asplund+2021 Sect. 2.4); inverse total-variance weights; '
+                   'combined error assumes independent ion budgets' if element in REQUIRED_FAMILY_SELECTORS
+                   else ' (Asplund+2021 Sect. 2.3)'))
     return {'element': element, 'A': a, 'sigma': s, 'rule': rule,
             'families': [{'family': f, 'A': rows[f][0], 'sigma': rows[f][1], 'product': rep[f]}
                          for f in ASPLUND_FAMILIES[element] if f in rep],

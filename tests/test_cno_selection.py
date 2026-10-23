@@ -85,10 +85,37 @@ class LineSetTests(unittest.TestCase):
         self.assertEqual(m['A'], 7.50)
 
     def test_no_recipe_falls_back_to_best_product(self):
-        rows = [p(element='Mg', selector='SET-OTHER')]
-        self.assertIsNone(literature_headline(rows, 'Mg'))
-        self.assertEqual(landmark('Mg', rows)['kind'], 'best_product')
+        rows = [p(element='Na', selector='SET-OTHER')]
+        self.assertIsNone(literature_headline(rows, 'Na'))
+        self.assertEqual(landmark('Na', rows)['kind'], 'best_product')
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class IonCombinationTests(unittest.TestCase):
+    def mg(self, ion='I', **kw):
+        return p(element='Mg', selector='SET-MG_AGSS21', ion=ion,
+                 display='Synth · 3D-NLTE · Amarsi', **kw)
+
+    def test_total_error_weighted_ion_means(self):
+        rows = [self.mg(A=7.56, sigma_stat=.01, sigma_syst=.02),
+                self.mg('II', A=7.52, sigma_stat=.03, sigma_syst=.03)]
+        mark = literature_headline(rows, 'Mg')
+        self.assertAlmostEqual(mark['A'], 7.551304347826087)
+        self.assertEqual([x['family'] for x in mark['families']], ['Mg I', 'Mg II'])
+        self.assertIn('assumes independent', mark['rule'])
+
+    def test_missing_ion_never_becomes_a_combined_headline(self):
+        rows = [self.mg('II')]
+        self.assertIsNone(literature_headline(rows, 'Mg'))
+        self.assertIsNone(landmark('Mg', rows))
+        self.assertIsNone(headline(rows, 'Mg'))
+        self.assertIsNotNone(best_in_band(rows, 'red-optical'))
+
+    def test_lte_or_other_lines_do_not_fill_the_missing_ion(self):
+        rows = [self.mg('II'), p(element='Mg', ion='I', selector='GRADED')]
+        self.assertIsNone(landmark('Mg', rows))
+        rows[1] = p(element='Mg', ion='I', selector='SET-MG_AGSS21')
+        self.assertIsNone(landmark('Mg', rows))
