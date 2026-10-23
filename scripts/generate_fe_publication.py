@@ -52,6 +52,16 @@ CYAN, GOLD, BG = '#63dce6', '#ebc77c', '#081219'
 VERSION = '1.0.0'
 
 
+
+#: Plain-language names for published-line-set selectors (site rule: no internal IDs). The
+#: same wording the C/N/O/Si/Al pages use (generate_cno_publication.INDICATOR_NAMES).
+SELECTOR_NAMES = {'SET-FE_AGSS21': 'Asplund et al. 2021 lines',
+                  'ASPLUND_AGSS21': 'Asplund et al. 2021 lines'}
+
+
+def selector_label(p):
+    return SELECTOR_NAMES.get(str(p.get('selector')), p.get('selector'))
+
 def esc(value):
     return html.escape(str(value))
 
@@ -98,7 +108,7 @@ def forest(products, reference, name, social=False):
         if social:
             text = f"{LABELS[p['instrument']]} {p['band']} · {p['display']}\n{p['grade']} · n={p['n_lines']}"
         else:
-            text += f"\n{p['holding']} · {p['selector']}\n{p['route']} · {p['treatment']}"
+            text += f"\n{p['holding']} · {selector_label(p)}\n{p['route']} · {p['treatment']}"
         labels.append(text)
         ax.text(1.025, y, f"{p['A']:.3f} ± {p['sigma_reported']:.3f}" + ('*' if p.get('sigma_reported_caveat') else '') +
                 ('' if social else f"  n={p['n_lines']}"),
@@ -346,7 +356,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     glossary += ' See <a href="/method/">Methodology</a> for the full model, line-selection and uncertainty procedures.</p></details>'
     body += '<section class="product-section"><h2>Error-bar forest</h2>'+guide+glossary+forest_html+'</section>'
     accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
-        f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(p["selector"])} · {esc(p["route"])} · {esc(p["treatment"])}: '
+        f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(selector_label(p))} · {esc(p["route"])} · {esc(p["treatment"])}: '
         f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
         + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
         + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'

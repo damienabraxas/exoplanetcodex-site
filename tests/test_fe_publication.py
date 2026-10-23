@@ -30,14 +30,33 @@ class FePublicationTests(unittest.TestCase):
             for link in re.findall(r'(?:href|src)="(/assets/data/[^"?#]+)', page):
                 self.assertTrue((ROOT / link.lstrip('/')).is_file(), link)
 
+    def _product_keys(self):
+        """The keys the page's own index resolves (element-products.js productIndex)."""
+        import json, subprocess
+        out = subprocess.run(['node', '-e',
+            "const {productIndexKeys}=require('./assets/js/element-products.js');"
+            "const f=JSON.parse(require('fs').readFileSync(process.argv[1]));"
+            "console.log(JSON.stringify(productIndexKeys?productIndexKeys(f):null));",
+            str(ROOT / 'assets/data/fe-publication/Fe.json')], capture_output=True, text=True, cwd=ROOT)
+        keys = json.loads(out.stdout or 'null')
+        if keys is None:
+            keys = [c['product_key'] for s in self.feed['plot_grid']['sections'] for c in s['cells']
+                    if c.get('product_key')]
+        return keys
+
     def test_original_forest_hierarchy_and_stylesheet_are_retained(self):
         for ion, slug in [('I', 'fe'), ('II', 'fe-ii')]:
             page = (ROOT / f'systems/sol/elements/{slug}/index.html').read_text()
-            sections = [s for s in self.feed['plot_grid']['sections'] if s['ion'] == ion]
+            #: Ryan 2026-10-21: the forest draws ONLY cells that have a product -- no N/A rows,
+            #: and a section (or band) with no product is left out entirely.
+            keys = {k for k in self._product_keys()}
+            sections = [s for s in self.feed['plot_grid']['sections'] if s['ion'] == ion
+                        and any(c.get('product_key') in keys for c in s['cells'])]
             self.assertEqual(page.count('class="forest-instrument"'), len(sections))
             self.assertEqual(page.count('class="forest-band"'), len({s['band'] for s in sections}))
-            self.assertEqual(len(re.findall(r'class="forest (?:gradedrow|forest-na)?"', page)),
-                             sum(len(s['cells']) for s in sections))
+            self.assertNotIn('forest-na', page)
+            self.assertEqual(len(re.findall(r'class="forest (?:gradedrow)?"', page)),
+                             sum(1 for s in sections for c in s['cells'] if c.get('product_key') in keys))
             self.assertIn('/assets/css/element-products.css', page)
             self.assertNotRegex(page, r'<img[^>]+Fe(?:I|II)-(?:VIS|NIR|H|near-UV|red-optical)')
 
