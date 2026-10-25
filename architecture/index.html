@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/assets/js/analytics.js"></script>
   <title>Science Architecture · The Exoplanet Codex</title>
-  <meta name="description" content="How The Exoplanet Codex verifies measurements, promotes results, freezes references, and preserves the scientific record.">
+  <meta name="description" content="How the Exoplanet Codex orchestrator takes an element from a published line list to a checked, published abundance.">
   <link rel="canonical" href="https://exoplanetcodex.org/architecture/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/codex.css">
@@ -29,6 +29,17 @@
     .architecture-section ul { max-width:720px; margin:1rem 0 1rem 1.3rem; color:var(--text-mid); }
     .architecture-section li { margin-bottom:.75rem; padding-left:.35rem; }
     code { font-family:var(--mono); font-size:.78em; color:var(--accent); background:var(--surface); border:1px solid var(--rim); padding:.12em .35em; overflow-wrap:anywhere; }
+    .architecture-section ol.arch-flow { list-style:none; margin:1.2rem 0 1.4rem; padding:0; counter-reset:step; max-width:760px; }
+    .arch-flow li { counter-increment:step; display:grid; grid-template-columns:9.5rem 1fr; gap:1rem; padding:.9rem 0; border-top:1px solid var(--rim); color:var(--text-mid); line-height:1.7; }
+    .arch-flow li:last-child { border-bottom:1px solid var(--rim); }
+    .arch-step { font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); padding-top:.2rem; }
+    .arch-step::before { content:counter(step) " · "; color:var(--accent-warm); }
+    .arch-table { width:100%; max-width:780px; border-collapse:collapse; margin:1.2rem 0 1.4rem; font-size:.92rem; }
+    .arch-table th { font-family:var(--mono); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-warm); text-align:left; padding:.5rem .7rem; border-bottom:1px solid var(--rim); }
+    .arch-table td { padding:.65rem .7rem; border-bottom:1px solid var(--rim); color:var(--text-mid); line-height:1.6; vertical-align:top; }
+    .arch-table td:first-child { color:var(--text-bright); white-space:nowrap; }
+    .architecture-section a, .architecture-intro a, .boundary-note a { color:var(--accent); }
+    @media (max-width:640px) { .arch-flow li { grid-template-columns:1fr; gap:.3rem; } .arch-table td:first-child { white-space:normal; } }
     .boundary-note { border:1px solid var(--rim); background:var(--deep); padding:1.6rem 1.8rem; max-width:820px; }
     .boundary-note h2 { font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:.8rem; }
     .boundary-note p { font-size:.94rem; color:var(--text-mid); line-height:1.75; }
@@ -52,25 +63,137 @@
     <div class="breadcrumb"><a href="/">Home</a> / <span>Science Architecture</span></div>
   </nav>
   <header class="page-hero">
-    <div class="page-eyebrow">Framework // How the Codex thinks</div>
+    <div class="page-eyebrow">Framework // How the Codex works</div>
     <h1 class="page-title">Science <em>Architecture</em></h1>
-    <p class="page-subtitle">How the Exoplanet Codex checks measurements, promotes results, freezes references, and preserves the scientific record.</p>
-    <div class="document-links"><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf" class="btn-download" download>↓ Download Architecture PDF (v3.0)</a><a href="/glossary/" class="document-link">Browse the Glossary →</a><a href="/assets/docs/exoplanet-codex-science-architecture-v2.0.docx" class="document-link" download>Previous version: v2.0</a></div>
-    <nav class="jump-links" aria-label="Jump to section"><a href="#two-engine">Two-engine floor</a><a href="#promotion">Three gates</a><a href="#tiers">Freeze tiers</a><a href="#honesty">Honesty tripwire</a><a href="#disposition">Disposition</a><a href="#tracker">Tracker</a><a href="#naming">Naming</a><a href="#read-set">Read set</a><a href="#sirius">Sirius</a><a href="#firewall">Firewall</a></nav>
+    <p class="page-subtitle">How one command takes an element from a published line list to a checked, published abundance — and what each element we have run through it taught it.</p>
+    <div class="document-links"><a href="/method/" class="btn-download">Read the Method →</a><a href="/glossary/" class="document-link">Browse the Glossary →</a><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf" class="document-link" download>Earlier architecture PDF (v3.0, archived)</a></div>
+    <nav class="jump-links" aria-label="Jump to section"><a href="#orchestrator">The orchestrator</a><a href="#prepare">Prepare</a><a href="#matrix">The run matrix</a><a href="#current">Not redoing work</a><a href="#measure">Measure and budget</a><a href="#publish">Publish and withdraw</a><a href="#check">Check</a><a href="#done">Done</a><a href="#lessons">What the runs taught it</a><a href="#guardrails">Guardrails</a><a href="#where">Where it runs</a></nav>
   </header>
   <main class="architecture-content">
-    <p class="architecture-intro">This document explains how the Exoplanet Codex decides which scientific results it can trust. Pipeline details appear only when they explain a scientific safeguard. Star-specific abundance values belong in that star’s Science Product Package, not here.</p>
-    <section class="architecture-section" id="two-engine"><p class="section-number">Section 01</p><h2>The two-engine floor</h2><p>A result from one measurement engine can be internally consistent and still be wrong. The Codex therefore runs two independent engines for every element that has a validated model atom. Their agreement is an honesty check that neither engine can provide alone.</p><p>Engine A is the 1D-NLTE production path. It measures an equivalent width or uses synthesis-v2, then applies a per-line NLTE correction from a one-dimensional correction table.</p><p>Engine B performs NLTE synthesis inside Turbospectrum with the Gerber 2023 deck. It uses native departure coefficients for each line where a validated atom exists.</p><p><code>pipeline/engine_selection.py:select_element</code> compares the engines line by line. When both provide acceptable measurements, the element result uses inverse-variance weighting. Cross-engine spread remains a separate diagnostic. <code>CROSS_ENGINE_MIX_GATE</code> raises when per-line winners produce a material conflict at the element level. A missing NLTE grid stops the pipeline; it never triggers a silent LTE fallback.</p></section>
-    <section class="architecture-section" id="promotion"><p class="section-number">Section 02</p><h2>The three-gate promotion</h2><p>An element does not become <code>gold</code> because one comparison looks good. Promotion requires three independent checks.</p><ul><li>Gate 1 tests whether Engine B recovers the external INSPECT or Amarsi anchor within 0.05 dex.</li><li>Gate 2 applies the validate-don’t-tune firewall to the model atom.</li><li>Gate 3 checks whether the absolute cross-engine difference, |dCE|, lies within the ratified band for the two-engine artifact.</li></ul><p>The rule is strict. All three gates must pass. A missing gate is a failure, not an abstention.</p></section>
-    <section class="architecture-section" id="tiers"><p class="section-number">Section 03</p><h2>Ratified freeze tiers</h2><p>Every element has one of three freeze tiers.</p><ul><li><code>gold</code> means the value is approved and frozen in the active reference.</li><li><code>owed</code> means work or approval remains before the value can be frozen.</li><li><code>data-gap</code> means no value has been measured.</li></ul><p><code>owed-HELD</code> means the verdict contains a measured value that has not been promoted. <code>owed-BLANK</code> means no measured value exists. Ryan ratifies each element’s tier. The pipeline enforces that decision; it does not make it.</p></section>
-    <section class="architecture-section" id="honesty"><p class="section-number">Section 04</p><h2>The blank-cause honesty tripwire</h2><p>A historical failure mode allowed a verdict row to say that no independent-gf line survived even when the tracker recorded surviving lines and a measured value. The text made a real measurement look blank.</p><p><code>pipeline/provenance_honesty.py:_assert_blank_cause_is_honest</code> rejects that contradiction. The phase_c verdict emitter and gold-reference builder call the same guard. This makes the bad state unrepresentable before it can enter a frozen artifact.</p></section>
-    <section class="architecture-section" id="disposition"><p class="section-number">Section 05</p><h2>The disposition report</h2><p>The disposition report is the final straggler sweep before a freeze. It reads the phase_c verdict, gold reference, two-engine artifact, and element status tracker. It assigns each element one disposition: PASS held, PASS candidate, provisional flip, owed with cause, or data-gap.</p><p>The report is machine-generated at <code>data/audit/element_disposition_report.json</code>. Analysts do not edit it. The generator runs before every freeze so unresolved elements are visible before the reference becomes immutable.</p></section>
-    <section class="architecture-section" id="tracker"><p class="section-number">Section 06</p><h2>The generated element status tracker</h2><p>The tracker was once edited by hand. That allowed the table to drift away from the evidence it summarized.</p><p>It is now generated from the phase_c verdict, <code>config/physics_regime_rya400.yaml</code>, and <code>data/audit/element_status_tracker_editorial.yaml</code>. An explicit <code>verdict</code> column keeps the scientific verdict separate from the freeze tier. A <code>--check</code> run compares the committed file with a fresh generation. Any hand edit becomes a build failure.</p></section>
-    <section class="architecture-section" id="naming"><p class="section-number">Section 07</p><h2>The four-noun naming convention</h2><p>A state artifact’s filename should reveal how it may change.</p><ul><li>A Catalog is a master enumeration.</li><li>A Register holds mutable state facts.</li><li>A Tracker records work or progress.</li><li>A Reference holds frozen, validated truth.</li></ul><p><code>SEQUENCE.md</code> is a narrative overlay, not a fifth state noun. “Gold” is reserved for a Reference modifier.</p></section>
-    <section class="architecture-section" id="read-set"><p class="section-number">Section 08</p><h2>The read-set discipline</h2><p>Every working session begins with <code>LEDGERS.md</code>. That startup index points to the register, tracker, catalogs, holdings manifest, and <code>SEQUENCE.md</code>.</p><p>The register-freshness guard blocks a pull request that changes a state surface without updating <code>CODEX_STATE_REGISTER.md</code>. The ledger-consistency guard compares the tracker, verdict, and gold reference. It reports undocumented disagreements in continuous integration and becomes blocking at merge.</p></section>
-    <section class="architecture-section" id="sirius"><p class="section-number">Section 09</p><h2>Sirius-only compute and continuous integration</h2><p>Sirius, an HP ProBook 450 running the project’s reference software stack, is the authoritative production runner. Abundance computations run there. The Mac is for research, development, and pull-request review.</p><p>Continuous integration also runs on Sirius. Twenty-four test files require iSpec. Ephemeral runners therefore fail 22 percent of the suite. <code>CI/test</code> is required before a pull request can merge to <code>main</code>. The repository uses merge commits so the landing record remains explicit.</p></section>
-    <section class="architecture-section" id="firewall"><p class="section-number">Section 10</p><h2>The validate-don’t-tune firewall</h2><p>A model atom or correction grid must never be tuned to reproduce a trusted anchor. The physics must produce the anchor. The anchor is the test, not the target.</p><p>The corroboration-accept standing rule provides a bounded alternative when ionization balance stops on precision. Model vintage also matters. Titanium and manganese moved to ab-initio atoms after the audit. Iron, calcium, chromium, barium, and strontium remain on scaled-Drawin atoms with explicit annotations because the current effect is benign or not material.</p><p>Corrections carry idempotency guards. A correction that has already been applied must be recognized as complete. Re-running the pipeline cannot apply it twice.</p></section>
-    <aside class="boundary-note"><h2>Document boundaries</h2><p>The Science Architecture describes framework-level decisions. The Method page describes the general measurement pipeline. The Glossary defines terms. A star’s Science Product Package carries its values, diagnostics, and caveats.</p></aside>
+    <p class="architecture-intro">The <a href="/method/">Method</a> page explains the science: which spectra, which lines, which models, how an abundance and its error bar are measured. This page explains the machinery that does that work for every element in the same way. It is called the <strong>orchestrator</strong>, and the point of the project right now is for it to run an element from start to finish with as little hand-steering as possible. Each element we put through it is a test of the orchestrator as much as a measurement of the Sun.</p>
+
+    <section class="architecture-section" id="orchestrator">
+      <div class="section-number">Section 01</div>
+      <h2>One command per element</h2>
+      <p>Every element goes through the same three stages, each started by one command:</p>
+      <ol class="arch-flow">
+        <li><span class="arch-step">Prepare</span><span>Check everything the measurement depends on, before anything is measured. Produces one report and a READY or NOT READY answer.</span></li>
+        <li><span class="arch-step">Publish</span><span>Measure every combination of spectrum, band and model that applies, build each result’s error bar, publish what passes, withdraw what it replaces, and compare the results to the literature.</span></li>
+        <li><span class="arch-step">Coverage</span><span>List every combination the element should have and what happened to it, so “finished” is something the pipeline can show rather than something someone asserts.</span></li>
+      </ol>
+      <p>The division of labour is deliberate. The orchestrator does the work. The person or AI agent running it starts the commands and reports what came out. Code changes only after a problem has been reported and agreed. Two decisions stay with Ryan: approving the prepare report (including any lines to drop), and merging the results into the public record.</p>
+      <p>The step-by-step procedure an operator follows is kept in the code repository as the <a href="https://github.com/damienabraxas/exoplanetcodex/blob/main/docs/ORCHESTRATOR_RUNBOOK.md" target="_blank" rel="noopener">orchestrator runbook ↗</a>, next to the code it describes, so the two change together.</p>
+    </section>
+
+    <section class="architecture-section" id="prepare">
+      <div class="section-number">Section 02</div>
+      <h2>Prepare: checks before measuring</h2>
+      <p>Earlier elements were measured first and checked afterwards, and every late discovery cost a full rerun. Prepare moves those checks to the front. It reads files only, and it asks six questions:</p>
+      <table class="arch-table">
+        <thead><tr><th>Check</th><th>The question</th></tr></thead>
+        <tbody>
+          <tr><td>Published line set</td><td>Is the solar literature’s own line list for this element registered, and does each of its lines have the oscillator strength (gf) the authors used, with their stated uncertainty?</td></tr>
+          <tr><td>gf sources</td><td>Is every source of atomic data classified by how its errors correlate between lines? An unclassified source would leave part of the error bar unpriced.</td></tr>
+          <tr><td>Lines to drop</td><td>Which lines are too strong to measure reliably <em>and</em> unused by the solar literature? These are proposals only.</td></tr>
+          <tr><td>NLTE coverage</td><td>Does the correction table for departures from local thermodynamic equilibrium cover every graded line?</td></tr>
+          <tr><td>Spectra</td><td>Does each prepared spectrum actually contain each line, at its rest wavelength, in its window?</td></tr>
+          <tr><td>Literature</td><td>Is there a file of published solar values to compare against, and does every reference in it resolve to a real paper?</td></tr>
+        </tbody>
+      </table>
+      <p>The answer is READY or NOT READY with the blockers named. Nothing about the data is changed until the report has been read and the operator confirms it; that confirmation is the one human checkpoint before measurement. A proposed line drop comes with any literature that argues against it. Magnesium showed why: one strong line is absent from the reference line table but is discussed explicitly as a solar line in another paper, and a rule that only looked at the first source would have dropped it.</p>
+    </section>
+
+    <section class="architecture-section" id="matrix">
+      <div class="section-number">Section 03</div>
+      <h2>The run matrix: every cell has an outcome</h2>
+      <p>One element is not one measurement. The orchestrator expands it into <strong>cells</strong>: one cell per wavelength band × prepared spectrum × ion × line grade × model treatment. Iron in the Sun is several hundred cells.</p>
+      <p>None of those lists is typed into the code. The spectra come from the holdings registry, the band edges from one band table, each instrument’s reach from the instrument catalogue, the model treatments from the model registry and the graded lines from the atomic-data table. A second hand-written copy of any of those facts is how two parts of a pipeline end up disagreeing, and that happened here more than once before the rule existed.</p>
+      <p>Every cell ends a run with exactly one outcome, and each outcome points at a different owner:</p>
+      <ul>
+        <li><strong>Done</strong> — measured in this run; <strong>skipped</strong> — already current (next section).</li>
+        <li><strong>Held</strong> — a step that must come before measurement is not complete, and the reason says which.</li>
+        <li><strong>Blocked</strong> — the combination cannot be run at all, for example a model that does not exist for this element.</li>
+        <li><strong>Not ready</strong> — the data is not in a usable state for this cell.</li>
+        <li><strong>Failed</strong> — the cell ran and broke. One failure stops one cell, never the whole run.</li>
+      </ul>
+      <p>A cell is never silently dropped. A gap that nobody wrote down and an honest “nothing here” look the same to everything downstream, and only one of them is a finding.</p>
+    </section>
+
+    <section class="architecture-section" id="current">
+      <div class="section-number">Section 04</div>
+      <h2>Work already current is not redone</h2>
+      <p>A full element run takes hours, so the orchestrator records a fingerprint for every cell it builds: the cell’s description, the exact code it ran, and every input file, including the spectrum itself. On the next run, a cell whose fingerprint is unchanged is skipped. A code change or a newly prepared spectrum changes the fingerprint and the cell runs again; the passing of time does not.</p>
+      <p>The same fingerprint tells the coverage report when a published value has gone <strong>stale</strong>: published, but built from lines, atomic data, a spectrum or code that has since changed.</p>
+    </section>
+
+    <section class="architecture-section" id="measure">
+      <div class="section-number">Section 05</div>
+      <h2>Measure, then build the error bar</h2>
+      <p>Each runnable cell is measured the way the Method page describes, mostly by fitting a synthetic spectrum to each line. To make several hundred cells affordable, each line is synthesised once on a fine grid and the instrument’s resolution is applied afterwards. Before adopting this, the cached spectrum was checked against a direct synthesis and they agreed to the fourth decimal place in abundance.</p>
+      <p>Different model treatments (one-dimensional or averaged three-dimensional atmospheres, with or without NLTE) each produce their own result. They are reported side by side and never averaged into one number.</p>
+      <p>Then comes the error bar. For each published value, every source of uncertainty is measured the same way: the measurement is repeated with <em>only</em> that one input changed — a warmer model atmosphere, a different continuum placement, the other telluric correction — and the shift is recorded. These paired reruns are most of the run time. A value whose error bar is missing any component is held rather than published with a partial error.</p>
+    </section>
+
+    <section class="architecture-section" id="publish">
+      <div class="section-number">Section 06</div>
+      <h2>Publish, and withdraw what is replaced</h2>
+      <p>Results go into the element’s published file through the same gates every product passes: a complete error bar, the right grade for its lines, and a record of where it came from. Anything that fails stays held, with the reason written down.</p>
+      <p>When a run rebuilds a cell and no longer publishes a value it published before, the old value is <strong>withdrawn</strong>: moved to an archive with the date and the reason, never deleted, so the record of what was once shown survives. The withdrawal is limited to the cells and model treatments the run actually rebuilt. Iron is why: an early run without that limit withdrew rows it had not rebuilt. They were restored, and the limit was added.</p>
+    </section>
+
+    <section class="architecture-section" id="check">
+      <div class="section-number">Section 07</div>
+      <h2>Check against the literature</h2>
+      <p>After publishing, each result is compared with the published solar values in the element’s literature file and marked as inside or outside the published range. A result on a different scale (for example one-dimensional against a three-dimensional NLTE reference) is flagged as a scale mismatch rather than compared directly. The check produces a list of problem lines for a person to look at.</p>
+      <p>It never changes a number or a line selection. A pipeline that adjusted its results until they matched the literature would only be repeating the literature back.</p>
+    </section>
+
+    <section class="architecture-section" id="done">
+      <div class="section-number">Section 08</div>
+      <h2>What “done” means</h2>
+      <p>The coverage report gives every cell exactly one of four states:</p>
+      <ul>
+        <li><strong>Published</strong> — a value with its error bar and line count is in the public record.</li>
+        <li><strong>Held</strong> — it cannot be produced, and the reason is stated.</li>
+        <li><strong>Not run</strong> — it applies and has not been measured yet: work is owed.</li>
+        <li><strong>Stale</strong> — it is published, but its inputs have changed since.</li>
+      </ul>
+      <p>An element is done when nothing is <em>not run</em> or <em>stale</em>. Even then, a done coverage table is not taken as proof the published file is clean: the full test suite is run on the branch and on the main line, and only failures that appear on the branch alone count. Silicon is the example. Its coverage read done while five superseded products were still live, and only the full suite caught it.</p>
+    </section>
+
+    <section class="architecture-section" id="lessons">
+      <div class="section-number">Section 09</div>
+      <h2>What the runs taught it</h2>
+      <p>Each element run through the orchestrator so far has found something the orchestrator then learned to do by itself:</p>
+      <ul>
+        <li><strong>Silicon, the first real run.</strong> The orchestrator was sending uncorrected spectra to be measured and refusing the corrected ones because of out-of-date labels. It now never uses a raw spectrum. Two parts of the code also disagreed on where the bands start and end; both now read the same band table. And five model treatments had been writing into one results file, so each now writes its own.</li>
+        <li><strong>Aluminium</strong> followed silicon through the corrected version, and the two together became the worked example the runbook tells every later element to copy.</li>
+        <li><strong>Iron.</strong> Iron’s Reference Grade became the line set Asplund and collaborators used, plus every line with a laboratory-measured gf. This brought in the synthesis cache, the scoped withdrawal described above, and a rule that results from experimental models are flagged straight from the model registry instead of by hand.</li>
+        <li><strong>Magnesium</strong>, the current test. Prepare is where its problems surfaced: a line-drop rule that needed to look past one reference table, and an NLTE step that needs a different software environment from the synthesis, which the procedure now checks before starting. A review of magnesium’s atomic data before release found a gf entered with the wrong sign, and its results are being rebuilt on the corrected value.</li>
+      </ul>
+      <p>Sodium is next, and the remaining elements’ reference line lists are already assembled for it.</p>
+    </section>
+
+    <section class="architecture-section" id="guardrails">
+      <div class="section-number">Section 10</div>
+      <h2>Guardrails kept from the earlier design</h2>
+      <ul>
+        <li><strong>Validate, don’t tune.</strong> A model atom or correction table is never adjusted to reproduce a trusted value. The physics has to produce it; the trusted value is the test, not the target.</li>
+        <li><strong>No silent fallback.</strong> If a line has no NLTE correction, or a line’s atomic data cannot be found, the result is held. It is never quietly measured another way.</li>
+        <li><strong>Models are never mixed.</strong> One-dimensional and three-dimensional, LTE and NLTE results stay separate products.</li>
+        <li><strong>Spectra are prepared once.</strong> Telluric correction and continuum normalisation are done once per spectrum and then frozen for every element.</li>
+        <li><strong>Honest blanks.</strong> A result cannot be shown as empty when a measurement exists, and a measurement cannot be shown where none exists. The pipeline refuses that contradiction rather than letting it reach the record.</li>
+        <li><strong>The record is append-only.</strong> Superseded values are archived with their reason, not erased.</li>
+      </ul>
+    </section>
+
+    <section class="architecture-section" id="where">
+      <div class="section-number">Section 11</div>
+      <h2>Where it runs</h2>
+      <p>Production runs happen on one machine, Sirius, which holds the spectra and the reference software. The development Mac mirrors it. Every file location comes from one path register, so the same command finds the same data on either host and another operator can reproduce a run. The automated tests run on Sirius too. Because the main line has a few known failing tests, a change is judged by comparing its failures with main’s, not by the raw count.</p>
+    </section>
+
+    <aside class="boundary-note"><h2>Document boundaries</h2><p>This page describes how the pipeline is organised. The <a href="/method/">Method</a> page describes the science it applies. The <a href="/glossary/">Glossary</a> defines terms, and the <a href="/sources/">Sources</a> page lists every reference. Each element’s page and downloadable appendix carry its values, diagnostics and caveats.</p></aside>
   </main>
   <footer class="codex-footer"><div class="footer-grid"><div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div><div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/architecture/">Science Architecture</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div><div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf">Architecture PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div><div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div></div><p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p></footer>
 </div>
