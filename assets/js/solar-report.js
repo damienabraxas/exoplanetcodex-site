@@ -203,15 +203,68 @@
                    href: e.appendixPath });
     });
     if (!cards.length) return;
-    findingsRoot.innerHTML =
-      '<div class="solar-findings">' + cards.map(function (c) {
+
+    // Ryan, 2026-10-25: the ratios that matter for planets sit under the four highlights,
+    // in the same tiles. Each is a ratio of numbers of atoms, 10^(A1 - A2), computed from
+    // the two published element values on this page; the reference is the same ratio of
+    // their Asplund, Amarsi & Grevesse (2021) values. The error adds the two total errors
+    // in quadrature, treating them as independent. A ratio whose elements are not both
+    // published shows what it is waiting for instead of a number.
+    function published(sym) {
+      var el = (report.elements || []).filter(function (x) {
+        return x.symbol === sym && x.ion === 'I' && x.status === 'Published';
+      })[0];
+      var pv = el && (el.primaryValue || el.primary);
+      return (pv && pv.value != null && pv.sigmaTotal != null) ?
+        { value: pv.value, sigma: pv.sigmaTotal, ref: el.asplund } : null;
+    }
+    // Magnesium is published but is being re-measured, so its ratio carries a flag.
+    var RATIO_FLAG = { Mg: 'Magnesium is being re-measured' };
+    var RATIOS = [
+      { label: 'C/O', top: 'C', bottom: 'O', href: '/glossary/#c-o-ratio' },
+      { label: 'Mg/Si', top: 'Mg', bottom: 'Si', href: '/glossary/#mg-si-ratio' },
+      { label: 'Fe/Si', top: 'Fe', bottom: 'Si', href: '/glossary/#mg-si-ratio' }
+    ];
+    var ratioCards = RATIOS.map(function (r) {
+      var a = published(r.top), b = published(r.bottom);
+      if (!a || !b) {
+        return { label: r.label, value: '\u2014', unit: 'by number of atoms',
+                 sub: 'Waits for ' + [!a ? r.top : null, !b ? r.bottom : null].filter(Boolean).join(' and '),
+                 href: r.href };
+      }
+      var ratio = Math.pow(10, a.value - b.value);
+      var sigma = ratio * Math.LN10 * Math.sqrt(a.sigma * a.sigma + b.sigma * b.sigma);
+      var ref = (a.ref != null && b.ref != null) ? Math.pow(10, a.ref - b.ref) : null;
+      return { label: r.label, value: ratio.toFixed(2), unit: 'by number of atoms',
+               sub: '\u00b1 ' + sigma.toFixed(2) + (ref != null ? ' \u00b7 reference ' + ref.toFixed(2) : ''),
+               flag: RATIO_FLAG[r.top] || RATIO_FLAG[r.bottom] || '', href: r.href };
+    });
+    // Placeholders for the outputs not computed yet (Ryan, 2026-10-25). [alpha/Fe] is computed
+    // once every alpha element is final, and which elements it averages is still to be decided,
+    // so the card names no list. CHNOPS names whichever of its measurable elements are missing
+    // (hydrogen is the reference, 12.00 by definition).
+    ratioCards.push({ label: '[\u03b1/Fe]', value: '\u2014', unit: 'dex',
+                      sub: 'Computed once the alpha elements are final', href: '/glossary/#alpha-enhancement' });
+    var chnops = ['C', 'N', 'O', 'P', 'S'].filter(function (s) { return !published(s); });
+    ratioCards.push({ label: 'CHNOPS', value: '\u2014', unit: 'elements of life',
+                      sub: chnops.length ? 'Waits for ' + chnops.join(' and ') : 'Not yet computed',
+                      href: '/glossary/#chnops' });
+
+    function tiles(list) {
+      return '<div class="solar-findings">' + list.map(function (c) {
+        // A ratio label is chemistry (Mg/Si, [α/Fe]); uppercasing it would change its meaning.
         return '<a class="solar-finding" href="' + c.href + '">' +
-          '<span class="sf-label">' + esc(c.label) + '</span>' +
+          '<span class="sf-label"' + (c.keepCase ? ' style="text-transform:none"' : '') + '>' + esc(c.label) + '</span>' +
           '<strong class="sf-value">' + esc(c.value) + '</strong>' +
           '<span class="sf-unit">' + esc(c.unit) + '</span>' +
           '<span class="sf-sub">' + esc(c.sub) + '</span>' +
           (c.flag ? '<span class="sf-flag">' + esc(c.flag) + '</span>' : '') + '</a>';
-      }).join('') + '</div>' +
+      }).join('') + '</div>';
+    }
+    ratioCards.forEach(function (c) { c.keepCase = true; });
+    findingsRoot.innerHTML = tiles(cards) +
+      '<p class="solar-kicker">Ratios for planets</p>' + tiles(ratioCards) +
+      '<p class="solar-table-note">Ratios of numbers of atoms, from the published values above. The reference is the same ratio from Asplund, Amarsi &amp; Grevesse (2021). Errors of the two elements are added as if independent.</p>' +
       '<p class="solar-findings-more"><a href="#our-findings">See every element in the abundance table \u2192</a></p>';
   }
 
