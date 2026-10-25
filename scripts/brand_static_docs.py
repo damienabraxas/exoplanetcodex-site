@@ -41,6 +41,8 @@ DOCUMENTS = {
     "exoplanet-codex-glossary-v3.2.pdf": ("Glossary of Terms", "Exoplanet Codex glossary", "2026-08-08", "v3.2", None),
     "exoplanet-codex-methodology-v1.2.pdf": ("Spectral Analysis Methodology", "Exoplanet Codex methodology (earlier version)", "2026-05-30", "v1.2", ARCHIVED),
     "exoplanet-codex-method-v2.0.pdf": ("Spectral Analysis Methodology", "Exoplanet Codex methodology (earlier version)", "2026-05-31", "v2.0", ARCHIVED),
+    "exoplanet-codex-method-v3.0.pdf": ("Spectral Analysis Methodology", "How we measure what a star is made of, starting with the Sun", "2026-10-24", "v3.0", None),
+    "exoplanet-codex-science-architecture-v4.0.pdf": ("Science Architecture", "How the orchestrator takes an element from line list to published abundance", "2026-10-24", "v4.0", None),
     "exoplanet-codex-science-architecture-v3.0.pdf": ("Science Architecture", "How the Codex checks and publishes results (earlier version)", "2026-08-08", "v3.0", ARCHIVED),
     "schmitt-2010-thesis.pdf": ("The Birth of Exoplanets", "Alpha enhancement and the formation of planetary systems · thesis (2010)", "2010", None,
                                 "The original thesis, reproduced as written. Its methods and numbers predate the Codex pipeline."),

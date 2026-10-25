@@ -43,6 +43,7 @@
     .boundary-note { border:1px solid var(--rim); background:var(--deep); padding:1.6rem 1.8rem; max-width:820px; }
     .boundary-note h2 { font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-warm); margin-bottom:.8rem; }
     .boundary-note p { font-size:.94rem; color:var(--text-mid); line-height:1.75; }
+    @page { size: Letter; margin: 24mm 16mm 16mm; }
     @media print {
       #starfield,.codex-nav,.codex-footer,.jump-links,.document-links { display:none!important; }
       body { background:#fff; color:#17263a; } body::after { display:none; }
@@ -51,6 +52,9 @@
       .page-subtitle,.architecture-intro,.architecture-section p,.architecture-section li,.boundary-note p { color:#263d55; }
       .architecture-content { padding-top:.25in; } .architecture-section { break-inside:avoid; padding:.2in 0; }
       .boundary-note { background:#f4f7fa; } code { color:#005b85; background:#f4f7fa; }
+      .arch-flow li,.arch-table td { color:#263d55; border-color:#c9d3db; } .arch-table td:first-child { color:#0d2238; }
+      .arch-step,.architecture-section a { color:#005b85; } .arch-table th,.section-number { color:#9a4f12; }
+      .architecture-section { break-inside:auto; } .architecture-section h2,.section-number { break-after:avoid; }
     }
   </style>
 </head>
@@ -66,7 +70,7 @@
     <div class="page-eyebrow">Framework // How the Codex works</div>
     <h1 class="page-title">Science <em>Architecture</em></h1>
     <p class="page-subtitle">How one command takes an element from a published line list to a checked, published abundance — and what each element we have run through it taught it.</p>
-    <div class="document-links"><a href="/method/" class="btn-download">Read the Method →</a><a href="/glossary/" class="document-link">Browse the Glossary →</a><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf" class="document-link" download>Earlier architecture PDF (v3.0, archived)</a></div>
+    <div class="document-links"><a href="/assets/docs/exoplanet-codex-science-architecture-v4.0.pdf" class="btn-download" download>↓ Download Architecture PDF (v4.0)</a><a href="/method/" class="document-link">Read the Method →</a><a href="/glossary/" class="document-link">Browse the Glossary →</a><a href="/assets/docs/exoplanet-codex-science-architecture-v3.0.pdf" class="document-link" download>Earlier architecture PDF (v3.0, archived)</a></div>
     <nav class="jump-links" aria-label="Jump to section"><a href="#orchestrator">The orchestrator</a><a href="#prepare">Prepare</a><a href="#matrix">The run matrix</a><a href="#current">Not redoing work</a><a href="#measure">Measure and budget</a><a href="#publish">Publish and withdraw</a><a href="#check">Check</a><a href="#done">Done</a><a href="#lessons">What the runs taught it</a><a href="#guardrails">Guardrails</a><a href="#where">Where it runs</a></nav>
   </header>
   <main class="architecture-content">
