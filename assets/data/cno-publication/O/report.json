@@ -56,7 +56,7 @@
     "reference_count": 12,
     "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
     "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-    "pdf_generator_sha256": "701f640e900359f1a3192d285f642f4da674a912b8b5816e754c307d3d30acce",
+    "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
     "counts": {
       "products": 28,
       "quarantine": 0,
@@ -69,7 +69,8 @@
       "archive": 51
     },
     "highlight_selectors": [],
-    "status": "products"
+    "status": "products",
+    "pdf_brand_sha256": "c0a3e6a0b6927a6bf391cb899507c16a339f8aaa19ca792b88cc3423cd23217f"
   },
   "products": [
     {

@@ -635,6 +635,7 @@ def build(science, element, selectors, site=ROOT):
                 template_sha256=digest((ROOT/'systems/sol/elements/fe/index.html').read_bytes()),
                 highlight_selectors_sha256=digest(json.dumps(selectors,sort_keys=True).encode()),
                 pdf_generator_sha256=digest((ROOT/'scripts/element_appendix_pdf.py').read_bytes()),
+                pdf_brand_sha256=digest((ROOT/'scripts/codex_doc_brand.py').read_bytes()),
                 counts={b:len(feed.get(b,[])) for b in ('products','quarantine','archive','superseded')},
                 visible_products=len(products), dispositions=dict(Counter(r['disposition'] for r in audit)),
                 highlight_selectors=selectors, status=status)

@@ -458,6 +458,7 @@ def main():
             'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             'pdf_generator':'scripts/element_appendix_pdf.py',
             'pdf_generator_sha256':hashlib.sha256((ROOT/'scripts/element_appendix_pdf.py').read_bytes()).hexdigest(),
+            'pdf_brand_sha256':hashlib.sha256((ROOT/'scripts/codex_doc_brand.py').read_bytes()).hexdigest(),
             'supplemental_sources':list(dict.fromkeys(['data/linelists/canonical_gf.csv', 'data/refs/bibliography.csv', 'docs/catalog/model_registry_notes.md',
                                     'data/linelists/linelist_solar.csv', 'data/reference/solar/CURRENT',
                                     'data/audit/rya515_fe_perline/fe2_blend_census.csv',
