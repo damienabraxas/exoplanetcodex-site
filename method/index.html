@@ -149,7 +149,7 @@
        top of every page for the Exoplanet Codex document header. */
     @page { size: Letter; margin: 24mm 16mm 16mm; }
     @media print {
-      #starfield, .codex-nav, .codex-footer, .jump-links, .btn-download, .method-archived, .breadcrumb { display:none !important; }
+      #starfield, .codex-nav, .codex-footer, .jump-links, .btn-download, .method-downloads, .method-archived, .breadcrumb { display:none !important; }
       html, body { background:#fff !important; }
       body::after { display:none !important; }
       * { color:#1d2c3a !important; background:transparent !important; box-shadow:none !important;
@@ -162,6 +162,8 @@
       tr, .method-callout, figure { break-inside:avoid; }
       .method-table-wrap { overflow:visible !important; }
     }
+    .method-downloads { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:1.5rem; }
+    .method-downloads .btn-download { margin:0; }
     .method-archived { margin-top:.8rem; font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; }
     .method-archived a { color:var(--text-dim, #8aa); text-decoration:none; }
     .method-archived a:hover { color:var(--accent); }
@@ -191,9 +193,14 @@
       <div class="section-label">Methodology</div>
       <h1 class="page-title">Spectral Analysis Methodology</h1>
       <p class="page-subtitle">How we measure what a star is made of, step by step, starting with the Sun</p>
-      <a href="/assets/docs/exoplanet-codex-method-v3.0.pdf" class="btn-download" download>
-        ↓ Download Methodology PDF (v3.0)
-      </a>
+      <div class="method-downloads">
+        <a href="/assets/docs/exoplanet-codex-method-v3.0.pdf" class="btn-download" download>
+          ↓ Download Methodology PDF (v3.0)
+        </a>
+        <a href="/assets/docs/exoplanet-codex-science-architecture-v4.0.pdf" class="btn-download" download>
+          ↓ Download Architecture PDF (v4.0)
+        </a>
+      </div>
       <p class="method-archived"><a href="/assets/docs/exoplanet-codex-method-v2.0.pdf" download>Earlier methodology PDF (v2.0, archived)</a></p>
       <nav class="jump-links" aria-label="Page sections">
         <a href="#process">The process</a>
