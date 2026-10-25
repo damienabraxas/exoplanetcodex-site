@@ -22,6 +22,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, Flowable
 
+import codex_doc_brand as brand
+
 SCHEMA = 'codex.element_appendix/1'
 VERSION = '1.0.0'
 
@@ -208,15 +210,32 @@ def render_pdf(report, output, site_root):
 
     story.append(Paragraph(escape(report['title']), ParagraphStyle('title',parent=heading,fontSize=19,leading=24)))
     story.append(Paragraph(escape(report['target']+' · '+report['element']+' '+report['ion']+' · downloadable appendix'),body_style))
+    # RYA-1271: the document details every Codex download carries. The date is the
+    # report's own deterministic build date, never the clock.
+    meta = report.get('metadata', {})
+    date = str(meta.get('generated_at', ''))[:10]
+    subject = ('Solar photospheric abundance appendix · '+report['element']+(' '+report['ion'] if report['ion'] else '')).strip()
+    version = ('feed v'+str(meta['feed_version'])) if meta.get('feed_version') else None
+    source = ('science commit '+str(meta['source_commit'])[:12]) if meta.get('source_commit') else None
+    rows = [[Paragraph('<b>'+escape(k)+'</b>', small), Paragraph(escape(v), small)]
+            for k, v in brand.details_rows(report['title'], subject, date, version, source, report.get('site_url'))]
+    details = Table(rows, colWidths=[width*.18, width*.82], hAlign='LEFT')
+    details.setStyle(TableStyle([('LINEABOVE',(0,0),(-1,0),.6,colors.HexColor('#d5dce1')),
+                                 ('LINEBELOW',(0,-1),(-1,-1),.6,colors.HexColor('#d5dce1')),
+                                 ('TOPPADDING',(0,0),(-1,-1),1.5),('BOTTOMPADDING',(0,0),(-1,-1),1.5),
+                                 ('LEFTPADDING',(0,0),(-1,-1),0)]))
+    story.extend([details, Spacer(1, 10)])
     for node in soup.children: walk(node)
     output = Path(output); output.parent.mkdir(parents=True, exist_ok=True)
     def footer(canvas, doc):
+        brand.draw_page_header(canvas, A4[0], A4[1], report['title'], date, doc.page)
         canvas.setFont('Appendix',7)
         canvas.setFillColor(colors.HexColor('#526575'))
         canvas.drawString(40,25,report['title'])
         canvas.drawRightString(A4[0]-40,25,str(doc.page))
-    doc = SimpleDocTemplate(str(output),pagesize=A4,rightMargin=40,leftMargin=40,topMargin=36,bottomMargin=40,
-                            title=report['title'],author='Exoplanet Codex',invariant=1)
+    doc = SimpleDocTemplate(str(output),pagesize=A4,rightMargin=40,leftMargin=40,topMargin=36+brand.HEADER_HEIGHT,bottomMargin=40,
+                            title=report['title'],author=brand.AUTHOR,
+                            subject=subject+' · '+brand.PUBLISHER,creator=brand.PUBLISHER,invariant=1)
     doc.build(story,onFirstPage=footer,onLaterPages=footer)
 
 

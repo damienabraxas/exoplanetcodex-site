@@ -170,21 +170,19 @@
     <div class="container">
       <div class="section-label">Methodology</div>
       <h1 class="page-title">Spectral Analysis Methodology</h1>
-      <p class="page-subtitle">How we measure the chemistry of stars — every step documented and reproducible</p>
+      <p class="page-subtitle">How we measure what a star is made of, step by step, starting with the Sun</p>
       <a href="/assets/docs/exoplanet-codex-method-v2.0.pdf" class="btn-download" download>
-        ↓ Download Methodology PDF (v2.0)
+        ↓ Earlier methodology PDF (v2.0, archived)
       </a>
       <nav class="jump-links" aria-label="Page sections">
-        <a href="#data-acquisition">Data Acquisition</a>
-        <a href="#instruments">Instruments</a>
-        <a href="#stellar-model">Stellar Model</a>
-        <a href="#atomic-data">Atomic Data</a>
-        <a href="#spectral-analysis">Spectral Analysis</a>
-        <a href="#line-profiles">Line Profiles</a>
-        <a href="#abundance">Abundance Derivation</a>
+        <a href="#process">The process</a>
+        <a href="#data">Data</a>
+        <a href="#cleaning">Cleaning the spectra</a>
+        <a href="#lines">Lines</a>
+        <a href="#models">Models</a>
+        <a href="#measuring">Measuring</a>
         <a href="#uncertainty">Uncertainty</a>
-        <a href="#pipeline">Data Model</a>
-        <a href="#validation">Solar Validation</a>
+        <a href="#publication">Publication</a>
         <a href="#references">References</a>
       </nav>
     </div>
@@ -193,447 +191,206 @@
   <main class="page-content">
     <div class="container">
 
-      <!-- 1. DATA ACQUISITION -->
-      <section class="method-section" id="data-acquisition">
+      <!-- 1. THE PROCESS -->
+      <section class="method-section" id="process">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 01</p>
-          <h2 class="method-section-title">Data Acquisition</h2>
-          <p class="method-intro">All spectra are retrieved from the ESO Science Archive, which provides public access to reduced data products after a 12-month proprietary period.</p>
+          <h2 class="method-section-title">One star, A to Z</h2>
+          <p class="method-intro">The question is simple to state. How much of each element is in a star's outer layers? Every element absorbs light at its own set of wavelengths. Those absorption lines show up as dark notches in the star's <a href="/glossary/#spectrum">spectrum</a>, the star's light spread out by wavelength. The depth and shape of each notch tell us how many atoms of that element are there.</p>
         </div>
+
+        <p class="method-intro">We start with the Sun. Its composition has been measured carefully by other teams, so it is the test. If our method cannot reproduce the published solar values, it has no business measuring other stars. The same process will then be applied to stars that host planets.</p>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Primary Instrument: HARPS</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
-              <tbody>
-                <tr><td>Telescope</td><td>ESO 3.6m, La Silla</td><td>Chile</td></tr>
-                <tr><td>Spectral Resolution</td><td>R ~ 115,000</td><td>vs. R ~ 42,000 in Schmitt (2010)</td></tr>
-                <tr><td>Wavelength Coverage</td><td>3780 – 6910 Å</td><td>Two arms: blue + red</td></tr>
-                <tr><td>Mode</td><td>HAM</td><td>High Accuracy Mode</td></tr>
-                <tr><td>Data Product</td><td>S1D</td><td>1D merged, wavelength-calibrated, barycentric-corrected</td></tr>
-                <tr><td>Archive Epochs (55 Cnc A)</td><td>88 spectra</td><td>All used after quality inspection</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">The sixteen steps</h3>
+          <p class="method-intro">Every star and every element goes through the same steps, in this order. Steps 1 to 8 are preparation. Nothing is measured until they are done.</p>
+          <ul class="method-steps">
+            <li><span class="step-num">1</span><span><strong>Choose the star.</strong></span></li>
+            <li><span class="step-num">2</span><span><strong>Find every instrument and data holding.</strong> A holding is one set of observations of the star from one instrument, as we store it.</span></li>
+            <li><span class="step-num">3</span><span><strong>Audit each holding.</strong> Check what the files really are: their units, their wavelength scale and whether anything has already been done to them.</span></li>
+            <li><span class="step-num">4</span><span><strong>Correct telluric absorption and normalise the continuum, once per holding, then freeze.</strong> The prepared spectrum is then used unchanged for every element.</span></li>
+            <li><span class="step-num">5</span><span><strong>Collect the literature on the star.</strong> What have other teams measured, and how?</span></li>
+            <li><span class="step-num">6</span><span><strong>Secure the atomic line data.</strong> Wavelengths and line strengths for every line we might use.</span></li>
+            <li><span class="step-num">7</span><span><strong>Grade lines against the published solar sets.</strong></span></li>
+            <li><span class="step-num">8</span><span><strong>Fix or solve the stellar parameters.</strong> Temperature, surface gravity and the other numbers that describe the star's atmosphere.</span></li>
+            <li><span class="step-num">9</span><span><strong>Measure iron first.</strong> Iron has more usable lines than any other element, so it is the first check that everything above is working.</span></li>
+            <li><span class="step-num">10</span><span><strong>Measure every band, instrument and engine separately.</strong></span></li>
+            <li><span class="step-num">11</span><span><strong>Uncertainty analysis.</strong> Build the error bar for each result.</span></li>
+            <li><span class="step-num">12</span><span><strong>Check against the literature.</strong></span></li>
+            <li><span class="step-num">13</span><span><strong>Report problem lines.</strong> Lines that disagree with the rest are listed, not quietly dropped.</span></li>
+            <li><span class="step-num">14</span><span><strong>Derived ratios.</strong> Ratios such as carbon to oxygen, which matter for planets.</span></li>
+            <li><span class="step-num">15</span><span><strong>Human review.</strong></span></li>
+            <li><span class="step-num">16</span><span><strong>Publication.</strong></span></li>
+          </ul>
         </div>
 
-        <div class="method-subsection" id="instruments">
-          <h3 class="method-subsection-title">Instrument Suite</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Instrument</th><th>Facility</th><th>Wavelength Range</th><th>Resolution</th><th>Usage</th></tr></thead>
-              <tbody>
-                <tr>
-                  <td>HARPS</td>
-                  <td>ESO 3.6m, La Silla, Chile</td>
-                  <td>3780 – 6910 Å (optical)</td>
-                  <td>R ~ 115,000</td>
-                  <td>Primary instrument for all FGK/M dwarf targets — optical stellar spectra</td>
-                </tr>
-                <tr>
-                  <td>HST/STIS</td>
-                  <td>Hubble Space Telescope — Space Telescope Imaging Spectrograph</td>
-                  <td>~1150 – 10,000 Å (UV + optical)</td>
-                  <td>Varies by grating</td>
-                  <td>UV oxygen lines inaccessible from ground. Gratings used: G140M, G750L, G430L (55 Cnc A); E140H, E140M, E230H, E230M (Alpha Cen A)</td>
-                </tr>
-                <tr>
-                  <td>HST/COS</td>
-                  <td>Hubble Space Telescope — Cosmic Origins Spectrograph</td>
-                  <td>~1150 – 3200 Å (far-UV)</td>
-                  <td>High sensitivity far-UV</td>
-                  <td>Far-UV spectra where available; high sensitivity for faint far-UV features</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="method-callout">
-            <p class="method-callout-title">Multi-Wavelength Strategy</p>
-            <p>Optical HARPS spectra cover the majority of target elements. HST UV coverage (STIS + COS) unlocks element lines that are blocked by Earth's atmosphere — critical for N, O, C UV transitions and for cross-validating ground-based oxygen measurements. HST data retrieved from MAST (Mikulski Archive for Space Telescopes, mast.stsci.edu).</p>
-          </div>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Target Selection Criteria</h3>
-          <ol class="method-steps">
-            <li><span class="step-num">1</span>Confirmed exoplanet host (NASA Exoplanet Archive)</li>
-            <li><span class="step-num">2</span>FGK spectral type (T<sub>eff</sub> 4000–7000 K) — ATLAS9 grid; M dwarfs (T<sub>eff</sub> &lt; 4000 K) use MARCS spherical grid</li>
-            <li><span class="step-num">3</span>Main sequence dwarf (log&thinsp;g &gt; 3.8) — plane-parallel atmosphere valid</li>
-            <li><span class="step-num">4</span>V &lt; 9 mag — sufficient HARPS S/N achievable</li>
-            <li><span class="step-num">5</span>Multiple HARPS epochs available for co-adding</li>
-            <li><span class="step-num">6</span>Not a spectroscopic binary</li>
-          </ol>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Spectrum Co-Adding (55 Cnc A — 88 Epochs)</h3>
-          <div class="method-eq">S/N<sub>coadd</sub> ≈ √88 × 100 ≈ 940 per pixel at 6000 Å</div>
-          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.2rem;">This makes phosphorus (P I 6034 Å, EW ~ 12 mÅ) and lithium (Li I 6707 Å, EW ~ 3 mÅ) accessible — both invisible in a single exposure.</p>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Element</th><th>Line EW</th><th>Single epoch S/N 100</th><th>Co-add S/N 940</th></tr></thead>
-              <tbody>
-                <tr><td>Fe I</td><td>~80 mÅ</td><td>Yes (40σ)</td><td>Yes (400σ)</td></tr>
-                <tr><td>Ca I</td><td>~40 mÅ</td><td>Yes (20σ)</td><td>Yes (200σ)</td></tr>
-                <tr><td>P I</td><td>~12 mÅ</td><td>No (6σ — marginal)</td><td>Yes (60σ)</td></tr>
-                <tr><td>Li I</td><td>~3 mÅ</td><td>No (1.5σ)</td><td>Yes (15σ)</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="method-callout">
-            <p class="method-callout-title">Radial Velocity Correction</p>
-            <p>Each spectrum is shifted to the stellar rest frame before co-adding: <code>λ_rest = λ_obs / (1 + v_r / c)</code>. 55 Cnc A hosts 5 planets with total RV variation up to ±100 m/s — equivalent to ~0.002 Å at 6000 Å. Uncorrected co-adding blurs line profiles at the 0.2-pixel level.</p>
-          </div>
+        <div class="method-callout">
+          <p class="method-callout-title">The orchestrator</p>
+          <p>The steps are run by one program, the orchestrator. We give it one command per star and element. It works through every combination of band, instrument and calculation method, and reports the status of each one: done, held back and why, or not run yet.</p>
         </div>
       </section>
 
-      <!-- 2. STELLAR MODEL -->
-      <section class="method-section" id="stellar-model">
+      <!-- 2. DATA -->
+      <section class="method-section" id="data">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 02</p>
-          <h2 class="method-section-title">Stellar Model Atmosphere</h2>
-          <p class="method-intro">We use the ATLAS9 one-dimensional, plane-parallel, LTE model atmosphere grid of Castelli &amp; Kurucz (2003) — the current standard for FGK main-sequence dwarfs.</p>
+          <h2 class="method-section-title">Data</h2>
+          <p class="method-intro">No single instrument covers every wavelength we need, so we use several. Each one is measured on its own. Having more than one look at the same lines also shows us when a result depends on the instrument rather than on the star.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">ATLAS9 Model Assumptions</h3>
+          <h3 class="method-subsection-title">Wavelength bands</h3>
+          <p class="method-intro">We split the spectrum into bands. Each band is handled under its own rules, because the problems change with wavelength. In the near-UV, lines are packed so tightly that no line stands alone. In the red and infrared, lines are sparse but Earth's atmosphere absorbs strongly.</p>
           <div class="method-table-wrap">
             <table class="method-table">
-              <thead><tr><th>Assumption</th><th>Plain English</th><th>Valid For</th></tr></thead>
+              <thead><tr><th>Band</th><th>Wavelengths (Å)</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>1D plane-parallel geometry</td>
-                  <td>Atmosphere modeled as flat parallel layers</td>
-                  <td>Main-sequence dwarfs (log&thinsp;g &gt; 3.5)</td>
-                </tr>
-                <tr>
-                  <td>LTE</td>
-                  <td>Each layer in thermal equilibrium — Boltzmann/Saha distributions</td>
-                  <td>Dense collision-dominated FGK photospheres</td>
-                </tr>
-                <tr>
-                  <td>Opacity Distribution Functions</td>
-                  <td>Millions of line opacities treated statistically for efficiency</td>
-                  <td>All spectral types</td>
-                </tr>
+                <tr><td>Near-UV</td><td>3000 – 3780</td></tr>
+                <tr><td>VIS (visible)</td><td>3780 – 6910</td></tr>
+                <tr><td>Red-optical</td><td>6910 – 9199</td></tr>
+                <tr><td>NIR (near-infrared)</td><td>9199 – 13000</td></tr>
+                <tr><td>H (infrared)</td><td>15007 – 17494</td></tr>
+                <tr><td>K (infrared)</td><td>19452 – 24846</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;">Cross-validation: key results also run through MARCS grid (Gustafsson et al. 2008). ATLAS9 vs. MARCS differences are typically &lt; 0.03 dex for FGK dwarfs and are included in the systematic uncertainty budget.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">55 Cancri A Model Parameters</h3>
+          <h3 class="method-subsection-title">Solar holdings by band</h3>
           <div class="method-table-wrap">
             <table class="method-table">
-              <thead><tr><th>Parameter</th><th>Symbol</th><th>Value</th><th>Uncertainty</th><th>Source</th></tr></thead>
+              <thead><tr><th>Holding</th><th>What it is</th><th>Bands used</th></tr></thead>
               <tbody>
-                <tr><td>Effective temperature</td><td>T<sub>eff</sub></td><td>5196 K</td><td>± 24 K</td><td><em>CHARA interferometry — von Braun et al. 2011, ApJ 740, 49</em></td></tr>
-                <tr><td>Surface gravity</td><td>log&thinsp;g</td><td>4.41</td><td>± 0.02</td><td><em>CHARA interferometry — von Braun et al. 2011</em></td></tr>
-                <tr><td>Metallicity</td><td>[Fe/H]</td><td>+0.32</td><td>± 0.02</td><td><em>Spectroscopic self-consistency (§4)</em></td></tr>
-                <tr><td>Microturbulence</td><td>ξ</td><td>~0.9 km/s</td><td>± 0.1 km/s</td><td><em>Fe I EW self-consistency (§4)</em></td></tr>
+                <tr><td>Kitt Peak solar atlas, our telluric correction</td><td>The 1984 Kitt Peak spectrum of sunlight, corrected for Earth's atmosphere by us with molecfit</td><td>Near-UV, VIS, red-optical, NIR</td></tr>
+                <tr><td>Kitt Peak solar atlas, Kurucz 2005 correction</td><td>The same atlas with Earth's atmosphere removed by Kurucz (2005)</td><td>Near-UV, VIS, red-optical, NIR</td></tr>
+                <tr><td>IAG solar atlas</td><td>A second, independent spectrum of sunlight from Göttingen, published already corrected (Reiners et al. 2016; Baker et al. 2020)</td><td>VIS, red-optical, NIR</td></tr>
+                <tr><td>HARPS</td><td>Ten direct exposures of the Sun from the HARPS spectrograph in Chile, corrected by us with molecfit</td><td>VIS</td></tr>
+                <tr><td>CRIRES+</td><td>Infrared spectra of sunlight reflected off the asteroid Vesta, from the CRIRES+ spectrograph in Chile</td><td>NIR, H, K</td></tr>
               </tbody>
             </table>
           </div>
+          <p class="method-intro">Raw spectra are never used. Every spectrum in this table has been corrected for Earth's atmosphere and normalised before any line is measured.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Other targets</h3>
+          <p class="method-intro">We also hold spectra of planet hosts and nearby stars, including <a href="/systems/55-cancri/">55 Cancri A</a> and <a href="/systems/alpha-centauri-a/">α Centauri A</a> and <a href="/systems/alpha-cen-b/">B</a>. These include HARPS, ESPRESSO, CRIRES+ and Hubble ultraviolet spectra. They wait until the Sun is finished. Each system page lists what we have for it.</p>
         </div>
       </section>
 
-      <!-- 3. ATOMIC DATA -->
-      <section class="method-section" id="atomic-data">
+      <!-- 3. TELLURIC + CONTINUUM -->
+      <section class="method-section" id="cleaning">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 03</p>
-          <h2 class="method-section-title">Atomic Data: Line List</h2>
-          <p class="method-intro">All atomic line data are loaded from external, version-controlled CSV files. No wavelengths or log&thinsp;gf values are hardcoded in pipeline software — ensuring full traceability.</p>
+          <h2 class="method-section-title">Telluric correction and continuum</h2>
+          <p class="method-intro">Before a spectrum can be measured, two things have to be removed: the fingerprint of Earth's air, and the overall brightness level. We do this once for each holding. The result is then frozen and used for every element, so all elements see the same spectrum.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">VALD3 Query Settings</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Setting</th><th>Value</th><th>Notes</th></tr></thead>
-              <tbody>
-                <tr><td>Query type</td><td>Extract Stellar</td><td>Filters by predicted line depth for given stellar parameters</td></tr>
-                <tr><td>Wavelength range</td><td>3780 – 6910 Å</td><td>Matches HARPS coverage</td></tr>
-                <tr><td>Depth threshold</td><td>≥ 1% of continuum</td><td>Removes lines too weak to measure</td></tr>
-                <tr><td>Access method</td><td>FTP (required)</td><td>HTTP truncates large requests — use vald.astro.uu.se FTP</td></tr>
-                <tr><td>Format</td><td>Long format</td><td>Includes broadening parameters (γ<sub>vdW</sub>)</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="method-callout">
-            <p class="method-callout-title">⚠ FTP Required for Full Line List</p>
-            <p>The VALD3 web interface truncates output for large requests. Queries covering the full HARPS range with 27 target elements require FTP access to retrieve the complete line list. Register at vald.astro.uu.se for a free academic FTP account.</p>
-          </div>
+          <h3 class="method-subsection-title">Telluric lines</h3>
+          <p class="method-intro">Telluric lines are absorption by Earth's own atmosphere, mostly water vapour and oxygen. They land on top of the star's lines and can make a line look deeper than it is. Every spectrum taken from the ground is corrected. Only a telescope in space escapes them.</p>
+          <p class="method-intro">For HARPS and CRIRES+ we model the atmosphere on the night of each observation with molecfit, a tool from the European Southern Observatory (Smette et al. 2015). The Kitt Peak atlas has no record of when or where each part was observed, so we fit its atmosphere freely. We also use the independent Kurucz (2005) correction of the same atlas. The IAG atlas comes already corrected by its authors.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">NIST Quality Grades</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Grade</th><th>log gf Uncertainty</th><th>Usage Policy</th></tr></thead>
-              <tbody>
-                <tr><td>A+</td><td>&lt; 1%</td><td>Full science use</td></tr>
-                <tr><td>A</td><td>&lt; 3%</td><td>Full science use</td></tr>
-                <tr><td>B</td><td>&lt; 10%</td><td>Science use, flagged in uncertainty budget</td></tr>
-                <tr><td>C</td><td>&lt; 25%</td><td>Excluded from primary results</td></tr>
-                <tr><td>D</td><td>&gt; 25%</td><td>Excluded entirely</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Target Element List — 27 Elements</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Priority</th><th>Element</th><th>Symbol</th><th>Group</th><th>Scientific Significance</th></tr></thead>
-              <tbody>
-                <tr><td class="priority-1">1</td><td>Iron I</td><td>Fe I</td><td>Iron peak</td><td>[Fe/H] calibration, T<sub>eff</sub> constraint</td></tr>
-                <tr><td class="priority-1">1</td><td>Iron II</td><td>Fe II</td><td>Iron peak</td><td>log&thinsp;g constraint via ionization equilibrium</td></tr>
-                <tr><td class="priority-1">1</td><td>Carbon</td><td>C</td><td>CHNOPS</td><td>C/O ratio — carbon vs. oxygen-rich planet mineralogy</td></tr>
-                <tr><td class="priority-1">1</td><td>Oxygen</td><td>O</td><td>CHNOPS</td><td>C/O ratio; most abundant metal in rocky planets</td></tr>
-                <tr><td class="priority-1">1</td><td>Magnesium</td><td>Mg</td><td>Alpha</td><td>Mg/Si ratio — mantle mineralogy (olivine vs. pyroxene)</td></tr>
-                <tr><td class="priority-1">1</td><td>Silicon</td><td>Si</td><td>Alpha</td><td>Primary rocky planet building block</td></tr>
-                <tr><td class="priority-1">1</td><td>Calcium</td><td>Ca</td><td>Alpha</td><td>Alpha element tracer; strong optical lines</td></tr>
-                <tr><td class="priority-1">1</td><td>Titanium</td><td>Ti</td><td>Alpha</td><td>Galactic chemical evolution tracer; perovskite in mantles</td></tr>
-                <tr><td class="priority-1">1</td><td>Nickel</td><td>Ni</td><td>Iron peak</td><td>Rocky planet core composition; Fe/Ni ratio</td></tr>
-                <tr><td class="priority-1">1</td><td>Sodium</td><td>Na</td><td>Bio-significant</td><td>Biological tracer; Na D doublet</td></tr>
-                <tr><td class="priority-1">1</td><td>Phosphorus</td><td>P</td><td>CHNOPS</td><td>Limiting nutrient for life; varies 10× across FGK stars</td></tr>
-                <tr><td class="priority-1">1</td><td>Sulfur</td><td>S</td><td>CHNOPS/Alpha</td><td>Life-essential volatile; disk chemistry tracer</td></tr>
-                <tr><td class="priority-2">2</td><td>Nitrogen</td><td>N</td><td>CHNOPS</td><td>Life-essential; difficult optical lines</td></tr>
-                <tr><td class="priority-2">2</td><td>Cobalt</td><td>Co</td><td>Iron peak</td><td>Fe peak nucleosynthesis tracer</td></tr>
-                <tr><td class="priority-2">2</td><td>Chromium</td><td>Cr</td><td>Iron peak</td><td>Type Ia vs. Type II SNe tracer via Cr/Fe</td></tr>
-                <tr><td class="priority-2">2</td><td>Aluminum</td><td>Al</td><td>Rocky planet</td><td>Refractory element; crustal composition</td></tr>
-                <tr><td class="priority-2">2</td><td>Potassium</td><td>K</td><td>Bio-significant</td><td>Life-essential; difficult lines</td></tr>
-                <tr><td class="priority-2">2</td><td>Barium</td><td>Ba</td><td>s-process</td><td>AGB star enrichment history</td></tr>
-                <tr><td class="priority-2">2</td><td>Yttrium</td><td>Y</td><td>s-process</td><td>Stellar age chemical clock (Y/Mg ratio)</td></tr>
-                <tr><td class="priority-2">2</td><td>Vanadium</td><td>V</td><td>Iron peak</td><td>Enzyme cofactor; nucleosynthesis tracer</td></tr>
-                <tr><td class="priority-2">2</td><td>Copper</td><td>Cu</td><td>Iron peak</td><td>Odd-Z iron-peak tracer; bio-essential; Cu I 5105/5218 Å</td></tr>
-                <tr><td class="priority-3">3</td><td>Manganese</td><td>Mn</td><td>Iron peak</td><td>Odd-Z nucleosynthesis; metallicity-dependent</td></tr>
-                <tr><td class="priority-3">3</td><td>Scandium</td><td>Sc</td><td>Light iron peak</td><td>Odd-even nucleosynthesis effect</td></tr>
-                <tr><td class="priority-3">3</td><td>Lithium</td><td>Li</td><td>Age indicator</td><td>Stellar age constraint; depletes with time</td></tr>
-                <tr><td class="priority-3">3</td><td>Europium</td><td>Eu</td><td>r-process</td><td>Neutron star merger enrichment history</td></tr>
-                <tr><td class="priority-3">3</td><td>Zirconium</td><td>Zr</td><td>s-process</td><td>Refractory s-process tracer</td></tr>
-                <tr><td class="priority-3">3</td><td>Strontium</td><td>Sr</td><td>s-process</td><td>Light s-process anchor; completes Sr/Y/Ba/Zr picture</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Special Line Handling</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Line</th><th>Issue</th><th>Treatment</th></tr></thead>
-              <tbody>
-                <tr><td>[O I] 6300.304 Å</td><td>Blended with Fe I + Ni I 6300.336 Å</td><td>Ni blend subtracted using measured Ni abundance; no NLTE correction (forbidden line)</td></tr>
-                <tr><td>O I 7771–7775 Å triplet</td><td>Large NLTE corrections (−0.2 to −0.4 dex)</td><td>Amarsi et al. (2021) grid; cross-checked against [O I] 6300 Å</td></tr>
-                <tr><td>Na I D 5890/5896 Å</td><td>Strong — damping wings + NLTE</td><td>Voigt profile fit; Lind et al. (2011) correction (~−0.07 dex)</td></tr>
-                <tr><td>P I 6034/6043 Å</td><td>Very weak — requires S/N &gt; 300</td><td>Only accessible in co-added spectrum; upper limit if &lt; 3σ</td></tr>
-                <tr><td>C I 5380 Å</td><td>High χ (7.7 eV) — T<sub>eff</sub> sensitive</td><td>Cross-validated against C I 5052 Å; Amarsi et al. (2019) NLTE correction</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">Continuum</h3>
+          <p class="method-intro">The <a href="/glossary/#line-profiles">continuum</a> is the brightness the star would have with no absorption lines at all. Line depths are measured against it, so it has to be set to 1 first. This is called normalising.</p>
+          <p class="method-intro">Published solar studies place the continuum at the local high points of the spectrum near each line. We do the equivalent inside the fit. Near each line we compare the observed spectrum with our own calculated spectrum, and set the continuum level from that comparison. Points that disagree badly, for example because of an unlisted line, are clipped out first.</p>
+          <p class="method-intro">For weak lines this matters a great deal. A line only 1% deep is changed noticeably by a continuum error of a tenth of a percent. So we also repeat each measurement on the second, independent IAG atlas. The difference goes into the error bar as the continuum uncertainty.</p>
+          <p class="method-intro">In the near-UV the true continuum is never seen, because lines cover every wavelength. There we can only place a pseudo-continuum, and its uncertainty is priced separately.</p>
         </div>
       </section>
 
-      <!-- 4. SPECTRAL ANALYSIS -->
-      <section class="method-section" id="spectral-analysis">
+      <!-- 4. ATOMIC DATA + LINE GRADES -->
+      <section class="method-section" id="lines">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 04</p>
-          <h2 class="method-section-title">Spectral Analysis</h2>
-          <p class="method-intro">Before measuring elemental abundances, the spectrum is continuum-normalized and stellar parameters (T<sub>eff</sub>, log&thinsp;g, ξ) are verified through self-consistency checks on Fe I and Fe II lines.</p>
+          <h2 class="method-section-title">Atomic data and line grades</h2>
+          <p class="method-intro">To turn a line's depth into a number of atoms, we need to know how strongly a single atom absorbs at that wavelength. This is the line's oscillator strength, written gf. A wrong gf gives a wrong abundance, however good the spectrum is. So we choose lines by how well their gf is known.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Continuum Normalization</h3>
-          <ol class="method-steps">
-            <li><span class="step-num">1</span>Identify continuum anchor windows — regions free of significant absorption for the target's stellar parameters (Barklem &amp; Aspelund-Johansson 2005).</li>
-            <li><span class="step-num">2</span>For metal-rich stars ([Fe/H] &gt; +0.2), use the ATLAS9 model continuum as additional reference in crowded regions (5000–5400 Å).</li>
-            <li><span class="step-num">3</span>Fit a Chebyshev polynomial (degree 3) through anchor points with iterative 3σ sigma-clipping.</li>
-            <li><span class="step-num">4</span>Divide observed spectrum by the fitted continuum.</li>
-            <li><span class="step-num">5</span>Verify: σ &lt; 0.005 (0.5% of continuum) in clean windows before proceeding.</li>
-          </ol>
-          <div class="method-callout">
-            <p class="method-callout-title">Challenge for 55 Cancri A</p>
-            <p>At [Fe/H] = +0.32, the spectrum is significantly more crowded than solar. The 5000–5400 Å region has very high Fe I line density. The ATLAS9 model continuum is weighted more heavily here to avoid over-fitting through shallow absorption features.</p>
-          </div>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Stellar Parameter Self-Consistency</h3>
+          <h3 class="method-subsection-title">Three line grades</h3>
           <div class="method-table-wrap">
             <table class="method-table">
-              <thead><tr><th>Parameter</th><th>Diagnostic</th><th>Convergence Criterion</th></tr></thead>
+              <thead><tr><th>Grade</th><th>Which lines</th><th>Why</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>T<sub>eff</sub></td>
-                  <td>Fe I abundance vs. excitation potential χ</td>
-                  <td>|∂[Fe/H]/∂χ| &lt; 0.01 dex/eV — requires ≥ 20 Fe I lines spanning χ = 0.5–5.0 eV</td>
-                </tr>
-                <tr>
-                  <td>ξ (microturbulence)</td>
-                  <td>Fe I abundance vs. reduced EW log(EW/λ)</td>
-                  <td>|∂[Fe/H]/∂log(EW/λ)| &lt; 0.01 dex per unit</td>
-                </tr>
-                <tr>
-                  <td>log&thinsp;g</td>
-                  <td>Ionization equilibrium: A(Fe I) vs. A(Fe II)</td>
-                  <td>|A(Fe I) − A(Fe II)| &lt; 0.05 dex</td>
-                </tr>
+                <tr><td>Reference</td><td>The lines used by the published solar analysis, with the gf values those authors used. That is Asplund, Amarsi &amp; Grevesse (2021), or the paper they cite for that element. Any line with a laboratory-measured gf is added.</td><td>We repeat published work first, then extend it. If we measure the same lines with the same atomic data, any difference from the published answer comes from our spectra or our method, and we can find it.</td></tr>
+                <tr><td>Codex</td><td>Any line whose gf comes with a published uncertainty: a laboratory measurement, a stated error, or a NIST accuracy grade of A to C. Lines up to 60% deep.</td><td>A wider set of lines, each with an error we can put a number on.</td></tr>
+                <tr><td>Deep</td><td>The same gf standard as Codex, for lines deeper than 60%.</td><td>Strong lines are more sensitive to the star's gas motions and to line broadening. They are reported, but as a secondary result.</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="font-size:0.85rem;color:var(--text-dim);margin:0.8rem 0 1.5rem;">All three constraints must be simultaneously satisfied. Convergence typically takes 3–5 iterations starting from interferometric values.</p>
-
-          <figure class="method-figure">
-            <img src="/assets/images/methodology/fig5_self_consistency.png"
-                 alt="Three self-consistency diagnostic plots for 55 Cancri A"
-                 onerror="this.closest('figure').style.display='none'">
-            <figcaption><strong>Figure 5.</strong> Self-consistency diagnostics for 55 Cancri A. Left: Fe I abundance vs. χ — zero slope confirms T<sub>eff</sub>. Centre: Fe I vs. log(EW/λ) — zero slope confirms ξ. Right: Fe I vs. Fe II agreement confirms log&thinsp;g.</figcaption>
-          </figure>
+          <p class="method-intro">A line whose gf has no stated uncertainty can still be measured, but it does not reach a grade. We note the gap rather than invent an error for it.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">EW Measurement Quality Thresholds</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Criterion</th><th>Requirement</th><th>Action if Failed</th></tr></thead>
-              <tbody>
-                <tr><td>EW minimum</td><td>&gt; 5 mÅ</td><td>Below detection — report upper limit</td></tr>
-                <tr><td>EW maximum</td><td>&lt; 300 mÅ</td><td>Saturated — exclude from LTE analysis</td></tr>
-                <tr><td>Fit quality (χ²<sub>red</sub>)</td><td>&lt; 2.0</td><td>Refit or exclude</td></tr>
-                <tr><td>Line S/N</td><td>&gt; 5</td><td>Exclude</td></tr>
-                <tr><td>Center shift</td><td>&lt; 0.05 Å from VALD/NIST</td><td>Flag — possible misidentification</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">One gf per physical line</h3>
+          <p class="method-intro">Many lines are really a cluster of very close components, split by the structure of the atom's nucleus (hyperfine structure) or by its isotopes. The calculation needs each component to get the line's shape right. But the gf is fixed once for the whole physical line, from a single master table. The components are scaled together so that their total matches it. A line with no entry in that table stops the run with an error. Nothing falls back to a default.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Lines we remove</h3>
+          <p class="method-intro">Published solar studies leave out lines that are saturated, meaning so strong that the depth barely changes with abundance, and lines too blended with neighbours to measure. We do the same. A saturated line that the published solar analyses did not use is proposed for removal, and a person approves each one. Blends are handled by calculating every known atomic and molecular line in the window together.</p>
         </div>
       </section>
 
-      <!-- 5. LINE PROFILES -->
-      <section class="method-section" id="line-profiles">
+      <!-- 5. MODELS + NLTE -->
+      <section class="method-section" id="models">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 05</p>
-          <h2 class="method-section-title">Line Profiles</h2>
-          <p class="method-intro">The correct line profile model depends on line strength. Gaussian fits work well for weak lines; strong lines with pressure-broadened wings require Voigt profiles.</p>
+          <h2 class="method-section-title">Model atmospheres and NLTE</h2>
+          <p class="method-intro">To predict what a line should look like, we need a model of the star's outer layers: how temperature and pressure change with depth. This is a <a href="/glossary/#model-atm">model atmosphere</a>. We also need to know how the atoms in it behave. Different choices give slightly different answers, so we run several and report each one on its own.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Gaussian vs. Lorentzian vs. Voigt</h3>
+          <h3 class="method-subsection-title">Model atmospheres</h3>
+          <p class="method-intro">A one-dimensional (1D) model treats the atmosphere as flat layers, each with one temperature. We use two standard 1D families: MARCS (Gustafsson et al. 2008) and ATLAS9 (Castelli &amp; Kurucz 2003). The real Sun has rising hot gas and sinking cool gas side by side. A ⟨3D⟩ model is built from a full 3D simulation of that motion (the Stagger grid, Magic et al. 2013), averaged into layers. Swapping MARCS for ATLAS9 on the same lines is one of the measured terms in the error bar.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">NLTE</h3>
+          <p class="method-intro">The simplest calculation assumes LTE, local thermodynamic equilibrium: that each layer's atoms are set by its temperature alone. In a star's thin outer layers that is not quite true. Light from deeper down also excites the atoms. Allowing for this is called NLTE (non-LTE). It can shift an abundance by a few hundredths of a dex or more. (Abundances are on a log scale, and one dex is a factor of ten, so 0.01 dex is about 2%.)</p>
+          <p class="method-intro">We include NLTE in two ways. The first takes published correction tables for each line (from Amarsi, Bergemann and collaborators) and applies them to the result. Where those tables stop, we compute corrections the same way from the published model atoms (Amarsi et al. 2020). The second puts NLTE inside the calculation itself. Turbospectrum (Gerber et al. 2023) reads departure coefficients, which say how far each atomic level is from LTE, and builds them into the predicted spectrum. That is done on both MARCS 1D and ⟨3D⟩ models.</p>
           <div class="method-table-wrap">
             <table class="method-table">
-              <thead><tr><th>Profile</th><th>Appropriate For</th><th>Physics</th><th>EW Rule</th></tr></thead>
+              <thead><tr><th>Treatment</th><th>Atmosphere</th><th>How NLTE enters</th></tr></thead>
               <tbody>
-                <tr>
-                  <td>Gaussian</td>
-                  <td>Weak lines EW &lt; 80 mÅ</td>
-                  <td>Thermal + instrumental broadening</td>
-                  <td>≈ Voigt (&lt; 1% difference) in this regime</td>
-                </tr>
-                <tr>
-                  <td>Lorentzian</td>
-                  <td>Theoretical damping wings only</td>
-                  <td>Pressure broadening (van der Waals)</td>
-                  <td>Overestimates core depth — not used alone</td>
-                </tr>
-                <tr>
-                  <td><strong>Voigt</strong></td>
-                  <td><strong>All line strengths</strong></td>
-                  <td>Gaussian core convolved with Lorentzian wings</td>
-                  <td><strong>Required for EW &gt; 150 mÅ</strong></td>
-                </tr>
+                <tr><td>1D LTE</td><td>ATLAS9 or MARCS</td><td>None</td></tr>
+                <tr><td>1D NLTE, correction tables</td><td>ATLAS9</td><td>Per-line correction from published tables</td></tr>
+                <tr><td>3D NLTE, correction tables</td><td>ATLAS9 base</td><td>Per-line 3D NLTE correction from published tables</td></tr>
+                <tr><td>1D NLTE, in the calculation</td><td>MARCS</td><td>Departure coefficients inside the synthesis</td></tr>
+                <tr><td>⟨3D⟩ LTE and ⟨3D⟩ NLTE</td><td>Stagger ⟨3D⟩</td><td>None, then departure coefficients, on the same atmosphere</td></tr>
               </tbody>
             </table>
           </div>
-          <p style="font-size:0.85rem;color:var(--text-dim);margin-top:0.5rem;">Always fitted with Voigt profiles: Na D doublet, Mg b triplet (5167–5184 Å), Ba II 5853 Å, Ca H&amp;K (3934/3968 Å).</p>
-
-          <figure class="method-figure">
-            <img src="/assets/images/methodology/fig1_voigt_comparison.png"
-                 alt="Ca I 6162 Å profile showing Gaussian vs Voigt fit comparison"
-                 onerror="this.closest('figure').style.display='none'">
-            <figcaption><strong>Figure 1.</strong> Ca I 6162.17 Å profile — Gaussian (dashed) vs. Voigt (solid) fit. The Gaussian underestimates pressure-broadened wings, leading to ~15% EW error for this line.</figcaption>
-          </figure>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Worked Example: Na I D1 (5895.92 Å)</h3>
-          <p style="font-size:0.9rem;color:var(--text);line-height:1.7;margin-bottom:1.2rem;">The Na I D doublet was first observed in the Sun by Fraunhofer (1814) and identified as sodium by Kirchhoff &amp; Bunsen (1859). For 55 Cnc A ([Fe/H] = +0.32), the lines are especially deep due to enhanced sodium abundance.</p>
-
-          <ol class="method-steps">
-            <li><span class="step-num">1</span><strong>Locate:</strong> Extract ±5 Å around 5895.92 Å after RV correction. D1 and D2 are separated by ~6 Å, well-resolved at R~115,000.</li>
-            <li><span class="step-num">2</span><strong>Choose profile:</strong> Na D EW ~ 450–550 mÅ → damping regime → <strong>Voigt required.</strong> Gaussian would underestimate EW by ~25%, causing ~0.2 dex error in [Na/H] — larger than the entire uncertainty budget.</li>
-            <li><span class="step-num">3</span><strong>Measure EW:</strong> Numerical integration over fitted Voigt profile. EW = ∫(1 − F(λ)/F<sub>c</sub>) dλ, expressed in mÅ.</li>
-            <li><span class="step-num">4</span><strong>Uncertainty:</strong> Primary limit is continuum placement, not photon noise. σ<sub>EW</sub> ≈ σ<sub>cont</sub> × window × 1000 ≈ 0.005 × 6.0 × 1000 ≈ 30 mÅ (~6% relative).</li>
-            <li><span class="step-num">5</span><strong>Atomic data:</strong> λ = 5895.924 Å (NIST A+), χ = 0.000 eV (ground state), log&thinsp;gf = −0.184 (NIST A), γ<sub>vdW</sub> = −7.530 (Barklem 2000). Input to iSpec/Turbospectrum.</li>
-            <li><span class="step-num">6</span><strong>NLTE correction:</strong> −0.07 ± 0.02 dex (Lind et al. 2011) for these parameters. Expected result: [Na/H] ≈ +0.34 to +0.44, [Na/Fe] ≈ +0.02 to +0.12 (near-solar ratio).</li>
-          </ol>
-
-          <figure class="method-figure">
-            <img src="/assets/images/methodology/fig2_sodium_example.png"
-                 alt="Na I D1 5895.92 Å profile in 55 Cancri A with Voigt fit"
-                 onerror="this.closest('figure').style.display='none'">
-            <figcaption><strong>Figure 2.</strong> Na I D1 5895.92 Å in 55 Cnc A co-added spectrum. Solid: Voigt fit (EW ~ 500 mÅ). Dashed: Gaussian fit for comparison — note the wing underestimate. Bottom: residuals.</figcaption>
-          </figure>
+          <p class="method-intro">Each treatment is its own result. They are never averaged together. If two treatments disagree, the disagreement is information about the physics, and averaging would hide it.</p>
         </div>
       </section>
 
-      <!-- 6. ABUNDANCE DERIVATION -->
-      <section class="method-section" id="abundance">
+      <!-- 6. MEASURING -->
+      <section class="method-section" id="measuring">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 06</p>
-          <h2 class="method-section-title">Abundance Derivation</h2>
-          <p class="method-intro">From equivalent width to photospheric abundance — via the curve of growth, iSpec/Turbospectrum radiative transfer, and solar normalization to Asplund et al. (2021).</p>
+          <h2 class="method-section-title">Measuring an abundance</h2>
+          <p class="method-intro">An <a href="/glossary/#abundance">abundance</a> is the number of atoms of an element for every trillion hydrogen atoms, on a log scale. For the Sun, iron is about 7.46 on that scale (Asplund et al. 2021). We find it by changing the abundance in our calculation until the predicted line matches the observed one.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">The Curve of Growth</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Regime</th><th>EW Range</th><th>Behavior</th><th>Notes</th></tr></thead>
-              <tbody>
-                <tr><td>Linear</td><td>&lt; ~50 mÅ</td><td>EW ∝ N (number of absorbing atoms)</td><td>Direct proportionality — preferred</td></tr>
-                <tr><td>Flat (saturation)</td><td>~50–150 mÅ</td><td>EW grows slowly with abundance</td><td>Sensitive to microturbulence ξ</td></tr>
-                <tr><td>Damping</td><td>&gt; ~150 mÅ</td><td>EW ∝ √N (pressure-broadened wings)</td><td>Requires accurate γ<sub>vdW</sub>; Voigt fit only</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">Spectrum synthesis, the main route</h3>
+          <p class="method-intro">Spectrum synthesis means calculating the whole stretch of spectrum around a line: the line itself, its neighbours, and any molecules there. We use Turbospectrum (Plez 2012) through iSpec (Blanco-Cuaresma et al. 2014). The program changes the abundance until the calculated spectrum best fits the observed one. Because every neighbour is in the calculation, a blend is modelled rather than ignored. In the near-UV this is the only route allowed, since no line there stands alone.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Solar Normalization</h3>
-          <div class="method-eq">[X/H] = A(X)<sub>star</sub> − A(X)<sub>sun</sub>&nbsp;&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;[X/Fe] = [X/H] − [Fe/H]</div>
-          <div class="comparison-grid">
-            <div>
-              <p class="comparison-title old">Schmitt (2010) — Predecessor Study</p>
-              <p>Solar reference: Lodders (2003)</p>
-              <p>A(Fe)☉ = 7.50</p>
-              <p>Instrument: ELODIE (R ~ 42,000)</p>
-            </div>
-            <div>
-              <p class="comparison-title new">The Exoplanet Codex (2026)</p>
-              <p>Solar reference: Asplund et al. (2021)</p>
-              <p>A(Fe)☉ = 7.46 (−0.04 dex revision)</p>
-              <p>Instrument: HARPS (R ~ 115,000)</p>
-            </div>
-          </div>
+          <h3 class="method-subsection-title">Profile fit, the second route</h3>
+          <p class="method-intro">In the visible and red bands, many lines are well separated. There we can also fit the line's own shape and measure its <a href="/glossary/#line-profiles">equivalent width</a>: the width of a fully dark strip with the same area as the line. A curve of growth, which links equivalent width to abundance, turns it into an abundance. The two routes are kept as separate results.</p>
+          <p class="method-intro">Simply adding up the missing light over a fixed window is not used. Tested against the HARPS lines, it clipped the wings of strong lines and took in neighbours of weak ones.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Key Science Ratios</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Ratio</th><th>Threshold</th><th>Interpretation</th><th>Solar Value</th></tr></thead>
-              <tbody>
-                <tr><td>C/O</td><td>0.8</td><td>Below: silicate/oxide minerals (Earth-like). Above: SiC, graphite — possible diamond interior</td><td>0.55</td></tr>
-                <tr><td>Mg/Si</td><td>1.0</td><td>Above: olivine-dominated mantle (Mg₂SiO₄). Below: pyroxene-dominated (MgSiO₃)</td><td>1.05</td></tr>
-                <tr><td>Fe/Si</td><td>—</td><td>Iron core mass fraction predictor for rocky planets</td><td>0.86 (mass)</td></tr>
-                <tr><td>[α/Fe]</td><td>—</td><td>High at low [Fe/H] = old star formed before Type Ia SNe Fe enrichment</td><td>~0.0</td></tr>
-                <tr><td>CHNOPS Index</td><td>vs. Redfield ratio</td><td>C:N:O:P:S ratios vs. marine organism composition — habitability indicator</td><td>1.0 (reference)</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">From lines to one number</h3>
+          <p class="method-intro">Each line gives its own abundance. A result combines the lines of one element, from one band, one instrument holding and one treatment. Its value is the median over those lines, so a single odd line cannot pull it far. When the published analysis we are repeating used a plain average, we use the same.</p>
         </div>
       </section>
 
@@ -641,261 +398,122 @@
       <section class="method-section" id="uncertainty">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 07</p>
-          <h2 class="method-section-title">Uncertainty Analysis</h2>
-          <p class="method-intro">The uncertainty budget follows the Type A / Type B framework of the JCGM Guide to the Expression of Uncertainty in Measurement (GUM) — consistent with precision metrology practice.</p>
+          <h2 class="method-section-title">Uncertainty</h2>
+          <p class="method-intro">A number without an honest error bar cannot be compared with anything. Our error bar has two parts. The statistical part is how much the lines scatter. The systematic part is how much the answer moves when we change a choice we had to make.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Type A — Statistical (Random)</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Source</th><th>Estimation Method</th><th>Typical Magnitude</th></tr></thead>
-              <tbody>
-                <tr><td>Photon noise on EW</td><td>Covariance matrix of Gaussian/Voigt fit</td><td>σ<sub>EW</sub> ≈ 1.5 × FWHM / S/N</td></tr>
-                <tr><td>Line-to-line scatter</td><td>σ / √N for N lines of same element</td><td>~0.02 – 0.05 dex</td></tr>
-                <tr><td>Continuum placement</td><td>Repeat normalization, vary anchor points</td><td>~0.01 – 0.03 dex</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">Statistical</h3>
+          <p class="method-intro">With several lines, the statistical error is the standard error of the mean: the scatter between lines divided by the square root of their number. With one or two lines there is no scatter to measure. Then we use how sharply the fit's quality worsens as the abundance moves away from the best value.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Type B — Systematic (Non-Random)</h3>
+          <h3 class="method-subsection-title">Systematic</h3>
+          <p class="method-intro">For each systematic term we re-run the same lines with one thing changed, and record how far the answer moves. Each result carries every term below. If any one is missing, the result is held back and no error bar is published.</p>
           <div class="method-table-wrap">
             <table class="method-table">
-              <thead><tr><th>Source</th><th>Estimation Method</th><th>Typical Magnitude</th></tr></thead>
+              <thead><tr><th>Term</th><th>What we change or check</th></tr></thead>
               <tbody>
-                <tr><td>ΔT<sub>eff</sub> = ±50 K</td><td>Re-run abundances at T<sub>eff</sub> ± 50 K</td><td>±0.05 – 0.10 dex</td></tr>
-                <tr><td>Δlog&thinsp;g = ±0.1</td><td>Re-run at log&thinsp;g ± 0.1</td><td>±0.02 – 0.05 dex</td></tr>
-                <tr><td>Δξ = ±0.1 km/s</td><td>Re-run at ξ ± 0.1</td><td>±0.03 – 0.06 dex</td></tr>
-                <tr><td>log&thinsp;gf uncertainty</td><td>NIST grade (A: 3%, B: 10%)</td><td>~0.02 – 0.05 dex</td></tr>
-                <tr><td>NLTE corrections</td><td>Uncertainty on correction grids</td><td>~0.02 – 0.08 dex</td></tr>
-                <tr><td>1D vs. 3D models</td><td>Compare ATLAS9 vs. MARCS</td><td>~0.03 – 0.10 dex (C, O)</td></tr>
-                <tr><td>Continuum (systematic)</td><td>Model-based vs. polynomial normalization</td><td>~0.02 – 0.05 dex</td></tr>
+                <tr><td>Atomic data (gf)</td><td>The published gf uncertainties, combined as explained below</td></tr>
+                <tr><td>Temperature</td><td>The star's temperature</td></tr>
+                <tr><td>Surface gravity</td><td>The star's surface gravity</td></tr>
+                <tr><td>Metallicity</td><td>The star's overall metal content</td></tr>
+                <tr><td>Microturbulence</td><td>The small-scale gas motion that broadens strong lines, raised and lowered</td></tr>
+                <tr><td>Continuum</td><td>Two placements of the continuum, and the second, independent IAG atlas</td></tr>
+                <tr><td>Fit window</td><td>The width of the stretch of spectrum fitted</td></tr>
+                <tr><td>Pseudo-continuum</td><td>Near-UV only, where the true continuum is never seen</td></tr>
+                <tr><td>Telluric</td><td>What is left of Earth's atmosphere after correction, measured against an independent correction</td></tr>
+                <tr><td>Method check</td><td>How far the method misses the known answer in the visible band</td></tr>
+                <tr><td>NLTE</td><td>The uncertainty in the NLTE correction</td></tr>
+                <tr><td>Model atmosphere</td><td>MARCS swapped for ATLAS9</td></tr>
+                <tr><td>Hyperfine and isotopes</td><td>The splitting of a line into close components</td></tr>
+                <tr><td>Blends</td><td>Neighbouring lines missing from the calculation</td></tr>
+                <tr><td>Molecules</td><td>For a molecular line, its dependence on the other element in the molecule</td></tr>
               </tbody>
             </table>
           </div>
-          <div class="method-eq">σ<sub>total</sub> = √(σ<sub>A</sub>² + σ<sub>Teff</sub>² + σ<sub>logg</sub>² + σ<sub>ξ</sub>² + σ<sub>loggf</sub>² + σ<sub>NLTE</sub>²)</div>
-          <div class="method-callout">
-            <p class="method-callout-title">O I / Ni I Blend at 6300 Å</p>
-            <p>The dominant source of published C/O ratio discrepancies for 55 Cnc A (Teske et al. 2013). The Ni I 6300.336 Å contribution is calculated from our measured Ni abundance and subtracted. Its uncertainty propagates into σ(C/O) as a correlated term.</p>
-          </div>
+          <p class="method-intro">Some terms do not apply to every result. Pseudo-continuum is zero outside the near-UV, for example. For the Sun, temperature, gravity and metal content are known so well that those terms come out at zero. Microturbulence is not, and is measured. The terms are then added in quadrature (as the square root of the sum of squares), together with the statistical part, allowing for any that move together.</p>
         </div>
 
-        <figure class="method-figure">
-          <img src="/assets/images/methodology/fig4_uncertainty_budget.png"
-               alt="Tornado chart showing uncertainty contribution per source for priority-1 elements"
-               onerror="this.closest('figure').style.display='none'">
-          <figcaption><strong>Figure 4.</strong> Uncertainty budget tornado chart for 55 Cnc A. Each bar shows the contribution of one source to σ<sub>total</sub>. T<sub>eff</sub> dominates for most elements; NLTE corrections dominate for C and O.</figcaption>
-        </figure>
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">gf errors that move together</h3>
+          <p class="method-intro">Laboratory gf values usually come from two measurements: how long an excited atom lives, and how its decay splits between lines. The lifetime sets an overall scale shared by every line from that source. If it is off, all those lines are off in the same direction, and averaging more of them does not help. The other part of each line's error is its own, and does average down.</p>
+          <p class="method-intro">So for each gf source we record which kind of error it carries. The shared scale is counted once. The per-line part shrinks with the number of lines. A source we have not yet reviewed is treated the cautious way, as fully shared.</p>
+        </div>
+
+        <div class="method-callout">
+          <p class="method-callout-title">How Asplund et al. (2021) did it</p>
+          <p>For comparison, the published solar analysis used a weighted standard error of the mean, or the fit quality for one or two lines. To that they added three systematic terms in quadrature: half the difference between two model atmospheres, half the difference between full 3D and ⟨3D⟩, and half the NLTE correction (at least 0.03 dex where no NLTE calculation exists). They say atomic data errors were generally not included. Our budget is built the same way, with more terms, and includes gf errors.</p>
+        </div>
       </section>
 
-      <!-- 8. DATA MODEL -->
-      <section class="method-section" id="pipeline">
+      <!-- 8. PUBLICATION + SOLAR VALIDATION -->
+      <section class="method-section" id="publication">
         <div class="method-section-header">
           <p class="method-eyebrow">Section 08</p>
-          <h2 class="method-section-title">Data Model</h2>
-          <p class="method-intro">The pipeline processes each star from raw ESO archive FITS files to final abundance tables through six sequential stages, each with well-defined input and output schemas.</p>
+          <h2 class="method-section-title">Publication and solar validation</h2>
+          <p class="method-intro">A result is not published because it was computed. It has to pass a comparison with the literature and a human review first. Then it goes on the site, and anything it replaces is archived.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Multi-Target Dataset Summary</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead>
-                <tr>
-                  <th>Target</th>
-                  <th>HARPS S1D</th>
-                  <th>HST Observations</th>
-                  <th>HST Gratings</th>
-                  <th>Program / PI</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Solar</strong> (calibrator)</td>
-                  <td>10 spectra</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td><em>ESO 1102.D-0954(A) · PI: Dumusque (U. Geneva) · Direct solar feed, SNR 306–309</em></td>
-                </tr>
-                <tr>
-                  <td><strong>55 Cancri A</strong></td>
-                  <td>88 spectra</td>
-                  <td>STIS</td>
-                  <td>G140M, G750L, G430L, E230M</td>
-                  <td><em>Multiple programs · MAST archive</em></td>
-                </tr>
-                <tr>
-                  <td><strong>Alpha Centauri A</strong></td>
-                  <td>75 spectra</td>
-                  <td>111 observations</td>
-                  <td>E140H, E140M, E230H, E230M</td>
-                  <td><em>Multiple programs · MAST archive</em></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="method-callout">
-            <p class="method-callout-title">Solar Dataset Note</p>
-            <p>The solar spectra are <strong>direct solar feed observations</strong> — the Sun itself, not asteroid-reflected sunlight. ESO Program 1102.D-0954(A), PI Xavier Dumusque (University of Geneva). The high SNR (306–309 per exposure) allows validation of weak lines including P I 6034 Å and Li I 6707 Å before touching science targets.</p>
-          </div>
+          <h3 class="method-subsection-title">Checking against the published Sun</h3>
+          <p class="method-intro">For every element we collect the published solar values first, chiefly Asplund, Amarsi &amp; Grevesse (2021) and Amarsi &amp; Grevesse (2026), each with its method. Our result is compared with them. The visible band is the control. It has a known answer, iron at 7.46 (Asplund et al. 2021). A method that cannot reproduce it there has not earned the right to report a value in a band with no known answer. How far it misses is measured and goes into the error bar as the method check.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Pipeline Data Flow</h3>
-          <figure class="method-figure">
-            <img src="/assets/images/methodology/fig3_pipeline_flow.png"
-                 alt="Pipeline flow diagram from ESO archive to science outputs"
-                 onerror="this.closest('figure').style.display='none'">
-            <figcaption><strong>Figure 3.</strong> Pipeline data flow. Each stage reads from a defined input format and writes versioned output files. All intermediate products are preserved.</figcaption>
-          </figure>
-          <div class="pipeline-flow">ESO Archive (FITS)
-    │
-    ▼
-pipeline/spectra_acquire.py
-    Input:   ESO archive FITS files
-    Output:  data/processed/{star}_coadded.fits
-             Normalized flux, rest-frame wavelength, S/N map
-    │
-    ▼
-pipeline/spectra_normalize.py
-    Input:   {star}_coadded.fits
-    Output:  {star}_normalized.fits  —  continuum = 1.0 ± 0.005
-    │
-    ▼
-pipeline/params_solve.py
-    Input:   normalized spectrum + Fe I/II line list
-    Output:  results/tables/{star}_stellar_params.csv
-    │
-    ▼
-pipeline/lines_measure.py
-    Input:   normalized spectrum + linelist_master.csv
-    Output:  results/tables/{star}_ew_measurements.csv
-             Per-line EW, uncertainty, quality flags
-    │
-    ▼
-pipeline/abundances_derive.py + uncertainty_budget.py
-    Input:   EW table + stellar params + ATLAS9 model
-    Output:  {star}_abundances_final.csv
-             [X/H], [X/Fe] with full uncertainty budget, NLTE applied
-    │
-    ▼
-pipeline/ratios_interpret.py
-    Input:   final abundances
-    Output:  {star}_science_outputs.csv
-             C/O, Mg/Si, Fe/Si, [α/Fe], CHNOPS index</div>
+          <h3 class="method-subsection-title">Problem lines and human review</h3>
+          <p class="method-intro">Lines that disagree with the rest, or fail a check, are reported for each run with the reason. Every proposed line removal, and every publication, is approved by a person. The program does the measuring. A person decides what is published.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Key File Schemas</h3>
-          <div class="method-code"># results/tables/{star}_ew_measurements.csv
-element, ion, wavelength_air_A, excitation_potential_eV, log_gf,
-nist_grade, EW_mA, EW_err_mA, center_fitted_A, sigma_A,
-chi2_reduced, blend_flag, quality_flag, notes
-
-# results/tables/{star}_abundances_final.csv
-element, ion, n_lines, A_X_mean, A_X_scatter, A_X_solar_A2021,
-XH, XH_err_typeA, XH_err_typeB, XH_err_total,
-XFe, XFe_err_total, nlte_correction, nlte_source
-
-# results/tables/{star}_science_outputs.csv
-star_id, teff_K, logg, feh, age_gyr,
-CO_ratio, CO_err, MgSi_ratio, MgSi_err,
-FeSi_ratio, FeSi_err, alpha_Fe_mean, alpha_Fe_err,
-CHNOPS_index, CHNOPS_err, notes</div>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Future Integrations</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Integration</th><th>Purpose</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td>JWST atmospheric spectra</td><td>Cross-correlate host star abundances with exoplanet atmospheric composition</td><td>Planned — Milestone C</td></tr>
-                <tr><td>Hypatia Catalog</td><td>Automated ingestion for literature comparison per star</td><td>Planned — Milestone C</td></tr>
-                <tr><td>NASA Exoplanet Archive API</td><td>Live planet parameter cross-matching</td><td>In design</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <h3 class="method-subsection-title">Only current results count</h3>
+          <p class="method-intro">When a result is re-measured, for example after a correction to the atomic data, the new one replaces the old. The old one is moved to an archive with the record of why. Nothing is deleted, so any earlier number on this site can be traced.</p>
         </div>
       </section>
 
-      <!-- 9. SOLAR VALIDATION -->
-      <section class="method-section" id="validation">
-        <div class="method-section-header">
-          <p class="method-eyebrow">Section 09</p>
-          <h2 class="method-section-title">Solar Validation</h2>
-          <p class="method-intro">Before analyzing any exoplanet host star, the pipeline is validated against the Sun using 10 direct solar HARPS S1D spectra (ESO 1102.D-0954(A), PI: Dumusque) — processed identically to the science targets.</p>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Solar Calibration Criteria</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Quantity</th><th>Required Result</th><th>If Failed</th></tr></thead>
-              <tbody>
-                <tr><td>A(Fe)☉ recovery</td><td>7.46 ± 0.05 (Asplund et al. 2021)</td><td>Systematic pipeline error — must identify and correct before any science results</td></tr>
-                <tr><td>C/O☉ recovery</td><td>0.55 ± 0.05</td><td>Systematic oxygen measurement error</td></tr>
-                <tr><td>Dataset</td><td>10 HARPS S1D, direct solar feed · SNR 306–309 per exposure</td><td>—</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="method-subsection">
-          <h3 class="method-subsection-title">Literature Comparison for 55 Cancri A</h3>
-          <div class="method-table-wrap">
-            <table class="method-table">
-              <thead><tr><th>Reference</th><th>Method</th><th>Key Result</th></tr></thead>
-              <tbody>
-                <tr><td>Fischer &amp; Valenti (2005)</td><td>HIRES/Keck spectral synthesis</td><td>[Fe/H] = +0.33 ± 0.04</td></tr>
-                <tr><td>Valenti &amp; Fischer (2005)</td><td>Spectral synthesis (SME)</td><td>Full atmospheric parameters</td></tr>
-                <tr><td>Teske et al. (2013)</td><td>EW method — dedicated C/O study</td><td>C/O = 0.78 ± 0.08 (ApJ 778, 132)</td></tr>
-                <tr><td>Hypatia Catalog (HIP 43587)</td><td>Weighted mean of all literature values</td><td>Reference for systematic offsets</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- 10. REFERENCES -->
+      <!-- 9. REFERENCES -->
       <section class="method-section" id="references">
         <div class="method-section-header">
-          <p class="method-eyebrow">Section 10</p>
+          <p class="method-eyebrow">Section 09</p>
           <h2 class="method-section-title">References</h2>
+          <p class="method-intro">The full list, with links, is on the <a href="/sources/">Sources</a> page.</p>
         </div>
 
         <div class="method-table-wrap">
           <table class="method-table">
+            <thead><tr><th>Reference</th><th>Publication</th></tr></thead>
             <tbody>
+              <tr><td>Amarsi &amp; Grevesse (2026)</td><td><em>arXiv:2608.23155</em> — Solar chemical composition</td></tr>
               <tr><td>Amarsi et al. (2019)</td><td><em>A&amp;A 630, A104</em> — Carbon NLTE corrections</td></tr>
-              <tr><td>Amarsi et al. (2021)</td><td><em>A&amp;A 656, A113</em> — Oxygen NLTE corrections</td></tr>
+              <tr><td>Amarsi et al. (2020)</td><td><em>A&amp;A 642, A62</em> — NLTE departure coefficients for large surveys</td></tr>
+              <tr><td>Amarsi et al. (2021)</td><td><em>A&amp;A 656, A113</em> — Solar C, N and O from molecular lines</td></tr>
               <tr><td>Amarsi et al. (2022)</td><td><em>A&amp;A 668, A68</em> — Iron NLTE corrections</td></tr>
-              <tr><td>Asplund et al. (2021)</td><td><em>A&amp;A 653, A141</em> — Solar photospheric abundances (current standard)</td></tr>
+              <tr><td>Asplund, Amarsi &amp; Grevesse (2021)</td><td><em>A&amp;A 653, A141</em> — The chemical make-up of the Sun: a 2020 vision</td></tr>
+              <tr><td>Baker, Blake &amp; Reiners (2020)</td><td><em>ApJS 247, 24</em> — The IAG solar flux atlas: telluric correction</td></tr>
               <tr><td>Barklem &amp; Aspelund-Johansson (2005)</td><td><em>A&amp;A 435, 373</em> — Van der Waals damping constants</td></tr>
-              <tr><td>Blackwell et al. (1979)</td><td><em>MNRAS 186, 657</em> — Microturbulence / equivalent width method</td></tr>
+              <tr><td>Bergemann et al. (2012)</td><td><em>MNRAS 427, 27</em> — Iron NLTE in 1D and ⟨3D⟩ model atmospheres</td></tr>
+              <tr><td>Bergemann et al. (2017)</td><td><em>ApJ 847, 15</em> — NLTE with 1D and ⟨3D⟩ models: magnesium</td></tr>
               <tr><td>Blanco-Cuaresma et al. (2014)</td><td><em>A&amp;A 569, A111</em> — iSpec spectral analysis framework</td></tr>
               <tr><td>Castelli &amp; Kurucz (2003)</td><td><em>Proc. IAU Symp. 210</em> — ATLAS9 model atmosphere grid</td></tr>
-              <tr><td>Fischer &amp; Valenti (2005)</td><td><em>ApJ 622, 1102</em> — 55 Cnc A parameters, [Fe/H] = +0.33</td></tr>
+              <tr><td>Gerber et al. (2023)</td><td><em>A&amp;A 669, A43</em> — NLTE radiative transfer with Turbospectrum</td></tr>
               <tr><td>Gustafsson et al. (2008)</td><td><em>A&amp;A 486, 951</em> — MARCS model atmosphere grid</td></tr>
               <tr><td>Kramida et al. (2023)</td><td>NIST Atomic Spectra Database — physics.nist.gov/asd</td></tr>
-              <tr><td>Lind et al. (2011)</td><td><em>A&amp;A 528, A103</em> — Sodium NLTE corrections</td></tr>
-              <tr><td>Lodders (2003)</td><td><em>ApJ 591, 1220</em> — Solar abundances (used in Schmitt 2010)</td></tr>
-              <tr><td>Osorio et al. (2015)</td><td><em>A&amp;A 579, A53</em> — Magnesium NLTE corrections</td></tr>
+              <tr><td>Kurucz (2005)</td><td>High-resolution solar irradiance and telluric-corrected solar atlas</td></tr>
+              <tr><td>Lodders, Bergemann &amp; Palme (2025)</td><td><em>Space Sci. Rev. 221</em> — Solar system abundances from the photosphere and CI chondrites</td></tr>
+              <tr><td>Magic et al. (2013)</td><td><em>A&amp;A 560, A8</em> — The Stagger grid: averaged 3D model atmospheres</td></tr>
+              <tr><td>Pehlivan Rhodin et al. (2017)</td><td><em>A&amp;A 598, A102</em> — Oscillator strengths of Mg I</td></tr>
+              <tr><td>Pehlivan Rhodin et al. (2024)</td><td><em>A&amp;A 682, A184</em> — Transition data for Si I and Si II</td></tr>
+              <tr><td>Plez (2012)</td><td><em>Turbospectrum: Code for spectral synthesis</em> — radiative transfer, native molecular lines</td></tr>
+              <tr><td>Reiners et al. (2016)</td><td><em>A&amp;A 587, A65</em> — The IAG solar flux atlas</td></tr>
               <tr><td>Ryabchikova et al. (2015)</td><td><em>PhyS 90, 054005</em> — VALD3 atomic line database</td></tr>
               <tr><td>Schmitt (2010)</td><td>Senior Thesis, University of Montana — predecessor 55 Cnc abundance study</td></tr>
-              <tr><td>Plez (2012)</td><td><em>Turbospectrum: Code for spectral synthesis</em> — radiative transfer, native molecular lines</td></tr>
-              <tr><td>Gerber et al. (2023)</td><td><em>A&amp;A 669, A43</em> — Turbospectrum NLTE radiative transfer</td></tr>
-              <tr><td>Teske et al. (2013)</td><td><em>ApJ 778, 132</em> — 55 Cnc C/O ratio (dedicated study)</td></tr>
-              <tr><td>Valenti &amp; Fischer (2005)</td><td><em>ApJS 159, 141</em> — Spectral synthesis method (SME)</td></tr>
-              <tr><td>von Braun et al. (2011)</td><td><em>ApJ 740, 49</em> — 55 Cnc A interferometric parameters (CHARA)</td></tr>
+              <tr><td>Smette et al. (2015)</td><td><em>A&amp;A 576, A77</em> — Molecfit: telluric absorption correction</td></tr>
             </tbody>
           </table>
         </div>
 
         <p style="font-size:0.8rem;color:var(--text-dim);margin-top:2rem;font-family:var(--mono);">
-          Version 1.2 · May 2026 ·
+          Revised October 2026 ·
           <a href="https://github.com/damienabraxas/exoplanetcodex" style="color:var(--accent);">github.com/damienabraxas/exoplanetcodex</a>
         </p>
       </section>

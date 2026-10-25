@@ -794,9 +794,12 @@ def build(science: Path, perline: list[dict]) -> dict:
             "engine": arbiter["engine"],
             "handler": arbiter["method"],
         },
-        # RYA-876: do NOT present this as a co-equal headline abundance, and do not
-        # show a Δ against Asplund — Asplund publishes A(Fe), not A(Fe II).
-        "asplund": None,
+        # RYA-876: do NOT present this as a co-equal headline abundance. RYA-1271: it
+        # does carry a reference value -- Asplund+2021 report each ionisation stage
+        # separately before averaging them: "7.46 +/- 0.04 and 7.47 +/- 0.04 from Fe I
+        # and Fe II respectively" (A&A 653, A141, iron paragraph). The old note here said
+        # they publish only A(Fe); the paper says otherwise.
+        "asplund": 7.47,
         "arbiterTrioA": trio["lines_air_A"],
         "products": prods,
         "coverage": coverage(science),
