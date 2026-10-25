@@ -138,7 +138,7 @@
       <div class="section-number">Section 06</div>
       <h2>Publish, and withdraw what is replaced</h2>
       <p>Results go into the element’s published file through the same gates every product passes: a complete error bar, the right grade for its lines, and a record of where it came from. Anything that fails stays held, with the reason written down.</p>
-      <p>When a run rebuilds a cell and no longer publishes a value it published before, the old value is <strong>withdrawn</strong>: moved to an archive with the date and the reason, never deleted, so the record of what was once shown survives. The withdrawal is limited to the cells and model treatments the run actually rebuilt. Iron is why: an early run without that limit withdrew rows it had not rebuilt. They were restored, and the limit was added.</p>
+      <p>When a run rebuilds a cell and no longer publishes a value it published before, the old value is <strong>withdrawn</strong>: moved to an archive with the date and the reason, never deleted, so the record of what was once shown survives. Iron showed that the withdrawal has to be limited to the cells and model treatments the run actually rebuilt: an early run without that limit withdrew rows it had not rebuilt, and they had to be restored. The limit was added for iron, a later merge undid it in the shared code, and putting it back is open work — until then, each run is checked for unexpected withdrawals before it is merged.</p>
     </section>
 
     <section class="architecture-section" id="check">
@@ -168,7 +168,7 @@
       <ul>
         <li><strong>Silicon, the first real run.</strong> The orchestrator was sending uncorrected spectra to be measured and refusing the corrected ones because of out-of-date labels. It now never uses a raw spectrum. Two parts of the code also disagreed on where the bands start and end; both now read the same band table. And five model treatments had been writing into one results file, so each now writes its own.</li>
         <li><strong>Aluminium</strong> followed silicon through the corrected version, and the two together became the worked example the runbook tells every later element to copy.</li>
-        <li><strong>Iron.</strong> Iron’s Reference Grade became the line set Asplund and collaborators used, plus every line with a laboratory-measured gf. This brought in the synthesis cache, the scoped withdrawal described above, and a rule that results from experimental models are flagged straight from the model registry instead of by hand.</li>
+        <li><strong>Iron.</strong> Iron’s Reference Grade became the line set Asplund and collaborators used, plus every line with a laboratory-measured gf. This brought in the synthesis cache, the lesson about scoping withdrawals described above, and a rule that results from experimental models are flagged straight from the model registry instead of by hand.</li>
         <li><strong>Magnesium</strong>, the current test. Prepare is where its problems surfaced: a line-drop rule that needed to look past one reference table, and an NLTE step that needs a different software environment from the synthesis, which the procedure now checks before starting. A review of magnesium’s atomic data before release found a gf entered with the wrong sign, and its results are being rebuilt on the corrected value.</li>
       </ul>
       <p>Sodium is next, and the remaining elements’ reference line lists are already assembled for it.</p>
