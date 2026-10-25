@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/assets/js/analytics.js"></script>
   <title>Glossary of Terms · The Exoplanet Codex</title>
-  <meta name="description" content="Complete glossary of stellar spectroscopy, elemental abundance notation, exoplanetary chemistry, and Codex architecture terms. 72 entries across 9 sections.">
+  <meta name="description" content="Plain-language glossary of the terms used to measure what stars are made of: 65 entries, each linked to the Exoplanet Codex method.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -68,17 +68,20 @@
       font-family: var(--mono); line-height: 1.6;
       border-top: 1px solid var(--rim);
     }
-    .architecture-figures { display:grid; grid-template-columns:minmax(0,900px); justify-content:center; gap:1.5rem; margin:1.8rem 0 2.2rem; }
-    .architecture-figures .gloss-figure { margin:0; background:var(--deep); }
-    .architecture-figures img { background:transparent; }
-    @media (max-width: 800px) { .architecture-figures { grid-template-columns:minmax(0,1fr); gap:1rem; } }
 
-    .term-card { border: 1px solid var(--rim); margin-bottom: 1.5rem; }
+    .term-card { border: 1px solid var(--rim); margin-bottom: 1.5rem; scroll-margin-top: 1.5rem; }
+    .gloss-letter {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 300; color: var(--accent-warm); line-height: 1; margin: 0;
+    }
+    .letter-links a { min-width: 2.2em; text-align: center; }
+    .page-subtitle a, .term-row p a { color: var(--accent); }
+    .legacy-anchor { display: block; height: 0; }
     .term-header {
       background: var(--surface); padding: 0.9rem 1.4rem;
       border-bottom: 1px solid var(--rim); display: flex; align-items: baseline; gap: 1rem;
     }
-    .term-name { font-family: var(--mono); font-size: 1.05rem; font-weight: bold; color: var(--text-bright); }
+    .term-name { font-family: var(--mono); font-size: 1.05rem; font-weight: bold; color: var(--text-bright); margin: 0; }
     .term-pronunciation { font-size: 0.85rem; color: var(--accent); font-style: italic; }
     .term-row {
       display: grid; grid-template-columns: 130px 1fr; gap: 1rem;
@@ -97,6 +100,7 @@
       .term-row { grid-template-columns: 1fr; gap: 0.2rem; }
       .term-label { padding-top: 0.1rem; }
     }
+    @page { size: Letter; margin: 24mm 16mm 16mm; }
     @media print {
       #starfield, .codex-nav, .codex-footer, .jump-links, .document-links { display: none !important; }
       body { background: #fff; color: #17263a; }
@@ -104,6 +108,8 @@
       .page { max-width: none; padding: 0 0.45in; }
       .page-hero { padding: 0.35in 0 0.25in; opacity: 1; animation: none; }
       .page-title, .gloss-section-title, .term-name { color: #0d2238; }
+      .gloss-letter { color: #8a5a00; break-after: avoid; }
+      .term-row p a, .page-subtitle a { color: #005b85; }
       .page-subtitle, .gloss-intro, .term-row p { color: #263d55; }
       .gloss-section { padding: 0.25in 0 0.08in; }
       .term-card { break-inside: auto; }
@@ -113,9 +119,6 @@
       .term-label, code { color: #005b85; }
       .gloss-figure { break-inside: avoid; background: #fff; }
       .gloss-figure figcaption { color: #41566c; }
-      .architecture-figures .gloss-figure { background:#080e1a; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
-      .architecture-figures .gloss-figure figcaption { color:#a8c0d8; background:#080e1a; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
-      .architecture-figures { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -140,537 +143,704 @@
   </nav>
 
   <header class="page-hero">
-    <div class="page-eyebrow">Reference // Stellar spectroscopy vocabulary</div>
+    <div class="page-eyebrow">Reference // Words used on this site</div>
     <h1 class="page-title">Glossary of <em>Terms</em></h1>
-    <p class="page-subtitle">Stellar Spectroscopy · Elemental Abundances · Exoplanetary Chemistry · Science Architecture — 72 terms across 9 sections.</p>
+    <p class="page-subtitle">65 terms, from absorption lines to uncertainty budgets. Each entry says what the word means, what it means in plain English, and where it is used in our <a href="/method/">Method</a>.</p>
     <div class="document-links">
-      <a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf" class="btn-download" download>↓ Download Glossary PDF (v3.2)</a>
-      <a href="/architecture/" class="document-link">Read the Science Architecture →</a>
-      <a href="/assets/docs/exoplanet-codex-glossary-v3.1.pdf" class="document-link" download>Previous version: v3.1</a>
-      <a href="/assets/docs/exoplanet-codex-glossary-v3.0.pdf" class="document-link" download>Archive: v3.0</a>
-      <a href="/assets/docs/exoplanet-codex-glossary-v2.0.pdf" class="document-link" download>Archive: v2.0</a>
+      <a href="/assets/docs/exoplanet-codex-glossary-v4.0.pdf" class="btn-download" download>↓ Download Glossary PDF (v4.0)</a>
+      <a href="/method/" class="document-link">Read the Method →</a>
+      <a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf" class="document-link" download>Previous version: v3.2</a>
     </div>
-    <nav class="jump-links" aria-label="Jump to section">
-      <a href="#spectrum">The Spectrum</a>
-      <a href="#architecture">Codex Architecture</a>
-      <a href="#line-profiles">Line Profiles</a>
-      <a href="#stellar-params">Stellar Parameters</a>
-      <a href="#abundance">Abundance Notation</a>
-      <a href="#model-atm">Model Atmospheres</a>
-      <a href="#nucleosynthesis">Nucleosynthesis</a>
-      <a href="#pipeline">Pipeline Terms</a>
-      <a href="#science">Science Outputs</a>
+    <nav class="jump-links letter-links" aria-label="Jump to letter">
+      <a href="#letter-a">A</a>
+      <a href="#letter-b">B</a>
+      <a href="#letter-c">C</a>
+      <a href="#letter-d">D</a>
+      <a href="#letter-e">E</a>
+      <a href="#letter-f">F</a>
+      <a href="#letter-g">G</a>
+      <a href="#letter-h">H</a>
+      <a href="#letter-i">I</a>
+      <a href="#letter-l">L</a>
+      <a href="#letter-m">M</a>
+      <a href="#letter-n">N</a>
+      <a href="#letter-o">O</a>
+      <a href="#letter-p">P</a>
+      <a href="#letter-r">R</a>
+      <a href="#letter-s">S</a>
+      <a href="#letter-t">T</a>
+      <a href="#letter-u">U</a>
+      <a href="#letter-v">V</a>
     </nav>
   </header>
 
+  <section class="gloss-section" id="letter-a">
+    <div class="gloss-section-header"><h2 class="gloss-letter">A</h2></div>
+    <div class="term-card" id="absorption-line">
+      <div class="term-header"><h3 class="term-name">Absorption line</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A dark feature in a spectrum at the wavelength where atoms in the star's outer layers absorb light.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Each element absorbs only certain colours of light. Where it does, the star's spectrum has a dark notch. Each element has its own set of notches, so the notches tell us which elements are there.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Wavelength in ångströms (Å)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Iron alone has thousands of lines in the Sun's visible spectrum. Asplund, Amarsi &amp; Grevesse (2021) chose 40 Fe I and 13 Fe II lines from them for their solar iron value.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every abundance on this site comes from absorption lines. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#spectrum">Spectrum</a>, <a href="#equivalent-width">Equivalent width (EW)</a>, <a href="#blend">Blend</a></p></div>
+    </div>
+    <div class="term-card" id="abundance-ratio">
+      <div class="term-header"><h3 class="term-name">Abundance ratio, [X/H] and [X/Fe]</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>[X/H] is a star's abundance of X minus the Sun's: [X/H] = A(X)<sub>star</sub> − A(X)<sub>Sun</sub>. [X/Fe] = [X/H] − [Fe/H] compares X with iron instead of hydrogen.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>These say how a star differs from the Sun. Zero means the same as the Sun. +0.3 means about twice as much. [X/Fe] removes the star's overall metal content, so it shows which elements are unusual.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>For the Sun every [X/H] and [X/Fe] is 0.00 by definition.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Ratios like these are step 14 of the process, after the abundances themselves. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#abundance">Abundance, A(X)</a>, <a href="#metallicity">Metallicity, [Fe/H]</a>, <a href="#alpha-enhancement">Alpha enhancement, [α/Fe]</a></p></div>
+    </div>
+    <div class="term-card" id="abundance">
+      <div class="term-header"><h3 class="term-name">Abundance, A(X)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The number of atoms of element X for every 10<sup>12</sup> hydrogen atoms, on a log scale: A(X) = log<sub>10</sub>(N<sub>X</sub>/N<sub>H</sub>) + 12. Hydrogen is 12.00 by definition.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A way to say how much of an element a star has. Each step of 1 on the scale is a factor of ten. Iron at 7.46 means about 29 million iron atoms for every trillion hydrogen atoms.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex (logarithmic)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: A(Fe) = 7.46, A(O) = 8.69, A(C) = 8.46 (Asplund, Amarsi &amp; Grevesse 2021).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>This is the number every Codex result reports. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#abundance-ratio">Abundance ratio, [X/H] and [X/Fe]</a>, <a href="#dex">dex</a>, <a href="#metallicity">Metallicity, [Fe/H]</a></p></div>
+    </div>
+    <div class="term-card" id="alpha-elements"><span id="nucleosynthesis" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">Alpha elements (α)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Elements built mainly by adding helium nuclei (alpha particles): O, Ne, Mg, Si, S, Ar, Ca and Ti. They are made mostly in massive stars and released when those stars explode.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A family of elements made in big, short-lived stars. Magnesium and silicon are among them, and they are the main rock-forming elements.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (an element group)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Mg, Si, Ca and Ti are the alpha elements most often measured in Sun-like stars.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Silicon has a published solar result on this site. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#alpha-enhancement">Alpha enhancement, [α/Fe]</a>, <a href="#iron-peak">Iron-peak elements</a></p></div>
+    </div>
+    <div class="term-card" id="alpha-enhancement">
+      <div class="term-header"><h3 class="term-name">Alpha enhancement, [α/Fe]</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The average of [X/Fe] over alpha elements, usually Mg, Si, Ca and Ti. It traces how a star's birth gas was enriched over the history of the galaxy.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Early in the galaxy's life, massive stars made alpha elements quickly. Iron from slower kinds of supernova came later. Old stars therefore tend to have more alpha elements for their iron than young stars like the Sun.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: [α/Fe] = 0.00 by definition.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>A derived ratio, worked out after each element has passed review. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#alpha-elements">Alpha elements (α)</a>, <a href="#abundance-ratio">Abundance ratio, [X/H] and [X/Fe]</a></p></div>
+    </div>
+    <div class="term-card" id="atlas">
+      <div class="term-header"><h3 class="term-name">Atlas (solar flux atlas)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A very high-quality spectrum of the Sun's integrated light, published for other scientists to use. It is built from many observations and covers a wide wavelength range.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A reference photograph of sunlight, spread out by colour in great detail. Teams around the world measure from the same atlas, so their results can be compared directly.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Wavelength in Å; normalised flux</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The 1984 Kitt Peak solar atlas, and the IAG atlas from Göttingen (Reiners et al. 2016; Baker et al. 2020).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Each atlas is a separate holding. The IAG atlas also serves as an independent check on continuum placement. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#holding">Holding</a>, <a href="#telluric">Telluric absorption and correction</a>, <a href="#continuum">Continuum</a></p></div>
+    </div>
+    <div class="term-card" id="atlas9">
+      <div class="term-header"><h3 class="term-name">ATLAS9</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A widely used grid of one-dimensional model atmospheres for stars like the Sun, computed by Robert Kurucz and updated by Castelli &amp; Kurucz (2003). Not to be confused with a solar atlas.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A ready-made set of model star atmospheres, each one a table of temperature and pressure against depth.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a model grid)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>ATLAS9 and MARCS are both 1D. Running the same lines on each shows how much the answer depends on the model.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>One of two 1D model families we use. Swapping it for MARCS is one term in the error bar. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#model-atmosphere">Model atmosphere</a>, <a href="#lte">LTE (local thermodynamic equilibrium)</a></p></div>
+    </div>
+  </section>
 
-  <section class="gloss-section" id="spectrum">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 1</p>
-      <h2 class="gloss-section-title">The Spectrum</h2>
-      <p class="gloss-intro">A spectrum is light spread out by wavelength — like a rainbow, but for a star. The terms below describe the key features encountered throughout the Codex.</p>
+  <section class="gloss-section" id="letter-b">
+    <div class="gloss-section-header"><h2 class="gloss-letter">B</h2></div>
+    <div class="term-card" id="band">
+      <div class="term-header"><h3 class="term-name">Band</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A wavelength range of the spectrum that is analysed under its own rules. The Codex uses six: near-UV, visible, red-optical, near-infrared, H and K.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>We cut the spectrum into pieces because the problems change with colour. In the near-UV the lines crowd together. In the infrared the lines are sparse, but Earth's air absorbs strongly.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Wavelength in Å</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The visible band runs from 3780 to 6910 Å. The H band runs from 15007 to 17494 Å.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every band is measured on its own and never averaged with another. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#holding">Holding</a>, <a href="#orchestrator">Orchestrator</a>, <a href="#spectrum">Spectrum</a></p></div>
     </div>
-    <figure class="gloss-figure">
-      <img src="/assets/images/glossary/gloss_A.png" alt="Anatomy of a single absorption line showing core, wings, depth, and FWHM; plus the equivalent width concept" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Fig 1. Left: anatomy of a single absorption line, showing the core, wings, depth, and FWHM. Right: the equivalent width (EW) concept — the width of a rectangle that has the same area as the absorption line.</figcaption>
-    </figure>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Spectrum</span><span class="term-pronunciation">SPEK-trum</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The distribution of electromagnetic radiation from an object, spread out by wavelength or frequency. A stellar spectrum shows how much light the star emits at each wavelength.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Think of it as a detailed "chemical fingerprint" of a star. Just as a supermarket barcode contains information encoded in bars of different widths, a stellar spectrum contains information about the star's composition encoded in the depths and positions of absorption lines.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Wavelength in Angstroms (Å) on x-axis; normalized flux (0 to 1) on y-axis</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>The HARPS spectrum of 55 Cancri A covers 3780–6910 Å at a resolution of R~115,000.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Absorption line, Continuum, Spectral resolution (R)</p></div>
+    <div class="term-card" id="barycentric-correction">
+      <div class="term-header"><h3 class="term-name">Barycentric correction</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A shift applied to the wavelengths of an observation to remove the Earth's own motion around the Sun along the line of sight.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The Earth moves, and that motion slightly shifts the colours we see. The correction removes the shift so that only the star's motion is left.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>km/s, or the matching shift in Å</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The standard HARPS data products already have this correction applied.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Checked during the audit of each holding. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#radial-velocity">Radial velocity (RV)</a>, <a href="#holding">Holding</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Absorption Line</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A dark feature in a stellar spectrum where atoms in the stellar photosphere have absorbed photons of a specific wavelength, removing that light from the outgoing beam.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Imagine a star's light as a full rainbow. Atoms in the outer layers of the star act like tiny "notch filters" — each element absorbs only its specific colours (wavelengths). The result is a rainbow with dark gaps at precise positions. Each gap is an absorption line, and each element has a unique set of gap positions — its spectral fingerprint.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Wavelength in Angstroms (Å)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>The sodium D1 line at 5895.92 Å is one of the most prominent absorption features in the optical spectrum of a K-type star like 55 Cancri A.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Equivalent Width (EW), Continuum, FWHM</p></div>
+    <div class="term-card" id="blend">
+      <div class="term-header"><h3 class="term-name">Blend</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Two or more absorption lines so close in wavelength that they overlap in the spectrum.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Two notches that run into each other. If you measure one without allowing for the other, you get too much absorption and the wrong answer.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The forbidden oxygen line at 6300.304 Å sits only 0.032 Å from a nickel line at 6300.336 Å.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Blends are handled by calculating every known atomic and molecular line in the window together. Lines too blended to measure are left out, as published solar studies do. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#spectrum-synthesis">Spectrum synthesis</a>, <a href="#absorption-line">Absorption line</a>, <a href="#spectral-resolution">Spectral resolution, R</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Continuum</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The smooth underlying flux level of a stellar spectrum, representing light from the photosphere unaffected by discrete atomic transitions. In a normalized spectrum, the continuum equals 1.0.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>The "baseline" of the spectrum — the bright background against which dark absorption lines appear. Measuring a line's depth requires knowing the continuum level precisely. For metal-rich stars like 55 Cnc ([Fe/H]=+0.32), so many lines overlap that finding the true continuum is challenging.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Normalized flux (dimensionless, set to 1.0)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>In the 5000–5400 Å region of 55 Cnc's spectrum, iron lines are so dense that the continuum must be estimated using model atmosphere predictions.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Normalization, Equivalent Width</p></div>
+  </section>
+
+  <section class="gloss-section" id="letter-c">
+    <div class="gloss-section-header"><h2 class="gloss-letter">C</h2></div>
+    <div class="term-card" id="c-o-ratio"><span id="science" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">C/O ratio</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The number of carbon atoms divided by the number of oxygen atoms in a star.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Carbon and oxygen compete for each other in the gas that forms planets. When oxygen wins, rocks are made of silicates, as on Earth. A star with much more carbon than usual could form very different planets.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>A ratio of numbers of atoms</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: C/O = 10<sup>(8.46 − 8.69)</sup> ≈ 0.59 (Asplund, Amarsi &amp; Grevesse 2021).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>A derived ratio, worked out from the published carbon and oxygen results. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#abundance">Abundance, A(X)</a>, <a href="#mg-si-ratio">Mg/Si and Fe/Si ratios</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Equivalent Width (EW)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A measure of the total absorption by a spectral line, defined as the width (in Angstroms) of a rectangular notch with depth equal to 1 (complete absorption) that has the same area as the actual line profile.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>The EW is a single number that captures "how much light does this line remove?" regardless of the line's shape. A line that removes a lot of light has a large EW. A faint line has a small EW. The EW is what we measure from the spectrum to eventually calculate how much of each element is present.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Angstroms (Å) or milliAngstroms (mÅ). 1 Å = 1000 mÅ. Most lines: 5–300 mÅ.</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>The Na I D1 line in 55 Cnc has EW ≈ 480 mÅ (strong). A typical Fe I line has EW ≈ 50–80 mÅ (moderate). A P I line has EW ≈ 12 mÅ (weak — needs high S/N to detect).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Absorption line, Gaussian profile, Voigt profile, Curve of growth</p></div>
+    <div class="term-card" id="chnops">
+      <div class="term-header"><h3 class="term-name">CHNOPS</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The six elements that make up most of living matter: carbon, hydrogen, nitrogen, oxygen, phosphorus and sulfur.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The main ingredients of life as we know it. How much of each a star has hints at what its planets were built from.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (an element group)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Carbon, nitrogen and oxygen have published solar results on this site.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Carbon, nitrogen and oxygen were among the first elements finished for the Sun. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#c-o-ratio">C/O ratio</a>, <a href="#abundance">Abundance, A(X)</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">FWHM — Full Width at Half Maximum</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The width of a spectral line measured at half the maximum line depth. A standard measure of line sharpness.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>If a line's deepest point is 0.3 (flux = 0.3 below continuum = 1.0), the FWHM is the wavelength width measured where the line depth equals 0.3/2 = 0.15. Narrower lines (small FWHM) are easier to measure and less likely to blend with neighbouring lines. Used in the EW uncertainty formula: σ<sub>EW</sub> ≈ 1.5 × FWHM / S/N.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Angstroms (Å)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>A typical HARPS Fe I line has FWHM ≈ 0.08–0.12 Å. The Na D lines have FWHM ≈ 0.5–1.0 Å due to their strong pressure-broadened wings.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Broadening, Spectral resolution</p></div>
+    <div class="term-card" id="continuum">
+      <div class="term-header"><h3 class="term-name">Continuum</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The brightness a spectrum would have if there were no absorption lines. In a normalised spectrum it is set to 1.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The level the notches are measured down from. If the level is wrong, every notch looks too deep or too shallow.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Normalised flux (1.0)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>A line only 1% deep is changed noticeably by a continuum error of a tenth of a percent.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>We set the continuum near each line by comparing the observed spectrum with our calculated one, and repeat on a second atlas to price the error. <a href="/method/#cleaning">Method, section 03</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#normalisation">Normalisation</a>, <a href="#pseudo-continuum">Pseudo-continuum</a>, <a href="#equivalent-width">Equivalent width (EW)</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Spectral Resolution (R)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A dimensionless number defined as R = λ / Δλ, where λ is the wavelength and Δλ is the smallest wavelength difference the instrument can separate. Higher R = sharper, more detailed spectra.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Resolution tells you how close together two spectral features can be while still appearing as two separate lines. At R = 115,000 (HARPS), two lines just 0.05 Å apart can be distinguished. At R = 42,000 (ELODIE, used in 2010), lines must be 0.14 Å apart to be separated. This is why HARPS gives us 3× better detail.</p></div>
+    <div class="term-card" id="correlated-gf-error">
+      <div class="term-header"><h3 class="term-name">Correlated gf error</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>An error in oscillator strengths that is shared by every line measured in the same laboratory study, so it does not shrink when more lines are averaged.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>If a ruler is a millimetre short, measuring more things with it does not help. Lab gf values can be off in the same way: all lines from one study shift together.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Lab gf values often combine an atomic lifetime with how the decay splits between lines. An error in the lifetime moves all lines from that level together.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>For each gf source we record which part of its error is shared and which is per line. A source not yet reviewed is treated as fully shared. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#oscillator-strength">Oscillator strength, log gf</a>, <a href="#laboratory-gf">Laboratory gf</a>, <a href="#uncertainty-budget">Uncertainty budget</a></p></div>
+    </div>
+    <div class="term-card" id="curve-of-growth">
+      <div class="term-header"><h3 class="term-name">Curve of growth</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The relation between a line's equivalent width and the abundance of the element. It has three parts: linear for weak lines, flat for saturated lines, and a damping part for very strong lines.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>For a weak line, twice the atoms gives twice the absorption. Once the line's centre is nearly black, adding atoms barely changes it. That flat stretch is why strong lines tell us less.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>log(equivalent width / wavelength) against log abundance</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Lines on the flat part depend strongly on microturbulence.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Turns a measured equivalent width into an abundance in the profile-fit route. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#equivalent-width">Equivalent width (EW)</a>, <a href="#saturated-line">Saturated line</a>, <a href="#microturbulence">Microturbulence, ξ</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-d">
+    <div class="gloss-section-header"><h2 class="gloss-letter">D</h2></div>
+    <div class="term-card" id="departure-coefficient">
+      <div class="term-header"><h3 class="term-name">Departure coefficient</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The ratio of the true number of atoms in an energy level to the number LTE predicts. A value of 1 means LTE holds for that level.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A correction factor for each energy level of an atom. It says how far the real atoms are from the simple assumption, layer by layer through the atmosphere.</p></div>
       <div class="term-row"><span class="term-label">Units</span><p>Dimensionless ratio</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>HARPS: R~115,000. ELODIE (2010 thesis): R~42,000. The [O I] 6300.304 Å line and its Ni I 6300.336 Å blend are only 0.032 Å apart — only resolved at R &gt; 100,000.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">HARPS, ELODIE</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Turbospectrum reads departure coefficients from an NLTE model atom and builds them into the calculated spectrum (Gerber et al. 2023).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Used by the NLTE treatments that put NLTE inside the calculation. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#nlte">NLTE (non-local thermodynamic equilibrium)</a>, <a href="#lte">LTE (local thermodynamic equilibrium)</a>, <a href="#spectrum-synthesis">Spectrum synthesis</a></p></div>
     </div>
-    <figure class="gloss-figure">
-      <img src="/assets/images/glossary/gloss_B.png" alt="Na D doublet shown at four different spectral resolutions, from R=2000 to R=115000 (HARPS)" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Fig 2. The Na D doublet shown at four different spectral resolutions. At R=2,000 (red), the two lines are completely blended. At R=115,000 (HARPS, blue), both lines are cleanly resolved and the pressure-broadened wings are visible — critical for accurate EW measurement.</figcaption>
-    </figure>
-  </section>
-
-  <section class="gloss-section" id="architecture">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 2</p>
-      <h2 class="gloss-section-title">Codex Architecture</h2>
-      <p class="gloss-intro">These terms describe how the Codex checks results, freezes references, and keeps the scientific record honest. Entries are alphabetical.</p>
-    </div>
-    <div class="architecture-figures">
-      <figure class="gloss-figure"><img src="/assets/images/glossary/two-engine-floor.svg" alt="Engine A and Engine B run in parallel before selection and a cross-engine disagreement check"><figcaption>Two independent engines make agreement testable. A disagreement stays visible.</figcaption></figure>
-      <figure class="gloss-figure"><img src="/assets/images/glossary/three-gate-promotion.svg" alt="Three required gates lead from owed to gold, with any missing gate resulting in a hold"><figcaption>Promotion is strict: all three gates must pass. Missing means fail.</figcaption></figure>
-      <figure class="gloss-figure"><img src="/assets/images/glossary/freeze-tiers.svg" alt="Gold, owed-held, owed-blank, and data-gap freeze states arranged by measurement and ratification status"><figcaption>Freeze tiers separate measured-but-held results from true data gaps.</figcaption></figure>
-    </div>
-    <div class="term-card"><div class="term-header"><span class="term-name">1D-NLTE vs 3D-NLTE Scale</span></div><div class="term-row"><span class="term-label">Definition</span><p>The distinction between abundances calculated with a one-dimensional atmosphere and non-local thermodynamic equilibrium corrections, and those calculated with a three-dimensional atmosphere and the same physics. The Codex applies a ratified 1D-to-3D correction to iron. Other metals remain on the 1D-NLTE scale until matching grids exist. Ratified by RYA-553; broader grid work is deferred to RYA-550.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Blank-Cause Honesty Tripwire</span></div><div class="term-row"><span class="term-label">Definition</span><p>A guard in <code>pipeline/provenance_honesty.py</code> that refuses to publish a “no independent-gf line survives” claim when a row has surviving lines or a measured value. The verdict emitter and gold-reference builder share the guard. It prevents a measured result from hiding behind a false blank cause. Ratified by RYA-596 and RYA-653.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">CODEX_STATE_REGISTER.md</span></div><div class="term-row"><span class="term-label">Definition</span><p>The mutable state ledger. Every state-changing pull request updates it. A register-freshness guard blocks a pull request that changes a state surface without updating the register. Ratified by RYA-659.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Corroboration-Accept Standing Rule</span></div><div class="term-row"><span class="term-label">Definition</span><p>An alternative acceptance gate for cases where ionization balance stops on precision rather than value. The rule has five bounded criteria and lives in <code>docs/SCIENCE_STANDARDS.md</code>. Titanium with the Mallinson 2024 atom was its first use. Ratified by RYA-545.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Cross-Engine Mix Gate</span></div><div class="term-row"><span class="term-label">Definition</span><p>A loud-fail guard in <code>pipeline/engine_selection.py</code>. It raises when per-line winner selection produces a material disagreement between Engine A and Engine B at the element level. This prevents silent averaging.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Disposition Report</span></div><div class="term-row"><span class="term-label">Definition</span><p>A machine-generated, per-element report at <code>data/audit/element_disposition_report.json</code>. It reads the current phase_c verdict, gold reference, two-engine artifact, and tracker. It classifies each element as PASS held, PASS candidate, provisional flip, owed with cause, or data-gap. The report runs before every freeze and is not hand-editable. Ratified by RYA-663.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Element Status Tracker</span></div><div class="term-row"><span class="term-label">Definition</span><p>The analyst-facing state table at <code>data/audit/element_status_tracker.csv</code>. It is generated from the phase_c verdict, <code>config/physics_regime_rya400.yaml</code>, and an editorial sidecar. Hand-editing the CSV breaks the build. Ratified by RYA-654.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Engine A</span></div><div class="term-row"><span class="term-label">Definition</span><p>The 1D-NLTE production path. It measures an equivalent width or uses synthesis-v2, then applies a per-line NLTE correction from a one-dimensional correction table. The table may come from PySME-derived, MPIA, Korotin, INSPECT, or <code>nlte_cno</code> data. Engine A supplies the reported gold-reference value for most elements. Ratified by RYA-525.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Engine B</span></div><div class="term-row"><span class="term-label">Definition</span><p>The Turbospectrum-native NLTE synthesis path. It runs per line with the Gerber TS-native NLTE deck and uses native departure coefficients where a validated model atom exists. It runs beside Engine A for cross-engine verification. Ratified by RYA-533 and RYA-525.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Four-Noun Naming Convention</span></div><div class="term-row"><span class="term-label">Definition</span><p>The rule that state artifacts use one of four nouns: Catalog for a master enumeration, Register for mutable state facts, Tracker for work or progress, and Reference for frozen validated truth. “Gold” is reserved for a Reference modifier. Ratified by RYA-631.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Gold Reference (gold vN)</span></div><div class="term-row"><span class="term-label">Definition</span><p>A frozen, hashed, write-once solar abundance reference at <code>data/reference/solar/solar_abundances_vN.csv</code>. It is promoted from a phase_c verdict with <code>scripts/promote_solar_reference.py --apply</code>. A correction creates vN+1 rather than editing a frozen file. <code>data/reference/solar/CURRENT</code> names the active version.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">HFS-Resolved Synthesis</span></div><div class="term-row"><span class="term-label">Definition</span><p>Synthesis in which an atomic line is expanded into its hyperfine-structure components before fitting. The Codex uses it for Mn, Co, Cu, V, Sc, Ba II, Eu II, Na, and Al. Lithium at 6707 Å is not used as an HFS test in warm F stars because depletion can mimic a synthesis failure. Ratified by RYA-269.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Idempotent Correction</span></div><div class="term-row"><span class="term-label">Definition</span><p>A correction that is safe to request more than once because the pipeline recognizes an already-corrected state. The iron 1D-to-3D correction checks <code>method_scale</code>, so re-emitting cannot apply it twice. Ratified by RYA-553.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Ledger Consistency Guard</span></div><div class="term-row"><span class="term-label">Definition</span><p>A continuous-integration guard that compares the element status tracker, phase_c verdict, and gold reference. It reports any disagreement that lacks a documented ratified divergence. Zero undocumented failures is the target. Ratified by RYA-632.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">LEDGERS.md</span></div><div class="term-row"><span class="term-label">Definition</span><p>The repository-root startup index. It names the canonical register, tracker, catalogs, holdings manifest, and <code>SEQUENCE.md</code> read-set. Every session begins by reading that set. Every state-changing pull request updates at least one member. Ratified by RYA-659.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Owed Tier</span></div><div class="term-row"><span class="term-label">Definition</span><p>A ratified freeze tier that carries no frozen value even when the phase_c verdict contains a measurement. It is used when a value exists but has not been approved as gold-frozen. “Owed-HELD” and “owed-BLANK” are different states. Ratified by RYA-522.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Owed-HELD vs Owed-BLANK</span></div><div class="term-row"><span class="term-label">Definition</span><p>The distinction between a measured value held from promotion and an element with no measurement. <code>owed-HELD</code> means the verdict contains a value that is not yet gold. <code>owed-BLANK</code> means no value has been measured. The blank-cause honesty tripwire keeps the states separate. Ratified by RYA-596.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">phase_c Verdict</span></div><div class="term-row"><span class="term-label">Definition</span><p>The canonical per-element abundance verdict produced by <code>scripts/phase_c_verdict_rya371.py</code>. It combines equivalent-width measurements, NLTE corrections, dedicated synthesis channels, and ratified corrections. Each element has one row with its abundance, method, tier, and verdict status. Gold references are built from this channel.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">physics_regime</span></div><div class="term-row"><span class="term-label">Definition</span><p>A per-element classification in <code>config/physics_regime_rya400.yaml</code>. It distinguishes elements measured by equivalent width from elements sourced by synthesis. The tracker generator uses it to separate a verifier’s blind spot from a true measurement gap. Ratified by RYA-654.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Ratified Freeze Tier</span></div><div class="term-row"><span class="term-label">Definition</span><p>A per-element assignment of <code>gold</code>, <code>owed</code>, or <code>data-gap</code>. It controls whether a phase_c verdict value is promoted into the frozen reference. Ryan ratifies each assignment; the computation does not. Ratified by RYA-522.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Ratified GET-DATA Divergences</span></div><div class="term-row"><span class="term-label">Definition</span><p>Elements that the phase_c verifier reports as having no measurement even though a synthesis or Kitt Peak atlas channel carries a real value. Co, N, K, and Cu are registered in <code>data/audit/known_verdict_divergences.yaml</code> and pinned by test. They are annotated divergences, not measurement gaps.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Scaled-Drawin vs Ab-Initio (H-Collision Recipe)</span></div><div class="term-row"><span class="term-label">Definition</span><p>Two families of hydrogen-collision recipes in NLTE model atoms. Scaled-Drawin recipes are empirical and can overpredict corrections. Ab-initio recipes derive the collision physics directly and are often smaller. The model-atom vintage audit records which family each element uses and whether the difference is material. Ratified by RYA-546.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Science Product Package (SPP)</span></div><div class="term-row"><span class="term-label">Definition</span><p>The per-star release deliverable. Each released star receives one PDF with twelve standard sections covering identity, provenance, parameters, abundances, science products, cross-region checks, anomalies, line diagnostics, uncertainty, caveats, data provenance, and method provenance. Each package is write-once, hashed, and versioned with its gold reference. Ratified by RYA-668.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">SEQUENCE.md</span></div><div class="term-row"><span class="term-label">Definition</span><p>The newest-first landing log at the repository root. Each merged ticket gets one line stating what landed and what it unblocks. It is a narrative overlay on the register, not a state machine. Ratified by RYA-666.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Sirius</span></div><div class="term-row"><span class="term-label">Definition</span><p>The HP ProBook 450 that serves as the authoritative production runner. Abundance computation and continuous-integration tests run there. The Mac is used for research, development, and pull-request review, not production computation. Ratified by RYA-517 and RYA-567.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">State Surface</span></div><div class="term-row"><span class="term-label">Definition</span><p>A file listed in <code>pipeline/state_surfaces.py</code>. Changing one triggers the register-freshness guard. Examples include the verdict generator, gold builder, <code>config/stars.yaml</code>, and <code>config/constants.py</code>.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Three-Gate Promotion</span></div><div class="term-row"><span class="term-label">Definition</span><p>The strict test for promoting an element from <code>owed</code> to <code>gold</code>. Gate 1 requires Engine B to recover the external anchor within 0.05 dex. Gate 2 requires the model atom to pass the validate-don’t-tune firewall. Gate 3 requires the absolute dCE to remain within its band against the two-engine artifact. All three gates must pass. A missing gate fails. Ratified by RYA-561.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Two-Engine Floor</span></div><div class="term-row"><span class="term-label">Definition</span><p>The architecture that runs Engine A and Engine B for every element with a validated model atom. Cross-engine spread is reported as a diagnostic and is never silently averaged into the result. <code>CROSS_ENGINE_MIX_GATE</code> flags a material conflict between per-line selection and element-level aggregation. Ratified by RYA-525.</p></div></div>
-    <div class="term-card"><div class="term-header"><span class="term-name">Validate-Don't-Tune</span></div><div class="term-row"><span class="term-label">Definition</span><p>The Codex firewall that forbids tuning an atom or grid to reproduce an anchor. The physics must produce the anchor. The anchor tests the model; it is not the model’s target.</p></div></div>
-  </section>
-
-
-  <section class="gloss-section" id="line-profiles">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 3</p>
-      <h2 class="gloss-section-title">Line Profiles and Broadening</h2>
-      <p class="gloss-intro">Real spectral lines are not infinitely sharp — they are broadened by several physical mechanisms. Understanding broadening is essential for choosing the right profile model (Gaussian vs Voigt) and for measuring accurate equivalent widths.</p>
-    </div>
-    <figure class="gloss-figure">
-      <img src="/assets/images/glossary/gloss_C.png" alt="Three main broadening mechanisms: thermal Gaussian, pressure Lorentzian, and rotational flat-top" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Fig 3. The three main broadening mechanisms. Left: thermal broadening (Gaussian) — hotter stars have broader lines because atoms move faster. Centre: pressure/damping broadening (Lorentzian) — higher pressure widens the line wings. Right: rotational broadening — fast-rotating stars show flat-topped lines. 55 Cancri A rotates slowly (v sin i = 2.3 km/s), so rotational broadening is negligible.</figcaption>
-    </figure>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Thermal Broadening</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Broadening of a spectral line caused by the random thermal velocities of atoms in the stellar photosphere. Atoms moving toward/away from us Doppler-shift the absorbed wavelength, smearing the line into a Gaussian shape.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Imagine a thousand sodium atoms all absorbing light at 5895.92 Å. But they're not sitting still — they're moving randomly (thermal motion). Atoms moving toward us absorb slightly bluer wavelengths; atoms moving away absorb slightly redder ones. The result: absorption is spread over a small wavelength range, creating a bell-curve (Gaussian) shaped line.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Wavelength (Å); characterized by Gaussian σ or FWHM</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>For 55 Cnc (T<sub>eff</sub> = 5196 K), thermal broadening gives σ<sub>thermal</sub> ≈ 0.07–0.10 Å for typical lines.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Gaussian profile, FWHM, Voigt profile</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Pressure Broadening / Damping</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Broadening caused by collisions between the absorbing atom and surrounding gas particles, which perturb the atom's energy levels and allow absorption over a range of wavelengths. Creates Lorentzian-shaped wings extending far from the line centre.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>When sodium atoms collide with neighbouring hydrogen and helium atoms thousands of times per second in the dense photosphere, the collisions momentarily shift the energy levels, allowing absorption at wavelengths slightly offset from 5895.92 Å. This creates broad "wings" on either side of the line core. The Na D lines are extreme examples — their wings extend ±3 Å from centre.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Wavelength (Å); characterised by damping constant γ<sub>vdW</sub> (van der Waals)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Na D lines (EW ≈ 480 mÅ): heavily damped, broad wings. A weak Fe I line (EW ≈ 50 mÅ): negligible damping wings. Voigt profile required for lines with EW &gt; 150 mÅ.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Voigt profile, Lorentzian, Damping constant</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Gaussian Profile</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A bell-curve shaped line profile: F(λ) = 1 − A × exp(−½((λ−λ₀)/σ)²). Describes lines dominated by thermal and instrumental broadening.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>The same bell curve as a normal distribution in statistics. For weak lines (EW &lt; 80 mÅ), the Gaussian is an excellent approximation because thermal broadening dominates. For strong lines (Na D, Mg b), the Gaussian misses the pressure-broadened wings and underestimates the EW by up to 25%.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Depth A (dimensionless, 0 to 1), width σ (Å)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>A Fe I line at 5328 Å with EW = 75 mÅ: well-fitted by Gaussian. Error vs Voigt &lt; 2%.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Voigt profile, Lorentzian, Thermal broadening</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Lorentzian Profile</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A profile with broader, slower-decaying wings than a Gaussian: L(x) = 1/(1 + (x/γ)²). Describes lines dominated by pressure/damping broadening.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Named after physicist Hendrik Lorentz. Falls off as 1/x² instead of the Gaussian's exp(−x²) — much slower. This captures the damping wings of strong lines. However, a pure Lorentzian overestimates the core depth. The correct profile for stellar lines is the Voigt (convolution of Gaussian + Lorentzian).</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Half-width γ (Å)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>The damping wings of Na D extend several Angstroms — clearly Lorentzian in shape.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Gaussian profile, Voigt profile, Pressure broadening</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Voigt Profile</span><span class="term-pronunciation">VOIGT</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The mathematically correct line profile for stellar absorption lines: the convolution of a Gaussian (thermal + instrumental broadening) and a Lorentzian (pressure/damping broadening). Implemented efficiently using the Faddeeva function.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>For weak lines, the Voigt profile automatically reduces to a Gaussian (the Lorentzian component is negligible). For strong lines, the Voigt profile captures the broad wings that a pure Gaussian misses. This is why we use Voigt as our standard fit for all lines with EW &gt; 80 mÅ.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Four parameters: amplitude, centre wavelength (Å), Gaussian FWHM (Å), Lorentzian FWHM (Å)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Na D1 at 5895.92 Å: Voigt fit with fwhm<sub>G</sub> ≈ 0.16 Å, fwhm<sub>L</sub> ≈ 0.40 Å. EW ≈ 480 mÅ. Using Gaussian instead would give EW ≈ 360 mÅ — 25% too small.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Gaussian profile, Lorentzian, EW, Damping</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Rotational Broadening (v sin i)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Broadening caused by stellar rotation. The near limb moves away from us; the far limb moves toward us. Both absorb at slightly different wavelengths, broadening lines and flattening their tops.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>A spinning star has one edge moving toward you (blueshifted) and the other edge moving away (redshifted). Both edges have the same absorption lines, but shifted in opposite directions. The result is a line that appears wider and more flat-topped. v sin i is the rotation speed times the sine of the inclination angle (how tilted the rotation axis is relative to our line of sight).</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>km/s</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cancri A: v sin i = 2.3 km/s — very slow rotator. Rotational broadening is negligible. The Sun: v sin i ≈ 2 km/s. A hot A-type star like Vega: v sin i ≈ 20 km/s — significantly broadened.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">FWHM, Spectral resolution</p></div>
+    <div class="term-card" id="dex">
+      <div class="term-header"><h3 class="term-name">dex</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Short for decimal exponent. A difference of 1 dex is a factor of ten.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The unit for log-scale numbers. Small differences are easier to think of as percentages: 0.01 dex is about 2%, and 0.1 dex is about 26%.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless (logarithmic)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>[Fe/H] = +0.30 means about twice as much iron as the Sun, because 10<sup>0.30</sup> ≈ 2.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>All abundances and error bars on this site are in dex. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#abundance">Abundance, A(X)</a>, <a href="#abundance-ratio">Abundance ratio, [X/H] and [X/Fe]</a></p></div>
     </div>
   </section>
 
-
-  <section class="gloss-section" id="stellar-params">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 4</p>
-      <h2 class="gloss-section-title">Stellar Parameters</h2>
-      <p class="gloss-intro">Four numbers completely describe the model atmosphere of a main-sequence FGK star. Getting these right is fundamental — errors in stellar parameters propagate into every elemental abundance we measure.</p>
-    </div>
-    <figure class="gloss-figure">
-      <img src="/assets/images/glossary/gloss_D.png" alt="Stellar spectral types from hot blue O stars to cool red M dwarfs, FGK targets highlighted" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Fig 4. Stellar spectral types from hot blue O stars to cool red M dwarfs. Our primary targets (FGK stars, highlighted) span 3,700–7,500 K and include the Sun (G2), 55 Cancri A (K0), and HD 89307 (G0). Gliese 581 (M3) falls outside this range and requires special treatment.</figcaption>
-    </figure>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">T<sub>eff</sub> — Effective Temperature</span><span class="term-pronunciation">T-eff</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The temperature of a perfect blackbody that would emit the same total power as the star. In practice: the temperature of the outer photosphere where visible light escapes.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>T<sub>eff</sub> is the single most important parameter for a star. It determines which atoms are ionized vs neutral, which controls which absorption lines appear. A star at 5196 K (55 Cnc) looks slightly more orange than the Sun (5778 K) because it emits relatively more red light. Hotter = bluer = more energetic photons.</p></div>
+  <section class="gloss-section" id="letter-e">
+    <div class="gloss-section-header"><h2 class="gloss-letter">E</h2></div>
+    <div class="term-card" id="effective-temperature"><span id="stellar-params" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">Effective temperature, T<sub>eff</sub></h3><span class="term-pronunciation">T-eff</span></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The temperature of a perfect black body that gives off the same total power per unit area as the star.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The star's surface temperature, in a precise sense. It sets which atoms are excited and so which lines are strong.</p></div>
       <div class="term-row"><span class="term-label">Units</span><p>Kelvin (K)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cnc: T<sub>eff</sub> = 5196 ± 24 K (from CHARA interferometry). Sun: 5778 K. A-type star Vega: 9600 K.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Spectral type, log g, Model atmosphere</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: 5772 K (Heiter et al. 2015).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Fixed for the Sun before any line is measured. For the Sun it is known so well that its error-bar term comes out at zero. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#log-g">Surface gravity, log g</a>, <a href="#microturbulence">Microturbulence, ξ</a>, <a href="#model-atmosphere">Model atmosphere</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">log g — Surface Gravity</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The base-10 logarithm of the gravitational acceleration at the stellar surface, in cgs units (cm/s²). Determines atmospheric pressure, which affects line widths and the balance between neutral and ionized atoms.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>A higher log g means stronger gravity at the surface → denser, higher-pressure atmosphere → more collision broadening → stronger damping wings. For dwarfs (log g ≈ 4.4) vs giants (log g ≈ 2.0), the same spectral line can look completely different. We use Fe I vs Fe II balance to determine log g (see §4.2 of methodology).</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>log<sub>10</sub>(cm/s²) — "dex" (dimensionless logarithm)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cnc: log g = 4.41. Sun: log g = 4.44. A red giant: log g ≈ 2.0 (much lower pressure).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">T<sub>eff</sub>, Ionization equilibrium, Fe I, Fe II</p></div>
+    <div class="term-card" id="engine"><span id="architecture" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">Engine</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>One complete way of turning spectra into abundances, including how departures from LTE are handled. The Codex has two. One applies published NLTE corrections to each line's result. The other puts NLTE inside the spectrum calculation itself.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Two different calculators for the same question. If they agree, we trust the answer more. If they disagree, that tells us something about the physics.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Iron is measured with published correction tables and with Turbospectrum's built-in NLTE, and both results are shown.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Results from different engines and treatments are never averaged. Averaging would hide a disagreement that is real information. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#nlte">NLTE (non-local thermodynamic equilibrium)</a>, <a href="#orchestrator">Orchestrator</a>, <a href="#spectrum-synthesis">Spectrum synthesis</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Microturbulence (ξ)</span><span class="term-pronunciation">xi — "zy"</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A velocity parameter representing small-scale, non-thermal motions in the stellar photosphere (convective turbulence). Typically 0.8–1.5 km/s for FGK dwarfs. Suppresses saturation of strong lines.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Even after accounting for thermal and rotation broadening, strong lines still appear broader than a pure thermal model predicts. This excess broadening is modelled as microturbulence — tiny swirling motions in the photosphere smaller than a mean free path. If ξ is wrong, strong lines and weak lines give different abundances. We derive ξ by requiring all Fe I lines, regardless of strength, to give the same iron abundance.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>km/s (velocity)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cnc: ξ ≈ 0.9 km/s (typical for K dwarfs). Sun: ξ ≈ 1.0 km/s.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Microturbulence check (§4.2), Curve of growth, EW</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">[Fe/H] — Iron Abundance / Metallicity</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The logarithmic ratio of iron abundance in a star relative to the Sun. Used as a proxy for overall "metallicity" (abundance of all heavy elements). [Fe/H] = 0.00 by definition for the Sun.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>[Fe/H] = log(N<sub>Fe</sub>/N<sub>H</sub>)<sub>star</sub> − log(N<sub>Fe</sub>/N<sub>H</sub>)<sub>Sun</sub>. Each +0.10 dex represents ~26% more iron than the previous level. +0.32 dex (55 Cnc) means roughly twice the solar iron abundance. Stars with more metals are more likely to host planets.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>dex (dimensionless logarithmic ratio)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cancri A: [Fe/H] = +0.32 (metal-rich — twice solar). Sun: [Fe/H] = 0.00. HD 89307: [Fe/H] = −0.14 (slightly metal-poor). Gliese 581: [Fe/H] = −0.33.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Metallicity, [X/H], [X/Fe], dex</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Spectral Type (OBAFGKM)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A classification system for stars based on their surface temperature and the pattern of absorption lines in their spectra. From hottest (O) to coolest (M).</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>The mnemonic "Oh Be A Fine Girl/Guy, Kiss Me" helps remember the sequence. Each type is subdivided 0–9 (e.g., G2 = slightly hotter than G5). The Sun is G2V — G-type, subtype 2, V = main sequence ("V" is Roman numeral 5, for luminosity class V).</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Unitless classification</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Sun: G2V. 55 Cancri A: K0IV-V. HD 89307: G0V. Gliese 581: M3V.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">T<sub>eff</sub>, Main sequence</p></div>
-    </div>
-  </section>
-
-
-  <section class="gloss-section" id="abundance">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 5</p>
-      <h2 class="gloss-section-title">Abundance Notation and Units</h2>
+    <div class="term-card" id="equivalent-width">
+      <div class="term-header"><h3 class="term-name">Equivalent width (EW)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The width of a completely dark strip with the same area as the absorption line.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>One number for how much light a line removes, whatever its shape. A strong line has a large equivalent width and a faint line a small one.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Ångströms (Å) or milliångströms (mÅ); 1 Å = 1000 mÅ</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Many lines used for the Sun are a few tens of mÅ.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Measured in the profile-fit route, in the visible and red bands where lines are well separated. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#curve-of-growth">Curve of growth</a>, <a href="#absorption-line">Absorption line</a>, <a href="#continuum">Continuum</a></p></div>
     </div>
     <figure class="gloss-figure">
-      <img src="/assets/images/glossary/gloss_E.png" alt="Solar elemental abundances on the A(X) scale with CHNOPS, alpha, and iron-peak elements highlighted; and [Fe/H] metallicity-planet correlation" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Fig 5. Left: solar elemental abundances on the logarithmic A(X) scale — hydrogen = 12.00 by definition. Life-essential CHNOPS elements (green), alpha elements (blue), and iron-peak elements (orange) are highlighted. Right: [Fe/H] notation explained, showing how metallicity correlates with the probability of hosting planets. 55 Cancri A at [Fe/H] = +0.32 is at the high-metallicity end.</figcaption>
+      <img src="/assets/images/glossary/gloss_A.png" alt="Anatomy of an absorption line: continuum, core, wings, FWHM, and the equivalent-width rectangle" onerror="this.closest('figure').style.display='none'">
+      <figcaption>Left: the parts of an absorption line. Right: the equivalent width is the width of a fully dark strip with the same area as the line.</figcaption>
     </figure>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">dex</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Short for "decimal exponent." A logarithmic unit used throughout astronomy. A difference of 1.0 dex represents a factor of 10 in the actual quantity.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>1.0 dex = factor of 10. 0.3 dex ≈ factor of 2. 0.1 dex ≈ factor of 1.26 (26% difference). So when we say [Fe/H] = +0.32, it means 55 Cnc has 10<sup>0.32</sup> ≈ 2.1 times more iron than the Sun.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless (logarithmic)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>[Fe/H] = +0.32 → factor of ~2.1 more iron than Sun. σ = 0.05 dex → ~12% uncertainty in actual abundance.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">[Fe/H], [X/H], A(X)</p></div>
+  </section>
+
+  <section class="gloss-section" id="letter-f">
+    <div class="gloss-section-header"><h2 class="gloss-letter">F</h2></div>
+    <div class="term-card" id="forbidden-line">
+      <div class="term-header"><h3 class="term-name">Forbidden line</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A line from a transition so unlikely that it is rarely seen in the laboratory, but appears in stars because the light passes through so much gas. It is written in brackets, as in [O I].</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A very weak kind of line. It forms under simple conditions, which makes it useful, but it is easily confused with any neighbour.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a type of transition)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>[O I] 6300.304 Å is a classic solar oxygen line. A nickel line sits 0.032 Å away.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Used for oxygen, with its nickel neighbour included in the calculation. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#blend">Blend</a>, <a href="#oscillator-strength">Oscillator strength, log gf</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">A(X) — Astronomical Abundance Scale</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The logarithmic abundance of element X on a scale where hydrogen = 12.00. Defined as A(X) = log(N<sub>X</sub>/N<sub>H</sub>) + 12, where N<sub>X</sub> and N<sub>H</sub> are the number of atoms per unit volume.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Why +12? Because hydrogen is the most abundant element in stars — about 10<sup>12</sup> times more abundant than the least abundant elements. Adding 12 makes all abundances positive and manageable. A(H) = 12.00 always. A(Fe) = 7.46 for the Sun means roughly 1 iron atom per 35,000 hydrogens.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless (logarithmic)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>A(Fe)<sub>Sun</sub> = 7.46 (Asplund 2021). A(Na)<sub>Sun</sub> = 6.24. A(Fe)<sub>55Cnc</sub> ≈ 7.78 ([Fe/H] = +0.32 above solar).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">[X/H], dex</p></div>
+    <div class="term-card" id="fwhm">
+      <div class="term-header"><h3 class="term-name">FWHM (full width at half maximum)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The width of a line measured halfway between the continuum and the line's deepest point.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A simple measure of how wide a line is. Narrow lines are less likely to run into their neighbours.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Ångströms (Å)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>A line whose depth is 0.30 is measured for width where its depth is 0.15.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Part of describing a line's shape in the profile-fit route. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#equivalent-width">Equivalent width (EW)</a>, <a href="#spectral-resolution">Spectral resolution, R</a>, <a href="#voigt-profile">Voigt profile</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">[X/H] — Elemental Abundance Ratio</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The abundance of element X in a star relative to the Sun, on the logarithmic dex scale. [X/H] = A(X)<sub>star</sub> − A(X)<sub>Sun</sub>.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>The brackets [ ] are standard notation for "abundance relative to the Sun." [Fe/H] = 0.00 means the same iron as the Sun. [C/H] = +0.20 means 60% more carbon than the Sun. This notation removes the very large A(X) numbers and focuses on differences from solar.</p></div>
+  </section>
+
+  <section class="gloss-section" id="letter-g">
+    <div class="gloss-section-header"><h2 class="gloss-letter">G</h2></div>
+    <div class="term-card" id="gaussian-profile">
+      <div class="term-header"><h3 class="term-name">Gaussian profile</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A bell-shaped line profile. It describes broadening by random gas motions and by the instrument.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The familiar bell curve. It drops off quickly away from the centre, so it has no long wings.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Depth (0 to 1) and width σ (Å)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Weak lines in a Sun-like star look close to Gaussian.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>One part of the Voigt profile used in the profile-fit route. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#voigt-profile">Voigt profile</a>, <a href="#lorentzian-profile">Lorentzian profile</a>, <a href="#thermal-broadening">Thermal broadening</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-h">
+    <div class="gloss-section-header"><h2 class="gloss-letter">H</h2></div>
+    <div class="term-card" id="harps">
+      <div class="term-header"><h3 class="term-name">HARPS</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The High Accuracy Radial velocity Planet Searcher, a spectrograph on the ESO 3.6 m telescope at La Silla, Chile. Its resolution is about 115,000 and it covers 3780 to 6910 Å.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A very stable instrument built to find planets by the wobble they cause in their star. Its spectra are also sharp enough to measure elements.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Resolution R ≈ 115,000</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>We use ten direct exposures of the Sun from HARPS, corrected for Earth's atmosphere with molecfit.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>One of the solar holdings in the visible band. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#holding">Holding</a>, <a href="#spectral-resolution">Spectral resolution, R</a>, <a href="#telluric">Telluric absorption and correction</a></p></div>
+    </div>
+    <div class="term-card" id="holding">
+      <div class="term-header"><h3 class="term-name">Holding</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>One instrument's observations of one star, as stored and prepared by the Codex.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The set of spectra we have of a star from one instrument. The Sun has five: two versions of the Kitt Peak atlas, the IAG atlas, HARPS and CRIRES+.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The CRIRES+ holding is infrared sunlight reflected off the asteroid Vesta.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Each holding is corrected for Earth's atmosphere and normalised once, then frozen and used unchanged for every element. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#band">Band</a>, <a href="#atlas">Atlas (solar flux atlas)</a>, <a href="#telluric">Telluric absorption and correction</a></p></div>
+    </div>
+    <div class="term-card" id="hst">
+      <div class="term-header"><h3 class="term-name">HST/STIS and HST/COS</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Two ultraviolet spectrographs on the Hubble Space Telescope: the Space Telescope Imaging Spectrograph and the Cosmic Origins Spectrograph.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Earth's air blocks most ultraviolet light, so some lines can only be seen from space. These two instruments see them.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (instruments)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Some carbon, nitrogen, oxygen and silicon lines lie only in the ultraviolet.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>We hold Hubble spectra of planet hosts. They wait until the Sun is finished. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#mast">MAST</a>, <a href="#band">Band</a></p></div>
+    </div>
+    <div class="term-card" id="hyperfine-structure">
+      <div class="term-header"><h3 class="term-name">Hyperfine structure</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The splitting of one spectral line into several very close components, caused by the atomic nucleus. Different isotopes of an element split a line in a similar way.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>What looks like one line is really a cluster of tiny lines. Treat it as one and the shape is wrong, so the answer is wrong.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Component separations in mÅ</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Manganese, cobalt, copper, scandium, vanadium, barium and europium lines need it.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The calculation includes every component, but the gf is fixed once for the whole physical line and the components are scaled to match. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#oscillator-strength">Oscillator strength, log gf</a>, <a href="#spectrum-synthesis">Spectrum synthesis</a>, <a href="#blend">Blend</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-i">
+    <div class="gloss-section-header"><h2 class="gloss-letter">I</h2></div>
+    <div class="term-card" id="iron-peak">
+      <div class="term-header"><h3 class="term-name">Iron-peak elements</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Elements near iron in the periodic table, such as V, Cr, Mn, Fe, Co and Ni. Their nuclei are among the most tightly bound, so stars build up a lot of them.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Iron and its neighbours. They are made largely in supernova explosions and end up in planet cores.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (an element group)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Iron is the iron-peak element with the most usable lines.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Iron is always measured first, as the check that everything before it works. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#alpha-elements">Alpha elements (α)</a>, <a href="#metallicity">Metallicity, [Fe/H]</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-l">
+    <div class="gloss-section-header"><h2 class="gloss-letter">L</h2></div>
+    <div class="term-card" id="laboratory-gf">
+      <div class="term-header"><h3 class="term-name">Laboratory gf</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>An oscillator strength measured in a laboratory, usually by timing how long an excited atom lives and measuring how its decay splits between lines.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The line strength measured directly from real atoms, not calculated. It comes with a stated error, which is what lets us put a number on how much it can be trusted.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex (as log gf)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Much of the solar iron work relies on laboratory gf from groups such as O'Brian et al. (1991).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Any line with a laboratory gf is added to the Reference grade. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#oscillator-strength">Oscillator strength, log gf</a>, <a href="#correlated-gf-error">Correlated gf error</a>, <a href="#line-grades">Line grades: Reference, Codex and Deep</a></p></div>
+    </div>
+    <div class="term-card" id="line-grades">
+      <div class="term-header"><h3 class="term-name">Line grades: Reference, Codex and Deep</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Three sets of lines, chosen by how well each line's oscillator strength is known. Reference: the lines and gf values of the published solar analysis, plus any line with a laboratory gf. Codex: any line whose gf has a published uncertainty, up to 60% deep. Deep: the same standard for lines deeper than 60%.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>We first repeat the published work with the same lines, then widen the set. Every line in a grade has a gf error we can put a number on.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a label)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>A line whose gf has no stated uncertainty can still be measured, but it does not reach a grade.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The grades are set before anything is measured. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#published-line-set">Published line set</a>, <a href="#oscillator-strength">Oscillator strength, log gf</a>, <a href="#nist-grade">NIST accuracy grade</a></p></div>
+    </div>
+    <div class="term-card" id="literature-check">
+      <div class="term-header"><h3 class="term-name">Literature check</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A comparison of our result with the published solar values for the same element, each with the method it used.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Before we trust our number, we compare it with what other careful teams found and how they found it.</p></div>
       <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>[Fe/H] = +0.32 (55 Cnc iron). [Na/H] = +0.37 (estimated sodium). [O/H] = +0.12 (estimated oxygen — less enhanced than Fe).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">[X/Fe], A(X), dex</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The visible band is the control. It has a known answer: iron at 7.46 (Asplund, Amarsi &amp; Grevesse 2021).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Published values are collected before measuring and compared after. The models are never adjusted to hit the published value. How far the method misses in the visible band goes into the error bar. <a href="/method/#publication">Method, section 08</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#publication-gate">Publication gate</a>, <a href="#published-line-set">Published line set</a>, <a href="#uncertainty-budget">Uncertainty budget</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">[X/Fe] — Abundance Ratio Relative to Iron</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The abundance of element X relative to iron (rather than hydrogen). [X/Fe] = [X/H] − [Fe/H]. Reveals nucleosynthetic patterns independent of overall metallicity.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>If a star is metal-rich ([Fe/H] = +0.32), ALL elements tend to be more abundant — that's just what metal-rich means. [X/Fe] asks: "is element X enhanced or depleted RELATIVE to iron?" Alpha elements (Mg, Si, Ca) enhanced relative to iron ([α/Fe] &gt; 0) means the star formed early in galactic history, before Type Ia supernovae had time to add iron.</p></div>
+    <div class="term-card" id="lorentzian-profile">
+      <div class="term-header"><h3 class="term-name">Lorentzian profile</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A line profile with wide wings that fall off slowly away from the centre. It describes broadening by collisions in the gas.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Like a bell curve with long skirts. Strong lines show these wings clearly.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Half-width γ (Å)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The broad wings of the sodium D lines are Lorentzian in shape.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>One part of the Voigt profile used in the profile-fit route. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#voigt-profile">Voigt profile</a>, <a href="#gaussian-profile">Gaussian profile</a>, <a href="#pressure-broadening">Pressure broadening (damping)</a></p></div>
+    </div>
+    <div class="term-card" id="lte">
+      <div class="term-header"><h3 class="term-name">LTE (local thermodynamic equilibrium)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The assumption that in each layer of the atmosphere, the atoms' energy levels and ionisation are set by that layer's temperature alone.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The simplest way to calculate a spectrum. It treats every layer as if it were in a closed, evenly heated box.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (an approximation)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Most strong lines in the Sun form well enough in LTE to be a useful starting point. Many still need an NLTE correction.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>1D LTE is one of the treatments we run and report on its own. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#nlte">NLTE (non-local thermodynamic equilibrium)</a>, <a href="#departure-coefficient">Departure coefficient</a>, <a href="#model-atmosphere">Model atmosphere</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-m">
+    <div class="gloss-section-header"><h2 class="gloss-letter">M</h2></div>
+    <div class="term-card" id="mast">
+      <div class="term-header"><h3 class="term-name">MAST</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The Mikulski Archive for Space Telescopes, NASA's public archive of Hubble and other space-telescope data.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The library where Hubble's observations are kept for anyone to download.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (an archive)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Our Hubble spectra of planet hosts come from MAST.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The source of our Hubble holdings. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#hst">HST/STIS and HST/COS</a>, <a href="#holding">Holding</a></p></div>
+    </div>
+    <div class="term-card" id="median">
+      <div class="term-header"><h3 class="term-name">Median over lines</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The middle value of the line-by-line abundances, once they are put in order.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Each line gives its own answer. We take the middle one, so a single odd line cannot pull the result far.</p></div>
       <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>[Mg/Fe] = +0.05 for 55 Cnc: slightly enhanced Mg relative to Fe — typical for a mildly metal-rich K dwarf.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">[X/H], Alpha-element enhancement, Galactic chemical evolution</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Five lines giving 7.40, 7.44, 7.46, 7.47 and 7.90 have a median of 7.46. Their average would be 7.53.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>A result is the median over its lines. When the published analysis we are repeating used a plain average, we use the same. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#abundance">Abundance, A(X)</a>, <a href="#statistical-systematic">Statistical and systematic uncertainty</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">C/O Ratio</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The ratio of carbon to oxygen atoms in a stellar photosphere (or planetary composition). Solar C/O = 0.55. Below ~0.8: oxygen-rich chemistry (silicates). Above ~0.8: carbon-rich chemistry (SiC, graphite).</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>This is the most important single number for predicting rocky planet composition. On Earth, minerals like quartz (SiO<sub>2</sub>), olivine (Mg<sub>2</sub>SiO<sub>4</sub>), and feldspar dominate because oxygen is more abundant than carbon. If a star has C/O &gt; 0.8, its planets might instead have silicon carbide (SiC) or graphite — possibly even diamond — instead of silicates. The contested C/O measurement for 55 Cancri (0.78 or &gt;1?) is a primary science goal of this project.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless ratio</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Sun: C/O = 0.55. Earth crust: C/O ≪ 1 (oxygen dominant). Carbon planets (hypothetical): C/O &gt; 0.8.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">[C/H], [O/H], Planetary composition</p></div>
+    <div class="term-card" id="metallicity">
+      <div class="term-header"><h3 class="term-name">Metallicity, [Fe/H]</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A star's iron abundance compared with the Sun's: [Fe/H] = A(Fe)<sub>star</sub> − A(Fe)<sub>Sun</sub>. It is used as a stand-in for all elements heavier than helium.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>How metal-rich a star is compared with the Sun. Stars with more metals are more likely to host giant planets.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: [Fe/H] = 0.00 by definition.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Iron is always measured first. For the Sun its metal-content error term comes out at zero. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#abundance-ratio">Abundance ratio, [X/H] and [X/Fe]</a>, <a href="#abundance">Abundance, A(X)</a>, <a href="#iron-peak">Iron-peak elements</a></p></div>
     </div>
-  </section>
-
-
-  <section class="gloss-section" id="model-atm">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 6</p>
-      <h2 class="gloss-section-title">Model Atmospheres and LTE</h2>
+    <div class="term-card" id="mg-si-ratio">
+      <div class="term-header"><h3 class="term-name">Mg/Si and Fe/Si ratios</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The number of magnesium or iron atoms divided by the number of silicon atoms in a star.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Rocky planets are built mostly from magnesium, silicon, iron and oxygen. Mg/Si shapes which minerals form the mantle. Fe/Si hints at how big the iron core is.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Ratios of numbers of atoms</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: Mg/Si = 10<sup>(7.55 − 7.51)</sup> ≈ 1.10 and Fe/Si = 10<sup>(7.46 − 7.51)</sup> ≈ 0.89 (Asplund, Amarsi &amp; Grevesse 2021).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Derived ratios, worked out after the elements behind them are published. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#c-o-ratio">C/O ratio</a>, <a href="#alpha-elements">Alpha elements (α)</a></p></div>
     </div>
-    <figure class="gloss-figure">
-      <img src="/assets/images/glossary/gloss_F.png" alt="Stellar atmosphere layers from LTE photosphere to NLTE chromosphere, plus NLTE correction magnitudes for key lines" onerror="this.closest('figure').style.display='none'">
-      <figcaption>Fig 6. Left: stellar atmosphere layers from the dense interior (LTE valid) through the photosphere (where absorption lines form) to the chromosphere and corona (NLTE effects become important). Right: NLTE correction magnitudes for key lines. The forbidden [O I] line at 6300 Å requires NO correction — a key reason it is our preferred oxygen indicator.</figcaption>
-    </figure>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Model Atmosphere</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A mathematical model of the physical conditions (temperature, pressure, density, opacity) in a stellar atmosphere as a function of depth, computed from equations of radiative transfer and hydrostatic equilibrium.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Without a model atmosphere, we can't convert an absorption line depth into an abundance — we wouldn't know the temperature and pressure conditions where the line was formed. ATLAS9 (Kurucz) provides pre-computed grids of model atmospheres parameterized by T<sub>eff</sub>, log g, [M/H], and ξ.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — abstract mathematical model</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>ATLAS9 model for 55 Cnc: T<sub>eff</sub>=5196 K, log g=4.41, [M/H]=+0.32. Each model has 64 atmospheric layers with T, P, density at each depth.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">ATLAS9, LTE, T<sub>eff</sub>, log g</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">ATLAS9 / Castelli-Kurucz</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The industry-standard grid of 1D, plane-parallel, LTE model atmospheres for FGK stars, developed by Dr. Robert Kurucz (Harvard) and updated by Castelli &amp; Kurucz (2003). Used in the Exoplanet Codex pipeline.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>ATLAS9 has been the backbone of stellar abundance analysis since the 1970s. The fact that it's still the standard in 2026 reflects how well the fundamental physics was captured. It's fast, well-tested, and matches observations of FGK dwarfs extremely well. MARCS (Sweden) is an alternative grid used for cross-validation.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — software package and data grid</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>For 55 Cnc, we interpolate the ATLAS9 grid to exactly T<sub>eff</sub>=5196 K, log g=4.41. The model predicts how deep each absorption line should be for a given elemental abundance.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">LTE, Model atmosphere, MARCS</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">LTE — Local Thermodynamic Equilibrium</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The assumption that each small volume of the photosphere is in thermal equilibrium at the local temperature T, so that the Boltzmann and Saha equations correctly describe the distribution of atoms across energy levels and ionization states.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>LTE is like assuming that every tiny parcel of stellar gas behaves as a perfect "black box" responding only to its local temperature — not to radiation from other layers or from outside the star. This is an excellent approximation in the dense photospheres of FGK dwarfs, where collisions are so frequent that local thermal equilibrium is maintained. It breaks down in low-density regions (chromosphere, corona).</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — physical approximation</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>LTE valid for: photosphere of FGK dwarfs, most absorption lines. LTE breaks down for: O I 7771–7775 Å triplet (requires NLTE correction of −0.20 to −0.40 dex); resonance lines of Na I, Li I.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">NLTE, Model atmosphere, Saha equation</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">NLTE — Non-Local Thermodynamic Equilibrium</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The condition where the radiation field or collisional rates are insufficient to maintain LTE, so the actual level populations differ from Boltzmann/Saha predictions. NLTE corrections are additive offsets applied to LTE abundances.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Some spectral lines form partly in the low-density outer photosphere where the radiation field (photons from deep inside the star) "pumps" atoms into higher energy states than thermal collisions alone would produce. This changes the line depth in ways the LTE model can't capture. We apply published NLTE correction grids (Amarsi et al. 2021) to fix this.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Correction in dex, typically −0.03 to −0.40 dex</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>O I 7773 Å: NLTE correction ≈ −0.30 dex. Na I D: −0.07 dex. [O I] 6300 Å: 0.00 dex (no correction needed — forbidden lines form under LTE).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">LTE, Forbidden line, Amarsi et al.</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Forbidden Line</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A spectral transition prohibited under electric-dipole selection rules but occurring via magnetic-dipole or electric-quadrupole transitions. Denoted with brackets: [O I] for the forbidden oxygen line.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>In high-density environments, atoms are constantly colliding and de-exciting before they can absorb via forbidden transitions. But the forbidden [O I] 6300.304 Å line can still form as an absorption line against the bright continuum. The key advantage: forbidden lines form strictly under LTE — no NLTE correction needed, making them cleaner oxygen abundance indicators.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — type of atomic transition</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>[O I] 6300.304 Å: the most important forbidden line for stellar oxygen abundance work. Note: the Ni I blend at 6300.336 Å is only 0.032 Å away — a key systematic for C/O measurements.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">LTE, NLTE, [O I], Ni I blend</p></div>
-    </div>
-  </section>
-
-
-  <section class="gloss-section" id="nucleosynthesis">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 7</p>
-      <h2 class="gloss-section-title">Nucleosynthesis and Element Groups</h2>
-      <p class="gloss-intro">The elements in a star did not form in that star — they were forged in supernovae and other stars over billions of years of galactic chemical evolution. Understanding which process made each element explains the patterns we see in stellar abundances.</p>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Alpha Elements (α)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Elements with atomic masses that are integer multiples of the helium nucleus (alpha particle, mass 4): O, Ne, Mg, Si, S, Ar, Ca, Ti. Produced primarily by massive stars and Type II supernovae.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>These elements are produced by alpha capture — successive fusion of helium nuclei onto heavier elements. They're called "alpha elements" because each step adds one alpha particle (helium nucleus). Since they come from short-lived massive stars, they were abundant early in galactic history. The ratio [α/Fe] tells us WHEN a star's birth cloud was enriched.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — element classification</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>High [α/Fe] (e.g., +0.3) = old star formed before Type Ia SNe contributed iron. Low [α/Fe] (~0) = star formed after the galaxy was enriched with iron from Type Ia SNe. 55 Cnc has solar [α/Fe] — consistent with its ~10 Gyr age.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Iron-peak elements, Type II supernova, [α/Fe], Galactic chemical evolution</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Iron-Peak Elements</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Elements near iron in the periodic table (V, Cr, Mn, Fe, Co, Ni, Cu) that have the highest nuclear binding energy per nucleon. Produced primarily by Type Ia supernovae. Also includes Al as a refractory rocky-planet tracer.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Iron is the "most stable" nucleus — you can't release energy by fusing iron into heavier elements or splitting it into lighter ones. Elements near iron share this high stability. Type Ia supernovae (white dwarf explosions in binary systems) are the primary source, enriching the galaxy with iron-peak elements over billion-year timescales.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — element classification</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Ni/Fe ratio in rocky planets predicts core composition. Co and Cr trace the relative contributions of Type Ia vs Type II supernovae. Cu (odd-Z, bio-essential trace metal) is measured from Cu I 5105/5218 Å. Al (refractory, crustal composition) uses two weak lines at 6696/6698 Å — best-effort measurement.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Alpha elements, Type Ia supernova, [Fe/H]</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">CHNOPS</span><span class="term-pronunciation">SAY-nops</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The six elements essential for all known life: Carbon (C), Hydrogen (H), Nitrogen (N), Oxygen (O), Phosphorus (P), Sulfur (S). Their relative abundances in a star predict whether its planets could host life.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>These six elements make up ~98% of all living matter on Earth. Carbon forms the backbone of organic molecules. Hydrogen and oxygen combine to make water. Nitrogen is in DNA and proteins. Phosphorus is in ATP (the cell's energy currency) and DNA. Sulfur is in amino acids. Phosphorus is now recognised as the LIMITING nutrient — it's the scarcest of the six in most stellar environments and varies by 10× across FGK stars.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — element group acronym</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>The CHNOPS habitability index compares a star's C:N:O:P:S ratios to the "Redfield ratio" — the composition of marine organisms on Earth.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Habitability, Redfield ratio, P I lines</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">s-process Elements (Ba, Y, Eu)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Elements heavier than iron formed by the slow neutron capture process (s-process) in AGB (Asymptotic Giant Branch) stars. Include Ba, Y, Zr, La, Ce, Nd.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>When iron nuclei slowly capture neutrons (one at a time), with time between each capture for the nucleus to beta-decay, you build up s-process elements. This happens inside evolved giant stars. The ratio Y/Mg is a stellar "chemical clock" — young stars have more Y relative to Mg because more AGB stars have had time to enrich the galaxy.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — nucleosynthesis process</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Ba II 5853.67 Å is a strong, easily measurable s-process line. Y II 4883 Å traces galactic age.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">r-process, Alpha elements, Galactic chemical evolution</p></div>
-    </div>
-  </section>
-
-
-  <section class="gloss-section" id="pipeline">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 8</p>
-      <h2 class="gloss-section-title">Pipeline and Analysis Terms</h2>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">HARPS</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>High Accuracy Radial velocity Planet Searcher. A spectrograph at the ESO 3.6m telescope, La Silla, Chile. Spectral resolution R~115,000, wavelength coverage 3780–6910 Å. The primary instrument for Exoplanet Codex spectroscopy.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>HARPS was built to measure stellar radial velocities to 1 m/s precision — accurate enough to detect the wobble caused by an Earth-sized planet. This extreme precision requires high spectral resolution, which is exactly what we need for abundance work. It is also why we have 88 archival HARPS spectra of 55 Cancri — it was a prime target for planet searches.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>R = λ/Δλ = 115,000 (dimensionless)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>HARPS can resolve features separated by 0.05 Å at 5800 Å. ELODIE (used in 2010 thesis): R~42,000.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">ELODIE, Spectral resolution, ESO archive</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">HST/STIS</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Space Telescope Imaging Spectrograph — a UV and optical spectrograph aboard the Hubble Space Telescope. Wavelength coverage ~1150–10,000 Å. Used in the Codex for UV spectral lines inaccessible from Earth's surface.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Earth's atmosphere absorbs ultraviolet light below ~3000 Å, blocking access to many important spectral lines of carbon, nitrogen, oxygen, and other elements. STIS on HST orbits above the atmosphere, providing access to these UV features. For 55 Cnc A, gratings G140M, G750L, G430L were used; for Alpha Cen A, the high-resolution echelle gratings E140H, E140M, E230H, E230M were used.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — instrument</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>O I UV lines at ~1302 Å and C II at ~1335 Å are only accessible via HST/STIS — both blocked by the atmosphere at ground-based observatories.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">HST/COS, MAST, Multi-wavelength analysis, HARPS</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">HST/COS</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Cosmic Origins Spectrograph — a far-ultraviolet spectrograph aboard the Hubble Space Telescope. Wavelength coverage ~1150–3200 Å. Optimized for high sensitivity in the far-UV where STIS has lower throughput.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>COS was installed on HST during Servicing Mission 4 (2009) specifically to boost sensitivity in the far-UV. It detects extremely faint UV features that would otherwise require impractically long exposure times. Used in the Codex where far-UV spectra are available and needed for element coverage.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — instrument</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Far-UV coverage ~1150–3200 Å includes Ly-α at 1216 Å and UV transitions of N, C, Si, and O not accessible from the ground.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">HST/STIS, MAST, Multi-wavelength analysis</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">MAST</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Mikulski Archive for Space Telescopes — NASA's archive for data from the Hubble Space Telescope and other space observatories. All HST spectra used in the Codex are retrieved from MAST.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>MAST is to space telescope data what the ESO Science Archive is to ground-based data. It hosts the full HST archive — including all STIS and COS spectra — and provides free public access after a 12-month proprietary period. The Codex retrieves all HST data from mast.stsci.edu.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — data archive</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Alpha Cen A: ~111 HST observations retrieved from MAST spanning multiple programs and gratings (downloading as of May 2026).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">HST/STIS, HST/COS, ESO archive</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Multi-wavelength analysis</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Combining spectra from multiple wavelength regimes — typically optical (HARPS, 3780–6910 Å) and ultraviolet (HST, ~1150–3200 Å) — to access elemental spectral lines unavailable in any single wavelength window.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>No single spectrograph covers everything. HARPS gives excellent optical coverage but cannot see UV lines. HST/STIS and COS cover the UV but don't observe from the ground. By combining both data sets, we access a much wider set of element lines — including UV transitions of N, O, C, and S that are essential for the CHNOPS habitability assessment.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — analysis strategy</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>For Alpha Cen A: HARPS provides 75 high-SNR optical spectra; HST STIS/COS provides UV coverage down to 1150 Å. Together they enable measurement of all 27 target elements including those with only UV spectral lines.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">HST/STIS, HST/COS, HARPS, MAST, CHNOPS</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">S/N — Signal-to-Noise Ratio</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The ratio of the signal (flux) to the noise (random fluctuations) in a spectrum. Higher S/N = cleaner, more precise measurements.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Every spectrum has noise — random fluctuations from photon counting statistics. S/N = 200 means the signal is 200 times the noise. For abundance work, S/N &gt; 200 is the minimum; S/N &gt; 400 is preferred. Weak lines like P I (EW ≈ 12 mÅ) require S/N &gt; 300 for a reliable measurement.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless ratio</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cnc single HARPS exposure: S/N ≈ 100. Co-added 88 spectra: S/N ≈ √88 × 100 ≈ 940.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Co-adding, Photon noise, EW uncertainty</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Radial Velocity (RV)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The component of a star's velocity along our line of sight (toward or away from us). Measured from the Doppler shift of spectral lines. Must be corrected before co-adding spectra.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>If a star moves toward us, all its spectral lines shift to shorter (bluer) wavelengths. If it moves away, they shift to longer (redder) wavelengths. The formula: Δλ/λ = v/c. 55 Cnc has a systemic RV of +27.58 km/s (receding at 27.58 km/s). Its 5-planet system causes additional RV variation of ±100 m/s — small but significant when co-adding spectra.</p></div>
+    <div class="term-card" id="microturbulence">
+      <div class="term-header"><h3 class="term-name">Microturbulence, ξ</h3><span class="term-pronunciation">xi, “ksee”</span></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A speed that stands in for small-scale gas motions in the atmosphere that are not included in a 1D model. It broadens the absorption of each atom.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Small swirls of gas spread a line's absorption over a wider range of colours. That matters most for strong lines, which are otherwise nearly black at their centre.</p></div>
       <div class="term-row"><span class="term-label">Units</span><p>km/s</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cnc systemic RV = +27.58 km/s. At 5895 Å, this shifts all lines by: 5895 × 27.58/299792 ≈ 0.54 Å.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Doppler shift, Barycentric correction, Co-adding</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: ξ = 1.0 km/s (Jofré et al. 2014).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>One of the stellar parameters fixed before measuring. Unlike temperature and gravity, its error term for the Sun is not zero, so we measure it by raising and lowering ξ. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#saturated-line">Saturated line</a>, <a href="#curve-of-growth">Curve of growth</a>, <a href="#model-atmosphere">Model atmosphere</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Barycentric Correction</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A correction applied to observed wavelengths to remove the component of Earth's orbital motion along the line of sight to the star. Applied automatically by the ESO HARPS pipeline.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Earth orbits the Sun at ~30 km/s. Depending on the time of year and direction of observation, Earth is moving toward or away from the target star at up to ±30 km/s. This shifts all spectral lines by up to ±0.6 Å at 5800 Å. The barycentric correction transforms wavelengths to what would be measured from the solar system barycentre (centre of mass).</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>km/s velocity correction; Angstroms wavelength shift</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>The ESO HARPS pipeline applies the barycentric correction to all S1D spectra automatically — we only need to apply the stellar systemic RV correction separately.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Radial velocity, Doppler shift</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Curve of Growth</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The relationship between the equivalent width of a spectral line and the abundance of the absorbing element. Has three regimes: linear, flat (saturated), and damping.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>If you add more iron atoms to a stellar atmosphere, iron lines get deeper. But the relationship is not simple. Weak lines grow linearly with abundance (more atoms = proportionally deeper). Strong lines saturate (the core is already black — adding more atoms doesn't help). Very strong lines eventually grow again via pressure-broadened wings. The curve of growth tells us which regime each line is in.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Axes: log(abundance) vs log(EW/λ) (both dimensionless)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Fe I at 5328 Å (EW=75 mÅ): linear regime. Na D (EW=480 mÅ): damping regime. A flat-part line: sensitive to microturbulence ξ.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Equivalent width, Microturbulence, Voigt profile</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">VALD3 — Vienna Atomic Line Database</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The primary online database for atomic and molecular spectral line data, providing wavelengths, excitation potentials, oscillator strengths (log gf), and damping constants for hundreds of millions of spectral transitions.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>VALD3 is to stellar spectroscopists what NIST Standard Reference Materials are to chemists — the authoritative source for atomic data. Before we can calculate abundances from an EW measurement, we need to know the transition probability (log gf) of that line. VALD3 provides this for every line we use.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>N/A — online database</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>For 55 Cnc, we submitted an "Extract Stellar" request to VALD3 with T<sub>eff</sub>=5196 K, log g=4.41, threshold 0.001, HFS enabled, returning ~125,000 transitions across 3780–6910 Å for 27 target elements (includes hyperfine structure components for Ba, Eu, Li, Mn).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">log gf, NIST, Excitation potential</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">log gf — Oscillator Strength</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The logarithm of the product of the statistical weight (g) and the oscillator strength (f) for an atomic transition. Determines the transition probability — how likely an atom is to absorb a photon of that wavelength.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>log gf is the "volume knob" for how strong a spectral line is. A high log gf (e.g., 0.0) means a highly probable transition — a strong line. A low log gf (e.g., −5.0) means a very improbable transition — a weak line. Poorly known log gf values are a major source of systematic uncertainty in abundance work — we only use NIST grades A and B.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless (logarithmic)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Na I D1: log gf = −0.184 (NIST grade A+). Fe I at 5328 Å: log gf = −1.466 (NIST grade A). [O I] 6300 Å: log gf = −9.717 (forbidden line — very weak transition probability).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">NIST quality grades, Oscillator strength, EW</p></div>
-    </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">NIST Quality Grades (A+, A, B, C, D)</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>Quality grades assigned by the National Institute of Standards and Technology to oscillator strength (log gf) measurements, based on their estimated uncertainty.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Not all log gf values are equally reliable. NIST grades each value: A+ (&lt;1% uncertainty), A (&lt;3%), B (&lt;10%), C (&lt;25%), D (&gt;25%). We only use grades A+, A, and B in the Codex pipeline. Using a grade C or D log gf value could introduce a 0.1–0.3 dex systematic error — swamping our actual measurement precision.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Letter grade (A+, A, B, C, D)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>We measure ~200 lines total but include only ~140 in our primary analysis after filtering for NIST grade ≥ B.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">log gf, Systematic uncertainty, NIST</p></div>
+    <div class="term-card" id="model-atmosphere"><span id="model-atm" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">Model atmosphere</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A table of temperature, pressure and density against depth through a star's outer layers. A 1D model uses flat layers. A full 3D model simulates the rising and sinking gas. A ⟨3D⟩ model is a 3D simulation averaged back into layers.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A recipe for what the star's outer layers look like, so we can predict how each line should form.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a model)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>We use two 1D families, MARCS (Gustafsson et al. 2008) and ATLAS9 (Castelli &amp; Kurucz 2003), and ⟨3D⟩ models from the Stagger grid (Magic et al. 2013).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Each atmosphere gives its own result. Swapping MARCS for ATLAS9 is one term in the error bar. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#atlas9">ATLAS9</a>, <a href="#lte">LTE (local thermodynamic equilibrium)</a>, <a href="#nlte">NLTE (non-local thermodynamic equilibrium)</a></p></div>
     </div>
   </section>
 
+  <section class="gloss-section" id="letter-n">
+    <div class="gloss-section-header"><h2 class="gloss-letter">N</h2></div>
+    <div class="term-card" id="nist-grade">
+      <div class="term-header"><h3 class="term-name">NIST accuracy grade</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A letter grade given by the US National Institute of Standards and Technology to an atomic transition probability, based on its estimated uncertainty. The scale runs AAA, AA, A+, A, B+, B, C+, C, D+, D and E.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A report card for a line's strength. Grade A means the value is good to a few percent. Grade C means within about 25%.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Letter grade; A is within 3%, B within 10%, C within 25%, D within 50%</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>A line with a NIST grade of A to C can join the Codex grade. Grades D and E cannot.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Used to decide which lines reach a grade. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#oscillator-strength">Oscillator strength, log gf</a>, <a href="#line-grades">Line grades: Reference, Codex and Deep</a>, <a href="#laboratory-gf">Laboratory gf</a></p></div>
+    </div>
+    <div class="term-card" id="nlte">
+      <div class="term-header"><h3 class="term-name">NLTE (non-local thermodynamic equilibrium)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Any calculation that does not assume LTE. The numbers of atoms in each energy level are worked out from all the processes that fill and empty them, including light coming up from deeper layers.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>In a star's thin outer layers, light from below also excites the atoms. Allowing for this changes how deep a line is predicted to be.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex (as a correction to an abundance)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The oxygen lines near 7774 Å are a well-known case where NLTE matters a great deal.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>We include NLTE two ways: published correction tables for each line, and departure coefficients inside the calculation. Each is its own result. <a href="/method/#models">Method, section 05</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#lte">LTE (local thermodynamic equilibrium)</a>, <a href="#departure-coefficient">Departure coefficient</a>, <a href="#engine">Engine</a></p></div>
+    </div>
+    <div class="term-card" id="normalisation">
+      <div class="term-header"><h3 class="term-name">Normalisation</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Dividing a spectrum by its continuum so that the continuum is at 1. Line depths are then fractions of the continuum.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Levelling the spectrum so every notch is measured from the same height.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (flux becomes a fraction)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Near each line we compare the observed spectrum with our calculated one and set the level from that comparison. Points that disagree badly, such as an unlisted line, are clipped out first.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Done once per holding with Earth's atmosphere removed, then frozen for every element. <a href="/method/#cleaning">Method, section 03</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#continuum">Continuum</a>, <a href="#pseudo-continuum">Pseudo-continuum</a>, <a href="#telluric">Telluric absorption and correction</a></p></div>
+    </div>
+  </section>
 
-  <section class="gloss-section" id="science">
-    <div class="gloss-section-header">
-      <p class="gloss-eyebrow">Section 9</p>
-      <h2 class="gloss-section-title">Key Science Outputs</h2>
+  <section class="gloss-section" id="letter-o">
+    <div class="gloss-section-header"><h2 class="gloss-letter">O</h2></div>
+    <div class="term-card" id="orchestrator"><span id="pipeline" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">Orchestrator</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The program that runs the whole process for one star and one element from a single command. It works through every combination of band, holding and treatment, and reports the status of each one.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>One command per element. The program does the measuring and tells us, for every combination, whether it is done, held back and why, or not run yet.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>For the Sun, one command per element measures every band, instrument and treatment and builds each error bar.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>People approve line removals and publication; the orchestrator does the rest. <a href="/method/#process">Method, section 01</a> and the <a href="/architecture/">Science Architecture</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#engine">Engine</a>, <a href="#band">Band</a>, <a href="#publication-gate">Publication gate</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Mg/Si Ratio</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The ratio of magnesium to silicon abundance in a stellar photosphere, used to predict the dominant silicate minerals in rocky planets.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Magnesium and silicon are the two main ingredients of rock-forming silicates. Their ratio determines the mineral balance: Mg/Si &gt; 1 → olivine-dominated mantle (Mg<sub>2</sub>SiO<sub>4</sub>, like Earth's upper mantle). Mg/Si &lt; 1 → pyroxene-dominated (MgSiO<sub>3</sub>). This directly predicts whether an exoplanet would have an olivine or pyroxene-rich interior — which affects volcanism, plate tectonics, and habitability.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless atomic ratio</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Sun: Mg/Si = 1.05. Earth: Mg/Si ≈ 1.02. Mars: Mg/Si ≈ 0.95. 55 Cnc A: Mg/Si ≈ 0.93 (literature) — slight pyroxene tendency.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">C/O ratio, Fe/Si, Rocky planet composition</p></div>
+    <div class="term-card" id="oscillator-strength">
+      <div class="term-header"><h3 class="term-name">Oscillator strength, log gf</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A measure of how strongly an atom absorbs at one line, written as the log of g × f: the statistical weight of the lower level times the oscillator strength.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>How good an atom is at absorbing that particular colour. A wrong value gives a wrong abundance, however good the spectrum is.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless (logarithmic)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Fe I 5247.05 Å has log gf = −4.961 in the published solar iron set (Asplund, Amarsi &amp; Grevesse 2021).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Fixed once for each physical line from a single master table. A line with no entry stops the run. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#laboratory-gf">Laboratory gf</a>, <a href="#nist-grade">NIST accuracy grade</a>, <a href="#correlated-gf-error">Correlated gf error</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">Fe/Si Ratio</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The ratio of iron to silicon abundance, used to predict the core mass fraction of rocky planets.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Iron sinks to the core during planetary formation (iron is denser than silicates). Higher Fe/Si in the host star means more iron in the planet, and therefore a larger iron core relative to the mantle. Earth's Fe/Si is higher than solar because of core formation — a large iron core (32% of Earth's mass) concentrated the iron.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless atomic ratio</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>Sun: Fe/Si = 0.86 (by mass). Earth: Fe/Si = 1.69 (enriched due to large core).</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Mg/Si, C/O ratio, Core mass fraction</p></div>
+  </section>
+
+  <section class="gloss-section" id="letter-p">
+    <div class="gloss-section-header"><h2 class="gloss-letter">P</h2></div>
+    <div class="term-card" id="pressure-broadening">
+      <div class="term-header"><h3 class="term-name">Pressure broadening (damping)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Widening of a line by collisions between the absorbing atom and other particles in the gas. It gives a line Lorentzian wings.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Atoms that bump into neighbours absorb a slightly wider range of colours. In dense gas, strong lines get wide wings.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Å; described by damping constants</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The sodium D lines in the Sun have wings that stretch for several ångströms.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Part of every calculated line profile. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#lorentzian-profile">Lorentzian profile</a>, <a href="#voigt-profile">Voigt profile</a>, <a href="#saturated-line">Saturated line</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">[α/Fe] — Alpha Enhancement</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>The mean enhancement of alpha elements relative to iron: [α/Fe] = mean([Mg/Fe], [Si/Fe], [Ca/Fe], [Ti/Fe]). A tracer of galactic chemical evolution and stellar age.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Early in the Milky Way's history, only massive short-lived stars had died, producing alpha elements but little iron. Over time, Type Ia supernovae (which take ~1 billion years to explode) added large amounts of iron, gradually lowering [α/Fe]. Old stars (formed early) have high [α/Fe]; young stars (like the Sun) have near-solar [α/Fe].</p></div>
+    <div class="term-card" id="pseudo-continuum">
+      <div class="term-header"><h3 class="term-name">Pseudo-continuum</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The highest level a spectrum reaches where lines cover every wavelength, so the true continuum is never seen.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>In the near-UV the notches overlap everywhere. The best we can do is a level close to, but below, the true one.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Normalised flux</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Below about 3780 Å no solar line stands alone.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Its uncertainty is priced as a separate term, for near-UV results only. <a href="/method/#cleaning">Method, section 03</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#continuum">Continuum</a>, <a href="#normalisation">Normalisation</a>, <a href="#band">Band</a></p></div>
+    </div>
+    <div class="term-card" id="publication-gate">
+      <div class="term-header"><h3 class="term-name">Publication gate</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The checks a result must pass before it is published: every error-bar term present, a comparison with the literature, and a person's approval.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Being computed is not enough. A result goes on the site only when it has a complete error bar and someone has reviewed it.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>A result missing any error-bar term is held back and no error bar is published for it. A held result is one we know we still owe, with the reason recorded.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every proposed line removal and every publication is approved by a person. <a href="/method/#publication">Method, section 08</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#literature-check">Literature check</a>, <a href="#uncertainty-budget">Uncertainty budget</a>, <a href="#superseded">Superseded result</a></p></div>
+    </div>
+    <div class="term-card" id="published-line-set">
+      <div class="term-header"><h3 class="term-name">Published line set</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The lines, and their gf values, that a published solar analysis used for an element.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The exact recipe another team used. We repeat it first, so that any difference from their answer comes from our spectra or our method, and we can find it.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>For iron, Asplund, Amarsi &amp; Grevesse (2021) used 40 Fe I and 13 Fe II lines. For other elements they cite the paper the lines come from.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The published set, plus any line with a laboratory gf, makes the Reference grade. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#line-grades">Line grades: Reference, Codex and Deep</a>, <a href="#literature-check">Literature check</a>, <a href="#oscillator-strength">Oscillator strength, log gf</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-r">
+    <div class="gloss-section-header"><h2 class="gloss-letter">R</h2></div>
+    <div class="term-card" id="radial-velocity">
+      <div class="term-header"><h3 class="term-name">Radial velocity (RV)</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A star's speed toward or away from us, measured from the shift of its spectral lines.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A star moving away looks slightly redder, and one moving toward us slightly bluer. The lines must be shifted back to their rest wavelengths before measuring.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>km/s</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>At 5900 Å, a speed of 30 km/s shifts a line by about 0.6 Å.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Each holding is checked to serve every line at its rest wavelength. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#barycentric-correction">Barycentric correction</a>, <a href="#holding">Holding</a></p></div>
+    </div>
+    <div class="term-card" id="rotational-broadening">
+      <div class="term-header"><h3 class="term-name">Rotational broadening, v sin i</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Widening of lines by the star's spin. One edge of the star moves toward us and the other away.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A spinning star smears its lines. Slow spinners like the Sun have sharp lines.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>km/s</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: v sin i = 1.8 km/s.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Part of the line broadening used in every calculated spectrum. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#thermal-broadening">Thermal broadening</a>, <a href="#pressure-broadening">Pressure broadening (damping)</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-s">
+    <div class="gloss-section-header"><h2 class="gloss-letter">S</h2></div>
+    <div class="term-card" id="s-process">
+      <div class="term-header"><h3 class="term-name">s-process and r-process elements</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Elements heavier than iron made by capturing neutrons. The slow (s) process works inside aging giant stars. The rapid (r) process needs extreme events such as merging neutron stars.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Two very different ways nature builds heavy elements. Barium and yttrium come mostly from the slow route. Europium comes mostly from the rapid one.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (element groups)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Ba II, Y II and Eu II lines are visible in Sun-like stars.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Heavy elements will run through the same process after the lighter ones. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#hyperfine-structure">Hyperfine structure</a>, <a href="#abundance">Abundance, A(X)</a></p></div>
+    </div>
+    <div class="term-card" id="saturated-line">
+      <div class="term-header"><h3 class="term-name">Saturated line</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A line so strong that its centre is nearly black, so its depth barely changes when the abundance changes.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Once the notch is almost fully dark, adding atoms hardly changes it. The line then tells us more about gas motions than about how many atoms there are.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The sodium D lines in the Sun are saturated.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>A saturated line that the published solar analyses did not use is proposed for removal, and a person approves each one. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#curve-of-growth">Curve of growth</a>, <a href="#microturbulence">Microturbulence, ξ</a>, <a href="#line-grades">Line grades: Reference, Codex and Deep</a></p></div>
+    </div>
+    <div class="term-card" id="signal-to-noise">
+      <div class="term-header"><h3 class="term-name">Signal-to-noise ratio, S/N</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The strength of the signal divided by the size of the random noise in a spectrum.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>How clean the spectrum is. With high S/N, faint notches stand out clearly from the noise.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless ratio</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Combining N similar exposures raises S/N by about √N.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Noise in the spectrum feeds the statistical part of each error bar. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#statistical-systematic">Statistical and systematic uncertainty</a>, <a href="#spectrum">Spectrum</a></p></div>
+    </div>
+    <div class="term-card" id="spectral-resolution">
+      <div class="term-header"><h3 class="term-name">Spectral resolution, R</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>R = λ/Δλ, where Δλ is the smallest wavelength gap the instrument can separate at wavelength λ.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>How fine the detail is. At higher R, two lines close together appear as two lines, not one smudge.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless ratio</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>HARPS has R ≈ 115,000, so at 6000 Å it separates features about 0.05 Å apart. The 2010 thesis used ELODIE, at R ≈ 42,000.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every holding we use has high enough resolution to separate most solar lines. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#harps">HARPS</a>, <a href="#blend">Blend</a>, <a href="#fwhm">FWHM (full width at half maximum)</a></p></div>
+    </div>
+    <div class="term-card" id="spectral-type">
+      <div class="term-header"><h3 class="term-name">Spectral type</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A classification of stars by surface temperature and the pattern of their lines, from hottest to coolest: O, B, A, F, G, K, M.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A quick label for what kind of star it is. The Sun is a G star. Slightly cooler, orange stars are K stars.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a classification)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: G2V. 55 Cancri A, a planet host we hold spectra for, is a K star.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The method is proven on the Sun before other stars. <a href="/method/#data">Method, section 02</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#effective-temperature">Effective temperature, T<sub>eff</sub></a>, <a href="#log-g">Surface gravity, log g</a></p></div>
+    </div>
+    <div class="term-card" id="spectrum">
+      <div class="term-header"><h3 class="term-name">Spectrum</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The light from an object spread out by wavelength, showing how much light arrives at each wavelength.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A star's light spread into a rainbow, in great detail. The dark notches in it are the star's chemical fingerprint.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Wavelength in Å; normalised flux from 0 to 1</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The solar spectra we use run from 3000 Å in the near-UV to 24846 Å in the infrared.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every result starts from a spectrum that has been corrected and normalised. <a href="/method/#process">Method, section 01</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#absorption-line">Absorption line</a>, <a href="#continuum">Continuum</a>, <a href="#spectral-resolution">Spectral resolution, R</a></p></div>
+    </div>
+    <div class="term-card" id="spectrum-synthesis">
+      <div class="term-header"><h3 class="term-name">Spectrum synthesis</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Calculating the spectrum a model atmosphere would produce for a given set of abundances, including every known atomic and molecular line in the window.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>We compute what the spectrum should look like, then change the amount of the element until the computed spectrum matches the real one.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a method)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>We use Turbospectrum (Plez 2012) through iSpec (Blanco-Cuaresma et al. 2014).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The main route. In the near-UV it is the only route allowed, because no line there stands alone. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#blend">Blend</a>, <a href="#model-atmosphere">Model atmosphere</a>, <a href="#engine">Engine</a></p></div>
+    </div>
+    <div class="term-card" id="statistical-systematic">
+      <div class="term-header"><h3 class="term-name">Statistical and systematic uncertainty</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Statistical uncertainty comes from the scatter between lines. Systematic uncertainty is how far the answer moves when a choice we had to make is changed.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Statistical error shrinks when more lines are used. Systematic error does not, because every line shares the same choice.</p></div>
       <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>55 Cnc ([α/Fe] ≈ 0): solar-ratio alpha elements — typical for a 10 Gyr old thin-disk star. Metal-poor halo stars ([α/Fe] ≈ +0.4): very old, formed before Type Ia SNe.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">Alpha elements, Type Ia supernova, Galactic chemical evolution</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>With several lines, the statistical error is the scatter divided by the square root of the number of lines.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Both parts go into every published error bar. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#uncertainty-budget">Uncertainty budget</a>, <a href="#correlated-gf-error">Correlated gf error</a>, <a href="#median">Median over lines</a></p></div>
     </div>
-    <div class="term-card">
-      <div class="term-header"><span class="term-name">CHNOPS Habitability Index</span></div>
-      <div class="term-row"><span class="term-label">Definition</span><p>A quantitative score comparing a star's measured C:N:O:P:S abundance ratios to the "Redfield ratio" — the elemental composition of marine organisms on Earth. Provides a normalised measure of bio-essential element availability.</p></div>
-      <div class="term-row"><span class="term-label">Plain English</span><p>Life on Earth needs certain elements in approximately certain ratios. The Redfield ratio (C:N:P = 106:16:1 in marine organisms) is the starting point. By comparing a star's CHNOPS ratios to this biological benchmark, we get a number that captures "how well does this system's chemistry match the chemistry of life?" A score of 1.0 = identical to Redfield. Scores &lt; 1.0 indicate depletion in one or more bio-essential elements.</p></div>
-      <div class="term-row"><span class="term-label">Units</span><p>Dimensionless index (Redfield-normalised)</p></div>
-      <div class="term-row"><span class="term-label">Example</span><p>A star depleted in phosphorus by 10× relative to carbon would score poorly on the CHNOPS index even if C, N, O, and S look fine — because P is the limiting nutrient.</p></div>
-      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text">CHNOPS, Redfield ratio, P I lines, Astrobiology</p></div>
+    <div class="term-card" id="superseded">
+      <div class="term-header"><h3 class="term-name">Superseded result</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A published result that has been replaced by a newer measurement of the same thing.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>When we redo a measurement, for example after a fix to the atomic data, the new result replaces the old one. The old one is not deleted.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>A superseded result is moved to an archive with the record of why it was replaced.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Only current results are shown, and every earlier number can still be traced. <a href="/method/#publication">Method, section 08</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#publication-gate">Publication gate</a>, <a href="#literature-check">Literature check</a></p></div>
     </div>
+    <div class="term-card" id="log-g">
+      <div class="term-header"><h3 class="term-name">Surface gravity, log g</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The base-10 logarithm of the gravity at the star's surface, in cgs units (cm/s²). It sets the pressure in the atmosphere.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>How strongly the star pulls on its outer layers. Higher gravity means denser gas, which changes line widths and how many atoms are ionised.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>log<sub>10</sub>(cm/s²)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>The Sun: log g = 4.44 (Heiter et al. 2015).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Fixed before measuring. For the Sun its error-bar term comes out at zero. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#effective-temperature">Effective temperature, T<sub>eff</sub></a>, <a href="#model-atmosphere">Model atmosphere</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-t">
+    <div class="gloss-section-header"><h2 class="gloss-letter">T</h2></div>
+    <div class="term-card" id="telluric">
+      <div class="term-header"><h3 class="term-name">Telluric absorption and correction</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Telluric absorption is absorption of starlight by Earth's own atmosphere, mostly water vapour and oxygen. Telluric correction removes it from the spectrum.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Before starlight reaches a telescope on the ground, Earth's air takes its own bites out of it. Those bites land on top of the star's lines and must be removed first.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>For HARPS and CRIRES+ we model the air on the night of each observation with molecfit (Smette et al. 2015).</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every spectrum taken from the ground is corrected. Only a telescope in space escapes this. <a href="/method/#cleaning">Method, section 03</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#holding">Holding</a>, <a href="#atlas">Atlas (solar flux atlas)</a>, <a href="#normalisation">Normalisation</a></p></div>
+    </div>
+    <div class="term-card" id="thermal-broadening">
+      <div class="term-header"><h3 class="term-name">Thermal broadening</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>Widening of a line by the random motion of the absorbing atoms, which Doppler-shifts each atom's absorption slightly.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>Hot atoms move fast in all directions. Each one sees the light at a slightly different colour, which spreads the line.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Å; gives a Gaussian shape</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Lighter atoms move faster at the same temperature, so their lines are wider.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Part of every calculated line profile. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#gaussian-profile">Gaussian profile</a>, <a href="#microturbulence">Microturbulence, ξ</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-u">
+    <div class="gloss-section-header"><h2 class="gloss-letter">U</h2></div>
+    <div class="term-card" id="uncertainty-budget">
+      <div class="term-header"><h3 class="term-name">Uncertainty budget</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The list of every source of error in a result, each measured separately, then added in quadrature: the square root of the sum of squares.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A full account of what could move the answer. For each choice we re-run the same lines with that choice changed and record how far the answer moves.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>dex</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Terms include the gf values, temperature, gravity, metal content, microturbulence, continuum, fit window, Earth's atmosphere, NLTE, model atmosphere, hyperfine structure, blends and a method check.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Every result carries every term. If one is missing, the result is held back. <a href="/method/#uncertainty">Method, section 07</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#statistical-systematic">Statistical and systematic uncertainty</a>, <a href="#correlated-gf-error">Correlated gf error</a>, <a href="#publication-gate">Publication gate</a></p></div>
+    </div>
+  </section>
+
+  <section class="gloss-section" id="letter-v">
+    <div class="gloss-section-header"><h2 class="gloss-letter">V</h2></div>
+    <div class="term-card" id="vald">
+      <div class="term-header"><h3 class="term-name">VALD</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>The Vienna Atomic Line Database, a widely used collection of atomic and molecular line data: wavelengths, energy levels, oscillator strengths and broadening constants (Ryabchikova et al. 2015).</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>A large public catalogue of spectral lines. It tells us where lines are and roughly how strong, but not every value in it has a measured error.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>None (a database)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>We extract solar line lists from VALD3, with hyperfine components included.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>Supplies the neighbouring lines in each synthesis window. The gf of each line we measure comes from the master table instead. <a href="/method/#lines">Method, section 04</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#oscillator-strength">Oscillator strength, log gf</a>, <a href="#spectrum-synthesis">Spectrum synthesis</a>, <a href="#blend">Blend</a></p></div>
+    </div>
+    <div class="term-card" id="voigt-profile"><span id="line-profiles" class="legacy-anchor"></span>
+      <div class="term-header"><h3 class="term-name">Voigt profile</h3></div>
+      <div class="term-row"><span class="term-label">Definition</span><p>A line profile that combines a Gaussian core with Lorentzian wings: the mathematical convolution of the two.</p></div>
+      <div class="term-row"><span class="term-label">Plain English</span><p>The realistic shape of a stellar line: bell-shaped in the middle, with longer wings for strong lines.</p></div>
+      <div class="term-row"><span class="term-label">Units</span><p>Centre (Å), Gaussian width and Lorentzian width (Å)</p></div>
+      <div class="term-row"><span class="term-label">Example</span><p>Fitting a strong line with only a Gaussian misses its wings and underestimates its equivalent width.</p></div>
+      <div class="term-row"><span class="term-label">In the Codex</span><p>The shape fitted in the profile-fit route. <a href="/method/#measuring">Method, section 06</a>.</p></div>
+      <div class="term-row"><span class="term-label">See also</span><p class="see-also-text"><a href="#gaussian-profile">Gaussian profile</a>, <a href="#lorentzian-profile">Lorentzian profile</a>, <a href="#equivalent-width">Equivalent width (EW)</a></p></div>
+    </div>
+    <figure class="gloss-figure">
+      <img src="/assets/images/glossary/gloss_B.png" alt="Three panels of line broadening: thermal (Gaussian), pressure (Lorentzian) and rotational" onerror="this.closest('figure').style.display='none'">
+      <figcaption>Three ways a line is widened. Left: thermal motion gives a bell-shaped core. Centre: collisions give long wings. Right: a fast-spinning star smears the line flat; a slow spinner like the Sun barely does.</figcaption>
+    </figure>
   </section>
 
 
@@ -678,7 +848,7 @@
     <div class="footer-grid">
       <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
       <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/architecture/">Science Architecture</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div>
-      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-methodology-v1.2.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-method-v3.0.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v4.0.pdf">Glossary PDF</a></div>
       <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
     </div>
     <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
