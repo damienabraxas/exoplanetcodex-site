@@ -239,12 +239,16 @@
                sub: '\u00b1 ' + sigma.toFixed(2) + (ref != null ? ' \u00b7 reference ' + ref.toFixed(2) : ''),
                flag: RATIO_FLAG[r.top] || RATIO_FLAG[r.bottom] || '', href: r.href };
     });
-    // [alpha/Fe] averages Mg, Si, Ca and Ti; with only two of them it is not yet [alpha/Fe].
-    var alpha = ['Mg', 'Si', 'Ca', 'Ti'].filter(function (s) { return !published(s); });
-    if (alpha.length) {
-      ratioCards.push({ label: '[\u03b1/Fe]', value: '\u2014', unit: 'dex',
-                        sub: 'Waits for ' + alpha.join(' and '), href: '/glossary/#alpha-enhancement' });
-    }
+    // Placeholders for the outputs not computed yet (Ryan, 2026-10-25). [alpha/Fe] is computed
+    // once every alpha element is final, and which elements it averages is still to be decided,
+    // so the card names no list. CHNOPS names whichever of its measurable elements are missing
+    // (hydrogen is the reference, 12.00 by definition).
+    ratioCards.push({ label: '[\u03b1/Fe]', value: '\u2014', unit: 'dex',
+                      sub: 'Computed once the alpha elements are final', href: '/glossary/#alpha-enhancement' });
+    var chnops = ['C', 'N', 'O', 'P', 'S'].filter(function (s) { return !published(s); });
+    ratioCards.push({ label: 'CHNOPS', value: '\u2014', unit: 'elements of life',
+                      sub: chnops.length ? 'Waits for ' + chnops.join(' and ') : 'Not yet computed',
+                      href: '/glossary/#chnops' });
 
     function tiles(list) {
       return '<div class="solar-findings">' + list.map(function (c) {
