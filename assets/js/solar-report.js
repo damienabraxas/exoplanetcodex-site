@@ -184,15 +184,18 @@
     // "gf floor owed" flag is withdrawn -- the RCA measured the gf term at 0.000 dex, and every
     // C/N/O headline now carries a full RYA-587 budget.
     var PRELIM = {};
-    // Every PUBLISHED element with an appendix page gets a card (was hard-coded C/N/O, so
-    // Si -- published with its own appendix -- had no way in from the top of the page).
+    // RYA-1271 (Ryan): General Information shows four highlights only -- metallicity,
+    // C, N and O. Every other element is in the abundance table, linked below the cards.
+    var HIGHLIGHT = ['C', 'N', 'O'];
     (report.elements || []).filter(function (x) {
-      return x.symbol !== 'Fe' && x.ion === 'I' && x.primaryValue && x.appendixPath &&
-             x.status === 'Published';
+      return HIGHLIGHT.indexOf(x.symbol) !== -1 && x.ion === 'I' && x.primaryValue &&
+             x.appendixPath && x.status === 'Published';
+    }).sort(function (a, b) {
+      return HIGHLIGHT.indexOf(a.symbol) - HIGHLIGHT.indexOf(b.symbol);
     }).forEach(function (e) {
       var sym = e.symbol;
       var pv = e.primaryValue;
-      var d = (e.delta != null) ? (e.delta > 0 ? '+' : '') + e.delta.toFixed(3) + ' vs AGSS21' : '';
+      var d = (e.delta != null) ? (e.delta > 0 ? '+' : '') + e.delta.toFixed(3) + ' vs reference' : '';
       cards.push({ label: e.name, value: pv.value.toFixed(3),
                    unit: 'A(' + sym + ')',
                    sub: (pv.sigmaTotal != null ? '\u00b1 ' + pv.sigmaTotal.toFixed(3) + ' \u00b7 ' : '') + d,
@@ -208,7 +211,8 @@
           '<span class="sf-unit">' + esc(c.unit) + '</span>' +
           '<span class="sf-sub">' + esc(c.sub) + '</span>' +
           (c.flag ? '<span class="sf-flag">' + esc(c.flag) + '</span>' : '') + '</a>';
-      }).join('') + '</div>';
+      }).join('') + '</div>' +
+      '<p class="solar-findings-more"><a href="#our-findings">See every element in the abundance table \u2192</a></p>';
   }
 
   renderFindings(report);
@@ -224,7 +228,7 @@
   }
 
   if (sourcesRoot) {
-    sourcesRoot.innerHTML = '<p class="solar-copy">These records are drawn from the project bibliography. Element-specific analysis references appear on each generated appendix rather than being maintained by hand on this page.</p>' + referenceList(report.pageReferenceKeys) +
+    sourcesRoot.innerHTML = '<p class="solar-copy">The main sources behind the solar measurements: the published solar values we compare against, the four instruments and how their spectra were corrected. Each element page lists its own atomic-data references. The full bibliography, with links to every paper, is on the <a href="/sources/">Sources</a> page.</p>' + referenceList(report.pageReferenceKeys) +
       '<div class="solar-credit-grid"><p><strong>Solar imagery</strong><br>NASA / Solar Dynamics Observatory</p><p><strong>Orbital geometry</strong><br>JPL semimajor axes · Kopparapu et al. (2013) conservative HZ</p><p><strong>Observations</strong><br>ESO 1102.D-0954(A) · PI Xavier Dumusque</p></div>';
   }
   if (overviewRoot) {
@@ -232,8 +236,8 @@
       (report.mode === 'development' ? '<div class="solar-dev-banner">Development snapshot · not for publication</div>' : '<div class="solar-generated-banner">Generated from versioned science artifacts</div>') +
       '<p class="solar-report-lede">The Sun is the Codex calibration anchor. Select an element with an available measurement to open its generated appendix, products, uncertainties, and diagnostic evidence.</p>' +
       '<div class="solar-table-tools"><label for="solar-element-filter">Find an element</label><input id="solar-element-filter" type="search" placeholder="Symbol, name, or status…" autocomplete="off"><span id="solar-element-count" aria-live="polite"></span></div>' +
-      '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>Species</th><th>Element / role</th><th>Reported A(X) ± σ</th><th>Asplund 2021</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
-      '<p class="solar-table-note">Every row is read from the generated element status tracker. Elements reading <em>no ratified value</em> have been measured but are curation-owed — the value is withheld rather than published provisionally; hover the cell for the method that is owed. Only species with a generated appendix are clickable.</p>';
+      '<div class="solar-table-wrap"><table class="solar-element-table"><thead><tr><th>Z</th><th>Species</th><th>Element / role</th><th>Reported A(X) ± σ</th><th>Reference</th><th>Δ</th><th>Status</th></tr></thead><tbody>' + elementRows(report.elements) + '</tbody></table></div>' +
+      '<p class="solar-table-note">Every row is read from the generated element status tracker. Elements reading <em>no ratified value</em> have been measured but are curation-owed — the value is withheld rather than published provisionally; hover the cell for the method that is owed. Only species with a generated appendix are clickable. <em>Reference</em> is the published solar value we compare against: Asplund, Amarsi &amp; Grevesse (2021), which reports Fe I and Fe II separately (7.46 and 7.47). Δ is our value minus the reference.</p>';
     var elementFilter = document.getElementById('solar-element-filter');
     var elementCount = document.getElementById('solar-element-count');
     var elementTableRows = Array.prototype.slice.call(overviewRoot.querySelectorAll('tbody tr[data-element-search]'));

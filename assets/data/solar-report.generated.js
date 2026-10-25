@@ -6,57 +6,33 @@ window.SOLAR_REPORT = {
       "band": "Visible",
       "range": "3780–6910 Å",
       "instrument": "HARPS · ESO 3.6 m",
-      "role": "Primary direct-solar dataset",
-      "status": "analysis ready",
-      "detail": "10 S1D exposures · R ≈ 115,000 · SNR 306–309 · ESO 1102.D-0954(A)"
+      "role": "Direct sunlight",
+      "status": "in use",
+      "detail": "10 S1D exposures · R ≈ 115,000 · ESO 1102.D-0954(A) · telluric-corrected with molecfit"
     },
     {
-      "band": "Near-UV through near-IR",
-      "range": "3044–10426 Å",
-      "instrument": "UVES · Vesta / Ceres",
-      "role": "Reflected-Sun cross-band observations",
-      "status": "audited with caveats",
-      "detail": "Multiple UVES settings; exposure-level coverage and conditioning retained"
+      "band": "Near-UV to near-IR",
+      "range": "3000–13000 Å",
+      "instrument": "Kitt Peak solar atlas (NSO FTS)",
+      "role": "Ground-based solar flux atlas",
+      "status": "in use",
+      "detail": "Two independent telluric corrections, each its own product: our molecfit fit and Kurucz (2005)"
+    },
+    {
+      "band": "Visible to near-IR",
+      "range": "from 4047 Å",
+      "instrument": "IAG solar flux atlas",
+      "role": "Second, independent solar atlas",
+      "status": "in use",
+      "detail": "Published already telluric-corrected (Reiners et al. 2016; Baker et al. 2020); also sets the continuum uncertainty"
     },
     {
       "band": "Y / J / H / K",
-      "range": "0.95–2.49 µm",
+      "range": "0.98–2.48 µm",
       "instrument": "CRIRES+ · Vesta",
-      "role": "Reflected-Sun infrared observations",
-      "status": "provisional",
-      "detail": "18 extracted IDPs; K-band remains telluric- and RV-conditioning gated"
-    },
-    {
-      "band": "Y / J / H",
-      "range": "0.966–1.923 µm",
-      "instrument": "NIRPS · direct Sun",
-      "role": "Direct-solar near-IR holding",
-      "status": "reduction owed",
-      "detail": "10 raw 2D frames; no reduced Solar S1D product yet"
-    },
-    {
-      "band": "Red optical / near-IR",
-      "range": "0.5–2.3 µm",
-      "instrument": "IAG solar flux atlases",
-      "role": "Telluric and wavelength-scale control",
-      "status": "reference atlas",
-      "detail": "Independent FTS reference coverage"
-    },
-    {
-      "band": "Infrared",
-      "range": "1.1–5.4 µm",
-      "instrument": "NSO Kitt Peak FTS",
-      "role": "Ground-based solar photosphere atlas",
-      "status": "reference atlas",
-      "detail": "Per-band products retain atlas identity and telluric limitations"
-    },
-    {
-      "band": "Infrared",
-      "range": "2.26–14.3 µm",
-      "instrument": "ACE-FTS",
-      "role": "Telluric-free space reference",
-      "status": "reference atlas",
-      "detail": "Validation source for ground-based infrared products"
+      "role": "Sunlight reflected off the asteroid Vesta",
+      "status": "in use",
+      "detail": "Telluric-corrected with molecfit per night (J, H, K); Y from the Elgueta et al. (2026) reduction"
     }
   ],
   "bibliography": {
@@ -95,17 +71,41 @@ window.SOLAR_REPORT = {
       "url": "https://doi.org/10.1051/0004-6361/201527530",
       "role": "Optical/near-IR atlas"
     },
-    "hase2010": {
-      "label": "Hase et al. (2010), The ACE-FTS atlas",
-      "url": "https://doi.org/10.1016/j.jqsrt.2009.10.020",
-      "role": "Telluric-free infrared atlas"
+    "amarsi_grevesse2026": {
+      "label": "Amarsi & Grevesse (2026), Solar chemical composition",
+      "url": "https://arxiv.org/abs/2608.23155",
+      "role": "Updated solar abundance reference"
+    },
+    "baker2020": {
+      "label": "Baker, Blake & Reiners (2020), The IAG Solar Flux Atlas: Telluric Correction",
+      "url": "https://doi.org/10.3847/1538-4365/ab6a1c",
+      "role": "Telluric-corrected IAG atlas"
+    },
+    "kurucz2005_irradiance": {
+      "label": "Kurucz (2005), Solar flux atlas with telluric lines removed",
+      "url": "http://kurucz.harvard.edu/sun/irradiance2005/",
+      "role": "Second telluric correction of the Kitt Peak atlas"
+    },
+    "smette2015": {
+      "label": "Smette et al. (2015), Molecfit: a general tool for telluric absorption correction",
+      "url": "https://doi.org/10.1051/0004-6361/201423932",
+      "role": "Telluric correction for HARPS, Kitt Peak and CRIRES+"
+    },
+    "elgueta2026": {
+      "label": "Elgueta et al. (2026), Gaia FGK Benchmark Stars: Selecting Infrared Lines",
+      "url": "https://doi.org/10.1051/0004-6361/202659148",
+      "role": "CRIRES+ Vesta solar spectrum (Y band) and infrared line selection"
     }
   },
   "pageReferenceKeys": [
     "asplund2021",
+    "amarsi_grevesse2026",
     "lodders2025",
     "reiners2016",
-    "hase2010"
+    "baker2020",
+    "kurucz2005_irradiance",
+    "smette2015",
+    "elgueta2026"
   ],
   "references": [
     {
@@ -7796,7 +7796,7 @@ window.SOLAR_REPORT = {
         "engine": "ENGINE-A",
         "handler": "ProfileFitHandler"
       },
-      "asplund": null,
+      "asplund": 7.47,
       "arbiterTrioA": [
         6147.7341,
         6238.3859,
@@ -8948,7 +8948,7 @@ window.SOLAR_REPORT = {
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "59fed9694523e0de5abc00be21569547167fcb12",
         "scienceGit": "f12a1b3d7cb347b8e8cf65eaeec96b4a5089a534",
-        "generatedAt": "2026-10-23T22:11:55+00:00"
+        "generatedAt": "2026-10-25T02:21:10+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
