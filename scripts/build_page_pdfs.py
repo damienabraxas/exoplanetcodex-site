@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the downloadable PDF of the current Method and Architecture pages (RYA-1271).
+"""Build the downloadable PDF of the current Method, Architecture and Glossary pages (RYA-1271).
 
 Ryan, 2026-10-24: the new methodology must be downloadable, not only the archived one.
 Each page is printed from the site itself with headless Chrome (the pages carry their own
@@ -7,10 +7,11 @@ print styles), then every page gets the Exoplanet Codex document header and the 
 gets the branded cover, both from scripts/codex_doc_brand.py -- the same look as every
 other download. The date is the date of the last commit to the page's source.
 
-    python3 scripts/build_page_pdfs.py            # rebuild both PDFs
+    python3 scripts/build_page_pdfs.py            # rebuild every PDF
+    python3 scripts/build_page_pdfs.py glossary   # rebuild only the pages named
     CHROME=/path/to/chrome python3 scripts/build_page_pdfs.py
 
-Re-run it whenever method/index.html or architecture/index.html changes.
+Re-run it whenever one of the pages in PAGES changes.
 """
 from __future__ import annotations
 
@@ -37,6 +38,7 @@ CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacO
 PAGES = {
     "method/index.html": "exoplanet-codex-method-v3.0.pdf",
     "architecture/index.html": "exoplanet-codex-science-architecture-v4.0.pdf",
+    "glossary/index.html": "exoplanet-codex-glossary-v4.0.pdf",
 }
 
 
@@ -71,13 +73,17 @@ def _with_headers(raw: Path, title: str, date: str) -> PdfReader:
     return out
 
 
-def main() -> int:
+def main(argv: list[str]) -> int:
+    pages = {s: n for s, n in PAGES.items() if not argv or Path(s).parent.name in argv}
+    if not pages:
+        print("no such page; choose from:", ", ".join(Path(s).parent.name for s in PAGES))
+        return 1
     port = _free_port()
     server = subprocess.Popen([sys.executable, "-m", "http.server", str(port), "--bind", "127.0.0.1"],
                               cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         time.sleep(1)
-        for src, name in PAGES.items():
+        for src, name in pages.items():
             spec = covers.DOCUMENTS[name]
             title, date = spec[0], spec[2]
             with tempfile.TemporaryDirectory() as tmp:
@@ -94,4 +100,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))
