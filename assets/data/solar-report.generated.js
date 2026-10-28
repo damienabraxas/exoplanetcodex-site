@@ -9054,17 +9054,17 @@ window.SOLAR_REPORT = {
       "name": "Magnesium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · DEEPGRADED · ENGINE-A (Deep Grade, Mg.json v1.15)",
+      "method": "harps VIS · SET-MG_AGSS21 · ENGINE-A-3DNLTE (Reference Grade, Mg.json v1.335)",
       "asplund": 7.55,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/mg/",
       "primaryValue": {
-        "value": 7.613,
-        "sigmaTotal": 0.1144,
-        "lineCount": 4
+        "value": 7.646,
+        "sigmaTotal": 0.0954,
+        "lineCount": 2
       },
-      "delta": 0.063,
-      "statusDetail": "published · deep grade · rya-587 budget"
+      "delta": 0.096,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 13,
