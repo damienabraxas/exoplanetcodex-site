@@ -161,20 +161,21 @@ def best_in_band(products, band):
     return min(rows, key=rank_key) if rows else None
 
 
-#: RYA-1251 (Ryan 2026-10-28): the top number is our best product, the HARPS VIS Reference
-#: Grade 3D non-LTE (Amarsi) analysis of the published line set -- the Fe appendix's anchor
-#: rule (generate_fe_publication). One named product, never an average across holdings.
-ANCHOR_RULE = {'Na': {'holding': 'solar_harps_molecfit_corrected', 'band': 'VIS',
-                      'selector': 'SET-NA_AGSS21', 'treatment': 'ENGINE-A-3DNLTE'}}
+#: RYA-1251 (Ryan 2026-10-28): the top number is our best HARPS product -- HARPS is the
+#: instrument for the stars that follow. The Fe appendix's anchor rule
+#: (generate_fe_publication), for every element: HARPS VIS, Reference Grade, ranked by
+#: rank_key (most complete treatment, then lines, then sigma). One named product, never an
+#: average across holdings. An element with no Reference Grade HARPS product (N; O has only
+#: a Codex Grade [O I] 6300) keeps its Asplund+2021 recipe.
+ANCHOR_HOLDING, ANCHOR_BAND = 'solar_harps_molecfit_corrected', 'VIS'
 
 
-def anchor_product(products, element):
-    rule = ANCHOR_RULE.get(element)
-    if rule is None:
+def anchor_product(products, element=None):
+    if headline_hold(products, element):
         return None
     hits = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade'
-            and all(str(p.get(k) or '') == v for k, v in rule.items())]
-    return hits[0] if len(hits) == 1 else None
+            and p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
+    return min(hits, key=rank_key) if hits else None
 
 
 def headline(products, element=None):

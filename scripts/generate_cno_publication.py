@@ -89,20 +89,20 @@ def landmark(element, products):
     """The one number at the top -- the SAME value the Sun table shows. Asplund+2021's own
     method where we have its recipe (RYA-1232 families for C/N/O; RYA-1233 line set for
     Si/Al); otherwise the best single product, marked as such (`kind: best_product`)."""
-    from cno_selection import literature_headline
+    from cno_selection import literature_headline, anchor_product
+    best = anchor_product(products, element)
+    if best is not None:
+        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
+                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product (the Fe anchor rule)',
+                'families': [{'family': best.get('band'), 'A': float(best['A']),
+                              'sigma': float(total_sigma(best)), 'product': best}],
+                'missing': []}
     mark = literature_headline(products, element)
     if mark is not None:
         return mark
     best = headline(products, element)
     if best is None:
         return None
-    from cno_selection import anchor_product
-    if anchor_product(products, element) is best:
-        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
-                'kind': 'anchor', 'rule': 'the HARPS Reference Grade 3D non-LTE product (the Fe anchor rule)',
-                'families': [{'family': best.get('band'), 'A': float(best['A']),
-                              'sigma': float(total_sigma(best)), 'product': best}],
-                'missing': []}
     return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
             'kind': 'best_product', 'rule': 'no Asplund et al. 2021 recipe in our products',
             'families': [{'family': best.get('band'), 'A': float(best['A']),
@@ -685,9 +685,10 @@ def build(science, element, selectors, site=ROOT):
             method_html = (f'<p>Measured the way Asplund, Amarsi &amp; Grevesse (2021) measure it: '
                            f'{esc(mark["rule"])}.</p>')
         elif kind == 'anchor':
-            method_html = ('<p>Our best single product, chosen the same way as for iron: the HARPS '
-                           'Reference Grade analysis of the Asplund et al. 2021 lines with the 3D non-LTE '
-                           'correction. Products and engines are not averaged together.</p>')
+            method_html = ('<p>Our best HARPS product, chosen the same way as for iron: the Reference '
+                           'Grade analysis with the most complete treatment, then the most lines. HARPS is '
+                           'the instrument we use for the stars that follow, so the Sun is anchored on it. '
+                           'Products and engines are not averaged together.</p>')
         elif kind == 'best_product':
             method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can '
                            'repeat for this element, so this is our best single product.</p>')
