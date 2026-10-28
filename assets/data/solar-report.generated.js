@@ -8997,16 +8997,16 @@ window.SOLAR_REPORT = {
       "name": "Nitrogen",
       "status": "Published",
       "tier": "owed",
-      "method": "Asplund+2021 combination of N I 7.904, CN 7.866 (N.json v1.80)",
+      "method": "kpno_solar_atlas red-optical · SET-LBP25 · ENGINE-A-3DNLTE (Reference Grade, N.json v1.80)",
       "asplund": 7.83,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 7.885,
-        "sigmaTotal": 0.019,
-        "lineCount": 217
+        "value": 7.897,
+        "sigmaTotal": 0.1932,
+        "lineCount": 2
       },
-      "delta": 0.055,
+      "delta": 0.067,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9016,16 +9016,16 @@ window.SOLAR_REPORT = {
       "name": "Oxygen",
       "status": "Published",
       "tier": "gold",
-      "method": "Asplund+2021 combination of [O I] 8.934, O I 8.751 (O.json v1.102)",
+      "method": "kpno_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.102)",
       "asplund": 8.69,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.7576,
-        "sigmaTotal": 0.0752,
-        "lineCount": 5
+        "value": 8.751,
+        "sigmaTotal": 0.0766,
+        "lineCount": 4
       },
-      "delta": 0.0676,
+      "delta": 0.061,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {

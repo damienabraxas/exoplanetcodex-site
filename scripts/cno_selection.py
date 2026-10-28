@@ -166,15 +166,19 @@ def best_in_band(products, band):
 #: (generate_fe_publication), for every element: HARPS VIS, Reference Grade, ranked by
 #: rank_key (most complete treatment, then lines, then sigma). One named product, never an
 #: average across holdings. An element with no Reference Grade HARPS product (N; O has only
-#: a Codex Grade [O I] 6300) keeps its Asplund+2021 recipe.
+#: a Codex Grade [O I] 6300) takes the best Reference Grade product from CRIRES+ or Kitt Peak,
+#: ranked the same way (Ryan 2026-10-28: CRIRES+ is also used for the stars).
 ANCHOR_HOLDING, ANCHOR_BAND = 'solar_harps_molecfit_corrected', 'VIS'
+FALLBACK_INSTRUMENTS = ('crires_plus', 'kpno_solar_atlas')
 
 
 def anchor_product(products, element=None):
     if headline_hold(products, element):
         return None
-    hits = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade'
-            and p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
+    ref = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade']
+    hits = [p for p in ref if p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
+    if not hits:
+        hits = [p for p in ref if p.get('instrument') in FALLBACK_INSTRUMENTS]
     return min(hits, key=rank_key) if hits else None
 
 
