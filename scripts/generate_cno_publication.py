@@ -18,7 +18,7 @@ import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
-from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
+from cno_selection import (ANCHOR_INSTRUMENT_OVERRIDE, BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
                            fill_grades, headline, rank_key, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -689,6 +689,11 @@ def build(science, element, selectors, site=ROOT):
                            'Grade analysis with the most complete treatment, then the most lines. HARPS is '
                            'the instrument we use for the stars that follow, so the Sun is anchored on it. '
                            'Products and engines are not averaged together.</p>')
+        elif kind == 'anchor' and element in ANCHOR_INSTRUMENT_OVERRIDE:
+            method_html = ('<p>HARPS reaches only two of these lines, and its continuum placement there '
+                           'is less certain than on the Kitt Peak atlas, so this is our Kitt Peak product on '
+                           'the same lines with the same treatment. Products and engines are not averaged '
+                           'together.</p>')
         elif kind == 'anchor':
             method_html = ('<p>HARPS has no Reference Grade product for this element, so this is our best '
                            'Reference Grade product from CRIRES+ or Kitt Peak, chosen the same way: the most '

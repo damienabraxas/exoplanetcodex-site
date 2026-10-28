@@ -17,11 +17,11 @@
     "data/reference/litscan/Al.yaml": "0d2ee0d21be36de82d07d80fda81a4a8199aca0b7e901e8242f8aca0a42303aa",
     "data/nlte_grids/Al_Amarsi2020_PySME.prov.json": "d9daaf1c48d5429e20710daa0a7a227babc2b41c91863ce7a126c00859818c92"
   },
-  "generator_sha256": "31971f75f1c754a31ba60cadc8ef1e804a78de8197a8bbb341ad2423d9d07508",
+  "generator_sha256": "611d7529397dfd0d87126302d89071c0fd925d9f9dfcf5853512e1bbacd5e31f",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 5,
-  "template_sha256": "f54355f4ef3ade36ea7a2c5241f39a71dcd52d4764fb0fb25b53e028833c71d7",
+  "template_sha256": "731ae11ef82d9e9c5b15c88872dbe3f463a02efad6e89cbce22aa016155f730b",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",

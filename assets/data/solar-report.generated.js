@@ -9073,16 +9073,16 @@ window.SOLAR_REPORT = {
       "name": "Aluminium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · SET-AL_AGSS21 · ENGINE-A (Reference Grade, Al.json v1.67)",
+      "method": "kpno_solar_atlas VIS · SET-AL_AGSS21 · ENGINE-A (Reference Grade, Al.json v1.67)",
       "asplund": 6.43,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
       "primaryValue": {
-        "value": 6.387,
-        "sigmaTotal": 0.0971,
+        "value": 6.429,
+        "sigmaTotal": 0.081,
         "lineCount": 2
       },
-      "delta": -0.043,
+      "delta": -0.001,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {

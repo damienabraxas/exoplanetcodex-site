@@ -170,12 +170,22 @@ def best_in_band(products, band):
 #: ranked the same way (Ryan 2026-10-28: CRIRES+ is also used for the stars).
 ANCHOR_HOLDING, ANCHOR_BAND = 'solar_harps_molecfit_corrected', 'VIS'
 FALLBACK_INSTRUMENTS = ('crires_plus', 'kpno_solar_atlas')
+#: Named exceptions (Ryan 2026-10-28). Al: HARPS reaches only 6696/6698 and its continuum
+#: term there is 0.070 dex against Kitt Peak's 0.044 on the same two lines and treatment,
+#: so the Kitt Peak VIS product is shown. NOT a general "smallest sigma" rule -- that would
+#: move C, Si and Na off HARPS as well.
+ANCHOR_INSTRUMENT_OVERRIDE = {'Al': 'kpno_solar_atlas'}
 
 
 def anchor_product(products, element=None):
     if headline_hold(products, element):
         return None
     ref = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade']
+    override = ANCHOR_INSTRUMENT_OVERRIDE.get(element)
+    if override:
+        hits = [p for p in ref if p.get('instrument') == override and p.get('band') == ANCHOR_BAND]
+        if hits:
+            return min(hits, key=rank_key)
     hits = [p for p in ref if p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
     if not hits:
         hits = [p for p in ref if p.get('instrument') in FALLBACK_INSTRUMENTS]
