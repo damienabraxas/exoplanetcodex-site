@@ -239,16 +239,25 @@
                sub: '\u00b1 ' + sigma.toFixed(2) + (ref != null ? ' \u00b7 reference ' + ref.toFixed(2) : ''),
                flag: RATIO_FLAG[r.top] || RATIO_FLAG[r.bottom] || '', href: r.href };
     });
-    // Placeholders for the outputs not computed yet (Ryan, 2026-10-25). [alpha/Fe] is computed
-    // once every alpha element is final, and which elements it averages is still to be decided,
-    // so the card names no list. CHNOPS names whichever of its measurable elements are missing
-    // (hydrogen is the reference, 12.00 by definition).
-    ratioCards.push({ label: '[\u03b1/Fe]', value: '\u2014', unit: 'dex',
-                      sub: 'Computed once the alpha elements are final', href: '/glossary/#alpha-enhancement' });
-    var chnops = ['C', 'N', 'O', 'P', 'S'].filter(function (s) { return !published(s); });
+    // Placeholders for the outputs not computed yet (Ryan, 2026-10-25). [alpha/Fe] is shown two
+    // ways and computed once every element in it is final: the accepted average (Mg, Si, Ca, Ti,
+    // the usual choice in the literature) and the Codex average, which adds the two other alpha
+    // elements a Sun-like star shows lines of, O and S (Ne and Ar have none). Each card names the
+    // elements it still waits for. CHNOPS does the same (hydrogen is the reference, 12.00 by
+    // definition).
+    function waitsFor(list) {
+      var missing = list.filter(function (s) { return !published(s); });
+      return missing.length ? 'Waits for ' + missing.join(', ').replace(/, ([^,]*)$/, ' and $1') : 'Not yet computed';
+    }
+    [
+      { label: 'Accepted [\u03b1/Fe]', els: ['Mg', 'Si', 'Ca', 'Ti'] },
+      { label: 'Codex [\u03b1/Fe]', els: ['O', 'Mg', 'Si', 'S', 'Ca', 'Ti'] }
+    ].forEach(function (a) {
+      ratioCards.push({ label: a.label, value: '\u2014', unit: 'dex \u00b7 ' + a.els.join(', '),
+                        sub: waitsFor(a.els), href: '/glossary/#alpha-enhancement' });
+    });
     ratioCards.push({ label: 'CHNOPS', value: '\u2014', unit: 'elements of life',
-                      sub: chnops.length ? 'Waits for ' + chnops.join(' and ') : 'Not yet computed',
-                      href: '/glossary/#chnops' });
+                      sub: waitsFor(['C', 'N', 'O', 'P', 'S']), href: '/glossary/#chnops' });
 
     function tiles(list) {
       return '<div class="solar-findings">' + list.map(function (c) {
