@@ -298,7 +298,6 @@ def main() -> None:
     # Asplund+2021 Table 2, not the gold record's asplund2021 column (Na 6.24 / Li 1.05 there).
     from asplund2021 import TABLE2
     asplund_of = {el: v for el, (v, _s) in TABLE2.items()}
-    tier_of = {row["element"]: row["confidence"] for row in rows(gold_path)}
 
     def optional(value):
         try:
@@ -372,7 +371,9 @@ def main() -> None:
             "ion": row["ion"], "name": names[symbol],
             # The tracker's own verdict + tier, not a re-derived label.
             "status": (row["verdict"] or "no verdict").lower(),
-            "tier": tier_of.get(symbol, ""),
+            # The gold record's tier vocabulary (owed / gold / gf_floor) is obsolete and read
+            # "owed" on published rows (Ryan 2026-10-28); the row shows its value only.
+            "tier": "",
             "method": row["method"],
             "asplund": optional(asplund_of.get(symbol)),
             # RYA-844: an element with no ratified value keeps a row and states why,
