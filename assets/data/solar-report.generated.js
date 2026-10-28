@@ -8978,16 +8978,16 @@ window.SOLAR_REPORT = {
       "name": "Carbon",
       "status": "Published",
       "tier": "gold",
-      "method": "Asplund+2021 combination of C I 8.488, C2 8.419, CH 8.509, CO 8.701 (C.json v1.202)",
+      "method": "harps VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.202)",
       "asplund": 8.46,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.5069,
-        "sigmaTotal": 0.0559,
-        "lineCount": 425
+        "value": 8.463,
+        "sigmaTotal": 0.1142,
+        "lineCount": 3
       },
-      "delta": 0.0469,
+      "delta": 0.003,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9073,16 +9073,16 @@ window.SOLAR_REPORT = {
       "name": "Aluminium",
       "status": "Published",
       "tier": "owed",
-      "method": "Asplund+2021 line set, 6 lines on kpno_solar_atlas: Al I VIS 6.428, Al I red-optical 6.450, Al I NIR 6.552 (Al.json v1.67)",
+      "method": "harps VIS · SET-AL_AGSS21 · ENGINE-A (Reference Grade, Al.json v1.67)",
       "asplund": 6.43,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
       "primaryValue": {
-        "value": 6.4547,
-        "sigmaTotal": 0.054,
-        "lineCount": 6
+        "value": 6.387,
+        "sigmaTotal": 0.0971,
+        "lineCount": 2
       },
-      "delta": 0.0247,
+      "delta": -0.043,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9092,16 +9092,16 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "gf_floor",
-      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.489, Si II VIS 7.518, Si I red-optical 7.577 (Si.json v1.278)",
+      "method": "harps VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.278)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
       "primaryValue": {
-        "value": 7.5122,
-        "sigmaTotal": 0.0588,
-        "lineCount": 10
+        "value": 7.487,
+        "sigmaTotal": 0.0864,
+        "lineCount": 7
       },
-      "delta": 0.0022,
+      "delta": -0.023,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
