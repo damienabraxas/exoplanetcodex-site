@@ -93,7 +93,7 @@ def landmark(element, products):
     best = anchor_product(products, element)
     if best is not None:
         return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
-                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product (the Fe anchor rule)',
+                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product, else CRIRES+ or Kitt Peak (the Fe anchor rule)',
                 'families': [{'family': best.get('band'), 'A': float(best['A']),
                               'sigma': float(total_sigma(best)), 'product': best}],
                 'missing': []}
@@ -684,11 +684,16 @@ def build(science, element, selectors, site=ROOT):
         if kind == 'line_set':
             method_html = (f'<p>Measured the way Asplund, Amarsi &amp; Grevesse (2021) measure it: '
                            f'{esc(mark["rule"])}.</p>')
-        elif kind == 'anchor':
+        elif kind == 'anchor' and mark['families'][0]['product'].get('holding') == 'solar_harps_molecfit_corrected':
             method_html = ('<p>Our best HARPS product, chosen the same way as for iron: the Reference '
                            'Grade analysis with the most complete treatment, then the most lines. HARPS is '
                            'the instrument we use for the stars that follow, so the Sun is anchored on it. '
                            'Products and engines are not averaged together.</p>')
+        elif kind == 'anchor':
+            method_html = ('<p>HARPS has no Reference Grade product for this element, so this is our best '
+                           'Reference Grade product from CRIRES+ or Kitt Peak, chosen the same way: the most '
+                           'complete treatment, then the most lines. Products and engines are not averaged '
+                           'together.</p>')
         elif kind == 'best_product':
             method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can '
                            'repeat for this element, so this is our best single product.</p>')
