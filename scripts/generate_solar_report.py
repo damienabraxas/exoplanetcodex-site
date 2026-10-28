@@ -525,7 +525,7 @@ def main() -> None:
          # total-only bar.
          "primary":{"value":float(anchor["A"]),"sigmaStat":float(anchor["sigma_stat"]),
                     "sigmaSys":float(anchor["sigma_syst_complete"]),
-                    "sigmaTotal":float(anchor["sigma_reported"]),
+                    "sigmaTotal":float(cno_selection.total_sigma(anchor)),
                     "lineCount":int(anchor["n_lines"]),
                     "sigmaBasis":f"Fe.json v{feed['version']} — {anchor['holding']}, "
                                  f"{anchor['grade']}, Amarsi 3D-NLTE (RYA-850 primary)"},

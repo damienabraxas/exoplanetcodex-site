@@ -85,10 +85,11 @@
       return ar-br || Number(b.n_lines||0)-Number(a.n_lines||0);
     })[0];
   }
-  // One total uncertainty per product -- statistical and systematic in quadrature, as
-  // Asplund et al. 2021 and Lodders et al. 2025 quote it. A budgeted row states it as
-  // sigma_reported; a legacy row falls back to stat (+) syst.
+  // The uncertainty as Asplund et al. 2021 quote it (sigma_asplund: statistics, 3D, NLTE),
+  // stamped by the science orchestrator. A legacy row falls back to sigma_reported, then
+  // stat (+) syst.
   function total(p) {
+    if (p.sigma_asplund != null && isFinite(Number(p.sigma_asplund))) return Number(p.sigma_asplund);
     if (p.sigma_reported != null && isFinite(Number(p.sigma_reported))) return Number(p.sigma_reported);
     var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0));
     return Math.sqrt(st * st + sy * sy);
@@ -161,7 +162,7 @@
     }));
     if (!rows.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
     var out = '<p class="product-feed-meta">Compatibility view while this feed version publishes no plot_grid.</p>' +
-      '<div class="forest-legend"><span>bar = total σ (statistical and systematic combined)</span></div>' +
+      '<div class="forest-legend"><span>bar = σ as Asplund 2021 quote it (scatter, 3D, NLTE)</span></div>' +
       '<div class="product-forest"><div class="product-forest-inner">';
     BANDS.forEach(function (band) {
       var here = rows.filter(function (p) { return p.band === band; });
@@ -198,7 +199,7 @@
     var sections = grid.sections.filter(function (s) { return s.ion === ion; });
     if (!sections.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
 
-    var out = '<div class="forest-legend"><span>bar = total \u03c3 (statistical and systematic combined)</span>' +
+    var out = '<div class="forest-legend"><span>bar = \u03c3 as Asplund 2021 quote it (scatter, 3D, NLTE)</span>' +
       '<span>blue = regular model result</span>' +
       '<span style="color:#f07848">reddish orange = experimental Frankenstein / Gerber mean-3D; not adopted</span>' +
       '<span>green = Asplund; gold = Lodders</span></div>' +

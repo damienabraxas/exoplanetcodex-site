@@ -54,8 +54,8 @@ CONTEXT = {
     'N': 'The nitrogen strategy uses red-optical N I as the primary atomic route, with NH providing an independent molecular check and CN a carbon-dependent cross-check. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
     'O': 'Oxygen is traced by forbidden [O I], permitted O I and molecular OH indicators where available. Blends, departures from LTE and atmospheric structure affect these families differently, so their results retain separate identities.'}
 GUIDE = ('Each row is one independent product, preserving its band, holding, engine, indicator and line set. '
-         'Engines and indicator families are never averaged. Each bar is the total uncertainty -- the statistical and '
-         'systematic terms combined in quadrature, as Asplund et al. 2021 and Lodders et al. 2025 quote it. The full error budget remains attached to the row. '
+         'Engines and indicator families are never averaged. Each bar is the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex). '
+         'Atomic-data and observational terms are not in the bar, as in Asplund; they stay in the full error budget attached to the row. '
          'Grades describe the supplied line-pool provenance, not engine quality; evaluated theoretical CNO oscillator strengths are not relabelled as laboratory evidence. '
          'Quarantined, failed and unconstrained fits have no abundance mark. Experimental products remain explicitly not adopted. '
          'Literature references provide context, never tuning targets.')

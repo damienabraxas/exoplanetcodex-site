@@ -8983,11 +8983,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.5069,
-        "sigmaTotal": 0.0559,
+        "value": 8.5045,
+        "sigmaTotal": 0.0252,
         "lineCount": 425
       },
-      "delta": 0.0469,
+      "delta": 0.0445,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9021,11 +9021,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.7576,
-        "sigmaTotal": 0.0752,
+        "value": 8.7563,
+        "sigmaTotal": 0.0544,
         "lineCount": 5
       },
-      "delta": 0.0676,
+      "delta": 0.0663,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9040,11 +9040,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/na/",
       "primaryValue": {
-        "value": 6.3119,
-        "sigmaTotal": 0.0389,
+        "value": 6.3116,
+        "sigmaTotal": 0.0381,
         "lineCount": 5
       },
-      "delta": 0.0919,
+      "delta": 0.0916,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9078,11 +9078,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
       "primaryValue": {
-        "value": 6.4547,
-        "sigmaTotal": 0.054,
+        "value": 6.4693,
+        "sigmaTotal": 0.0335,
         "lineCount": 6
       },
-      "delta": 0.0247,
+      "delta": 0.0393,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9092,16 +9092,16 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.489, Si II VIS 7.518, Si I red-optical 7.577 (Si.json v1.278)",
+      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.486, Si II VIS 7.528, Si I red-optical 7.563 (Si.json v1.278)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
       "primaryValue": {
-        "value": 7.5122,
-        "sigmaTotal": 0.0588,
+        "value": 7.517,
+        "sigmaTotal": 0.0362,
         "lineCount": 10
       },
-      "delta": 0.0022,
+      "delta": 0.007,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {

@@ -105,7 +105,7 @@ class IonCombinationTests(unittest.TestCase):
         mark = literature_headline(rows, 'Mg')
         self.assertAlmostEqual(mark['A'], 7.551304347826087)
         self.assertEqual([x['family'] for x in mark['families']], ['Mg I', 'Mg II'])
-        self.assertIn('assumes independent', mark['rule'])
+        self.assertIn('Amarsi+2021 Eq. 3', mark['rule'])
 
     def test_missing_ion_never_becomes_a_combined_headline(self):
         rows = [self.mg('II')]
