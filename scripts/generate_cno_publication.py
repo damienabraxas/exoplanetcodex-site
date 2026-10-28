@@ -96,6 +96,13 @@ def landmark(element, products):
     best = headline(products, element)
     if best is None:
         return None
+    from cno_selection import anchor_product
+    if anchor_product(products, element) is best:
+        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
+                'kind': 'anchor', 'rule': 'the HARPS Reference Grade 3D non-LTE product (the Fe anchor rule)',
+                'families': [{'family': best.get('band'), 'A': float(best['A']),
+                              'sigma': float(total_sigma(best)), 'product': best}],
+                'missing': []}
     return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
             'kind': 'best_product', 'rule': 'no Asplund et al. 2021 recipe in our products',
             'families': [{'family': best.get('band'), 'A': float(best['A']),
@@ -432,13 +439,14 @@ def holding_name(p):
 #: ⚠️ VALUE ONLY, NO BAND. Fe shades +/- sigma_external because its tracker supplies one.
 #: AGSS21's published uncertainties are not in the science repo, and inventing a width
 #: would put an unsourced error band on a public plot.
-ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51, 'Al': 6.43, 'Mg': 7.55, 'Na': 6.22}
+from asplund2021 import TABLE2 as _AGSS21_TABLE2
+ASPLUND2021 = {el: v for el, (v, _s) in _AGSS21_TABLE2.items()}
 
 #: AGSS21's OWN published uncertainties (Asplund, Amarsi & Grevesse 2021, Table 2). The Fe
 #: forest shades +/- sigma_external around its reference; CNO now does the same, so the
 #: reference reads as a measurement with a bar rather than an infinitely sharp line.
 #: These are the paper's stated values, not a width invented to make a band appear.
-ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03, 'Mg': 0.03, 'Na': 0.03}
+ASPLUND2021_SIGMA = {el: s for el, (_v, s) in _AGSS21_TABLE2.items()}
 
 #: Diagnostics the ratified RYA-1220 policy REJECTS as abundance routes. They stay in the
 #: feed and in the forest -- withdrawing evidence is not the same as hiding it -- but they
@@ -676,6 +684,10 @@ def build(science, element, selectors, site=ROOT):
         if kind == 'line_set':
             method_html = (f'<p>Measured the way Asplund, Amarsi &amp; Grevesse (2021) measure it: '
                            f'{esc(mark["rule"])}.</p>')
+        elif kind == 'anchor':
+            method_html = ('<p>Our best single product, chosen the same way as for iron: the HARPS '
+                           'Reference Grade analysis of the Asplund et al. 2021 lines with the 3D non-LTE '
+                           'correction. Products and engines are not averaged together.</p>')
         elif kind == 'best_product':
             method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can '
                            'repeat for this element, so this is our best single product.</p>')
