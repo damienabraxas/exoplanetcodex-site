@@ -25,13 +25,17 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Na': ('Sodium is traced by neutral Na I lines from the near-ultraviolet to the K band. The reference '
+           'lines are the five Asplund et al. 2021 used (4751, 5148, 6154, 6160 and 10746 \u00c5), with '
+           'the oscillator strengths they adopted. Na I departs from LTE, so each spectrum also carries '
+           'non-LTE products; each set, spectrum and treatment remains a separate product.'),
     'Mg': ('Magnesium is measured separately from neutral Mg I and ionized Mg II. '
            'Asplund et al. 2021 use eight Mg I and six Mg II features, average the lines '
            'within each ion, then weight the two ion means by their total uncertainties. '
@@ -114,6 +118,7 @@ INDICATOR_NAMES = {
     'SET-SI_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-MG_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-AL_AGSS21': '{el} · Asplund et al. 2021 lines',
+    'SET-NA_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-SI_DESHMUKH2022': '{el} · Deshmukh et al. 2022 lines',
     'SET-SI_ELGUETA2026': '{el} · Elgueta et al. 2026 lines',
 }
@@ -427,13 +432,13 @@ def holding_name(p):
 #: ⚠️ VALUE ONLY, NO BAND. Fe shades +/- sigma_external because its tracker supplies one.
 #: AGSS21's published uncertainties are not in the science repo, and inventing a width
 #: would put an unsourced error band on a public plot.
-ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51, 'Al': 6.43, 'Mg': 7.55}
+ASPLUND2021 = {'C': 8.46, 'N': 7.83, 'O': 8.69, 'Si': 7.51, 'Al': 6.43, 'Mg': 7.55, 'Na': 6.22}
 
 #: AGSS21's OWN published uncertainties (Asplund, Amarsi & Grevesse 2021, Table 2). The Fe
 #: forest shades +/- sigma_external around its reference; CNO now does the same, so the
 #: reference reads as a measurement with a bar rather than an infinitely sharp line.
 #: These are the paper's stated values, not a width invented to make a band appear.
-ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03, 'Mg': 0.03}
+ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03, 'Mg': 0.03, 'Na': 0.03}
 
 #: Diagnostics the ratified RYA-1220 policy REJECTS as abundance routes. They stay in the
 #: feed and in the forest -- withdrawing evidence is not the same as hiding it -- but they
@@ -453,6 +458,10 @@ ASPLUND2021_SIGMA = {'C': 0.04, 'N': 0.07, 'O': 0.04, 'Si': 0.03, 'Al': 0.03, 'M
 #: Bergemann & Palme 2025 decline to use, adopting 7.94 +/- 0.11 from the two least-blended
 #: lines instead.
 PRELIMINARY = {
+    'Na': ('The three-dimensional non-LTE products apply published line-by-line corrections '
+           '(Asplund et al. 2021; Canocchi et al. 2026) to our one-dimensional fits; they are not '
+           'our own three-dimensional calculation. The H- and K-band products sit about 0.4 dex '
+           'below the visible ones. They are shown as measured, with their full error bars.'),
     'Mg': ('The published Mg I line set still lacks resolved oscillator-strength uncertainties. '
            'Available Mg II NLTE products use line-specific corrections from Asplund et al. '
            '2021 on our LTE fits; they are not a new three-dimensional transfer calculation. '

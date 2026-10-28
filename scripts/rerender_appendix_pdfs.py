@@ -32,7 +32,7 @@ TARGETS = [
     (f"assets/data/cno-publication/{el}/report.json",
      f"assets/data/cno-publication/{el}/manifest.json",
      f"assets/docs/appendices/solar_{el.lower()}_appendix.pdf")
-    for el in ("Al", "C", "Mg", "N", "O", "Si")
+    for el in ("Al", "C", "Mg", "N", "Na", "O", "Si")
 ]
 
 

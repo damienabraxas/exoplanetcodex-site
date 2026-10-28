@@ -9033,12 +9033,19 @@ window.SOLAR_REPORT = {
       "symbol": "Na",
       "ion": "I",
       "name": "Sodium",
-      "status": "Curation owed",
+      "status": "Published",
       "tier": "owed",
-      "method": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "method": "Asplund+2021 line set, 5 lines on kpno_solar_atlas: Na I VIS 6.291, Na I NIR 6.328 (Na.json v1.131)",
       "asplund": 6.24,
-      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
-      "statusDetail": "curation-owed"
+      "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/na/",
+      "primaryValue": {
+        "value": 6.3119,
+        "sigmaTotal": 0.0389,
+        "lineCount": 5
+      },
+      "delta": 0.0719,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 12,
