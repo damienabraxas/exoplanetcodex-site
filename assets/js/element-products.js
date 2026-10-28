@@ -85,11 +85,18 @@
       return ar-br || Number(b.n_lines||0)-Number(a.n_lines||0);
     })[0];
   }
+  // One total uncertainty per product -- statistical and systematic in quadrature, as
+  // Asplund et al. 2021 and Lodders et al. 2025 quote it. A budgeted row states it as
+  // sigma_reported; a legacy row falls back to stat (+) syst.
+  function total(p) {
+    if (p.sigma_reported != null && isFinite(Number(p.sigma_reported))) return Number(p.sigma_reported);
+    var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0));
+    return Math.sqrt(st * st + sy * sy);
+  }
   function card(p, telluric) {
     var bandClass=p.band==='near-UV'?'band-near-uv':p.band==='NIR'?'band-ir':'band-vis';
     return '<article class="product-card '+bandClass+'"><span class="eyebrow">'+esc(LABELS[p.instrument]||p.instrument)+' · '+esc(p.band)+' · '+esc(p.tier)+'</span>'+
-      '<strong>'+num(p.A)+' <small>± '+num(p.sigma_stat)+' stat</small></strong><p>'+esc(p.display)+' · n='+esc(p.n_lines)+'</p>'+
-      '<small>± '+num(p.sigma_syst)+' systematic · '+esc(p.dominant_term||'systematic basis not declared')+'</small>'+
+      '<strong>'+num(p.A)+' <small>± '+num(total(p))+'</small></strong><p>'+esc(p.display)+' · n='+esc(p.n_lines)+'</p>'+
       '<small class="corrected">telluric '+esc(telluric[p.holding]||'UNKNOWN')+' · '+esc(p.holding)+'</small></article>';
   }
   // RYA-1102 — THE ERROR-BAR FOREST DRAWS A PUBLISHED GRID, NOT WHATEVER ROWS EXIST.
@@ -154,13 +161,13 @@
     }));
     if (!rows.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
     var out = '<p class="product-feed-meta">Compatibility view while this feed version publishes no plot_grid.</p>' +
-      '<div class="forest-legend"><span>blue solid = statistical σ</span><span>blue wireframe = systematic σ</span></div>' +
+      '<div class="forest-legend"><span>bar = total σ (statistical and systematic combined)</span></div>' +
       '<div class="product-forest"><div class="product-forest-inner">';
     BANDS.forEach(function (band) {
       var here = rows.filter(function (p) { return p.band === band; });
       if (!here.length) return;
       var vals = [];
-      here.forEach(function (p) { vals.push(Number(p.A)-Number(p.sigma_stat||0),Number(p.A)+Number(p.sigma_stat||0),Number(p.A)-Number(p.sigma_syst||0),Number(p.A)+Number(p.sigma_syst||0)); });
+      here.forEach(function (p) { vals.push(Number(p.A)-total(p),Number(p.A)+total(p)); });
       if (reference) { vals.push(reference.band[0],reference.band[1]); (reference.comparators||[]).forEach(function(c){vals.push(Number(c.value)-Number(c.sigma||0),Number(c.value)+Number(c.sigma||0));}); }
       var lo=Math.min.apply(null,vals)-0.03, hi=Math.max.apply(null,vals)+0.03, span=hi-lo||1;
       function x(v){return Math.max(0,Math.min(100,(v-lo)/span*100));}
@@ -172,9 +179,9 @@
         holdings.forEach(function(holding){
           out += '<div class="forest-instrument">'+esc(holdingLabel(holding,inst))+'<small>'+esc(holding)+'</small></div>';
           group.filter(function(p){return p.holding===holding;}).forEach(function(p){
-            var st=Number(p.sigma_stat||0),sy=Number(p.sigma_syst||0),sl=x(Number(p.A)-st),sw=x(Number(p.A)+st)-sl,yl=x(Number(p.A)-sy),yw=x(Number(p.A)+sy)-yl;
+            var tot=total(p),sl=x(Number(p.A)-tot),sw=x(Number(p.A)+tot)-sl;
             var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(0.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(0.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
-            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.grade)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="sysbar" style="left:'+yl+'%;width:'+Math.max(0.4,yw)+'%"></i><i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(st)+' stat ±'+num(sy)+' syst</small></span></div>';
+            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.grade)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(tot)+'</small></span></div>';
           });
         });
       });
@@ -191,8 +198,8 @@
     var sections = grid.sections.filter(function (s) { return s.ion === ion; });
     if (!sections.length) return '<p class="product-pending">No finished products in this tier yet.</p>';
 
-    var out = '<div class="forest-legend"><span>blue solid = statistical \u03c3</span>' +
-      '<span>wireframe = systematic \u03c3</span><span>blue = regular model result</span>' +
+    var out = '<div class="forest-legend"><span>bar = total \u03c3 (statistical and systematic combined)</span>' +
+      '<span>blue = regular model result</span>' +
       '<span style="color:#f07848">reddish orange = experimental Frankenstein / Gerber mean-3D; not adopted</span>' +
       '<span>green = Asplund; gold = Lodders</span></div>' +
       '<div class="product-forest"><div class="product-forest-inner">';
@@ -211,8 +218,7 @@
         s.cells.forEach(function (c) {
           var p = c.product_key && byKey[c.product_key];
           if (!p) return;
-          vals.push(Number(p.A) - Number(p.sigma_stat || 0), Number(p.A) + Number(p.sigma_stat || 0),
-                    Number(p.A) - Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0)), Number(p.A) + Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0)));
+          vals.push(Number(p.A) - total(p), Number(p.A) + total(p));
         });
       });
       if (reference) {
@@ -238,9 +244,8 @@
           s.cells.forEach(function (c) {
             var p = c.product_key && byKey[c.product_key];
             if (!p) return;   // only products are drawn (Ryan 2026-10-21); coverage lives in the tracker
-            var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0));
-            var sl = x(Number(p.A) - st), sw = x(Number(p.A) + st) - sl;
-            var yl = x(Number(p.A) - sy), yw = x(Number(p.A) + sy) - yl;
+            var tot = total(p);
+            var sl = x(Number(p.A) - tot), sw = x(Number(p.A) + tot) - sl;
             var refs = reference ? '<i class="ref" title="' + esc(reference.best_external) + '" style="left:' + x(reference.band[0]) + '%;width:' + Math.max(0.4, x(reference.band[1]) - x(reference.band[0])) + '%"></i><i class="refline" style="left:' + x(reference.asplund2021) + '%"></i>' + (reference.comparators || []).map(function (c2) { return '<i class="cmpband" title="' + esc(c2.name) + '" style="left:' + x(Number(c2.value) - Number(c2.sigma || 0)) + '%;width:' + Math.max(0.4, x(Number(c2.value) + Number(c2.sigma || 0)) - x(Number(c2.value) - Number(c2.sigma || 0))) + '%"></i><i class="cmp" style="left:' + x(c2.value) + '%"></i>'; }).join('') : '';
             var experimental = p.adoption === 'EXPERIMENTAL-NOT-ADOPTED';
             out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + '"' +
@@ -248,10 +253,9 @@
               '<span class="forest-label">' + esc(c.row) + (experimental ? ' · Frankenstein (experimental)' : '') + '<small>' + esc(p.grade) + ' · n=' + esc(p.n_lines) +
               (c.alternates ? ' \u00b7 ' + c.alternates + ' alternate' + (c.alternates > 1 ? 's' : '') : '') +
               '</small></span><span class="track">' + refs +
-              '<i class="sysbar" style="left:' + yl + '%;width:' + Math.max(0.4, yw) + '%"></i>' +
               '<i class="bar" style="left:' + sl + '%;width:' + Math.max(0.4, sw) + '%"></i>' +
               '<i class="dot" style="left:' + x(Number(p.A)) + '%"></i></span>' +
-              '<span class="forest-value">' + num(p.A) + ' <small>\u00b1' + num(st) + ' stat \u00b1' + num(sy) + ' syst</small></span></div>';
+              '<span class="forest-value">' + num(p.A) + ' <small>\u00b1' + num(tot) + '</small></span></div>';
           });
         });
       });
@@ -272,7 +276,7 @@
       var bad=quarantine.filter(function(p){return p.instrument===inst&&p.band===band;});
       var gap=gaps.filter(function(g){return g.band===band;})[0];
       if(bad.length) h+='<td class="matrix-problem"><span class="matrix-state">Problem</span>'+(rows.length?'<span class="matrix-row">Finished products also exist in this cell; quarantined rows are never hidden.</span>':'')+'<span class="matrix-reason">'+esc(bad[0].quarantine_reason||'Quarantined product')+'</span></td>';
-      else if(rows.length) h+='<td class="matrix-product"><span class="matrix-state">Finished</span>'+rows.map(function(p){return '<span class="matrix-row">'+esc(p.tier)+' · '+esc(p.display)+' · '+num(p.A)+' <span class="matrix-uncertainty">±'+num(p.sigma_stat)+' stat ±'+num(p.sigma_syst)+' syst</span></span>';}).join('')+(expectedTiers||[]).filter(function(t){return !rows.some(function(p){return p.tier===t;});}).map(function(t){return '<span class="matrix-row matrix-tier-pending">'+esc(t)+' · Pending</span>';}).join('')+'</td>';
+      else if(rows.length) h+='<td class="matrix-product"><span class="matrix-state">Finished</span>'+rows.map(function(p){return '<span class="matrix-row">'+esc(p.tier)+' · '+esc(p.display)+' · '+num(p.A)+' <span class="matrix-uncertainty">±'+num(total(p))+'</span></span>';}).join('')+(expectedTiers||[]).filter(function(t){return !rows.some(function(p){return p.tier===t;});}).map(function(t){return '<span class="matrix-row matrix-tier-pending">'+esc(t)+' · Pending</span>';}).join('')+'</td>';
       else if(!covered(inst,band)) h+='<td class="matrix-na" aria-label="Out of band"></td>';
       else if(gap) h+='<td class="matrix-na"><span class="matrix-state">N/A</span><span class="matrix-reason">N/A for '+esc(element)+': '+esc(gap.reason)+'</span></td>';
       else h+='<td class="matrix-pending"><span class="matrix-state">Pending</span></td>';

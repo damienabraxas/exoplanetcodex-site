@@ -24,8 +24,7 @@ class ElementProductTests(unittest.TestCase):
         for state in ("Pending", "Out of band", "N/A for ", "Problem"):
             self.assertIn(state, self.js)
         self.assertIn("feed.quarantine", self.js)
-        self.assertIn("num(p.sigma_stat)", self.js)
-        self.assertIn("num(p.sigma_syst)", self.js)
+        self.assertIn("num(total(p))", self.js)
         self.assertIn("matrix-uncertainty", self.css)
         self.assertIn("Deepgraded and consistent matrix", self.js)
         self.assertIn("matrix(secondary", self.js)

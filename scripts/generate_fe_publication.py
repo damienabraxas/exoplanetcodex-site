@@ -103,7 +103,6 @@ def forest(products, reference, name, social=False):
         ax.errorbar(p['A'], y, xerr=p['sigma_reported'], fmt='o',
                     color=color, mfc=color if p['tier'] != 'ALL' else BG,
                     capsize=3, lw=1.2, markersize=5)
-        ax.plot([p['A']-p['sigma_stat'], p['A']+p['sigma_stat']], [y, y], color=color, lw=3)
         text = label(p)
         if social:
             text = f"{LABELS[p['instrument']]} {p['band']} · {p['display']}\n{p['grade']} · n={p['n_lines']}"
@@ -117,7 +116,7 @@ def forest(products, reference, name, social=False):
     ax.invert_yaxis()
     ax.tick_params(axis='x', colors='#b8c8d3')
     ax.tick_params(axis='y', length=0, pad=12)
-    ax.set_xlabel('A(Fe) · thick: statistical · thin: reported uncertainty', color='#b8c8d3', fontsize=9)
+    ax.set_xlabel('A(Fe) · bar: total uncertainty (statistical and systematic combined)', color='#b8c8d3', fontsize=9)
     caveats = [p['sigma_reported_caveat'] for p in products if p.get('sigma_reported_caveat')]
     if caveats:
         footnote = '* Lower-bound uncertainty; microturbulence term unavailable.' if all('LOWER BOUND' in c for c in caveats) else '* Reported uncertainty is qualified; see source product CSV.'
@@ -335,7 +334,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         "const fs=require('fs'); const {forest}=require('./assets/js/element-products.js'); "
         "const x=JSON.parse(fs.readFileSync(0,'utf8')); process.stdout.write(forest(x.feed,x.ion,x.reference));"
     ], input=json.dumps({'feed': feed, 'ion': ion, 'reference': reference}), text=True, cwd=ROOT)
-    guide = '<p class="product-section-intro"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Solid bars show statistical uncertainty from the line measurements; wireframes show systematic uncertainty from the product’s adopted error budget, which does not average away with more lines. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool’s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p>'
+    guide = '<p class="product-section-intro"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Each bar is the total uncertainty: the statistical and systematic terms combined in quadrature, as Asplund et al. 2021 and Lodders et al. 2025 quote it. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool’s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p>'
     definitions = {
         'Reference Grade': 'An externally published reference line pool, using that reference’s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.',
         'Codex Grade': 'The vetted Codex pool of primary-laboratory oscillator strengths, restricted to lines at or below the adopted feature-depth gate.',

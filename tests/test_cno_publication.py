@@ -77,7 +77,12 @@ class AdmissionTests(unittest.TestCase):
         p=product(sigma_syst_complete=.06)
         del p['sigma_syst']
         live,_=audit_feed(feed([p]),{'verified':'applied'})
-        self.assertIn('±0.060 syst',forest('C',live))
+        # The forest draws ONE total bar (stat (+) syst, as Asplund+2021 quote it); the
+        # completed systematic must still reach that total without the legacy field.
+        from cno_selection import total_sigma
+        tot=total_sigma(live[0])
+        self.assertGreaterEqual(tot,.06)
+        self.assertIn(f'±{tot:.3f}</small>',forest('C',live))
 
     def test_highlights_require_unique_scientific_identity(self):
         live,_=audit_feed(feed([product(),product(selector='MOL-CH_Gband')]),{'verified':'applied'})
