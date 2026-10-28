@@ -166,10 +166,11 @@ def best_in_band(products, band):
 #: (generate_fe_publication), for every element: HARPS VIS, Reference Grade, ranked by
 #: rank_key (most complete treatment, then lines, then sigma). One named product, never an
 #: average across holdings. An element with no Reference Grade HARPS product (N; O has only
-#: a Codex Grade [O I] 6300) takes the best Reference Grade product from CRIRES+ or Kitt Peak,
-#: ranked the same way (Ryan 2026-10-28: CRIRES+ is also used for the stars).
+#: a Codex Grade [O I] 6300) takes the best Reference Grade Kitt Peak product, ranked the
+#: same way (RYA-1250, Ryan 2026-10-28: "the best Harps value if it exists, if not the best
+#: Kitt peak value" -- replaces the earlier CRIRES+-or-Kitt-Peak fallback).
 ANCHOR_HOLDING, ANCHOR_BAND = 'solar_harps_molecfit_corrected', 'VIS'
-FALLBACK_INSTRUMENTS = ('crires_plus', 'kpno_solar_atlas')
+FALLBACK_INSTRUMENTS = ('kpno_solar_atlas',)
 #: Named exceptions (Ryan 2026-10-28). Al: HARPS reaches only 6696/6698 and its continuum
 #: term there is 0.070 dex against Kitt Peak's 0.044 on the same two lines and treatment,
 #: so the Kitt Peak VIS product is shown. NOT a general "smallest sigma" rule -- that would
