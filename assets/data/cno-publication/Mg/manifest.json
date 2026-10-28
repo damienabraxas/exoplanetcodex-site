@@ -17,13 +17,14 @@
     "data/reference/litscan/Mg.yaml": "0de32e74e53e24a08635aba9d3533a8ef8f1570bb62ef6f1b721599767cb471d",
     "data/nlte_grids/Mg_Amarsi2020_PySME.prov.json": "a95bff8b556fc6246c08bb0d63ad608015bf90077549810d727037be8c94ab9a"
   },
-  "generator_sha256": "687de46c18c9e755678735e0e69aaabcbcc0391bfdbf3c0492ed6cc0309cdff4",
+  "generator_sha256": "31971f75f1c754a31ba60cadc8ef1e804a78de8197a8bbb341ad2423d9d07508",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 5,
-  "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
+  "template_sha256": "f54355f4ef3ade36ea7a2c5241f39a71dcd52d4764fb0fb25b53e028833c71d7",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
+  "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
     "products": 15,
     "quarantine": 0,
@@ -35,6 +36,5 @@
     "products": 15
   },
   "highlight_selectors": [],
-  "status": "products",
-  "pdf_brand_sha256": "c0a3e6a0b6927a6bf391cb899507c16a339f8aaa19ca792b88cc3423cd23217f"
+  "status": "products"
 }

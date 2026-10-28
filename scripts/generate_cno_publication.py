@@ -18,7 +18,7 @@ import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
-from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
+from cno_selection import (ANCHOR_INSTRUMENT_OVERRIDE, BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
                            fill_grades, headline, rank_key, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,8 +54,8 @@ CONTEXT = {
     'N': 'The nitrogen strategy uses red-optical N I as the primary atomic route, with NH providing an independent molecular check and CN a carbon-dependent cross-check. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
     'O': 'Oxygen is traced by forbidden [O I], permitted O I and molecular OH indicators where available. Blends, departures from LTE and atmospheric structure affect these families differently, so their results retain separate identities.'}
 GUIDE = ('Each row is one independent product, preserving its band, holding, engine, indicator and line set. '
-         'Engines and indicator families are never averaged. Solid bars show the supplied statistical uncertainty; '
-         'wireframes show the supplied systematic uncertainty. The statistical basis and any incomplete error budget remain attached to the row. '
+         'Engines and indicator families are never averaged. Each bar is the total uncertainty -- the statistical and '
+         'systematic terms combined in quadrature, as Asplund et al. 2021 and Lodders et al. 2025 quote it. The full error budget remains attached to the row. '
          'Grades describe the supplied line-pool provenance, not engine quality; evaluated theoretical CNO oscillator strengths are not relabelled as laboratory evidence. '
          'Quarantined, failed and unconstrained fits have no abundance mark. Experimental products remain explicitly not adopted. '
          'Literature references provide context, never tuning targets.')
@@ -533,8 +533,7 @@ def forest(element, products, cmp=None):
     # Fe plot_grid tier preference, alternate collapse, or fixed instrument list.
     for band in in_band_order(list(dict.fromkeys(p['band'] for p in products))):
         rows = [p for p in products if p['band'] == band]
-        extent = [(p['A']-max(statistical(p), systematic(p)),
-                   p['A']+max(statistical(p), systematic(p))) for p in rows]
+        extent = [(p['A']-total_sigma(p), p['A']+total_sigma(p)) for p in rows]
         # The axis ALWAYS spans the Asplund reference. Auto-ranging on the products alone
         # drops the line whenever a band sits clear of it -- which is precisely the band a
         # reader most needs it for. C red-optical (8.56-8.98 against a reference of 8.46)
@@ -554,7 +553,7 @@ def forest(element, products, cmp=None):
             for p in group:
                 experimental = p.get('adoption') == 'EXPERIMENTAL-NOT-ADOPTED'
                 attr = ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' if experimental else ''
-                st, sy = statistical(p), systematic(p)
+                tot = total_sigma(p)
                 rsig = ASPLUND2021_SIGMA.get(element, 0.0)
                 marks = ''
                 if ref is not None:
@@ -569,13 +568,14 @@ def forest(element, products, cmp=None):
                               f'style="left:{x(cmp["value"]-cmp["sigma"]):.6f}%;'
                               f'width:{2*cmp["sigma"]/(hi-lo)*100:.6f}%"></i>'
                               f'<i class="cmp" style="left:{x(cmp["value"]):.6f}%"></i>')
-                marks += ''.join(f'<i class="{kind}" style="left:{x(p["A"]-sigma):.6f}%;width:{2*sigma/(hi-lo)*100:.6f}%"></i>' for kind,sigma in [('sysbar',sy),('bar',st)])
+                # One total bar (stat (+) syst), as Asplund+2021 / Lodders+2025 quote it.
+                marks += f'<i class="bar" style="left:{x(p["A"]-tot):.6f}%;width:{2*tot/(hi-lo)*100:.6f}%"></i>'
                 marks += f'<i class="dot" style="left:{x(p["A"]):.6f}%"></i>'
                 out += (f'<div class="forest" data-product-id="{p["publication_id"]}" data-selector="{esc(str(p.get("selector") or ""))}" data-line-set="{esc(str(p.get("line_set") or ""))}"{attr}><span class="forest-label">{esc(product_label(p))}'
                         f'<small>{esc(p["grade"])} · {p["n_lines"]} line{"s" if p["n_lines"] != 1 else ""}'
                         + (' · EXPERIMENTAL-NOT-ADOPTED' if experimental else '')
                         + f'</small></span><span class="track">{marks}</span><span class="forest-value">{p["A"]:.3f}'
-                        f'<small>±{st:.3f} stat ±{sy:.3f} syst</small></span></div>')
+                        f'<small>±{tot:.3f}</small></span></div>')
         if ref is not None:
             rs = ASPLUND2021_SIGMA.get(element, 0.0)
             out += (f'<p class="forest-reference-note">Green band: Asplund, Amarsi &amp; '
@@ -689,6 +689,11 @@ def build(science, element, selectors, site=ROOT):
                            'Grade analysis with the most complete treatment, then the most lines. HARPS is '
                            'the instrument we use for the stars that follow, so the Sun is anchored on it. '
                            'Products and engines are not averaged together.</p>')
+        elif kind == 'anchor' and element in ANCHOR_INSTRUMENT_OVERRIDE:
+            method_html = ('<p>HARPS reaches only two of these lines, and its continuum placement there '
+                           'is less certain than on the Kitt Peak atlas, so this is our Kitt Peak product on '
+                           'the same lines with the same treatment. Products and engines are not averaged '
+                           'together.</p>')
         elif kind == 'anchor':
             method_html = ('<p>HARPS has no Reference Grade product for this element, so this is our best '
                            'Reference Grade product from CRIRES+ or Kitt Peak, chosen the same way: the most '
@@ -717,7 +722,7 @@ def build(science, element, selectors, site=ROOT):
     for p in band_highlights(products):
         spectrum = 'uv' if p['band']=='near-UV' else 'visible' if p['band'] in ('VIS','red-optical') else 'ir'
         cards.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(p["band"])}</h3>'
-                     f'<strong>{p["A"]:.3f} ± {total_sigma(p):.3f}</strong><p>±{statistical(p):.3f} stat · ±{systematic(p):.3f} syst</p>'
+                     f'<strong>{p["A"]:.3f} ± {total_sigma(p):.3f}</strong>'
                      f'<p>{esc(product_label(p))} · {esc(holding_name(p))} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
     body += section('Line grades', grades_section(element, products))
