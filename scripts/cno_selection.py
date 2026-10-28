@@ -285,13 +285,15 @@ def asplund_headline(products, element):
 # analysis of a published line set, weighted line by line:
 #   Si 7.51 +/- 0.03  nine Si I + one Si II line (Amarsi & Asplund 2017, Scott+2015b data)
 #   Al 6.43 +/- 0.03  Nordlander & Lind 2017 Table A.1 (1089.1 nm dropped for tellurics)
+#   Na 6.22 +/- 0.03  five Na I lines, Asplund+2021 Table A.1 (RYA-1251)
 # Our set is carried as one product per band x ion, so the recipe is: on ONE spectrum, take
 # each band x ion's best analysis (rank_key -- most complete treatment first), and combine
 # them by 1/sigma^2. The spectrum is the one that covers the most of the set, then the
 # tightest. Splitting the set across spectra would average holdings as if independent.
-LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21'}
+LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21', 'Na': 'SET-NA_AGSS21'}
 LINE_SET_SOURCE = {'Si': 'Amarsi & Asplund 2017: nine Si I and one Si II line',
-                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1'}
+                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1',
+                   'Na': 'the five Na I lines of their Table A.1'}
 
 
 def asplund_line_set(products, element):

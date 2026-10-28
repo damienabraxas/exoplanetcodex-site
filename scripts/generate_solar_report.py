@@ -374,7 +374,7 @@ def main() -> None:
             # rather than being dropped from the table.
             "measurementNote": "" if value is not None else (row["method"] or ""),
         }
-        if symbol in ("Al", "C", "N", "O", "Si", "Mg") and row["ion"] == "I":
+        if symbol in ("Al", "C", "N", "O", "Si", "Mg", "Na") and row["ion"] == "I":
             item["appendixPath"] = f"/systems/sol/elements/{symbol.lower()}/"
         required_selector = cno_selection.REQUIRED_FAMILY_SELECTORS.get(symbol)
         if required_selector and row["ion"] == "I":
