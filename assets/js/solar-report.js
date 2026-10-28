@@ -112,21 +112,17 @@
         var rows = products.filter(function (p) { return (bandNames[p.band] || p.band) === band; }).map(function (p) {
           var left = pct(p.value - p.sigma);
           var width = (p.sigma * 2 / span * 100).toFixed(2);
-          var stat = typeof p.sigmaStat === 'number' ? p.sigmaStat : null;
-          var statBar = stat == null ? '' : '<i class="solar-935-stat" style="left:' + pct(p.value - stat) + '%;width:' + ((stat * 2 / span) * 100).toFixed(2) + '%"></i>';
-          var syst = typeof p.sigmaSys === 'number' ? p.sigmaSys : null;
-          var systBar = syst == null ? '' : '<i class="solar-935-syst" style="left:' + pct(p.value - syst) + '%;width:' + ((syst * 2 / span) * 100).toFixed(2) + '%"></i>';
+          // One total uncertainty bar (stat and syst in quadrature), as Asplund+2021 quote it.
+          var totalBar = '<i class="solar-935-stat" style="left:' + left + '%;width:' + width + '%"></i>';
           var metadata = (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
           return '<div class="solar-935-row"><span>' + esc(p.band + ' · ' + readableProduct(p)) + '<small>' + esc(metadata) + '</small></span>' +
-            '<span class="solar-935-track">' + referenceMarkup + systBar + statBar +
+            '<span class="solar-935-track">' + referenceMarkup + totalBar +
             '<i class="solar-935-dot" style="left:' + pct(p.value) + '%"></i>' +
-            '</span><span>' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) +
-            (stat == null ? '' : '<small>stat ±' + number(stat, 3) + '</small>') +
-            (syst == null ? '' : '<small>syst ±' + number(syst, 3) + '</small>') + '</span></div>';
+            '</span><span>' + number(p.value, 3) + ' ± ' + number(p.sigma, 3) + '</span></div>';
         }).join('');
         return '<div class="solar-935-band-heading"><strong>' + esc(bandLabel) + '</strong><span>' + bandRefs + '</span></div>' + rows;
       }).join('') + '</div>' +
-      '<div class="solar-935-legend"><span><i class="solar-935-key-ref"></i>literature interval</span><span><i class="solar-935-key-stat"></i>statistical σ</span><span><i class="solar-935-key-syst"></i>systematic σ</span></div>';
+      '<div class="solar-935-legend"><span><i class="solar-935-key-ref"></i>literature interval</span><span><i class="solar-935-key-stat"></i>total σ (statistical and systematic combined)</span></div>';
   }
 
   function diagnostics(records) {
@@ -643,7 +639,7 @@
         '<p class="solar-table-note">Each matrix cell retains its band and instrument identity. Empty cells are gaps in the committed Al product set, not inferred non-detections.</p>' +
         '<h4 class="solar-subhead">Uncertainty by product</h4>' +
         '<div class="solar-error-plot">' + plotRows(alProducts, [alEvidence.reference], { axisLabel: 'A(Al)' }) + '</div>' +
-        '<p class="solar-table-note">Bars show total σ; the inner bars show statistical σ where available. The systematic term remains visible in the product table because it dominates several Al products.</p>' +
+        '<p class="solar-table-note">Bars show the total σ: statistical and systematic combined, as Asplund et al. 2021 quote it.</p>' +
         '<h4 class="solar-subhead">RYA-935 provenance</h4>' +
         '<p class="solar-copy">Values, line counts, instrument labels, and error components are read from the committed RYA-935 live status artifact. The shared <a href="/assets/data/rya935/live_tracker.html">full tracker</a> remains available for holding and telluric detail.</p>' +
       '</article>';
