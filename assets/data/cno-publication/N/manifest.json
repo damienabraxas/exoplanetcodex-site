@@ -1,21 +1,21 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "67a3cb4f0c66b8719fb12fe68fa9d992503d35eb",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/67a3cb4f0c66b8719fb12fe68fa9d992503d35eb",
-  "generated_at": "2026-10-18T00:15:00-06:00",
+  "source_commit": "27afcfcba7db6b4782ca756c1131fb9ddaa8dc3c",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/27afcfcba7db6b4782ca756c1131fb9ddaa8dc3c",
+  "generated_at": "2026-10-28T11:24:25-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
   "feed_version": "1.80",
   "feed_updated_at": "2026-10-10T20:48:37Z",
   "feed_sha256": "e5935ec91bd5cb5c6b68f3efe48da6e8ffe9488ffe6d125e073de164d1dbc514",
   "source_sha256": {
     "data/products/solar/N.json": "e5935ec91bd5cb5c6b68f3efe48da6e8ffe9488ffe6d125e073de164d1dbc514",
-    "data/refs/bibliography.csv": "27ea81cf69b597e79ddb5715424c4633c8c29d7ff86e044bb12c951b7d369fbe",
+    "data/refs/bibliography.csv": "de8965bb277b5c8f9dbae22f4dfe496b5ff5b909df7b09fe42ddce84515ca37c",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "docs/co_indicator_strategy.md": "497ef9d59f404a386723d90ec826ee03863a13cf7d36780d0d1adf49eabf85e8",
     "data/audit/rya1214_cno_products/cno_gf_adjudication.prov.json": "11900b0d8856975da602890b8b95d300e8415c5fb535386a0ba06db2faf04a3b",
     "data/audit/rya1214_cno_products/agss21_indicator_gf_check.csv": "66528cf2edfd2aa11794c877536bfeb495dfe11d92d3a23f9c6248bf4cf91752",
-    "config/constants.py": "3d0e0cd8a25825d4c34ec8a18b74db53de777058f5aa9bb35f6249abaf7342ba",
+    "config/constants.py": "a671f496c2d2b9b86129cbfdbb930589d1410ee437a82c8c0915b1177b924ccd",
     "data/audit/cno_synthesis/solar_vis_cno_provenance.json": "8c481d3dfcd83b6f836be67793aca322a4ffc479c8731acc50e5bc4ef7e123dd",
     "data/audit/rya1136_cno_intake/source_bibliography.csv": "a4cfede94fc1f4e53f39f082ad647f822ab5f8bbc2f44578a58a8e363da0cd13",
     "data/catalog/model_registry.csv": "97225f8687ea3cc041389d2ea5454dc606a90513dd23cef97cf27954bf6f1bb7",
@@ -27,15 +27,16 @@
     "data/results/rya1230/legs/unit04/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_kurucz2005_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
     "data/results/rya1232/legs/unit00/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-AGSS21_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
     "data/results/rya1232/legs/unit01/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
-    "pipeline/band_products.py": "3e883e28b06ae2b9afafcaad323559649ae1106184d8db34944d35419d52ece2"
+    "pipeline/band_products.py": "69dbffd106562cbe2c6176fac34dd66a7f75259c78bd170f857297dbb899455d"
   },
-  "generator_sha256": "71cb4931c05c3f7734511241ce088498c3fa4b167400cebfee0ded8833d67c46",
+  "generator_sha256": "1e041854a03d5d1f6745b9b63162da05cf266a72f88dc833314b071a7011b3ef",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 11,
-  "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
+  "template_sha256": "50d9299e27ef4e0cd714ed781df164b065e0afc0e7cca3e1c5857ea9e57b7c60",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
+  "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
     "products": 12,
     "quarantine": 5,
@@ -49,6 +50,5 @@
     "archive": 35
   },
   "highlight_selectors": [],
-  "status": "products",
-  "pdf_brand_sha256": "c0a3e6a0b6927a6bf391cb899507c16a339f8aaa19ca792b88cc3423cd23217f"
+  "status": "products"
 }

@@ -161,6 +161,27 @@ def best_in_band(products, band):
     return min(rows, key=rank_key) if rows else None
 
 
+#: RYA-1251 (Ryan 2026-10-28): the top number is our best HARPS product -- HARPS is the
+#: instrument for the stars that follow. The Fe appendix's anchor rule
+#: (generate_fe_publication), for every element: HARPS VIS, Reference Grade, ranked by
+#: rank_key (most complete treatment, then lines, then sigma). One named product, never an
+#: average across holdings. An element with no Reference Grade HARPS product (N; O has only
+#: a Codex Grade [O I] 6300) takes the best Reference Grade product from CRIRES+ or Kitt Peak,
+#: ranked the same way (Ryan 2026-10-28: CRIRES+ is also used for the stars).
+ANCHOR_HOLDING, ANCHOR_BAND = 'solar_harps_molecfit_corrected', 'VIS'
+FALLBACK_INSTRUMENTS = ('crires_plus', 'kpno_solar_atlas')
+
+
+def anchor_product(products, element=None):
+    if headline_hold(products, element):
+        return None
+    ref = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade']
+    hits = [p for p in ref if p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
+    if not hits:
+        hits = [p for p in ref if p.get('instrument') in FALLBACK_INSTRUMENTS]
+    return min(hits, key=rank_key) if hits else None
+
+
 def headline(products, element=None):
     """The Sun-table / appendix-top number: VIS's best Reference Grade product; when VIS has
     none, the best product of any other band by the same rank. For an element with a
@@ -172,6 +193,9 @@ def headline(products, element=None):
     """
     if headline_hold(products, element):
         return None
+    anchor = anchor_product(products, element)
+    if anchor is not None:
+        return anchor
     rows = [p for p in products if eligible_for_headline(p)]
     prim = PRIMARY_SELECTORS.get(element or (rows[0].get('element') if rows else None))
     if prim:
@@ -285,15 +309,13 @@ def asplund_headline(products, element):
 # analysis of a published line set, weighted line by line:
 #   Si 7.51 +/- 0.03  nine Si I + one Si II line (Amarsi & Asplund 2017, Scott+2015b data)
 #   Al 6.43 +/- 0.03  Nordlander & Lind 2017 Table A.1 (1089.1 nm dropped for tellurics)
-#   Na 6.22 +/- 0.03  five Na I lines, Asplund+2021 Table A.1 (RYA-1251)
 # Our set is carried as one product per band x ion, so the recipe is: on ONE spectrum, take
 # each band x ion's best analysis (rank_key -- most complete treatment first), and combine
 # them by 1/sigma^2. The spectrum is the one that covers the most of the set, then the
 # tightest. Splitting the set across spectra would average holdings as if independent.
-LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21', 'Na': 'SET-NA_AGSS21'}
+LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21'}
 LINE_SET_SOURCE = {'Si': 'Amarsi & Asplund 2017: nine Si I and one Si II line',
-                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1',
-                   'Na': 'the five Na I lines of their Table A.1'}
+                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1'}
 
 
 def asplund_line_set(products, element):

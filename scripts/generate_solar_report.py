@@ -295,8 +295,9 @@ def main() -> None:
     # blank A_X for every CURATION-OWED element and its `ion` column still reads I for
     # species measured as II (Ba, Sr, Y, Zr, Eu). Reading it for the front table threw
     # away every measured non-Fe value and mislabelled five species.
-    asplund_of = {row["element"]: row["asplund2021"] for row in rows(gold_path)}
-    tier_of = {row["element"]: row["confidence"] for row in rows(gold_path)}
+    # Asplund+2021 Table 2, not the gold record's asplund2021 column (Na 6.24 / Li 1.05 there).
+    from asplund2021 import TABLE2
+    asplund_of = {el: v for el, (v, _s) in TABLE2.items()}
 
     def optional(value):
         try:
@@ -325,6 +326,9 @@ def main() -> None:
         prods = cno_selection.fill_grades(feed.get('products', []), science)
         # RYA-1232/1233: Asplund+2021's own method where we have its recipe (C/N/O families,
         # Si/Al line set) -- the SAME function the element page uses; else the best product.
+        anchor = cno_selection.anchor_product(prods, symbol)
+        if anchor is not None:
+            return anchor, cno_selection.total_sigma(anchor), feed.get('version')
         comb = cno_selection.literature_headline(prods, symbol)
         if comb is not None:
             n_lines = sum(int(f['product'].get('n_lines') or 0) for f in comb['families'])
@@ -367,7 +371,9 @@ def main() -> None:
             "ion": row["ion"], "name": names[symbol],
             # The tracker's own verdict + tier, not a re-derived label.
             "status": (row["verdict"] or "no verdict").lower(),
-            "tier": tier_of.get(symbol, ""),
+            # The gold record's tier vocabulary (owed / gold / gf_floor) is obsolete and read
+            # "owed" on published rows (Ryan 2026-10-28); the row shows its value only.
+            "tier": "",
             "method": row["method"],
             "asplund": optional(asplund_of.get(symbol)),
             # RYA-844: an element with no ratified value keeps a row and states why,

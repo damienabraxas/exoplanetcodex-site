@@ -1,29 +1,30 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "67a3cb4f0c66b8719fb12fe68fa9d992503d35eb",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/67a3cb4f0c66b8719fb12fe68fa9d992503d35eb",
-  "generated_at": "2026-10-18T00:15:00-06:00",
+  "source_commit": "27afcfcba7db6b4782ca756c1131fb9ddaa8dc3c",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/27afcfcba7db6b4782ca756c1131fb9ddaa8dc3c",
+  "generated_at": "2026-10-28T11:24:25-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
   "feed_version": "1.278",
   "feed_updated_at": "2026-10-17T23:20:32Z",
   "feed_sha256": "7c1195f65f701ad6d0d6dbd97f55dee5cfdd7b07b6f7a1291b6ab2ce2619f708",
   "source_sha256": {
     "data/products/solar/Si.json": "7c1195f65f701ad6d0d6dbd97f55dee5cfdd7b07b6f7a1291b6ab2ce2619f708",
-    "data/refs/bibliography.csv": "27ea81cf69b597e79ddb5715424c4633c8c29d7ff86e044bb12c951b7d369fbe",
+    "data/refs/bibliography.csv": "de8965bb277b5c8f9dbae22f4dfe496b5ff5b909df7b09fe42ddce84515ca37c",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
-    "data/reference/line_sets/REGISTRY.csv": "be032162e0a50bf1c7009cd746cc567e4ccc4eddf85e19e488c929a02552da95",
-    "data/reference/gf_error_model.csv": "9ed26c5cb8b0938c77b710d2b39561f30a30af1c69544902fc7c61155b434ad2",
+    "data/reference/line_sets/REGISTRY.csv": "7e1f17e231e154f26633c7edb2c5f933d199c1251c625be7a108dabf8d92a1d3",
+    "data/reference/gf_error_model.csv": "8e0719ea71141f51fae1898b6e4d1660a5f3811bbcf6d185d5904f62c65b7fb2",
     "data/reference/litscan/Si.yaml": "206be9f996773067bb3ab9741808e6ea60039ce3619f85f28c323c7116d62bf6",
     "data/nlte_grids/Si_Amarsi2020_PySME.prov.json": "a6f3f1dd14b815b97b034b8f15a5501d36782741b13fa009d794f01e09e99cf2"
   },
-  "generator_sha256": "71cb4931c05c3f7734511241ce088498c3fa4b167400cebfee0ded8833d67c46",
+  "generator_sha256": "1e041854a03d5d1f6745b9b63162da05cf266a72f88dc833314b071a7011b3ef",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 11,
-  "template_sha256": "f054a13759afc2b0b09036b60bef5bd78ea315e53b00dfa15cbcb71e807ac392",
+  "template_sha256": "50d9299e27ef4e0cd714ed781df164b065e0afc0e7cca3e1c5857ea9e57b7c60",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
+  "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
     "products": 62,
     "quarantine": 4,
@@ -37,6 +38,5 @@
     "archive": 159
   },
   "highlight_selectors": [],
-  "status": "products",
-  "pdf_brand_sha256": "c0a3e6a0b6927a6bf391cb899507c16a339f8aaa19ca792b88cc3423cd23217f"
+  "status": "products"
 }
