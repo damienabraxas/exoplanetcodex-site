@@ -8961,7 +8961,7 @@ window.SOLAR_REPORT = {
       "status": "Curation owed",
       "tier": "upper_limit",
       "method": "EW: Li I 6707 (single line, UPPER LIMIT)",
-      "asplund": 1.05,
+      "asplund": 0.96,
       "measurementNote": "",
       "primaryValue": {
         "value": 0.727,
@@ -9035,16 +9035,16 @@ window.SOLAR_REPORT = {
       "name": "Sodium",
       "status": "Published",
       "tier": "owed",
-      "method": "Asplund+2021 line set, 5 lines on kpno_solar_atlas: Na I VIS 6.291, Na I NIR 6.328 (Na.json v1.131)",
-      "asplund": 6.24,
+      "method": "harps VIS · SET-NA_AGSS21 · ENGINE-A-3DNLTE (Reference Grade, Na.json v1.131)",
+      "asplund": 6.22,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/na/",
       "primaryValue": {
-        "value": 6.3119,
-        "sigmaTotal": 0.0389,
-        "lineCount": 5
+        "value": 6.264,
+        "sigmaTotal": 0.1187,
+        "lineCount": 4
       },
-      "delta": 0.0719,
+      "delta": 0.044,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {

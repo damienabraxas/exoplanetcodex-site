@@ -295,7 +295,9 @@ def main() -> None:
     # blank A_X for every CURATION-OWED element and its `ion` column still reads I for
     # species measured as II (Ba, Sr, Y, Zr, Eu). Reading it for the front table threw
     # away every measured non-Fe value and mislabelled five species.
-    asplund_of = {row["element"]: row["asplund2021"] for row in rows(gold_path)}
+    # Asplund+2021 Table 2, not the gold record's asplund2021 column (Na 6.24 / Li 1.05 there).
+    from asplund2021 import TABLE2
+    asplund_of = {el: v for el, (v, _s) in TABLE2.items()}
     tier_of = {row["element"]: row["confidence"] for row in rows(gold_path)}
 
     def optional(value):

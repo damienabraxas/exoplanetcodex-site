@@ -161,6 +161,22 @@ def best_in_band(products, band):
     return min(rows, key=rank_key) if rows else None
 
 
+#: RYA-1251 (Ryan 2026-10-28): the top number is our best product, the HARPS VIS Reference
+#: Grade 3D non-LTE (Amarsi) analysis of the published line set -- the Fe appendix's anchor
+#: rule (generate_fe_publication). One named product, never an average across holdings.
+ANCHOR_RULE = {'Na': {'holding': 'solar_harps_molecfit_corrected', 'band': 'VIS',
+                      'selector': 'SET-NA_AGSS21', 'treatment': 'ENGINE-A-3DNLTE'}}
+
+
+def anchor_product(products, element):
+    rule = ANCHOR_RULE.get(element)
+    if rule is None:
+        return None
+    hits = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade'
+            and all(str(p.get(k) or '') == v for k, v in rule.items())]
+    return hits[0] if len(hits) == 1 else None
+
+
 def headline(products, element=None):
     """The Sun-table / appendix-top number: VIS's best Reference Grade product; when VIS has
     none, the best product of any other band by the same rank. For an element with a
@@ -172,6 +188,9 @@ def headline(products, element=None):
     """
     if headline_hold(products, element):
         return None
+    anchor = anchor_product(products, element)
+    if anchor is not None:
+        return anchor
     rows = [p for p in products if eligible_for_headline(p)]
     prim = PRIMARY_SELECTORS.get(element or (rows[0].get('element') if rows else None))
     if prim:
@@ -285,15 +304,13 @@ def asplund_headline(products, element):
 # analysis of a published line set, weighted line by line:
 #   Si 7.51 +/- 0.03  nine Si I + one Si II line (Amarsi & Asplund 2017, Scott+2015b data)
 #   Al 6.43 +/- 0.03  Nordlander & Lind 2017 Table A.1 (1089.1 nm dropped for tellurics)
-#   Na 6.22 +/- 0.03  five Na I lines, Asplund+2021 Table A.1 (RYA-1251)
 # Our set is carried as one product per band x ion, so the recipe is: on ONE spectrum, take
 # each band x ion's best analysis (rank_key -- most complete treatment first), and combine
 # them by 1/sigma^2. The spectrum is the one that covers the most of the set, then the
 # tightest. Splitting the set across spectra would average holdings as if independent.
-LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21', 'Na': 'SET-NA_AGSS21'}
+LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21'}
 LINE_SET_SOURCE = {'Si': 'Amarsi & Asplund 2017: nine Si I and one Si II line',
-                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1',
-                   'Na': 'the five Na I lines of their Table A.1'}
+                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1'}
 
 
 def asplund_line_set(products, element):
