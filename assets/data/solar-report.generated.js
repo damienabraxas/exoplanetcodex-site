@@ -8978,16 +8978,16 @@ window.SOLAR_REPORT = {
       "name": "Carbon",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, C.json v1.202)",
+      "method": "Asplund+2021 combination of C I 8.488, C2 8.419, CH 8.509, CO 8.701 (C.json v1.202)",
       "asplund": 8.46,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.463,
-        "sigmaTotal": 0.1142,
-        "lineCount": 3
+        "value": 8.5069,
+        "sigmaTotal": 0.0559,
+        "lineCount": 425
       },
-      "delta": 0.003,
+      "delta": 0.0469,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -8997,16 +8997,16 @@ window.SOLAR_REPORT = {
       "name": "Nitrogen",
       "status": "Published",
       "tier": "",
-      "method": "kpno_solar_atlas red-optical · SET-LBP25 · ENGINE-A-3DNLTE (Reference Grade, N.json v1.80)",
+      "method": "Asplund+2021 combination of N I 7.904, CN 7.866 (N.json v1.80)",
       "asplund": 7.83,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 7.897,
-        "sigmaTotal": 0.1932,
-        "lineCount": 2
+        "value": 7.885,
+        "sigmaTotal": 0.019,
+        "lineCount": 217
       },
-      "delta": 0.067,
+      "delta": 0.055,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9016,16 +9016,16 @@ window.SOLAR_REPORT = {
       "name": "Oxygen",
       "status": "Published",
       "tier": "",
-      "method": "kpno_solar_atlas red-optical · SET-AGSS21 · ENGINE-A-3DNLTE (Reference Grade, O.json v1.102)",
+      "method": "Asplund+2021 combination of [O I] 8.934, O I 8.751 (O.json v1.102)",
       "asplund": 8.69,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.751,
-        "sigmaTotal": 0.0766,
-        "lineCount": 4
+        "value": 8.7576,
+        "sigmaTotal": 0.0752,
+        "lineCount": 5
       },
-      "delta": 0.061,
+      "delta": 0.0676,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9035,16 +9035,16 @@ window.SOLAR_REPORT = {
       "name": "Sodium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · SET-NA_AGSS21 · ENGINE-A-3DNLTE (Reference Grade, Na.json v1.131)",
+      "method": "Asplund+2021 line set, 5 lines on kpno_solar_atlas: Na I VIS 6.291, Na I NIR 6.328 (Na.json v1.131)",
       "asplund": 6.22,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/na/",
       "primaryValue": {
-        "value": 6.264,
-        "sigmaTotal": 0.1187,
-        "lineCount": 4
+        "value": 6.3119,
+        "sigmaTotal": 0.0389,
+        "lineCount": 5
       },
-      "delta": 0.044,
+      "delta": 0.0919,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9073,16 +9073,16 @@ window.SOLAR_REPORT = {
       "name": "Aluminium",
       "status": "Published",
       "tier": "",
-      "method": "kpno_solar_atlas VIS · SET-AL_AGSS21 · ENGINE-A (Reference Grade, Al.json v1.67)",
+      "method": "Asplund+2021 line set, 6 lines on kpno_solar_atlas: Al I VIS 6.428, Al I red-optical 6.450, Al I NIR 6.552 (Al.json v1.67)",
       "asplund": 6.43,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
       "primaryValue": {
-        "value": 6.429,
-        "sigmaTotal": 0.081,
-        "lineCount": 2
+        "value": 6.4547,
+        "sigmaTotal": 0.054,
+        "lineCount": 6
       },
-      "delta": -0.001,
+      "delta": 0.0247,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9092,16 +9092,16 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · SET-SI_AGSS21 · ENGINE-A (Reference Grade, Si.json v1.278)",
+      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.489, Si II VIS 7.518, Si I red-optical 7.577 (Si.json v1.278)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
       "primaryValue": {
-        "value": 7.487,
-        "sigmaTotal": 0.0864,
-        "lineCount": 7
+        "value": 7.5122,
+        "sigmaTotal": 0.0588,
+        "lineCount": 10
       },
-      "delta": -0.023,
+      "delta": 0.0022,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {

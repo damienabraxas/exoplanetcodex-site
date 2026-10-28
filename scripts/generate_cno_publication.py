@@ -18,7 +18,7 @@ import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
-from cno_selection import (ANCHOR_INSTRUMENT_OVERRIDE, BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
+from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
                            fill_grades, headline, rank_key, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -90,16 +90,16 @@ def landmark(element, products):
     method where we have its recipe (RYA-1232 families for C/N/O; RYA-1233 line set for
     Si/Al); otherwise the best single product, marked as such (`kind: best_product`)."""
     from cno_selection import literature_headline, anchor_product
-    best = anchor_product(products, element)
-    if best is not None:
-        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
-                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product, else CRIRES+ or Kitt Peak (the Fe anchor rule)',
-                'families': [{'family': best.get('band'), 'A': float(best['A']),
-                              'sigma': float(total_sigma(best)), 'product': best}],
-                'missing': []}
     mark = literature_headline(products, element)
     if mark is not None:
         return mark
+    best = anchor_product(products, element)
+    if best is not None:
+        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
+                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product, else CRIRES+ or Kitt Peak',
+                'families': [{'family': best.get('band'), 'A': float(best['A']),
+                              'sigma': float(total_sigma(best)), 'product': best}],
+                'missing': []}
     best = headline(products, element)
     if best is None:
         return None
@@ -685,20 +685,13 @@ def build(science, element, selectors, site=ROOT):
             method_html = (f'<p>Measured the way Asplund, Amarsi &amp; Grevesse (2021) measure it: '
                            f'{esc(mark["rule"])}.</p>')
         elif kind == 'anchor' and mark['families'][0]['product'].get('holding') == 'solar_harps_molecfit_corrected':
-            method_html = ('<p>Our best HARPS product, chosen the same way as for iron: the Reference '
-                           'Grade analysis with the most complete treatment, then the most lines. HARPS is '
-                           'the instrument we use for the stars that follow, so the Sun is anchored on it. '
-                           'Products and engines are not averaged together.</p>')
-        elif kind == 'anchor' and element in ANCHOR_INSTRUMENT_OVERRIDE:
-            method_html = ('<p>HARPS reaches only two of these lines, and its continuum placement there '
-                           'is less certain than on the Kitt Peak atlas, so this is our Kitt Peak product on '
-                           'the same lines with the same treatment. Products and engines are not averaged '
-                           'together.</p>')
+            method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can repeat for '
+                           'this element, so this is our best HARPS product: the Reference Grade analysis with '
+                           'the most complete treatment, then the most lines.</p>')
         elif kind == 'anchor':
-            method_html = ('<p>HARPS has no Reference Grade product for this element, so this is our best '
-                           'Reference Grade product from CRIRES+ or Kitt Peak, chosen the same way: the most '
-                           'complete treatment, then the most lines. Products and engines are not averaged '
-                           'together.</p>')
+            method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can repeat for '
+                           'this element and HARPS has no Reference Grade product, so this is our best '
+                           'Reference Grade product from CRIRES+ or Kitt Peak.</p>')
         elif kind == 'best_product':
             method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can '
                            'repeat for this element, so this is our best single product.</p>')

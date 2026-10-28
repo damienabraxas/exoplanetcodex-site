@@ -326,16 +326,13 @@ def main() -> None:
         prods = cno_selection.fill_grades(feed.get('products', []), science)
         # RYA-1232/1233: Asplund+2021's own method where we have its recipe (C/N/O families,
         # Si/Al line set) -- the SAME function the element page uses; else the best product.
-        anchor = cno_selection.anchor_product(prods, symbol)
-        if anchor is not None:
-            return anchor, cno_selection.total_sigma(anchor), feed.get('version')
         comb = cno_selection.literature_headline(prods, symbol)
         if comb is not None:
             n_lines = sum(int(f['product'].get('n_lines') or 0) for f in comb['families'])
             best = {'A': comb['A'], 'n_lines': n_lines, 'grade': 'Reference Grade',
                     'uncertainty': True, '_asplund': comb}
             return best, comb['sigma'], feed.get('version')
-        best = cno_selection.headline(prods, symbol)
+        best = cno_selection.anchor_product(prods, symbol) or cno_selection.headline(prods, symbol)
         # Mg has a deliberate two-ion Asplund recipe. Until both published-set
         # ions exist, keep the combined headline pending but still show the
         # best available HARPS VIS product in the element table, matching the
