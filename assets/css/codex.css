@@ -20,6 +20,7 @@
   --accent-green:  #52c78a;
   --accent-purple: #7c6fcf;
   --danger:        #e05c4b;
+  --grade-deep:    #f2d14b;   /* Deep Grade: strong, saturation-sensitive lines */
   --serif:         'Crimson Pro', Georgia, serif;
   --mono:          'Space Mono', 'Courier New', monospace;
   --max-width:     1100px;

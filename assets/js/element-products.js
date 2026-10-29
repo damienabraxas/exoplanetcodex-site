@@ -94,6 +94,8 @@
     var st = Number(p.sigma_stat || 0), sy = Number(p.sigma_syst_complete != null ? p.sigma_syst_complete : (p.sigma_syst || 0));
     return Math.sqrt(st * st + sy * sy);
   }
+  // Deep Grade (strong, saturation-sensitive lines): kept, and drawn in yellow.
+  function isDeep(p) { return p.grade === 'Deep Grade' || String(p.tier || '').indexOf('DEEPGRADED') === 0; }
   function card(p, telluric) {
     var bandClass=p.band==='near-UV'?'band-near-uv':p.band==='NIR'?'band-ir':'band-vis';
     return '<article class="product-card '+bandClass+'"><span class="eyebrow">'+esc(LABELS[p.instrument]||p.instrument)+' · '+esc(p.band)+' · '+esc(p.tier)+'</span>'+
@@ -182,7 +184,7 @@
           group.filter(function(p){return p.holding===holding;}).forEach(function(p){
             var tot=total(p),sl=x(Number(p.A)-tot),sw=x(Number(p.A)+tot)-sl;
             var refs=reference?'<i class="ref" title="'+esc(reference.best_external)+'" style="left:'+x(reference.band[0])+'%;width:'+Math.max(0.4,x(reference.band[1])-x(reference.band[0]))+'%"></i><i class="refline" style="left:'+x(reference.asplund2021)+'%"></i>'+(reference.comparators||[]).map(function(c){return '<i class="cmpband" title="'+esc(c.name)+'" style="left:'+x(Number(c.value)-Number(c.sigma||0))+'%;width:'+Math.max(0.4,x(Number(c.value)+Number(c.sigma||0))-x(Number(c.value)-Number(c.sigma||0)))+'%"></i><i class="cmp" style="left:'+x(c.value)+'%"></i>';}).join(''):'';
-            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.grade)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(tot)+'</small></span></div>';
+            out += '<div class="forest '+(p.tier==='GRADED'?'gradedrow':'')+(isDeep(p)?' is-deep':'')+'"><span class="forest-label">'+esc(p.display)+'<small>'+esc(p.grade)+' · n='+esc(p.n_lines)+'</small></span><span class="track">'+refs+'<i class="bar" style="left:'+sl+'%;width:'+Math.max(0.4,sw)+'%"></i><i class="dot" style="left:'+x(Number(p.A))+'%"></i></span><span class="forest-value">'+num(p.A)+' <small>±'+num(tot)+'</small></span></div>';
           });
         });
       });
@@ -249,7 +251,7 @@
             var sl = x(Number(p.A) - tot), sw = x(Number(p.A) + tot) - sl;
             var refs = reference ? '<i class="ref" title="' + esc(reference.best_external) + '" style="left:' + x(reference.band[0]) + '%;width:' + Math.max(0.4, x(reference.band[1]) - x(reference.band[0])) + '%"></i><i class="refline" style="left:' + x(reference.asplund2021) + '%"></i>' + (reference.comparators || []).map(function (c2) { return '<i class="cmpband" title="' + esc(c2.name) + '" style="left:' + x(Number(c2.value) - Number(c2.sigma || 0)) + '%;width:' + Math.max(0.4, x(Number(c2.value) + Number(c2.sigma || 0)) - x(Number(c2.value) - Number(c2.sigma || 0))) + '%"></i><i class="cmp" style="left:' + x(c2.value) + '%"></i>'; }).join('') : '';
             var experimental = p.adoption === 'EXPERIMENTAL-NOT-ADOPTED';
-            out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + '"' +
+            out += '<div class="forest ' + (p.tier === 'GRADED' ? 'gradedrow' : '') + (isDeep(p) ? ' is-deep' : '') + '"' +
               (experimental ? ' data-experimental="true" style="--accent:#f07848;--text:#f07848;--text-dim:#f07848"' : '') + '>' +
               '<span class="forest-label">' + esc(c.row) + (experimental ? ' · Frankenstein (experimental)' : '') + '<small>' + esc(p.grade) + ' · n=' + esc(p.n_lines) +
               (c.alternates ? ' \u00b7 ' + c.alternates + ' alternate' + (c.alternates > 1 ? 's' : '') : '') +
