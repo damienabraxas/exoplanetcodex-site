@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "d00d21cb0a6fa21d09513efd1520256ce66dc7d7",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/d00d21cb0a6fa21d09513efd1520256ce66dc7d7",
-  "generated_at": "2026-10-28T16:38:16-06:00",
+  "source_commit": "f5c6b3d35f016dd66b74d3a098459bd648f9677f",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/f5c6b3d35f016dd66b74d3a098459bd648f9677f",
+  "generated_at": "2026-10-28T21:25:21-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.67",
-  "feed_updated_at": "2026-10-16T12:38:38Z",
-  "feed_sha256": "62e198133029f2d56d1bdb1acddd8b36d57e3dfe52a1ebe09540911b0aec3040",
+  "feed_version": "1.68",
+  "feed_updated_at": "2026-10-29T03:00:31Z",
+  "feed_sha256": "c5cc06e65a2e5771861960db7708634a890ac640950364de3422e3c0c1bcef9e",
   "source_sha256": {
-    "data/products/solar/Al.json": "62e198133029f2d56d1bdb1acddd8b36d57e3dfe52a1ebe09540911b0aec3040",
+    "data/products/solar/Al.json": "c5cc06e65a2e5771861960db7708634a890ac640950364de3422e3c0c1bcef9e",
     "data/refs/bibliography.csv": "de8965bb277b5c8f9dbae22f4dfe496b5ff5b909df7b09fe42ddce84515ca37c",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "e970389d5361764a02323ef186fce01fa8c3fbc24b55b763d129914c60fae314",
@@ -17,24 +17,24 @@
     "data/reference/litscan/Al.yaml": "0d2ee0d21be36de82d07d80fda81a4a8199aca0b7e901e8242f8aca0a42303aa",
     "data/nlte_grids/Al_Amarsi2020_PySME.prov.json": "d9daaf1c48d5429e20710daa0a7a227babc2b41c91863ce7a126c00859818c92"
   },
-  "generator_sha256": "334432901fd46ffe6ad4ddba6c320918630675a647530fdabaedad23d369feca",
+  "generator_sha256": "85dac80d210ae600e32e42ee9e733061b2bd18d60bdb8e1c36b59c4853151da0",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 5,
-  "template_sha256": "731ae11ef82d9e9c5b15c88872dbe3f463a02efad6e89cbce22aa016155f730b",
+  "template_sha256": "c84e28a1303edf475a9e6cb36bd617e998fb36e8e79b7c0c096b82e043a8969b",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
-    "products": 30,
+    "products": 26,
     "quarantine": 0,
-    "archive": 37,
+    "archive": 41,
     "superseded": 0
   },
-  "visible_products": 30,
+  "visible_products": 26,
   "dispositions": {
-    "products": 30,
-    "archive": 37
+    "products": 26,
+    "archive": 41
   },
   "highlight_selectors": [],
   "status": "products"
