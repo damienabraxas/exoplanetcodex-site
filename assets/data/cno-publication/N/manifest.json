@@ -1,9 +1,9 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "9724a72abd88f294096fff5e5a3e2dbb203c80eb",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/9724a72abd88f294096fff5e5a3e2dbb203c80eb",
-  "generated_at": "2026-10-29T07:08:35-06:00",
+  "source_commit": "46fd923d510159bad5c0aaf5eeb616e175e048e5",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/46fd923d510159bad5c0aaf5eeb616e175e048e5",
+  "generated_at": "2026-10-29T07:34:56-06:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
   "feed_version": "1.80",
   "feed_updated_at": "2026-10-10T20:48:37Z",
@@ -29,7 +29,7 @@
     "data/results/rya1232/legs/unit01/nominal/NI_6910_9199_kpno_solar_atlas_solar_kpno_molecfit_corrected_SYNTH_SET-LBP25_ENGINE-A-3DNLTE_provenance.txt": "a765f0ace2da3e724c0fca953445e4b20a7b477909d619a8f4de9210dc0ab1ff",
     "pipeline/band_products.py": "69dbffd106562cbe2c6176fac34dd66a7f75259c78bd170f857297dbb899455d"
   },
-  "generator_sha256": "d8c114afe1be884b7ab743898e3ba668c2b914645805986bdf8b5ec600f83c83",
+  "generator_sha256": "2e8484200c1d6f4338b1ee29a7b1046a6d7ee2176eed590286eeef9763f4591d",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 11,

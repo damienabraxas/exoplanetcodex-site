@@ -640,7 +640,7 @@
         '<p class="solar-table-note">Each matrix cell retains its band and instrument identity. Empty cells are gaps in the committed Al product set, not inferred non-detections.</p>' +
         '<h4 class="solar-subhead">Uncertainty by product</h4>' +
         '<div class="solar-error-plot">' + plotRows(alProducts, [alEvidence.reference], { axisLabel: 'A(Al)' }) + '</div>' +
-        '<p class="solar-table-note">Bars show the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex).</p>' +
+        '<p class="solar-table-note">Bars show the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex; for molecules, the dependence on the other element instead).</p>' +
         '<h4 class="solar-subhead">RYA-935 provenance</h4>' +
         '<p class="solar-copy">Values, line counts, instrument labels, and error components are read from the committed RYA-935 live status artifact. The shared <a href="/assets/data/rya935/live_tracker.html">full tracker</a> remains available for holding and telluric detail.</p>' +
       '</article>';
