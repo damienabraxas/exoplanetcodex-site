@@ -9043,11 +9043,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.5045,
-        "sigmaTotal": 0.0252,
+        "value": 8.5063,
+        "sigmaTotal": 0.0254,
         "lineCount": 425
       },
-      "delta": 0.0445,
+      "delta": 0.0463,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
