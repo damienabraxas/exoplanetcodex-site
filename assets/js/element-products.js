@@ -239,7 +239,7 @@
 
       INSTRUMENTS.forEach(function (inst) {
         here.filter(function (s) { return s.instrument === inst; }).forEach(function (s) {
-          var pool = lineSetLabel(s.line_set);
+          var pool = lineSetLabel(s.line_set) + (s.variant ? ' \u00b7 ' + s.variant : '');
           out += '<div class="forest-instrument">' + esc(holdingLabel(s.holding, inst)) +
             (pool ? ' <span class="forest-lineset">' + esc(pool) + '</span>' : '') +
             '<small>' + esc(s.holding) + (s.only_deepgraded ? ' \u00b7 DEEPGRADED (no graded product in this band)' : '') + '</small></div>';
