@@ -59,6 +59,8 @@ GUIDE = ('Each row is one independent product, preserving its band, holding, eng
          'Grades describe the supplied line-pool provenance, not engine quality; evaluated theoretical CNO oscillator strengths are not relabelled as laboratory evidence. '
          'Quarantined, failed and unconstrained fits have no abundance mark. Experimental products remain explicitly not adopted. '
          'Literature references provide context, never tuning targets.')
+DEEP_KEY = ('Yellow rows are Deep Grade: strong lines that saturate, kept but less certain '
+            'than the other grades.')
 
 
 def esc(v):
@@ -720,7 +722,7 @@ def build(science, element, selectors, site=ROOT):
                      f'<p>{esc(product_label(p))} · {esc(holding_name(p))} · {esc(p["grade"])}</p></article>')
     body += section('Highlighted Products','<div class="fe-highlights">'+''.join(cards)+'</div>'+('' if cards else '<p>No adopted highlighted product has been selected. '+esc(no_adopted if status != 'products' else 'See the independent products below.')+'</p>'))
     body += section('Line grades', grades_section(element, products))
-    body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}</p></section>'
+    body += '<section class="product-section"><h2>Error-bar Forest Plot</h2>'+forest(element, products, lodders_comparator(science, element))+f'<p class="product-section-intro"><strong>How to read this forest.</strong> {GUIDE}'+(f' <span class="deep-grade-key">{DEEP_KEY}</span>' if any(p.get("grade") == "Deep Grade" for p in products) else '')+'</p></section>'
     body += section('How this was measured', recipe(element, products))
     excl = excluded_lines_section(science, element)
     if excl:

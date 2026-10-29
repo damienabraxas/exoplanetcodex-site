@@ -55,7 +55,7 @@ class FePublicationTests(unittest.TestCase):
             self.assertEqual(page.count('class="forest-instrument"'), len(sections))
             self.assertEqual(page.count('class="forest-band"'), len({s['band'] for s in sections}))
             self.assertNotIn('forest-na', page)
-            self.assertEqual(len(re.findall(r'class="forest (?:gradedrow)?"', page)),
+            self.assertEqual(len(re.findall(r'class="forest (?:gradedrow)?(?: is-deep)?"', page)),
                              sum(1 for s in sections for c in s['cells'] if c.get('product_key') in keys))
             self.assertIn('/assets/css/element-products.css', page)
             self.assertNotRegex(page, r'<img[^>]+Fe(?:I|II)-(?:VIS|NIR|H|near-UV|red-optical)')
