@@ -202,6 +202,17 @@ def recipe(element, products):
         f', and the spread between spectra, each measured by refitting with that '
         f'one input changed. The headline at the top is the Asplund-grade product: a published '
         f'line set, the most complete treatment, then the most lines.</p>')
+    if element == 'N':
+        method = method.replace(
+            'nothing is averaged across indicators or instruments.',
+            'the combined headline averages the atomic and molecular results, '
+            'while individual products remain separate.')
+        method = method.replace(
+            'The headline at the top is the Asplund-grade product: a published '
+            'line set, the most complete treatment, then the most lines.',
+            'The nitrogen headline follows Asplund et al. 2021 Sect. 2.3: '
+            'the atomic–molecular mean, with an uncertainty that is the larger of '
+            'half their separation and the two product errors combined.')
     groups = {}
     for p in products:
         groups.setdefault((p['band'], str(p.get('selector') or '')), []).append(p)
@@ -483,8 +494,11 @@ PRELIMINARY = {
           'line, and the continuum is placed locally around every line. For comparison, '
           'Asplund et al. 2021 give 7.77 from '
           'N I after empirically rescaling the CN blends, and Lodders, Bergemann & Palme '
-          '2025 adopt 7.94 ± 0.11 from the two least-blended lines. The error bar carries '
-          'the full uncertainty budget, including CN blending and telluric residuals.'),
+          '2025 adopt 7.94 ± 0.11 from the two least-blended lines. The combined nitrogen '
+          'headline follows Asplund et al. 2021 Sect. 2.3: the mean of the atomic and '
+          'molecular results. Its uncertainty is the larger of half their separation '
+          'and the two product errors combined, so the combined bar is never smaller '
+          'than the individual budgets (CN blending, continuum, telluric) support.'),
 }
 
 #: Spectral order, matching generate_fe_publication.BANDS. The cards are colour-coded by

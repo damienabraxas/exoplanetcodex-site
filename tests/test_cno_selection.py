@@ -50,9 +50,18 @@ class SelectionTests(unittest.TestCase):
         self.assertIs(headline([cn_red, red]), red)
         self.assertEqual([x['band'] for x in band_highlights([cn_red, red])], ['red-optical'])
 
-    def test_appendix_and_sun_table_share_one_pick(self):
-        rows = [p(), p(band='VIS'), p(band='NIR', selector='MOL-CN_AX_IR', n_lines=244)]
-        self.assertIs(landmark('N', rows), headline(rows))
+    def test_appendix_uses_shared_nitrogen_family_combination(self):
+        rows = [p(A=7.904), p(band='NIR', selector='MOL-CN_AX_IR', A=7.866, n_lines=244)]
+        mark = landmark('N', rows)
+        self.assertEqual(mark, literature_headline(rows, 'N'))
+        self.assertAlmostEqual(mark['A'], 7.885)
+        self.assertEqual(mark['missing'], ['NH'])
+        # RYA-1317: half the separation (0.019) is only a floor; the propagated product
+        # errors (hypot of two 0.054 bars / 2 = 0.038) are larger here and are quoted.
+        self.assertAlmostEqual(mark['sigma'], (2 * (0.02 ** 2 + 0.05 ** 2)) ** 0.5 / 2, places=6)
+        for row in rows:
+            row['sigma_syst'] *= 2
+        self.assertGreater(landmark('N', rows)['sigma'], mark['sigma'])
 
     def test_1d_families_combine_on_the_3d_scale_and_n_takes_the_larger_error(self):
         # RYA-1317: CN 1D 7.866 is 7.806 on Asplund's 3D scale; half the range (0.049) and
