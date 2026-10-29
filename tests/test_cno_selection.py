@@ -50,9 +50,17 @@ class SelectionTests(unittest.TestCase):
         self.assertIs(headline([cn_red, red]), red)
         self.assertEqual([x['band'] for x in band_highlights([cn_red, red])], ['red-optical'])
 
-    def test_appendix_and_sun_table_share_one_pick(self):
-        rows = [p(), p(band='VIS'), p(band='NIR', selector='MOL-CN_AX_IR', n_lines=244)]
-        self.assertIs(landmark('N', rows), headline(rows))
+    def test_appendix_uses_shared_nitrogen_family_combination(self):
+        rows = [p(A=7.904), p(band='NIR', selector='MOL-CN_AX_IR', A=7.866, n_lines=244)]
+        mark = landmark('N', rows)
+        self.assertEqual(mark, literature_headline(rows, 'N'))
+        self.assertAlmostEqual(mark['A'], 7.885)
+        self.assertAlmostEqual(mark['sigma'], 0.019)
+        self.assertEqual(mark['missing'], ['NH'])
+        # Nitrogen's published recipe measures family disagreement, not propagated errors.
+        for row in rows:
+            row['sigma_syst'] *= 2
+        self.assertAlmostEqual(landmark('N', rows)['sigma'], 0.019)
 
     def test_rank_is_deterministic_on_ties(self):
         a, b = p(holding='a'), p(holding='b')

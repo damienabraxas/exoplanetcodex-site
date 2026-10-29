@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/assets/js/analytics.js"></script>
   <title>The Sun, Measured · Mission Log · The Exoplanet Codex</title>
-  <meta name="description" content="Iron, carbon, nitrogen and oxygen in the Sun, measured end to end by the Codex pipeline with full uncertainty budgets: every headline within 0.068 dex of Asplund et al. (2021).">
+  <meta name="description" content="Iron, carbon, nitrogen and oxygen in the Sun, measured end to end by the Codex pipeline with documented uncertainty estimates: every headline within 0.068 dex of Asplund et al. (2021).">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -62,7 +62,7 @@
         <time datetime="2026-10-03">October 2026</time>
       </div>
       <h1 class="page-title">The Sun, Measured: Iron, Carbon, Nitrogen and Oxygen</h1>
-      <p class="page-subtitle">The calibration star is done. Four elements, measured end to end with full uncertainty budgets — every headline within 0.068 dex of Asplund et al. (2021)</p>
+      <p class="page-subtitle">The calibration star is done. Four elements, measured end to end with documented uncertainty estimates — every headline within 0.068 dex of Asplund et al. (2021)</p>
     </div>
   </header>
 
@@ -74,7 +74,7 @@
           <p class="panel-eyebrow">Solar headline findings</p>
           <p class="panel-title">What the pipeline measured</p>
           <div class="solar-findings"><a class="solar-finding" href="/systems/sol/elements/fe/"><span class="sf-label">Metallicity [Fe/H]</span><strong class="sf-value">+0.017</strong><span class="sf-unit">dex</span><span class="sf-sub">relative to AGSS21 A(Fe) = 7.46</span></a><a class="solar-finding" href="/systems/sol/elements/fe/"><span class="sf-label">Iron</span><strong class="sf-value">7.477</strong><span class="sf-unit">A(Fe)</span><span class="sf-sub">± 0.052 · +0.017 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/elements/c/"><span class="sf-label">Carbon</span><strong class="sf-value">8.507</strong><span class="sf-unit">A(C)</span><span class="sf-sub">± 0.056 · +0.047 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/elements/n/"><span class="sf-label">Nitrogen</span><strong class="sf-value">7.885</strong><span class="sf-unit">A(N)</span><span class="sf-sub">± 0.019 · +0.055 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/elements/o/"><span class="sf-label">Oxygen</span><strong class="sf-value">8.758</strong><span class="sf-unit">A(O)</span><span class="sf-sub">± 0.075 · +0.068 vs AGSS21</span></a><a class="solar-finding" href="/systems/sol/"><span class="sf-label">C/O ratio</span><strong class="sf-value">0.56</strong><span class="sf-unit">number ratio</span><span class="sf-sub">± 0.12 · AGSS21 0.59</span></a></div>
-          <p class="panel-note">Abundances on the A(X) = log(N<sub>X</sub>/N<sub>H</sub>) + 12 scale. Each ± is the total uncertainty from the published budget. AGSS21 = Asplund, Amarsi &amp; Grevesse 2021, A&amp;A 653, A141. C/O ratio propagated from the C and O totals as independent.</p>
+          <p class="panel-note">Abundances on the A(X) = log(N<sub>X</sub>/N<sub>H</sub>) + 12 scale. Nitrogen’s ±0.019 dex follows Asplund et al. (2021) Sect. 2.3: half the separation of the atomic and molecular results. It is an indicator-disagreement estimate, not a propagation of their full individual budgets. AGSS21 = Asplund, Amarsi &amp; Grevesse 2021, A&amp;A 653, A141. C/O ratio propagated from the C and O totals as independent.</p>
         </section>
 
         <section class="panel">
@@ -97,7 +97,7 @@
         <h2>What it took</h2>
         <p><strong>The spectra are prepared once, then measured.</strong> Every ground-based solar spectrum we use — HARPS, the Kitt Peak and IAG atlases, CRIRES+ — has the Earth's atmosphere removed across its whole range, and each band gets its own continuum placed against the model spectrum. Only then are abundances measured, from the same prepared spectra for every element.</p>
         <p><strong>The physics follows the literature.</strong> Molecules (CN, CH, C<sub>2</sub>) are synthesised alongside the atomic lines in every band, and the departures from local thermodynamic equilibrium and the 3D atmosphere are applied line by line from published grids. Where a choice had to be made — how to place the continuum, which indicator leads for nitrogen — we checked how Asplund, Amarsi and Lodders did it, and did the same.</p>
-        <p><strong>Every number carries its full uncertainty.</strong> Sixteen components per product: line-to-line scatter, oscillator strengths, microturbulence, continuum placement (including the spread between two independent solar atlases), the atmosphere model, non-LTE and 3D effects (sized the way Asplund et al. 2021 size them), telluric residuals, blends and cross-instrument agreement. Nothing is left blank: a component we cannot price holds the product back instead of being set to zero.</p>
+        <p><strong>Each product has a documented uncertainty budget.</strong> The combined nitrogen headline uses the atomic–molecular half-separation described above; its uncertainty is separate from the individual budgets. Components recorded per product include: line-to-line scatter, oscillator strengths, microturbulence, continuum placement (including the spread between two independent solar atlases), the atmosphere model, non-LTE and 3D effects (sized the way Asplund et al. 2021 size them), telluric residuals, blends and cross-instrument agreement. Nothing is left blank: a component we cannot price holds the product back instead of being set to zero.</p>
 
         <h2>The result</h2>
         <p>Iron, carbon, nitrogen and oxygen all land on the reference: metallicity [Fe/H] = +0.017, carbon +0.047, nitrogen +0.055 and oxygen +0.068 dex from Asplund et al. (2021), each inside its error bar. Carbon, nitrogen and oxygen are each combined from their indicator families exactly the way Asplund et al. do it (a weighted mean of the atomic and molecular indicators; for nitrogen the mean of the atomic and molecular results). The carbon-to-oxygen ratio, the quantity that matters most for the planets, comes out at 0.56 ± 0.12 against the reference 0.59 ± 0.08.</p>
