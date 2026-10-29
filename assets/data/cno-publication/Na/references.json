@@ -1102,7 +1102,7 @@
       ]
     },
     {
-      "subject": "Na-products-541e815eee69",
+      "subject": "Na-products-b06ed066892d",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1113,10 +1113,11 @@
       ]
     },
     {
-      "subject": "Na-products-541e815eee69",
+      "subject": "Na-products-b06ed066892d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021"
+        "asplund2021",
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1124,7 +1125,7 @@
       ]
     },
     {
-      "subject": "Na-products-541e815eee69",
+      "subject": "Na-products-b06ed066892d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1135,7 +1136,7 @@
       ]
     },
     {
-      "subject": "Na-products-e2653a1dbfc3",
+      "subject": "Na-products-620b8337a6f5",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1146,10 +1147,11 @@
       ]
     },
     {
-      "subject": "Na-products-e2653a1dbfc3",
+      "subject": "Na-products-620b8337a6f5",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021"
+        "asplund2021",
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1157,7 +1159,7 @@
       ]
     },
     {
-      "subject": "Na-products-e2653a1dbfc3",
+      "subject": "Na-products-620b8337a6f5",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021",
@@ -1171,7 +1173,7 @@
       ]
     },
     {
-      "subject": "Na-products-763a6ed09847",
+      "subject": "Na-products-69a7aa7bb39f",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1182,10 +1184,11 @@
       ]
     },
     {
-      "subject": "Na-products-763a6ed09847",
+      "subject": "Na-products-69a7aa7bb39f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021"
+        "asplund2021",
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1193,7 +1196,7 @@
       ]
     },
     {
-      "subject": "Na-products-763a6ed09847",
+      "subject": "Na-products-69a7aa7bb39f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021"
@@ -1205,7 +1208,7 @@
       ]
     },
     {
-      "subject": "Na-products-ecad184cc0b3",
+      "subject": "Na-products-b90c5f56677b",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1216,10 +1219,11 @@
       ]
     },
     {
-      "subject": "Na-products-ecad184cc0b3",
+      "subject": "Na-products-b90c5f56677b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021"
+        "asplund2021",
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1227,7 +1231,7 @@
       ]
     },
     {
-      "subject": "Na-products-ecad184cc0b3",
+      "subject": "Na-products-b90c5f56677b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1238,7 +1242,7 @@
       ]
     },
     {
-      "subject": "Na-products-80ede85d09ae",
+      "subject": "Na-products-c00f6af0b401",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1249,10 +1253,11 @@
       ]
     },
     {
-      "subject": "Na-products-80ede85d09ae",
+      "subject": "Na-products-c00f6af0b401",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021"
+        "asplund2021",
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1260,7 +1265,7 @@
       ]
     },
     {
-      "subject": "Na-products-80ede85d09ae",
+      "subject": "Na-products-c00f6af0b401",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1271,11 +1276,10 @@
       ]
     },
     {
-      "subject": "Na-products-ce9ac5f39f49",
+      "subject": "Na-products-3549f0317ecb",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd",
-        "asplund2021"
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1283,7 +1287,7 @@
       ]
     },
     {
-      "subject": "Na-products-ce9ac5f39f49",
+      "subject": "Na-products-3549f0317ecb",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1294,10 +1298,10 @@
       ]
     },
     {
-      "subject": "Na-products-ab09b0d70813",
+      "subject": "Na-products-841d473766d8",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021"
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1305,7 +1309,7 @@
       ]
     },
     {
-      "subject": "Na-products-ab09b0d70813",
+      "subject": "Na-products-841d473766d8",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021",
@@ -1319,7 +1323,73 @@
       ]
     },
     {
-      "subject": "Na-products-348c83d33858",
+      "subject": "Na-products-b72a4b06a2c1",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Na.json"
+      ]
+    },
+    {
+      "subject": "Na-products-b72a4b06a2c1",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Na_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Na-products-b1a83c053f0b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Na.json"
+      ]
+    },
+    {
+      "subject": "Na-products-b1a83c053f0b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Na-products-58dd461d3e5a",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd"
+      ],
+      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Na.json"
+      ]
+    },
+    {
+      "subject": "Na-products-58dd461d3e5a",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Na-products-5a5ee22946b5",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -1331,7 +1401,56 @@
       ]
     },
     {
-      "subject": "Na-products-348c83d33858",
+      "subject": "Na-products-5a5ee22946b5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Na-products-be7b30000a66",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "asplund2021",
+        "nist_asd"
+      ],
+      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Na.json"
+      ]
+    },
+    {
+      "subject": "Na-products-be7b30000a66",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "asplund2021",
+        "canocchi2026"
+      ],
+      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
+      "evidence": [
+        "data/reference/solar_nlte_tables.yaml",
+        "data/reference/na_agss21/na_agss21_lines.csv",
+        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
+      ]
+    },
+    {
+      "subject": "Na-products-23bfd23782d9",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nist_asd",
+        "asplund2021"
+      ],
+      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Na.json"
+      ]
+    },
+    {
+      "subject": "Na-products-23bfd23782d9",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021"
@@ -1343,7 +1462,7 @@
       ]
     },
     {
-      "subject": "Na-products-e50beeefb79a",
+      "subject": "Na-products-17cc53288fb1",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -1355,7 +1474,7 @@
       ]
     },
     {
-      "subject": "Na-products-e50beeefb79a",
+      "subject": "Na-products-17cc53288fb1",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1366,7 +1485,7 @@
       ]
     },
     {
-      "subject": "Na-products-dde1f495e38b",
+      "subject": "Na-products-36b16e0d3bcd",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd",
@@ -1378,7 +1497,7 @@
       ]
     },
     {
-      "subject": "Na-products-dde1f495e38b",
+      "subject": "Na-products-36b16e0d3bcd",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1389,7 +1508,7 @@
       ]
     },
     {
-      "subject": "Na-products-bf07027dc13e",
+      "subject": "Na-products-bf622c820458",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1400,9 +1519,10 @@
       ]
     },
     {
-      "subject": "Na-products-bf07027dc13e",
+      "subject": "Na-products-bf622c820458",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
+        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1411,7 +1531,7 @@
       ]
     },
     {
-      "subject": "Na-products-bf07027dc13e",
+      "subject": "Na-products-bf622c820458",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1422,7 +1542,7 @@
       ]
     },
     {
-      "subject": "Na-products-1daf8bcbe2d9",
+      "subject": "Na-products-f0d7d3616c1c",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1433,9 +1553,10 @@
       ]
     },
     {
-      "subject": "Na-products-1daf8bcbe2d9",
+      "subject": "Na-products-f0d7d3616c1c",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
+        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1444,7 +1565,7 @@
       ]
     },
     {
-      "subject": "Na-products-1daf8bcbe2d9",
+      "subject": "Na-products-f0d7d3616c1c",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021",
@@ -1458,7 +1579,7 @@
       ]
     },
     {
-      "subject": "Na-products-3a98984e466e",
+      "subject": "Na-products-fd002196b613",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1469,9 +1590,10 @@
       ]
     },
     {
-      "subject": "Na-products-3a98984e466e",
+      "subject": "Na-products-fd002196b613",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
+        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1480,7 +1602,7 @@
       ]
     },
     {
-      "subject": "Na-products-3a98984e466e",
+      "subject": "Na-products-fd002196b613",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021"
@@ -1492,7 +1614,7 @@
       ]
     },
     {
-      "subject": "Na-products-b3e5b5040e7c",
+      "subject": "Na-products-0276917cf012",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1503,9 +1625,10 @@
       ]
     },
     {
-      "subject": "Na-products-b3e5b5040e7c",
+      "subject": "Na-products-0276917cf012",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
+        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1514,7 +1637,7 @@
       ]
     },
     {
-      "subject": "Na-products-b3e5b5040e7c",
+      "subject": "Na-products-0276917cf012",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1525,7 +1648,7 @@
       ]
     },
     {
-      "subject": "Na-products-2e47117c2071",
+      "subject": "Na-products-6d05db230769",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "asplund2021"
@@ -1536,9 +1659,10 @@
       ]
     },
     {
-      "subject": "Na-products-2e47117c2071",
+      "subject": "Na-products-6d05db230769",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
+        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1547,7 +1671,7 @@
       ]
     },
     {
-      "subject": "Na-products-2e47117c2071",
+      "subject": "Na-products-6d05db230769",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1558,7 +1682,7 @@
       ]
     },
     {
-      "subject": "Na-products-896ca65668ab",
+      "subject": "Na-products-dd0066591b38",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -1569,7 +1693,7 @@
       ]
     },
     {
-      "subject": "Na-products-896ca65668ab",
+      "subject": "Na-products-dd0066591b38",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1580,7 +1704,7 @@
       ]
     },
     {
-      "subject": "Na-products-006690b22fdc",
+      "subject": "Na-products-eb26cb8b60bb",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -1591,7 +1715,7 @@
       ]
     },
     {
-      "subject": "Na-products-006690b22fdc",
+      "subject": "Na-products-eb26cb8b60bb",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021",
@@ -1605,7 +1729,7 @@
       ]
     },
     {
-      "subject": "Na-products-f3dd43d9ffb0",
+      "subject": "Na-products-6f4bd45a4765",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -1616,7 +1740,7 @@
       ]
     },
     {
-      "subject": "Na-products-f3dd43d9ffb0",
+      "subject": "Na-products-6f4bd45a4765",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1627,7 +1751,7 @@
       ]
     },
     {
-      "subject": "Na-products-445ba2669999",
+      "subject": "Na-products-a5cee5792af3",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -1638,7 +1762,7 @@
       ]
     },
     {
-      "subject": "Na-products-445ba2669999",
+      "subject": "Na-products-a5cee5792af3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1649,7 +1773,7 @@
       ]
     },
     {
-      "subject": "Na-products-d35c1b0e4c6c",
+      "subject": "Na-products-93bab5e00805",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -1660,7 +1784,7 @@
       ]
     },
     {
-      "subject": "Na-products-d35c1b0e4c6c",
+      "subject": "Na-products-93bab5e00805",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1671,10 +1795,11 @@
       ]
     },
     {
-      "subject": "Na-products-3dbb912978f0",
+      "subject": "Na-products-eeac09562b71",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd"
+        "nist_asd",
+        "asplund2021"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1682,7 +1807,7 @@
       ]
     },
     {
-      "subject": "Na-products-3dbb912978f0",
+      "subject": "Na-products-eeac09562b71",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1693,9 +1818,10 @@
       ]
     },
     {
-      "subject": "Na-products-887745d379db",
+      "subject": "Na-products-f8e30b062164",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
+        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1704,7 +1830,7 @@
       ]
     },
     {
-      "subject": "Na-products-887745d379db",
+      "subject": "Na-products-f8e30b062164",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021",
@@ -1718,10 +1844,11 @@
       ]
     },
     {
-      "subject": "Na-products-28f9f215407b",
+      "subject": "Na-products-6f7a1bf44b76",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd"
+        "nist_asd",
+        "asplund2021"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1729,7 +1856,7 @@
       ]
     },
     {
-      "subject": "Na-products-28f9f215407b",
+      "subject": "Na-products-6f7a1bf44b76",
       "layer": "Model and grid sources",
       "reference_ids": [
         "asplund2021"
@@ -1741,10 +1868,11 @@
       ]
     },
     {
-      "subject": "Na-products-a35858a340fb",
+      "subject": "Na-products-8260a258557d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd"
+        "nist_asd",
+        "asplund2021"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1752,7 +1880,7 @@
       ]
     },
     {
-      "subject": "Na-products-a35858a340fb",
+      "subject": "Na-products-8260a258557d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1763,10 +1891,11 @@
       ]
     },
     {
-      "subject": "Na-products-ad0c84319fcb",
+      "subject": "Na-products-aac4173b0ef6",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd"
+        "nist_asd",
+        "asplund2021"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -1774,7 +1903,7 @@
       ]
     },
     {
-      "subject": "Na-products-ad0c84319fcb",
+      "subject": "Na-products-aac4173b0ef6",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1785,21 +1914,9 @@
       ]
     },
     {
-      "subject": "Na-products-4569604fa768",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-4569604fa768",
+      "subject": "Na-products-4d5f9acb10d8",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "asplund2021",
         "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
@@ -1808,7 +1925,7 @@
       ]
     },
     {
-      "subject": "Na-products-4569604fa768",
+      "subject": "Na-products-4d5f9acb10d8",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1819,147 +1936,7 @@
       ]
     },
     {
-      "subject": "Na-products-495cd9c8c074",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-495cd9c8c074",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-495cd9c8c074",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021",
-        "canocchi2026"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv",
-        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-a38f0b208861",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-a38f0b208861",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-a38f0b208861",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-87bc049ac725",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-87bc049ac725",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-87bc049ac725",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-db5631e25929",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-db5631e25929",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-db5631e25929",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-bd0293a634fe",
+      "subject": "Na-products-0c24e0ee234b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -1970,54 +1947,7 @@
       ]
     },
     {
-      "subject": "Na-products-bd0293a634fe",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Na-products-ded57e1c5070",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-ded57e1c5070",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021",
-        "canocchi2026"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv",
-        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-73612c1d4273",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-73612c1d4273",
+      "subject": "Na-products-0c24e0ee234b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2028,7 +1958,7 @@
       ]
     },
     {
-      "subject": "Na-products-26869c3e1e4e",
+      "subject": "Na-products-9e68e7906843",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2039,7 +1969,7 @@
       ]
     },
     {
-      "subject": "Na-products-26869c3e1e4e",
+      "subject": "Na-products-9e68e7906843",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2050,7 +1980,7 @@
       ]
     },
     {
-      "subject": "Na-products-edd51cc70553",
+      "subject": "Na-products-32c8f839e09e",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2061,7 +1991,7 @@
       ]
     },
     {
-      "subject": "Na-products-edd51cc70553",
+      "subject": "Na-products-32c8f839e09e",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2072,11 +2002,10 @@
       ]
     },
     {
-      "subject": "Na-products-c13c6dedd13c",
+      "subject": "Na-products-860f6a57a0ff",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd",
-        "asplund2021"
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -2084,7 +2013,7 @@
       ]
     },
     {
-      "subject": "Na-products-c13c6dedd13c",
+      "subject": "Na-products-860f6a57a0ff",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2095,277 +2024,7 @@
       ]
     },
     {
-      "subject": "Na-products-a6a7321d5840",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-a6a7321d5840",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021",
-        "canocchi2026"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv",
-        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-ea478594141b",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "asplund2021"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-ea478594141b",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-0c75a6fe2556",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "asplund2021"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-0c75a6fe2556",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-a34ba2835813",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "asplund2021"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-a34ba2835813",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-042ad2fd5de9",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-042ad2fd5de9",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-042ad2fd5de9",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Na-products-19df07386cef",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-19df07386cef",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-19df07386cef",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021",
-        "canocchi2026"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv",
-        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-1494795404fa",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-1494795404fa",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-1494795404fa",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-67d356e27f0f",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-67d356e27f0f",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-67d356e27f0f",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-47baff4c5ac5",
-      "layer": "Solar abundance and indicator analyses",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Published line set NA_AGSS21 (the line selection).",
-      "evidence": [
-        "data/reference/line_sets/REGISTRY.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-47baff4c5ac5",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-47baff4c5ac5",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-cfc9e9eb70e3",
+      "subject": "Na-products-9ac31d7523ad",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2376,54 +2035,7 @@
       ]
     },
     {
-      "subject": "Na-products-cfc9e9eb70e3",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Na-products-9b7194a3f91f",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-9b7194a3f91f",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021",
-        "canocchi2026"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv",
-        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-65d9faa2ccb9",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-65d9faa2ccb9",
+      "subject": "Na-products-9ac31d7523ad",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2434,7 +2046,7 @@
       ]
     },
     {
-      "subject": "Na-products-4a1658b5951f",
+      "subject": "Na-products-17a68269f94a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2445,7 +2057,7 @@
       ]
     },
     {
-      "subject": "Na-products-4a1658b5951f",
+      "subject": "Na-products-17a68269f94a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2456,7 +2068,7 @@
       ]
     },
     {
-      "subject": "Na-products-058e6beb869b",
+      "subject": "Na-products-8da873b08ed4",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2467,7 +2079,7 @@
       ]
     },
     {
-      "subject": "Na-products-058e6beb869b",
+      "subject": "Na-products-8da873b08ed4",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2478,11 +2090,10 @@
       ]
     },
     {
-      "subject": "Na-products-b6c2d17a5194",
+      "subject": "Na-products-490ef3c9753d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "nist_asd",
-        "asplund2021"
+        "nist_asd"
       ],
       "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -2490,7 +2101,7 @@
       ]
     },
     {
-      "subject": "Na-products-b6c2d17a5194",
+      "subject": "Na-products-490ef3c9753d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2501,103 +2112,7 @@
       ]
     },
     {
-      "subject": "Na-products-7a9e984596b8",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "asplund2021",
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-7a9e984596b8",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021",
-        "canocchi2026"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv",
-        "data/reference/na_canocchi2026/na_canocchi2026_solar.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-94483c02ba7a",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "asplund2021"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-94483c02ba7a",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "asplund2021"
-      ],
-      "claim": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte",
-      "evidence": [
-        "data/reference/solar_nlte_tables.yaml",
-        "data/reference/na_agss21/na_agss21_lines.csv"
-      ]
-    },
-    {
-      "subject": "Na-products-773eaddf1bfa",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "asplund2021"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-773eaddf1bfa",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-0050b08885a3",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd",
-        "asplund2021"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-0050b08885a3",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-c98b92f8cf06",
+      "subject": "Na-products-29aa33878906",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2608,29 +2123,7 @@
       ]
     },
     {
-      "subject": "Na-products-c98b92f8cf06",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Na-products-7b5f26e18d05",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-7b5f26e18d05",
+      "subject": "Na-products-29aa33878906",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2641,7 +2134,7 @@
       ]
     },
     {
-      "subject": "Na-products-a1c9300b31ea",
+      "subject": "Na-products-81cf47912679",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2652,29 +2145,7 @@
       ]
     },
     {
-      "subject": "Na-products-a1c9300b31ea",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-7431e0115a58",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-7431e0115a58",
+      "subject": "Na-products-81cf47912679",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2685,7 +2156,7 @@
       ]
     },
     {
-      "subject": "Na-products-646f7da9e3e8",
+      "subject": "Na-products-256c3fc7e0b8",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2696,7 +2167,7 @@
       ]
     },
     {
-      "subject": "Na-products-646f7da9e3e8",
+      "subject": "Na-products-256c3fc7e0b8",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2707,7 +2178,7 @@
       ]
     },
     {
-      "subject": "Na-products-fbbe3e29526c",
+      "subject": "Na-products-7699e2dbb81f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2718,7 +2189,7 @@
       ]
     },
     {
-      "subject": "Na-products-fbbe3e29526c",
+      "subject": "Na-products-7699e2dbb81f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2729,7 +2200,7 @@
       ]
     },
     {
-      "subject": "Na-products-cf34ce196ed6",
+      "subject": "Na-products-04067e028764",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2740,7 +2211,7 @@
       ]
     },
     {
-      "subject": "Na-products-cf34ce196ed6",
+      "subject": "Na-products-04067e028764",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2751,7 +2222,7 @@
       ]
     },
     {
-      "subject": "Na-products-4787bf42df8a",
+      "subject": "Na-products-0e50a7927295",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2762,7 +2233,7 @@
       ]
     },
     {
-      "subject": "Na-products-4787bf42df8a",
+      "subject": "Na-products-0e50a7927295",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2773,7 +2244,7 @@
       ]
     },
     {
-      "subject": "Na-products-6f652f90421a",
+      "subject": "Na-products-2755c55a0874",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2784,7 +2255,7 @@
       ]
     },
     {
-      "subject": "Na-products-6f652f90421a",
+      "subject": "Na-products-2755c55a0874",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2795,7 +2266,7 @@
       ]
     },
     {
-      "subject": "Na-products-4f909aca0e0e",
+      "subject": "Na-products-352e51858fa7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2806,7 +2277,7 @@
       ]
     },
     {
-      "subject": "Na-products-4f909aca0e0e",
+      "subject": "Na-products-352e51858fa7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2817,7 +2288,7 @@
       ]
     },
     {
-      "subject": "Na-products-e61f83c01931",
+      "subject": "Na-products-aa11fabbd085",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2828,73 +2299,7 @@
       ]
     },
     {
-      "subject": "Na-products-e61f83c01931",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-c241c9161c00",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-c241c9161c00",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Na-products-1fc9f1ec12ae",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-1fc9f1ec12ae",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Na_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Na-products-5f37e476920b",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-5f37e476920b",
+      "subject": "Na-products-aa11fabbd085",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2905,7 +2310,7 @@
       ]
     },
     {
-      "subject": "Na-products-d0440d9448a6",
+      "subject": "Na-products-af83ab9b05b0",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nist_asd"
@@ -2916,95 +2321,7 @@
       ]
     },
     {
-      "subject": "Na-products-d0440d9448a6",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-883dab16251c",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-883dab16251c",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Na-products-f78f5834d3bb",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-f78f5834d3bb",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Na_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Na-products-307326254076",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-307326254076",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
-      "evidence": [
-        "pipeline/gerber_nlte.py"
-      ]
-    },
-    {
-      "subject": "Na-products-1582fe7c0f11",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nist_asd"
-      ],
-      "claim": "Na I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Na.json"
-      ]
-    },
-    {
-      "subject": "Na-products-1582fe7c0f11",
+      "subject": "Na-products-af83ab9b05b0",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -3964,15 +3281,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-541e815eee69",
+      "publication_id": "Na-products-b06ed066892d",
       "source_bucket": "products",
       "source_index": 38,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "ALL",
         "selector": "SET-NA_AGSS21",
         "route": "SYNTH",
@@ -3983,20 +3300,21 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
+        "nist_asd",
         "gerber2023"
       ],
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-e2653a1dbfc3",
+      "publication_id": "Na-products-620b8337a6f5",
       "source_bucket": "products",
       "source_index": 39,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "ALL",
         "selector": "SET-NA_AGSS21",
         "route": "SYNTH",
@@ -4007,20 +3325,21 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
+        "nist_asd",
         "canocchi2026"
       ],
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
     },
     {
-      "publication_id": "Na-products-763a6ed09847",
+      "publication_id": "Na-products-69a7aa7bb39f",
       "source_bucket": "products",
       "source_index": 40,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "ALL",
         "selector": "SET-NA_AGSS21",
         "route": "SYNTH",
@@ -4030,20 +3349,21 @@
       },
       "reference_ids": [
         "asplund2021",
-        "lodders2025"
+        "lodders2025",
+        "nist_asd"
       ],
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Na-products-ecad184cc0b3",
+      "publication_id": "Na-products-b90c5f56677b",
       "source_bucket": "products",
       "source_index": 41,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "ALL",
         "selector": "SET-NA_AGSS21",
         "route": "SYNTH",
@@ -4054,20 +3374,21 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
+        "nist_asd",
         "gerber2023"
       ],
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-80ede85d09ae",
+      "publication_id": "Na-products-c00f6af0b401",
       "source_bucket": "products",
       "source_index": 42,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "ALL",
         "selector": "SET-NA_AGSS21",
         "route": "SYNTH",
@@ -4078,22 +3399,23 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
+        "nist_asd",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-ce9ac5f39f49",
+      "publication_id": "Na-products-3549f0317ecb",
       "source_bucket": "products",
       "source_index": 43,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -4108,17 +3430,17 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-ab09b0d70813",
+      "publication_id": "Na-products-841d473766d8",
       "source_bucket": "products",
       "source_index": 44,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
         "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
@@ -4127,268 +3449,21 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
+        "nist_asd",
         "canocchi2026"
       ],
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
     },
     {
-      "publication_id": "Na-products-348c83d33858",
+      "publication_id": "Na-products-b72a4b06a2c1",
       "source_bucket": "products",
       "source_index": 45,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd"
-      ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
-    },
-    {
-      "publication_id": "Na-products-e50beeefb79a",
-      "source_bucket": "products",
-      "source_index": 46,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-dde1f495e38b",
-      "source_bucket": "products",
-      "source_index": 47,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag_reiners2016",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-bf07027dc13e",
-      "source_bucket": "products",
-      "source_index": 48,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-1daf8bcbe2d9",
-      "source_bucket": "products",
-      "source_index": 49,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "canocchi2026"
-      ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
-    },
-    {
-      "publication_id": "Na-products-3a98984e466e",
-      "source_bucket": "products",
-      "source_index": 50,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd"
-      ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
-    },
-    {
-      "publication_id": "Na-products-b3e5b5040e7c",
-      "source_bucket": "products",
-      "source_index": 51,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-2e47117c2071",
-      "source_bucket": "products",
-      "source_index": 52,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-896ca65668ab",
-      "source_bucket": "products",
-      "source_index": 53,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-006690b22fdc",
-      "source_bucket": "products",
-      "source_index": 54,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "canocchi2026"
-      ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
-    },
-    {
-      "publication_id": "Na-products-f3dd43d9ffb0",
-      "source_bucket": "products",
-      "source_index": 55,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
@@ -4405,15 +3480,15 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Na-products-445ba2669999",
+      "publication_id": "Na-products-b1a83c053f0b",
       "source_bucket": "products",
-      "source_index": 56,
+      "source_index": 46,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
@@ -4430,15 +3505,15 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-d35c1b0e4c6c",
+      "publication_id": "Na-products-58dd461d3e5a",
       "source_bucket": "products",
-      "source_index": 57,
+      "source_index": 47,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
@@ -4455,15 +3530,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-3dbb912978f0",
+      "publication_id": "Na-products-5a5ee22946b5",
       "source_bucket": "products",
-      "source_index": 58,
+      "source_index": 48,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -4480,15 +3555,15 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-887745d379db",
+      "publication_id": "Na-products-be7b30000a66",
       "source_bucket": "products",
-      "source_index": 59,
+      "source_index": 49,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -4505,15 +3580,15 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
     },
     {
-      "publication_id": "Na-products-28f9f215407b",
+      "publication_id": "Na-products-23bfd23782d9",
       "source_bucket": "products",
-      "source_index": 60,
+      "source_index": 50,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -4529,15 +3604,15 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Na-products-a35858a340fb",
+      "publication_id": "Na-products-17cc53288fb1",
       "source_bucket": "products",
-      "source_index": 61,
+      "source_index": 51,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -4554,15 +3629,15 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-ad0c84319fcb",
+      "publication_id": "Na-products-36b16e0d3bcd",
       "source_bucket": "products",
-      "source_index": 62,
+      "source_index": 52,
       "identity": {
         "element": "Na",
         "ion": "I",
         "band": "VIS",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -4579,7 +3654,256 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-4569604fa768",
+      "publication_id": "Na-products-bf622c820458",
+      "source_bucket": "products",
+      "source_index": 53,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-NA_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Na-products-f0d7d3616c1c",
+      "source_bucket": "products",
+      "source_index": 54,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-NA_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "canocchi2026"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
+    },
+    {
+      "publication_id": "Na-products-fd002196b613",
+      "source_bucket": "products",
+      "source_index": 55,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-NA_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Na-products-0276917cf012",
+      "source_bucket": "products",
+      "source_index": 56,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-NA_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Na-products-6d05db230769",
+      "source_bucket": "products",
+      "source_index": 57,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-NA_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Na-products-dd0066591b38",
+      "source_bucket": "products",
+      "source_index": 58,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Na-products-eb26cb8b60bb",
+      "source_bucket": "products",
+      "source_index": 59,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "canocchi2026"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
+    },
+    {
+      "publication_id": "Na-products-6f4bd45a4765",
+      "source_bucket": "products",
+      "source_index": 60,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Na-products-a5cee5792af3",
+      "source_bucket": "products",
+      "source_index": 61,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Na-products-93bab5e00805",
+      "source_bucket": "products",
+      "source_index": 62,
+      "identity": {
+        "element": "Na",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Na-products-eeac09562b71",
       "source_bucket": "products",
       "source_index": 63,
       "identity": {
@@ -4587,9 +3911,9 @@
         "ion": "I",
         "band": "VIS",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -4604,7 +3928,7 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-495cd9c8c074",
+      "publication_id": "Na-products-f8e30b062164",
       "source_bucket": "products",
       "source_index": 64,
       "identity": {
@@ -4612,9 +3936,9 @@
         "ion": "I",
         "band": "VIS",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
@@ -4629,7 +3953,7 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
     },
     {
-      "publication_id": "Na-products-a38f0b208861",
+      "publication_id": "Na-products-6f7a1bf44b76",
       "source_bucket": "products",
       "source_index": 65,
       "identity": {
@@ -4637,9 +3961,9 @@
         "ion": "I",
         "band": "VIS",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
@@ -4653,7 +3977,7 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Na-products-87bc049ac725",
+      "publication_id": "Na-products-8260a258557d",
       "source_bucket": "products",
       "source_index": 66,
       "identity": {
@@ -4661,9 +3985,9 @@
         "ion": "I",
         "band": "VIS",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "ENGINE-B-NLTE",
         "line_set": null,
@@ -4678,7 +4002,7 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-db5631e25929",
+      "publication_id": "Na-products-aac4173b0ef6",
       "source_bucket": "products",
       "source_index": 67,
       "identity": {
@@ -4686,9 +4010,9 @@
         "ion": "I",
         "band": "VIS",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
@@ -4703,13 +4027,13 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-bd0293a634fe",
+      "publication_id": "Na-products-4d5f9acb10d8",
       "source_bucket": "products",
       "source_index": 68,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
@@ -4728,19 +4052,19 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-ded57e1c5070",
+      "publication_id": "Na-products-0c24e0ee234b",
       "source_bucket": "products",
       "source_index": 69,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
       },
@@ -4748,24 +4072,24 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "canocchi2026"
+        "amarsi2020_galah"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Na-products-73612c1d4273",
+      "publication_id": "Na-products-9e68e7906843",
       "source_bucket": "products",
       "source_index": 70,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
+        "treatment": "ENGINE-B-NLTE",
         "line_set": null,
         "indicator": null
       },
@@ -4773,24 +4097,24 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "amarsi2020_galah"
+        "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-26869c3e1e4e",
+      "publication_id": "Na-products-32c8f839e09e",
       "source_bucket": "products",
       "source_index": 71,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_kurucz2005_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
+        "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
         "indicator": null
       },
@@ -4800,22 +4124,22 @@
         "nist_asd",
         "gerber2023"
       ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-edd51cc70553",
+      "publication_id": "Na-products-860f6a57a0ff",
       "source_bucket": "products",
       "source_index": 72,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "DEEPGRADED",
         "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4825,22 +4149,22 @@
         "nist_asd",
         "gerber2023"
       ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-c13c6dedd13c",
+      "publication_id": "Na-products-9ac31d7523ad",
       "source_bucket": "products",
       "source_index": 73,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "1D-LTE",
+        "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
       },
@@ -4848,24 +4172,24 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "gerber2023"
+        "amarsi2020_galah"
       ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Na-products-a6a7321d5840",
+      "publication_id": "Na-products-17a68269f94a",
       "source_bucket": "products",
       "source_index": 74,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "ENGINE-B-NLTE",
         "line_set": null,
         "indicator": null
       },
@@ -4873,48 +4197,49 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "canocchi2026"
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-ea478594141b",
+      "publication_id": "Na-products-8da873b08ed4",
       "source_bucket": "products",
       "source_index": 75,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "DEEPGRADED",
+        "selector": "DEEPGRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
+        "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
         "indicator": null
       },
       "reference_ids": [
         "asplund2021",
         "lodders2025",
-        "nist_asd"
+        "nist_asd",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-0c75a6fe2556",
+      "publication_id": "Na-products-490ef3c9753d",
       "source_bucket": "products",
       "source_index": 76,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4924,22 +4249,22 @@
         "nist_asd",
         "gerber2023"
       ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-a34ba2835813",
+      "publication_id": "Na-products-29aa33878906",
       "source_bucket": "products",
       "source_index": 77,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
+        "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
       },
@@ -4947,24 +4272,24 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "gerber2023"
+        "amarsi2020_galah"
       ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Na-products-042ad2fd5de9",
+      "publication_id": "Na-products-81cf47912679",
       "source_bucket": "products",
       "source_index": 78,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "1D-LTE",
+        "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
         "indicator": null
       },
@@ -4974,22 +4299,22 @@
         "nist_asd",
         "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-19df07386cef",
+      "publication_id": "Na-products-256c3fc7e0b8",
       "source_bucket": "products",
       "source_index": 79,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4997,22 +4322,22 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "canocchi2026"
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-1494795404fa",
+      "publication_id": "Na-products-7699e2dbb81f",
       "source_bucket": "products",
       "source_index": 80,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
@@ -5021,22 +4346,23 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
-        "nist_asd"
+        "nist_asd",
+        "amarsi2020_galah"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Na-products-67d356e27f0f",
+      "publication_id": "Na-products-04067e028764",
       "source_bucket": "products",
       "source_index": 81,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "ENGINE-B-NLTE",
         "line_set": null,
@@ -5051,17 +4377,17 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-47baff4c5ac5",
+      "publication_id": "Na-products-0e50a7927295",
       "source_bucket": "products",
       "source_index": 82,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-NA_AGSS21",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
@@ -5076,17 +4402,17 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-cfc9e9eb70e3",
+      "publication_id": "Na-products-2755c55a0874",
       "source_bucket": "products",
       "source_index": 83,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -5101,19 +4427,19 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Na-products-9b7194a3f91f",
+      "publication_id": "Na-products-352e51858fa7",
       "source_bucket": "products",
       "source_index": 84,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
       },
@@ -5121,24 +4447,24 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "canocchi2026"
+        "amarsi2020_galah"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Na-products-65d9faa2ccb9",
+      "publication_id": "Na-products-aa11fabbd085",
       "source_bucket": "products",
       "source_index": 85,
       "identity": {
         "element": "Na",
         "ion": "I",
-        "band": "VIS",
+        "band": "red-optical",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
+        "treatment": "ENGINE-B-NLTE",
         "line_set": null,
         "indicator": null
       },
@@ -5146,638 +4472,14 @@
         "asplund2021",
         "lodders2025",
         "nist_asd",
-        "amarsi2020_galah"
+        "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Na-products-4a1658b5951f",
+      "publication_id": "Na-products-af83ab9b05b0",
       "source_bucket": "products",
       "source_index": 86,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-058e6beb869b",
-      "source_bucket": "products",
-      "source_index": 87,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-b6c2d17a5194",
-      "source_bucket": "products",
-      "source_index": 88,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-7a9e984596b8",
-      "source_bucket": "products",
-      "source_index": 89,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "canocchi2026"
-      ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte, A_1d_lte"
-    },
-    {
-      "publication_id": "Na-products-94483c02ba7a",
-      "source_bucket": "products",
-      "source_index": 90,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd"
-      ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
-    },
-    {
-      "publication_id": "Na-products-773eaddf1bfa",
-      "source_bucket": "products",
-      "source_index": 91,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-0050b08885a3",
-      "source_bucket": "products",
-      "source_index": 92,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-c98b92f8cf06",
-      "source_bucket": "products",
-      "source_index": 93,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-7b5f26e18d05",
-      "source_bucket": "products",
-      "source_index": 94,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Na-products-a1c9300b31ea",
-      "source_bucket": "products",
-      "source_index": 95,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-7431e0115a58",
-      "source_bucket": "products",
-      "source_index": 96,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-646f7da9e3e8",
-      "source_bucket": "products",
-      "source_index": 97,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-fbbe3e29526c",
-      "source_bucket": "products",
-      "source_index": 98,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Na-products-cf34ce196ed6",
-      "source_bucket": "products",
-      "source_index": 99,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-4787bf42df8a",
-      "source_bucket": "products",
-      "source_index": 100,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "DEEPGRADED",
-        "selector": "DEEPGRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-6f652f90421a",
-      "source_bucket": "products",
-      "source_index": 101,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-4f909aca0e0e",
-      "source_bucket": "products",
-      "source_index": 102,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Na-products-e61f83c01931",
-      "source_bucket": "products",
-      "source_index": 103,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-c241c9161c00",
-      "source_bucket": "products",
-      "source_index": 104,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-1fc9f1ec12ae",
-      "source_bucket": "products",
-      "source_index": 105,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Na-products-5f37e476920b",
-      "source_bucket": "products",
-      "source_index": 106,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-d0440d9448a6",
-      "source_bucket": "products",
-      "source_index": 107,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-883dab16251c",
-      "source_bucket": "products",
-      "source_index": 108,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Na-products-f78f5834d3bb",
-      "source_bucket": "products",
-      "source_index": 109,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Na_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Na-products-307326254076",
-      "source_bucket": "products",
-      "source_index": 110,
-      "identity": {
-        "element": "Na",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nist_asd",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Na-products-1582fe7c0f11",
-      "source_bucket": "products",
-      "source_index": 111,
       "identity": {
         "element": "Na",
         "ion": "I",

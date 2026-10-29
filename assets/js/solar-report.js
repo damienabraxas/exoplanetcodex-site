@@ -361,7 +361,8 @@
     var cov = {};
     (grid || []).forEach(function (c) { cov[c.instrument + '|' + c.band] = c; });
     var STATE = { present: ['is-present', 'product'], gap: ['is-gap', 'no product'],
-                  blocked: ['is-blocked', 'unreachable'], nodata: ['is-void', 'out of range'] };
+                  blocked: ['is-blocked', 'unreachable'], nodata: ['is-void', 'out of range'],
+                  notused: ['is-void', 'not used'] };
 
     function cell(inst, band) {
       var here = products.filter(function (p) { return p.instrument === inst && p.band === band; });
