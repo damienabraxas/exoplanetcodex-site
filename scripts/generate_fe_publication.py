@@ -415,9 +415,12 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         template = template.replace('</head>', '  <link rel="stylesheet" href="/assets/css/element-products.css">\n</head>')
     if '/assets/css/fe-publication.css' not in template:
         template = template.replace('</head>', '  <link rel="stylesheet" href="/assets/css/fe-publication.css">\n</head>')
-    css_version = hashlib.sha256((ROOT / 'assets/css/fe-publication.css').read_bytes()).hexdigest()[:12]
-    template = re.sub(r'/assets/css/fe-publication\.css(?:\?[^" ]*)?',
-                      '/assets/css/fe-publication.css?v='+css_version, template)
+    # Version-stamp the page's own stylesheets so a change reaches readers at once (Pages
+    # caches unstamped assets for 10 minutes; the Deep Grade highlight hid behind that).
+    for sheet in ('fe-publication', 'element-products'):
+        css_version = hashlib.sha256((ROOT / f'assets/css/{sheet}.css').read_bytes()).hexdigest()[:12]
+        template = re.sub(rf'/assets/css/{sheet}\.css(?:\?[^" ]*)?',
+                          f'/assets/css/{sheet}.css?v='+css_version, template)
     page.write_text('\n'.join(line.rstrip() for line in template.splitlines())+'\n')
 
 
