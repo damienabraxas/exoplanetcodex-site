@@ -17,6 +17,11 @@ except ImportError:
     PDF_AVAILABLE = False
 
 
+def shown(product):
+    """The sigma the site shows: Asplund 2021's when the feed carries it."""
+    return product['sigma_asplund'] if product.get('sigma_asplund') is not None else product['sigma_reported']
+
+
 @unittest.skipUnless(PDF_AVAILABLE, 'Install scripts/requirements-appendix.txt for PDF checks')
 class AppendixPDFTests(unittest.TestCase):
     def test_report_identity_anchor_and_web_parity(self):
@@ -33,7 +38,7 @@ class AppendixPDFTests(unittest.TestCase):
             report = BeautifulSoup(model['body_html'],'html.parser')
             self.assertEqual(site.select_one('.product-forest').get_text(),report.select_one('.product-forest').get_text())
             self.assertEqual(site.select_one('.fe-highlights').get_text(),report.select_one('.fe-highlights').get_text())
-            self.assertIn(f'{anchor["A"]:.3f} ± {anchor["sigma_reported"]:.3f}',site.select_one('.fe-anchor').get_text())
+            self.assertIn(f'{anchor["A"]:.3f} ± {shown(anchor):.3f}',site.select_one('.fe-anchor').get_text())
             self.assertNotIn('7.466',site.select_one('.fe-anchor').get_text())
             self.assertTrue(site.select_one(f'a[download][href$="solar_fe_{ion}_appendix.pdf"]'))
             if ion=='i': self.assertIn('EW', report.get_text())
@@ -50,7 +55,7 @@ class AppendixPDFTests(unittest.TestCase):
                 self.assertIn(expected,normalized)
             for product in model['products']:
                 self.assertIn(f'{product["A"]:.3f}',normalized)
-                self.assertIn(f'{product["sigma_reported"]:.3f}',normalized)
+                self.assertIn(f'{shown(product):.3f}',normalized)
             for page in doc:
                 self.assertAlmostEqual(page.rect.width,595.276,delta=.1)
                 self.assertGreater(len(page.get_text().split()),10)

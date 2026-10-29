@@ -470,10 +470,8 @@ PRELIMINARY = {
            '(Asplund et al. 2021; Canocchi et al. 2026) to our one-dimensional fits; they are not '
            'our own three-dimensional calculation. The H- and K-band products sit about 0.4 dex '
            'below the visible ones. They are shown as measured, with their full error bars.'),
-    'Mg': ('The published Mg I line set still lacks resolved oscillator-strength uncertainties. '
-           'Available Mg II NLTE products use line-specific corrections from Asplund et al. '
-           '2021 on our LTE fits; they are not a new three-dimensional transfer calculation. '
-           'Individual products remain visible while the combined abundance is pending.'),
+    'Mg': ('The Mg II NLTE products apply line-by-line corrections from Asplund et al. 2021 '
+           'to our LTE fits; they are not our own three-dimensional calculation.'),
     'N': ('The solar N I lines are weak (0.3–1% deep) and carry CN absorption inside '
           'their own profiles, so the result depends on molecular opacity and on continuum '
           'placement at the 0.1% level. Both are now modelled: CN is synthesised with the '

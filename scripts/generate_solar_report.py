@@ -436,6 +436,20 @@ def main() -> None:
     # abundance. Preserve each band/engine/value/error-bar tuple for the Al
     # appendix's Fe-style presentation.
     live_status = json.loads(live_status_path.read_text(encoding="utf-8"))
+    # The evidence rows are a snapshot of feed products; each shows the feed's Asplund 2021
+    # sigma when the feed carries one, matched on identity and value.
+    evidence_keys = ("element", "ion", "band", "instrument", "holding", "tier", "selector",
+                     "treatment", "A")
+    feed_sigma = {}
+    for element in ("Fe", "Al"):
+        for q in json.loads((science / f"data/products/solar/{element}.json")
+                            .read_text(encoding="utf-8")).get("products", []):
+            if q.get("sigma_asplund") is not None:
+                feed_sigma[tuple(q.get(k) for k in evidence_keys)] = (
+                    float(q["sigma_asplund_stat"]), float(q["sigma_asplund_syst"]))
+    def evidence_sigma(row):
+        return feed_sigma.get(tuple(row.get(k) for k in evidence_keys),
+                              (float(row["sigma_stat"]), float(row["sigma_syst"])))
     def product_display(row):
         declared = str(row.get("display") or "").strip()
         if declared:
@@ -459,9 +473,9 @@ def main() -> None:
             "displayName": product_display(row),
             "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
-            "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
-            "sigmaStat": float(row["sigma_stat"]),
-            "sigmaSys": float(row["sigma_syst"]),
+            "sigma": math.hypot(*evidence_sigma(row)),
+            "sigmaStat": evidence_sigma(row)[0],
+            "sigmaSys": evidence_sigma(row)[1],
             "lineCount": row.get("n_lines"),
             "role": "RYA-935 evidence",
         })
@@ -494,9 +508,9 @@ def main() -> None:
             "displayName": product_display(row),
             "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
-            "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
-            "sigmaStat": float(row["sigma_stat"]),
-            "sigmaSys": float(row["sigma_syst"]),
+            "sigma": math.hypot(*evidence_sigma(row)),
+            "sigmaStat": evidence_sigma(row)[0],
+            "sigmaSys": evidence_sigma(row)[1],
             "lineCount": row.get("n_lines"),
             "role": "RYA-935 evidence",
         })
@@ -523,8 +537,9 @@ def main() -> None:
          # ratified anchor into stat/sys, so those stay absent rather than invented" -- true
          # of the gold row, but the feed product splits it, so the table can stop showing a
          # total-only bar.
-         "primary":{"value":float(anchor["A"]),"sigmaStat":float(anchor["sigma_stat"]),
-                    "sigmaSys":float(anchor["sigma_syst_complete"]),
+         "primary":{"value":float(anchor["A"]),
+                    "sigmaStat":float(anchor["sigma_asplund_stat"] if anchor.get("sigma_asplund") is not None else anchor["sigma_stat"]),
+                    "sigmaSys":float(anchor["sigma_asplund_syst"] if anchor.get("sigma_asplund") is not None else anchor["sigma_syst_complete"]),
                     "sigmaTotal":float(cno_selection.total_sigma(anchor)),
                     "lineCount":int(anchor["n_lines"]),
                     "sigmaBasis":f"Fe.json v{feed['version']} — {anchor['holding']}, "
