@@ -9038,16 +9038,16 @@ window.SOLAR_REPORT = {
       "name": "Carbon",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 combination of C I 8.488, C2 8.419, CH 8.509, CO 8.701 (C.json v1.202)",
+      "method": "Asplund+2021 combination of C I 8.488, C2 8.441, CH 8.575, CO 8.559 (C.json v1.203)",
       "asplund": 8.46,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.5063,
-        "sigmaTotal": 0.0254,
+        "value": 8.5395,
+        "sigmaTotal": 0.0445,
         "lineCount": 425
       },
-      "delta": 0.0463,
+      "delta": 0.0795,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9057,16 +9057,16 @@ window.SOLAR_REPORT = {
       "name": "Nitrogen",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 combination of N I 7.904, CN 7.866 (N.json v1.80)",
+      "method": "Asplund+2021 combination of N I 7.904, CN 7.806 (N.json v1.80)",
       "asplund": 7.83,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 7.885,
-        "sigmaTotal": 0.019,
+        "value": 7.855,
+        "sigmaTotal": 0.049,
         "lineCount": 217
       },
-      "delta": 0.055,
+      "delta": 0.025,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9076,16 +9076,16 @@ window.SOLAR_REPORT = {
       "name": "Oxygen",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 combination of [O I] 8.934, O I 8.751 (O.json v1.102)",
+      "method": "Asplund+2021 combination of [O I] 8.973, O I 8.751 (O.json v1.102)",
       "asplund": 8.69,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.7563,
+        "value": 8.7575,
         "sigmaTotal": 0.0544,
         "lineCount": 5
       },
-      "delta": 0.0663,
+      "delta": 0.0675,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {

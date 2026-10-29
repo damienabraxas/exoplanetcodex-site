@@ -276,9 +276,19 @@ def _wmean(rows):
     return a, math.hypot(stat, syst), stat, syst
 
 
+def _row_3d(p):
+    """`_row` on Asplund's 3D scale. A 1D-LTE CNO product carries `asplund_3d_shift`
+    (Asplund+2021 Table 3: 3D minus 1D MARCS for its indicator group, stamped by the science
+    feed); Asplund's family values are all 3D, so the shift is added before combining.
+    The product's own A is never changed (RYA-1317)."""
+    a, s, st, sy = _row(p)
+    return a + float(p.get('asplund_3d_shift') or 0.0), s, st, sy
+
+
 def asplund_headline(products, element):
     """Asplund+2021's combination of this element's indicator families, from OUR products.
-    Returns {A, sigma, rule, families: [{family, A, sigma, product}], missing: [...]}."""
+    Returns {A, sigma, rule, families: [{family, A, sigma, shift, product}], missing: [...]};
+    a family's A is on the 3D scale (see `_row_3d`)."""
     if headline_hold(products, element):
         return None
     fams = {}
@@ -292,7 +302,7 @@ def asplund_headline(products, element):
         if f in ASPLUND_FAMILIES.get(element, ()):
             fams.setdefault(f, []).append(p)
     rep = {f: min(ps, key=rank_key) for f, ps in fams.items()}
-    rows = {f: _row(p) for f, p in rep.items()}
+    rows = {f: _row_3d(p) for f, p in rep.items()}
     if not rows:
         return None
     if element == 'N':
@@ -300,9 +310,12 @@ def asplund_headline(products, element):
         parts = ([rows['N I']] if 'N I' in rows else []) + ([_wmean(mol)] if mol else [])
         if len(parts) == 2:
             a = (parts[0][0] + parts[1][0]) / 2.0
-            s = abs(parts[0][0] - parts[1][0]) / 2.0
-            rule = ('unweighted mean of atomic N I and the weighted molecular mean (NH, CN); '
-                    'uncertainty half the range (Asplund+2021 Sect. 2.3)')
+            # RYA-1317: half the range alone can fall below the two parts' own errors (ours
+            # 0.019 against 0.049); Asplund's 0.07 for N sits above both, so take the larger.
+            s = max(abs(parts[0][0] - parts[1][0]) / 2.0, math.hypot(parts[0][1], parts[1][1]) / 2.0)
+            rule = ('unweighted mean of atomic N I and the weighted molecular mean (NH, CN), both on '
+                    'the 3D scale; uncertainty half their range or their propagated error, whichever '
+                    'is larger (Asplund+2021 Sect. 2.3)')
         else:
             a, s = parts[0][:2]
             rule = 'only one of atomic / molecular N available'
@@ -313,8 +326,12 @@ def asplund_headline(products, element):
                 + (' (Asplund+2021 Sect. 2.4); inverse total-variance weights; '
                    'statistical parts combined as independent, systematic parts as shared (Amarsi+2021 Eq. 3)' if element in REQUIRED_FAMILY_SELECTORS
                    else ' (Asplund+2021 Sect. 2.3)'))
+    if any(rep[f].get('asplund_3d_shift') for f in rep):
+        rule += ('; 1D results moved to the 3D scale by Asplund+2021 Table 3 (3D minus 1D MARCS '
+                 'for the same indicator)')
     return {'element': element, 'A': a, 'sigma': s, 'rule': rule,
-            'families': [{'family': f, 'A': rows[f][0], 'sigma': rows[f][1], 'product': rep[f]}
+            'families': [{'family': f, 'A': rows[f][0], 'sigma': rows[f][1],
+                          'shift': float(rep[f].get('asplund_3d_shift') or 0.0), 'product': rep[f]}
                          for f in ASPLUND_FAMILIES[element] if f in rep],
             'missing': [f for f in ASPLUND_FAMILIES[element] if f not in rep]}
 

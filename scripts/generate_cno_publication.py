@@ -678,7 +678,9 @@ def build(science, element, selectors, site=ROOT):
         caveat = PRELIMINARY.get(element)
         caveat_html = (f'<p class="fe-anchor-caveat">{esc(caveat)}</p>') if caveat else ''
         fam_html = ''.join(
-            f'<li>{esc(f["family"])}: {f["A"]:.3f} &plusmn; {f["sigma"]:.3f} &middot; '
+            f'<li>{esc(f["family"])}: {f["A"]:.3f} &plusmn; {f["sigma"]:.3f}'
+            + (f' (1D {f["A"] - f["shift"]:.3f} {f["shift"]:+.3f} to 3D)' if f.get("shift") else '')
+            + f' &middot; '
             f'{esc(holding_name(f["product"]))} &middot; {esc(f["product"]["band"])} &middot; '
             f'{esc(product_label(f["product"]))}</li>' for f in mark['families'])
         miss = (f'<p>Not measurable in our spectra: {esc(", ".join(mark["missing"]))}.</p>'
