@@ -214,8 +214,8 @@
       return (pv && pv.value != null && pv.sigmaTotal != null) ?
         { value: pv.value, sigma: pv.sigmaTotal, ref: el.asplund } : null;
     }
-    // Magnesium is published but is being re-measured, so its ratio carries a flag.
-    var RATIO_FLAG = { Mg: 'Magnesium is being re-measured' };
+    // A ratio whose element is published but provisional carries a flag here (none now).
+    var RATIO_FLAG = {};
     var RATIOS = [
       { label: 'C/O', top: 'C', bottom: 'O', href: '/glossary/#c-o-ratio' },
       { label: 'Mg/Si', top: 'Mg', bottom: 'Si', href: '/glossary/#mg-si-ratio' },
