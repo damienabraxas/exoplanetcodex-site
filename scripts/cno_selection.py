@@ -75,9 +75,12 @@ def systematic(p):
 
 
 def total_sigma(p):
-    """The product's total uncertainty. A row carrying a RYA-587 budget states it as
-    `sigma_reported` (the canonical total over all 16 components) -- that is the number,
-    exactly as Fe shows it. Only a legacy row without one falls back to stat (+) syst."""
+    """The product's published uncertainty, as Asplund, Amarsi & Grevesse 2021 quote it:
+    statistical (+) half the 3D effect (+) NLTE (floor 0.03), stamped by the science
+    orchestrator as `sigma_asplund`. A legacy row without a budget falls back to its
+    `sigma_reported`, then to stat (+) syst."""
+    if p.get('sigma_asplund') is not None:
+        return float(p['sigma_asplund'])
     if p.get('sigma_reported') is not None:
         return float(p['sigma_reported'])
     return math.sqrt((p.get('sigma_stat') or 0.0) ** 2 + (systematic(p) or 0.0) ** 2)
@@ -161,32 +164,19 @@ def best_in_band(products, band):
     return min(rows, key=rank_key) if rows else None
 
 
-#: RYA-1251 (Ryan 2026-10-28): the top number is our best HARPS product -- HARPS is the
-#: instrument for the stars that follow. The Fe appendix's anchor rule
-#: (generate_fe_publication), for every element: HARPS VIS, Reference Grade, ranked by
-#: rank_key (most complete treatment, then lines, then sigma). One named product, never an
-#: average across holdings. An element with no Reference Grade HARPS product (N; O has only
-#: a Codex Grade [O I] 6300) takes the best Reference Grade Kitt Peak product, ranked the
-#: same way (RYA-1250, Ryan 2026-10-28: "the best Harps value if it exists, if not the best
-#: Kitt peak value" -- replaces the earlier CRIRES+-or-Kitt-Peak fallback).
+#: RYA-1251 (Ryan 2026-10-28): the top number is measured the way Asplund et al. 2021
+#: measure it -- all of the element's lines / indicator families combined, weighted by their
+#: uncertainties (literature_headline). Only an element with no Asplund recipe falls back to
+#: one product: the best HARPS VIS Reference Grade product (HARPS is the instrument for the
+#: stars that follow), else the best from CRIRES+ or Kitt Peak.
 ANCHOR_HOLDING, ANCHOR_BAND = 'solar_harps_molecfit_corrected', 'VIS'
-FALLBACK_INSTRUMENTS = ('kpno_solar_atlas',)
-#: Named exceptions (Ryan 2026-10-28). Al: HARPS reaches only 6696/6698 and its continuum
-#: term there is 0.070 dex against Kitt Peak's 0.044 on the same two lines and treatment,
-#: so the Kitt Peak VIS product is shown. NOT a general "smallest sigma" rule -- that would
-#: move C, Si and Na off HARPS as well.
-ANCHOR_INSTRUMENT_OVERRIDE = {'Al': 'kpno_solar_atlas'}
+FALLBACK_INSTRUMENTS = ('crires_plus', 'kpno_solar_atlas')
 
 
 def anchor_product(products, element=None):
     if headline_hold(products, element):
         return None
     ref = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade']
-    override = ANCHOR_INSTRUMENT_OVERRIDE.get(element)
-    if override:
-        hits = [p for p in ref if p.get('instrument') == override and p.get('band') == ANCHOR_BAND]
-        if hits:
-            return min(hits, key=rank_key)
     hits = [p for p in ref if p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
     if not hits:
         hits = [p for p in ref if p.get('instrument') in FALLBACK_INSTRUMENTS]
@@ -204,9 +194,6 @@ def headline(products, element=None):
     """
     if headline_hold(products, element):
         return None
-    anchor = anchor_product(products, element)
-    if anchor is not None:
-        return anchor
     rows = [p for p in products if eligible_for_headline(p)]
     prim = PRIMARY_SELECTORS.get(element or (rows[0].get('element') if rows else None))
     if prim:
@@ -266,9 +253,27 @@ def indicator_family(p):
     return f'{el} {ion}'
 
 
+def _row(p):
+    """(A, sigma, statistical, systematic) for the combiner; a legacy row without the
+    Asplund split is treated as all-statistical."""
+    s = float(total_sigma(p))
+    st, sy = p.get('sigma_asplund_stat'), p.get('sigma_asplund_syst')
+    if st is None or sy is None:
+        st, sy = s, 0.0
+    return float(p['A']), s, float(st), float(sy)
+
+
 def _wmean(rows):
-    w = [1.0 / s ** 2 for _, s in rows]
-    return sum(a * wi for (a, _), wi in zip(rows, w)) / sum(w), (1.0 / sum(w)) ** 0.5
+    """Weighted mean (weights 1/sigma^2) and its error as Amarsi et al. 2021 Eq. 3 propagate
+    it: the statistical parts are uncorrelated between groups and shrink; the systematic
+    parts (3D, NLTE, compositional) are perfectly correlated and are averaged, not shrunk."""
+    rows = [r if len(r) == 4 else (r[0], r[1], r[1], 0.0) for r in rows]
+    w = [1.0 / r[1] ** 2 for r in rows]
+    W = sum(w)
+    a = sum(r[0] * wi for r, wi in zip(rows, w)) / W
+    stat = sum((wi * r[2]) ** 2 for r, wi in zip(rows, w)) ** 0.5 / W
+    syst = sum(wi * r[3] for r, wi in zip(rows, w)) / W
+    return a, math.hypot(stat, syst), stat, syst
 
 
 def asplund_headline(products, element):
@@ -287,7 +292,7 @@ def asplund_headline(products, element):
         if f in ASPLUND_FAMILIES.get(element, ()):
             fams.setdefault(f, []).append(p)
     rep = {f: min(ps, key=rank_key) for f, ps in fams.items()}
-    rows = {f: (float(p['A']), float(total_sigma(p))) for f, p in rep.items()}
+    rows = {f: _row(p) for f, p in rep.items()}
     if not rows:
         return None
     if element == 'N':
@@ -299,14 +304,14 @@ def asplund_headline(products, element):
             rule = ('unweighted mean of atomic N I and the weighted molecular mean (NH, CN); '
                     'uncertainty half the range (Asplund+2021 Sect. 2.3)')
         else:
-            a, s = parts[0]
+            a, s = parts[0][:2]
             rule = 'only one of atomic / molecular N available'
     else:
-        a, s = _wmean(list(rows.values()))
+        a, s = _wmean(list(rows.values()))[:2]
         rule = ('weighted mean and error of the indicator families '
                 + ', '.join(ASPLUND_FAMILIES[element])
                 + (' (Asplund+2021 Sect. 2.4); inverse total-variance weights; '
-                   'combined error assumes independent ion budgets' if element in REQUIRED_FAMILY_SELECTORS
+                   'statistical parts combined as independent, systematic parts as shared (Amarsi+2021 Eq. 3)' if element in REQUIRED_FAMILY_SELECTORS
                    else ' (Asplund+2021 Sect. 2.3)'))
     return {'element': element, 'A': a, 'sigma': s, 'rule': rule,
             'families': [{'family': f, 'A': rows[f][0], 'sigma': rows[f][1], 'product': rep[f]}
@@ -324,9 +329,10 @@ def asplund_headline(products, element):
 # each band x ion's best analysis (rank_key -- most complete treatment first), and combine
 # them by 1/sigma^2. The spectrum is the one that covers the most of the set, then the
 # tightest. Splitting the set across spectra would average holdings as if independent.
-LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21'}
+LINE_SET_SELECTORS = {'Si': 'SET-SI_AGSS21', 'Al': 'SET-AL_AGSS21', 'Na': 'SET-NA_AGSS21'}
 LINE_SET_SOURCE = {'Si': 'Amarsi & Asplund 2017: nine Si I and one Si II line',
-                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1'}
+                   'Al': 'Nordlander & Lind 2017: the Al I lines of their Table A.1',
+                   'Na': 'the five Na I lines of their Table A.1'}
 
 
 def asplund_line_set(products, element):
@@ -345,7 +351,7 @@ def asplund_line_set(products, element):
         rep = sorted((min(v, key=rank_key) for v in parts.values()),
                      key=lambda p: (BAND_ORDER.index(p['band']) if p.get('band') in BAND_ORDER
                                     else len(BAND_ORDER), str(p.get('ion') or 'I')))
-        a, s = _wmean([(float(p['A']), float(total_sigma(p))) for p in rep])
+        a, s = _wmean([_row(p) for p in rep])[:2]
         n = sum(resolved_lines(p) for p in rep)
         key = (-n, round(s, 6), str(holding))
         if best is None or key < best[0]:

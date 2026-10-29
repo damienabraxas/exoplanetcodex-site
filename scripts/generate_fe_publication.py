@@ -59,6 +59,11 @@ SELECTOR_NAMES = {'SET-FE_AGSS21': 'Asplund et al. 2021 lines',
                   'ASPLUND_AGSS21': 'Asplund et al. 2021 lines'}
 
 
+
+def sig(p):
+    """Published sigma: Asplund 2021's convention (`sigma_asplund`), else the row's own total."""
+    return p['sigma_asplund'] if p.get('sigma_asplund') is not None else p['sigma_reported']
+
 def selector_label(p):
     return SELECTOR_NAMES.get(str(p.get('selector')), p.get('selector'))
 
@@ -100,7 +105,7 @@ def forest(products, reference, name, social=False):
         color = GOLD if p['tier'] != 'ALL' else CYAN
         if held(p):
             color = '#f07848'
-        ax.errorbar(p['A'], y, xerr=p['sigma_reported'], fmt='o',
+        ax.errorbar(p['A'], y, xerr=sig(p), fmt='o',
                     color=color, mfc=color if p['tier'] != 'ALL' else BG,
                     capsize=3, lw=1.2, markersize=5)
         text = label(p)
@@ -109,14 +114,14 @@ def forest(products, reference, name, social=False):
         else:
             text += f"\n{p['holding']} · {selector_label(p)}\n{p['route']} · {p['treatment']}"
         labels.append(text)
-        ax.text(1.025, y, f"{p['A']:.3f} ± {p['sigma_reported']:.3f}" + ('*' if p.get('sigma_reported_caveat') else '') +
+        ax.text(1.025, y, f"{p['A']:.3f} ± {sig(p):.3f}" + ('*' if p.get('sigma_reported_caveat') else '') +
                 ('' if social else f"  n={p['n_lines']}"),
                 transform=ax.get_yaxis_transform(), va='center', color=color, fontsize=9)
     ax.set_yticks(range(len(products)), labels, color='#dae4eb', fontsize=9 if social else 8)
     ax.invert_yaxis()
     ax.tick_params(axis='x', colors='#b8c8d3')
     ax.tick_params(axis='y', length=0, pad=12)
-    ax.set_xlabel('A(Fe) · bar: total uncertainty (statistical and systematic combined)', color='#b8c8d3', fontsize=9)
+    ax.set_xlabel('A(Fe) · bar: uncertainty as Asplund 2021 quote it', color='#b8c8d3', fontsize=9)
     caveats = [p['sigma_reported_caveat'] for p in products if p.get('sigma_reported_caveat')]
     if caveats:
         footnote = '* Lower-bound uncertainty; microturbulence term unavailable.' if all('LOWER BOUND' in c for c in caveats) else '* Reported uncertainty is qualified; see source product CSV.'
@@ -277,7 +282,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     if len(anchors) != 1:
         raise ValueError('The selected HARPS Fe I reference anchor is missing or ambiguous')
     anchor = anchors[0]
-    body += f'<p class="fe-anchor">Solar Fe I anchor: {anchor["A"]:.3f} ± {anchor["sigma_reported"]:.3f}</p><p>HARPS · Reference Grade · Amarsi 3D-NLTE · n = {anchor["n_lines"]}. The selected Fe I product anchors this Solar appendix; products and engines are not averaged together.</p>'
+    body += f'<p class="fe-anchor">Solar Fe I anchor: {anchor["A"]:.3f} ± {sig(anchor):.3f}</p><p>HARPS · Reference Grade · Amarsi 3D-NLTE · n = {anchor["n_lines"]}. The selected Fe I product anchors this Solar appendix; products and engines are not averaged together.</p>'
     highlights = []
     for band in BANDS:
         candidates = [p for p in own if p['band']==band and not held(p)]
@@ -291,7 +296,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
                     raise ValueError(f'Expected one reference Amarsi VIS product for {holding}')
                 selected.extend(matches)
         elif candidates:
-            selected = [min(candidates, key=lambda p: (p['sigma_reported'], p['publication_id']))]
+            selected = [min(candidates, key=lambda p: (sig(p), p['publication_id']))]
         for p in selected:
             spectrum = 'uv' if band == 'near-UV' else 'visible' if band in ('VIS', 'red-optical') else 'ir'
             product_label = label(p)
@@ -300,7 +305,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
                 product_label = f"{instrument_label} · Synth · 3D-NLTE · Amarsi · {p['grade']}"
             hold = HELD_BANDS.get(band)
             notice = f'<p class="fe-hold">{esc(hold)}</p>' if hold else ''
-            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {p["sigma_reported"]:.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p>{notice}</article>')
+            highlights.append(f'<article class="fe-highlight-{spectrum}" data-highlight-product="{p["publication_id"]}"><h3>{esc(band)}</h3><strong>{p["A"]:.3f} ± {sig(p):.3f}</strong><p>{esc(product_label)} · n = {p["n_lines"]}</p>{notice}</article>')
     body += section('Highlighted band products', '<div class="fe-highlights">'+''.join(highlights)+'</div>')
     # 🔴 REFUSE A FOREST WITH AN EMPTY SECTION. RYA-1213's Reference tier published 19
     # plot_grid sections whose cells resolved to NOTHING, because the renderer's
@@ -334,7 +339,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         "const fs=require('fs'); const {forest}=require('./assets/js/element-products.js'); "
         "const x=JSON.parse(fs.readFileSync(0,'utf8')); process.stdout.write(forest(x.feed,x.ion,x.reference));"
     ], input=json.dumps({'feed': feed, 'ion': ion, 'reference': reference}), text=True, cwd=ROOT)
-    guide = '<p class="product-section-intro"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Each bar is the total uncertainty: the statistical and systematic terms combined in quadrature, as Asplund et al. 2021 and Lodders et al. 2025 quote it. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool’s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p>'
+    guide = '<p class="product-section-intro"><strong>How to read this forest.</strong> Each measured row is a separate abundance product for an instrument, holding, line pool and treatment; engines are never averaged together. Each bar is the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex). Atomic-data and observational terms are not in the bar, as in Asplund; they stay in the full error budget attached to the row. Green and gold regions mark the Asplund and Lodders literature values and uncertainties, not pass/fail gates. Grades describe the line pool’s provenance and selection, not the quality of an engine. Reddish-orange mean-3D / Frankenstein rows are experimental and not adopted. Unmeasured model rows remain N/A.</p>'
     definitions = {
         'Reference Grade': 'An externally published reference line pool, using that reference’s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.',
         'Codex Grade': 'The vetted Codex pool of primary-laboratory oscillator strengths, restricted to lines at or below the adopted feature-depth gate.',
@@ -356,7 +361,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     body += '<section class="product-section"><h2>Error-bar forest</h2>'+guide+glossary+forest_html+'</section>'
     accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
         f'<li data-product-id="{p["publication_id"]}">{esc(label(p))} · {esc(p["holding"])} · {esc(selector_label(p))} · {esc(p["route"])} · {esc(p["treatment"])}: '
-        f'{p["A"]:.3f} ± {p["sigma_reported"]:.3f} reported total; n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
+        f'{p["A"]:.3f} ± {sig(p):.3f} (Asplund 2021 convention); n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
         + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
         + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'
     body += accessible

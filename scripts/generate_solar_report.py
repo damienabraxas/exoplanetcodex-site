@@ -326,16 +326,13 @@ def main() -> None:
         prods = cno_selection.fill_grades(feed.get('products', []), science)
         # RYA-1232/1233: Asplund+2021's own method where we have its recipe (C/N/O families,
         # Si/Al line set) -- the SAME function the element page uses; else the best product.
-        anchor = cno_selection.anchor_product(prods, symbol)
-        if anchor is not None:
-            return anchor, cno_selection.total_sigma(anchor), feed.get('version')
         comb = cno_selection.literature_headline(prods, symbol)
         if comb is not None:
             n_lines = sum(int(f['product'].get('n_lines') or 0) for f in comb['families'])
             best = {'A': comb['A'], 'n_lines': n_lines, 'grade': 'Reference Grade',
                     'uncertainty': True, '_asplund': comb}
             return best, comb['sigma'], feed.get('version')
-        best = cno_selection.headline(prods, symbol)
+        best = cno_selection.anchor_product(prods, symbol) or cno_selection.headline(prods, symbol)
         # Mg has a deliberate two-ion Asplund recipe. Until both published-set
         # ions exist, keep the combined headline pending but still show the
         # best available HARPS VIS product in the element table, matching the
@@ -439,6 +436,20 @@ def main() -> None:
     # abundance. Preserve each band/engine/value/error-bar tuple for the Al
     # appendix's Fe-style presentation.
     live_status = json.loads(live_status_path.read_text(encoding="utf-8"))
+    # The evidence rows are a snapshot of feed products; each shows the feed's Asplund 2021
+    # sigma when the feed carries one, matched on identity and value.
+    evidence_keys = ("element", "ion", "band", "instrument", "holding", "tier", "selector",
+                     "treatment", "A")
+    feed_sigma = {}
+    for element in ("Fe", "Al"):
+        for q in json.loads((science / f"data/products/solar/{element}.json")
+                            .read_text(encoding="utf-8")).get("products", []):
+            if q.get("sigma_asplund") is not None:
+                feed_sigma[tuple(q.get(k) for k in evidence_keys)] = (
+                    float(q["sigma_asplund_stat"]), float(q["sigma_asplund_syst"]))
+    def evidence_sigma(row):
+        return feed_sigma.get(tuple(row.get(k) for k in evidence_keys),
+                              (float(row["sigma_stat"]), float(row["sigma_syst"])))
     def product_display(row):
         declared = str(row.get("display") or "").strip()
         if declared:
@@ -462,9 +473,9 @@ def main() -> None:
             "displayName": product_display(row),
             "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
-            "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
-            "sigmaStat": float(row["sigma_stat"]),
-            "sigmaSys": float(row["sigma_syst"]),
+            "sigma": math.hypot(*evidence_sigma(row)),
+            "sigmaStat": evidence_sigma(row)[0],
+            "sigmaSys": evidence_sigma(row)[1],
             "lineCount": row.get("n_lines"),
             "role": "RYA-935 evidence",
         })
@@ -497,9 +508,9 @@ def main() -> None:
             "displayName": product_display(row),
             "telluric": "not declared — holding absent" if not row.get("holding") else row.get("telluric_applied", "not declared"),
             "value": float(row["A"]),
-            "sigma": math.hypot(float(row["sigma_stat"]), float(row["sigma_syst"])),
-            "sigmaStat": float(row["sigma_stat"]),
-            "sigmaSys": float(row["sigma_syst"]),
+            "sigma": math.hypot(*evidence_sigma(row)),
+            "sigmaStat": evidence_sigma(row)[0],
+            "sigmaSys": evidence_sigma(row)[1],
             "lineCount": row.get("n_lines"),
             "role": "RYA-935 evidence",
         })
@@ -526,9 +537,10 @@ def main() -> None:
          # ratified anchor into stat/sys, so those stay absent rather than invented" -- true
          # of the gold row, but the feed product splits it, so the table can stop showing a
          # total-only bar.
-         "primary":{"value":float(anchor["A"]),"sigmaStat":float(anchor["sigma_stat"]),
-                    "sigmaSys":float(anchor["sigma_syst_complete"]),
-                    "sigmaTotal":float(anchor["sigma_reported"]),
+         "primary":{"value":float(anchor["A"]),
+                    "sigmaStat":float(anchor["sigma_asplund_stat"] if anchor.get("sigma_asplund") is not None else anchor["sigma_stat"]),
+                    "sigmaSys":float(anchor["sigma_asplund_syst"] if anchor.get("sigma_asplund") is not None else anchor["sigma_syst_complete"]),
+                    "sigmaTotal":float(cno_selection.total_sigma(anchor)),
                     "lineCount":int(anchor["n_lines"]),
                     "sigmaBasis":f"Fe.json v{feed['version']} — {anchor['holding']}, "
                                  f"{anchor['grade']}, Amarsi 3D-NLTE (RYA-850 primary)"},

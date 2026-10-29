@@ -112,7 +112,7 @@
         var rows = products.filter(function (p) { return (bandNames[p.band] || p.band) === band; }).map(function (p) {
           var left = pct(p.value - p.sigma);
           var width = (p.sigma * 2 / span * 100).toFixed(2);
-          // One total uncertainty bar (stat and syst in quadrature), as Asplund+2021 quote it.
+          // One uncertainty bar, as Asplund+2021 quote it (scatter, 3D, NLTE).
           var totalBar = '<i class="solar-935-stat" style="left:' + left + '%;width:' + width + '%"></i>';
           var metadata = (p.lineCount != null ? 'n=' + p.lineCount + ' · ' : '') + (p.telluric || 'telluric: not declared');
           return '<div class="solar-935-row"><span>' + esc(p.band + ' · ' + readableProduct(p)) + '<small>' + esc(metadata) + '</small></span>' +
@@ -122,7 +122,7 @@
         }).join('');
         return '<div class="solar-935-band-heading"><strong>' + esc(bandLabel) + '</strong><span>' + bandRefs + '</span></div>' + rows;
       }).join('') + '</div>' +
-      '<div class="solar-935-legend"><span><i class="solar-935-key-ref"></i>literature interval</span><span><i class="solar-935-key-stat"></i>total σ (statistical and systematic combined)</span></div>';
+      '<div class="solar-935-legend"><span><i class="solar-935-key-ref"></i>literature interval</span><span><i class="solar-935-key-stat"></i>σ as Asplund 2021 quote it</span></div>';
   }
 
   function diagnostics(records) {
@@ -639,7 +639,7 @@
         '<p class="solar-table-note">Each matrix cell retains its band and instrument identity. Empty cells are gaps in the committed Al product set, not inferred non-detections.</p>' +
         '<h4 class="solar-subhead">Uncertainty by product</h4>' +
         '<div class="solar-error-plot">' + plotRows(alProducts, [alEvidence.reference], { axisLabel: 'A(Al)' }) + '</div>' +
-        '<p class="solar-table-note">Bars show the total σ: statistical and systematic combined, as Asplund et al. 2021 quote it.</p>' +
+        '<p class="solar-table-note">Bars show the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex).</p>' +
         '<h4 class="solar-subhead">RYA-935 provenance</h4>' +
         '<p class="solar-copy">Values, line counts, instrument labels, and error components are read from the committed RYA-935 live status artifact. The shared <a href="/assets/data/rya935/live_tracker.html">full tracker</a> remains available for holding and telluric detail.</p>' +
       '</article>';

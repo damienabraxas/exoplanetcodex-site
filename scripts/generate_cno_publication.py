@@ -18,7 +18,7 @@ import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
 from cno_references import reconcile, render_references, SUPPLEMENT
-from cno_selection import (ANCHOR_INSTRUMENT_OVERRIDE, BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
+from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
                            fill_grades, headline, rank_key, systematic, total_sigma)
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,8 +54,8 @@ CONTEXT = {
     'N': 'The nitrogen strategy uses red-optical N I as the primary atomic route, with NH providing an independent molecular check and CN a carbon-dependent cross-check. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
     'O': 'Oxygen is traced by forbidden [O I], permitted O I and molecular OH indicators where available. Blends, departures from LTE and atmospheric structure affect these families differently, so their results retain separate identities.'}
 GUIDE = ('Each row is one independent product, preserving its band, holding, engine, indicator and line set. '
-         'Engines and indicator families are never averaged. Each bar is the total uncertainty -- the statistical and '
-         'systematic terms combined in quadrature, as Asplund et al. 2021 and Lodders et al. 2025 quote it. The full error budget remains attached to the row. '
+         'Engines and indicator families are never averaged. Each bar is the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex). '
+         'Atomic-data and observational terms are not in the bar, as in Asplund; they stay in the full error budget attached to the row. '
          'Grades describe the supplied line-pool provenance, not engine quality; evaluated theoretical CNO oscillator strengths are not relabelled as laboratory evidence. '
          'Quarantined, failed and unconstrained fits have no abundance mark. Experimental products remain explicitly not adopted. '
          'Literature references provide context, never tuning targets.')
@@ -90,16 +90,16 @@ def landmark(element, products):
     method where we have its recipe (RYA-1232 families for C/N/O; RYA-1233 line set for
     Si/Al); otherwise the best single product, marked as such (`kind: best_product`)."""
     from cno_selection import literature_headline, anchor_product
-    best = anchor_product(products, element)
-    if best is not None:
-        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
-                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product, else CRIRES+ or Kitt Peak (the Fe anchor rule)',
-                'families': [{'family': best.get('band'), 'A': float(best['A']),
-                              'sigma': float(total_sigma(best)), 'product': best}],
-                'missing': []}
     mark = literature_headline(products, element)
     if mark is not None:
         return mark
+    best = anchor_product(products, element)
+    if best is not None:
+        return {'element': element, 'A': float(best['A']), 'sigma': float(total_sigma(best)),
+                'kind': 'anchor', 'rule': 'the best HARPS Reference Grade product, else CRIRES+ or Kitt Peak',
+                'families': [{'family': best.get('band'), 'A': float(best['A']),
+                              'sigma': float(total_sigma(best)), 'product': best}],
+                'missing': []}
     best = headline(products, element)
     if best is None:
         return None
@@ -686,20 +686,13 @@ def build(science, element, selectors, site=ROOT):
             method_html = (f'<p>Measured the way Asplund, Amarsi &amp; Grevesse (2021) measure it: '
                            f'{esc(mark["rule"])}.</p>')
         elif kind == 'anchor' and mark['families'][0]['product'].get('holding') == 'solar_harps_molecfit_corrected':
-            method_html = ('<p>Our best HARPS product, chosen the same way as for iron: the Reference '
-                           'Grade analysis with the most complete treatment, then the most lines. HARPS is '
-                           'the instrument we use for the stars that follow, so the Sun is anchored on it. '
-                           'Products and engines are not averaged together.</p>')
-        elif kind == 'anchor' and element in ANCHOR_INSTRUMENT_OVERRIDE:
-            method_html = ('<p>HARPS reaches only two of these lines, and its continuum placement there '
-                           'is less certain than on the Kitt Peak atlas, so this is our Kitt Peak product on '
-                           'the same lines with the same treatment. Products and engines are not averaged '
-                           'together.</p>')
+            method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can repeat for '
+                           'this element, so this is our best HARPS product: the Reference Grade analysis with '
+                           'the most complete treatment, then the most lines.</p>')
         elif kind == 'anchor':
-            method_html = ('<p>HARPS has no Reference Grade product for this element, so this is our best '
-                           'Reference Grade product from CRIRES+ or Kitt Peak, chosen the same way: the most '
-                           'complete treatment, then the most lines. Products and engines are not averaged '
-                           'together.</p>')
+            method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can repeat for '
+                           'this element and HARPS has no Reference Grade product, so this is our best '
+                           'Reference Grade product from CRIRES+ or Kitt Peak.</p>')
         elif kind == 'best_product':
             method_html = ('<p>Asplund, Amarsi &amp; Grevesse (2021) give no line recipe we can '
                            'repeat for this element, so this is our best single product.</p>')
