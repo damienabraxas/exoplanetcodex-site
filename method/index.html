@@ -427,17 +427,42 @@
         <div class="method-section-header">
           <p class="method-eyebrow">Section 07</p>
           <h2 class="method-section-title">Uncertainty</h2>
-          <p class="method-intro">A number without an honest error bar cannot be compared with anything. Our error bar has two parts. The statistical part is how much the lines scatter. The systematic part is how much the answer moves when we change a choice we had to make.</p>
+          <p class="method-intro">A number without an honest error bar cannot be compared with anything. Each result has two layers. The error bar we show is worked out the way Asplund, Amarsi &amp; Grevesse (2021) work out theirs, so our numbers and theirs can be compared directly. Behind it sits a much longer check of everything else that could move the answer. A result that fails that check is not published at all.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Statistical</h3>
-          <p class="method-intro">With several lines, the statistical error is the standard error of the mean: the scatter between lines divided by the square root of their number. With one or two lines there is no scatter to measure. Then we use how sharply the fit's quality worsens as the abundance moves away from the best value.</p>
+          <h3 class="method-subsection-title">The error bar we show</h3>
+          <p class="method-intro">It has three parts, added in quadrature (the square root of the sum of the squares):</p>
+          <div class="method-table-wrap">
+            <table class="method-table">
+              <thead><tr><th>Part</th><th>What it is</th></tr></thead>
+              <tbody>
+                <tr><td>Statistical</td><td>How much the lines disagree with each other: their scatter divided by the square root of their number. With one or two lines there is no scatter to measure, so we use how sharply the fit gets worse as the abundance moves away from the best value.</td></tr>
+                <tr><td>3D model</td><td>Half of how much the answer changes between model atmospheres, including the change from a simple layered model to a full 3D model of the Sun's churning surface.</td></tr>
+                <tr><td>NLTE</td><td>Half of the NLTE correction, and never less than 0.03 dex, even where the correction is small or not calculated.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="method-intro">As in Asplund et al. (2021), errors in the atomic data (gf values) are not part of this bar. They are measured and checked in the longer list below.</p>
         </div>
 
         <div class="method-subsection">
-          <h3 class="method-subsection-title">Systematic</h3>
-          <p class="method-intro">For each systematic term we re-run the same lines with one thing changed, and record how far the answer moves. Each result carries every term below. If any one is missing, the result is held back and no error bar is published.</p>
+          <h3 class="method-subsection-title">Molecules and the 3D model</h3>
+          <p class="method-intro">Carbon, nitrogen and oxygen are also measured from molecules such as CH, CN, CO and OH. Molecules do not need an NLTE term. Instead, a molecule's strength depends on both of its elements, so the uncertainty in the other element takes that place (Amarsi et al. 2021).</p>
+          <p class="method-intro">Asplund and Amarsi calculated these molecular lines in full 3D, using simulations of the solar surface and their own software, which is not public. Our programs work with layered (1D) models, so we cannot repeat that calculation. They did publish how far the answer moves between 3D and 1D for each band of each molecule, measured on the same lines we use. We take that published difference for the same band: CH in the G band moves up 0.066 dex, CO near 2.3 microns moves down 0.142, CN in the near-infrared down 0.060. It does two things. Half of it goes into the 3D part of the error bar, which is never smaller than the spread Amarsi found across their four model atmospheres. And when results are combined into one number (below), it puts our 1D result on the same 3D footing as theirs. The result's own measured value is never changed. The page shows both.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">Combining results into one number</h3>
+          <p class="method-intro">For carbon, nitrogen and oxygen the top number combines the different kinds of measurement, as Asplund et al. (2021) do. Each kind is represented by our best result for it, on the 3D footing described above.</p>
+          <p class="method-intro">Carbon and oxygen take a weighted average, where a result with a smaller error bar counts for more. The statistical parts shrink as results are added, because they are independent. The model parts do not shrink, because every result shares the same model of the Sun (Amarsi et al. 2021).</p>
+          <p class="method-intro">Nitrogen takes the plain average of the atomic lines and the molecules. Its error bar is half the gap between those two, or their own error bars combined, whichever is larger. When the two agree closely, half the gap alone would claim more precision than either measurement has.</p>
+          <p class="method-intro">One term Amarsi et al. (2021) include for molecules is not in our bar yet: how much the answer drifts with a line's wavelength or strength across a band. Measuring it needs a separate answer for each line, and our molecular fits give one answer for the whole band.</p>
+        </div>
+
+        <div class="method-subsection">
+          <h3 class="method-subsection-title">The full check behind each result</h3>
+          <p class="method-intro">For every term below we re-run the same lines with one thing changed and record how far the answer moves. Each result has to carry every term. If any one is missing, the result is held back and nothing is published.</p>
           <div class="method-table-wrap">
             <table class="method-table">
               <thead><tr><th>Term</th><th>What we change or check</th></tr></thead>
@@ -460,18 +485,13 @@
               </tbody>
             </table>
           </div>
-          <p class="method-intro">Some terms do not apply to every result. Pseudo-continuum is zero outside the near-UV, for example. For the Sun, temperature, gravity and metal content are known so well that those terms come out at zero. Microturbulence is not, and is measured. The terms are then added in quadrature (as the square root of the sum of squares), together with the statistical part, allowing for any that move together.</p>
+          <p class="method-intro">Some terms do not apply to every result. Pseudo-continuum is zero outside the near-UV, for example. For the Sun, temperature, gravity and metal content are known so well that those terms come out at zero. Microturbulence is not, and is measured. The full list is kept with every result and can be downloaded with it.</p>
         </div>
 
         <div class="method-subsection">
           <h3 class="method-subsection-title">gf errors that move together</h3>
           <p class="method-intro">Laboratory gf values usually come from two measurements: how long an excited atom lives, and how its decay splits between lines. The lifetime sets an overall scale shared by every line from that source. If it is off, all those lines are off in the same direction, and averaging more of them does not help. The other part of each line's error is its own, and does average down.</p>
           <p class="method-intro">So for each gf source we record which kind of error it carries. The shared scale is counted once. The per-line part shrinks with the number of lines. A source we have not yet reviewed is treated the cautious way, as fully shared.</p>
-        </div>
-
-        <div class="method-callout">
-          <p class="method-callout-title">How Asplund et al. (2021) did it</p>
-          <p>For comparison, the published solar analysis used a weighted standard error of the mean, or the fit quality for one or two lines. To that they added three systematic terms in quadrature: half the difference between two model atmospheres, half the difference between full 3D and ⟨3D⟩, and half the NLTE correction (at least 0.03 dex where no NLTE calculation exists). They say atomic data errors were generally not included. Our budget is built the same way, with more terms, and includes gf errors.</p>
         </div>
       </section>
 
