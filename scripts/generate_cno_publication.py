@@ -51,10 +51,10 @@ CONTEXT = {
            'sets of Deshmukh et al. 2022 and Elgueta et al. 2026 on Pehlivan Rhodin et al. 2024 '
            'oscillator strengths. Each set, spectrum and treatment remains a separate product.'),
     'C': 'Carbon is traced by atomic C I, including forbidden [C I], and molecular CH, C₂ and CO indicators. Each probes different line formation and molecular-equilibrium sensitivities. Indicator families and atmospheric treatments remain separate products.',
-    'N': 'The nitrogen strategy uses red-optical N I as the primary atomic route, with NH providing an independent molecular check and CN a carbon-dependent cross-check. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
+    'N': 'Nitrogen is traced by atomic N I in the red-optical and by molecular CN in the near-infrared. NH, the other molecule Asplund et al. 2021 use, has no usable band in our spectra. The top number is the plain mean of the atomic and molecular results, as theirs is. An unresolved or unconstrained fit supplies no adopted Solar nitrogen abundance.',
     'O': 'Oxygen is traced by forbidden [O I], permitted O I and molecular OH indicators where available. Blends, departures from LTE and atmospheric structure affect these families differently, so their results retain separate identities.'}
 GUIDE = ('Each row is one independent product, preserving its band, holding, engine, indicator and line set. '
-         'Engines and indicator families are never averaged. Each bar is the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex). '
+         'Engines and indicator families are never averaged. Each bar is the uncertainty as Asplund et al. 2021 quote it: line-to-line scatter, the 3D-model term and the NLTE term (at least 0.03 dex). For a molecule the NLTE term is replaced by its dependence on the other element, and the 3D term comes from the 3D-to-1D difference Amarsi et al. 2021 publish for the same band. '
          'Atomic-data and observational terms are not in the bar, as in Asplund; they stay in the full error budget attached to the row. '
          'Grades describe the supplied line-pool provenance, not engine quality; evaluated theoretical CNO oscillator strengths are not relabelled as laboratory evidence. '
          'Quarantined, failed and unconstrained fits have no abundance mark. Experimental products remain explicitly not adopted. '
@@ -211,8 +211,8 @@ def recipe(element, products):
             'The headline at the top is the Asplund-grade product: a published '
             'line set, the most complete treatment, then the most lines.',
             'The nitrogen headline follows Asplund et al. 2021 Sect. 2.3: '
-            'the atomic–molecular mean and half-separation uncertainty. '
-            'This estimate is separate from the individual product budgets.')
+            'the atomic–molecular mean, with an uncertainty that is the larger of '
+            'half their separation and the two product errors combined.')
     groups = {}
     for p in products:
         groups.setdefault((p['band'], str(p.get('selector') or '')), []).append(p)
@@ -496,11 +496,9 @@ PRELIMINARY = {
           'N I after empirically rescaling the CN blends, and Lodders, Bergemann & Palme '
           '2025 adopt 7.94 ± 0.11 from the two least-blended lines. The combined nitrogen '
           'headline follows Asplund et al. 2021 Sect. 2.3: the mean of the atomic and '
-          'molecular results, with uncertainty equal to half their separation. This '
-          'indicator-disagreement estimate does not propagate the individual error '
-          'budgets. CN blending, continuum and telluric terms remain in those budgets; '
-          'the smaller half-separation does not establish greater accuracy than the '
-          'literature result.'),
+          'molecular results. Its uncertainty is the larger of half their separation '
+          'and the two product errors combined, so the combined bar is never smaller '
+          'than the individual budgets (CN blending, continuum, telluric) support.'),
 }
 
 #: Spectral order, matching generate_fe_publication.BANDS. The cards are colour-coded by
@@ -694,7 +692,9 @@ def build(science, element, selectors, site=ROOT):
         caveat = PRELIMINARY.get(element)
         caveat_html = (f'<p class="fe-anchor-caveat">{esc(caveat)}</p>') if caveat else ''
         fam_html = ''.join(
-            f'<li>{esc(f["family"])}: {f["A"]:.3f} &plusmn; {f["sigma"]:.3f} &middot; '
+            f'<li>{esc(f["family"])}: {f["A"]:.3f} &plusmn; {f["sigma"]:.3f}'
+            + (f' (1D {f["A"] - f["shift"]:.3f} {f["shift"]:+.3f} to 3D)' if f.get("shift") else '')
+            + f' &middot; '
             f'{esc(holding_name(f["product"]))} &middot; {esc(f["product"]["band"])} &middot; '
             f'{esc(product_label(f["product"]))}</li>' for f in mark['families'])
         miss = (f'<p>Not measurable in our spectra: {esc(", ".join(mark["missing"]))}.</p>'

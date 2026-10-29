@@ -55,12 +55,27 @@ class SelectionTests(unittest.TestCase):
         mark = landmark('N', rows)
         self.assertEqual(mark, literature_headline(rows, 'N'))
         self.assertAlmostEqual(mark['A'], 7.885)
-        self.assertAlmostEqual(mark['sigma'], 0.019)
         self.assertEqual(mark['missing'], ['NH'])
-        # Nitrogen's published recipe measures family disagreement, not propagated errors.
+        # RYA-1317: half the separation (0.019) is only a floor; the propagated product
+        # errors (hypot of two 0.054 bars / 2 = 0.038) are larger here and are quoted.
+        self.assertAlmostEqual(mark['sigma'], (2 * (0.02 ** 2 + 0.05 ** 2)) ** 0.5 / 2, places=6)
         for row in rows:
             row['sigma_syst'] *= 2
-        self.assertAlmostEqual(landmark('N', rows)['sigma'], 0.019)
+        self.assertGreater(landmark('N', rows)['sigma'], mark['sigma'])
+
+    def test_1d_families_combine_on_the_3d_scale_and_n_takes_the_larger_error(self):
+        # RYA-1317: CN 1D 7.866 is 7.806 on Asplund's 3D scale; half the range (0.049) and
+        # the propagated error (hypot(0.03, 0.09)/2 = 0.047) -- the larger is quoted.
+        atom = p(display='Synth · 3D-NLTE · Amarsi', A=7.904, sigma_stat=0.03, sigma_syst=0.0)
+        cn = p(selector='MOL-CN_AX_IR', band='NIR', A=7.866, sigma_stat=0.09, sigma_syst=0.0,
+               asplund_3d_shift=-0.060)
+        mark = literature_headline([atom, cn], 'N')
+        self.assertAlmostEqual(mark['A'], (7.904 + 7.806) / 2, places=6)
+        self.assertAlmostEqual(mark['sigma'], 0.049, places=6)
+        self.assertEqual(cn['A'], 7.866)                     # the product itself never moves
+        tight = dict(cn, A=7.904 + 0.060)                     # families agree exactly
+        self.assertAlmostEqual(literature_headline([atom, tight], 'N')['sigma'],
+                               (0.03 ** 2 + 0.09 ** 2) ** 0.5 / 2, places=6)
 
     def test_rank_is_deterministic_on_ties(self):
         a, b = p(holding='a'), p(holding='b')
