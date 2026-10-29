@@ -72,11 +72,13 @@ class ForestJoinTests(unittest.TestCase):
         self.assertTrue(paired, 'no repeated (ion, band, instrument, holding) group in the '
                                 'feed — this suite is not testing anything')
         for key, n in paired.items():
-            pools = sorted(s.get('line_set') for s in self.feed['plot_grid']['sections']
+            # RYA-1310: the continuum variant (local-continuum Deep pool) also separates sections
+            pools = sorted((s.get('line_set'), s.get('variant') or '')
+                           for s in self.feed['plot_grid']['sections']
                            if (s['ion'], s['band'], s['instrument'], s.get('holding')) == key)
             self.assertEqual(len(set(pools)), n,
                              f'{key} repeats {n} times but has {len(set(pools))} distinct '
-                             f'line_set values, so something other than the pool differs')
+                             f'(line_set, variant) values, so something other than the pool differs')
 
     def test_no_plot_grid_section_resolves_zero_products(self):
         """🔴 THE DEFECT ITSELF. A section that resolves nothing is a broken join, never
