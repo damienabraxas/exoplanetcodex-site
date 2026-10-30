@@ -96,6 +96,8 @@ def render_pdf(report, output, site_root):
         if node.name == 'br': return '<br/>'
         content = ''.join(markup(c) for c in node.children)
         if node.name in ['b', 'strong']: return '<b>'+content+'</b>'
+        if node.name == 'small' and node.find_parent('table'):
+            return '<br/>' + content
         if node.name == 'a':
             url = urljoin(report['site_url'], node.get('href', ''))
             return '<link href="'+escape(url, quote=True)+'" color="#176a94">'+content+'</link>'
@@ -152,9 +154,26 @@ def render_pdf(report, output, site_root):
     def walk(node):
         if isinstance(node, NavigableString): return
         classes = node.get('class', [])
+        if 'appendix-table-hint' in classes:
+            return  # Keyboard/scroll guidance is specific to the website.
         if 'product-forest' in classes:
             forest(node); return
         if node.name == 'table':
+            if 'appendix-table--measurement' in classes:
+                # Seven screen columns do not fit on A4 at readable type sizes.
+                # Print each source row as labelled fields, with all values and
+                # provenance visible and intact rather than squeezing numbers.
+                headers = node.thead.find_all('th')
+                for row in node.tbody.find_all('tr', recursive=False):
+                    fields = row.find_all(['th', 'td'], recursive=False)
+                    data = [[paragraph(h, small), paragraph(c, small)] for h, c in zip(headers, fields)]
+                    t = Table(data, colWidths=[110, width - 110], hAlign='LEFT', repeatRows=2)
+                    t.setStyle(TableStyle([
+                        ('BACKGROUND', (0, 0), (0, -1), colors.HexColor('#edf2f5')),
+                        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+                        ('LINEBELOW', (0, 0), (-1, -1), .25, colors.HexColor('#e1e6e9'))]))
+                    story.extend([t, Spacer(1, 8)])
+                return
             # HTML tables (Line grades, How this was measured, Excluded lines) were walked
             # cell-less and vanished from the PDF; render them as tables.
             data = [[paragraph(c, small) for c in tr.find_all(['th', 'td'], recursive=False)]
@@ -170,6 +189,12 @@ def render_pdf(report, output, site_root):
                 col = lambda i: [r[i] for r in cells if len(r) > i]
                 floor = [max((pdfmetrics.stringWidth(w, 'Appendix', small.fontSize) for s in col(i)
                               for w in s.split()), default=0) + 10 for i in range(n)]
+                # Long provenance/engine tokens in a seven-column summary may
+                # exceed the printable width even before spare space is shared.
+                # Paragraphs can wrap long words; the table must stay on the page.
+                if sum(floor) > width:
+                    total_floor = sum(floor)
+                    floor = [f * width / total_floor for f in floor]
                 share = [min(60, max((len(s) for s in col(i)), default=1)) for i in range(n)]
                 spare = max(0.0, width - sum(floor))
                 widths = [f + spare * s / sum(share) for f, s in zip(floor, share)]

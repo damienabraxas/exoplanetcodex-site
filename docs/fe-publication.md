@@ -87,3 +87,7 @@ for every line (RYA-1211/1212). Sources are drawn from `bibliography.csv`, with
 additional laboratory citations admitted only when wavelength, ion, excitation
 and gf match resolved exported line evidence. Historical dossier values are not
 used as current abundance measurements.
+# Shared tables
+
+See [scientific appendix tables](appendix-tables.md) for the common grade/measurement
+components, PDF record layout and presentation-only snapshot refresh procedure.

@@ -23,7 +23,7 @@
   "reference_count": 11,
   "template_sha256": "c84e28a1303edf475a9e6cb36bd617e998fb36e8e79b7c0c096b82e043a8969b",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
+  "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
     "products": 56,
@@ -38,5 +38,6 @@
     "archive": 165
   },
   "highlight_selectors": [],
-  "status": "products"
+  "status": "products",
+  "table_renderer_sha256": "b7ecb0d093761b227e8d2884d62dbe54362254ee3df3ead9eed8445e4f4b58db"
 }

@@ -1,0 +1,59 @@
+{
+  "base": "64fe15e",
+  "reports": [
+    {
+      "report": "assets/data/fe-publication/solar_fe_i_appendix.report.json",
+      "product_count": 183,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "668258fe7ac5b9f4fb0836eb00d9fc857c0ed693d589563e2e7c586b76f54fc2"
+    },
+    {
+      "report": "assets/data/fe-publication/solar_fe_ii_appendix.report.json",
+      "product_count": 50,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "668258fe7ac5b9f4fb0836eb00d9fc857c0ed693d589563e2e7c586b76f54fc2"
+    },
+    {
+      "report": "assets/data/cno-publication/Al/report.json",
+      "product_count": 26,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "c5cc06e65a2e5771861960db7708634a890ac640950364de3422e3c0c1bcef9e"
+    },
+    {
+      "report": "assets/data/cno-publication/C/report.json",
+      "product_count": 60,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "f6494f1efb32482edd6c5332e8edacfd09389d35ab64950fc7c44c1060146110"
+    },
+    {
+      "report": "assets/data/cno-publication/Mg/report.json",
+      "product_count": 193,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "4541bc29c3c0e7626d31f18a6a09acbcf49f14c87ed09c01510d565cb59cb01e"
+    },
+    {
+      "report": "assets/data/cno-publication/N/report.json",
+      "product_count": 12,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "e0c02e52a4ef9818865ae7543d9a08169ff453580c49b3c6dacad3ce303a747e"
+    },
+    {
+      "report": "assets/data/cno-publication/Na/report.json",
+      "product_count": 87,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "fc8c26961fb6b5b1c1edd87c59ff559dce565ec90301bfb4cbc03807d3c34c34"
+    },
+    {
+      "report": "assets/data/cno-publication/O/report.json",
+      "product_count": 28,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "1cb9f530ec8ef1256b0ea62505c70d49cf4960b3bd9542e0234cec10b48150f8"
+    },
+    {
+      "report": "assets/data/cno-publication/Si/report.json",
+      "product_count": 56,
+      "scientific_fields_unchanged": true,
+      "source_feed_sha256": "c410d23996df5c4ea8521d52052c547837348d49f209b44819cc281d1147cdb9"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from appendix_tables import standardize_tables, TABLE_RENDERER_SHA256
 
 import matplotlib
 matplotlib.use('Agg')
@@ -393,6 +394,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     pdf_link = f'<p><a download href="/assets/docs/appendices/{pdf_name}">Download PDF — Solar Fe {ion} appendix</a></p>'
     # This semantic report is the single rendered body consumed by both exports.
     from element_appendix_pdf import make_report, render_pdf
+    body = standardize_tables(body, own, 'Fe', ion)
+    meta['table_renderer_sha256'] = TABLE_RENDERER_SHA256
     report = make_report(f'Solar Fe {ion} appendix', 'Sun', 'Fe', ion, body, meta, own)
     report['references'] = references
     report['image_background'] = BG
@@ -471,6 +474,7 @@ def main():
                                     'data/linelists/linelist_solar.csv', 'data/reference/solar/CURRENT',
                                     'data/audit/rya515_fe_perline/fe2_blend_census.csv',
                                     'data/results/rya935/live_status.json']+[p[3] for p in plots]))}
+    meta['table_renderer_sha256'] = TABLE_RENDERER_SHA256
     (OUT / 'manifest.json').write_text(json.dumps(meta, indent=2)+'\n')
     for ion in ['I','II']:
         render_page(ion, products, feed, meta, REFERENCE, records, coverage, plots, saturation, science)
