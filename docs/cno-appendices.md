@@ -134,3 +134,7 @@ a conflicting MNRAS locator for Masseron2014, while the primary intake identifie
 A&A 571 A47; and a registered/sidecar model source is not proof that a particular
 feed value has received that treatment. Broader reference completeness must be
 reconciled again when new product/treatment families are admitted.
+# Shared tables
+
+See [scientific appendix tables](appendix-tables.md) for the common table renderer,
+design tokens, responsive behavior and presentation-only snapshot refresh procedure.

@@ -12,7 +12,7 @@
   "held_products": 42,
   "generator_sha256": "50cffd332922b8111ea15d4d7e6340d0226995127fca96e21eefe996fa4e4f0b",
   "pdf_generator": "scripts/element_appendix_pdf.py",
-  "pdf_generator_sha256": "f4a002497cc4e51a080716a86cc7fdbd725069d2e37bdf664ae0f1f5132f95c9",
+  "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "supplemental_sources": [
     "data/linelists/canonical_gf.csv",
@@ -25,5 +25,6 @@
     "data/catalog/line_curation_exclusions.csv",
     "data/results/rya1207/nearuv_molecular_lever.json",
     "data/products/solar/Fe.json"
-  ]
+  ],
+  "table_renderer_sha256": "b7ecb0d093761b227e8d2884d62dbe54362254ee3df3ead9eed8445e4f4b58db"
 }

@@ -17,6 +17,7 @@ import re
 import subprocess
 
 from element_appendix_pdf import make_report, render_pdf
+from appendix_tables import standardize_tables, TABLE_RENDERER_SHA256
 from cno_references import reconcile, render_references, SUPPLEMENT
 from cno_selection import (BAND_ORDER, REJECTED_SELECTORS, best_in_band, eligible_for_headline, statistical,
                            fill_grades, headline, rank_key, systematic, total_sigma)
@@ -765,6 +766,8 @@ def build(science, element, selectors, site=ROOT):
     body += section('References / Data & Model Sources', render_references(reference_bundle, base,
         label_of=lambda pid: (lambda p: p and f'{p["band"]} · {holding_name(p)} · {product_label(p)}')(
             by_pid.get(pid))))
+    body = standardize_tables(body, products, element)
+    meta['table_renderer_sha256'] = TABLE_RENDERER_SHA256
     report = make_report('Solar '+element+' appendix','Sun',element,'',body,meta,products)
     report['site_url'] = f'https://exoplanetcodex.org/systems/sol/elements/{element.lower()}/'
     report.update(references=refs, reference_bindings=reference_bundle["bindings"], product_sources=reference_bundle["product_sources"], visibility_audit=audit, highlighted_products=highlights)
@@ -782,6 +785,9 @@ def build(science, element, selectors, site=ROOT):
     template = re.sub(r'<p class="page-subtitle">.*?</p>',f'<p class="page-subtitle">{element} · products, publication readiness and reproducible evidence</p>',template)
     page=site/f'systems/sol/elements/{element.lower()}/index.html'
     page.parent.mkdir(parents=True,exist_ok=True)
+    css_version = digest((site/'assets/css/fe-publication.css').read_bytes())[:12]
+    template = re.sub(r'/assets/css/fe-publication\.css(?:\?[^" ]*)?',
+                      '/assets/css/fe-publication.css?v='+css_version, template)
     page.write_text(template)
     return meta
 

@@ -1,0 +1,23 @@
+...........FF.FF................................F....... [ 88%]
+.....F.                                                                  [100%]
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:488
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_cno_publication.py::GeneratedTests::test_counts_dispositions_and_numerical_blanks
+FAILED tests/test_cno_publication.py::GeneratedTests::test_pdf_readability_references_and_determinism
+FAILED tests/test_cno_publication.py::ReferenceTests::test_no_reference_promotion_or_cross_element_padding
+FAILED tests/test_cno_publication.py::ReferenceTests::test_pdf_includes_all_bibliography_records_and_role_notes
+FAILED tests/test_fe_publication.py::FePublicationTests::test_csv_is_lossless_and_tracker_reconciles
+FAILED tests/test_release_roadmap.py::ReleaseRoadmapTests::test_release_product_has_separate_alpha_centauri_progress
+6 failed, 57 passed, 5 warnings, 16 subtests passed in 7.76s
