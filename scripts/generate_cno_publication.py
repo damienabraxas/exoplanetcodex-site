@@ -26,13 +26,18 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Ca': ('Calcium is measured from neutral Ca I and ionized Ca II lines in the visible and '
+           'red-optical. The reference lines are the ten Ca I and five Ca II lines Asplund et al. '
+           '2021 used, with the oscillator strengths they adopted; a wider set of lines with '
+           'laboratory oscillator strengths and the Codex\'s own line selection are shown as separate '
+           'products. No usable calcium line was found in the near-ultraviolet or the infrared.'),
     'Na': ('Sodium is traced by neutral Na I lines from the near-ultraviolet to the K band. The reference '
            'lines are the five Asplund et al. 2021 used (4751, 5148, 6154, 6160 and 10746 \u00c5), with '
            'the oscillator strengths they adopted. Na I departs from LTE, so each spectrum also carries '
@@ -129,6 +134,7 @@ INDICATOR_NAMES = {
     'SET-MG_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-AL_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-NA_AGSS21': '{el} · Asplund et al. 2021 lines',
+    'SET-CA_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-SI_DESHMUKH2022': '{el} · Deshmukh et al. 2022 lines',
     'SET-SI_ELGUETA2026': '{el} · Elgueta et al. 2026 lines',
 }
@@ -480,6 +486,11 @@ ASPLUND2021_SIGMA = {el: s for el, (_v, s) in _AGSS21_TABLE2.items()}
 #: Bergemann & Palme 2025 decline to use, adopting 7.94 +/- 0.11 from the two least-blended
 #: lines instead.
 PRELIMINARY = {
+    'Ca': ('The Ca I value sits about 0.1 dex above Asplund et al. 2021. They fit the light from the '
+           'centre of the solar disc; we fit the light of the whole disc, as we must for other stars. '
+           'Fitting the disc centre with the same lines and code gives their value, so the difference '
+           'comes from the strong lines\' edge-of-disc light, not from the line data. The Ca II lines '
+           'agree with Asplund et al. 2021.'),
     'Na': ('The three-dimensional non-LTE products apply published line-by-line corrections '
            '(Asplund et al. 2021; Canocchi et al. 2026) to our one-dimensional fits; they are not '
            'our own three-dimensional calculation. The H- and K-band products sit about 0.4 dex '
