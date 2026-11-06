@@ -21,15 +21,15 @@
       "status": "in_progress",
       "summary": "Reviewed elemental abundances for the Sun across the strongest valid wavelength regions and available engines.",
       "notes": [
-        "Published for the Sun: Fe (I and II), C, O, Si, N, Al, Na."
+        "Published for the Sun: Fe (I and II), C, O, Si, N, Al, Na, Ca."
       ],
       "targets": [
         {
           "target_id": "solar",
           "target_name": "Sun",
-          "complete_products": 8,
+          "complete_products": 9,
           "total_products": 27,
-          "progress_fraction": 0.296296,
+          "progress_fraction": 0.333333,
           "complete_product_ids": [
             "Fe",
             "Fe-II",
@@ -38,7 +38,8 @@
             "Si",
             "N",
             "Al",
-            "Na"
+            "Na",
+            "Ca"
           ],
           "gate": "current_publishable_product"
         }

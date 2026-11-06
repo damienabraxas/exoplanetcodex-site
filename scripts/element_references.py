@@ -131,6 +131,12 @@ def reconcile_atomic(science, element, feed, audit):
             note = ('Feed treatment: ' + t + '; Turbospectrum on the registered Gerber deck. '
                     'The product retains its own atmosphere and ion identity.')
             bind(subject, LAYER_ORDER[2], ['gerber2023'], note, ['pipeline/gerber_nlte.py'])
+        elif t in ('synth-mean3D-LTE-gerber-stagger', 'synth-mean3D-NLTE-gerber-stagger'):
+            keys += [ref('gerber2023'), ref('magic2013')]
+            note = ('Feed treatment: ' + t + '; Turbospectrum on the registered Gerber deck with the '
+                    'horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.')
+            bind(subject, LAYER_ORDER[2], ['gerber2023', 'magic2013'], note,
+                 ['pipeline/gerber_nlte.py'])
         elif t == '1D-LTE':
             keys.append(ref('gerber2023'))
             note = 'Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.'

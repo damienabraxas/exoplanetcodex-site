@@ -9223,12 +9223,19 @@ window.SOLAR_REPORT = {
       "symbol": "Ca",
       "ion": "I",
       "name": "Calcium",
-      "status": "Curation owed",
+      "status": "Published",
       "tier": "",
-      "method": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
+      "method": "harps VIS · SET-CA_AGSS21 · ENGINE-A-3DNLTE (Reference Grade, Ca.json v1.324)",
       "asplund": 6.3,
-      "measurementNote": "EW: 2 curated line(s); value HELD at gold tier 'owed' (RYA-522) — not a graded-cull blank",
-      "statusDetail": "curation-owed"
+      "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/ca/",
+      "primaryValue": {
+        "value": 6.405,
+        "sigmaTotal": 0.0491,
+        "lineCount": 10
+      },
+      "delta": 0.105,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 21,
