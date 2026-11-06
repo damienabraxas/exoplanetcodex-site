@@ -9043,11 +9043,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/c/",
       "primaryValue": {
-        "value": 8.5395,
-        "sigmaTotal": 0.0445,
+        "value": 8.5363,
+        "sigmaTotal": 0.0424,
         "lineCount": 425
       },
-      "delta": 0.0795,
+      "delta": 0.0763,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9057,16 +9057,16 @@ window.SOLAR_REPORT = {
       "name": "Nitrogen",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 combination of N I 7.904, CN 7.806 (N.json v1.80)",
+      "method": "Asplund+2021 combination of N I 7.894, CN 7.806 (N.json v1.80)",
       "asplund": 7.83,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/n/",
       "primaryValue": {
-        "value": 7.855,
-        "sigmaTotal": 0.049,
+        "value": 7.85,
+        "sigmaTotal": 0.0513,
         "lineCount": 217
       },
-      "delta": 0.025,
+      "delta": 0.02,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9081,11 +9081,11 @@ window.SOLAR_REPORT = {
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/o/",
       "primaryValue": {
-        "value": 8.7575,
-        "sigmaTotal": 0.0544,
+        "value": 8.7546,
+        "sigmaTotal": 0.0397,
         "lineCount": 5
       },
-      "delta": 0.0675,
+      "delta": 0.0646,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -9095,16 +9095,16 @@ window.SOLAR_REPORT = {
       "name": "Sodium",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 line set, 5 lines on kpno_solar_atlas: Na I VIS 6.291, Na I NIR 6.328 (Na.json v1.131)",
+      "method": "Asplund+2021 line set, 5 lines on kpno_solar_atlas: Na I VIS 6.291, Na I NIR 6.328 (Na.json v1.158)",
       "asplund": 6.22,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/na/",
       "primaryValue": {
-        "value": 6.3116,
-        "sigmaTotal": 0.0381,
+        "value": 6.3129,
+        "sigmaTotal": 0.0394,
         "lineCount": 5
       },
-      "delta": 0.0916,
+      "delta": 0.0929,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
