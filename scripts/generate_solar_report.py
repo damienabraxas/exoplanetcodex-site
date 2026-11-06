@@ -377,13 +377,14 @@ def main() -> None:
             # rather than being dropped from the table.
             "measurementNote": "" if value is not None else (row["method"] or ""),
         }
-        if symbol in ("Al", "C", "N", "O", "Si", "Mg", "Na", "Ca") and row["ion"] == "I":
+        if symbol in ("Al", "C", "N", "O", "Si", "Mg", "Na", "Ca", "Ti") and row["ion"] == "I":
             item["appendixPath"] = f"/systems/sol/elements/{symbol.lower()}/"
         required_selector = cno_selection.REQUIRED_FAMILY_SELECTORS.get(symbol)
         if required_selector and row["ion"] == "I":
             feed_path = science / f'data/products/solar/{symbol}.json'
-            products = json.loads(feed_path.read_text()).get('products', []) if feed_path.exists() else []
-            hold = cno_selection.headline_hold(products, symbol)
+            # not `products`: that name is the Fe rows' list, emitted below (RYA-1315)
+            family = json.loads(feed_path.read_text()).get('products', []) if feed_path.exists() else []
+            hold = cno_selection.headline_hold(family, symbol)
             if hold:
                 value = None
                 item['measurementNote'] = hold

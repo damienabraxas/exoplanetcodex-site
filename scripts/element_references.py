@@ -18,12 +18,19 @@ import yaml
 
 from cno_references import LAYER_ORDER
 
+#: Ti artifacts carry per-line provenance cells longer than csv's 128 KiB default.
+csv.field_size_limit(2**31 - 1)
+
 BIB = 'data/refs/bibliography.csv'
 SETS = 'data/reference/line_sets/REGISTRY.csv'
 #: A gf source's recorded LINEAGE: Amarsi & Asplund 2017 adopt Garz 1973 renormalised to
 #: O'Brian & Lawler 1991 lifetimes (bibliography row amarsi2017_si; RYA-1233 Garz Table 1).
 GF_LINEAGE = {'amarsi2017_si': ['garz1973', 'obrian1991']}
 ENGINE_A_GRID = 'amarsi2020_galah'
+#: Elements whose ENGINE-A grid is not the Amarsi 2020 GALAH one: (bibliography key, grid CSV,
+#: provenance file), as config/constants.py wires them in the science repo.
+ENGINE_A_GRIDS = {'Ti': ('mallinson2024', 'Ti_Mallinson2024_PySME.csv',
+                         'Ti_Mallinson2024_PySME.csv.prov.json')}
 
 
 def reconcile_atomic(science, element, feed, audit):
@@ -105,6 +112,11 @@ def reconcile_atomic(science, element, feed, audit):
             # declared source to the canonical bibliography record.
             if key is None and 'nist asd' in str(s).lower():
                 key = 'nist_asd'
+            # GES truncates the Lawler et al. 2013 bibcode (ApJS 205, 11) to '2013ApJS..';
+            # in canonical_gf it tags only Ti I lines, so it resolves there and nowhere else.
+            if key is None and str(s).strip() == '2013ApJS..' and element == 'Ti' \
+                    and str(p.get('ion')) == 'I':
+                key = 'lawler2013'
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]
@@ -142,12 +154,16 @@ def reconcile_atomic(science, element, feed, audit):
             note = 'Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.'
             bind(subject, LAYER_ORDER[2], ['gerber2023'], note, ['pipeline/band_products.py'])
         elif t == 'ENGINE-A':
-            keys.append(ref(ENGINE_A_GRID))
-            note = ('Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH '
-                    'departure grid via PySME (data/nlte_grids/' + element + '_Amarsi2020_PySME.csv).')
-            paths.add(f'data/nlte_grids/{element}_Amarsi2020_PySME.prov.json')
-            bind(subject, LAYER_ORDER[2], [ENGINE_A_GRID], note,
-                 [f'data/nlte_grids/{element}_Amarsi2020_PySME.prov.json'])
+            grid_key, grid_csv, grid_prov = ENGINE_A_GRIDS.get(
+                element, (ENGINE_A_GRID, f'{element}_Amarsi2020_PySME.csv',
+                          f'{element}_Amarsi2020_PySME.prov.json'))
+            keys.append(ref(grid_key))
+            grid_name = ('Mallinson et al. 2024' if grid_key == 'mallinson2024'
+                         else 'Amarsi 2020 GALAH')
+            note = ('Feed treatment: 1D NLTE, per-line correction from the ' + grid_name +
+                    ' departure grid via PySME (data/nlte_grids/' + grid_csv + ').')
+            paths.add(f'data/nlte_grids/{grid_prov}')
+            bind(subject, LAYER_ORDER[2], [grid_key], note, [f'data/nlte_grids/{grid_prov}'])
         else:
             note = 'Model reference unresolved for treatment ' + t
             if record['visible']:
