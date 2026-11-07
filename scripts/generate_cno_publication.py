@@ -37,7 +37,11 @@ CONTEXT = {
            'red-optical. The reference lines are the ten Ca I and five Ca II lines Asplund et al. '
            '2021 used, with the oscillator strengths they adopted; a wider set of lines with '
            'laboratory oscillator strengths and the Codex\'s own line selection are shown as separate '
-           'products. No usable calcium line was found in the near-ultraviolet or the infrared.'),
+           'products. In the infrared (Y and J bands, Kitt Peak and CRIRES+) no laboratory oscillator '
+           'strength exists, so the lines use values Elgueta et al. 2024 calibrated on Cepheid '
+           'stars, each with its own published uncertainty. No usable calcium line was found in the '
+           'near-ultraviolet, and none in the H and K bands has an oscillator strength that was not '
+           'itself tuned to the Sun.'),
     'Na': ('Sodium is traced by neutral Na I lines from the near-ultraviolet to the K band. The reference '
            'lines are the five Asplund et al. 2021 used (4751, 5148, 6154, 6160 and 10746 \u00c5), with '
            'the oscillator strengths they adopted. Na I departs from LTE, so each spectrum also carries '
@@ -490,7 +494,10 @@ PRELIMINARY = {
            'centre of the solar disc; we fit the light of the whole disc, as we must for other stars. '
            'Fitting the disc centre with the same lines and code gives their value, so the difference '
            'comes from the strong lines\' edge-of-disc light, not from the line data. The Ca II lines '
-           'agree with Asplund et al. 2021.'),
+           'agree with Asplund et al. 2021. The infrared values read about 0.1 dex higher still. '
+           'On iron lines that also have laboratory values, the Cepheid-calibrated oscillator '
+           'strengths sit about 0.14 dex low, which would push a calcium abundance up by about '
+           'that much; the infrared products are shown as measured, with that caveat.'),
     'Na': ('The three-dimensional non-LTE products apply published line-by-line corrections '
            '(Asplund et al. 2021; Canocchi et al. 2026) to our one-dimensional fits; they are not '
            'our own three-dimensional calculation. The H- and K-band products sit about 0.4 dex '
