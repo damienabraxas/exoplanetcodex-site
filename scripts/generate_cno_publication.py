@@ -26,13 +26,19 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Ti': ('Titanium is measured from neutral Ti I and ionized Ti II lines from the near-ultraviolet '
+           'to the near-infrared. The reference lines are the Ti I and Ti II lines Asplund et al. 2021 '
+           'used, with the oscillator strengths they adopted; a wider set of lines with laboratory '
+           'oscillator strengths and the Codex\'s own line selection are shown as separate products. '
+           'Ti I departs from LTE, so each spectrum also carries non-LTE products. No titanium line in '
+           'the H or K band has a published oscillator-strength uncertainty, so those bands are gaps.'),
     'Ca': ('Calcium is measured from neutral Ca I and ionized Ca II lines in the visible and '
            'red-optical. The reference lines are the ten Ca I and five Ca II lines Asplund et al. '
            '2021 used, with the oscillator strengths they adopted; a wider set of lines with '
@@ -135,6 +141,7 @@ INDICATOR_NAMES = {
     'SET-AL_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-NA_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-CA_AGSS21': '{el} · Asplund et al. 2021 lines',
+    'SET-TI_AGSS21': '{el} · Asplund et al. 2021 lines',
     'SET-SI_DESHMUKH2022': '{el} · Deshmukh et al. 2022 lines',
     'SET-SI_ELGUETA2026': '{el} · Elgueta et al. 2026 lines',
 }

@@ -1,0 +1,43 @@
+{
+  "generator": "scripts/generate_cno_publication.py",
+  "version": "1.0.0",
+  "source_commit": "8efedb8e5221f931d247c2b7b3b1af2cee80decf",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/8efedb8e5221f931d247c2b7b3b1af2cee80decf",
+  "generated_at": "2026-11-07T04:26:11-07:00",
+  "timestamp_basis": "source commit timestamp (deterministic build)",
+  "feed_version": "1.343",
+  "feed_updated_at": "2026-11-07T11:24:59Z",
+  "feed_sha256": "b548819f016648d78d2d1fe6ec490245a900125035f8e92048fbc6ad23005f59",
+  "source_sha256": {
+    "data/products/solar/Ti.json": "b548819f016648d78d2d1fe6ec490245a900125035f8e92048fbc6ad23005f59",
+    "data/refs/bibliography.csv": "2ac0af5996352abd8d1cead20c0cdcd4c3d1e1d7485502fa1b3735957ec1e598",
+    "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
+    "data/reference/line_sets/REGISTRY.csv": "01bf38b20cbc5f0c9892612aef489e37da8c287a4366335801ed427e6c516dd0",
+    "data/reference/gf_error_model.csv": "f3581797aba88381f8ba1c52eba355d2d898fec680a104b680396bae0d25c875",
+    "data/reference/litscan/Ti.yaml": "6ab3963e6d69302dddf5a2d7f26a12a7fd0b3e0aec907733e18005d00d7dc208",
+    "data/nlte_grids/Ti_Mallinson2024_PySME.csv.prov.json": "7bfc5d0bf5bf2c203e496fb8d5e286a705cc4155bf726d377aa624290b9e050d"
+  },
+  "generator_sha256": "edfb6b0f764584e5b73916bfee1fb0b06e27b754a63a4e54c3665e20f5be6d94",
+  "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
+  "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
+  "reference_count": 10,
+  "template_sha256": "37d1bc23076752c6e319a6020628ed0790713a646f3bc014b14ddf7d388da7cf",
+  "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
+  "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
+  "counts": {
+    "products": 330,
+    "quarantine": 12,
+    "archive": 0,
+    "superseded": 0
+  },
+  "visible_products": 330,
+  "dispositions": {
+    "products": 220,
+    "EXPERIMENTAL-NOT-ADOPTED": 110,
+    "quarantine": 12
+  },
+  "highlight_selectors": [],
+  "status": "products",
+  "table_renderer_sha256": "b7ecb0d093761b227e8d2884d62dbe54362254ee3df3ead9eed8445e4f4b58db"
+}
