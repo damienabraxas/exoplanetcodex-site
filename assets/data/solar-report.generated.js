@@ -1739,7 +1739,7 @@ window.SOLAR_REPORT = {
       "name": "Titanium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ti.json v1.342)",
+      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ti.json v1.343)",
       "asplund": 4.97,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/ti/",

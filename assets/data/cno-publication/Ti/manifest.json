@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "4cbdd50cb115757aeacaa83122f1ae28489868b8",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/4cbdd50cb115757aeacaa83122f1ae28489868b8",
-  "generated_at": "2026-11-06T18:07:59-07:00",
+  "source_commit": "8efedb8e5221f931d247c2b7b3b1af2cee80decf",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/8efedb8e5221f931d247c2b7b3b1af2cee80decf",
+  "generated_at": "2026-11-07T04:26:11-07:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.342",
-  "feed_updated_at": "2026-11-06T15:00:11Z",
-  "feed_sha256": "56996f31d23041cce17005e9346d92057e45d7a67eee8de9d95cb2b07448038c",
+  "feed_version": "1.343",
+  "feed_updated_at": "2026-11-07T11:24:59Z",
+  "feed_sha256": "b548819f016648d78d2d1fe6ec490245a900125035f8e92048fbc6ad23005f59",
   "source_sha256": {
-    "data/products/solar/Ti.json": "56996f31d23041cce17005e9346d92057e45d7a67eee8de9d95cb2b07448038c",
+    "data/products/solar/Ti.json": "b548819f016648d78d2d1fe6ec490245a900125035f8e92048fbc6ad23005f59",
     "data/refs/bibliography.csv": "2ac0af5996352abd8d1cead20c0cdcd4c3d1e1d7485502fa1b3735957ec1e598",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "01bf38b20cbc5f0c9892612aef489e37da8c287a4366335801ed427e6c516dd0",
@@ -26,15 +26,16 @@
   "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
-    "products": 342,
-    "quarantine": 0,
+    "products": 330,
+    "quarantine": 12,
     "archive": 0,
     "superseded": 0
   },
-  "visible_products": 342,
+  "visible_products": 330,
   "dispositions": {
-    "products": 228,
-    "EXPERIMENTAL-NOT-ADOPTED": 114
+    "products": 220,
+    "EXPERIMENTAL-NOT-ADOPTED": 110,
+    "quarantine": 12
   },
   "highlight_selectors": [],
   "status": "products",
