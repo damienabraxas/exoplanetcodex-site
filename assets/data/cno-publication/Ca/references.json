@@ -6770,7 +6770,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-989db4cbae76",
+      "subject": "Ca-quarantine-e643d5992efd",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6781,51 +6781,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-989db4cbae76",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Ca-quarantine-f18456e9bdb1",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "denhartog2021_ca1"
-      ],
-      "claim": "Ca I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Ca.json"
-      ]
-    },
-    {
-      "subject": "Ca-quarantine-f18456e9bdb1",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Ca-quarantine-e0130d10dbb2",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "denhartog2021_ca1"
-      ],
-      "claim": "Ca I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Ca.json"
-      ]
-    },
-    {
-      "subject": "Ca-quarantine-e0130d10dbb2",
+      "subject": "Ca-quarantine-e643d5992efd",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6836,7 +6792,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-897cf415c93a",
+      "subject": "Ca-quarantine-5f2dd671f62c",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6847,7 +6803,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-897cf415c93a",
+      "subject": "Ca-quarantine-5f2dd671f62c",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6858,7 +6814,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-6afdd6759cd4",
+      "subject": "Ca-quarantine-21dea072bc9a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6869,7 +6825,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-6afdd6759cd4",
+      "subject": "Ca-quarantine-21dea072bc9a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6881,7 +6837,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-0833274967e1",
+      "subject": "Ca-quarantine-4a7de465caae",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6892,7 +6848,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-0833274967e1",
+      "subject": "Ca-quarantine-4a7de465caae",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6904,7 +6860,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-706c8b3cf249",
+      "subject": "Ca-quarantine-33139cc9a834",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6915,7 +6871,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-706c8b3cf249",
+      "subject": "Ca-quarantine-33139cc9a834",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6926,7 +6882,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-843859d65bd2",
+      "subject": "Ca-quarantine-e1dd5b4d6040",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6937,7 +6893,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-843859d65bd2",
+      "subject": "Ca-quarantine-e1dd5b4d6040",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6949,7 +6905,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-7bccf1b30a35",
+      "subject": "Ca-quarantine-6c67f152010b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "denhartog2021_ca1"
@@ -6960,7 +6916,7 @@
       ]
     },
     {
-      "subject": "Ca-quarantine-7bccf1b30a35",
+      "subject": "Ca-quarantine-6c67f152010b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6969,6 +6925,94 @@
       "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
       "evidence": [
         "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-e0b6664d7b16",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "denhartog2021_ca1"
+      ],
+      "claim": "Ca I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ca.json"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-e0b6664d7b16",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-ad72a253cca0",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "denhartog2021_ca1"
+      ],
+      "claim": "Ca I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ca.json"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-ad72a253cca0",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Ca_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Ca_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-e2b3ece968ab",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "denhartog2021_ca1"
+      ],
+      "claim": "Ca I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ca.json"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-e2b3ece968ab",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-56f5ce3f0836",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "denhartog2021_ca1"
+      ],
+      "claim": "Ca I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ca.json"
+      ]
+    },
+    {
+      "subject": "Ca-quarantine-56f5ce3f0836",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Ca_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Ca_Amarsi2020_PySME.prov.json"
       ]
     }
   ],
@@ -13464,59 +13508,9 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ca-quarantine-989db4cbae76",
+      "publication_id": "Ca-quarantine-e643d5992efd",
       "source_bucket": "quarantine",
       "source_index": 47,
-      "identity": {
-        "element": "Ca",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "denhartog2021_ca1",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Ca-quarantine-f18456e9bdb1",
-      "source_bucket": "quarantine",
-      "source_index": 48,
-      "identity": {
-        "element": "Ca",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "denhartog2021_ca1",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Ca-quarantine-e0130d10dbb2",
-      "source_bucket": "quarantine",
-      "source_index": 49,
       "identity": {
         "element": "Ca",
         "ion": "I",
@@ -13539,7 +13533,58 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ca-quarantine-897cf415c93a",
+      "publication_id": "Ca-quarantine-5f2dd671f62c",
+      "source_bucket": "quarantine",
+      "source_index": 48,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ca-quarantine-21dea072bc9a",
+      "source_bucket": "quarantine",
+      "source_index": 49,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ca-quarantine-4a7de465caae",
       "source_bucket": "quarantine",
       "source_index": 50,
       "identity": {
@@ -13551,6 +13596,32 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ca-quarantine-33139cc9a834",
+      "source_bucket": "quarantine",
+      "source_index": 51,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
         "indicator": null
@@ -13564,15 +13635,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ca-quarantine-6afdd6759cd4",
+      "publication_id": "Ca-quarantine-e1dd5b4d6040",
       "source_bucket": "quarantine",
-      "source_index": 51,
+      "source_index": 52,
       "identity": {
         "element": "Ca",
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -13590,33 +13661,7 @@
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ca-quarantine-0833274967e1",
-      "source_bucket": "quarantine",
-      "source_index": 52,
-      "identity": {
-        "element": "Ca",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "synth-mean3D-NLTE-gerber-stagger",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "denhartog2021_ca1",
-        "gerber2023",
-        "magic2013"
-      ],
-      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
-    },
-    {
-      "publication_id": "Ca-quarantine-706c8b3cf249",
+      "publication_id": "Ca-quarantine-6c67f152010b",
       "source_bucket": "quarantine",
       "source_index": 53,
       "identity": {
@@ -13628,57 +13673,6 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "denhartog2021_ca1",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Ca-quarantine-843859d65bd2",
-      "source_bucket": "quarantine",
-      "source_index": 54,
-      "identity": {
-        "element": "Ca",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "synth-mean3D-LTE-gerber-stagger",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "denhartog2021_ca1",
-        "gerber2023",
-        "magic2013"
-      ],
-      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
-    },
-    {
-      "publication_id": "Ca-quarantine-7bccf1b30a35",
-      "source_bucket": "quarantine",
-      "source_index": 55,
-      "identity": {
-        "element": "Ca",
-        "ion": "I",
-        "band": "near-UV",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
         "treatment": "synth-mean3D-NLTE-gerber-stagger",
         "line_set": null,
         "indicator": null
@@ -13691,6 +13685,106 @@
         "magic2013"
       ],
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ca-quarantine-e0b6664d7b16",
+      "source_bucket": "quarantine",
+      "source_index": 54,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Ca-quarantine-ad72a253cca0",
+      "source_bucket": "quarantine",
+      "source_index": 55,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Ca_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Ca-quarantine-e2b3ece968ab",
+      "source_bucket": "quarantine",
+      "source_index": 56,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Ca-quarantine-56f5ce3f0836",
+      "source_bucket": "quarantine",
+      "source_index": 57,
+      "identity": {
+        "element": "Ca",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "denhartog2021_ca1",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Ca_Amarsi2020_PySME.csv)."
     }
   ],
   "source_paths": [
