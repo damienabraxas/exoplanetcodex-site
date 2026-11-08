@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "235944d1f49567237a9ba2b1480f0fdaa4473454",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/235944d1f49567237a9ba2b1480f0fdaa4473454",
-  "generated_at": "2026-11-08T04:28:43-07:00",
+  "source_commit": "15e0bc6d372c8ad95d687fd381827c52d64747af",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/15e0bc6d372c8ad95d687fd381827c52d64747af",
+  "generated_at": "2026-11-08T05:33:14-07:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.374",
-  "feed_updated_at": "2026-11-08T11:22:20Z",
-  "feed_sha256": "de1b5e4d011fc2f8b2443c29f48a5a7181083dd7b0f3aee011ab5dec978234dd",
+  "feed_version": "1.379",
+  "feed_updated_at": "2026-11-08T12:32:33Z",
+  "feed_sha256": "cd9f87d9995d48ee53cab75b5f42698df072b6e5f50b65f6394a2bf82dc16605",
   "source_sha256": {
-    "data/products/solar/Ca.json": "de1b5e4d011fc2f8b2443c29f48a5a7181083dd7b0f3aee011ab5dec978234dd",
+    "data/products/solar/Ca.json": "cd9f87d9995d48ee53cab75b5f42698df072b6e5f50b65f6394a2bf82dc16605",
     "data/refs/bibliography.csv": "7f8ec502cef04d5dc438b21424ff995a71670fd6c2dd1061fc77f9c95d96d1b4",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "01bf38b20cbc5f0c9892612aef489e37da8c287a4366335801ed427e6c516dd0",
@@ -19,7 +19,7 @@
     "data/reference/ca_agss21/ca_agss21_lines.csv": "f843b176c506a9cdb07958f6b51443cae2e42491e930d28c8c7c09ad361c628a",
     "data/reference/solar_nlte_tables.yaml": "3d7396fbf8622cc79f32d771e00b06a9a717be1549957345db59e72b71503f23"
   },
-  "generator_sha256": "a1181dfd4ba5479af08f2ec064cdfbc83cb94150dab245c0566cb4305c3ea7a0",
+  "generator_sha256": "cd0e801d193f672f8966e12a15202d6597c772e8d6edd0a5325211f823bd0c14",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 9,
@@ -28,17 +28,17 @@
   "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
-    "products": 213,
-    "quarantine": 58,
-    "archive": 57,
+    "products": 217,
+    "quarantine": 54,
+    "archive": 61,
     "superseded": 0
   },
-  "visible_products": 212,
+  "visible_products": 216,
   "dispositions": {
-    "products": 149,
+    "products": 153,
     "EXPERIMENTAL-NOT-ADOPTED": 64,
-    "quarantine": 58,
-    "archive": 57
+    "quarantine": 54,
+    "archive": 61
   },
   "highlight_selectors": [],
   "status": "products",

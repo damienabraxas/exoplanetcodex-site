@@ -3894,17 +3894,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-5d9595047f2c",
+    "publication_id": "Ca-products-18633d3c107f",
     "source_bucket": "products",
     "source_index": 177,
     "identity": {
       "element": "Ca",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "1D-LTE",
       "line_set": null,
@@ -3916,17 +3916,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-75f058b0cff5",
+    "publication_id": "Ca-products-3856899c5bf8",
     "source_bucket": "products",
     "source_index": 178,
     "identity": {
       "element": "Ca",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
@@ -3938,19 +3938,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-5bc736a79d60",
+    "publication_id": "Ca-products-38f9cba86aee",
     "source_bucket": "products",
     "source_index": 179,
     "identity": {
       "element": "Ca",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -3960,19 +3960,19 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-84df940e996c",
+    "publication_id": "Ca-products-bc6eaf5311f8",
     "source_bucket": "products",
     "source_index": 180,
     "identity": {
       "element": "Ca",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
     },
@@ -3982,7 +3982,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-bfe0d443cb86",
+    "publication_id": "Ca-products-68c6a37d47ae",
     "source_bucket": "products",
     "source_index": 181,
     "identity": {
@@ -3994,17 +3994,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-0e70b718f154",
+    "publication_id": "Ca-products-3b3f52eb458e",
     "source_bucket": "products",
     "source_index": 182,
     "identity": {
@@ -4016,50 +4016,6 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-NLTE-gerber-stagger",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-5afe6e142880",
-    "source_bucket": "products",
-    "source_index": 183,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-dc14e6d0a86d",
-    "source_bucket": "products",
-    "source_index": 184,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
@@ -4070,17 +4026,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-0033b75c2433",
+    "publication_id": "Ca-products-00b34b010762",
     "source_bucket": "products",
-    "source_index": 185,
+    "source_index": 183,
     "identity": {
       "element": "Ca",
       "ion": "I",
       "band": "red-optical",
       "instrument": "iag_fts_solar_atlas",
       "holding": "solar_iag",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
       "treatment": "ENGINE-B-NLTE",
       "line_set": null,
@@ -4092,17 +4048,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-0c9748102733",
+    "publication_id": "Ca-products-9fea04c0ca2c",
     "source_bucket": "products",
-    "source_index": 186,
+    "source_index": 184,
     "identity": {
       "element": "Ca",
       "ion": "I",
       "band": "red-optical",
       "instrument": "iag_fts_solar_atlas",
       "holding": "solar_iag",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
       "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
@@ -4114,7 +4070,51 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-3f3602a94c36",
+    "publication_id": "Ca-products-099b84316343",
+    "source_bucket": "products",
+    "source_index": 185,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-192752486eca",
+    "source_bucket": "products",
+    "source_index": 186,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-NLTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-53eceffa2363",
     "source_bucket": "products",
     "source_index": 187,
     "identity": {
@@ -4126,6 +4126,94 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-72b2b7dadf11",
+    "source_bucket": "products",
+    "source_index": 188,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-9d4952ad8375",
+    "source_bucket": "products",
+    "source_index": 189,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-B-NLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-530a136266c9",
+    "source_bucket": "products",
+    "source_index": 190,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-gerber",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-fd2f55f9eee5",
+    "source_bucket": "products",
+    "source_index": 191,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4136,9 +4224,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-523ca8472cdf",
+    "publication_id": "Ca-products-30a61d57b9af",
     "source_bucket": "products",
-    "source_index": 188,
+    "source_index": 192,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4158,95 +4246,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-3475fb9b54e3",
-    "source_bucket": "products",
-    "source_index": 189,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-95f84e301ace",
-    "source_bucket": "products",
-    "source_index": 190,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-cf6b24cd86c6",
-    "source_bucket": "products",
-    "source_index": 191,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-f697331d17eb",
-    "source_bucket": "products",
-    "source_index": 192,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-6cde383fa798",
+    "publication_id": "Ca-products-50450021fe12",
     "source_bucket": "products",
     "source_index": 193,
     "identity": {
@@ -4258,17 +4258,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-dad436e4c75d",
+    "publication_id": "Ca-products-2f7d0ac1aeb0",
     "source_bucket": "products",
     "source_index": 194,
     "identity": {
@@ -4280,50 +4280,6 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-NLTE-gerber-stagger",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-3bba02358a4c",
-    "source_bucket": "products",
-    "source_index": 195,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ca-products-3e1e0b616e66",
-    "source_bucket": "products",
-    "source_index": 196,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
       "treatment": "ENGINE-A",
       "line_set": null,
       "indicator": null
@@ -4334,17 +4290,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-bc4a6118b324",
+    "publication_id": "Ca-products-77b670af750c",
     "source_bucket": "products",
-    "source_index": 197,
+    "source_index": 195,
     "identity": {
       "element": "Ca",
       "ion": "I",
       "band": "red-optical",
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
       "treatment": "ENGINE-B-NLTE",
       "line_set": null,
@@ -4356,17 +4312,17 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-523bdf6b31f2",
+    "publication_id": "Ca-products-c21ba62ed89d",
     "source_bucket": "products",
-    "source_index": 198,
+    "source_index": 196,
     "identity": {
       "element": "Ca",
       "ion": "I",
       "band": "red-optical",
       "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
+      "tier": "GRADED",
+      "selector": "GRADED",
       "route": "SYNTH",
       "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
@@ -4378,7 +4334,51 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-65cdf673c79b",
+    "publication_id": "Ca-products-1e92e6fcc46a",
+    "source_bucket": "products",
+    "source_index": 197,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-a0f8ca7b667b",
+    "source_bucket": "products",
+    "source_index": 198,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-NLTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-aa9d8891eb43",
     "source_bucket": "products",
     "source_index": 199,
     "identity": {
@@ -4390,6 +4390,94 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-248468f04096",
+    "source_bucket": "products",
+    "source_index": 200,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-f1ce080d4e66",
+    "source_bucket": "products",
+    "source_index": 201,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-B-NLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-147513e4e002",
+    "source_bucket": "products",
+    "source_index": 202,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-gerber",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ca-products-af67a584b5a2",
+    "source_bucket": "products",
+    "source_index": 203,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4400,9 +4488,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-37a2e064a1ad",
+    "publication_id": "Ca-products-55afaeb3985e",
     "source_bucket": "products",
-    "source_index": 200,
+    "source_index": 204,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4422,9 +4510,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-32df2499bdd3",
+    "publication_id": "Ca-products-37db3784b59a",
     "source_bucket": "products",
-    "source_index": 201,
+    "source_index": 205,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4444,9 +4532,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-2c5eab6e3fa0",
+    "publication_id": "Ca-products-cae2102f5c84",
     "source_bucket": "products",
-    "source_index": 202,
+    "source_index": 206,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4466,9 +4554,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-33927267399d",
+    "publication_id": "Ca-products-2bce0929e088",
     "source_bucket": "products",
-    "source_index": 203,
+    "source_index": 207,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4488,9 +4576,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-19f451c52e7b",
+    "publication_id": "Ca-products-b92928575b76",
     "source_bucket": "products",
-    "source_index": 204,
+    "source_index": 208,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4510,9 +4598,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-0d3cb3c95ef2",
+    "publication_id": "Ca-products-8c1852a27d28",
     "source_bucket": "products",
-    "source_index": 205,
+    "source_index": 209,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4532,9 +4620,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-affe075da451",
+    "publication_id": "Ca-products-06464ef33945",
     "source_bucket": "products",
-    "source_index": 206,
+    "source_index": 210,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4554,9 +4642,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-2dc922781b65",
+    "publication_id": "Ca-products-18d3cd12355e",
     "source_bucket": "products",
-    "source_index": 207,
+    "source_index": 211,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4576,9 +4664,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-a2bf8e0875d8",
+    "publication_id": "Ca-products-7bebecbf9197",
     "source_bucket": "products",
-    "source_index": 208,
+    "source_index": 212,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4598,9 +4686,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-9a0319227190",
+    "publication_id": "Ca-products-c7d8cb8a37d4",
     "source_bucket": "products",
-    "source_index": 209,
+    "source_index": 213,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4620,9 +4708,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-ec6084609ab2",
+    "publication_id": "Ca-products-e178836e119d",
     "source_bucket": "products",
-    "source_index": 210,
+    "source_index": 214,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4642,9 +4730,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-2fd32f084baa",
+    "publication_id": "Ca-products-7e89abc42086",
     "source_bucket": "products",
-    "source_index": 211,
+    "source_index": 215,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -4664,9 +4752,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ca-products-66d76a7ec2b8",
+    "publication_id": "Ca-products-6f8ef8433293",
     "source_bucket": "products",
-    "source_index": 212,
+    "source_index": 216,
     "identity": {
       "element": "Ca",
       "ion": "I",
@@ -5968,94 +6056,6 @@
     "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap"
   },
   {
-    "publication_id": "Ca-quarantine-e0b6664d7b16",
-    "source_bucket": "quarantine",
-    "source_index": 54,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "quarantine",
-    "quarantine_codes": [],
-    "visible": false,
-    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
-  },
-  {
-    "publication_id": "Ca-quarantine-ad72a253cca0",
-    "source_bucket": "quarantine",
-    "source_index": 55,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "quarantine",
-    "quarantine_codes": [],
-    "visible": false,
-    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
-  },
-  {
-    "publication_id": "Ca-quarantine-e2b3ece968ab",
-    "source_bucket": "quarantine",
-    "source_index": 56,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "quarantine",
-    "quarantine_codes": [],
-    "visible": false,
-    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
-  },
-  {
-    "publication_id": "Ca-quarantine-56f5ce3f0836",
-    "source_bucket": "quarantine",
-    "source_index": 57,
-    "identity": {
-      "element": "Ca",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-A",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "quarantine",
-    "quarantine_codes": [],
-    "visible": false,
-    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
-  },
-  {
     "publication_id": "Ca-archive-ca49b92c63cd",
     "source_bucket": "archive",
     "source_index": 0,
@@ -7318,5 +7318,93 @@
     ],
     "visible": false,
     "omission_reason": "RYA-1097 gated re-run precedence: this product does NOT pass the RYA-1092 eligibility gate, so it was published into quarantine and did not supersede anything. [ANOMALOUS_SCATTER] line-to-line scatter 0.2548 dex is 3.10x the median of the 3 other pools on the same species/band/holding -- grossly inconsistent with them (threshold 3.0)."
+  },
+  {
+    "publication_id": "Ca-archive-93c2e2cc66aa",
+    "source_bucket": "archive",
+    "source_index": 57,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
+  },
+  {
+    "publication_id": "Ca-archive-37a8a74df08d",
+    "source_bucket": "archive",
+    "source_index": 58,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
+  },
+  {
+    "publication_id": "Ca-archive-151ea1cba4d2",
+    "source_bucket": "archive",
+    "source_index": 59,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
+  },
+  {
+    "publication_id": "Ca-archive-592ac285f45e",
+    "source_bucket": "archive",
+    "source_index": 60,
+    "identity": {
+      "element": "Ca",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-A",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "RYA-1311: near-UV Ca I Reference pool is 3 lines (3624.112, 3630.752, 3644.413) in the near-UV line jungle, red_chi2 28-64; reads 6.60-6.81 vs 6.30-6.45 in VIS/red-optical and A21 6.30. Model-inadequate blends; no near-UV Ca line is usable, declared gap. Same cell re-run 2026-11-08 to build its ENGINE-A row (6.63-6.68, same lines and fits); quarantined with the rest of the cell."
   }
 ]

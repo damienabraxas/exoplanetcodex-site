@@ -516,7 +516,10 @@ PRELIMINARY = {
            'oscillator strengths, Ca I in the H band reads 6.18 to 6.28 on five or six lines and in '
            'the K band 6.27 to 6.37 on 19 to 22 lines, about 0.1 to 0.2 dex below the visible '
            'lines; with a 0.11 dex uncertainty on every line\'s oscillator strength, they are '
-           'shown as measured.'),
+           'shown as measured. In the near ultraviolet, where the spectrum is crowded with other '
+           'lines, only three Ca I lines can be measured, and the fits are poor; they read 6.61 to '
+           '6.68, about 0.2 dex above the visible lines. They are shown as measured, as a first '
+           'look at that part of the spectrum, and carry little weight.'),
     'Na': ('The three-dimensional non-LTE products apply published line-by-line corrections '
            '(Asplund et al. 2021; Canocchi et al. 2026) to our one-dimensional fits; they are not '
            'our own three-dimensional calculation. The H- and K-band products sit about 0.4 dex '
