@@ -9,6 +9,20 @@
   const states = record => {const box=node('div',undefined,'state-pair');box.append(node('span',`Implementation: ${labels[record.status]||'Unknown'}`,'state'),node('span',`Validation: ${labels[record.validation]||'Not assessed'}`,'state science'));return box;};
   const evidence = items => {const list=node('ul',undefined,'evidence');for(const e of items||[]){const li=node('li');li.append(link(e.label,e.url),node('small',`${e.kind==='review'?'Review branch':e.kind==='scope'?'Scope only':'Merged evidence'} · inspected ${e.date}`));list.append(li);}return list;};
   const issues = ids => {const p=node('p',undefined,'roadmap-meta');p.append('Scope: ');for(const id of ids||[])p.append(link(id,`https://linear.app/ryans-adventure-zone/issue/${encodeURIComponent(id)}`),' ');return p;};
+  // Ordered implementation stages are ordinal markers, not weighted completion.
+  const stageBar = record => {
+    const stages=['planned','discovery','in_development','in_review','released'];
+    const current=stages.indexOf(record.status);
+    const box=node('div',undefined,'stage-progress');
+    box.append(node('div',`Development stage · ${labels[record.status]||'Not assessed'}`,'roadmap-meta'));
+    const bar=node('div',undefined,'stage-bar');
+    bar.setAttribute('role','progressbar');bar.setAttribute('aria-label',`${record.title} development stage`);
+    bar.setAttribute('aria-valuemin','0');bar.setAttribute('aria-valuemax','4');
+    if(current>=0)bar.setAttribute('aria-valuenow',String(current));
+    bar.setAttribute('aria-valuetext',`${labels[record.status]||'Not assessed'}; stage marker, not percentage complete`);
+    stages.forEach((stage,i)=>{const segment=node('span',undefined,i<=current?'stage-segment reached':'stage-segment');segment.setAttribute('aria-hidden','true');bar.append(segment);});
+    box.append(bar);return box;
+  };
   let panels=[],selectors=[];
   const select = () => {const id=location.hash.slice(1);const found=panels.some(p=>p.id===id);const selected=found?id:panels[0]?.id;panels.forEach(p=>p.hidden=p.id!==selected);selectors.forEach(a=>a.setAttribute('aria-current',String(a.hash.slice(1)===selected)));};
   function render(data) {
@@ -19,9 +33,9 @@
     const cards=node('div',undefined,'product-cards'), nav=node('nav',undefined,'product-selector');nav.setAttribute('aria-label','Product selector');
     for(const p of [...data.products].sort((a,b)=>a.display_order-b.display_order)){
       if(!/^[a-z][a-z0-9-]*$/.test(p.id)||!Array.isArray(p.milestones))throw Error('Invalid product');
-      const card=node('article',undefined,'product-card');card.append(node('div',`0${p.display_order} / ${p.stage}`,'product-number'),node('h3',p.title),states(p),node('p',p.summary),link('Explore milestones →',`#${p.id}`));cards.append(card);
+      const card=node('article',undefined,'product-card');card.append(node('div',`0${p.display_order} / ${p.stage}`,'product-number'),node('h3',p.title),stageBar(p),states(p),node('p',p.summary),link('Explore milestones →',`#${p.id}`));cards.append(card);
       const tab=link(p.title,`#${p.id}`);nav.append(tab);selectors.push(tab);
-      const panel=node('article',undefined,'product-detail');panel.id=p.id;panel.setAttribute('aria-label',p.title);panel.append(node('h3',p.title),states(p),node('p',p.summary),node('p',`Next verification gate: ${p.gate}`,'next-gate'),node('p',`Latest evidence inspection: ${p.updated}`,'roadmap-meta'),issues(p.issues));
+      const panel=node('article',undefined,'product-detail');panel.id=p.id;panel.setAttribute('aria-label',p.title);panel.append(node('h3',p.title),stageBar(p),states(p),node('p',p.summary),node('p',`Next verification gate: ${p.gate}`,'next-gate'),node('p',`Latest evidence inspection: ${p.updated}`,'roadmap-meta'),issues(p.issues));
       const list=node('ol',undefined,'milestones');
       for(const mi of p.milestones){const li=node('li'),details=node('details'),summary=node('summary',mi.title);details.append(summary,states(mi),node('p',mi.summary),node('p',`Verification gate: ${mi.gate}`),evidence(mi.evidence),issues(mi.issues));li.append(details);list.append(li);}panel.append(list);
       if(p.id==='stellar-survey'){

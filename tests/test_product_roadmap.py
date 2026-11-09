@@ -39,6 +39,13 @@ class ProductRoadmapTests(unittest.TestCase):
     def test_shared_shell_and_preserved_legacy(self):
         html=(ROOT/'roadmap.html').read_text();self.assertIn('/assets/css/codex.css',html);self.assertIn('class="codex-nav"',html);self.assertIn('class="codex-footer"',html);self.assertIn('aria-current="page"',html)
         self.assertIn('id="release-roadmap"',html);self.assertIn('url=/roadmap.html',(ROOT/'roadmap/index.html').read_text())
+    def test_homepage_has_compact_summary_and_separate_roadmap(self):
+        html=(ROOT/"index.html").read_text()
+        self.assertIn('id="release-roadmap" data-mode="summary"',html)
+        self.assertIn('href="/roadmap.html"',html)
+        self.assertNotIn('src="/roadmap.html"',html)
+        self.assertNotIn('product-roadmap.js',html)
+
     def test_generated_sources_is_current(self):
         spec=importlib.util.spec_from_file_location('credits',ROOT/'scripts/render_roadmap_credits.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
         html=(ROOT/'sources/index.html').read_text();self.assertEqual(module.updated(html),html)

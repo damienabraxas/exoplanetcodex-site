@@ -63,7 +63,7 @@ escaping the macOS sandbox's Chromium Mach-port restriction.
 Host: macOS arm64; isolated Python 3.9.6, Playwright 1.60.0 / Chromium
 148.0.7778.96, jsonschema 4.25.1; Node syntax checks.
 
-- `python -m unittest discover -s tests -p '*roadmap*.py'`: exit 0, 8 tests.
+- `python -m unittest discover -s tests -p '*roadmap*.py'`: exit 0, 9 tests.
 - `python scripts/render_roadmap_credits.py --check`: exit 0.
 - `python scripts/sync_roadmap_catalogs.py --science-root <pinned-science-checkout> --check`: exit 0.
 - `node --check assets/js/product-roadmap.js`: exit 0.
@@ -79,3 +79,15 @@ on the roadmap without changing its markup or other pages. Browser harness histo
 assertions now wait for actual visibility, route fixtures accept both callback
 arguments, and entry points are guarded against unittest import side effects.
 No unresolved new engineering test failures.
+
+## Requested layout refinement
+
+Homepage iframe integration was missed in the initial pass. The final homepage
+now renders compact release cards directly from the same retained release JSON,
+including Solar calibration progress, with an explicit link to the standalone
+Roadmap page. No five-track dashboard or shared header is embedded in the homepage.
+Research cards and detail panels now include an ordinal development-stage progress
+bar with accessible values; no numerical percentage estimate is introduced.
+Homepage desktop/mobile summary screenshots are included. Browser checks verify
+the summary and absence of the old dashboard iframe. The existing homepage hero
+extends outside the document viewport independently; changed summary bounds pass.

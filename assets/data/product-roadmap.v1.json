@@ -2,7 +2,7 @@
   "schema": "codex.product_roadmap/1",
   "updated": "2026-11-09",
   "science_base": "078cf7dedfa961452c8bd9af43c4bf83c5463fdf",
-  "methodology": "No overall completion percentage. Stages describe evidenced work, not issue counts. The legacy element-release snapshot below counts current publishable products only; it does not certify a complete star or engine. No weighted completion is claimed.",
+  "methodology": "Progress bars mark the current implementation stage: Planned → Discovery → In development → In review → Released. Equal segments show stage position, not equal effort or percentage complete. Scientific validation is reported separately. No overall completion percentage or weighted estimate is claimed.",
   "sources": {
     "data/catalog/system_catalog.csv": {
       "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/catalog/system_catalog.csv",

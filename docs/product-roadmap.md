@@ -1,5 +1,8 @@
 # Product roadmap maintenance (RYA-1370)
 
+The homepage uses compact release cards from the existing release snapshot and
+links to the standalone Roadmap page; it does not embed the dashboard in an iframe.
+
 `/roadmap.html` owns the five-track public development snapshot. `/roadmap/`
 continues to redirect there. Product fragments are `#stellar-survey`, `#bride`,
 `#atomic-laboratory`, `#abundance-gui` and `#cross-engine`. The retained element
@@ -62,6 +65,11 @@ it does not claim that differently named external artifacts were inspected.
    attribution. No upstream code or raw atomic databases are redistributed here.
 
 ## Progress methodology
+
+Each research-path card has an accessible segmented progress bar marking the
+current implementation stage (Planned, Discovery, In development, In review,
+Released). Equal segments represent ordinal stages, not equal work or numerical
+completion. Scientific validation remains a separate field.
 
 There is no weighted completion calculation and no project-wide percentage. No
 GUI “5%” estimate is claimed. Implementation stage and validation disposition are

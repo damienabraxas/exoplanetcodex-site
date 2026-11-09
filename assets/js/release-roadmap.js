@@ -2,6 +2,7 @@
   "use strict";
   const host=document.getElementById("release-roadmap");
   if(!host)return;
+  const summaryMode=host.dataset.mode==="summary";
   const esc=(value)=>String(value).replace(/[&<>"']/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const targetMarkup=(target)=>{
     const percent=Math.round(target.progress_fraction*1000)/10;
@@ -12,9 +13,9 @@
     host.innerHTML=`<div class="release-grid">${data.releases.map((release)=>{
       const targets=release.targets||[];
       const progress=release.progress_fraction===undefined?"":targetMarkup({target_name:"Established platform",label:"complete",complete_products:1,total_products:1,progress_fraction:release.progress_fraction});
-      const notes=(release.notes||[]).length?`<ul class="notes">${release.notes.map(note=>`<li>${esc(note)}</li>`).join("")}</ul>`:"";
+      const notes=!summaryMode&&(release.notes||[]).length?`<ul class="notes">${release.notes.map(note=>`<li>${esc(note)}</li>`).join("")}</ul>`:"";
       return `<article class="release" data-status="${esc(release.status)}"><div class="release-status">${esc(release.status.replaceAll("_"," "))}</div><h2>${esc(release.name)}</h2><p class="release-summary">${esc(release.summary)}</p>${progress}${targets.map(targetMarkup).join("")}${notes}</article>`;
-    }).join("")}</div><p class="source">Source: canonical 27-element target list + current publishable abundance store · ${esc(data.sources.publication_gate)}</p>`;
+    }).join("")}</div><p class="source">${summaryMode?"":"Source: canonical "+esc(data.canonical_product_count)+"-target list + current publishable abundance store · "}${summaryMode?"Current published element coverage; full milestones and evidence on the Roadmap page.":esc(data.sources.publication_gate)}</p>`;
   };
   fetch("/assets/data/release-roadmap.v1.json",{headers:{Accept:"application/json"}}).then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();}).then(render).catch(()=>{host.innerHTML='<p class="error">Release progress is temporarily unavailable. Scientific products remain available through the system pages.</p>';});
 })();

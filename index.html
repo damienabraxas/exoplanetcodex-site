@@ -161,6 +161,7 @@
       .notify-input { border-right:1px solid var(--muted); border-bottom:none; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/release-roadmap.css">
 </head>
 <body>
 
@@ -177,7 +178,7 @@
       <li><a href="/mission-log/">Mission Log</a></li>
       <li><a href="/origin/">Origin</a></li>
       <li><a href="/about/">About</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="/roadmap.html">Roadmap</a></li>
       <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
     </ul>
     <div class="status-pill">Pipeline active</div>
@@ -280,15 +281,11 @@
     </div>
   </section>
 
-  <section id="roadmap" style="width:100%;margin:0 0 0;">
-    <iframe
-      src="/roadmap.html"
-      title="Live Project Roadmap"
-      scrolling="no"
-      style="width:100%;border:none;display:block;min-height:560px;"
-      loading="lazy"
-      onload="this.style.height=(this.contentDocument.body.scrollHeight+40)+'px'"
-    ></iframe>
+  <section id="roadmap" class="release-summary-section">
+    <div class="section-label">Release progress</div>
+    <h2>From Solar calibration to the stars</h2>
+    <div id="release-roadmap" data-mode="summary" aria-live="polite"><p>Loading release progress…</p></div>
+    <p class="roadmap-page-link"><a href="/roadmap.html">Explore the full scientific roadmap →</a></p>
   </section>
 
   <section class="pillars-section" id="method">
@@ -328,5 +325,6 @@
 <script src="/assets/js/starfield.js"></script>
 <script src="/assets/js/codex.js"></script>
   <script src="/assets/js/local-neighborhood.js" defer></script>
+<script src="/assets/js/release-roadmap.js"></script>
 </body>
 </html>

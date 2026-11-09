@@ -14,6 +14,7 @@ def main():
         for width,name in [(1440,'desktop'),(390,'mobile'),(320,'small-mobile')]:
             page.set_viewport_size({'width':width,'height':1000 if width==1440 else 844});page.goto(ORIGIN+'/roadmap.html');ready(page)
             assert page.locator('.product-card').count()==5
+            assert page.locator('.product-card [role=progressbar]').count()==5
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             page.screenshot(path=str(OUT/f'after-{name}.png'),full_page=True)
             page.goto(ORIGIN+'/roadmap.html#atomic-laboratory');ready(page);assert page.locator('#atomic-laboratory').is_visible();assert not page.locator('#stellar-survey').is_visible()
@@ -29,6 +30,16 @@ def main():
         data['products'][0]['title']='<img src=x onerror="window.injected=1">';data['products'][0]['milestones'][0]['evidence'][0]['url']='javascript:alert(1)'
         page.route('**/product-roadmap.v1.json',lambda route:route.fulfill(json=data));page.goto(ORIGIN+'/roadmap.html');ready(page);assert not page.evaluate('Boolean(window.injected)');assert page.locator('#product-roadmap img').count()==0;assert page.locator('#product-roadmap a[href^="javascript:"]').count()==0;page.unroute('**/product-roadmap.v1.json')
         page.route('**/product-roadmap.v1.json',lambda route:route.fulfill(status=503));page.goto(ORIGIN+'/roadmap.html');page.locator('#product-roadmap .error').wait_for();page.unroute('**/product-roadmap.v1.json')
+        # Homepage is a compact release summary; the dashboard is a separate page.
+        for width,name in [(1440,'desktop'),(390,'mobile')]:
+            page.set_viewport_size({'width':width,'height':1000 if width==1440 else 844})
+            page.goto(ORIGIN+'/');page.wait_for_selector('#release-roadmap .target-count')
+            assert page.locator('iframe[src="/roadmap.html"]').count()==0
+            assert page.locator('.product-card').count()==0
+            assert page.locator('#release-roadmap [role=progressbar]').count()==4
+            assert page.locator('#release-roadmap').inner_text().find('10 / 27')>=0
+            page.locator('#roadmap').screenshot(path=str(OUT/f'homepage-summary-{name}.png'))
+            assert page.locator('#roadmap').evaluate('(e)=>e.scrollWidth <= e.clientWidth')
         # Check every local page/asset linked by the roadmap (fragments separately).
         page.goto(ORIGIN+'/roadmap.html');ready(page);links=page.locator('a[href^="/"],link[href^="/"],script[src^="/"]').evaluate_all('(els)=>els.map(e=>e.getAttribute("href")||e.getAttribute("src"))')
         for href in set(links):assert page.request.get(ORIGIN+href.split('#')[0]).ok,href
