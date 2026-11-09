@@ -1,0 +1,13 @@
+.F.
+======================================================================
+FAIL: test_release_product_has_separate_alpha_centauri_progress (test_release_roadmap.ReleaseRoadmapTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<site-root>/tests/test_release_roadmap.py", line 27, in test_release_product_has_separate_alpha_centauri_progress
+    self.assertEqual(releases["alpha"]["targets"][0]["complete_products"], 2)
+AssertionError: 10 != 2
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (failures=1)

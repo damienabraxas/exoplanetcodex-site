@@ -3,45 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Release Roadmap · The Exoplanet Codex</title>
-  <meta name="description" content="Element-based release roadmap for The Exoplanet Codex.">
+  <script src="/assets/js/analytics.js"></script>
+  <title>Roadmap · The Exoplanet Codex</title>
+  <meta name="description" content="Five evidence-backed scientific development tracks, their next validation gates and software sources.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
   <link rel="canonical" href="https://exoplanetcodex.org/roadmap.html">
-  <style>
-    :root{--void:#04060d;--deep:#080d18;--rim:#1a2640;--text:#c8d8e8;--bright:#edf6ff;--dim:#8299af;--muted:#50677f;--cyan:#4fc3f7;--warm:#e8a24a;--green:#61d095;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--serif:Georgia,"Times New Roman",serif}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--void);color:var(--text);font-family:var(--mono);padding:clamp(1rem,3vw,2rem)}
-    main{max-width:1120px;margin:0 auto}
-    .eyebrow{color:var(--cyan);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.5rem}
-    h1{font:300 clamp(1.7rem,4vw,2.7rem) var(--serif);color:var(--bright);margin-bottom:.55rem}
-    .intro{color:var(--dim);font-size:.78rem;line-height:1.65;max-width:760px;margin-bottom:1.5rem}
-    .release-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rim);border:1px solid var(--rim)}
-    .release{background:var(--deep);padding:clamp(1rem,2.5vw,1.6rem);min-width:0}
-    .release-status{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem}
-    .release[data-status="in_progress"] .release-status{color:var(--cyan)}
-    .release[data-status="planned"] .release-status{color:var(--warm)}
-    .release h2{font:300 1.35rem/1.2 var(--serif);color:var(--bright);margin-bottom:.75rem}
-    .release-summary{font-size:.72rem;line-height:1.6;color:var(--dim);min-height:6.8em}
-    .target{border-top:1px solid var(--rim);padding-top:.9rem;margin-top:.9rem}
-    .target-head{display:flex;justify-content:space-between;gap:.7rem;font-size:.65rem;color:var(--bright);margin-bottom:.55rem}
-    .target-count{color:var(--cyan);white-space:nowrap}
-    .track{height:3px;background:var(--rim);overflow:hidden}
-    .fill{height:100%;background:var(--cyan);width:0;transition:width .7s ease}
-    .release[data-status="complete"] .fill{background:var(--green)}
-    .notes{list-style:none;margin-top:.85rem;color:var(--muted);font-size:.62rem;line-height:1.55}
-    .notes li+li{margin-top:.35rem}.notes li::before{content:"— ";color:var(--cyan)}
-    .source{margin-top:1rem;color:var(--muted);font-size:.56rem;line-height:1.5}
-    .error{border:1px solid var(--rim);padding:1.2rem;color:var(--dim);font-size:.72rem}
-    @media(max-width:760px){.release-grid{grid-template-columns:1fr}.release-summary{min-height:0}.release{padding:1.25rem}}
-    @media(prefers-reduced-motion:reduce){.fill{transition:none}}
-  </style>
+  <link rel="stylesheet" href="/assets/css/product-roadmap.css">
+  <link rel="stylesheet" href="/assets/css/release-roadmap.css">
 </head>
 <body>
-  <main>
-    <div class="eyebrow">Scientific release roadmap</div>
-    <h1>Progress measured in elements</h1>
-    <p class="intro">Release progress counts elements with a reviewed, current abundance result published for that star—not project-management activity. The 27 are the Codex target list, with Fe II counted alongside Fe I. Missing, provisional, superseded, and quarantined results never advance a release.</p>
-    <div id="release-roadmap" aria-live="polite"><p class="error">Loading release product…</p></div>
-  </main>
-  <script src="/assets/js/release-roadmap.js"></script>
-</body>
-</html>
+  <a class="skip-link" href="#main">Skip to roadmap</a>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="page">
+  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/roadmap.html" class="active" aria-current="page">Roadmap</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Roadmap</span></div>
+  </nav>
+
+<main id="main">
+<header class="page-hero">
+  <div class="page-eyebrow">Development atlas // Evidence before claims</div>
+  <h1 class="page-title">Five paths.<br><em>One open science mission.</em></h1>
+  <p class="page-subtitle">Follow the survey, the engines and the tools taking shape around it. Each track shows what is being built, what still needs scientific proof, and the evidence behind the next step.</p>
+</header>
+<section class="roadmap-principle" aria-label="How to read progress">
+ <p><strong>Implementation and scientific validation are separate.</strong> Working software, converged calculations and completed tickets do not establish an independently validated scientific result.</p>
+ <p id="roadmap-method">No overall completion percentage is claimed. Milestones advance through evidence and review.</p>
+ <details><summary>Status legend &amp; evidence rules</summary><dl class="legend">
+ <dt>Planned / Discovery</dt><dd>Scope or investigation; no completed implementation implied.</dd>
+ <dt>In development / In review</dt><dd>Implementation exists or is under review. Review-branch evidence is explicitly labeled.</dd>
+ <dt>Scientific HOLD / Not assessed</dt><dd>Required scientific proof is still owed or has not been evaluated.</dd>
+ <dt>Independently validated / Released</dt><dd>Reserved for linked independent scientific sign-off or an explicit release record.</dd>
+ </dl><p>Evidence dates identify this snapshot’s inspection date. They are not promised completion dates. Linear links describe scope; merged artifacts and reviewed scientific evidence carry separate labels.</p></details>
+</section>
+<section aria-labelledby="tracks-title" class="roadmap-section">
+ <div class="section-label">Product tracks</div><h2 id="tracks-title">Choose a research path</h2>
+ <div id="product-roadmap" aria-live="polite"><p>Loading evidence snapshot…</p></div>
+ <noscript><p>JavaScript is needed for the interactive snapshot. Download the <a href="/assets/data/product-roadmap.v1.json">roadmap data</a>, <a href="/assets/data/roadmap-credits.v1.json">software credits</a> or visit <a href="/systems/">the system pages</a>.</p></noscript>
+</section>
+<section class="roadmap-section" id="stellar-releases" aria-labelledby="release-title">
+ <div class="section-label">Stellar survey // Existing release snapshot</div><h2 id="release-title">Progress measured in elements</h2>
+ <p>Current published element coverage for the Sun and each Alpha Centauri component. This retained release snapshot does not certify full-star publication readiness. The complete canonical target roster appears within the survey track.</p>
+ <div id="release-roadmap" aria-live="polite"><p>Loading release product…</p></div>
+</section>
+<section class="roadmap-section" id="software-attribution" aria-labelledby="credits-title">
+ <div class="section-label">External foundations</div><h2 id="credits-title">Credit the tools. Trace the sources.</h2>
+ <p>The atomic pilot calculates theoretical candidates. It does not make experimental laboratory measurements. Codex orchestration and audit records build on external atomic-structure software.</p>
+ <div id="roadmap-credits"><p><a href="/sources/#roadmap-software">Read the full software and source attribution</a>.</p></div>
+</section>
+</main>
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-method-v2.0.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script>
+<script src="/assets/js/product-roadmap.js"></script>
+<script src="/assets/js/release-roadmap.js"></script>
+</body></html>

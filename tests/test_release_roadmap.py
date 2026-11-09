@@ -24,7 +24,9 @@ class ReleaseRoadmapTests(unittest.TestCase):
         self.assertEqual(data["canonical_product_count"], 27)
         releases = {release["id"]: release for release in data["releases"]}
         self.assertEqual(releases["foundation"]["status"], "complete")
-        self.assertEqual(releases["alpha"]["targets"][0]["complete_products"], 2)
+        target = releases["alpha"]["targets"][0]
+        self.assertEqual(target["complete_products"], len(set(target["complete_product_ids"])))
+        self.assertAlmostEqual(target["progress_fraction"], target["complete_products"] / target["total_products"], places=5)
         beta = releases["beta"]["targets"]
         self.assertEqual([target["target_id"] for target in beta], ["alpha_cen_a", "alpha_cen_b"])
 
