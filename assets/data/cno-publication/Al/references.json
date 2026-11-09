@@ -71,7 +71,11 @@
         "Model and grid sources"
       ],
       "roles": [
-        "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+        "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+        "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+        "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+        "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+        "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
       ]
     },
     {
@@ -90,6 +94,25 @@
       ],
       "roles": [
         "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+      ]
+    },
+    {
+      "id": "magic2013",
+      "citation": "Magic, Z.; Collet, R.; Hayek, W.; Asplund, M. (2013). The Stagger-grid: A grid of 3D stellar atmosphere models. II. Horizontal and temporal averaging and spectral line formation. A&A 560, A8",
+      "doi": "10.1051/0004-6361/201322252",
+      "url": "https://doi.org/10.1051/0004-6361/201322252",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "magic2013"
+        }
+      ],
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+        "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
       ]
     }
   ],
@@ -173,7 +196,7 @@
       ]
     },
     {
-      "subject": "Al-products-e1f71442de77",
+      "subject": "Al-products-0656fc282fb7",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -184,7 +207,7 @@
       ]
     },
     {
-      "subject": "Al-products-e1f71442de77",
+      "subject": "Al-products-0656fc282fb7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -195,18 +218,18 @@
       ]
     },
     {
-      "subject": "Al-products-e1f71442de77",
+      "subject": "Al-products-0656fc282fb7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
       ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
       "evidence": [
-        "pipeline/band_products.py"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-9443d9b76f0f",
+      "subject": "Al-products-e70c0751a855",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -217,7 +240,7 @@
       ]
     },
     {
-      "subject": "Al-products-9443d9b76f0f",
+      "subject": "Al-products-e70c0751a855",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -228,62 +251,18 @@
       ]
     },
     {
-      "subject": "Al-products-9443d9b76f0f",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Al-products-2c817b8eea2e",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-2c817b8eea2e",
+      "subject": "Al-products-e70c0751a855",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
       ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
       "evidence": [
-        "pipeline/band_products.py"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-fcec422376c8",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-fcec422376c8",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Al-products-49c83f2985f1",
+      "subject": "Al-products-5f8885902907",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -294,7 +273,7 @@
       ]
     },
     {
-      "subject": "Al-products-49c83f2985f1",
+      "subject": "Al-products-5f8885902907",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -305,18 +284,19 @@
       ]
     },
     {
-      "subject": "Al-products-49c83f2985f1",
+      "subject": "Al-products-5f8885902907",
       "layer": "Model and grid sources",
       "reference_ids": [
-        "gerber2023"
+        "gerber2023",
+        "magic2013"
       ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
       "evidence": [
-        "pipeline/band_products.py"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-cfa1cc6e0651",
+      "subject": "Al-products-4fbec410b2fc",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -327,7 +307,7 @@
       ]
     },
     {
-      "subject": "Al-products-cfa1cc6e0651",
+      "subject": "Al-products-4fbec410b2fc",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -338,62 +318,19 @@
       ]
     },
     {
-      "subject": "Al-products-cfa1cc6e0651",
+      "subject": "Al-products-4fbec410b2fc",
       "layer": "Model and grid sources",
       "reference_ids": [
-        "amarsi2020_galah"
+        "gerber2023",
+        "magic2013"
       ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
       "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-8d6674191138",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-8d6674191138",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Al-products-f02ef045fac9",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-f02ef045fac9",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Al-products-763c8ec6b825",
+      "subject": "Al-products-b7d6fd23e6c5",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -404,7 +341,7 @@
       ]
     },
     {
-      "subject": "Al-products-763c8ec6b825",
+      "subject": "Al-products-b7d6fd23e6c5",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -415,7 +352,7 @@
       ]
     },
     {
-      "subject": "Al-products-763c8ec6b825",
+      "subject": "Al-products-b7d6fd23e6c5",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -426,7 +363,7 @@
       ]
     },
     {
-      "subject": "Al-products-4ae1b7f5d552",
+      "subject": "Al-products-19f1293b9a1f",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -437,7 +374,7 @@
       ]
     },
     {
-      "subject": "Al-products-4ae1b7f5d552",
+      "subject": "Al-products-19f1293b9a1f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -448,7 +385,7 @@
       ]
     },
     {
-      "subject": "Al-products-4ae1b7f5d552",
+      "subject": "Al-products-19f1293b9a1f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -459,51 +396,7 @@
       ]
     },
     {
-      "subject": "Al-products-fbc7225a6f74",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-fbc7225a6f74",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "gerber2023"
-      ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
-      "evidence": [
-        "pipeline/band_products.py"
-      ]
-    },
-    {
-      "subject": "Al-products-e336923b786f",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-e336923b786f",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Al-products-e748030f2e3a",
+      "subject": "Al-products-e2d00a7404d0",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -514,7 +407,7 @@
       ]
     },
     {
-      "subject": "Al-products-e748030f2e3a",
+      "subject": "Al-products-e2d00a7404d0",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -525,18 +418,18 @@
       ]
     },
     {
-      "subject": "Al-products-e748030f2e3a",
+      "subject": "Al-products-e2d00a7404d0",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
       ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
       "evidence": [
-        "pipeline/band_products.py"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-260a78aecdcd",
+      "subject": "Al-products-424c0b21e3f7",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -547,7 +440,7 @@
       ]
     },
     {
-      "subject": "Al-products-260a78aecdcd",
+      "subject": "Al-products-424c0b21e3f7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -558,62 +451,18 @@
       ]
     },
     {
-      "subject": "Al-products-260a78aecdcd",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Al-products-f0ee54abeefa",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-f0ee54abeefa",
+      "subject": "Al-products-424c0b21e3f7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
       ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
       "evidence": [
-        "pipeline/band_products.py"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-c71470f7634e",
-      "layer": "Atomic data and gf authorities",
-      "reference_ids": [
-        "nordlander_lind2017"
-      ],
-      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
-      "evidence": [
-        "data/products/solar/Al.json"
-      ]
-    },
-    {
-      "subject": "Al-products-c71470f7634e",
-      "layer": "Model and grid sources",
-      "reference_ids": [
-        "amarsi2020_galah"
-      ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
-      "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
-      ]
-    },
-    {
-      "subject": "Al-products-e7e99f42d031",
+      "subject": "Al-products-fac0626b64f2",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -624,7 +473,7 @@
       ]
     },
     {
-      "subject": "Al-products-e7e99f42d031",
+      "subject": "Al-products-fac0626b64f2",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -635,18 +484,19 @@
       ]
     },
     {
-      "subject": "Al-products-e7e99f42d031",
+      "subject": "Al-products-fac0626b64f2",
       "layer": "Model and grid sources",
       "reference_ids": [
-        "gerber2023"
+        "gerber2023",
+        "magic2013"
       ],
-      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
       "evidence": [
-        "pipeline/band_products.py"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-189b8acbdd3b",
+      "subject": "Al-products-54d5fcb4807a",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -657,7 +507,7 @@
       ]
     },
     {
-      "subject": "Al-products-189b8acbdd3b",
+      "subject": "Al-products-54d5fcb4807a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -668,18 +518,19 @@
       ]
     },
     {
-      "subject": "Al-products-189b8acbdd3b",
+      "subject": "Al-products-54d5fcb4807a",
       "layer": "Model and grid sources",
       "reference_ids": [
-        "amarsi2020_galah"
+        "gerber2023",
+        "magic2013"
       ],
-      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
       "evidence": [
-        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+        "pipeline/gerber_nlte.py"
       ]
     },
     {
-      "subject": "Al-products-ca9c883560bd",
+      "subject": "Al-products-ad1c7c744535",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -690,7 +541,7 @@
       ]
     },
     {
-      "subject": "Al-products-ca9c883560bd",
+      "subject": "Al-products-ad1c7c744535",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -701,7 +552,7 @@
       ]
     },
     {
-      "subject": "Al-products-ad4018a70e99",
+      "subject": "Al-products-4593bc34b0a0",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -712,7 +563,7 @@
       ]
     },
     {
-      "subject": "Al-products-ad4018a70e99",
+      "subject": "Al-products-4593bc34b0a0",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -723,7 +574,97 @@
       ]
     },
     {
-      "subject": "Al-products-172960c23449",
+      "subject": "Al-products-b07d2f5c0794",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b07d2f5c0794",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-fffb5cf33289",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-fffb5cf33289",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-75e93e5cb6e6",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-75e93e5cb6e6",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-68d39137066b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-68d39137066b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-08150164da38",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -734,7 +675,7 @@
       ]
     },
     {
-      "subject": "Al-products-172960c23449",
+      "subject": "Al-products-08150164da38",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -745,7 +686,7 @@
       ]
     },
     {
-      "subject": "Al-products-172960c23449",
+      "subject": "Al-products-08150164da38",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -756,7 +697,7 @@
       ]
     },
     {
-      "subject": "Al-products-c85886319365",
+      "subject": "Al-products-42ce2c84e60e",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "nordlander_lind2017"
@@ -767,7 +708,7 @@
       ]
     },
     {
-      "subject": "Al-products-c85886319365",
+      "subject": "Al-products-42ce2c84e60e",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -778,7 +719,7 @@
       ]
     },
     {
-      "subject": "Al-products-c85886319365",
+      "subject": "Al-products-42ce2c84e60e",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -789,7 +730,18 @@
       ]
     },
     {
-      "subject": "Al-products-1be4caee7bb3",
+      "subject": "Al-products-02c29fedf62c",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-02c29fedf62c",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -800,7 +752,130 @@
       ]
     },
     {
-      "subject": "Al-products-1be4caee7bb3",
+      "subject": "Al-products-02c29fedf62c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-234e360a5ace",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-234e360a5ace",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-234e360a5ace",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-9754fc9828b8",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-9754fc9828b8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-9754fc9828b8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-e6c258ee63fd",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-e6c258ee63fd",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e6c258ee63fd",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-311878d9af3c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-311878d9af3c",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -811,7 +886,7 @@
       ]
     },
     {
-      "subject": "Al-products-38c43a7a6482",
+      "subject": "Al-products-db28a16759bb",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "nordlander_lind2017"
@@ -822,7 +897,7 @@
       ]
     },
     {
-      "subject": "Al-products-38c43a7a6482",
+      "subject": "Al-products-db28a16759bb",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -830,6 +905,1766 @@
       "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
       "evidence": [
         "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-285adb9fd391",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-285adb9fd391",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-953aa411f821",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-953aa411f821",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-88ee62a78c2f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-88ee62a78c2f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-fd1d9ee21465",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-fd1d9ee21465",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-f068500295d6",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-f068500295d6",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f068500295d6",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-3125461cb5e6",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-3125461cb5e6",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-3125461cb5e6",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-25e6d5334264",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-25e6d5334264",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-25e6d5334264",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-1a22d37f03d0",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-1a22d37f03d0",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1a22d37f03d0",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-4db175295e20",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-4db175295e20",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-4db175295e20",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-54cb923a1ae5",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-54cb923a1ae5",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-54cb923a1ae5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-f84d95639973",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f84d95639973",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-1fa3fa8922c0",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1fa3fa8922c0",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f7ea0919ce28",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-f7ea0919ce28",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-5912f5df3ae8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5912f5df3ae8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-b14b5937b128",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-b14b5937b128",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-d47494677477",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-d47494677477",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-06f60208ce1c",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-06f60208ce1c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-06f60208ce1c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-e766253592e5",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-e766253592e5",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e766253592e5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6a49d48c409c",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-6a49d48c409c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6a49d48c409c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-14ec3404d0e5",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-14ec3404d0e5",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-14ec3404d0e5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-5fa749e4356f",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-5fa749e4356f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5fa749e4356f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-2b14b88f0e68",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-2b14b88f0e68",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-2b14b88f0e68",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-bc4bf239d469",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-bc4bf239d469",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-dc7bd351c7fc",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-dc7bd351c7fc",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-9d141f0dfc76",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-9d141f0dfc76",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-2d63a8646d94",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-2d63a8646d94",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-e588528cf72e",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e588528cf72e",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-72245614a1dd",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-72245614a1dd",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-89343c349127",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-89343c349127",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-89343c349127",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-6640245aa244",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-6640245aa244",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6640245aa244",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6d1907604b60",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-6d1907604b60",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6d1907604b60",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-6dd1b696a78b",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-6dd1b696a78b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-6dd1b696a78b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-28d286875701",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-28d286875701",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-0e5815993901",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0e5815993901",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5acdc4277798",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5acdc4277798",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-9b55860ab656",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-9b55860ab656",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-1716a40355c6",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-1716a40355c6",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1716a40355c6",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-7581f2520a7f",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-7581f2520a7f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-7581f2520a7f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-c65e99c3f346",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-c65e99c3f346",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-c65e99c3f346",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-2a94a76ac21f",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-2a94a76ac21f",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-2a94a76ac21f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-ba9b9260cf37",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-ba9b9260cf37",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-ba9b9260cf37",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-9026c0b16ab8",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-9026c0b16ab8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-9026c0b16ab8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-3c8dfe4c1e98",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-3c8dfe4c1e98",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-37fd4fdd5edb",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-37fd4fdd5edb",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1fa7c3894dfe",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1fa7c3894dfe",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-a0fbadaf621e",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-a0fbadaf621e",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-ec2c517078f8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-ec2c517078f8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-8f1428dae0e6",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-8f1428dae0e6",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-4e3f3a9404f2",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-4e3f3a9404f2",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-4e3f3a9404f2",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-d73ed60d0cc5",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-d73ed60d0cc5",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-d73ed60d0cc5",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-34bea8e5a20b",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-34bea8e5a20b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-34bea8e5a20b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-d377fb52e406",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-d377fb52e406",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-d377fb52e406",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-2f5341e61b4b",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-2f5341e61b4b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-2f5341e61b4b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-eea08d60b912",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-products-eea08d60b912",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-eea08d60b912",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-1cd1060b62ac",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1cd1060b62ac",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Al-products-e1564e4b5875",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e1564e4b5875",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "amarsi2020_galah"
+      ],
+      "claim": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv).",
+      "evidence": [
+        "data/nlte_grids/Al_Amarsi2020_PySME.prov.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0f9307cc14d8",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-0f9307cc14d8",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-e83022665728",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-e83022665728",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-1b6d063b944a",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-1b6d063b944a",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-products-5f8de77bca9c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-products-5f8de77bca9c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-12e78a3c6133",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-12e78a3c6133",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-76ece51eef7d",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-76ece51eef7d",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-76ece51eef7d",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-dcd067946a16",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-dcd067946a16",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-894223314462",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Published line set AL_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-894223314462",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "nordlander_lind2017"
+      ],
+      "claim": "Al I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Al.json"
+      ]
+    },
+    {
+      "subject": "Al-quarantine-894223314462",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
       ]
     }
   ],
@@ -885,19 +2720,19 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Al-products-e1f71442de77",
+      "publication_id": "Al-products-0656fc282fb7",
       "source_bucket": "products",
       "source_index": 2,
       "identity": {
         "element": "Al",
         "ion": "I",
         "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
         "tier": "ALL",
         "selector": "SET-AL_AGSS21",
         "route": "SYNTH",
-        "treatment": "1D-LTE",
+        "treatment": "ENGINE-B-NLTE",
         "line_set": null,
         "indicator": null
       },
@@ -907,22 +2742,22 @@
         "nordlander_lind2017",
         "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Al-products-9443d9b76f0f",
+      "publication_id": "Al-products-e70c0751a855",
       "source_bucket": "products",
       "source_index": 3,
       "identity": {
         "element": "Al",
         "ion": "I",
         "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
         "tier": "ALL",
         "selector": "SET-AL_AGSS21",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
+        "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
         "indicator": null
       },
@@ -930,18 +2765,222 @@
         "asplund2021",
         "lodders2025",
         "nordlander_lind2017",
-        "amarsi2020_galah"
+        "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Al-products-2c817b8eea2e",
+      "publication_id": "Al-products-5f8885902907",
       "source_bucket": "products",
       "source_index": 4,
       "identity": {
         "element": "Al",
         "ion": "I",
         "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-4fbec410b2fc",
+      "source_bucket": "products",
+      "source_index": 5,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-b7d6fd23e6c5",
+      "source_bucket": "products",
+      "source_index": 6,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-19f1293b9a1f",
+      "source_bucket": "products",
+      "source_index": 7,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-e2d00a7404d0",
+      "source_bucket": "products",
+      "source_index": 8,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-424c0b21e3f7",
+      "source_bucket": "products",
+      "source_index": 9,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-fac0626b64f2",
+      "source_bucket": "products",
+      "source_index": 10,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-54d5fcb4807a",
+      "source_bucket": "products",
+      "source_index": 11,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-ad1c7c744535",
+      "source_bucket": "products",
+      "source_index": 12,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "NIR",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
         "tier": "GRADED",
@@ -960,9 +2999,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Al-products-fcec422376c8",
+      "publication_id": "Al-products-4593bc34b0a0",
       "source_bucket": "products",
-      "source_index": 5,
+      "source_index": 13,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -985,219 +3024,19 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Al-products-49c83f2985f1",
-      "source_bucket": "products",
-      "source_index": 6,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-AL_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Al-products-cfa1cc6e0651",
-      "source_bucket": "products",
-      "source_index": 7,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-AL_AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Al-products-8d6674191138",
-      "source_bucket": "products",
-      "source_index": 8,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Al-products-f02ef045fac9",
-      "source_bucket": "products",
-      "source_index": 9,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Al-products-763c8ec6b825",
-      "source_bucket": "products",
-      "source_index": 10,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-AL_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Al-products-4ae1b7f5d552",
-      "source_bucket": "products",
-      "source_index": 11,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-AL_AGSS21",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Al-products-fbc7225a6f74",
-      "source_bucket": "products",
-      "source_index": 12,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Al-products-e336923b786f",
-      "source_bucket": "products",
-      "source_index": 13,
-      "identity": {
-        "element": "Al",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "nordlander_lind2017",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Al-products-e748030f2e3a",
+      "publication_id": "Al-products-b07d2f5c0794",
       "source_bucket": "products",
       "source_index": 14,
       "identity": {
         "element": "Al",
         "ion": "I",
-        "band": "VIS",
+        "band": "NIR",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-AL_AGSS21",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "1D-LTE",
+        "treatment": "ENGINE-B-NLTE",
         "line_set": null,
         "indicator": null
       },
@@ -1207,22 +3046,22 @@
         "nordlander_lind2017",
         "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Al-products-260a78aecdcd",
+      "publication_id": "Al-products-fffb5cf33289",
       "source_bucket": "products",
       "source_index": 15,
       "identity": {
         "element": "Al",
         "ion": "I",
-        "band": "VIS",
+        "band": "NIR",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-AL_AGSS21",
+        "tier": "GRADED",
+        "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
+        "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
         "indicator": null
       },
@@ -1230,24 +3069,24 @@
         "asplund2021",
         "lodders2025",
         "nordlander_lind2017",
-        "amarsi2020_galah"
+        "gerber2023"
       ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Al-products-f0ee54abeefa",
+      "publication_id": "Al-products-75e93e5cb6e6",
       "source_bucket": "products",
       "source_index": 16,
       "identity": {
         "element": "Al",
         "ion": "I",
-        "band": "VIS",
+        "band": "NIR",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "1D-LTE",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
         "line_set": null,
         "indicator": null
       },
@@ -1255,17 +3094,829 @@
         "asplund2021",
         "lodders2025",
         "nordlander_lind2017",
-        "gerber2023"
+        "gerber2023",
+        "magic2013"
       ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Al-products-c71470f7634e",
+      "publication_id": "Al-products-68d39137066b",
       "source_bucket": "products",
       "source_index": 17,
       "identity": {
         "element": "Al",
         "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-08150164da38",
+      "source_bucket": "products",
+      "source_index": 18,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-42ce2c84e60e",
+      "source_bucket": "products",
+      "source_index": 19,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-02c29fedf62c",
+      "source_bucket": "products",
+      "source_index": 20,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-234e360a5ace",
+      "source_bucket": "products",
+      "source_index": 21,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-9754fc9828b8",
+      "source_bucket": "products",
+      "source_index": 22,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-e6c258ee63fd",
+      "source_bucket": "products",
+      "source_index": 23,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-311878d9af3c",
+      "source_bucket": "products",
+      "source_index": 24,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-db28a16759bb",
+      "source_bucket": "products",
+      "source_index": 25,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-285adb9fd391",
+      "source_bucket": "products",
+      "source_index": 26,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-953aa411f821",
+      "source_bucket": "products",
+      "source_index": 27,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-88ee62a78c2f",
+      "source_bucket": "products",
+      "source_index": 28,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-fd1d9ee21465",
+      "source_bucket": "products",
+      "source_index": 29,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-f068500295d6",
+      "source_bucket": "products",
+      "source_index": 30,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-3125461cb5e6",
+      "source_bucket": "products",
+      "source_index": 31,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-25e6d5334264",
+      "source_bucket": "products",
+      "source_index": 32,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-1a22d37f03d0",
+      "source_bucket": "products",
+      "source_index": 33,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-4db175295e20",
+      "source_bucket": "products",
+      "source_index": 34,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-54cb923a1ae5",
+      "source_bucket": "products",
+      "source_index": 35,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-f84d95639973",
+      "source_bucket": "products",
+      "source_index": 36,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-1fa3fa8922c0",
+      "source_bucket": "products",
+      "source_index": 37,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-f7ea0919ce28",
+      "source_bucket": "products",
+      "source_index": 38,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-5912f5df3ae8",
+      "source_bucket": "products",
+      "source_index": 39,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-b14b5937b128",
+      "source_bucket": "products",
+      "source_index": 40,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-d47494677477",
+      "source_bucket": "products",
+      "source_index": 41,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-06f60208ce1c",
+      "source_bucket": "products",
+      "source_index": 42,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-e766253592e5",
+      "source_bucket": "products",
+      "source_index": 43,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-6a49d48c409c",
+      "source_bucket": "products",
+      "source_index": 44,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-14ec3404d0e5",
+      "source_bucket": "products",
+      "source_index": 45,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-5fa749e4356f",
+      "source_bucket": "products",
+      "source_index": 46,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-2b14b88f0e68",
+      "source_bucket": "products",
+      "source_index": 47,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-bc4bf239d469",
+      "source_bucket": "products",
+      "source_index": 48,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-dc7bd351c7fc",
+      "source_bucket": "products",
+      "source_index": 49,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
         "band": "VIS",
         "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
@@ -1285,9 +3936,111 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Al-products-e7e99f42d031",
+      "publication_id": "Al-products-9d141f0dfc76",
       "source_bucket": "products",
-      "source_index": 18,
+      "source_index": 50,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-2d63a8646d94",
+      "source_bucket": "products",
+      "source_index": 51,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-e588528cf72e",
+      "source_bucket": "products",
+      "source_index": 52,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-72245614a1dd",
+      "source_bucket": "products",
+      "source_index": 53,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-89343c349127",
+      "source_bucket": "products",
+      "source_index": 54,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1310,9 +4063,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Al-products-189b8acbdd3b",
+      "publication_id": "Al-products-6640245aa244",
       "source_bucket": "products",
-      "source_index": 19,
+      "source_index": 55,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1335,9 +4088,60 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Al-products-ca9c883560bd",
+      "publication_id": "Al-products-6d1907604b60",
       "source_bucket": "products",
-      "source_index": 20,
+      "source_index": 56,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-6dd1b696a78b",
+      "source_bucket": "products",
+      "source_index": 57,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-28d286875701",
+      "source_bucket": "products",
+      "source_index": 58,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1360,9 +4164,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Al-products-ad4018a70e99",
+      "publication_id": "Al-products-0e5815993901",
       "source_bucket": "products",
-      "source_index": 21,
+      "source_index": 59,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1385,9 +4189,364 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Al-products-172960c23449",
+      "publication_id": "Al-products-5acdc4277798",
       "source_bucket": "products",
-      "source_index": 22,
+      "source_index": 60,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-9b55860ab656",
+      "source_bucket": "products",
+      "source_index": 61,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-1716a40355c6",
+      "source_bucket": "products",
+      "source_index": 62,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-7581f2520a7f",
+      "source_bucket": "products",
+      "source_index": 63,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-c65e99c3f346",
+      "source_bucket": "products",
+      "source_index": 64,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-2a94a76ac21f",
+      "source_bucket": "products",
+      "source_index": 65,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-ba9b9260cf37",
+      "source_bucket": "products",
+      "source_index": 66,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-9026c0b16ab8",
+      "source_bucket": "products",
+      "source_index": 67,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-3c8dfe4c1e98",
+      "source_bucket": "products",
+      "source_index": 68,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Al-products-37fd4fdd5edb",
+      "source_bucket": "products",
+      "source_index": 69,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-1fa7c3894dfe",
+      "source_bucket": "products",
+      "source_index": 70,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-a0fbadaf621e",
+      "source_bucket": "products",
+      "source_index": 71,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-ec2c517078f8",
+      "source_bucket": "products",
+      "source_index": 72,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-8f1428dae0e6",
+      "source_bucket": "products",
+      "source_index": 73,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-4e3f3a9404f2",
+      "source_bucket": "products",
+      "source_index": 74,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1410,9 +4569,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Al-products-c85886319365",
+      "publication_id": "Al-products-d73ed60d0cc5",
       "source_bucket": "products",
-      "source_index": 23,
+      "source_index": 75,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1435,9 +4594,111 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Al-products-1be4caee7bb3",
+      "publication_id": "Al-products-34bea8e5a20b",
       "source_bucket": "products",
-      "source_index": 24,
+      "source_index": 76,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-d377fb52e406",
+      "source_bucket": "products",
+      "source_index": 77,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-2f5341e61b4b",
+      "source_bucket": "products",
+      "source_index": 78,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-eea08d60b912",
+      "source_bucket": "products",
+      "source_index": 79,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-1cd1060b62ac",
+      "source_bucket": "products",
+      "source_index": 80,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1460,9 +4721,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Al-products-38c43a7a6482",
+      "publication_id": "Al-products-e1564e4b5875",
       "source_bucket": "products",
-      "source_index": 25,
+      "source_index": 81,
       "identity": {
         "element": "Al",
         "ion": "I",
@@ -1483,6 +4744,210 @@
         "amarsi2020_galah"
       ],
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Al_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Al-products-0f9307cc14d8",
+      "source_bucket": "products",
+      "source_index": 82,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-e83022665728",
+      "source_bucket": "products",
+      "source_index": 83,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-products-1b6d063b944a",
+      "source_bucket": "products",
+      "source_index": 84,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-products-5f8de77bca9c",
+      "source_bucket": "products",
+      "source_index": 85,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-quarantine-12e78a3c6133",
+      "source_bucket": "quarantine",
+      "source_index": 0,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-quarantine-76ece51eef7d",
+      "source_bucket": "quarantine",
+      "source_index": 1,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Al-quarantine-dcd067946a16",
+      "source_bucket": "quarantine",
+      "source_index": 2,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Al-quarantine-894223314462",
+      "source_bucket": "quarantine",
+      "source_index": 3,
+      "identity": {
+        "element": "Al",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-AL_AGSS21",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "nordlander_lind2017",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     }
   ],
   "source_paths": [

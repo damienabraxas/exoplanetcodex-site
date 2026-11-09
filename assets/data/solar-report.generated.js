@@ -1610,16 +1610,16 @@ window.SOLAR_REPORT = {
       "name": "Aluminium",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 line set, 6 lines on kpno_solar_atlas: Al I VIS 6.428, Al I red-optical 6.450, Al I NIR 6.552 (Al.json v1.67)",
+      "method": "Asplund+2021 line set, 6 lines on kpno_solar_atlas: Al I VIS 6.516, Al I red-optical 6.521, Al I NIR 6.591 (Al.json v1.159)",
       "asplund": 6.43,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/al/",
       "primaryValue": {
-        "value": 6.4693,
-        "sigmaTotal": 0.0335,
+        "value": 6.541,
+        "sigmaTotal": 0.0373,
         "lineCount": 6
       },
-      "delta": 0.0393,
+      "delta": 0.111,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -1629,16 +1629,16 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.486, Si II VIS 7.528, Si I red-optical 7.563 (Si.json v1.278)",
+      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.580, Si II VIS 7.522, Si I red-optical 7.650 (Si.json v1.421)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
       "primaryValue": {
-        "value": 7.517,
-        "sigmaTotal": 0.0362,
+        "value": 7.5726,
+        "sigmaTotal": 0.036,
         "lineCount": 10
       },
-      "delta": 0.007,
+      "delta": 0.0626,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
