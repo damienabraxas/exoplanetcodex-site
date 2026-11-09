@@ -117,6 +117,10 @@ def reconcile_atomic(science, element, feed, audit):
             if key is None and str(s).strip() == '2013ApJS..' and element == 'Ti' \
                     and str(p.get('ion')) == 'I':
                 key = 'lawler2013'
+            # The Si Reference Grade pool records Garz 1973 by name ('GARZ; sigma from NIST
+            # class C ...'), not by DOI; it is the raw Garz table, without Amarsi's renormalisation.
+            if key is None and str(s).strip().upper().startswith('GARZ'):
+                key = 'garz1973'
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]
