@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "updated",
+    "credits"
+  ],
+  "properties": {
+    "schema": {
+      "const": "codex.roadmap_credits/1"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "credits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "authors",
+          "role",
+          "version",
+          "license",
+          "citation",
+          "scope",
+          "url",
+          "license_url",
+          "evidence",
+          "accessed",
+          "papers"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authors": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "citation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^(https://[^\\s]+|/(?!/)[^\\s]*)$"
+          },
+          "license_url": {
+            "type": "string",
+            "pattern": "^(https://[^\\s]+|/(?!/)[^\\s]*)$"
+          },
+          "evidence": {
+            "type": "string",
+            "pattern": "^(https://[^\\s]+|/(?!/)[^\\s]*)$"
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date"
+          },
+          "papers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "title",
+                "url"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^(https://[^\\s]+|/(?!/)[^\\s]*)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

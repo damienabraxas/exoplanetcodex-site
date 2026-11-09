@@ -1,0 +1,714 @@
+{
+  "schema": "codex.product_roadmap/1",
+  "updated": "2026-11-09",
+  "science_base": "078cf7dedfa961452c8bd9af43c4bf83c5463fdf",
+  "methodology": "No overall completion percentage. Stages describe evidenced work, not issue counts. The legacy element-release snapshot below counts current publishable products only; it does not certify a complete star or engine. No weighted completion is claimed.",
+  "sources": {
+    "data/catalog/system_catalog.csv": {
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/catalog/system_catalog.csv",
+      "sha256": "c53a174f2232241dc69848a2a7643b647356567dc04d43dc4c8dad9610fc2be6"
+    },
+    "data/config/elements_master.json": {
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/config/elements_master.json",
+      "sha256": "6c0376637083267de97e25cb9ffa35a015ff6a56dbfa1f3f3ecad733da4ea0e4"
+    },
+    "data/catalog/instrument_catalog.csv": {
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/catalog/instrument_catalog.csv",
+      "sha256": "4565881728a27c6a4f9fd12a961e3e749604396fe8b324cbb2b72bb018179e00"
+    }
+  },
+  "products": [
+    {
+      "id": "stellar-survey",
+      "title": "Stellar Abundance Survey",
+      "summary": "A benchmark ladder from the Sun to planet hosts, with line, instrument and uncertainty provenance. Published element coverage is a release metric; a complete star still needs independent review.",
+      "display_order": 1,
+      "status": "in_development",
+      "stage": "Development",
+      "validation": "hold",
+      "updated": "2026-11-09",
+      "issues": [
+        "RYA-621",
+        "RYA-1357"
+      ],
+      "milestones": [
+        {
+          "id": "solar",
+          "title": "Solar calibration",
+          "summary": "Existing element releases remain below. UV, visible and infrared coverage, supported engine comparisons, uncertainty and unresolved diagnostics form the Solar package.",
+          "status": "in_development",
+          "validation": "hold",
+          "gate": "Complete the Solar evidence package, independent reproduction and scientific sign-off.",
+          "issues": [
+            "RYA-1357"
+          ],
+          "evidence": [
+            {
+              "label": "Merged product store",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/products/solar",
+              "kind": "merged",
+              "date": "2026-11-09"
+            },
+            {
+              "label": "Science package contract",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/SCIENCE_PRODUCT_PACKAGE.md",
+              "kind": "merged",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "benchmark-ladder",
+          "title": "Benchmark ladder",
+          "summary": "Alpha Centauri A and B, then Procyon, extend the calibration across stellar conditions before flagship work. The full canonical target roster is retained below.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Review target ordering and each star’s input identity, parameters and instrument holdings.",
+          "issues": [
+            "RYA-621"
+          ],
+          "evidence": [
+            {
+              "label": "Canonical system catalog",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/catalog/system_catalog.csv",
+              "kind": "merged",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "publication",
+          "title": "Publication readiness",
+          "summary": "Per-star packages include line-level results, method provenance, cross-region checks, failure evidence and uncertainty budgets.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Independent scientific review precedes a released Science Product Package.",
+          "issues": [
+            "RYA-1357"
+          ],
+          "evidence": [
+            {
+              "label": "Publication contract",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/SCIENCE_PRODUCT_PACKAGE.md",
+              "kind": "merged",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        }
+      ],
+      "gate": "Complete the Solar evidence package, independent reproduction and scientific sign-off.",
+      "dependencies": [],
+      "credits": [
+        "survey-stack"
+      ],
+      "evidence": [
+        {
+          "label": "Merged product store",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/products/solar",
+          "kind": "merged",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "Science package contract",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/SCIENCE_PRODUCT_PACKAGE.md",
+          "kind": "merged",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "Canonical system catalog",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/catalog/system_catalog.csv",
+          "kind": "merged",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "Publication contract",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/SCIENCE_PRODUCT_PACKAGE.md",
+          "kind": "merged",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "id": "bride",
+      "title": "BRIDE · 3D NLTE Engine",
+      "summary": "Oxygen-first radiative-transfer research. Review-branch one-column diagnostics do not establish an independently validated physical model or coupled 3D transfer.",
+      "display_order": 2,
+      "status": "in_development",
+      "stage": "Development",
+      "validation": "hold",
+      "updated": "2026-11-09",
+      "issues": [
+        "RYA-1278",
+        "RYA-1280",
+        "RYA-1281",
+        "RYA-1282"
+      ],
+      "milestones": [
+        {
+          "id": "foundations",
+          "title": "Formal transfer & statistical equilibrium",
+          "summary": "Test limiting cases, conservation, rate balance, boundary conditions and resolution against independent references.",
+          "status": "in_development",
+          "validation": "hold",
+          "gate": "Qualify the physical atom, atmosphere, opacity and matched independent reference.",
+          "issues": [
+            "RYA-1280"
+          ],
+          "evidence": [
+            {
+              "label": "Foundation PR #597",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/pull/597",
+              "kind": "review",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "oxygen-column",
+          "title": "O I 777 nm one-column pilot",
+          "summary": "A review branch retains experimental oxygen diagnostics and sensitivity controls. Numerical convergence alone does not establish physical accuracy.",
+          "status": "in_review",
+          "validation": "hold",
+          "gate": "Independent same-physics comparison; resolve opacity and observational conditioning.",
+          "issues": [
+            "RYA-1281"
+          ],
+          "evidence": [
+            {
+              "label": "One-column PR #598",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/pull/598",
+              "kind": "review",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "subsets",
+          "title": "Representative 1.5D subsets",
+          "summary": "Validate spatial and temporal sampling, area/ray weighting, velocities and numerical convergence. Independent columns omit horizontal radiative coupling.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Pass one-column physical qualification before subset validation.",
+          "issues": [
+            "RYA-1282"
+          ],
+          "evidence": [],
+          "dependencies": []
+        },
+        {
+          "id": "coupled-3d",
+          "title": "Coupled full-3D backend",
+          "summary": "Select and independently test a backend with horizontal transport coupled to populations. Broader C/N/Fe and UV/IR coverage have separate applicability gates.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Demonstrate homogeneous limits and an independent structured-atmosphere benchmark.",
+          "issues": [
+            "RYA-1282"
+          ],
+          "evidence": [],
+          "dependencies": []
+        }
+      ],
+      "gate": "Qualify the physical atom, atmosphere, opacity and matched independent reference.",
+      "dependencies": [],
+      "credits": [
+        "lightweaver"
+      ],
+      "evidence": [
+        {
+          "label": "Foundation PR #597",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/pull/597",
+          "kind": "review",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "One-column PR #598",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/pull/598",
+          "kind": "review",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "id": "atomic-laboratory",
+      "title": "Theoretical Atomic Line Laboratory",
+      "summary": "Calculated atomic transition data, explicitly separated from experimental laboratory measurements. Exploratory oxygen predictions remain on scientific HOLD.",
+      "display_order": 3,
+      "status": "in_development",
+      "stage": "Development",
+      "validation": "hold",
+      "updated": "2026-11-09",
+      "issues": [
+        "RYA-1351",
+        "RYA-1354",
+        "RYA-1355",
+        "RYA-1356"
+      ],
+      "milestones": [
+        {
+          "id": "inventory",
+          "title": "Source and identity census",
+          "summary": "Merged O/Fe census and grade-governance audits establish source distinctions and unresolved identity/admission gates.",
+          "status": "in_review",
+          "validation": "hold",
+          "gate": "Resolve physical transition identity and theoretical-data adoption policy.",
+          "issues": [
+            "RYA-1351"
+          ],
+          "evidence": [
+            {
+              "label": "Merged O/Fe census",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/scripts/rya1353_line_census.py",
+              "kind": "merged",
+              "date": "2026-11-09"
+            },
+            {
+              "label": "Merged grade governance",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/audit/rya1352/README.md",
+              "kind": "merged",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "oxygen-theory",
+          "title": "O I pilot · two structure methods",
+          "summary": "The review branch invokes pinned GRASP and ATSP/MCHF toolchains. Configuration, gauge, lifetime and orbital-model studies remain exploratory; O II requires separate justification.",
+          "status": "in_review",
+          "validation": "hold",
+          "gate": "Reviewed convergence, source provenance and calibrated uncertainty before adoption.",
+          "issues": [
+            "RYA-1354"
+          ],
+          "evidence": [
+            {
+              "label": "Oxygen pilot PR #616",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/pull/616",
+              "kind": "review",
+              "date": "2026-11-09"
+            },
+            {
+              "label": "Pinned toolchain receipt",
+              "url": "https://github.com/damienabraxas/exoplanetcodex/blob/b04ed3d71fb8220d9858cea008adefd7332136cd/docs/audit/rya1354/toolchain_provenance.json",
+              "kind": "review",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "independent-benchmark",
+          "title": "Independent experimental comparison",
+          "summary": "Existing NIST/project/literature comparisons are exposed, nonblind validation. Prospective blindness requires genuinely withheld evidence, frozen predictions and distinct curation.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Review laboratory origin, shared lifetime/branching scales and covariance; freeze criteria before scoring.",
+          "issues": [
+            "RYA-1354"
+          ],
+          "evidence": [],
+          "dependencies": []
+        },
+        {
+          "id": "iron-extension",
+          "title": "Fe I/II · UV / VIS / IR",
+          "summary": "Extend only after the oxygen and governance gates, retaining failed predictions and independent primary experimental anchors.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Review tractable transitions and method-specific uncertainty.",
+          "issues": [
+            "RYA-1355"
+          ],
+          "evidence": [],
+          "dependencies": []
+        },
+        {
+          "id": "beyond-gf",
+          "title": "Beyond oscillator strengths",
+          "summary": "Collision rates, photoionization, broadening, HFS/isotopes and M-dwarf applicability need distinct methods and experimental constraints.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Approve a method-by-property scope; no single structure solver supplies every property.",
+          "issues": [
+            "RYA-1356"
+          ],
+          "evidence": [],
+          "dependencies": []
+        }
+      ],
+      "gate": "Resolve physical transition identity and theoretical-data adoption policy.",
+      "dependencies": [],
+      "credits": [
+        "grasp",
+        "atsp",
+        "atsp-book",
+        "nist",
+        "vald"
+      ],
+      "evidence": [
+        {
+          "label": "Merged O/Fe census",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/scripts/rya1353_line_census.py",
+          "kind": "merged",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "Merged grade governance",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/audit/rya1352/README.md",
+          "kind": "merged",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "Oxygen pilot PR #616",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/pull/616",
+          "kind": "review",
+          "date": "2026-11-09"
+        },
+        {
+          "label": "Pinned toolchain receipt",
+          "url": "https://github.com/damienabraxas/exoplanetcodex/blob/b04ed3d71fb8220d9858cea008adefd7332136cd/docs/audit/rya1354/toolchain_provenance.json",
+          "kind": "review",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "id": "abundance-gui",
+      "title": "Abundance GUI",
+      "summary": "Discovery for an open, local-first single-line spectroscopy workbench. Line measurement and abundance inference have separate inputs and validation.",
+      "display_order": 4,
+      "status": "discovery",
+      "stage": "Discovery",
+      "validation": "not_assessed",
+      "updated": "2026-11-09",
+      "issues": [
+        "RYA-1367",
+        "RYA-214"
+      ],
+      "milestones": [
+        {
+          "id": "discovery",
+          "title": "Discovery & architecture",
+          "summary": "Define spectrum input, continuum placement, local fitting, engine boundaries, provenance, privacy and bounded resources.",
+          "status": "discovery",
+          "validation": "not_assessed",
+          "gate": "Review architecture, wireframes and a feasible engine interface.",
+          "issues": [
+            "RYA-1367"
+          ],
+          "evidence": [
+            {
+              "label": "Workbench scope",
+              "url": "https://linear.app/ryans-adventure-zone/issue/RYA-1367",
+              "kind": "scope",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "prototype",
+          "title": "Single-line prototype",
+          "summary": "Measure a line, then infer abundance only with verified stellar parameters, atomic data and applicable physics.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Reject unsupported combinations and missing scientific inputs.",
+          "issues": [
+            "RYA-1367"
+          ],
+          "evidence": [],
+          "dependencies": []
+        },
+        {
+          "id": "verification",
+          "title": "Scientific V&V & accessible release",
+          "summary": "Verify synthetic and independent benchmarks, propagated uncertainty, keyboard use and reproducibility exports. Full-star agent service is a later, separate vision.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Scientific and accessibility review before public release.",
+          "issues": [
+            "RYA-1367",
+            "RYA-214"
+          ],
+          "evidence": [],
+          "dependencies": []
+        }
+      ],
+      "gate": "Review architecture, wireframes and a feasible engine interface.",
+      "dependencies": [],
+      "credits": [],
+      "evidence": [
+        {
+          "label": "Workbench scope",
+          "url": "https://linear.app/ryans-adventure-zone/issue/RYA-1367",
+          "kind": "scope",
+          "date": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "id": "cross-engine",
+      "title": "Cross-Engine & Cross-Band Data Product",
+      "summary": "An independent research dataset comparing applicable LTE/NLTE and dimensional treatments across bands, instruments and stars. No engine is presumed superior.",
+      "display_order": 5,
+      "status": "discovery",
+      "stage": "Discovery",
+      "validation": "not_assessed",
+      "updated": "2026-11-09",
+      "issues": [
+        "RYA-1368",
+        "RYA-508"
+      ],
+      "milestones": [
+        {
+          "id": "design",
+          "title": "Comparison protocol & schema",
+          "summary": "Define matched-input comparisons with line, holding, atmosphere, engine, uncertainty and covariance provenance.",
+          "status": "discovery",
+          "validation": "not_assessed",
+          "gate": "Review schema and exemplar records with explicit missingness and applicability.",
+          "issues": [
+            "RYA-1368"
+          ],
+          "evidence": [
+            {
+              "label": "Research product scope",
+              "url": "https://linear.app/ryans-adventure-zone/issue/RYA-1368",
+              "kind": "scope",
+              "date": "2026-11-09"
+            }
+          ],
+          "dependencies": []
+        },
+        {
+          "id": "solar-matrix",
+          "title": "Solar comparison matrix",
+          "summary": "Populate from verified Solar evidence. Preserve NOT_APPLICABLE, UNSUPPORTED, NOT_RUN, BLOCKED and FAILED states alongside successful comparisons.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Control atomic data, atmosphere, continuum, resolution and tellurics before interpreting residuals.",
+          "issues": [
+            "RYA-1368"
+          ],
+          "evidence": [],
+          "dependencies": []
+        },
+        {
+          "id": "feedback",
+          "title": "Residuals, replication & BRIDE feedback",
+          "summary": "Publish reproducible exploratory plots, null results and correlated systematics, then broaden across stars. Use discrepancies as falsifiable engine hypotheses.",
+          "status": "planned",
+          "validation": "not_assessed",
+          "gate": "Independent review of effect sizes, uncertainty, selection bias and reproducibility.",
+          "issues": [
+            "RYA-1368",
+            "RYA-508"
+          ],
+          "evidence": [],
+          "dependencies": []
+        }
+      ],
+      "gate": "Review schema and exemplar records with explicit missingness and applicability.",
+      "dependencies": [],
+      "credits": [],
+      "evidence": [
+        {
+          "label": "Research product scope",
+          "url": "https://linear.app/ryans-adventure-zone/issue/RYA-1368",
+          "kind": "scope",
+          "date": "2026-11-09"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "system_name": "Sun",
+      "star_params_key": "solar",
+      "role": "calibration_anchor",
+      "run_order": "1",
+      "pipeline_status": "running",
+      "website_slug": "sol"
+    },
+    {
+      "system_name": "Procyon",
+      "star_params_key": "procyon",
+      "role": "benchmark",
+      "run_order": "4",
+      "pipeline_status": "vald_done",
+      "website_slug": "procyon"
+    },
+    {
+      "system_name": "Alpha Cen A",
+      "star_params_key": "alpha_cen_a",
+      "role": "science_target",
+      "run_order": "2",
+      "pipeline_status": "vald_done",
+      "website_slug": "alpha-centauri-a"
+    },
+    {
+      "system_name": "Alpha Cen B",
+      "star_params_key": "alpha_cen_b",
+      "role": "science_target",
+      "run_order": "3",
+      "pipeline_status": "vald_done",
+      "website_slug": "alpha-cen-b"
+    },
+    {
+      "system_name": "55 Cnc A",
+      "star_params_key": "55cnc_a",
+      "role": "science_target",
+      "run_order": "5",
+      "pipeline_status": "queued",
+      "website_slug": "55-cancri"
+    },
+    {
+      "system_name": "tau Boo",
+      "star_params_key": "",
+      "role": "benchmark_candidate",
+      "run_order": "",
+      "pipeline_status": "data_audit",
+      "website_slug": "tau-boo"
+    },
+    {
+      "system_name": "HD 77338",
+      "star_params_key": "",
+      "role": "benchmark_candidate",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "hd-77338"
+    },
+    {
+      "system_name": "HD 209458",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "hd209458"
+    },
+    {
+      "system_name": "HD 189733",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "hd189733"
+    },
+    {
+      "system_name": "tau Ceti",
+      "star_params_key": "tau_ceti",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "tau-ceti"
+    },
+    {
+      "system_name": "eps Eri",
+      "star_params_key": "eps_eri",
+      "role": "benchmark_candidate",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "eps-eri"
+    },
+    {
+      "system_name": "WASP-107",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "wasp-107"
+    },
+    {
+      "system_name": "LHS 3844",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "lhs-3844"
+    },
+    {
+      "system_name": "Barnards Star",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "barnards-star"
+    },
+    {
+      "system_name": "Gliese 581",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "gliese581"
+    },
+    {
+      "system_name": "HD 89307",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "hd89307"
+    },
+    {
+      "system_name": "Proxima Centauri",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "proxima"
+    },
+    {
+      "system_name": "61 Virginis",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "61-vir"
+    },
+    {
+      "system_name": "51 Pegasi",
+      "star_params_key": "",
+      "role": "future_target",
+      "run_order": "",
+      "pipeline_status": "queued",
+      "website_slug": "51-peg"
+    }
+  ],
+  "elements": [
+    "Fe",
+    "Fe II",
+    "C",
+    "O",
+    "Mg",
+    "Si",
+    "Ca",
+    "Ti",
+    "Ni",
+    "Na",
+    "P",
+    "S",
+    "N",
+    "Co",
+    "Cr",
+    "Al",
+    "K",
+    "Ba",
+    "Y",
+    "V",
+    "Cu",
+    "Zn",
+    "Mn",
+    "Sc",
+    "Li",
+    "Eu",
+    "Zr",
+    "Sr"
+  ]
+}

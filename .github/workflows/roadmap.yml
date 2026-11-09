@@ -1,0 +1,23 @@
+name: Roadmap integrity
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  roadmap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install jsonschema playwright
+      - run: python -m unittest discover -s tests -p '*roadmap*.py'
+      - run: python scripts/render_roadmap_credits.py --check
+      - run: playwright install --with-deps chromium
+      - name: Browser, mobile and local link checks
+        run: |
+          python -m http.server 8520 --bind 127.0.0.1 &
+          python tests/browser_product_roadmap.py
+          curl -fsSL https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js -o /tmp/axe.js
+          python tests/browser_roadmap_accessibility.py /tmp/axe.js

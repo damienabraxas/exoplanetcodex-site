@@ -1,0 +1,134 @@
+{
+  "schema": "codex.roadmap_credits/1",
+  "updated": "2026-11-09",
+  "credits": [
+    {
+      "id": "grasp",
+      "name": "GRASP",
+      "authors": "C. Froese Fischer, G. Gaigalas, P. Jönsson, J. Bieroń; Computational Atomic Structure Group / CompAS",
+      "role": "External MCDHF/RCI structure and native transition operators invoked by the exploratory O I pilot. Codex supplies orchestration and audit records, not the upstream solver.",
+      "version": "9006157730a82ac839f2b4ff4e938bcba63a539e",
+      "url": "https://github.com/compas/grasp",
+      "license": "MIT; retain copyright and permission notice with copies or substantial portions. Manual separately CC BY 4.0.",
+      "license_url": "https://github.com/compas/grasp/blob/9006157730a82ac839f2b4ff4e938bcba63a539e/LICENSE",
+      "citation": "Froese Fischer et al., GRASP2018, Computer Physics Communications 237, 184–187; cite pinned source in addition to method paper.",
+      "papers": [
+        {
+          "title": "GRASP2018 method paper",
+          "url": "https://doi.org/10.1016/j.cpc.2018.10.032"
+        }
+      ],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/blob/b04ed3d71fb8220d9858cea008adefd7332136cd/docs/audit/rya1354/toolchain_provenance.json",
+      "scope": "review branch",
+      "accessed": "2026-11-09"
+    },
+    {
+      "id": "atsp",
+      "name": "ATSP development / ATSP2K lineage",
+      "authors": "C. Froese Fischer, G. Tachiev, G. Gaigalas, M. R. Godefroid; CompAS maintainers",
+      "role": "External MCHF and modern biorthogonal transition path; a limited independent-method comparison with shared development ancestry.",
+      "version": "66689d96b409ac94b003b4bacace6e72f4e69294",
+      "url": "https://github.com/compas/atsp",
+      "license": "MIT; copyright 2019 CompAS. Preserve copyright and permission notice with copies or substantial portions.",
+      "license_url": "https://github.com/compas/atsp/blob/66689d96b409ac94b003b4bacace6e72f4e69294/LICENSE",
+      "citation": "Froese Fischer et al., An MCHF atomic-structure package for large-scale calculations, CPC 176, 559 (2007). Installed pin is a development revision, not a claim to the published release.",
+      "papers": [
+        {
+          "title": "ATSP2K method paper",
+          "url": "https://doi.org/10.1016/j.cpc.2007.01.006"
+        },
+        {
+          "title": "Multiconfiguration methods review",
+          "url": "https://doi.org/10.1088/0953-4075/49/18/182004"
+        }
+      ],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/blob/b04ed3d71fb8220d9858cea008adefd7332136cd/docs/audit/rya1354/toolchain_provenance.json",
+      "scope": "review branch",
+      "accessed": "2026-11-09"
+    },
+    {
+      "id": "atsp-book",
+      "name": "ATSP book version",
+      "authors": "C. Froese Fischer, T. Brage, P. Jönsson; CompAS repository",
+      "role": "External MCHF book-code calculations; rejected legacy angular output is retained as failure evidence.",
+      "version": "26a2c5a2d3cafc07a8d2d37b40d035d43e938b3e",
+      "url": "https://github.com/compas/atsp-book",
+      "license": "Pending: no root license verified in the toolchain receipt. Upstream source is not redistributed here.",
+      "license_url": "https://github.com/compas/atsp-book",
+      "citation": "Froese Fischer, Brage & Jönsson, Computational Atomic Structure: An MCHF Approach (1997), ISBN 9780750304665. Software-specific reuse terms remain pending.",
+      "papers": [],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/blob/b04ed3d71fb8220d9858cea008adefd7332136cd/docs/audit/rya1354/toolchain_provenance.json",
+      "scope": "review branch",
+      "accessed": "2026-11-09"
+    },
+    {
+      "id": "nist",
+      "name": "NIST Atomic Spectra Database (ASD)",
+      "authors": "A. Kramida, Yu. Ralchenko, J. Reader and NIST ASD Team",
+      "role": "Evaluated level/transition records and source tracing. Pilot comparisons are exposed and nonblind; database entries do not by themselves prove primary experimental origin.",
+      "version": "Query receipt dated 2026-11-08; exact retained response version pending. Upstream citation page lists 5.12 (2024).",
+      "url": "https://physics.nist.gov/asd",
+      "license": "NIST SRD reuse terms apply; exact record-specific redistribution review pending. Cite ASD and original data sources; no blanket public-domain assertion.",
+      "license_url": "https://www.nist.gov/open/license",
+      "citation": "Kramida et al. (2024), NIST Atomic Spectra Database, version 5.12, NIST, DOI 10.18434/T4W30F. Record actual retrieval date and retained response version.",
+      "papers": [
+        {
+          "title": "ASD citation and version history",
+          "url": "https://physics.nist.gov/PhysRefData/ASD/Html/verhist.shtml"
+        },
+        {
+          "title": "ASD DOI",
+          "url": "https://doi.org/10.18434/T4W30F"
+        }
+      ],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/blob/b04ed3d71fb8220d9858cea008adefd7332136cd/data/audit/rya1354/nonblind_v1/nist_receipt.json",
+      "scope": "review branch",
+      "accessed": "2026-11-09"
+    },
+    {
+      "id": "vald",
+      "name": "VALD / Kurucz source records",
+      "authors": "VALD consortium and individually credited source authors; exact extraction attribution pending",
+      "role": "Merged census reads existing project linelist/source records. No new pilot VALD3 service invocation or complete extraction-version receipt is claimed.",
+      "version": "Exact extraction version pending",
+      "url": "https://vald.astro.uu.se/",
+      "license": "Pending per extraction and original dataset. No upstream dataset is redistributed by this dashboard.",
+      "license_url": "https://vald.astro.uu.se/",
+      "citation": "Extraction-specific recommended citation pending; existing bibliography retains individual atomic source references.",
+      "papers": [],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/docs/audit/rya1353_line_census.md",
+      "scope": "merged census",
+      "accessed": "2026-11-09"
+    },
+    {
+      "id": "lightweaver",
+      "name": "Lightweaver & STAGGER",
+      "authors": "Lightweaver and STAGGER upstream teams; exact per-run author/version citation audit pending",
+      "role": "External radiative-transfer and atmosphere foundations referenced by the BRIDE research scope. Coupled 3D qualification remains open.",
+      "version": "Resolve from each BRIDE run manifest; no version inferred here",
+      "url": "https://github.com/Goobley/Lightweaver",
+      "license": "Pending per pinned code, atmosphere and model-atom records.",
+      "license_url": "https://github.com/Goobley/Lightweaver",
+      "citation": "Full run-specific software and atmosphere citations pending; see BRIDE review evidence.",
+      "papers": [],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/pull/598",
+      "scope": "review branch",
+      "accessed": "2026-11-09"
+    },
+    {
+      "id": "survey-stack",
+      "name": "Survey engines, grids & atomic sources",
+      "authors": "Individual upstream authors credited in the existing bibliography and per-product provenance",
+      "role": "External synthesis engines, departure grids, atmosphere models and experimental/evaluated line data support the survey. Read exact versions and applicability per product.",
+      "version": "Per-product provenance; no universal version",
+      "url": "/sources/",
+      "license": "Per dependency; see cited software/data records and product provenance.",
+      "license_url": "/sources/",
+      "citation": "Use the existing bibliography and each released product’s method/source records.",
+      "papers": [],
+      "evidence": "https://github.com/damienabraxas/exoplanetcodex/blob/078cf7dedfa961452c8bd9af43c4bf83c5463fdf/data/catalog/model_registry.csv",
+      "scope": "merged registry",
+      "accessed": "2026-11-09"
+    }
+  ]
+}
