@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/assets/js/analytics.js"></script>
+  <title>Spectroscopic Frontier · The Exoplanet Codex</title>
+  <meta name="description" content="Explore atomic and molecular model resources, documented coverage, scientific limits and open research gaps.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/codex.css">
+  <link rel="canonical" href="https://exoplanetcodex.org/spectroscopic-frontier/">
+  <link rel="stylesheet" href="/assets/css/frontier-atlas.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to atlas</a><canvas id="starfield" aria-hidden="true"></canvas><div class="page">  <nav class="codex-nav">
+    <a href="/" class="nav-logo"><span class="logo-text">EXOPLANET CODEX</span></a>
+    <ul class="nav-links">
+      <li><a href="/systems/">Systems</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+      <li><a href="/method/">Method</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/mission-log/">Mission Log</a></li>
+      <li><a href="/origin/">Origin</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/roadmap.html">Roadmap</a></li>
+      <li><a href="/spectroscopic-frontier/" class="active" aria-current="page">Frontier</a></li>
+      <li><a href="https://github.com/damienabraxas/exoplanetcodex" target="_blank">GitHub ↗</a></li>
+    </ul>
+    <div class="breadcrumb"><a href="/">Home</a> / <span>Spectroscopic Frontier</span></div>
+  </nav>
+
+
+<main id="main">
+<header class="page-hero">
+ <div class="page-eyebrow">Science atlas // Atomic &amp; molecular model resources</div>
+ <h1 class="page-title">The Spectroscopic<br><em>Frontier</em></h1>
+ <p class="page-subtitle">Find the models behind a spectral line—and the questions still open. Explore atomic and molecular resources by species, wavelength and physical scope, with the sources and limitations in view.</p>
+</header>
+<div class="atlas-snapshot"><p><strong>Atomic &amp; Molecular Model Atlas</strong> · A public research inventory. Availability, compatibility and independent validation are separate facts.</p><p id="snapshot-status">Loading source snapshot…</p></div>
+<nav class="atlas-jumps" aria-label="Atlas sections"><a href="#coverage">Coverage matrix</a><a href="#research-gaps">Research gaps</a><a href="#cool-star-pathway">M-dwarf pathway</a><a href="#methodology">How to read the atlas</a></nav>
+<section id="coverage" class="atlas-section" aria-labelledby="coverage-title">
+ <div class="section-label">Explore the evidence</div><h2 id="coverage-title">Coverage matrix</h2>
+ <p class="atlas-intro">Search source records or narrow the view. Quantitative filters match published axis envelopes only; they do not certify a valid interpolation, a complete model or a result for your star.</p>
+ <form id="atlas-filters" class="atlas-filters" aria-label="Filter atlas" hidden>
+  <label class="search-field">Search species, models, sources or limits<input id="atlas-search" type="search" placeholder="O I, Fe II, CO, atmosphere…" autocomplete="off"></label>
+  <label>Species / molecule<select id="filter-species"><option value="">All species</option></select></label>
+  <label>Ion stage<select id="filter-ion"><option value="">All ions</option></select></label>
+  <label>Isotopologue<select id="filter-isotope"><option value="">All / unspecified</option></select></label>
+  <label>Band<select id="filter-band"><option value="">All / unaudited bands</option><option>UV</option><option>VIS</option><option>IR</option><option value="unaudited">Not yet audited</option></select></label>
+  <label>Resource type<select id="filter-component"><option value="">All resource types</option></select></label>
+  <label>Physics / treatment<select id="filter-treatment"><option value="">All treatments</option></select></label>
+  <label>Availability<select id="filter-availability"><option value="">All availability</option></select></label>
+  <label>Scientific assessment<select id="filter-status"><option value="">All assessments</option><option value="unverified">Unverified</option><option value="validated">Independently validated</option><option value="known_gap">Known gap / incompatible resource</option><option value="unaudited">Not yet audited</option><option value="outside_scope">Outside the filtered axis envelope</option></select></label>
+  <label>Stellar research context<select id="filter-stellar"><option value="">All / scope not established</option><option value="fg">F/G reference studies</option><option value="cool">M-dwarf / cool-star research</option></select></label>
+  <label>Atmosphere family<select id="filter-atmosphere"><option value="">All / not yet audited</option></select></label>
+  <label>Engine / solver<select id="filter-engine"><option value="">All / not yet audited</option></select></label>
+  <label>Line-set membership<select id="filter-membership"><option value="">All / not yet audited</option><option value="not_audited">Not yet audited</option><option value="asplund">Asplund</option><option value="amarsi">Amarsi</option><option value="bergemann_openmulti3d">Bergemann / OpenMULTI3D</option><option value="codex">Codex</option><option value="theoretical_codex">Theoretical Codex</option></select></label>
+  <details class="quantitative"><summary>Quantitative scope: Teff, log g, metallicity &amp; C/O</summary><div class="axis-fields">
+   <label>Teff (K)<input id="filter-teff" type="number" min="0" step="any" placeholder="Not specified"></label>
+   <label>log g (cm/s²)<input id="filter-logg" type="number" step="any" placeholder="Not specified"></label>
+   <label>[Fe/H] (dex)<input id="filter-feh" type="number" step="any" placeholder="Not specified"></label>
+   <label>C/O (number ratio)<input id="filter-co" type="number" min="0" step="any" placeholder="Not specified"></label>
+   <label>Unknown domains<select id="filter-unknown"><option value="include">Include as not yet audited</option><option value="exclude">Only records with every requested axis</option></select></label>
+  </div><p>Missing bounds stay unknown. An envelope includes neither all parameter combinations nor authorization to interpolate. Use the outside-scope view to inspect excluded records.</p></details>
+  <div class="filter-actions"><button type="reset">Reset filters</button><a href="#methodology">Status and quality legend</a></div>
+ </form>
+ <p id="result-count" role="status" aria-live="polite">Loading atlas…</p>
+ <p id="filter-note" class="filter-note"></p>
+ <div id="atlas-results" aria-busy="true"><p class="atlas-loading">Loading canonical resource records…</p></div>
+ <noscript><p>Download the <a href="/assets/data/frontier-atlas.v1.json">canonical atlas JSON</a> or read the <a href="/sources/#frontier-attribution">source bibliography</a>. Interactive filtering requires JavaScript.</p></noscript>
+</section>
+<section id="research-gaps" class="atlas-section" aria-labelledby="gaps-title"><div class="section-label">Questions with a next step</div><h2 id="gaps-title">Scientific gap matrix</h2><p>A gap here describes a specific resource or an unfinished audit. It is not a claim that the literature has no model.</p><div id="atlas-gaps">Loading research questions…</div></section>
+<section id="cool-star-pathway" class="atlas-section" aria-labelledby="cool-title"><div class="section-label">Beyond the reference stars</div><h2 id="cool-title">A pathway to M-dwarf spectroscopy</h2><p>Cool-star and molecular resources need their own physical and observational review. Chemistry, C/O, pressure broadening and magnetic sensitivity matter alongside temperature, gravity and metallicity. A spectral-class label does not establish applicability.</p><p id="target-pathway"></p><p><a href="?stellar=cool#coverage">Explore the cool-star research inventory →</a> · <a href="https://linear.app/ryans-adventure-zone/issue/RYA-970">Benchmark-star research</a> · <a href="https://linear.app/ryans-adventure-zone/issue/RYA-1314">Molecular framework</a></p></section>
+<section id="methodology" class="atlas-section" aria-labelledby="method-title"><div class="section-label">Read the distinctions</div><h2 id="method-title">What a coverage record can tell you</h2>
+ <dl class="atlas-legend"><dt>Available</dt><dd>The named resource is held, or published but not acquired. That says nothing by itself about validation or reuse rights.</dd><dt>Unverified</dt><dd>Independent scientific assessment is still owed, even when the source identity and stored artifact are known.</dd><dt>Validated</dt><dd>Requires explicit independent sign-off for a stated scope. The current registry makes no such promotion.</dd><dt>Known gap</dt><dd>A documented incompatibility or missing requirement for this particular resource.</dd><dt>Not yet audited</dt><dd>The release, membership or physical domain has not been established. Missing from this registry does not mean nonexistent.</dd><dt>Outside scope</dt><dd>A requested value lies outside a stored axis envelope. Values inside an envelope still need exact line and hull checks.</dd></dl>
+ <div class="method-grid"><article><h3>Atom ≠ atmosphere ≠ solver</h3><p>A model atom supplies levels and rates. An atmosphere supplies physical structure. A solver handles radiation and populations. A correction grid or surrogate summarizes a source calculation; a line list supplies transitions. None substitutes for the others.</p></article><article><h3>Geometry and dimensionality</h3><p>Disk-centre intensity and disk-integrated flux are different observables. Mean-3D atmospheres, independent 1.5D columns and coupled full-3D transfer are distinct. A solver’s full-3D capability does not validate every species, atom or diagnostic.</p></article><article><h3>Source membership is not a grade</h3><p>A transition may belong to several published selections. Recommendation, empirical suitability, experimental oscillator-strength quality and theoretical-calculation validation remain independent. Memberships and their reasons appear only when supplied by reviewed canonical evidence; RYA-1376 owns the pending source audit.</p></article><article><h3>Wavelengths and uncertainty</h3><p>Display bands use UV &lt;400 nm, VIS 400–780 nm and IR ≥780 nm. These are navigation categories. Exact transitions, air/vacuum conventions, holding-specific telluric checks and uncertainty evidence determine scientific use. Missing chemistry, rates or grades remain explicit.</p></article></div>
+ <p><a href="/sources/#frontier-attribution">Full source and software attribution</a> · <a id="atlas-method-link" href="https://github.com/damienabraxas/exoplanetcodex">Canonical methodology</a> · <a href="/roadmap.html#bride">BRIDE</a> · <a href="/roadmap.html#atomic-laboratory">Atomic Laboratory</a> · <a href="/roadmap.html#cross-engine">Cross-engine research</a></p>
+</section>
+<section class="atlas-section" id="contribute"><div class="section-label">Improve the record</div><h2>Contribute evidence or a correction</h2><p>Report the entry ID, exact source/version, physical scope and proposed correction. Changes go through a versioned pull request and separate scientific review; this page cannot edit canonical data.</p><p><a href="https://github.com/damienabraxas/exoplanetcodex/issues/new?title=Frontier%20atlas%20correction">Propose a correction on GitHub</a> · <a id="contribution-guide" href="https://github.com/damienabraxas/exoplanetcodex">Contribution and review guide</a> · <a href="/assets/data/frontier-atlas.v1.json">Download this snapshot</a></p></section>
+</main>
+  <footer class="codex-footer">
+    <div class="footer-grid">
+      <div><p class="footer-label">The Exoplanet Codex</p><p>Open science · Stellar spectroscopy · Montana, USA</p></div>
+      <div><p class="footer-label">Navigate</p><a href="/glossary/">Glossary</a><a href="/method/">Methodology</a><a href="/sources/">Sources</a><a href="/mission-log/">Mission Log</a></div>
+      <div><p class="footer-label">Science</p><a href="/spectroscopic-frontier/">Spectroscopic Frontier</a><a href="https://github.com/damienabraxas/exoplanetcodex">Pipeline Code</a><a href="/assets/docs/exoplanet-codex-method-v2.0.pdf">Methodology PDF</a><a href="/assets/docs/exoplanet-codex-glossary-v3.2.pdf">Glossary PDF</a></div>
+      <div><p class="footer-label">Contact</p><a href="mailto:info@exoplanetcodex.org">info@exoplanetcodex.org</a></div>
+    </div>
+    <p class="footer-copy">© 2026 The Exoplanet Codex · Open Science · All data public</p>
+  </footer>
+</div>
+<script src="/assets/js/starfield.js"></script><script src="/assets/js/frontier-atlas.js" defer></script></body></html>

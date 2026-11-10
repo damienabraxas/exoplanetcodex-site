@@ -1,0 +1,30 @@
+name: Frontier atlas integrity
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  atlas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install jsonschema playwright
+      - run: python -m unittest discover -s tests -p 'test_frontier*.py'
+      - run: python scripts/render_frontier_attribution.py --check
+      - run: python scripts/sync_frontier_navigation.py --check
+      - run: playwright install --with-deps chromium
+      - name: Browser, mobile, source-link and accessibility checks
+        run: |
+          python -m http.server 8521 --bind 127.0.0.1 &
+          curl -fsSL https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js -o /tmp/axe.js
+          python tests/browser_frontier_atlas.py http://127.0.0.1:8521 /tmp/axe.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: frontier-browser-evidence
+          path: docs/qa/rya1377/
