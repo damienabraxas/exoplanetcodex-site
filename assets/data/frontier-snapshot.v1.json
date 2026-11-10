@@ -1,0 +1,15 @@
+{
+  "schema": "codex.frontier_web_snapshot/1",
+  "science_commit": "10f0dc955803253570a944ca37012654e80ead9f",
+  "atlas_sha256": "d4f120af577239876212b7511b93daa033adec6c5bdfbffda0d4b118532bcf01",
+  "schema_sha256": "4716ec6044ed5f0a0a3f3287f8da346e21ff52b187f917a6689233c17b2e02bd",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/10f0dc955803253570a944ca37012654e80ead9f/data/products/frontier/coverage.v1.json",
+  "methodology_url": "https://github.com/damienabraxas/exoplanetcodex/blob/10f0dc955803253570a944ca37012654e80ead9f/docs/science/spectroscopic_frontier.md",
+  "contribution_url": "https://github.com/damienabraxas/exoplanetcodex/blob/10f0dc955803253570a944ca37012654e80ead9f/docs/science/spectroscopic_frontier_contributing.md",
+  "research_target": {
+    "name": "Gliese 581",
+    "url": "/systems/gliese581/",
+    "catalog_url": "https://github.com/damienabraxas/exoplanetcodex/blob/10f0dc955803253570a944ca37012654e80ead9f/data/catalog/system_catalog.csv",
+    "applicability": "Research pathway only; no species/model validation for this star is inferred."
+  }
+}

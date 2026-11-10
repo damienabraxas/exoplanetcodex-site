@@ -206,3 +206,11 @@ blockquote footer { padding: 0; border: none; animation: none; opacity: 1; displ
   .breadcrumb a:not(:first-child)::before { content: '← '; }
   .breadcrumb span { display: none; }            /* hide star name */
 }
+
+/* Keep shared navigation discoverable and wrap whole labels as the site grows. */
+.codex-nav .nav-links { flex-wrap:wrap; row-gap:.55rem; }
+.codex-nav .nav-links li { white-space:nowrap; }
+@media (max-width:700px) {
+  .codex-nav .nav-links { display:flex; flex-wrap:wrap; flex-direction:row; width:100%; gap:.4rem 1rem; }
+  .codex-nav .nav-links a { font-size:.6rem; }
+}
