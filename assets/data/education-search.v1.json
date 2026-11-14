@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "title": "Light",
+      "description": "Read wavelength, frequency and photon energy before reading a spectrum.",
+      "concepts": "A spectrum separates light by wavelength. Ultraviolet photons carry more energy than visible photons; infrared photons carry less. Wavelength is a length, frequency counts oscillations per second, and photon energy is the energy exchanged in one interaction. In vacuum, c = λν and E = hν = hc/λ. At small radial velocities, Δλ/λ ≈ v/c; positive recession shifts a line to longer wavelength. Resolving power R = λ/Δλ describes the smallest nearby features an instrument can separate under a stated resolution convention. Air and vacuum wavelengths differ because light propagates differently in air. Compare quantities in a declared medium and velocity frame. Instrumental resolution, pixel sampling and measurement precision are separate. UV, visible and IR band boundaries are conventions; this site uses <400, 400–780 and ≥780 nm for navigation.",
+      "url": "/education/#light",
+      "type": "Lesson"
+    },
+    {
+      "title": "Atomic Physics & Spectral Lines",
+      "description": "Explore discrete states and the photons exchanged between them.",
+      "concepts": "An atom has discrete quantum states. Absorption can raise an electron to a higher-energy state; emission accompanies a drop to a lower-energy state. The photon energy matches the difference. The explorer below connects these two descriptions without depicting electrons as tiny planets. Eγ = Eupper − Elower. When level energies are tabulated as wavenumbers in cm⁻¹, λvac(nm) = 10⁷ / Δσ. The same energy gap applies in either direction. Oscillator strength f describes a transition probability scale; it is not an elemental abundance. Fine structure splits a named hydrogen feature into components. Electric-dipole selection rules restrict which states connect; not every pair of levels is allowed. Natural, thermal, pressure and turbulent broadening shape lines, while nearby transitions can blend. This explorer selects individual allowed components and does not calculate their intensities.",
+      "url": "/education/#atomic-physics",
+      "type": "Lesson"
+    },
+    {
+      "title": "Stellar Spectroscopy",
+      "description": "Connect a stellar atmosphere to its continuum and Fraunhofer lines.",
+      "concepts": "The continuum is a useful reference level beneath the forest of stellar spectral lines. Fraunhofer absorption lines reveal atomic and molecular interactions in the Sun’s atmosphere. A line can change when temperature, gravity, chemistry or the observing instrument changes. Radiative transfer balances extinction and emission: dIν/ds = −ανIν + jν. Optical depth measures accumulated extinction. Effective temperature describes total emergent flux via F = σSB Teff⁴; it is not the temperature at every depth. LTE uses local temperature and density relations for populations and source functions under appropriate assumptions. NLTE solves populations coupled to radiation and collisions. One-dimensional atmospheres, mean-3D structures, independent 1.5D columns and fully coupled 3D transfer have different assumptions. Microturbulence changes line opacity and saturation; it is not merely a final convolution. Thermal, rotational and instrumental broadening also have distinct effects.",
+      "url": "/education/#stellar-spectroscopy",
+      "type": "Lesson"
+    },
+    {
+      "title": "Elemental Abundances",
+      "description": "Follow a calibrated spectrum through line measurement to a checked result.",
+      "concepts": "Start with calibrated spectra and verified source identity, wavelength scale and velocity frame. Correct contaminating telluric absorption where needed, estimate the continuum, then compare selected lines with a model. Equivalent widths and spectrum synthesis offer complementary diagnostics. A solar benchmark tests the chain before interpretation. Equivalent width Wλ = ∫(1 − Fλ/Fc)dλ measures missing area relative to the continuum and has wavelength units. A(X) = log10(NX/NH) + 12. [X/H] = A(X)star − A(X)Sun on a compatible scale. [X/Fe] = [X/H] − [Fe/H]. VALD3 supplies atomic data with source provenance; it does not certify every line as suitable. Oscillator-strength grades, damping, blends, atmosphere choices and model applicability require review. Correlated gf or continuum errors do not shrink like independent noise. Propagate covariance and parameter sensitivity. IR measurements require holding-specific telluric validation before any claim of validated abundances.",
+      "url": "/education/#elemental-abundances",
+      "type": "Lesson"
+    },
+    {
+      "title": "Exoplanets",
+      "description": "Discover planets and interpret host-star chemistry with care.",
+      "concepts": "Transits measure changes in stellar brightness when a planet crosses the stellar disk. Radial velocities track periodic motion of the star through shifting spectral lines. Stellar abundances describe the host’s photosphere; they help frame planet-formation questions alongside planetary observations and models. For a small opaque planet and a uniform stellar disk, transit depth δ ≈ (Rp/Rstar)². Real analyses include limb darkening and system geometry. Radial-velocity amplitude constrains a mass–inclination combination in a single-planet Keplerian model, given stellar mass and orbit. Planet formation redistributes and differentiates material. A photospheric [X/Fe] ratio is not a direct measurement of a planet’s bulk composition, atmosphere or biosignatures. Stellar activity, stellar parameters, orbital geometry and detection selection all affect interpretation.",
+      "url": "/education/#exoplanets",
+      "type": "Lesson"
+    },
+    {
+      "title": "Theoretical Atomic Laboratory",
+      "description": "Follow a transition’s provenance before trusting its strength.",
+      "concepts": "A theoretical atomic calculation predicts properties from a model of the atom. A laboratory experiment measures a physical system. Evaluated databases may combine both. Always follow an oscillator strength back to its actual method and reference. Line lists often report log10(gf), where g is the lower-state statistical weight and f the absorption oscillator strength. Errors in gf affect inferred abundance; the relationship depends on line strength and the model. Gauge agreement or convergence is diagnostic evidence, not independent experimental validation. An ungraded line can be explored without calling its abundance scale trusted. Compare consistent transition identities, air/vacuum scales, fine-structure components, uncertainty definitions and independent literature. Agreement between engines sharing the same inputs is not an independent atomic-data check. Codex research predictions and unfinished validation gates are not established laboratory results.",
+      "url": "/education/#atomic-laboratory",
+      "type": "Lesson"
+    },
+    {
+      "title": "Learning Resources",
+      "description": "Practice the full journey and bring a guided activity to class.",
+      "concepts": "Begin with Light, explore hydrogen, then follow the Stellar Spectroscopy, Elemental Abundances and Exoplanets lessons. Use the Glossary for definitions and Methodology for the project’s documented practices. All lessons, interactives and downloads are freely accessible without an account or payment. Classroom task: calculate the photon energy for a selected explorer transition, convert nm to m explicitly, and compare with the display. Change only the transition and explain why E and λ vary inversely. Record the selected states and vacuum convention with your answer. Educator assessment: ask learners to label each claim as an observation, a modeling assumption or an interpretation. A detector flux is an observation; an LTE atmosphere is a modeling assumption; a planet-formation explanation is an interpretation. An abundance estimate depends on observations and modeling. Download the activity and record assumptions with every result.",
+      "url": "/education/#learning-resources",
+      "type": "Lesson"
+    },
+    {
+      "title": "Hydrogen transition explorer",
+      "description": "Emission, absorption, photon energy and vacuum wavelength; downloadable CSV, SVG and shareable configurations.",
+      "concepts": "hydrogen balmer lyman atomic transition simulator electron",
+      "url": "/education/#hydrogen-explorer",
+      "type": "Interactive"
+    },
+    {
+      "title": "Absorption line",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Absorption line  \n        Definition  A dark feature in a spectrum at the wavelength where atoms in the star's outer layers absorb light.  \n        Plain English  Each element absorbs only certain colours of light. Where it does, the star's spectrum has a dark notch. Each element has its own set of notches, so the notches tell us which elements are there.  \n        Units  Wavelength in ångströms (Å)  \n        Example  Iron alone has thousands of lines in the Sun's visible spectrum. Asplund, Amarsi & Grevesse (2021) chose 40 Fe I and 13 Fe II lines from them for their solar iron value.  \n        In the Codex  Every abundance on this site comes from absorption lines.  Method, section 01 .  \n        See also   Spectrum ,  Equivalent width (EW) ,  Blend   \n     Explore in Education:  Atomic Physics & Spectral Lines  ·  Learning Resources",
+      "url": "/glossary/#absorption-line",
+      "type": "Glossary"
+    },
+    {
+      "title": "Abundance ratio, [X/H] and [X/Fe]",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Abundance ratio, [X/H] and [X/Fe]  \n        Definition  [X/H] is a star's abundance of X minus the Sun's: [X/H] = A(X) star  − A(X) Sun . [X/Fe] = [X/H] − [Fe/H] compares X with iron instead of hydrogen.  \n        Plain English  These say how a star differs from the Sun. Zero means the same as the Sun. +0.3 means about twice as much. [X/Fe] removes the star's overall metal content, so it shows which elements are unusual.  \n        Units  dex  \n        Example  For the Sun every [X/H] and [X/Fe] is 0.00 by definition.  \n        In the Codex  Ratios like these are step 14 of the process, after the abundances themselves.  Method, section 01 .  \n        See also   Abundance, A(X) ,  Metallicity, [Fe/H] ,  Alpha enhancement, [α/Fe]   \n     Explore in Education:  Elemental Abundances  ·  Exoplanets  ·  Learning Resources",
+      "url": "/glossary/#abundance-ratio",
+      "type": "Glossary"
+    },
+    {
+      "title": "Abundance, A(X)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Abundance, A(X)  \n        Definition  The number of atoms of element X for every 10 12  hydrogen atoms, on a log scale: A(X) = log 10 (N X /N H ) + 12. Hydrogen is 12.00 by definition.  \n        Plain English  A way to say how much of an element a star has. Each step of 1 on the scale is a factor of ten. Iron at 7.46 means about 29 million iron atoms for every trillion hydrogen atoms.  \n        Units  dex (logarithmic)  \n        Example  The Sun: A(Fe) = 7.46, A(O) = 8.69, A(C) = 8.46 (Asplund, Amarsi & Grevesse 2021).  \n        In the Codex  This is the number every Codex result reports.  Method, section 06 .  \n        See also   Abundance ratio, [X/H] and [X/Fe] ,  dex ,  Metallicity, [Fe/H]   \n     Explore in Education:  Elemental Abundances",
+      "url": "/glossary/#abundance",
+      "type": "Glossary"
+    },
+    {
+      "title": "Alpha elements (α)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Alpha elements (α)  \n        Definition  Elements made mostly in massive stars and released quickly when those stars explode: O, Ne, Mg, Si, S, Ar, Ca and Ti. The name comes from how their nuclei are built, by adding helium nuclei (alpha particles), but the group is defined by where the elements come from, not by that alone.  \n        Plain English  A family of elements made in big, short-lived stars. Magnesium and silicon are among them, and they are the main rock-forming elements.  \n        Why these  Counting helium nuclei alone would include almost everything up to iron. Carbon-12 is three helium nuclei, and chromium-52 and even iron-56 are whole numbers of them too. So astronomers group elements by how they behave over the galaxy's history instead. The alpha elements rise above iron in old stars and fall back to the Sun's ratio in young ones, because they came early and iron came later. Carbon does not follow that pattern, since much of it comes from smaller stars late in their lives. Chromium is made alongside iron and keeps the same ratio to iron in stars of every age, so it counts as an iron-peak element. Titanium is not strictly built this way, but it follows the alpha pattern in real stars, so it is included.  \n        Units  None (an element group)  \n        Example  Mg, Si, Ca and Ti are the alpha elements most often measured in Sun-like stars. Neon and argon cannot be measured in them at all: they leave no usable lines in the light from the star's surface.  \n    ",
+      "url": "/glossary/#alpha-elements",
+      "type": "Glossary"
+    },
+    {
+      "title": "Alpha enhancement, [α/Fe]",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Alpha enhancement, [α/Fe]  \n        Definition  The average of [X/Fe] over a set of alpha elements. It traces how a star's birth gas was enriched over the history of the galaxy. Studies differ on which elements go into the average; the most common choice is Mg, Si, Ca and Ti.  \n        Plain English  Early in the galaxy's life, massive stars made alpha elements quickly. Iron from slower kinds of supernova came later. Old stars therefore tend to have more alpha elements for their iron than young stars like the Sun.  \n        Units  dex  \n        Example  The Sun: [α/Fe] = 0.00 by definition.  \n        In the Codex  Shown two ways, each worked out once all of its elements have passed review.  Accepted [α/Fe]  uses the usual four: Mg, Si, Ca and Ti. They are the alpha elements with the most clean lines in a Sun-like star.  Codex [α/Fe]  uses every alpha element we can measure: O, Mg, Si, S, Ca and Ti. Oxygen and sulfur are left out of the usual four because they have only a few lines, and oxygen's need large corrections. We measure both for the Sun anyway. Neon and argon are left out of both versions, because they leave no lines in the light from a Sun-like star.  Method, section 01 .  \n        See also   Alpha elements (α) ,  Abundance ratio, [X/H] and [X/Fe]",
+      "url": "/glossary/#alpha-enhancement",
+      "type": "Glossary"
+    },
+    {
+      "title": "Atlas (solar flux atlas)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Atlas (solar flux atlas)  \n        Definition  A very high-quality spectrum of the Sun's integrated light, published for other scientists to use. It is built from many observations and covers a wide wavelength range.  \n        Plain English  A reference photograph of sunlight, spread out by colour in great detail. Teams around the world measure from the same atlas, so their results can be compared directly.  \n        Units  Wavelength in Å; normalised flux  \n        Example  The 1984 Kitt Peak solar atlas, and the IAG atlas from Göttingen (Reiners et al. 2016; Baker et al. 2020).  \n        In the Codex  Each atlas is a separate holding. The IAG atlas also serves as an independent check on continuum placement.  Method, section 02 .  \n        See also   Holding ,  Telluric absorption and correction ,  Continuum",
+      "url": "/glossary/#atlas",
+      "type": "Glossary"
+    },
+    {
+      "title": "ATLAS9",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "ATLAS9  \n        Definition  A widely used grid of one-dimensional model atmospheres for stars like the Sun, computed by Robert Kurucz and updated by Castelli & Kurucz (2003). Not to be confused with a solar atlas.  \n        Plain English  A ready-made set of model star atmospheres, each one a table of temperature and pressure against depth.  \n        Units  None (a model grid)  \n        Example  ATLAS9 and MARCS are both 1D. Running the same lines on each shows how much the answer depends on the model.  \n        In the Codex  One of two 1D model families we use. Swapping it for MARCS is one term in the error bar.  Method, section 05 .  \n        See also   Model atmosphere ,  LTE (local thermodynamic equilibrium)",
+      "url": "/glossary/#atlas9",
+      "type": "Glossary"
+    },
+    {
+      "title": "Band",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Band  \n        Definition  A wavelength range of the spectrum that is analysed under its own rules. The Codex uses six: near-UV, visible, red-optical, near-infrared, H and K.  \n        Plain English  We cut the spectrum into pieces because the problems change with colour. In the near-UV the lines crowd together. In the infrared the lines are sparse, but Earth's air absorbs strongly.  \n        Units  Wavelength in Å  \n        Example  The visible band runs from 3780 to 6910 Å. The H band runs from 15007 to 17494 Å.  \n        In the Codex  Every band is measured on its own and never averaged with another.  Method, section 02 .  \n        See also   Holding ,  Orchestrator ,  Spectrum   \n     Explore in Education:  Light",
+      "url": "/glossary/#band",
+      "type": "Glossary"
+    },
+    {
+      "title": "Barycentric correction",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Barycentric correction  \n        Definition  A shift applied to the wavelengths of an observation to remove the Earth's own motion around the Sun along the line of sight.  \n        Plain English  The Earth moves, and that motion slightly shifts the colours we see. The correction removes the shift so that only the star's motion is left.  \n        Units  km/s, or the matching shift in Å  \n        Example  The standard HARPS data products already have this correction applied.  \n        In the Codex  Checked during the audit of each holding.  Method, section 01 .  \n        See also   Radial velocity (RV) ,  Holding   \n     Explore in Education:  Light",
+      "url": "/glossary/#barycentric-correction",
+      "type": "Glossary"
+    },
+    {
+      "title": "Blend",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Blend  \n        Definition  Two or more absorption lines so close in wavelength that they overlap in the spectrum.  \n        Plain English  Two notches that run into each other. If you measure one without allowing for the other, you get too much absorption and the wrong answer.  \n        Units  None  \n        Example  The forbidden oxygen line at 6300.304 Å sits only 0.032 Å from a nickel line at 6300.336 Å.  \n        In the Codex  Blends are handled by calculating every known atomic and molecular line in the window together. Lines too blended to measure are left out, as published solar studies do.  Method, section 04 .  \n        See also   Spectrum synthesis ,  Absorption line ,  Spectral resolution, R   \n     Explore in Education:  Atomic Physics & Spectral Lines",
+      "url": "/glossary/#blend",
+      "type": "Glossary"
+    },
+    {
+      "title": "C/O ratio",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "C/O ratio  \n        Definition  The number of carbon atoms divided by the number of oxygen atoms in a star.  \n        Plain English  Carbon and oxygen compete for each other in the gas that forms planets. When oxygen wins, rocks are made of silicates, as on Earth. A star with much more carbon than usual could form very different planets.  \n        Units  A ratio of numbers of atoms  \n        Example  The Sun: C/O = 10 (8.46 − 8.69)  ≈ 0.59 (Asplund, Amarsi & Grevesse 2021).  \n        In the Codex  A derived ratio, worked out from the published carbon and oxygen results.  Method, section 01 .  \n        See also   Abundance, A(X) ,  Mg/Si and Fe/Si ratios   \n     Explore in Education:  Exoplanets",
+      "url": "/glossary/#c-o-ratio",
+      "type": "Glossary"
+    },
+    {
+      "title": "CHNOPS",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "CHNOPS  \n        Definition  The six elements that make up most of living matter: carbon, hydrogen, nitrogen, oxygen, phosphorus and sulfur.  \n        Plain English  The main ingredients of life as we know it. How much of each a star has hints at what its planets were built from.  \n        Units  None (an element group)  \n        Example  Carbon, nitrogen and oxygen have published solar results on this site.  \n        In the Codex  Carbon, nitrogen and oxygen were among the first elements finished for the Sun.  Method, section 01 .  \n        See also   C/O ratio ,  Abundance, A(X)",
+      "url": "/glossary/#chnops",
+      "type": "Glossary"
+    },
+    {
+      "title": "Continuum",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Continuum  \n        Definition  The brightness a spectrum would have if there were no absorption lines. In a normalised spectrum it is set to 1.  \n        Plain English  The level the notches are measured down from. If the level is wrong, every notch looks too deep or too shallow.  \n        Units  Normalised flux (1.0)  \n        Example  A line only 1% deep is changed noticeably by a continuum error of a tenth of a percent.  \n        In the Codex  We set the continuum near each line by comparing the observed spectrum with our calculated one, and repeat on a second atlas to price the error.  Method, section 03 .  \n        See also   Normalisation ,  Pseudo-continuum ,  Equivalent width (EW)   \n     Explore in Education:  Stellar Spectroscopy",
+      "url": "/glossary/#continuum",
+      "type": "Glossary"
+    },
+    {
+      "title": "Correlated gf error",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Correlated gf error  \n        Definition  An error in oscillator strengths that is shared by every line measured in the same laboratory study, so it does not shrink when more lines are averaged.  \n        Plain English  If a ruler is a millimetre short, measuring more things with it does not help. Lab gf values can be off in the same way: all lines from one study shift together.  \n        Units  dex  \n        Example  Lab gf values often combine an atomic lifetime with how the decay splits between lines. An error in the lifetime moves all lines from that level together.  \n        In the Codex  For each gf source we record which part of its error is shared and which is per line. A source not yet reviewed is treated as fully shared.  Method, section 07 .  \n        See also   Oscillator strength, log gf ,  Laboratory gf ,  Uncertainty budget   \n     Explore in Education:  Theoretical Atomic Laboratory",
+      "url": "/glossary/#correlated-gf-error",
+      "type": "Glossary"
+    },
+    {
+      "title": "Curve of growth",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Curve of growth  \n        Definition  The relation between a line's equivalent width and the abundance of the element. It has three parts: linear for weak lines, flat for saturated lines, and a damping part for very strong lines.  \n        Plain English  For a weak line, twice the atoms gives twice the absorption. Once the line's centre is nearly black, adding atoms barely changes it. That flat stretch is why strong lines tell us less.  \n        Units  log(equivalent width / wavelength) against log abundance  \n        Example  Lines on the flat part depend strongly on microturbulence.  \n        In the Codex  Turns a measured equivalent width into an abundance in the profile-fit route.  Method, section 06 .  \n        See also   Equivalent width (EW) ,  Saturated line ,  Microturbulence, ξ",
+      "url": "/glossary/#curve-of-growth",
+      "type": "Glossary"
+    },
+    {
+      "title": "Departure coefficient",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Departure coefficient  \n        Definition  The ratio of the true number of atoms in an energy level to the number LTE predicts. A value of 1 means LTE holds for that level.  \n        Plain English  A correction factor for each energy level of an atom. It says how far the real atoms are from the simple assumption, layer by layer through the atmosphere.  \n        Units  Dimensionless ratio  \n        Example  Turbospectrum reads departure coefficients from an NLTE model atom and builds them into the calculated spectrum (Gerber et al. 2023).  \n        In the Codex  Used by the NLTE treatments that put NLTE inside the calculation.  Method, section 05 .  \n        See also   NLTE (non-local thermodynamic equilibrium) ,  LTE (local thermodynamic equilibrium) ,  Spectrum synthesis",
+      "url": "/glossary/#departure-coefficient",
+      "type": "Glossary"
+    },
+    {
+      "title": "dex",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "dex  \n        Definition  Short for decimal exponent. A difference of 1 dex is a factor of ten.  \n        Plain English  The unit for log-scale numbers. Small differences are easier to think of as percentages: 0.01 dex is about 2%, and 0.1 dex is about 26%.  \n        Units  Dimensionless (logarithmic)  \n        Example  [Fe/H] = +0.30 means about twice as much iron as the Sun, because 10 0.30  ≈ 2.  \n        In the Codex  All abundances and error bars on this site are in dex.  Method, section 05 .  \n        See also   Abundance, A(X) ,  Abundance ratio, [X/H] and [X/Fe]   \n     Explore in Education:  Elemental Abundances",
+      "url": "/glossary/#dex",
+      "type": "Glossary"
+    },
+    {
+      "title": "Effective temperature, T eff",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Effective temperature, T eff   T-eff  \n        Definition  The temperature of a perfect black body that gives off the same total power per unit area as the star.  \n        Plain English  The star's surface temperature, in a precise sense. It sets which atoms are excited and so which lines are strong.  \n        Units  Kelvin (K)  \n        Example  The Sun: 5772 K (Heiter et al. 2015).  \n        In the Codex  Fixed for the Sun before any line is measured. For the Sun it is known so well that its error-bar term comes out at zero.  Method, section 07 .  \n        See also   Surface gravity, log g ,  Microturbulence, ξ ,  Model atmosphere   \n     Explore in Education:  Stellar Spectroscopy",
+      "url": "/glossary/#effective-temperature",
+      "type": "Glossary"
+    },
+    {
+      "title": "Engine",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Engine  \n        Definition  One complete way of turning spectra into abundances, including how departures from LTE are handled. The Codex has two. One applies published NLTE corrections to each line's result. The other puts NLTE inside the spectrum calculation itself.  \n        Plain English  Two different calculators for the same question. If they agree, we trust the answer more. If they disagree, that tells us something about the physics.  \n        Units  None  \n        Example  Iron is measured with published correction tables and with Turbospectrum's built-in NLTE, and both results are shown.  \n        In the Codex  Results from different engines and treatments are never averaged. Averaging would hide a disagreement that is real information.  Method, section 05 .  \n        See also   NLTE (non-local thermodynamic equilibrium) ,  Orchestrator ,  Spectrum synthesis   \n     Explore in Education:  Theoretical Atomic Laboratory",
+      "url": "/glossary/#engine",
+      "type": "Glossary"
+    },
+    {
+      "title": "Equivalent width (EW)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Equivalent width (EW)  \n        Definition  The width of a completely dark strip with the same area as the absorption line.  \n        Plain English  One number for how much light a line removes, whatever its shape. A strong line has a large equivalent width and a faint line a small one.  \n        Units  Ångströms (Å) or milliångströms (mÅ); 1 Å = 1000 mÅ  \n        Example  Many lines used for the Sun are a few tens of mÅ.  \n        In the Codex  Measured in the profile-fit route, in the visible and red bands where lines are well separated.  Method, section 06 .  \n        See also   Curve of growth ,  Absorption line ,  Continuum   \n     Explore in Education:  Elemental Abundances  ·  Learning Resources  \n     \n     \n       \n       Left: the parts of an absorption line. Right: the equivalent width is the width of a fully dark strip with the same area as the line.",
+      "url": "/glossary/#equivalent-width",
+      "type": "Glossary"
+    },
+    {
+      "title": "Forbidden line",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Forbidden line  \n        Definition  A line from a transition so unlikely that it is rarely seen in the laboratory, but appears in stars because the light passes through so much gas. It is written in brackets, as in [O I].  \n        Plain English  A very weak kind of line. It forms under simple conditions, which makes it useful, but it is easily confused with any neighbour.  \n        Units  None (a type of transition)  \n        Example  [O I] 6300.304 Å is a classic solar oxygen line. A nickel line sits 0.032 Å away.  \n        In the Codex  Used for oxygen, with its nickel neighbour included in the calculation.  Method, section 04 .  \n        See also   Blend ,  Oscillator strength, log gf   \n     Explore in Education:  Atomic Physics & Spectral Lines",
+      "url": "/glossary/#forbidden-line",
+      "type": "Glossary"
+    },
+    {
+      "title": "FWHM (full width at half maximum)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "FWHM (full width at half maximum)  \n        Definition  The width of a line measured halfway between the continuum and the line's deepest point.  \n        Plain English  A simple measure of how wide a line is. Narrow lines are less likely to run into their neighbours.  \n        Units  Ångströms (Å)  \n        Example  A line whose depth is 0.30 is measured for width where its depth is 0.15.  \n        In the Codex  Part of describing a line's shape in the profile-fit route.  Method, section 06 .  \n        See also   Equivalent width (EW) ,  Spectral resolution, R ,  Voigt profile",
+      "url": "/glossary/#fwhm",
+      "type": "Glossary"
+    },
+    {
+      "title": "Gaussian profile",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Gaussian profile  \n        Definition  A bell-shaped line profile. It describes broadening by random gas motions and by the instrument.  \n        Plain English  The familiar bell curve. It drops off quickly away from the centre, so it has no long wings.  \n        Units  Depth (0 to 1) and width σ (Å)  \n        Example  Weak lines in a Sun-like star look close to Gaussian.  \n        In the Codex  One part of the Voigt profile used in the profile-fit route.  Method, section 06 .  \n        See also   Voigt profile ,  Lorentzian profile ,  Thermal broadening",
+      "url": "/glossary/#gaussian-profile",
+      "type": "Glossary"
+    },
+    {
+      "title": "HARPS",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "HARPS  \n        Definition  The High Accuracy Radial velocity Planet Searcher, a spectrograph on the ESO 3.6 m telescope at La Silla, Chile. Its resolution is about 115,000 and it covers 3780 to 6910 Å.  \n        Plain English  A very stable instrument built to find planets by the wobble they cause in their star. Its spectra are also sharp enough to measure elements.  \n        Units  Resolution R ≈ 115,000  \n        Example  We use ten direct exposures of the Sun from HARPS, corrected for Earth's atmosphere with molecfit.  \n        In the Codex  One of the solar holdings in the visible band.  Method, section 02 .  \n        See also   Holding ,  Spectral resolution, R ,  Telluric absorption and correction",
+      "url": "/glossary/#harps",
+      "type": "Glossary"
+    },
+    {
+      "title": "Holding",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Holding  \n        Definition  One instrument's observations of one star, as stored and prepared by the Codex.  \n        Plain English  The set of spectra we have of a star from one instrument. The Sun has five: two versions of the Kitt Peak atlas, the IAG atlas, HARPS and CRIRES+.  \n        Units  None  \n        Example  The CRIRES+ holding is infrared sunlight reflected off the asteroid Vesta.  \n        In the Codex  Each holding is corrected for Earth's atmosphere and normalised once, then frozen and used unchanged for every element.  Method, section 02 .  \n        See also   Band ,  Atlas (solar flux atlas) ,  Telluric absorption and correction",
+      "url": "/glossary/#holding",
+      "type": "Glossary"
+    },
+    {
+      "title": "HST/STIS and HST/COS",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "HST/STIS and HST/COS  \n        Definition  Two ultraviolet spectrographs on the Hubble Space Telescope: the Space Telescope Imaging Spectrograph and the Cosmic Origins Spectrograph.  \n        Plain English  Earth's air blocks most ultraviolet light, so some lines can only be seen from space. These two instruments see them.  \n        Units  None (instruments)  \n        Example  Some carbon, nitrogen, oxygen and silicon lines lie only in the ultraviolet.  \n        In the Codex  We hold Hubble spectra of planet hosts. They wait until the Sun is finished.  Method, section 02 .  \n        See also   MAST ,  Band",
+      "url": "/glossary/#hst",
+      "type": "Glossary"
+    },
+    {
+      "title": "Hyperfine structure",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Hyperfine structure  \n        Definition  The splitting of one spectral line into several very close components, caused by the atomic nucleus. Different isotopes of an element split a line in a similar way.  \n        Plain English  What looks like one line is really a cluster of tiny lines. Treat it as one and the shape is wrong, so the answer is wrong.  \n        Units  Component separations in mÅ  \n        Example  Manganese, cobalt, copper, scandium, vanadium, barium and europium lines need it.  \n        In the Codex  The calculation includes every component, but the gf is fixed once for the whole physical line and the components are scaled to match.  Method, section 04 .  \n        See also   Oscillator strength, log gf ,  Spectrum synthesis ,  Blend",
+      "url": "/glossary/#hyperfine-structure",
+      "type": "Glossary"
+    },
+    {
+      "title": "Iron-peak elements",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Iron-peak elements  \n        Definition  Elements near iron in the periodic table, such as V, Cr, Mn, Fe, Co and Ni. Their nuclei are among the most tightly bound, so stars build up a lot of them.  \n        Plain English  Iron and its neighbours. They are made largely in supernova explosions and end up in planet cores.  \n        Units  None (an element group)  \n        Example  Iron is the iron-peak element with the most usable lines.  \n        In the Codex  Iron is always measured first, as the check that everything before it works.  Method, section 01 .  \n        See also   Alpha elements (α) ,  Metallicity, [Fe/H]",
+      "url": "/glossary/#iron-peak",
+      "type": "Glossary"
+    },
+    {
+      "title": "Laboratory gf",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Laboratory gf  \n        Definition  An oscillator strength measured in a laboratory, usually by timing how long an excited atom lives and measuring how its decay splits between lines.  \n        Plain English  The line strength measured directly from real atoms, not calculated. It comes with a stated error, which is what lets us put a number on how much it can be trusted.  \n        Units  dex (as log gf)  \n        Example  Much of the solar iron work relies on laboratory gf from groups such as O'Brian et al. (1991).  \n        In the Codex  Any line with a laboratory gf is added to the Reference grade.  Method, section 04 .  \n        See also   Oscillator strength, log gf ,  Correlated gf error ,  Line grades: Reference, Codex and Deep",
+      "url": "/glossary/#laboratory-gf",
+      "type": "Glossary"
+    },
+    {
+      "title": "Line grades: Reference, Codex and Deep",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Line grades: Reference, Codex and Deep  \n        Definition  Three sets of lines, chosen by how well each line's oscillator strength is known. Reference: the lines and gf values of the published solar analysis, plus any line with a laboratory gf. Codex: any line whose gf has a published uncertainty, up to 60% deep. Deep: the same standard for lines deeper than 60%.  \n        Plain English  We first repeat the published work with the same lines, then widen the set. Every line in a grade has a gf error we can put a number on.  \n        Units  None (a label)  \n        Example  A line whose gf has no stated uncertainty can still be measured, but it does not reach a grade.  \n        In the Codex  The grades are set before anything is measured.  Method, section 04 .  \n        See also   Published line set ,  Oscillator strength, log gf ,  NIST accuracy grade",
+      "url": "/glossary/#line-grades",
+      "type": "Glossary"
+    },
+    {
+      "title": "Literature check",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Literature check  \n        Definition  A comparison of our result with the published solar values for the same element, each with the method it used.  \n        Plain English  Before we trust our number, we compare it with what other careful teams found and how they found it.  \n        Units  dex  \n        Example  The visible band is the control. It has a known answer: iron at 7.46 (Asplund, Amarsi & Grevesse 2021).  \n        In the Codex  Published values are collected before measuring and compared after. The models are never adjusted to hit the published value. How far the method misses in the visible band goes into the error bar.  Method, section 08 .  \n        See also   Publication gate ,  Published line set ,  Uncertainty budget",
+      "url": "/glossary/#literature-check",
+      "type": "Glossary"
+    },
+    {
+      "title": "Lorentzian profile",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Lorentzian profile  \n        Definition  A line profile with wide wings that fall off slowly away from the centre. It describes broadening by collisions in the gas.  \n        Plain English  Like a bell curve with long skirts. Strong lines show these wings clearly.  \n        Units  Half-width γ (Å)  \n        Example  The broad wings of the sodium D lines are Lorentzian in shape.  \n        In the Codex  One part of the Voigt profile used in the profile-fit route.  Method, section 06 .  \n        See also   Voigt profile ,  Gaussian profile ,  Pressure broadening (damping)",
+      "url": "/glossary/#lorentzian-profile",
+      "type": "Glossary"
+    },
+    {
+      "title": "LTE (local thermodynamic equilibrium)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "LTE (local thermodynamic equilibrium)  \n        Definition  The assumption that in each layer of the atmosphere, the atoms' energy levels and ionisation are set by that layer's temperature alone.  \n        Plain English  The simplest way to calculate a spectrum. It treats every layer as if it were in a closed, evenly heated box.  \n        Units  None (an approximation)  \n        Example  Most strong lines in the Sun form well enough in LTE to be a useful starting point. Many still need an NLTE correction.  \n        In the Codex  1D LTE is one of the treatments we run and report on its own.  Method, section 05 .  \n        See also   NLTE (non-local thermodynamic equilibrium) ,  Departure coefficient ,  Model atmosphere   \n     Explore in Education:  Stellar Spectroscopy",
+      "url": "/glossary/#lte",
+      "type": "Glossary"
+    },
+    {
+      "title": "MAST",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "MAST  \n        Definition  The Mikulski Archive for Space Telescopes, NASA's public archive of Hubble and other space-telescope data.  \n        Plain English  The library where Hubble's observations are kept for anyone to download.  \n        Units  None (an archive)  \n        Example  Our Hubble spectra of planet hosts come from MAST.  \n        In the Codex  The source of our Hubble holdings.  Method, section 02 .  \n        See also   HST/STIS and HST/COS ,  Holding",
+      "url": "/glossary/#mast",
+      "type": "Glossary"
+    },
+    {
+      "title": "Median over lines",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Median over lines  \n        Definition  The middle value of the line-by-line abundances, once they are put in order.  \n        Plain English  Each line gives its own answer. We take the middle one, so a single odd line cannot pull the result far.  \n        Units  dex  \n        Example  Five lines giving 7.40, 7.44, 7.46, 7.47 and 7.90 have a median of 7.46. Their average would be 7.53.  \n        In the Codex  A result is the median over its lines. When the published analysis we are repeating used a plain average, we use the same.  Method, section 06 .  \n        See also   Abundance, A(X) ,  Statistical and systematic uncertainty",
+      "url": "/glossary/#median",
+      "type": "Glossary"
+    },
+    {
+      "title": "Metallicity, [Fe/H]",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Metallicity, [Fe/H]  \n        Definition  A star's iron abundance compared with the Sun's: [Fe/H] = A(Fe) star  − A(Fe) Sun . It is used as a stand-in for all elements heavier than helium.  \n        Plain English  How metal-rich a star is compared with the Sun. Stars with more metals are more likely to host giant planets.  \n        Units  dex  \n        Example  The Sun: [Fe/H] = 0.00 by definition.  \n        In the Codex  Iron is always measured first. For the Sun its metal-content error term comes out at zero.  Method, section 07 .  \n        See also   Abundance ratio, [X/H] and [X/Fe] ,  Abundance, A(X) ,  Iron-peak elements   \n     Explore in Education:  Stellar Spectroscopy  ·  Exoplanets",
+      "url": "/glossary/#metallicity",
+      "type": "Glossary"
+    },
+    {
+      "title": "Mg/Si and Fe/Si ratios",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Mg/Si and Fe/Si ratios  \n        Definition  The number of magnesium or iron atoms divided by the number of silicon atoms in a star.  \n        Plain English  Rocky planets are built mostly from magnesium, silicon, iron and oxygen. Mg/Si shapes which minerals form the mantle. Fe/Si hints at how big the iron core is.  \n        Units  Ratios of numbers of atoms  \n        Example  The Sun: Mg/Si = 10 (7.55 − 7.51)  ≈ 1.10 and Fe/Si = 10 (7.46 − 7.51)  ≈ 0.89 (Asplund, Amarsi & Grevesse 2021).  \n        In the Codex  Derived ratios, worked out after the elements behind them are published.  Method, section 01 .  \n        See also   C/O ratio ,  Alpha elements (α)",
+      "url": "/glossary/#mg-si-ratio",
+      "type": "Glossary"
+    },
+    {
+      "title": "Microturbulence, ξ",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Microturbulence, ξ  xi, “ksee”  \n        Definition  A speed that stands in for small-scale gas motions in the atmosphere that are not included in a 1D model. It broadens the absorption of each atom.  \n        Plain English  Small swirls of gas spread a line's absorption over a wider range of colours. That matters most for strong lines, which are otherwise nearly black at their centre.  \n        Units  km/s  \n        Example  The Sun: ξ = 1.0 km/s (Jofré et al. 2014).  \n        In the Codex  One of the stellar parameters fixed before measuring. Unlike temperature and gravity, its error term for the Sun is not zero, so we measure it by raising and lowering ξ.  Method, section 07 .  \n        See also   Saturated line ,  Curve of growth ,  Model atmosphere   \n     Explore in Education:  Stellar Spectroscopy",
+      "url": "/glossary/#microturbulence",
+      "type": "Glossary"
+    },
+    {
+      "title": "Model atmosphere",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Model atmosphere  \n        Definition  A table of temperature, pressure and density against depth through a star's outer layers. A 1D model uses flat layers. A full 3D model simulates the rising and sinking gas. A ⟨3D⟩ model is a 3D simulation averaged back into layers.  \n        Plain English  A recipe for what the star's outer layers look like, so we can predict how each line should form.  \n        Units  None (a model)  \n        Example  We use two 1D families, MARCS (Gustafsson et al. 2008) and ATLAS9 (Castelli & Kurucz 2003), and ⟨3D⟩ models from the Stagger grid (Magic et al. 2013).  \n        In the Codex  Each atmosphere gives its own result. Swapping MARCS for ATLAS9 is one term in the error bar.  Method, section 05 .  \n        See also   ATLAS9 ,  LTE (local thermodynamic equilibrium) ,  NLTE (non-local thermodynamic equilibrium)",
+      "url": "/glossary/#model-atmosphere",
+      "type": "Glossary"
+    },
+    {
+      "title": "NIST accuracy grade",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "NIST accuracy grade  \n        Definition  A letter grade given by the US National Institute of Standards and Technology to an atomic transition probability, based on its estimated uncertainty. The scale runs AAA, AA, A+, A, B+, B, C+, C, D+, D and E.  \n        Plain English  A report card for a line's strength. Grade A means the value is good to a few percent. Grade C means within about 25%.  \n        Units  Letter grade; A is within 3%, B within 10%, C within 25%, D within 50%  \n        Example  A line with a NIST grade of A to C can join the Codex grade. Grades D and E cannot.  \n        In the Codex  Used to decide which lines reach a grade.  Method, section 04 .  \n        See also   Oscillator strength, log gf ,  Line grades: Reference, Codex and Deep ,  Laboratory gf",
+      "url": "/glossary/#nist-grade",
+      "type": "Glossary"
+    },
+    {
+      "title": "NLTE (non-local thermodynamic equilibrium)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "NLTE (non-local thermodynamic equilibrium)  \n        Definition  Any calculation that does not assume LTE. The numbers of atoms in each energy level are worked out from all the processes that fill and empty them, including light coming up from deeper layers.  \n        Plain English  In a star's thin outer layers, light from below also excites the atoms. Allowing for this changes how deep a line is predicted to be.  \n        Units  dex (as a correction to an abundance)  \n        Example  The oxygen lines near 7774 Å are a well-known case where NLTE matters a great deal.  \n        In the Codex  We include NLTE two ways: published correction tables for each line, and departure coefficients inside the calculation. Each is its own result.  Method, section 05 .  \n        See also   LTE (local thermodynamic equilibrium) ,  Departure coefficient ,  Engine   \n     Explore in Education:  Stellar Spectroscopy",
+      "url": "/glossary/#nlte",
+      "type": "Glossary"
+    },
+    {
+      "title": "Normalisation",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Normalisation  \n        Definition  Dividing a spectrum by its continuum so that the continuum is at 1. Line depths are then fractions of the continuum.  \n        Plain English  Levelling the spectrum so every notch is measured from the same height.  \n        Units  None (flux becomes a fraction)  \n        Example  Near each line we compare the observed spectrum with our calculated one and set the level from that comparison. Points that disagree badly, such as an unlisted line, are clipped out first.  \n        In the Codex  Done once per holding with Earth's atmosphere removed, then frozen for every element.  Method, section 03 .  \n        See also   Continuum ,  Pseudo-continuum ,  Telluric absorption and correction",
+      "url": "/glossary/#normalisation",
+      "type": "Glossary"
+    },
+    {
+      "title": "Orchestrator",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Orchestrator  \n        Definition  The program that runs the whole process for one star and one element from a single command. It works through every combination of band, holding and treatment, and reports the status of each one.  \n        Plain English  One command per element. The program does the measuring and tells us, for every combination, whether it is done, held back and why, or not run yet.  \n        Units  None  \n        Example  For the Sun, one command per element measures every band, instrument and treatment and builds each error bar.  \n        In the Codex  People approve line removals and publication; the orchestrator does the rest.  Method, section 01  and the  Science Architecture .  \n        See also   Engine ,  Band ,  Publication gate",
+      "url": "/glossary/#orchestrator",
+      "type": "Glossary"
+    },
+    {
+      "title": "Oscillator strength, log gf",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Oscillator strength, log gf  \n        Definition  A measure of how strongly an atom absorbs at one line, written as the log of g × f: the statistical weight of the lower level times the oscillator strength.  \n        Plain English  How good an atom is at absorbing that particular colour. A wrong value gives a wrong abundance, however good the spectrum is.  \n        Units  Dimensionless (logarithmic)  \n        Example  Fe I 5247.05 Å has log gf = −4.961 in the published solar iron set (Asplund, Amarsi & Grevesse 2021).  \n        In the Codex  Fixed once for each physical line from a single master table. A line with no entry stops the run.  Method, section 04 .  \n        See also   Laboratory gf ,  NIST accuracy grade ,  Correlated gf error   \n     Explore in Education:  Atomic Physics & Spectral Lines  ·  Elemental Abundances  ·  Theoretical Atomic Laboratory",
+      "url": "/glossary/#oscillator-strength",
+      "type": "Glossary"
+    },
+    {
+      "title": "Pressure broadening (damping)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Pressure broadening (damping)  \n        Definition  Widening of a line by collisions between the absorbing atom and other particles in the gas. It gives a line Lorentzian wings.  \n        Plain English  Atoms that bump into neighbours absorb a slightly wider range of colours. In dense gas, strong lines get wide wings.  \n        Units  Å; described by damping constants  \n        Example  The sodium D lines in the Sun have wings that stretch for several ångströms.  \n        In the Codex  Part of every calculated line profile.  Method, section 06 .  \n        See also   Lorentzian profile ,  Voigt profile ,  Saturated line",
+      "url": "/glossary/#pressure-broadening",
+      "type": "Glossary"
+    },
+    {
+      "title": "Pseudo-continuum",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Pseudo-continuum  \n        Definition  The highest level a spectrum reaches where lines cover every wavelength, so the true continuum is never seen.  \n        Plain English  In the near-UV the notches overlap everywhere. The best we can do is a level close to, but below, the true one.  \n        Units  Normalised flux  \n        Example  Below about 3780 Å no solar line stands alone.  \n        In the Codex  Its uncertainty is priced as a separate term, for near-UV results only.  Method, section 03 .  \n        See also   Continuum ,  Normalisation ,  Band",
+      "url": "/glossary/#pseudo-continuum",
+      "type": "Glossary"
+    },
+    {
+      "title": "Publication gate",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Publication gate  \n        Definition  The checks a result must pass before it is published: every error-bar term present, a comparison with the literature, and a person's approval.  \n        Plain English  Being computed is not enough. A result goes on the site only when it has a complete error bar and someone has reviewed it.  \n        Units  None  \n        Example  A result missing any error-bar term is held back and no error bar is published for it. A held result is one we know we still owe, with the reason recorded.  \n        In the Codex  Every proposed line removal and every publication is approved by a person.  Method, section 08 .  \n        See also   Literature check ,  Uncertainty budget ,  Superseded result",
+      "url": "/glossary/#publication-gate",
+      "type": "Glossary"
+    },
+    {
+      "title": "Published line set",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Published line set  \n        Definition  The lines, and their gf values, that a published solar analysis used for an element.  \n        Plain English  The exact recipe another team used. We repeat it first, so that any difference from their answer comes from our spectra or our method, and we can find it.  \n        Units  None  \n        Example  For iron, Asplund, Amarsi & Grevesse (2021) used 40 Fe I and 13 Fe II lines. For other elements they cite the paper the lines come from.  \n        In the Codex  The published set, plus any line with a laboratory gf, makes the Reference grade.  Method, section 04 .  \n        See also   Line grades: Reference, Codex and Deep ,  Literature check ,  Oscillator strength, log gf",
+      "url": "/glossary/#published-line-set",
+      "type": "Glossary"
+    },
+    {
+      "title": "Radial velocity (RV)",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Radial velocity (RV)  \n        Definition  A star's speed toward or away from us, measured from the shift of its spectral lines.  \n        Plain English  A star moving away looks slightly redder, and one moving toward us slightly bluer. The lines must be shifted back to their rest wavelengths before measuring.  \n        Units  km/s  \n        Example  At 5900 Å, a speed of 30 km/s shifts a line by about 0.6 Å.  \n        In the Codex  Each holding is checked to serve every line at its rest wavelength.  Method, section 02 .  \n        See also   Barycentric correction ,  Holding",
+      "url": "/glossary/#radial-velocity",
+      "type": "Glossary"
+    },
+    {
+      "title": "Rotational broadening, v sin i",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Rotational broadening, v sin i  \n        Definition  Widening of lines by the star's spin. One edge of the star moves toward us and the other away.  \n        Plain English  A spinning star smears its lines. Slow spinners like the Sun have sharp lines.  \n        Units  km/s  \n        Example  The Sun: v sin i = 1.8 km/s.  \n        In the Codex  Part of the line broadening used in every calculated spectrum.  Method, section 06 .  \n        See also   Thermal broadening ,  Pressure broadening (damping)",
+      "url": "/glossary/#rotational-broadening",
+      "type": "Glossary"
+    },
+    {
+      "title": "s-process and r-process elements",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "s-process and r-process elements  \n        Definition  Elements heavier than iron made by capturing neutrons. The slow (s) process works inside aging giant stars. The rapid (r) process needs extreme events such as merging neutron stars.  \n        Plain English  Two very different ways nature builds heavy elements. Barium and yttrium come mostly from the slow route. Europium comes mostly from the rapid one.  \n        Units  None (element groups)  \n        Example  Ba II, Y II and Eu II lines are visible in Sun-like stars.  \n        In the Codex  Heavy elements will run through the same process after the lighter ones.  Method, section 01 .  \n        See also   Hyperfine structure ,  Abundance, A(X)",
+      "url": "/glossary/#s-process",
+      "type": "Glossary"
+    },
+    {
+      "title": "Saturated line",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Saturated line  \n        Definition  A line so strong that its centre is nearly black, so its depth barely changes when the abundance changes.  \n        Plain English  Once the notch is almost fully dark, adding atoms hardly changes it. The line then tells us more about gas motions than about how many atoms there are.  \n        Units  None  \n        Example  The sodium D lines in the Sun are saturated.  \n        In the Codex  A saturated line that the published solar analyses did not use is proposed for removal, and a person approves each one.  Method, section 04 .  \n        See also   Curve of growth ,  Microturbulence, ξ ,  Line grades: Reference, Codex and Deep",
+      "url": "/glossary/#saturated-line",
+      "type": "Glossary"
+    },
+    {
+      "title": "Signal-to-noise ratio, S/N",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Signal-to-noise ratio, S/N  \n        Definition  The strength of the signal divided by the size of the random noise in a spectrum.  \n        Plain English  How clean the spectrum is. With high S/N, faint notches stand out clearly from the noise.  \n        Units  Dimensionless ratio  \n        Example  Combining N similar exposures raises S/N by about √N.  \n        In the Codex  Noise in the spectrum feeds the statistical part of each error bar.  Method, section 07 .  \n        See also   Statistical and systematic uncertainty ,  Spectrum",
+      "url": "/glossary/#signal-to-noise",
+      "type": "Glossary"
+    },
+    {
+      "title": "Spectral resolution, R",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Spectral resolution, R  \n        Definition  R = λ/Δλ, where Δλ is the smallest wavelength gap the instrument can separate at wavelength λ.  \n        Plain English  How fine the detail is. At higher R, two lines close together appear as two lines, not one smudge.  \n        Units  Dimensionless ratio  \n        Example  HARPS has R ≈ 115,000, so at 6000 Å it separates features about 0.05 Å apart. The 2010 thesis used ELODIE, at R ≈ 42,000.  \n        In the Codex  Every holding we use has high enough resolution to separate most solar lines.  Method, section 02 .  \n        See also   HARPS ,  Blend ,  FWHM (full width at half maximum)   \n     Explore in Education:  Light",
+      "url": "/glossary/#spectral-resolution",
+      "type": "Glossary"
+    },
+    {
+      "title": "Spectral type",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Spectral type  \n        Definition  A classification of stars by surface temperature and the pattern of their lines, from hottest to coolest: O, B, A, F, G, K, M.  \n        Plain English  A quick label for what kind of star it is. The Sun is a G star. Slightly cooler, orange stars are K stars.  \n        Units  None (a classification)  \n        Example  The Sun: G2V. 55 Cancri A, a planet host we hold spectra for, is a K star.  \n        In the Codex  The method is proven on the Sun before other stars.  Method, section 02 .  \n        See also   Effective temperature, T eff  ,  Surface gravity, log g",
+      "url": "/glossary/#spectral-type",
+      "type": "Glossary"
+    },
+    {
+      "title": "Spectrum",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Spectrum  \n        Definition  The light from an object spread out by wavelength, showing how much light arrives at each wavelength.  \n        Plain English  A star's light spread into a rainbow, in great detail. The dark notches in it are the star's chemical fingerprint.  \n        Units  Wavelength in Å; normalised flux from 0 to 1  \n        Example  The solar spectra we use run from 3000 Å in the near-UV to 24846 Å in the infrared.  \n        In the Codex  Every result starts from a spectrum that has been corrected and normalised.  Method, section 01 .  \n        See also   Absorption line ,  Continuum ,  Spectral resolution, R",
+      "url": "/glossary/#spectrum",
+      "type": "Glossary"
+    },
+    {
+      "title": "Spectrum synthesis",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Spectrum synthesis  \n        Definition  Calculating the spectrum a model atmosphere would produce for a given set of abundances, including every known atomic and molecular line in the window.  \n        Plain English  We compute what the spectrum should look like, then change the amount of the element until the computed spectrum matches the real one.  \n        Units  None (a method)  \n        Example  We use Turbospectrum (Plez 2012) through iSpec (Blanco-Cuaresma et al. 2014).  \n        In the Codex  The main route. In the near-UV it is the only route allowed, because no line there stands alone.  Method, section 06 .  \n        See also   Blend ,  Model atmosphere ,  Engine",
+      "url": "/glossary/#spectrum-synthesis",
+      "type": "Glossary"
+    },
+    {
+      "title": "Statistical and systematic uncertainty",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Statistical and systematic uncertainty  \n        Definition  Statistical uncertainty comes from the scatter between lines. Systematic uncertainty is how far the answer moves when a choice we had to make is changed.  \n        Plain English  Statistical error shrinks when more lines are used. Systematic error does not, because every line shares the same choice.  \n        Units  dex  \n        Example  With several lines, the statistical error is the scatter divided by the square root of the number of lines.  \n        In the Codex  Both parts go into every published error bar.  Method, section 07 .  \n        See also   Uncertainty budget ,  Correlated gf error ,  Median over lines",
+      "url": "/glossary/#statistical-systematic",
+      "type": "Glossary"
+    },
+    {
+      "title": "Superseded result",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Superseded result  \n        Definition  A published result that has been replaced by a newer measurement of the same thing.  \n        Plain English  When we redo a measurement, for example after a fix to the atomic data, the new result replaces the old one. The old one is not deleted.  \n        Units  None  \n        Example  A superseded result is moved to an archive with the record of why it was replaced.  \n        In the Codex  Only current results are shown, and every earlier number can still be traced.  Method, section 08 .  \n        See also   Publication gate ,  Literature check",
+      "url": "/glossary/#superseded",
+      "type": "Glossary"
+    },
+    {
+      "title": "Surface gravity, log g",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Surface gravity, log g  \n        Definition  The base-10 logarithm of the gravity at the star's surface, in cgs units (cm/s²). It sets the pressure in the atmosphere.  \n        Plain English  How strongly the star pulls on its outer layers. Higher gravity means denser gas, which changes line widths and how many atoms are ionised.  \n        Units  log 10 (cm/s²)  \n        Example  The Sun: log g = 4.44 (Heiter et al. 2015).  \n        In the Codex  Fixed before measuring. For the Sun its error-bar term comes out at zero.  Method, section 07 .  \n        See also   Effective temperature, T eff  ,  Model atmosphere   \n     Explore in Education:  Stellar Spectroscopy",
+      "url": "/glossary/#log-g",
+      "type": "Glossary"
+    },
+    {
+      "title": "Telluric absorption and correction",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Telluric absorption and correction  \n        Definition  Telluric absorption is absorption of starlight by Earth's own atmosphere, mostly water vapour and oxygen. Telluric correction removes it from the spectrum.  \n        Plain English  Before starlight reaches a telescope on the ground, Earth's air takes its own bites out of it. Those bites land on top of the star's lines and must be removed first.  \n        Units  None  \n        Example  For HARPS and CRIRES+ we model the air on the night of each observation with molecfit (Smette et al. 2015).  \n        In the Codex  Every spectrum taken from the ground is corrected. Only a telescope in space escapes this.  Method, section 03 .  \n        See also   Holding ,  Atlas (solar flux atlas) ,  Normalisation   \n     Explore in Education:  Elemental Abundances",
+      "url": "/glossary/#telluric",
+      "type": "Glossary"
+    },
+    {
+      "title": "Thermal broadening",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Thermal broadening  \n        Definition  Widening of a line by the random motion of the absorbing atoms, which Doppler-shifts each atom's absorption slightly.  \n        Plain English  Hot atoms move fast in all directions. Each one sees the light at a slightly different colour, which spreads the line.  \n        Units  Å; gives a Gaussian shape  \n        Example  Lighter atoms move faster at the same temperature, so their lines are wider.  \n        In the Codex  Part of every calculated line profile.  Method, section 06 .  \n        See also   Gaussian profile ,  Microturbulence, ξ",
+      "url": "/glossary/#thermal-broadening",
+      "type": "Glossary"
+    },
+    {
+      "title": "Uncertainty budget",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "Uncertainty budget  \n        Definition  The list of every source of error in a result, each measured separately, then added in quadrature: the square root of the sum of squares.  \n        Plain English  A full account of what could move the answer. For each choice we re-run the same lines with that choice changed and record how far the answer moves.  \n        Units  dex  \n        Example  Terms include the gf values, temperature, gravity, metal content, microturbulence, continuum, fit window, Earth's atmosphere, NLTE, model atmosphere, hyperfine structure, blends and a method check.  \n        In the Codex  Every result carries every term. If one is missing, the result is held back.  Method, section 07 .  \n        See also   Statistical and systematic uncertainty ,  Correlated gf error ,  Publication gate",
+      "url": "/glossary/#uncertainty-budget",
+      "type": "Glossary"
+    },
+    {
+      "title": "VALD",
+      "description": "Definition in the existing Glossary.",
+      "concepts": "VALD  \n        Definition  The Vienna Atomic Line Database, a widely used collection of atomic and molecular line data: wavelengths, energy levels, oscillator strengths and broadening constants (Ryabchikova et al. 2015).  \n        Plain English  A large public catalogue of spectral lines. It tells us where lines are and roughly how strong, but not every value in it has a measured error.  \n        Units  None (a database)  \n        Example  We extract solar line lists from VALD3, with hyperfine components included.  \n        In the Codex  Supplies the neighbouring lines in each synthesis window. The gf of each line we measure comes from the master table instead.  Method, section 04 .  \n        See also   Oscillator strength, log gf ,  Spectrum synthesis ,  Blend",
+      "url": "/glossary/#vald",
+      "type": "Glossary"
+    },
+    {
+      "title": "One star, A to Z",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 01 \n           One star, A to Z \n           The question is simple to state. How much of each element is in a star's outer layers? Every element absorbs light at its own set of wavelengths. Those absorption lines show up as dark notches in the star's  spectrum , the star's light spread out by wavelength. The depth and shape of each notch tell us how many atoms of that element are there. \n         \n\n         We start with the Sun. Its composition has been measured carefully by other teams, so it is the test. If our method cannot reproduce the published solar values, it has no business measuring other stars. The same process will then be applied to stars that host planets. \n\n         \n           The sixteen steps \n           Every star and every element goes through the same steps, in this order. Steps 1 to 8 are preparation. Nothing is measured until they are done. \n           \n              1   Choose the star.   \n              2   Find every instrument and data holding.  A holding is one set of observations of the star from one instrument, as we store it.  \n              3   Audit each holding.  Check what the files really are: their units, their wavelength scale and whether anything has already been done to them.  \n              4   Correct telluric absorption and normalise the continuum, once per holding, then freeze.  The prepared spectrum is then used unchanged for every element.  \n              5   Collect the literature on the star.  What have other teams measured, and how?  \n              6   Secure the atomic line data.  Wavelengths and line strengths for every line we might use.  \n              7   Grade lines against the published solar sets.   \n              8   Fix or solve the stellar parameters.  Temperature, surface gravity and the other numbers that describe the star's atmosphere.  \n              9   Measure iron first.  Iron has more usable lines than any other element, so it is the first check that everything above is working.  \n          ",
+      "url": "/method/#process",
+      "type": "Methodology"
+    },
+    {
+      "title": "Data",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 02 \n           Data \n           No single instrument covers every wavelength we need, so we use several. Each one is measured on its own. Having more than one look at the same lines also shows us when a result depends on the instrument rather than on the star. \n         \n\n         \n           Wavelength bands \n           We split the spectrum into bands. Each band is handled under its own rules, because the problems change with wavelength. In the near-UV, lines are packed so tightly that no line stands alone. In the red and infrared, lines are sparse but Earth's atmosphere absorbs strongly. \n           \n             \n                 Band  Wavelengths (Å)   \n               \n                  Near-UV  3000 – 3780  \n                  VIS (visible)  3780 – 6910  \n                  Red-optical  6910 – 9199  \n                  NIR (near-infrared)  9199 – 13000  \n                  H (infrared)  15007 – 17494  \n                  K (infrared)  19452 – 24846  \n               \n             \n           \n         \n\n         \n           Solar holdings by band \n           \n             \n                 Holding  What it is  Bands used   \n               \n                  Kitt Peak solar atlas, our telluric correction  The 1984 Kitt Peak spectrum of sunlight, corrected for Earth's atmosphere by us with molecfit  Near-UV, VIS, red-optical, NIR  \n                  Kitt Peak solar atlas, Kurucz 2005 correction  The same atlas with Earth's atmosphere removed by Kurucz (2005)  Near-UV, VIS, red-optical, NIR  \n                  IAG solar atlas  A second, independent spectrum of sunlight from Göttingen, published already corrected (Reiners et al. 2016; Baker et al. 2020)  VIS, red-optical, NIR  \n                  HARPS  Ten direct exposures of the Sun from the HARPS spectrograph in Chile, corrected by us with molecfit  VIS  \n                  CRIRES+  Infrared spectra of sunlight reflected off the asteroid Vesta, from the CRIRES+ spectrograph in Chile  NIR, H, K  \n               ",
+      "url": "/method/#data",
+      "type": "Methodology"
+    },
+    {
+      "title": "Telluric correction and continuum",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 03 \n           Telluric correction and continuum \n           Before a spectrum can be measured, two things have to be removed: the fingerprint of Earth's air, and the overall brightness level. We do this once for each holding. The result is then frozen and used for every element, so all elements see the same spectrum. \n         \n\n         \n           Telluric lines \n           Telluric lines are absorption by Earth's own atmosphere, mostly water vapour and oxygen. They land on top of the star's lines and can make a line look deeper than it is. Every spectrum taken from the ground is corrected. Only a telescope in space escapes them. \n           For HARPS and CRIRES+ we model the atmosphere on the night of each observation with molecfit, a tool from the European Southern Observatory (Smette et al. 2015). The Kitt Peak atlas has no record of when or where each part was observed, so we fit its atmosphere freely. We also use the independent Kurucz (2005) correction of the same atlas. The IAG atlas comes already corrected by its authors. \n         \n\n         \n           Continuum \n           The  continuum  is the brightness the star would have with no absorption lines at all. Line depths are measured against it, so it has to be set to 1 first. This is called normalising. \n           Published solar studies place the continuum at the local high points of the spectrum near each line. We do the equivalent inside the fit. Near each line we compare the observed spectrum with our own calculated spectrum, and set the continuum level from that comparison. Points that disagree badly, for example because of an unlisted line, are clipped out first. \n           For weak lines this matters a great deal. A line only 1% deep is changed noticeably by a continuum error of a tenth of a percent. So we also repeat each measurement on the second, independent IAG atlas. The difference goes into the error bar as the continuum uncertainty. \n           In the near-UV the true continuum ",
+      "url": "/method/#cleaning",
+      "type": "Methodology"
+    },
+    {
+      "title": "Atomic data and line grades",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 04 \n           Atomic data and line grades \n           To turn a line's depth into a number of atoms, we need to know how strongly a single atom absorbs at that wavelength. This is the line's oscillator strength, written gf. A wrong gf gives a wrong abundance, however good the spectrum is. So we choose lines by how well their gf is known. \n         \n\n         \n           Three line grades \n           \n             \n                 Grade  Which lines  Why   \n               \n                  Reference  The lines used by the published solar analysis, with the gf values those authors used. That is Asplund, Amarsi & Grevesse (2021), or the paper they cite for that element. Any line with a laboratory-measured gf is added.  We repeat published work first, then extend it. If we measure the same lines with the same atomic data, any difference from the published answer comes from our spectra or our method, and we can find it.  \n                  Codex  Any line whose gf comes with a published uncertainty: a laboratory measurement, a stated error, or a NIST accuracy grade of A to C. Lines up to 60% deep.  A wider set of lines, each with an error we can put a number on.  \n                  Deep  The same gf standard as Codex, for lines deeper than 60%.  Strong lines are more sensitive to the star's gas motions and to line broadening. They are reported, but as a secondary result.  \n               \n             \n           \n           A line whose gf has no stated uncertainty can still be measured, but it does not reach a grade. We note the gap rather than invent an error for it. \n         \n\n         \n           One gf per physical line \n           Many lines are really a cluster of very close components, split by the structure of the atom's nucleus (hyperfine structure) or by its isotopes. The calculation needs each component to get the line's shape right. But the gf is fixed once for the whole physical line, from a single master table. The components are scaled togeth",
+      "url": "/method/#lines",
+      "type": "Methodology"
+    },
+    {
+      "title": "Model atmospheres and NLTE",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 05 \n           Model atmospheres and NLTE \n           To predict what a line should look like, we need a model of the star's outer layers: how temperature and pressure change with depth. This is a  model atmosphere . We also need to know how the atoms in it behave. Different choices give slightly different answers, so we run several and report each one on its own. \n         \n\n         \n           Model atmospheres \n           A one-dimensional (1D) model treats the atmosphere as flat layers, each with one temperature. We use two standard 1D families: MARCS (Gustafsson et al. 2008) and ATLAS9 (Castelli & Kurucz 2003). The real Sun has rising hot gas and sinking cool gas side by side. A ⟨3D⟩ model is built from a full 3D simulation of that motion (the Stagger grid, Magic et al. 2013), averaged into layers. Swapping MARCS for ATLAS9 on the same lines is one of the measured terms in the error bar. \n         \n\n         \n           NLTE \n           The simplest calculation assumes LTE, local thermodynamic equilibrium: that each layer's atoms are set by its temperature alone. In a star's thin outer layers that is not quite true. Light from deeper down also excites the atoms. Allowing for this is called NLTE (non-LTE). It can shift an abundance by a few hundredths of a dex or more. (Abundances are on a log scale, and one dex is a factor of ten, so 0.01 dex is about 2%.) \n           We include NLTE in two ways. The first takes published correction tables for each line (from Amarsi, Bergemann and collaborators) and applies them to the result. Where those tables stop, we compute corrections the same way from the published model atoms (Amarsi et al. 2020). The second puts NLTE inside the calculation itself. Turbospectrum (Gerber et al. 2023) reads departure coefficients, which say how far each atomic level is from LTE, and builds them into the predicted spectrum. That is done on both MARCS 1D and ⟨3D⟩ models. \n           \n             \n                 Treatment  Atmosp",
+      "url": "/method/#models",
+      "type": "Methodology"
+    },
+    {
+      "title": "Measuring an abundance",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 06 \n           Measuring an abundance \n           An  abundance  is the number of atoms of an element for every trillion hydrogen atoms, on a log scale. For the Sun, iron is about 7.46 on that scale (Asplund et al. 2021). We find it by changing the abundance in our calculation until the predicted line matches the observed one. \n         \n\n         \n           Spectrum synthesis, the main route \n           Spectrum synthesis means calculating the whole stretch of spectrum around a line: the line itself, its neighbours, and any molecules there. We use Turbospectrum (Plez 2012) through iSpec (Blanco-Cuaresma et al. 2014). The program changes the abundance until the calculated spectrum best fits the observed one. Because every neighbour is in the calculation, a blend is modelled rather than ignored. In the near-UV this is the only route allowed, since no line there stands alone. \n         \n\n         \n           Profile fit, the second route \n           In the visible and red bands, many lines are well separated. There we can also fit the line's own shape and measure its  equivalent width : the width of a fully dark strip with the same area as the line. A curve of growth, which links equivalent width to abundance, turns it into an abundance. The two routes are kept as separate results. \n           Simply adding up the missing light over a fixed window is not used. Tested against the HARPS lines, it clipped the wings of strong lines and took in neighbours of weak ones. \n         \n\n         \n           From lines to one number \n           Each line gives its own abundance. A result combines the lines of one element, from one band, one instrument holding and one treatment. Its value is the median over those lines, so a single odd line cannot pull it far. When the published analysis we are repeating used a plain average, we use the same.",
+      "url": "/method/#measuring",
+      "type": "Methodology"
+    },
+    {
+      "title": "Uncertainty",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 07 \n           Uncertainty \n           A number without an honest error bar cannot be compared with anything. Each result has two layers. The error bar we show is worked out the way Asplund, Amarsi & Grevesse (2021) work out theirs, so our numbers and theirs can be compared directly. Behind it sits a much longer check of everything else that could move the answer. A result that fails that check is not published at all. \n         \n\n         \n           The error bar we show \n           It has three parts, added in quadrature (the square root of the sum of the squares): \n           \n             \n                 Part  What it is   \n               \n                  Statistical  How much the lines disagree with each other: their scatter divided by the square root of their number. With one or two lines there is no scatter to measure, so we use how sharply the fit gets worse as the abundance moves away from the best value.  \n                  3D model  Half of how much the answer changes between model atmospheres, including the change from a simple layered model to a full 3D model of the Sun's churning surface.  \n                  NLTE  Half of the NLTE correction, and never less than 0.03 dex, even where the correction is small or not calculated.  \n               \n             \n           \n           As in Asplund et al. (2021), errors in the atomic data (gf values) are not part of this bar. They are measured and checked in the longer list below. \n         \n\n         \n           Molecules and the 3D model \n           Carbon, nitrogen and oxygen are also measured from molecules such as CH, CN, CO and OH. Molecules do not need an NLTE term. Instead, a molecule's strength depends on both of its elements, so the uncertainty in the other element takes that place (Amarsi et al. 2021). \n           Asplund and Amarsi calculated these molecular lines in full 3D, using simulations of the solar surface and their own software, which is not public. Our programs work with la",
+      "url": "/method/#uncertainty",
+      "type": "Methodology"
+    },
+    {
+      "title": "Publication and solar validation",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 08 \n           Publication and solar validation \n           A result is not published because it was computed. It has to pass a comparison with the literature and a human review first. Then it goes on the site, and anything it replaces is archived. \n         \n\n         \n           Checking against the published Sun \n           For every element we collect the published solar values first, chiefly Asplund, Amarsi & Grevesse (2021) and Amarsi & Grevesse (2026), each with its method. Our result is compared with them. The visible band is the control. It has a known answer, iron at 7.46 (Asplund et al. 2021). A method that cannot reproduce it there has not earned the right to report a value in a band with no known answer. How far it misses is measured and goes into the error bar as the method check. \n         \n\n         \n           Problem lines and human review \n           Lines that disagree with the rest, or fail a check, are reported for each run with the reason. Every proposed line removal, and every publication, is approved by a person. The program does the measuring. A person decides what is published. \n         \n\n         \n           Only current results count \n           When a result is re-measured, for example after a correction to the atomic data, the new one replaces the old. The old one is moved to an archive with the record of why. Nothing is deleted, so any earlier number on this site can be traced.",
+      "url": "/method/#publication",
+      "type": "Methodology"
+    },
+    {
+      "title": "References",
+      "description": "Documented Codex practices in Methodology.",
+      "concepts": "Section 09 \n           References \n           The full list, with links, is on the  Sources  page. \n         \n\n         \n           \n               Reference  Publication   \n             \n                Amarsi & Grevesse (2026)   arXiv:2608.23155  — Solar chemical composition  \n                Amarsi et al. (2019)   A&A 630, A104  — Carbon NLTE corrections  \n                Amarsi et al. (2020)   A&A 642, A62  — NLTE departure coefficients for large surveys  \n                Amarsi et al. (2021)   A&A 656, A113  — Solar C, N and O from molecular lines  \n                Amarsi et al. (2022)   A&A 668, A68  — Iron NLTE corrections  \n                Asplund, Amarsi & Grevesse (2021)   A&A 653, A141  — The chemical make-up of the Sun: a 2020 vision  \n                Baker, Blake & Reiners (2020)   ApJS 247, 24  — The IAG solar flux atlas: telluric correction  \n                Barklem & Aspelund-Johansson (2005)   A&A 435, 373  — Van der Waals damping constants  \n                Bergemann et al. (2012)   MNRAS 427, 27  — Iron NLTE in 1D and ⟨3D⟩ model atmospheres  \n                Bergemann et al. (2017)   ApJ 847, 15  — NLTE with 1D and ⟨3D⟩ models: magnesium  \n                Blanco-Cuaresma et al. (2014)   A&A 569, A111  — iSpec spectral analysis framework  \n                Castelli & Kurucz (2003)   Proc. IAU Symp. 210  — ATLAS9 model atmosphere grid  \n                Gerber et al. (2023)   A&A 669, A43  — NLTE radiative transfer with Turbospectrum  \n                Gustafsson et al. (2008)   A&A 486, 951  — MARCS model atmosphere grid  \n                Kramida et al. (2023)  NIST Atomic Spectra Database — physics.nist.gov/asd  \n                Kurucz (2005)  High-resolution solar irradiance and telluric-corrected solar atlas  \n                Lodders, Bergemann & Palme (2025)   Space Sci. Rev. 221  — Solar system abundances from the photosphere and CI chondrites  \n                Magic et al. (2013)   A&A 560, A8  — The Stagger grid: averaged 3D model atmospheres  ",
+      "url": "/method/#references",
+      "type": "Methodology"
+    }
+  ]
+}

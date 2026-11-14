@@ -1,0 +1,16 @@
+✔ NIST components reproduce independent vacuum references to display precision (0.715125ms)
+✔ absorption reverses states with unchanged positive photon energy (0.117208ms)
+✔ larger Balmer gap requires higher energy and shorter wavelength (0.053667ms)
+✔ malformed reference fails rather than manufacturing science (0.536458ms)
+✔ query initialization validates IDs and mode (0.663917ms)
+✔ local search covers aliases, typo tolerance and content types (41.648792ms)
+✔ URL allowlist rejects scripts, external and protocol relative URLs (0.471208ms)
+✔ CSV retains units, states, medium, educational scope and sources (0.372917ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 123.449125

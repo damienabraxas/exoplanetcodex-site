@@ -1,0 +1,11 @@
+{
+  "website_base": "da7a249bcacf1c953550ff9be4b472871b07f2c5",
+  "science_base": "45901e7678ab6c8624fe659e552fba3f2681457d",
+  "python": "3.9.6",
+  "node": "v26.0.0",
+  "files": {
+    "assets/data/education-hydrogen.v1.json": "75bd8f4bbde2f5c3da2b67a807add02f564502ef4281b33f7aa6598b393b6d96",
+    "assets/data/education-lessons.v1.json": "0a37ba935e4bc453d0c50e91f60cc49ae47b59c93acc7b76645474b2f250b99d",
+    "assets/data/education-search.v1.json": "77a5027119f85a27b731ee711750b461081259a00bf2f793657da28bc1033d9e"
+  }
+}

@@ -109,3 +109,10 @@ Ryan Schmitt — astrophysics degree (2010), laser engineer, Salesforce AI consu
 Generate C, N and O pages and PDFs from the same pinned scientific reporting
 inputs with `scripts/generate_cno_publication.py`. See
 [the admission rules, highlight selectors and build commands](docs/cno-appendices.md).
+
+## Education & Learning Center
+
+`/education/` adds open introductory lessons, local concept search and a source-backed
+hydrogen transition explorer alongside the existing Glossary and Methodology.
+[Content architecture, reference calculations, update procedure and phased roadmap](docs/education.md)
+include the separate scientific and accessibility review gates.

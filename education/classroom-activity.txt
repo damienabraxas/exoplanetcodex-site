@@ -1,0 +1,47 @@
+EXOPLANET CODEX — LIGHT TO OTHER WORLDS
+Source checked: 2026-11-14. Draft; independent scientific review pending.
+Freely accessible without registration or payment.
+
+30-minute activity. Work in pairs; no calculus required.
+1. Predict: which has more photon energy, 500 nm or 700 nm vacuum light?
+2. In /education/#hydrogen-explorer, select Balmer alpha emission. Record
+   upper/lower state, vacuum wavelength, photon energy and the cited NIST source.
+3. Switch to absorption. Predict the electron direction. Play once. What changes,
+   and what stays the same? Download a labeled CSV and an SVG diagram.
+4. Compare Balmer beta. Explain its energy difference using E = hc/lambda.
+   Use c = 299792458 m/s, h = 6.62607015e-34 J s, and
+   1 eV = 1.602176634e-19 J. Convert nm to m before calculating.
+5. Hypothetical [X/H] = +0.20 and [Fe/H] = +0.10 dex. Find [X/Fe].
+6. Classify each: observed detector flux; an LTE atmosphere; a modeled abundance;
+   an explanation of planet formation. Which inference needs both data and a model?
+7. A hypothetical transit depth of 1%: under a uniform-disk approximation, what
+   is the planet/star radius ratio? Does this establish habitability?
+
+ANSWER GUIDE / ASSESSMENT
+1. The shorter-wavelength 500 nm photon has more energy.
+2. Use current explorer output, not a copied wavelength. These are selected
+   fine-structure components; do not substitute air wavelengths or blend centroids.
+3. Emission: higher to lower state with an outgoing photon. Absorption: lower
+   to higher state with an incoming photon. Photon energy and wavelength unchanged.
+4. Balmer beta has a larger gap and shorter wavelength. Expect approximately
+   2.55 eV versus 1.89 eV for the selected Balmer alpha component.
+5. [X/Fe] = +0.10 dex. X/H is approximately 1.58 times the reference solar ratio.
+6. Observation; modeling assumption; model-dependent estimate; interpretation.
+7. Radius ratio approximately 0.10. No mass, composition or habitability conclusion.
+
+TEACHER NOTES
+Assess explanation and units, not just a matching number. Ask what is schematic:
+level spacing, electron trajectory, photon path/time and spectral intensity/width.
+A stellar absorption line needs radiative transfer through an atmosphere, not
+just a picture of a single atom absorbing a photon. Microturbulence changes
+saturation and opacity and cannot be treated as an arbitrary output convolution.
+The explorer is not a validated stellar synthesis grid or survey measurement.
+
+Accessibility: native keyboard controls and descriptive text; reduced motion
+shows final states without animation. Static lessons and reference values work
+without JavaScript. Print this guide or the lesson page as needed.
+
+References: NIST hydrogen levels and SI constants, linked in the explorer;
+OpenStax Astronomy 2e ch. 5 and 17; NASA Science exoplanet discovery methods.
+Original activity and diagrams. Proposed CC BY 4.0 reuse license pending project
+owner approval. This draft makes no new license grant; sources retain their terms.
