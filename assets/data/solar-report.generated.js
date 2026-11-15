@@ -19,12 +19,12 @@ window.SOLAR_REPORT = {
       "detail": "Two independent telluric corrections, each its own product: our molecfit fit and Kurucz (2005)"
     },
     {
-      "band": "Red-optical to near-IR",
-      "range": "6910–11083 Å",
+      "band": "Visible to near-IR",
+      "range": "from 4047 Å",
       "instrument": "IAG solar flux atlas",
       "role": "Second, independent solar atlas",
       "status": "in use",
-      "detail": "Published already telluric-corrected (Baker et al. 2020); used beyond the visible band, and also sets the continuum uncertainty"
+      "detail": "Published already telluric-corrected (Reiners et al. 2016; Baker et al. 2020); also sets the continuum uncertainty"
     },
     {
       "band": "Y / J / H / K",
@@ -1473,7 +1473,7 @@ window.SOLAR_REPORT = {
           "engine": "this page's products",
           "publishedLineCount": 3,
           "artifactLineCount": 0,
-          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 45 of the 55 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
+          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 55 of the 55 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
         }
       ],
       "reproducibility": {
@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "34eabffe0c41600cf4710503b04e06bf5aa97ad7",
-        "scienceGit": "4cbdd50cb115757aeacaa83122f1ae28489868b8",
-        "generatedAt": "2026-11-07T01:08:29+00:00"
+        "scienceGit": "4457c5a69e6486d9a10c3421ba5ddb87c731d50a",
+        "generatedAt": "2026-11-15T17:38:43+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1591,16 +1591,16 @@ window.SOLAR_REPORT = {
       "name": "Magnesium",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 combination of Mg I 7.661, Mg II 7.717 (Mg.json v1.335)",
+      "method": "Asplund+2021 combination of Mg I 7.661, Mg II 7.717 (Mg.json v1.336)",
       "asplund": 7.55,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/mg/",
       "primaryValue": {
-        "value": 7.6683,
-        "sigmaTotal": 0.0429,
+        "value": 7.6668,
+        "sigmaTotal": 0.0365,
         "lineCount": 7
       },
-      "delta": 0.1183,
+      "delta": 0.1168,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -1702,7 +1702,7 @@ window.SOLAR_REPORT = {
       "name": "Calcium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · SET-CA_AGSS21 · ENGINE-A-3DNLTE (Reference Grade, Ca.json v1.324)",
+      "method": "harps VIS · SET-CA_AGSS21 · ENGINE-A-3DNLTE (Reference Grade, Ca.json v1.379)",
       "asplund": 6.3,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/ca/",
@@ -1739,16 +1739,16 @@ window.SOLAR_REPORT = {
       "name": "Titanium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ti.json v1.343)",
+      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ti.json v1.685)",
       "asplund": 4.97,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/ti/",
       "primaryValue": {
-        "value": 4.945,
-        "sigmaTotal": 0.0653,
-        "lineCount": 80
+        "value": 4.961,
+        "sigmaTotal": 0.0658,
+        "lineCount": 81
       },
-      "delta": -0.025,
+      "delta": -0.009,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
@@ -1932,9 +1932,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.747,
-        "sigma": 0.7021242024775013,
-        "sigmaStat": 0.6995529970664605,
-        "sigmaSys": 0.06003332407921454,
+        "sigma": 0.17288944444355184,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1726,
         "lineCount": 1,
         "role": "RYA-935 evidence"
       },
@@ -1947,9 +1947,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.732,
-        "sigma": 0.7021242024775013,
-        "sigmaStat": 0.6995529970664605,
-        "sigmaSys": 0.06003332407921454,
+        "sigma": 0.17288944444355184,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1726,
         "lineCount": 1,
         "role": "RYA-935 evidence"
       },
@@ -1962,9 +1962,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.569,
-        "sigma": 0.04503887209955424,
-        "sigmaStat": 0.03350000000000008,
-        "sigmaSys": 0.030103986446980736,
+        "sigma": 0.1758209600701805,
+        "sigmaStat": 0.0335,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -1977,9 +1977,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.552,
-        "sigma": 0.04346083884628953,
-        "sigmaStat": 0.03134636363636378,
-        "sigmaSys": 0.030103986446980736,
+        "sigma": 0.17541507916938043,
+        "sigmaStat": 0.0313,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -1992,9 +1992,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.569,
-        "sigma": 0.04503887209955424,
-        "sigmaStat": 0.03350000000000008,
-        "sigmaSys": 0.030103986446980736,
+        "sigma": 0.1758209600701805,
+        "sigmaStat": 0.0335,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2007,9 +2007,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.552,
-        "sigma": 0.04346083884628953,
-        "sigmaStat": 0.03134636363636378,
-        "sigmaSys": 0.030103986446980736,
+        "sigma": 0.17541507916938043,
+        "sigmaStat": 0.0313,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2022,9 +2022,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.409,
-        "sigma": 0.03156738823532908,
-        "sigmaStat": 0.00949999999999962,
-        "sigmaSys": 0.030103986446980736,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2037,9 +2037,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.387,
-        "sigma": 0.030409473706654307,
-        "sigmaStat": 0.004299545454545139,
-        "sigmaSys": 0.030103986446980736,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2052,9 +2052,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.403,
-        "sigma": 0.03056141357987222,
-        "sigmaStat": 0.0029999999999996696,
-        "sigmaSys": 0.0304138126514911,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2067,9 +2067,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.381,
-        "sigma": 0.03049331074525383,
-        "sigmaStat": 0.002200454545454811,
-        "sigmaSys": 0.0304138126514911,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2082,9 +2082,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.451,
-        "sigma": 0.030141333746203064,
-        "sigmaStat": 0.0024999999999999467,
-        "sigmaSys": 0.030037476591751176,
+        "sigma": 0.036689576176347466,
+        "sigmaStat": 0.0029999999999996696,
+        "sigmaSys": 0.036566719841954726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2097,9 +2097,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.429,
-        "sigma": 0.03100882132888333,
-        "sigmaStat": 0.007700454545454426,
-        "sigmaSys": 0.030037476591751176,
+        "sigma": 0.03663286775842997,
+        "sigmaStat": 0.002200454545454811,
+        "sigmaSys": 0.036566719841954726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2112,9 +2112,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.446,
-        "sigma": 0.03150396800404665,
-        "sigmaStat": 0.00849999999999973,
-        "sigmaSys": 0.030335622624235024,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2127,9 +2127,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.423,
-        "sigma": 0.03328591976725379,
-        "sigmaStat": 0.01370045454545421,
-        "sigmaSys": 0.030335622624235024,
+        "sigma": 0.1705511360267061,
+        "sigmaStat": 0.0137,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2142,9 +2142,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.45,
-        "sigma": 0.031324910215354156,
-        "sigmaStat": 0.004999999999999893,
-        "sigmaSys": 0.030923292192132454,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2157,9 +2157,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.428,
-        "sigma": 0.032562236915388364,
-        "sigmaStat": 0.010200454545454372,
-        "sigmaSys": 0.030923292192132454,
+        "sigma": 0.17030572509460745,
+        "sigmaStat": 0.0102,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2172,9 +2172,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.45,
-        "sigma": 0.030700162866017514,
-        "sigmaStat": 0.0055000000000000595,
-        "sigmaSys": 0.03020347662107791,
+        "sigma": 0.17029386365926402,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.17,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2187,9 +2187,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.427,
-        "sigma": 0.03204293568759484,
-        "sigmaStat": 0.01070045454545454,
-        "sigmaSys": 0.03020347662107791,
+        "sigma": 0.038243629299855975,
+        "sigmaStat": 0.011200454545454708,
+        "sigmaSys": 0.036566719841954726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2202,9 +2202,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.423,
-        "sigma": 0.03234192325759244,
-        "sigmaStat": 0.004999999999999893,
-        "sigmaSys": 0.03195309061734092,
+        "sigma": 0.17288944444355184,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2217,9 +2217,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.406,
-        "sigma": 0.03348527751302002,
-        "sigmaStat": 0.010013181818181671,
-        "sigmaSys": 0.03195309061734092,
+        "sigma": 0.17288944444355184,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2232,9 +2232,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.423,
-        "sigma": 0.03234192325759244,
-        "sigmaStat": 0.004999999999999893,
-        "sigmaSys": 0.03195309061734092,
+        "sigma": 0.17288944444355184,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2247,9 +2247,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.406,
-        "sigma": 0.03348527751302002,
-        "sigmaStat": 0.010013181818181671,
-        "sigmaSys": 0.03195309061734092,
+        "sigma": 0.17288944444355184,
+        "sigmaStat": 0.01,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2262,9 +2262,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.467,
-        "sigma": 0.05838664230798022,
-        "sigmaStat": 0.05000000000000026,
-        "sigmaSys": 0.030149626863362672,
+        "sigma": 0.17969629934976403,
+        "sigmaStat": 0.05,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2277,9 +2277,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.45,
-        "sigma": 0.06273316645730832,
-        "sigmaStat": 0.05501318181818204,
-        "sigmaSys": 0.030149626863362672,
+        "sigma": 0.18115120755876843,
+        "sigmaStat": 0.055,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2292,9 +2292,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-LTE",
         "telluric": "not declared",
         "value": 6.467,
-        "sigma": 0.05838664230798022,
-        "sigmaStat": 0.05000000000000026,
-        "sigmaSys": 0.030149626863362672,
+        "sigma": 0.17969629934976403,
+        "sigmaStat": 0.05,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       },
@@ -2307,9 +2307,9 @@ window.SOLAR_REPORT = {
         "displayName": "Synth · 1D-NLTE · Amarsi",
         "telluric": "not declared",
         "value": 6.45,
-        "sigma": 0.06273316645730832,
-        "sigmaStat": 0.05501318181818204,
-        "sigmaSys": 0.030149626863362672,
+        "sigma": 0.18115120755876843,
+        "sigmaStat": 0.055,
+        "sigmaSys": 0.1726,
         "lineCount": 2,
         "role": "RYA-935 evidence"
       }
@@ -2378,9 +2378,8 @@ window.SOLAR_REPORT = {
       {
         "instrument": "iag_fts_solar_atlas",
         "band": "VIS",
-        "state": "notused",
-        "range": "",
-        "reason": "Not used: IAG is the near-IR atlas here; the visible band is measured on HARPS and Kitt Peak."
+        "state": "gap",
+        "range": ""
       },
       {
         "instrument": "iag_fts_solar_atlas",
@@ -5336,9 +5335,9 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "f12a1b3d7cb347b8e8cf65eaeec96b4a5089a534",
-    "productCommit": "37d4158a0359d7587d297c7be5f9084b6ed114c7",
+    "gitCommit": "48db0c21bf3de01c477aa13ec86456bbc3473636",
+    "productCommit": "692b74a244096aab9764a00818d173898d58b7a7",
     "goldVersion": "Fe_I=v5",
-    "generatedAt": "2026-10-23T09:38:53+00:00"
+    "generatedAt": "2026-11-07T18:34:41+00:00"
   }
 };
