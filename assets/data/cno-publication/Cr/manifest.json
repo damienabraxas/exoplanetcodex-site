@@ -1,9 +1,9 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "a13b41b21194671088139fcd48a0225d37d21bc9",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/a13b41b21194671088139fcd48a0225d37d21bc9",
-  "generated_at": "2026-11-14T18:27:14-07:00",
+  "source_commit": "48db0c21bf3de01c477aa13ec86456bbc3473636",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/48db0c21bf3de01c477aa13ec86456bbc3473636",
+  "generated_at": "2026-11-15T08:52:31-07:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
   "feed_version": "1.199",
   "feed_updated_at": "2026-11-15T00:52:26Z",
@@ -17,7 +17,7 @@
     "data/reference/litscan/Cr.yaml": "6bd07b5a32e92830afb94cfaffdef9d6a985d341fe28b817f374dc28526f83a9",
     "data/nlte_grids/Cr_Bergemann2010_MPIA.prov.json": "1b3430754571153d7b31e41ef0d423bb34b2a6e91880c950d1d7f24547ce78ae"
   },
-  "generator_sha256": "fff6dfd042662b5bf92bbb04158db0dd1e72762fdfd9cbc5d4e2d766af7e8d6a",
+  "generator_sha256": "01c70faa8526fb2753f683d234acf04bff152b7853ab736793116e9f8bbd3df5",
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 15,
