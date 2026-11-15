@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "review_status": "Source-checked draft; independent scientific and accessibility review pending",
+  "sources": {
+    "nist-levels": {
+      "title": "NIST Handbook: H I energy levels (MK00a)",
+      "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable5.htm"
+    },
+    "nist-lines": {
+      "title": "NIST Handbook: H I persistent lines",
+      "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable3.htm"
+    },
+    "constants": {
+      "title": "NIST 2022 CODATA constants: exact SI h, c and elementary charge",
+      "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+    },
+    "light": {
+      "title": "OpenStax Astronomy 2e §5.1: electromagnetic radiation",
+      "url": "https://openstax.org/books/astronomy-2e/pages/5-1-the-behavior-of-light"
+    },
+    "lines": {
+      "title": "OpenStax Astronomy 2e §5.5: formation of spectral lines",
+      "url": "https://openstax.org/books/astronomy-2e/pages/5-5-formation-of-spectral-lines"
+    },
+    "stars": {
+      "title": "OpenStax Astronomy 2e §17.3: stellar spectra",
+      "url": "https://openstax.org/books/astronomy-2e/pages/17-3-the-spectra-of-stars-and-brown-dwarfs"
+    },
+    "planets": {
+      "title": "NASA Science: exoplanet discovery methods",
+      "url": "https://science.nasa.gov/exoplanets/how-we-find-and-characterize/"
+    },
+    "vald": {
+      "title": "Ryabchikova et al. (2015): a major upgrade of VALD",
+      "url": "https://doi.org/10.1088/0031-8949/90/5/054005"
+    },
+    "solar": {
+      "title": "Asplund, Amarsi & Grevesse (2021): the chemical make-up of the Sun",
+      "url": "https://doi.org/10.1051/0004-6361/202140445"
+    },
+    "atomic": {
+      "title": "NIST ASD: contents, provenance and data help",
+      "url": "https://physics.nist.gov/PhysRefData/ASD/Html/contents.html"
+    }
+  },
+  "lessons": [
+    {
+      "id": "light",
+      "title": "Light",
+      "description": "Read wavelength, frequency and photon energy before reading a spectrum.",
+      "objectives": [
+        "Connect wavelength to photon energy.",
+        "Distinguish a Doppler shift from spectral resolution."
+      ],
+      "beginner": "A spectrum separates light by wavelength. Ultraviolet photons carry more energy than visible photons; infrared photons carry less. Wavelength is a length, frequency counts oscillations per second, and photon energy is the energy exchanged in one interaction.",
+      "mathematics": "In vacuum, c = λν and E = hν = hc/λ. At small radial velocities, Δλ/λ ≈ v/c; positive recession shifts a line to longer wavelength. Resolving power R = λ/Δλ describes the smallest nearby features an instrument can separate under a stated resolution convention.",
+      "advanced": "Air and vacuum wavelengths differ because light propagates differently in air. Compare quantities in a declared medium and velocity frame. Instrumental resolution, pixel sampling and measurement precision are separate. UV, visible and IR band boundaries are conventions; this site uses <400, 400–780 and ≥780 nm for navigation.",
+      "example": "A hypothetical 500 nm vacuum photon has frequency about 6.00 × 10¹⁴ Hz and energy 2.48 eV. At R = 50,000, a 500 nm resolution element is about 0.010 nm. These are unit-conversion examples, not observations.",
+      "misconception": "A redshift moves line positions; it does not identify an element by itself. Greater resolution does not automatically mean smaller abundance uncertainty.",
+      "glossary": [
+        "band",
+        "spectral-resolution",
+        "barycentric-correction"
+      ],
+      "method": "data",
+      "sources": [
+        "light",
+        "constants"
+      ],
+      "diagram": "spectrum",
+      "last_source_check": "2026-11-14"
+    },
+    {
+      "id": "atomic-physics",
+      "title": "Atomic Physics & Spectral Lines",
+      "description": "Explore discrete states and the photons exchanged between them.",
+      "objectives": [
+        "Explain absorption and emission with energy conservation.",
+        "Locate one transition on a spectrum."
+      ],
+      "beginner": "An atom has discrete quantum states. Absorption can raise an electron to a higher-energy state; emission accompanies a drop to a lower-energy state. The photon energy matches the difference. The explorer below connects these two descriptions without depicting electrons as tiny planets.",
+      "mathematics": "Eγ = Eupper − Elower. When level energies are tabulated as wavenumbers in cm⁻¹, λvac(nm) = 10⁷ / Δσ. The same energy gap applies in either direction. Oscillator strength f describes a transition probability scale; it is not an elemental abundance.",
+      "advanced": "Fine structure splits a named hydrogen feature into components. Electric-dipole selection rules restrict which states connect; not every pair of levels is allowed. Natural, thermal, pressure and turbulent broadening shape lines, while nearby transitions can blend. This explorer selects individual allowed components and does not calculate their intensities.",
+      "example": "Select Balmer α and compare emission with absorption. The photon energy and wavelength stay the same while the direction reverses. Then choose Balmer β: its larger level gap requires a higher-energy, shorter-wavelength photon.",
+      "misconception": "A stellar absorption line is not explained by one atom simply removing a color. Emergent intensity depends on opacity, emission, scattering, populations and the temperature structure along the path.",
+      "glossary": [
+        "absorption-line",
+        "oscillator-strength",
+        "blend",
+        "forbidden-line"
+      ],
+      "method": "lines",
+      "sources": [
+        "nist-levels",
+        "nist-lines",
+        "lines"
+      ],
+      "diagram": "atom",
+      "last_source_check": "2026-11-14"
+    },
+    {
+      "id": "stellar-spectroscopy",
+      "title": "Stellar Spectroscopy",
+      "description": "Connect a stellar atmosphere to its continuum and Fraunhofer lines.",
+      "objectives": [
+        "Separate atmospheric parameters from instrumental effects.",
+        "Explain why line strength alone cannot determine abundance."
+      ],
+      "beginner": "The continuum is a useful reference level beneath the forest of stellar spectral lines. Fraunhofer absorption lines reveal atomic and molecular interactions in the Sun’s atmosphere. A line can change when temperature, gravity, chemistry or the observing instrument changes.",
+      "mathematics": "Radiative transfer balances extinction and emission: dIν/ds = −ανIν + jν. Optical depth measures accumulated extinction. Effective temperature describes total emergent flux via F = σSB Teff⁴; it is not the temperature at every depth.",
+      "advanced": "LTE uses local temperature and density relations for populations and source functions under appropriate assumptions. NLTE solves populations coupled to radiation and collisions. One-dimensional atmospheres, mean-3D structures, independent 1.5D columns and fully coupled 3D transfer have different assumptions. Microturbulence changes line opacity and saturation; it is not merely a final convolution. Thermal, rotational and instrumental broadening also have distinct effects.",
+      "example": "Hold abundance fixed while comparing two schematic lines: an initially weak line responds differently to microturbulent broadening than a saturated line. A quantitative prediction requires a validated atmosphere, line data and transfer model; no such stellar grid is supplied here.",
+      "misconception": "A deeper line does not necessarily mean more of an element. Temperature, ionization, blends, continuum placement and resolution can produce similar changes. An NLTE label alone does not establish applicability.",
+      "glossary": [
+        "continuum",
+        "effective-temperature",
+        "log-g",
+        "metallicity",
+        "microturbulence",
+        "lte",
+        "nlte"
+      ],
+      "method": "models",
+      "sources": [
+        "stars",
+        "solar"
+      ],
+      "diagram": "transfer",
+      "last_source_check": "2026-11-14"
+    },
+    {
+      "id": "elemental-abundances",
+      "title": "Elemental Abundances",
+      "description": "Follow a calibrated spectrum through line measurement to a checked result.",
+      "objectives": [
+        "Trace the major steps from detector to abundance.",
+        "Identify correlated as well as random uncertainties."
+      ],
+      "beginner": "Start with calibrated spectra and verified source identity, wavelength scale and velocity frame. Correct contaminating telluric absorption where needed, estimate the continuum, then compare selected lines with a model. Equivalent widths and spectrum synthesis offer complementary diagnostics. A solar benchmark tests the chain before interpretation.",
+      "mathematics": "Equivalent width Wλ = ∫(1 − Fλ/Fc)dλ measures missing area relative to the continuum and has wavelength units. A(X) = log10(NX/NH) + 12. [X/H] = A(X)star − A(X)Sun on a compatible scale. [X/Fe] = [X/H] − [Fe/H].",
+      "advanced": "VALD3 supplies atomic data with source provenance; it does not certify every line as suitable. Oscillator-strength grades, damping, blends, atmosphere choices and model applicability require review. Correlated gf or continuum errors do not shrink like independent noise. Propagate covariance and parameter sensitivity. IR measurements require holding-specific telluric validation before any claim of validated abundances.",
+      "example": "Hypothetical values [X/H] = +0.20 dex and [Fe/H] = +0.10 dex give [X/Fe] = +0.10 dex. The X/H number ratio is 10⁰·² ≈ 1.58 times the reference solar ratio. These invented teaching inputs are not Codex measurements.",
+      "misconception": "A line-list entry is not a quality grade. Averaging more lines cannot remove a shared systematic error; a solar agreement alone cannot validate compensating modeling errors.",
+      "glossary": [
+        "equivalent-width",
+        "abundance",
+        "abundance-ratio",
+        "dex",
+        "oscillator-strength",
+        "telluric"
+      ],
+      "method": "measuring",
+      "sources": [
+        "vald",
+        "solar"
+      ],
+      "diagram": "workflow",
+      "last_source_check": "2026-11-14"
+    },
+    {
+      "id": "exoplanets",
+      "title": "Exoplanets",
+      "description": "Discover planets and interpret host-star chemistry with care.",
+      "objectives": [
+        "Distinguish transit and radial-velocity observations.",
+        "Explain the limits of host-star composition as a planetary clue."
+      ],
+      "beginner": "Transits measure changes in stellar brightness when a planet crosses the stellar disk. Radial velocities track periodic motion of the star through shifting spectral lines. Stellar abundances describe the host’s photosphere; they help frame planet-formation questions alongside planetary observations and models.",
+      "mathematics": "For a small opaque planet and a uniform stellar disk, transit depth δ ≈ (Rp/Rstar)². Real analyses include limb darkening and system geometry. Radial-velocity amplitude constrains a mass–inclination combination in a single-planet Keplerian model, given stellar mass and orbit.",
+      "advanced": "Planet formation redistributes and differentiates material. A photospheric [X/Fe] ratio is not a direct measurement of a planet’s bulk composition, atmosphere or biosignatures. Stellar activity, stellar parameters, orbital geometry and detection selection all affect interpretation.",
+      "example": "A hypothetical 1% transit depth implies Rp/Rstar ≈ 0.10 under the uniform-disk approximation. It does not determine the planet’s mass, mineralogy or habitability. Compare this geometric inference with the chemistry inferred in the previous lesson.",
+      "misconception": "An element associated with life in a host star is not evidence of life on its planets. A stellar C/O ratio does not uniquely specify a planet’s rocks or atmosphere.",
+      "glossary": [
+        "abundance-ratio",
+        "c-o-ratio",
+        "metallicity"
+      ],
+      "method": "uncertainty",
+      "sources": [
+        "planets"
+      ],
+      "diagram": "transit",
+      "last_source_check": "2026-11-14"
+    },
+    {
+      "id": "atomic-laboratory",
+      "title": "Theoretical Atomic Laboratory",
+      "description": "Follow a transition’s provenance before trusting its strength.",
+      "objectives": [
+        "Separate theoretical calculations from laboratory measurements.",
+        "Identify what validation and line grades establish."
+      ],
+      "beginner": "A theoretical atomic calculation predicts properties from a model of the atom. A laboratory experiment measures a physical system. Evaluated databases may combine both. Always follow an oscillator strength back to its actual method and reference.",
+      "mathematics": "Line lists often report log10(gf), where g is the lower-state statistical weight and f the absorption oscillator strength. Errors in gf affect inferred abundance; the relationship depends on line strength and the model. Gauge agreement or convergence is diagnostic evidence, not independent experimental validation.",
+      "advanced": "An ungraded line can be explored without calling its abundance scale trusted. Compare consistent transition identities, air/vacuum scales, fine-structure components, uncertainty definitions and independent literature. Agreement between engines sharing the same inputs is not an independent atomic-data check. Codex research predictions and unfinished validation gates are not established laboratory results.",
+      "example": "Open the Atomic Laboratory roadmap and the Frontier atlas. For a selected entry, separate availability, implementation status, applicable physical domain and independent validation. Missing evidence stays unknown; membership in a literature list is not a grade.",
+      "misconception": "A theoretical oscillator strength does not become an experimental measurement because it appears in an evaluated database. A successful software run does not supply scientific sign-off.",
+      "glossary": [
+        "oscillator-strength",
+        "correlated-gf-error",
+        "engine"
+      ],
+      "method": "lines",
+      "sources": [
+        "atomic",
+        "vald"
+      ],
+      "diagram": "provenance",
+      "last_source_check": "2026-11-14"
+    },
+    {
+      "id": "learning-resources",
+      "title": "Learning Resources",
+      "description": "Practice the full journey and bring a guided activity to class.",
+      "objectives": [
+        "Connect light, lines, stars, abundances and planets.",
+        "Support an inference with assumptions and provenance."
+      ],
+      "beginner": "Begin with Light, explore hydrogen, then follow the Stellar Spectroscopy, Elemental Abundances and Exoplanets lessons. Use the Glossary for definitions and Methodology for the project’s documented practices. All lessons, interactives and downloads are freely accessible without an account or payment.",
+      "mathematics": "Classroom task: calculate the photon energy for a selected explorer transition, convert nm to m explicitly, and compare with the display. Change only the transition and explain why E and λ vary inversely. Record the selected states and vacuum convention with your answer.",
+      "advanced": "Educator assessment: ask learners to label each claim as an observation, a modeling assumption or an interpretation. A detector flux is an observation; an LTE atmosphere is a modeling assumption; a planet-formation explanation is an interpretation. An abundance estimate depends on observations and modeling. Download the activity and record assumptions with every result.",
+      "example": "Suggested 30-minute session: 5 minutes on wavelength, 10 on the hydrogen explorer, 10 tracing a spectrum-to-abundance inference, and 5 on why stellar chemistry alone cannot prove habitability. No prerequisite calculus is needed; the mathematics panels provide an extension.",
+      "misconception": "A convincing visualization is not evidence that a model fits real stars. The explorer is an energy-conservation lesson, not a stellar synthesis engine.",
+      "glossary": [
+        "absorption-line",
+        "equivalent-width",
+        "abundance-ratio"
+      ],
+      "method": "process",
+      "sources": [
+        "light",
+        "lines",
+        "stars",
+        "planets"
+      ],
+      "diagram": "journey",
+      "last_source_check": "2026-11-14"
+    }
+  ]
+}

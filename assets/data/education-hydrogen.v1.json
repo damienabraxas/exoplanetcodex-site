@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "scope": "educational_reference_not_survey_measurements",
+  "source_accessed": "2026-11-14",
+  "sources": {
+    "nist-levels": {
+      "title": "NIST Handbook: H I energy levels (MK00a)",
+      "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable5.htm"
+    },
+    "nist-lines": {
+      "title": "NIST Handbook: H I persistent lines",
+      "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable3.htm"
+    },
+    "constants": {
+      "title": "NIST 2022 CODATA constants: exact SI h, c and elementary charge",
+      "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+    }
+  },
+  "constants": {
+    "c_m_s": 299792458,
+    "h_J_s": 6.62607015e-34,
+    "e_C": 1.602176634e-19,
+    "source": "constants"
+  },
+  "levels": [
+    {
+      "id": "1s",
+      "label": "1s ²S₁/₂",
+      "n": 1,
+      "energy_cm1": 0
+    },
+    {
+      "id": "2p",
+      "label": "2p ²P°₃/₂",
+      "n": 2,
+      "energy_cm1": 82259.285
+    },
+    {
+      "id": "2s",
+      "label": "2s ²S₁/₂",
+      "n": 2,
+      "energy_cm1": 82258.9544
+    },
+    {
+      "id": "3p",
+      "label": "3p ²P°₃/₂",
+      "n": 3,
+      "energy_cm1": 97492.3196
+    },
+    {
+      "id": "4p",
+      "label": "4p ²P°₃/₂",
+      "n": 4,
+      "energy_cm1": 102823.8943
+    }
+  ],
+  "level_source": "nist-levels",
+  "transitions": [
+    {
+      "id": "lyman-alpha",
+      "label": "Lyman α · n = 2 ↔ 1 · UV",
+      "lower": "1s",
+      "upper": "2p",
+      "band": "UV"
+    },
+    {
+      "id": "balmer-alpha",
+      "label": "Balmer α · n = 3 ↔ 2 · red visible",
+      "lower": "2s",
+      "upper": "3p",
+      "band": "Visible"
+    },
+    {
+      "id": "balmer-beta",
+      "label": "Balmer β · n = 4 ↔ 2 · blue visible",
+      "lower": "2s",
+      "upper": "4p",
+      "band": "Visible"
+    }
+  ],
+  "wavelength_convention": "vacuum Ritz estimate from rounded NIST level differences; individual fine-structure components, not blended line centroids",
+  "uncertainty": "No uncertainty inferred from printed decimals. Educational display rounded to 0.01 nm and 0.001 eV; not for precision calibration.",
+  "assumptions": [
+    "Schematic level spacing, electron marker and photon path are not spatial orbit trajectories or physical timescales.",
+    "Allowed electric-dipole examples: parity changes, Δl = ±1 and ΔJ = 0, ±1 (0 → 0 excluded).",
+    "Illustrative spectrum shape, line width and height do not predict intensity, equivalent width or stellar populations."
+  ]
+}
