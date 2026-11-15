@@ -112,7 +112,9 @@ inputs with `scripts/generate_cno_publication.py`. See
 
 ## Education & Learning Center
 
-`/education/` adds open introductory lessons, local concept search and a source-backed
-hydrogen transition explorer alongside the existing Glossary and Methodology.
+`/education/` adds open lessons, local concept search and working GUIs in all seven
+modules: light, H/Na atomic transitions, schematic stellar spectroscopy, EW/curve of
+growth, transit/RV, atomic metadata and an interactive classroom assessment. The
+existing Glossary and Methodology remain separate.
 [Content architecture, reference calculations, update procedure and phased roadmap](docs/education.md)
 include the separate scientific and accessibility review gates.

@@ -59,6 +59,16 @@ export function searchEntries(entries, query) {
 }
 export function safeLocalURL(s) { return typeof s === 'string' && /^\/(education|glossary|method)\/#[-a-z0-9]+$/.test(s); }
 export function transitionCSV(v, mode, data) {
-  const rows = [['dataset','hydrogen educational reference; not survey measurements'],['transition',v.transition.id],['mode',mode],['lower_state',v.lower.label],['upper_state',v.upper.label],['lower_energy_cm-1',v.lower.energy_cm1],['upper_energy_cm-1',v.upper.energy_cm1],['wavelength_vacuum_nm',v.wavelength_nm],['photon_energy_eV',v.energy_eV],['frequency_Hz',v.frequency_Hz],['wavelength_method',data.wavelength_convention],['uncertainty_note',data.uncertainty],['level_source',data.sources['nist-levels'].url],['constants_source',data.sources.constants.url],['source_accessed',data.source_accessed]];
+  const rows = [['dataset','atomic educational reference; not survey measurements'],['element',v.transition.element??'H'],['transition',v.transition.id],['mode',mode],['lower_state',v.lower.label],['upper_state',v.upper.label],['lower_energy_cm-1',v.lower.energy_cm1],['upper_energy_cm-1',v.upper.energy_cm1],['wavelength_vacuum_nm',v.wavelength_nm],['photon_energy_eV',v.energy_eV],['frequency_Hz',v.frequency_Hz],['wavelength_method',data.wavelength_convention],['uncertainty_note',data.uncertainty],['level_source',data.sources[v.transition.element==='Na'?'na-levels':'nist-levels'].url],['constants_source',data.sources.constants.url],['source_accessed',data.source_accessed]];
   return rows.map(row=>row.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n';
+}
+
+/** Combine versioned atomic references without duplicating hydrogen values. */
+export function combinedAtomicReference(hydrogen, sodium) {
+  if(sodium?.schema_version !== 1 || sodium.scope !== hydrogen.scope) throw Error('Invalid sodium reference');
+  return validateReference({...hydrogen,
+    sources:{...hydrogen.sources,...sodium.sources},
+    levels:[...hydrogen.levels,...sodium.levels],
+    transitions:[...hydrogen.transitions.map(t=>({...t,element:'H'})),...sodium.transitions],
+  });
 }

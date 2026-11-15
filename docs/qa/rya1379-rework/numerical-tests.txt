@@ -1,0 +1,28 @@
+✔ NIST components reproduce independent vacuum references to display precision (0.723208ms)
+✔ absorption reverses states with unchanged positive photon energy (0.129709ms)
+✔ larger Balmer gap requires higher energy and shorter wavelength (0.046709ms)
+✔ malformed reference fails rather than manufacturing science (0.564083ms)
+✔ query initialization validates IDs and mode (0.770042ms)
+✔ local search covers aliases, typo tolerance and content types (32.568833ms)
+✔ URL allowlist rejects scripts, external and protocol relative URLs (0.16675ms)
+✔ CSV retains units, states, medium, educational scope and sources (0.11625ms)
+✔ photon frequency and energy have independent SI benchmarks (0.782709ms)
+✔ Doppler signs, inverse velocities and small-velocity approximation (0.082125ms)
+✔ SCHOTT index and grating orders match independent references (0.107958ms)
+✔ resolving power changes width, while sampling and SNR are independent (1.416666ms)
+✔ sodium components retain NIST identities and distinct air/vacuum conventions (0.260667ms)
+✔ Gaussian EW matches analytic area, not FWHM; window and continuum matter (0.917708ms)
+✔ opacity normalization gives weak-line invariance and saturated broadening response (2.777375ms)
+✔ all stellar parameters have disclosed, meaningful effects; R preserves intrinsic EW (11.739ms)
+✔ curve of growth has thin linearity, saturation, invertibility and explicit domain failure (1.400833ms)
+✔ uniform transit equals p² centrally, vanishes out of transit and behaves at grazing contact (0.174792ms)
+✔ limb-darkened transit quadrature agrees with analytic centered integral and converges (0.396625ms)
+✔ RV semi-amplitude matches Jupiter/solar benchmark, inclination and period scaling (0.104291ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.415667

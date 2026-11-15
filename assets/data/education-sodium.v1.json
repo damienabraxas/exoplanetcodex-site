@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "source_accessed": "2026-11-14",
+  "scope": "educational_reference_not_survey_measurements",
+  "sources": {
+    "na-levels": {
+      "title": "NIST Handbook Na I levels (MZ81)",
+      "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/sodiumtable5.htm"
+    },
+    "na-lines": {
+      "title": "NIST Handbook Na I persistent lines (air wavelengths)",
+      "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/sodiumtable3.htm"
+    }
+  },
+  "levels": [
+    {
+      "id": "na-3s",
+      "label": "3s ²S₁/₂",
+      "energy_cm1": 0,
+      "n": 3
+    },
+    {
+      "id": "na-3p1",
+      "label": "3p ²P°₁/₂",
+      "energy_cm1": 16956.172,
+      "n": 3
+    },
+    {
+      "id": "na-3p3",
+      "label": "3p ²P°₃/₂",
+      "energy_cm1": 16973.368,
+      "n": 3
+    }
+  ],
+  "transitions": [
+    {
+      "id": "sodium-d2",
+      "label": "Sodium D₂ · 3p J=3/2 ↔ 3s J=1/2",
+      "lower": "na-3s",
+      "upper": "na-3p3",
+      "element": "Na",
+      "band": "Visible",
+      "source_air_nm": 588.995,
+      "source": "na-lines",
+      "canonical_line_id": "gf_097225"
+    },
+    {
+      "id": "sodium-d1",
+      "label": "Sodium D₁ · 3p J=1/2 ↔ 3s J=1/2",
+      "lower": "na-3s",
+      "upper": "na-3p1",
+      "element": "Na",
+      "band": "Visible",
+      "source_air_nm": 589.5924,
+      "source": "na-lines",
+      "canonical_line_id": "gf_097226"
+    }
+  ],
+  "canonical_source": {
+    "data/linelists/canonical_gf.csv": {
+      "sha256": "30e8e4bc0c7ce899313a6ecadde93e1b444696d5920dc9124a7fa0f07043ea72",
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/45901e7678ab6c8624fe659e552fba3f2681457d/data/linelists/canonical_gf.csv"
+    },
+    "data/linelists/primary_gf/nist_asd_Na_I_3000_25000.tsv": {
+      "sha256": "0fba6e0364f7387f9db4e81a392bf01cf5f2ebfb0044f53df115858ed18f4b0f",
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/45901e7678ab6c8624fe659e552fba3f2681457d/data/linelists/primary_gf/nist_asd_Na_I_3000_25000.tsv"
+    },
+    "data/linelists/primary_gf/nist_asd_Na_I_3000_25000.prov.json": {
+      "sha256": "d1f4670384bd54bb39b211e5fa435796e44d33f40f546a80e12bd304a87f3539",
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/45901e7678ab6c8624fe659e552fba3f2681457d/data/linelists/primary_gf/nist_asd_Na_I_3000_25000.prov.json"
+    },
+    "data/catalog/model_registry.csv": {
+      "sha256": "57bf70b1d514374491a9753d046d20c3d7fa60e93152436bfccd45352b9dd258",
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/45901e7678ab6c8624fe659e552fba3f2681457d/data/catalog/model_registry.csv"
+    }
+  },
+  "science_base": "45901e7678ab6c8624fe659e552fba3f2681457d",
+  "line_records": [
+    {
+      "line_id": "gf_097225",
+      "species": "Na I",
+      "wavelength_air_A": "5889.951",
+      "excitation_potential_eV": "0.0",
+      "log_gf": "0.108",
+      "loggf_reference": "NIST ASD (accuracy AA; TP ref T6617,T6568,T6567)",
+      "nist_grade": "AA",
+      "adjudication_status": "adopted_rya1268_nist_asd",
+      "gf_synth_ges": "0.108",
+      "gf_regions_vald": "0.108",
+      "gf_linelist_vald": "0.1081",
+      "gf_tier": "NIST-C+"
+    },
+    {
+      "line_id": "gf_097226",
+      "species": "Na I",
+      "wavelength_air_A": "5895.924",
+      "excitation_potential_eV": "0.0",
+      "log_gf": "-0.194",
+      "loggf_reference": "NIST ASD (accuracy AA; TP ref T6617,T6567)",
+      "nist_grade": "AA",
+      "adjudication_status": "adopted_rya1268_nist_asd",
+      "gf_synth_ges": "-0.144",
+      "gf_regions_vald": "-0.194",
+      "gf_linelist_vald": "-0.1939",
+      "gf_tier": "NIST-C+"
+    },
+    {
+      "line_id": "gf_097193",
+      "species": "Na I",
+      "wavelength_air_A": "4213.001",
+      "excitation_potential_eV": "2.102",
+      "log_gf": "-2.65",
+      "loggf_reference": "GUES",
+      "nist_grade": null,
+      "adjudication_status": "single_source",
+      "gf_synth_ges": "-2.65",
+      "gf_regions_vald": null,
+      "gf_linelist_vald": "-2.6499",
+      "gf_tier": "OTHER"
+    }
+  ],
+  "method_disclosure": "NIST-evaluated values with retained upstream reference codes. Experimental versus theoretical origin has not been independently classified in this teaching snapshot. Canonical grade does not approve every stellar use. Retained GES/VALD candidate columns are historical inputs, not a new live external query."
+}

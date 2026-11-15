@@ -1,0 +1,11 @@
+{
+  "requested_url": "https://exoplanetcodex.org/education/",
+  "retrieved_utc": "2026-11-15T01:10:16Z",
+  "sha256": "fc1be7a61477fb16a6d494e1939e56c3ebbe11d48b51ef6d679a33a9ddd74256",
+  "has_hydrogen_explorer": true,
+  "new_parameter_driven_widget_count": 0,
+  "has_stellar_planned_notice": true,
+  "scripts": [
+    "/assets/js/education.js"
+  ]
+}
