@@ -51,10 +51,87 @@
       "type": "Lesson"
     },
     {
-      "title": "Hydrogen transition explorer",
+      "title": "Atomic transition explorer: hydrogen and sodium",
       "description": "Emission, absorption, photon energy and vacuum wavelength; downloadable CSV, SVG and shareable configurations.",
-      "concepts": "hydrogen balmer lyman atomic transition simulator electron",
+      "concepts": "hydrogen sodium doublet balmer lyman atomic transition simulator electron",
       "url": "/education/#hydrogen-explorer",
+      "type": "Interactive"
+    },
+    {
+      "title": "Tune a photon",
+      "description": "Drag the spectrum or move the wavelength slider. Shorter wavelength means higher frequency and photon energy.",
+      "concepts": "E = hc/λ; ν = c/λ. The color strip is original illustrative RGB interpolation, not calibrated human color perception; visible limits vary. J is energy, Hz is frequency. Predict the change in E when wavelength doubles. Compare 400 nm with 780 nm and explain the inverse relationship.",
+      "url": "/education/#light-photon",
+      "type": "Interactive"
+    },
+    {
+      "title": "Prism or diffraction grating?",
+      "description": "Compare two different ways to spread wavelengths. Each ray is colored by the same approximate color scale.",
+      "concepts": "Prism: SCHOTT N-BK7 Sellmeier n(λ), minimum deviation δ = 2 asin(n sin(A/2)) − A. Each wavelength is evaluated at its own minimum-deviation incidence; the illustration is not a common-incidence ray trace. Grating: normal incidence in vacuum, d sin θ = mλ. An order with |mλ/d| > 1 does not propagate. Prism refraction is not diffraction. Angles and angular dispersion are numeric; ray positions are schematic. Compare red and blue: which has the larger prism deviation? Which has the larger grating angle in order +1? What happens in order zero or when an order is forbidden?",
+      "url": "/education/#dispersion",
+      "type": "Interactive"
+    },
+    {
+      "title": "Separate two nearby lines",
+      "description": "The cyan curve is a noise-free teaching profile; orange points illustrate detector sampling and seeded Gaussian noise.",
+      "concepts": "At 550 nm, instrumental FWHM = λ/R. Intrinsic Gaussian sigma is 0.0005 nm, convolved analytically with the Gaussian instrument profile. R, sampling and noise are separate. ESO overview gives nominal HARPS R=115,000; manual 3.3.12 lists measured R=120,000 and 4.1 pixels/FWHM. The two presets retain this distinction. Real HARPS line-spread functions are not universally Gaussian. Distinguishability depends on line shape, contrast, sampling, SNR and inference method; there is no universal hard threshold. Hold R fixed and reduce SNR, then change sampling alone. Which properties of the noise-free line stay unchanged?",
+      "url": "/education/#resolution",
+      "type": "Interactive"
+    },
+    {
+      "title": "Move a spectrum toward or away",
+      "description": "Cyan: stationary reference. Orange: shifted copies of the same three hypothetical absorption lines.",
+      "concepts": "λobs/λrest = sqrt((1+β)/(1−β)), β=v/c. The approximation Δλ/λ ≈ v/c applies for |v| ≪ c; compare its error in the readout. Hypothetical reference lines at 499.7, 500.0 and 500.3 nm are not element identifications. Only longitudinal motion is modeled. Set v to equal positive and negative values. Explain the sign, then follow the link to stellar reflex motion in the RV simulator.",
+      "url": "/education/#doppler",
+      "type": "Interactive"
+    },
+    {
+      "title": "Stellar Spectroscopy Simulator",
+      "description": "Compare a weak and a saturated synthetic teaching line under the same parameters. Dashed lines retain the reference atmosphere for comparison.",
+      "concepts": "This is a generic Fe-like atom (56 u, ionization 7.9 eV, excitation 2.5 eV), not an identified observed transition. A single LTE absorbing screen uses F=exp(−τ); opacity scales with 10^[M/H] and Saha–Boltzmann populations. T is set equal to Teff. Electron density ne=10¹⁹ × 10^(log g−4.44) × 5772/T m⁻³ is an explicit schematic pressure proxy, not a calibrated atmosphere. Doppler b²=2kT/m+ξ²; the area-normalized opacity is broadened before transfer. Only instrumental broadening is a subsequent convolution. No line emission, damping, real atmosphere, NLTE or 3D prediction. Slider bounds define the teaching domain, not an interpolation grid. Hold abundance fixed, increase ξ and compare weak/saturated EW. Change R alone: profiles change while integrated EW is conserved if the window contains the full line. Explore gravity–metallicity and temperature degeneracies; different parameters can give similar line strengths.",
+      "url": "/education/#stellar-simulator",
+      "type": "Interactive"
+    },
+    {
+      "title": "Measure the missing light",
+      "description": "The shaded area is the signed integrated difference between the adopted continuum and normalized flux within the selected window.",
+      "concepts": "Wλ = ∫[1−Fλ/Fc]dλ; 1 Å = 1000 mÅ. The center is a hypothetical 5000 Å (500 nm) line. Depth and width are independent synthetic teaching inputs. Gaussian full EW = depth × sigma × sqrt(2π); FWHM = 2 sqrt(2 ln 2) sigma and is not EW. A finite window can lose area. Continuum errors can add or subtract area, including a signed negative result. The Lorentzian width control is HWHM, not sigma. Change depth and width separately. Then keep the physical line fixed and offset the continuum: is the inferred EW unbiased? Compare the area result with FWHM.",
+      "url": "/education/#equivalent-width",
+      "type": "Interactive"
+    },
+    {
+      "title": "From equivalent width to abundance — conditionally",
+      "description": "Move along a synthetic curve of growth. Compare two Doppler widths at the same abundance and inspect a line profile.",
+      "concepts": "F(v)=exp[−A φ(v)] with unit-area Gaussian φ, A=5×10^ΔA km/s and sigma=b/√2. W is integrated and converted at a hypothetical 500 nm line. Inversion uses the same fixed transition strength and atmosphere proxy; it returns only a synthetic differential abundance, not a calibrated A(X) or Codex result. This Gaussian-opacity model shows linear and saturation regimes, not the damping-wing branch. Increasing b can increase saturated EW at unchanged abundance. Instrument convolution conserves full EW and is distinct from opacity broadening. Compare b=2 and b=6 at ΔA=−2 and +1. An EW-to-abundance conversion requires the transition, populations, broadening and transfer assumptions to be held fixed.",
+      "url": "/education/#curve-growth",
+      "type": "Interactive"
+    },
+    {
+      "title": "Build a transit light curve",
+      "description": "Change planet size, impact parameter and limb darkening; scrub the planet across the projected stellar disk.",
+      "concepts": "Opaque spherical planet and spherical star, circular orbit, a/R★=10 and P=3 days fixed. Impact parameter b=(a/R★) cos i determines geometry. Linear intensity I(μ)=1−u(1−μ), with disk normalization π(1−u/3). Uniform disks use exact circle overlap; limb darkening uses 900 radial annuli. No spots, dilution, exposure averaging or transit timing variations. a/R★ and P imply a fixed stellar-density scale; no stellar mass/radius is inferred here. This is a teaching implementation, not batman or a fitted planet. Try b>1+Rp/R★: no transit. At b=0,u=0 verify depth=(Rp/R★)². Increase u and inspect how the curve changes; radius and limb darkening can trade off.",
+      "url": "/education/#transit-simulator",
+      "type": "Interactive"
+    },
+    {
+      "title": "Watch a star’s reflex motion",
+      "description": "The star, not the planet, supplies these shifted stellar lines. Phase is interactive; the orbit sketch is deliberately not to scale.",
+      "concepts": "For e=0, K=(2πG/P)^(1/3) Mp sin i/(M★+Mp)^(2/3), v★=K sin(2π phase). Positive v is receding. Masses use the documented IAU nominal-GM/G conversion. Without inclination, RV constrains a mass function; Mp sin i is the usual small-Mp/M★ minimum-mass approximation. We retain Mp in the denominator. Doppler-shift readout is relativistic; the curve is nonrelativistic two-body motion. The linked spectral line width is illustrative and magnified for teaching, not an instrument line-spread function. No eccentricity, activity, blends or additional planets. Set i=0: why is RV zero even for a massive planet? Double mass or change period, then compare the Doppler shift with the Light lesson.",
+      "url": "/education/#rv-simulator",
+      "type": "Interactive"
+    },
+    {
+      "title": "Inspect the source behind a line",
+      "description": "Choose an element and line, then compare the adopted record with retained source candidates. Unknown fields remain unknown.",
+      "concepts": "NIST level and line tables provide identities. The pinned Codex canonical_gf rows provide adopted log(gf), NIST accuracy grade and retained GES/VALD candidate columns. These historical candidates are not independent new external queries. An accuracy grade describes atomic-data uncertainty, not approval for a stellar analysis. NIST is an evaluated compilation; experimental/theoretical origins are not classified where the snapshot does not establish them. Missing H log(gf) and missing grades stay unknown, not zero. This explorer does not promote Theoretical Atomic Lab candidates. Find a source difference for Na D₁, then select the ungraded line. Which claims can you make from a source value, an accuracy grade or missing provenance? Follow the actual pinned canonical reference.",
+      "url": "/education/#atomic-metadata",
+      "type": "Interactive"
+    },
+    {
+      "title": "Try it: predict a photon’s energy",
+      "description": "Tune the light, calculate E=hc/λ, enter your prediction in eV and check it. The result explains units and the calculation.",
+      "concepts": "Use λ in meters, h=6.62607015×10⁻³⁴ J s and c=299792458 m/s, then divide joules by 1.602176634×10⁻¹⁹ J/eV. Approximate color is an aid, not calibrated colorimetry. The check accepts relative error ≤1%; this is a classroom scoring tolerance, not a physical uncertainty. Ask for a prediction before calculating. At 500 nm expect approximately 2.480 eV. Correct arithmetic with wrong units does not earn full credit. Change to 650 nm and explain the direction before trying again. Link back to the atomic and Light experiments for transfer practice.",
+      "url": "/education/#photon-exercise",
       "type": "Interactive"
     },
     {

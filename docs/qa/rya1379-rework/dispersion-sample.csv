@@ -1,0 +1,8 @@
+"educational_model","dispersion"
+"assumptions","Prism: SCHOTT N-BK7 Sellmeier n(λ), minimum deviation δ = 2 asin(n sin(A/2)) − A. Each wavelength is evaluated at its own minimum-deviation incidence; the illustration is not a common-incidence ray trace. Grating: normal incidence in vacuum, d sin θ = mλ. An order with |mλ/d| > 1 does not propagate. Prism refraction is not diffraction. Angles and angular dispersion are numeric; ray positions are schematic."
+"parameters","{""wavelength"":550,""apex"":60,""grooves"":600,""order"":""1""}"
+"sources","[{""title"":""SCHOTT N-BK7 datasheet, 2023-12-01, dispersion coefficients"",""url"":""https://media.schott.com/api/public/content/41e799d0bf874807a0bb8e702fbb75b5?v=54856406""},{""title"":""OpenStax University Physics 3 §4.4: diffraction gratings"",""url"":""https://openstax.org/books/university-physics-volume-3/pages/4-4-diffraction-gratings""}]"
+"provenance","{}"
+
+"wavelength_nm","prism_min_deviation_deg","grating_angle_deg","prism_dispersion_deg_per_nm","grating_dispersion_deg_per_nm"
+"550","38.798219210702506","19.268775491483765","-0.00443001706273094","0.036417544615674154"

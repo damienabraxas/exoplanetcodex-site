@@ -1,0 +1,8 @@
+"educational_model","light-photon"
+"assumptions","E = hc/λ; ν = c/λ. The color strip is original illustrative RGB interpolation, not calibrated human color perception; visible limits vary. J is energy, Hz is frequency."
+"parameters","{""wavelength"":550}"
+"sources","[{""title"":""NIST CODATA 2022 constants"",""url"":""https://physics.nist.gov/cuu/Constants/Table/allascii.txt""}]"
+"provenance","{}"
+
+"wavelength_vacuum_nm","frequency_Hz","photon_energy_eV","photon_energy_J"
+"550","545077196363636.3","2.254258153330914","3.611719740270779e-19"

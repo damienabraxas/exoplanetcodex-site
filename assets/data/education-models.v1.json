@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "scope": "analytic_and_schematic_educational_models_not_survey_measurements",
+  "source_accessed": "2026-11-14",
+  "constants": {
+    "k_J_K": 1.380649e-23,
+    "m_e_kg": 9.1093837139e-31,
+    "u_kg": 1.66053906892e-27,
+    "G_m3_kg_s2": 6.6743e-11,
+    "solar_mass_kg": 1.988409870698051e+30,
+    "jupiter_mass_kg": 1.8981245973360505e+27,
+    "AU_m": 149597870700,
+    "day_s": 86400
+  },
+  "mass_convention": "Solar and Jupiter masses are educational conversion values from nominal GM divided by G (IAU 2015 B3); not exact physical masses. G follows CODATA 2022.",
+  "harps": {
+    "R": 115000,
+    "sampling_per_fwhm": 4.1,
+    "profile": "Gaussian approximation for this lesson, NOT the measured HARPS line-spread function",
+    "manual_measured_R": 120000,
+    "source_note": "ESO overview gives nominal R=115000; pipeline manual 3.3.12 lists measured R=120000 and 4.1 px/FWHM. Presets identify these separately; Gaussian lesson profile is not the measured HARPS LSF."
+  },
+  "glass": {
+    "name": "SCHOTT N-BK7",
+    "B": [
+      1.03961212,
+      0.231792344,
+      1.01046945
+    ],
+    "C_um2": [
+      0.006000699,
+      0.0200179144,
+      103.560653
+    ]
+  },
+  "slab": {
+    "reference_T_K": 5772,
+    "reference_logg": 4.44,
+    "reference_ne_m3": 1e+19,
+    "mass_u": 56,
+    "ionization_eV": 7.9,
+    "excitation_eV": 2.5,
+    "partition_ratio": 1,
+    "weak_opacity_area_km_s": 0.12,
+    "strong_opacity_area_km_s": 20,
+    "center_nm": 500,
+    "disclosure": "Generic Fe-like teaching atom, not an identified real transition. Single-temperature LTE Saha–Boltzmann absorbing screen, no line emission, continuum opacity, damping, blends, NLTE or 3D. Set T=Teff and ne=1e19×10^(logg−4.44)×5772/T as an explicit schematic pressure proxy; no calibrated stellar atmosphere or grid interpolation."
+  },
+  "sources": {
+    "constants": {
+      "title": "NIST CODATA 2022 constants",
+      "url": "https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+    },
+    "iau": {
+      "title": "IAU 2015 nominal solar and planetary constants (Prša et al. 2016)",
+      "url": "https://arxiv.org/abs/1605.09788"
+    },
+    "glass": {
+      "title": "SCHOTT N-BK7 datasheet, 2023-12-01, dispersion coefficients",
+      "url": "https://media.schott.com/api/public/content/41e799d0bf874807a0bb8e702fbb75b5?v=54856406"
+    },
+    "grating": {
+      "title": "OpenStax University Physics 3 §4.4: diffraction gratings",
+      "url": "https://openstax.org/books/university-physics-volume-3/pages/4-4-diffraction-gratings"
+    },
+    "harps": {
+      "title": "ESO HARPS overview: R=115,000, 378–691 nm",
+      "url": "https://www.eso.org/sci/facilities/lasilla/instruments/harps/overview.html"
+    },
+    "harps-manual": {
+      "title": "ESO HARPS Pipeline Manual 3.3.12 §4.3: sampling, 4.1 px/FWHM",
+      "url": "https://ftp.eso.org/pub/dfs/pipelines/instruments/harps/harps-pipeline-manual-3.3.12.pdf"
+    },
+    "harps-profile": {
+      "title": "Zhao et al. 2020: measured HARPS line profile",
+      "url": "https://arxiv.org/abs/2011.03391"
+    },
+    "lines": {
+      "title": "NIST atomic spectroscopy: intensities and oscillator strengths",
+      "url": "https://physics.nist.gov/Pubs/AtSpec/node17.html"
+    },
+    "cog": {
+      "title": "Tatum, Stellar Atmospheres, ch.11: curve of growth",
+      "url": "https://www.astro.uvic.ca/~tatum/stellatm/atm11.pdf"
+    },
+    "saha": {
+      "title": "Tatum, Stellar Atmospheres, ch.8: Boltzmann and Saha equations",
+      "url": "https://www.astro.uvic.ca/~tatum/stellatm/atm8.pdf"
+    },
+    "planet": {
+      "title": "NASA Exoplanet Archive: predicted observables and RV amplitude",
+      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/poet_calculations.html"
+    },
+    "transit": {
+      "title": "Kreidberg 2015: transit geometry and radially symmetric limb darkening",
+      "url": "https://arxiv.org/abs/1507.08285"
+    }
+  },
+  "science_source": {
+    "base": "45901e7678ab6c8624fe659e552fba3f2681457d",
+    "model_registry": {
+      "sha256": "57bf70b1d514374491a9753d046d20c3d7fa60e93152436bfccd45352b9dd258",
+      "url": "https://github.com/damienabraxas/exoplanetcodex/blob/45901e7678ab6c8624fe659e552fba3f2681457d/data/catalog/model_registry.csv"
+    }
+  }
+}

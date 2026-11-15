@@ -1,0 +1,21 @@
+{
+  "website_base": "2a4577be74ec52ccc77340403eb1d8d2cd44c429",
+  "science_base": "45901e7678ab6c8624fe659e552fba3f2681457d",
+  "branch": "rya1379-interactive-rework",
+  "python": "3.9.6",
+  "node": "v26.0.0",
+  "files": {
+    "assets/data/education-hydrogen.v1.json": "75bd8f4bbde2f5c3da2b67a807add02f564502ef4281b33f7aa6598b393b6d96",
+    "assets/data/education-sodium.v1.json": "ffc8c3baac486e561e042232c1db816028088ff3ae83807c384d3fb238ba3620",
+    "assets/data/education-models.v1.json": "2ac068e182af8a5d0ee85fbb8e21f30a215ae9176310f5dabcec2c95c7cbee85",
+    "assets/data/education-widgets.v1.json": "5d3f887f3eab68741f2dc1523c018ba62f61e25290bb8b77feed06fca903f0f7",
+    "assets/data/education-lessons.v1.json": "0a37ba935e4bc453d0c50e91f60cc49ae47b59c93acc7b76645474b2f250b99d",
+    "assets/data/education-search.v1.json": "65e634c91318e4631ca520ffbe9b9130b8926eebdc50d5a2e58a53253f95c778",
+    "assets/js/education-core.mjs": "c6020195768e254eed656367c57bf7463d42dca47200bf56a77dfa4085145511",
+    "assets/js/education-models.mjs": "56b2a170394d8b11362b4db96775af3d2b39875e1f60ef4415fd214c86981f3f",
+    "assets/js/education-simulators.js": "4e003b30afab8bfef9ed2c5ccc3bf027bf18e365e3a4c3c3734c7d2615a57bb8",
+    "assets/js/education.js": "3e3f087fa351343e64f7c47369d053df4bf41b34df0c4259dd3d09f86ca314c4",
+    "scripts/education_widgets.py": "10d15f927d8ea5310464983f3a062817247f3ac8a8aeb3a10e51844fae5018cc",
+    "scripts/generate_education.py": "03bc1bdde5521b601c826cdca0b065cd07bf5a658eac93dd695585a9ed119966"
+  }
+}

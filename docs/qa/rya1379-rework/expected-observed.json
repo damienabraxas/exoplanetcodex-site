@@ -1,0 +1,242 @@
+[
+  {
+    "widget": "light-photon",
+    "parameter": "wavelength",
+    "expected": "result or plotted model updates immediately",
+    "before": "550 nm \u2192 545.08 THz (5.4508e+14 Hz), 2.2543 eV (3.6117e-19 J). Displayed color is approximate.",
+    "after": "672 nm \u2192 446.12 THz (4.4612e+14 Hz), 1.8450 eV (2.9560e-19 J). Displayed color is approximate.",
+    "observed": "updated"
+  },
+  {
+    "widget": "dispersion",
+    "parameter": "wavelength",
+    "expected": "result or plotted model updates immediately",
+    "before": "Prism n=1.51852, minimum deviation 38.798\u00b0, dispersion -0.0044\u00b0/nm. Grating order 1: 19.269\u00b0, dispersion 0.0364\u00b0/nm.",
+    "after": "Prism n=1.51558, minimum deviation 38.539\u00b0, dispersion -0.0032\u00b0/nm. Grating order 1: 21.802\u00b0, dispersion 0.0370\u00b0/nm.",
+    "observed": "updated"
+  },
+  {
+    "widget": "dispersion",
+    "parameter": "apex",
+    "expected": "result or plotted model updates immediately",
+    "before": "Prism n=1.51852, minimum deviation 38.798\u00b0, dispersion -0.0044\u00b0/nm. Grating order 1: 19.269\u00b0, dispersion 0.0364\u00b0/nm.",
+    "after": "Prism n=1.51852, minimum deviation 31.468\u00b0, dispersion -0.0034\u00b0/nm. Grating order 1: 19.269\u00b0, dispersion 0.0364\u00b0/nm.",
+    "observed": "updated"
+  },
+  {
+    "widget": "dispersion",
+    "parameter": "grooves",
+    "expected": "result or plotted model updates immediately",
+    "before": "Prism n=1.51852, minimum deviation 38.798\u00b0, dispersion -0.0044\u00b0/nm. Grating order 1: 19.269\u00b0, dispersion 0.0364\u00b0/nm.",
+    "after": "Prism n=1.51852, minimum deviation 38.798\u00b0, dispersion -0.0044\u00b0/nm. Grating order 1: 31.500\u00b0, dispersion 0.0638\u00b0/nm.",
+    "observed": "updated"
+  },
+  {
+    "widget": "resolution",
+    "parameter": "R",
+    "expected": "result or plotted model updates immediately",
+    "before": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 1.25. 4.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "after": "Instrument FWHM = 0.02750 nm; separation / instrumental FWHM = 0.22. 4.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "observed": "updated"
+  },
+  {
+    "widget": "resolution",
+    "parameter": "separation",
+    "expected": "result or plotted model updates immediately",
+    "before": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 1.25. 4.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "after": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 6.27. 4.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "observed": "updated"
+  },
+  {
+    "widget": "resolution",
+    "parameter": "sampling",
+    "expected": "result or plotted model updates immediately",
+    "before": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 1.25. 4.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "after": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 1.25. 6.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "observed": "updated"
+  },
+  {
+    "widget": "resolution",
+    "parameter": "snr",
+    "expected": "result or plotted model updates immediately",
+    "before": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 1.25. 4.1 samples/FWHM; SNR 100. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "after": "Instrument FWHM = 0.00478 nm; separation / instrumental FWHM = 1.25. 4.1 samples/FWHM; SNR 220. Judge the curve and sampled data; no universal resolved/unresolved cutoff is applied.",
+    "observed": "updated"
+  },
+  {
+    "widget": "doppler",
+    "parameter": "velocity",
+    "expected": "result or plotted model updates immediately",
+    "before": "Receding / redshift: 500.00000 nm \u2192 500.05004 nm. \u03b2=1.001e-4. Linear approximation differs by 2.50e-6 nm; valid to first order in |v|/c.",
+    "after": "Receding / redshift: 500.00000 nm \u2192 500.23021 nm. \u03b2=4.603e-4. Linear approximation differs by 5.30e-5 nm; valid to first order in |v|/c.",
+    "observed": "updated"
+  },
+  {
+    "widget": "stellar-simulator",
+    "parameter": "teff",
+    "expected": "result or plotted model updates immediately",
+    "before": "Weak EW 1.97 m\u00c5; saturated EW 84.09 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "after": "Weak EW 0.63 m\u00c5; saturated EW 57.35 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.20 km/s; relative lower-state opacity 0.317; pressure-proxy ne=9.13e+18 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "observed": "updated"
+  },
+  {
+    "widget": "stellar-simulator",
+    "parameter": "logg",
+    "expected": "result or plotted model updates immediately",
+    "before": "Weak EW 1.97 m\u00c5; saturated EW 84.09 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "after": "Weak EW 2.06 m\u00c5; saturated EW 84.94 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.045; pressure-proxy ne=1.05e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "observed": "updated"
+  },
+  {
+    "widget": "stellar-simulator",
+    "parameter": "metallicity",
+    "expected": "result or plotted model updates immediately",
+    "before": "Weak EW 1.97 m\u00c5; saturated EW 84.09 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "after": "Weak EW 3.88 m\u00c5; saturated EW 96.32 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.995; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "observed": "updated"
+  },
+  {
+    "widget": "stellar-simulator",
+    "parameter": "xi",
+    "expected": "result or plotted model updates immediately",
+    "before": "Weak EW 1.97 m\u00c5; saturated EW 84.09 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "after": "Weak EW 1.99 m\u00c5; saturated EW 150.77 m\u00c5 (intrinsic full-line areas). Doppler sigma 2.71 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "observed": "updated"
+  },
+  {
+    "widget": "stellar-simulator",
+    "parameter": "R",
+    "expected": "result or plotted model updates immediately",
+    "before": "Weak EW 1.97 m\u00c5; saturated EW 84.09 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "after": "Weak EW 1.97 m\u00c5; saturated EW 84.09 m\u00c5 (intrinsic full-line areas). Doppler sigma 1.16 km/s; relative lower-state opacity 1.000; pressure-proxy ne=1.00e+19 m\u207b\u00b3. Similar EWs can arise from different parameters. Schematic slab, not a validated stellar prediction.",
+    "observed": "updated"
+  },
+  {
+    "widget": "equivalent-width",
+    "parameter": "depth",
+    "expected": "result or plotted model updates immediately",
+    "before": "Measured window EW = 125.33 m\u00c5; same window with true continuum = 125.33 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 125.33 m\u00c5.",
+    "after": "Measured window EW = 167.94 m\u00c5; same window with true continuum = 167.94 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 167.94 m\u00c5.",
+    "observed": "updated"
+  },
+  {
+    "widget": "equivalent-width",
+    "parameter": "sigma",
+    "expected": "result or plotted model updates immediately",
+    "before": "Measured window EW = 125.33 m\u00c5; same window with true continuum = 125.33 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 125.33 m\u00c5.",
+    "after": "Measured window EW = 269.38 m\u00c5; same window with true continuum = 269.38 m\u00c5. FWHM = 0.5181 \u00c5, a width, not EW. Full Gaussian analytic EW = 275.73 m\u00c5.",
+    "observed": "updated"
+  },
+  {
+    "widget": "equivalent-width",
+    "parameter": "window",
+    "expected": "result or plotted model updates immediately",
+    "before": "Measured window EW = 125.33 m\u00c5; same window with true continuum = 125.33 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 125.33 m\u00c5.",
+    "after": "Measured window EW = 125.33 m\u00c5; same window with true continuum = 125.33 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 125.33 m\u00c5.",
+    "observed": "updated"
+  },
+  {
+    "widget": "equivalent-width",
+    "parameter": "continuum",
+    "expected": "result or plotted model updates immediately",
+    "before": "Measured window EW = 125.33 m\u00c5; same window with true continuum = 125.33 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 125.33 m\u00c5.",
+    "after": "Measured window EW = 146.66 m\u00c5; same window with true continuum = 125.33 m\u00c5. FWHM = 0.2355 \u00c5, a width, not EW. Full Gaussian analytic EW = 125.33 m\u00c5.",
+    "observed": "updated"
+  },
+  {
+    "widget": "curve-growth",
+    "parameter": "abundance",
+    "expected": "result or plotted model updates immediately",
+    "before": "EW 53.90 m\u00c5. With your fixed b=2, inversion returns \u0394A=-0.00 dex. Assuming b=2 instead gives -0.00 dex. Broadening can change saturated EW without an abundance change; this is a conditional synthetic inference.",
+    "after": "EW 112.91 m\u00c5. With your fixed b=2, inversion returns \u0394A=0.90 dex. Assuming b=2 instead gives 0.90 dex. Broadening can change saturated EW without an abundance change; this is a conditional synthetic inference.",
+    "observed": "updated"
+  },
+  {
+    "widget": "curve-growth",
+    "parameter": "b",
+    "expected": "result or plotted model updates immediately",
+    "before": "EW 53.90 m\u00c5. With your fixed b=2, inversion returns \u0394A=-0.00 dex. Assuming b=2 instead gives -0.00 dex. Broadening can change saturated EW without an abundance change; this is a conditional synthetic inference.",
+    "after": "EW 71.31 m\u00c5. With your fixed b=6.1, inversion returns \u0394A=-0.00 dex. Assuming b=2 instead gives 0.22 dex. Broadening can change saturated EW without an abundance change; this is a conditional synthetic inference.",
+    "observed": "updated"
+  },
+  {
+    "widget": "transit-simulator",
+    "parameter": "radius",
+    "expected": "result or plotted model updates immediately",
+    "before": "Mid-transit depth 1.233%; selected flux 0.987670. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "after": "Mid-transit depth 5.931%; selected flux 0.940694. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 4.840%. Geometry and limb darkening affect the observed depth.",
+    "observed": "updated"
+  },
+  {
+    "widget": "transit-simulator",
+    "parameter": "impact",
+    "expected": "result or plotted model updates immediately",
+    "before": "Mid-transit depth 1.233%; selected flux 0.987670. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "after": "Mid-transit depth 0.247%; selected flux 0.997531. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "observed": "updated"
+  },
+  {
+    "widget": "transit-simulator",
+    "parameter": "limb",
+    "expected": "result or plotted model updates immediately",
+    "before": "Mid-transit depth 1.233%; selected flux 0.987670. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "after": "Mid-transit depth 1.258%; selected flux 0.987422. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "observed": "updated"
+  },
+  {
+    "widget": "transit-simulator",
+    "parameter": "phase",
+    "expected": "result or plotted model updates immediately",
+    "before": "Mid-transit depth 1.233%; selected flux 0.987670. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "after": "Mid-transit depth 1.233%; selected flux 1.000000. Uniform central-disk estimate (Rp/R\u2605)\u00b2 = 1.000%. Geometry and limb darkening affect the observed depth.",
+    "observed": "updated"
+  },
+  {
+    "widget": "rv-simulator",
+    "parameter": "mass",
+    "expected": "result or plotted model updates immediately",
+    "before": "K=65.37 m/s; current stellar v=65.37 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158391 nm. Inclination is needed for true mass; K alone does not give it.",
+    "after": "K=238.19 m/s; current stellar v=238.19 m/s (receding). Mp sin i=3.650 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158731 nm. Inclination is needed for true mass; K alone does not give it.",
+    "observed": "updated"
+  },
+  {
+    "widget": "rv-simulator",
+    "parameter": "inclination",
+    "expected": "result or plotted model updates immediately",
+    "before": "K=65.37 m/s; current stellar v=65.37 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158391 nm. Inclination is needed for true mass; K alone does not give it.",
+    "after": "K=59.72 m/s; current stellar v=59.72 m/s (receding). Mp sin i=0.914 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158380 nm. Inclination is needed for true mass; K alone does not give it.",
+    "observed": "updated"
+  },
+  {
+    "widget": "rv-simulator",
+    "parameter": "period",
+    "expected": "result or plotted model updates immediately",
+    "before": "K=65.37 m/s; current stellar v=65.37 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158391 nm. Inclination is needed for true mass; K alone does not give it.",
+    "after": "K=31.54 m/s; current stellar v=31.54 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158325 nm. Inclination is needed for true mass; K alone does not give it.",
+    "observed": "updated"
+  },
+  {
+    "widget": "rv-simulator",
+    "parameter": "starMass",
+    "expected": "result or plotted model updates immediately",
+    "before": "K=65.37 m/s; current stellar v=65.37 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158391 nm. Inclination is needed for true mass; K alone does not give it.",
+    "after": "K=47.80 m/s; current stellar v=47.80 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158356 nm. Inclination is needed for true mass; K alone does not give it.",
+    "observed": "updated"
+  },
+  {
+    "widget": "rv-simulator",
+    "parameter": "phase",
+    "expected": "result or plotted model updates immediately",
+    "before": "K=65.37 m/s; current stellar v=65.37 m/s (receding). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158391 nm. Inclination is needed for true mass; K alone does not give it.",
+    "after": "K=65.37 m/s; current stellar v=-64.85 m/s (approaching). Mp sin i=1.000 M_J (usual small-mass minimum-mass proxy). Na D\u2082 vacuum 589.158263 \u2192 589.158135 nm. Inclination is needed for true mass; K alone does not give it.",
+    "observed": "updated"
+  },
+  {
+    "widget": "photon-exercise",
+    "parameter": "wavelength",
+    "expected": "result or plotted model updates immediately",
+    "before": "Observed teaching input: 500 nm vacuum, frequency 5.9958e+14 Hz. Predict the energy in eV before checking.",
+    "after": "Observed teaching input: 656 nm vacuum, frequency 4.5700e+14 Hz. Predict the energy in eV before checking.",
+    "observed": "updated"
+  }
+]

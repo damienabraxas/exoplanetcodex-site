@@ -1,8 +1,9 @@
 """Static content integrity: real destinations, reciprocal links and generated state."""
-import importlib.util,json,re,unittest
+import importlib.util,json,re,unittest,sys
 from pathlib import Path
 from urllib.parse import urlsplit,unquote
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
 def module(name):
  spec=importlib.util.spec_from_file_location(name,ROOT/'scripts'/f'{name}.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 class EducationTests(unittest.TestCase):
@@ -43,7 +44,22 @@ class EducationTests(unittest.TestCase):
   self.assertNotIn('analytics.js',page)
   self.assertNotIn('starfield.js',page)
   self.assertIn('independent scientific and accessibility review pending',page)
-  self.assertIn('not available in this release',page)
+  self.assertEqual(page.count('data-widget='),11)
+  self.assertIn('Schematic LTE absorbing slab',page)
   js=(ROOT/'assets/js/education.js').read_text();self.assertNotIn('innerHTML',js)
-  self.assertEqual(len(re.findall(r'localJSON\(',js)),3) # definition plus two local assets
+  self.assertEqual(len(re.findall(r'localJSON\(',js)),4) # definition plus three local assets
+
+ def test_each_main_module_has_a_real_controlled_model(self):
+  data=json.loads((ROOT/'assets/data/education-widgets.v1.json').read_text())
+  modules={w['module'] for w in data['widgets']}|{'atomic-physics'}
+  self.assertEqual(modules,{'light','atomic-physics','stellar-spectroscopy','elemental-abundances','exoplanets','atomic-laboratory','learning-resources'})
+  for w in data['widgets']:
+   self.assertTrue(w['controls']);self.assertTrue(w['model']);self.assertTrue(w['sources'])
+   for c in w['controls']:
+    if c['kind']!='select':self.assertTrue(c['min']<=c['value']<=c['max'])
+  sodium=json.loads((ROOT/'assets/data/education-sodium.v1.json').read_text())
+  self.assertEqual(sodium['line_records'][0]['nist_grade'],'AA')
+  self.assertIsNone(sodium['line_records'][2]['nist_grade'])
+  for source in sodium['canonical_source'].values():
+   self.assertEqual(len(source['sha256']),64);self.assertIn(sodium['science_base'],source['url'])
 if __name__=='__main__':unittest.main()

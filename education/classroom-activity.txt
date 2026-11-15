@@ -45,3 +45,37 @@ References: NIST hydrogen levels and SI constants, linked in the explorer;
 OpenStax Astronomy 2e ch. 5 and 17; NASA Science exoplanet discovery methods.
 Original activity and diagrams. Proposed CC BY 4.0 reuse license pending project
 owner approval. This draft makes no new license grant; sources retain their terms.
+
+REVISED GUI EXERCISES — EVERY MODULE HAS A WORKING EXPERIMENT
+Open /education/ and choose a module tile. These are educational models, not
+observations or validated survey measurements. Reset between comparisons.
+
+LIGHT: Tune to 500 nm and check about 2.4797 eV. Compare the prism's minimum
+refractive deviation with grating order +1. Choose order zero, then an absent
+order. What does R change that pixel sampling and SNR do not?
+ATOMS: Select Na I, compare D2 and D1 in the doublet zoom, then reverse emission
+and absorption. Explain why the photon wavelength stays fixed for a given gap.
+The explorer uses vacuum Ritz estimates; the NIST table's Na lines are air values.
+STARS: Hold [M/H] fixed and increase xi from 1 to 4 km/s. Compare weak and
+saturated EW, then change only instrumental R. Explain the distinction between
+broadening opacity before transfer and convolving transmitted flux afterwards.
+ABUNDANCES: For depth=0.5, Gaussian sigma=0.1 A, continuum=1 and a wide window,
+expect EW approximately 125.33 mA (milliangstrom), while FWHM is approximately
+0.23548 A. Why are these not equal? Offset the continuum without changing the
+line. Use the curve-of-growth GUI to see why abundance inference needs fixed b.
+PLANETS: Set Rp/Rstar=0.1, b=0, u=0: a uniform central transit has 1% depth.
+Increase b beyond 1+Rp/Rstar: there is no transit. In the circular RV GUI set
+inclination=0: K is zero even though the planet has mass. Send the current
+stellar velocity to Light; it is the host star's reflex spectrum that shifts.
+ATOMIC LAB: Compare adopted and retained candidate values for Na D1. Select
+the ungraded record, then H with unavailable gf. Do not treat unknown as zero,
+or source accuracy as certification for a stellar analysis. The retained source
+columns are historical inputs, not independent new external measurements.
+RESOURCES: Use the interactive photon assessment. Enter 2.48 eV at 500 nm,
+check, then try another wavelength. The 1% score tolerance is educational,
+not an uncertainty claim. Explain the conversion from nm to m and J to eV.
+
+Teacher: assess the stated assumptions, units and inference, not merely a matching
+number. Stellar controls use a schematic single-temperature absorbing screen,
+not a calibrated atmosphere. Transit and RV are circular models with documented
+limits. Independent scientific and accessibility review remain separate gates.

@@ -1,0 +1,8 @@
+"educational_model","photon-exercise"
+"assumptions","Use λ in meters, h=6.62607015×10⁻³⁴ J s and c=299792458 m/s, then divide joules by 1.602176634×10⁻¹⁹ J/eV. Approximate color is an aid, not calibrated colorimetry. The check accepts relative error ≤1%; this is a classroom scoring tolerance, not a physical uncertainty."
+"parameters","{""wavelength"":500,""answer"":2}"
+"sources","[{""title"":""NIST CODATA 2022 constants"",""url"":""https://physics.nist.gov/cuu/Constants/Table/allascii.txt""}]"
+"provenance","{}"
+
+"wavelength_vacuum_nm","frequency_Hz","expected_energy_eV","student_prediction_eV"
+"500","599584915999999.9","2.4796839686640046","2"

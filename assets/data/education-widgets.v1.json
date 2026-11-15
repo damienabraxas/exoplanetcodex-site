@@ -1,0 +1,538 @@
+{
+  "schema_version": 1,
+  "widgets": [
+    {
+      "id": "light-photon",
+      "module": "light",
+      "controls": [
+        {
+          "name": "wavelength",
+          "label": "Vacuum wavelength (nm)",
+          "min": 380,
+          "max": 780,
+          "step": 1,
+          "value": 550,
+          "kind": "range"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "constants"
+      ],
+      "model": "E = hc/λ; ν = c/λ. The color strip is original illustrative RGB interpolation, not calibrated human color perception; visible limits vary. J is energy, Hz is frequency."
+    },
+    {
+      "id": "dispersion",
+      "module": "light",
+      "controls": [
+        {
+          "name": "wavelength",
+          "label": "Selected wavelength (nm)",
+          "min": 400,
+          "max": 700,
+          "step": 1,
+          "value": 550,
+          "kind": "range"
+        },
+        {
+          "name": "apex",
+          "label": "Prism apex angle (degrees)",
+          "min": 30,
+          "max": 60,
+          "step": 1,
+          "value": 60,
+          "kind": "range"
+        },
+        {
+          "name": "grooves",
+          "label": "Grating groove density (lines/mm)",
+          "min": 200,
+          "max": 1200,
+          "step": 50,
+          "value": 600,
+          "kind": "range"
+        },
+        {
+          "name": "order",
+          "label": "Diffraction order",
+          "options": [
+            [
+              "-2",
+              "-2"
+            ],
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "2"
+            ]
+          ],
+          "value": "1",
+          "kind": "select"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "glass",
+        "grating"
+      ],
+      "model": "Prism: SCHOTT N-BK7 Sellmeier n(λ), minimum deviation δ = 2 asin(n sin(A/2)) − A. Each wavelength is evaluated at its own minimum-deviation incidence; the illustration is not a common-incidence ray trace. Grating: normal incidence in vacuum, d sin θ = mλ. An order with |mλ/d| > 1 does not propagate. Prism refraction is not diffraction. Angles and angular dispersion are numeric; ray positions are schematic."
+    },
+    {
+      "id": "resolution",
+      "module": "light",
+      "controls": [
+        {
+          "name": "R",
+          "label": "Resolving power R (dimensionless)",
+          "min": 20000,
+          "max": 150000,
+          "step": 1000,
+          "value": 115000,
+          "kind": "range"
+        },
+        {
+          "name": "separation",
+          "label": "Line separation (nm)",
+          "min": 0.002,
+          "max": 0.04,
+          "step": 0.001,
+          "value": 0.006,
+          "kind": "range"
+        },
+        {
+          "name": "sampling",
+          "label": "Samples per instrumental FWHM",
+          "min": 1,
+          "max": 8,
+          "step": 0.1,
+          "value": 4.1,
+          "kind": "range"
+        },
+        {
+          "name": "snr",
+          "label": "Continuum signal-to-noise per sample",
+          "min": 20,
+          "max": 300,
+          "step": 10,
+          "value": 100,
+          "kind": "range"
+        }
+      ],
+      "presets": [
+        {
+          "R": 115000,
+          "sampling": 4.1
+        },
+        {
+          "R": 120000,
+          "sampling": 4.1
+        }
+      ],
+      "sources": [
+        "harps",
+        "harps-manual",
+        "harps-profile"
+      ],
+      "model": "At 550 nm, instrumental FWHM = λ/R. Intrinsic Gaussian sigma is 0.0005 nm, convolved analytically with the Gaussian instrument profile. R, sampling and noise are separate. ESO overview gives nominal HARPS R=115,000; manual 3.3.12 lists measured R=120,000 and 4.1 pixels/FWHM. The two presets retain this distinction. Real HARPS line-spread functions are not universally Gaussian. Distinguishability depends on line shape, contrast, sampling, SNR and inference method; there is no universal hard threshold."
+    },
+    {
+      "id": "doppler",
+      "module": "light",
+      "controls": [
+        {
+          "name": "velocity",
+          "label": "Radial velocity (km/s; positive receding)",
+          "min": -300,
+          "max": 300,
+          "step": 1e-06,
+          "value": 30,
+          "kind": "range"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "constants",
+        "planet"
+      ],
+      "model": "λobs/λrest = sqrt((1+β)/(1−β)), β=v/c. The approximation Δλ/λ ≈ v/c applies for |v| ≪ c; compare its error in the readout. Hypothetical reference lines at 499.7, 500.0 and 500.3 nm are not element identifications. Only longitudinal motion is modeled."
+    },
+    {
+      "id": "stellar-simulator",
+      "module": "stellar-spectroscopy",
+      "controls": [
+        {
+          "name": "teff",
+          "label": "Effective temperature proxy Teff (K)",
+          "min": 4500,
+          "max": 7000,
+          "step": 1,
+          "value": 5772,
+          "kind": "range"
+        },
+        {
+          "name": "logg",
+          "label": "Surface gravity log g (cgs)",
+          "min": 3,
+          "max": 5,
+          "step": 0.01,
+          "value": 4.44,
+          "kind": "range"
+        },
+        {
+          "name": "metallicity",
+          "label": "Metallicity [M/H] (dex)",
+          "min": -1.5,
+          "max": 1,
+          "step": 0.05,
+          "value": 0,
+          "kind": "range"
+        },
+        {
+          "name": "xi",
+          "label": "Microturbulence ξ (km/s)",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "value": 1,
+          "kind": "range"
+        },
+        {
+          "name": "R",
+          "label": "Instrument resolving power R",
+          "min": 20000,
+          "max": 150000,
+          "step": 1000,
+          "value": 115000,
+          "kind": "range"
+        }
+      ],
+      "presets": [
+        {
+          "teff": 5772,
+          "logg": 4.44,
+          "metallicity": 0,
+          "xi": 1,
+          "R": 115000
+        },
+        {
+          "R": 25000
+        },
+        {
+          "xi": 4
+        }
+      ],
+      "sources": [
+        "saha",
+        "cog",
+        "constants"
+      ],
+      "model": "This is a generic Fe-like atom (56 u, ionization 7.9 eV, excitation 2.5 eV), not an identified observed transition. A single LTE absorbing screen uses F=exp(−τ); opacity scales with 10^[M/H] and Saha–Boltzmann populations. T is set equal to Teff. Electron density ne=10¹⁹ × 10^(log g−4.44) × 5772/T m⁻³ is an explicit schematic pressure proxy, not a calibrated atmosphere. Doppler b²=2kT/m+ξ²; the area-normalized opacity is broadened before transfer. Only instrumental broadening is a subsequent convolution. No line emission, damping, real atmosphere, NLTE or 3D prediction. Slider bounds define the teaching domain, not an interpolation grid."
+    },
+    {
+      "id": "equivalent-width",
+      "module": "elemental-abundances",
+      "controls": [
+        {
+          "name": "depth",
+          "label": "Line depth below true continuum",
+          "min": 0.05,
+          "max": 0.9,
+          "step": 0.01,
+          "value": 0.5,
+          "kind": "range"
+        },
+        {
+          "name": "sigma",
+          "label": "Gaussian sigma / Lorentz HWHM (Å)",
+          "min": 0.02,
+          "max": 0.3,
+          "step": 0.01,
+          "value": 0.1,
+          "kind": "range"
+        },
+        {
+          "name": "shape",
+          "label": "Line shape",
+          "options": [
+            [
+              "gaussian",
+              "Gaussian"
+            ],
+            [
+              "lorentzian",
+              "Lorentzian"
+            ]
+          ],
+          "value": "gaussian",
+          "kind": "select"
+        },
+        {
+          "name": "window",
+          "label": "Integration half-window (Å)",
+          "min": 0.03,
+          "max": 1.5,
+          "step": 0.01,
+          "value": 0.5,
+          "kind": "range"
+        },
+        {
+          "name": "continuum",
+          "label": "Adopted continuum / true continuum",
+          "min": 0.95,
+          "max": 1.05,
+          "step": 0.005,
+          "value": 1,
+          "kind": "range"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "cog"
+      ],
+      "model": "Wλ = ∫[1−Fλ/Fc]dλ; 1 Å = 1000 mÅ. The center is a hypothetical 5000 Å (500 nm) line. Depth and width are independent synthetic teaching inputs. Gaussian full EW = depth × sigma × sqrt(2π); FWHM = 2 sqrt(2 ln 2) sigma and is not EW. A finite window can lose area. Continuum errors can add or subtract area, including a signed negative result. The Lorentzian width control is HWHM, not sigma."
+    },
+    {
+      "id": "curve-growth",
+      "module": "elemental-abundances",
+      "controls": [
+        {
+          "name": "abundance",
+          "label": "Log abundance ratio to synthetic reference (dex)",
+          "min": -2,
+          "max": 2,
+          "step": 0.05,
+          "value": 0,
+          "kind": "range"
+        },
+        {
+          "name": "b",
+          "label": "Doppler b parameter (km/s)",
+          "min": 1,
+          "max": 8,
+          "step": 0.1,
+          "value": 2,
+          "kind": "range"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "cog"
+      ],
+      "model": "F(v)=exp[−A φ(v)] with unit-area Gaussian φ, A=5×10^ΔA km/s and sigma=b/√2. W is integrated and converted at a hypothetical 500 nm line. Inversion uses the same fixed transition strength and atmosphere proxy; it returns only a synthetic differential abundance, not a calibrated A(X) or Codex result. This Gaussian-opacity model shows linear and saturation regimes, not the damping-wing branch. Increasing b can increase saturated EW at unchanged abundance. Instrument convolution conserves full EW and is distinct from opacity broadening."
+    },
+    {
+      "id": "transit-simulator",
+      "module": "exoplanets",
+      "controls": [
+        {
+          "name": "radius",
+          "label": "Planet/star radius ratio Rp/R★",
+          "min": 0.02,
+          "max": 0.3,
+          "step": 0.01,
+          "value": 0.1,
+          "kind": "range"
+        },
+        {
+          "name": "impact",
+          "label": "Impact parameter b (stellar radii)",
+          "min": 0,
+          "max": 1.4,
+          "step": 0.02,
+          "value": 0.2,
+          "kind": "range"
+        },
+        {
+          "name": "limb",
+          "label": "Linear limb-darkening coefficient u",
+          "min": 0,
+          "max": 0.9,
+          "step": 0.05,
+          "value": 0.6,
+          "kind": "range"
+        },
+        {
+          "name": "phase",
+          "label": "Time from mid-transit (hours)",
+          "min": -4,
+          "max": 4,
+          "step": 0.05,
+          "value": 0,
+          "kind": "range"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "transit"
+      ],
+      "model": "Opaque spherical planet and spherical star, circular orbit, a/R★=10 and P=3 days fixed. Impact parameter b=(a/R★) cos i determines geometry. Linear intensity I(μ)=1−u(1−μ), with disk normalization π(1−u/3). Uniform disks use exact circle overlap; limb darkening uses 900 radial annuli. No spots, dilution, exposure averaging or transit timing variations. a/R★ and P imply a fixed stellar-density scale; no stellar mass/radius is inferred here. This is a teaching implementation, not batman or a fitted planet."
+    },
+    {
+      "id": "rv-simulator",
+      "module": "exoplanets",
+      "controls": [
+        {
+          "name": "mass",
+          "label": "Planet mass (Jupiter masses)",
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "value": 1,
+          "kind": "range"
+        },
+        {
+          "name": "inclination",
+          "label": "Orbital inclination (degrees)",
+          "min": 0,
+          "max": 90,
+          "step": 1,
+          "value": 90,
+          "kind": "range"
+        },
+        {
+          "name": "period",
+          "label": "Orbital period (days)",
+          "min": 1,
+          "max": 365,
+          "step": 1,
+          "value": 30,
+          "kind": "range"
+        },
+        {
+          "name": "starMass",
+          "label": "Stellar mass (solar masses)",
+          "min": 0.5,
+          "max": 2,
+          "step": 0.05,
+          "value": 1,
+          "kind": "range"
+        },
+        {
+          "name": "phase",
+          "label": "Orbital phase (cycles)",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "value": 0.25,
+          "kind": "range"
+        }
+      ],
+      "presets": [
+        {
+          "mass": 1,
+          "inclination": 90,
+          "period": 365,
+          "starMass": 1
+        },
+        {
+          "inclination": 0
+        }
+      ],
+      "sources": [
+        "planet",
+        "iau",
+        "constants"
+      ],
+      "model": "For e=0, K=(2πG/P)^(1/3) Mp sin i/(M★+Mp)^(2/3), v★=K sin(2π phase). Positive v is receding. Masses use the documented IAU nominal-GM/G conversion. Without inclination, RV constrains a mass function; Mp sin i is the usual small-Mp/M★ minimum-mass approximation. We retain Mp in the denominator. Doppler-shift readout is relativistic; the curve is nonrelativistic two-body motion. The linked spectral line width is illustrative and magnified for teaching, not an instrument line-spread function. No eccentricity, activity, blends or additional planets."
+    },
+    {
+      "id": "atomic-metadata",
+      "module": "atomic-laboratory",
+      "controls": [
+        {
+          "name": "element",
+          "label": "Element",
+          "options": [
+            [
+              "Na",
+              "Neutral sodium · Na I"
+            ],
+            [
+              "H",
+              "Neutral hydrogen · H I"
+            ]
+          ],
+          "value": "Na",
+          "kind": "select"
+        },
+        {
+          "name": "line",
+          "label": "Transition / line record",
+          "options": [
+            [
+              "sodium-d2",
+              "Na D₂"
+            ],
+            [
+              "sodium-d1",
+              "Na D₁"
+            ],
+            [
+              "ungraded",
+              "Additional ungraded canonical Na line"
+            ],
+            [
+              "balmer-alpha",
+              "H Balmer α"
+            ],
+            [
+              "balmer-beta",
+              "H Balmer β"
+            ],
+            [
+              "lyman-alpha",
+              "H Lyman α"
+            ]
+          ],
+          "value": "sodium-d2",
+          "kind": "select"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "lines"
+      ],
+      "model": "NIST level and line tables provide identities. The pinned Codex canonical_gf rows provide adopted log(gf), NIST accuracy grade and retained GES/VALD candidate columns. These historical candidates are not independent new external queries. An accuracy grade describes atomic-data uncertainty, not approval for a stellar analysis. NIST is an evaluated compilation; experimental/theoretical origins are not classified where the snapshot does not establish them. Missing H log(gf) and missing grades stay unknown, not zero. This explorer does not promote Theoretical Atomic Lab candidates."
+    },
+    {
+      "id": "photon-exercise",
+      "module": "learning-resources",
+      "controls": [
+        {
+          "name": "wavelength",
+          "label": "Vacuum wavelength (nm)",
+          "min": 400,
+          "max": 750,
+          "step": 1,
+          "value": 500,
+          "kind": "range"
+        },
+        {
+          "name": "answer",
+          "label": "Your predicted photon energy (eV)",
+          "min": 0.1,
+          "max": 20,
+          "step": 0.001,
+          "value": 2,
+          "kind": "number"
+        }
+      ],
+      "presets": [],
+      "sources": [
+        "constants"
+      ],
+      "model": "Use λ in meters, h=6.62607015×10⁻³⁴ J s and c=299792458 m/s, then divide joules by 1.602176634×10⁻¹⁹ J/eV. Approximate color is an aid, not calibrated colorimetry. The check accepts relative error ≤1%; this is a classroom scoring tolerance, not a physical uncertainty."
+    }
+  ]
+}

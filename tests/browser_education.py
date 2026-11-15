@@ -13,7 +13,7 @@ def main():
    page.set_viewport_size({'width':width,'height':1000 if width>700 else 844});page.goto(URL,wait_until='networkidle');ready(page)
    assert page.locator('.module-tile').count()==7;assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
    expect(page.locator('.nav-links a[href="/education/"]')).to_be_visible();assert page.locator('.module-grid').evaluate('(el)=>el.previousElementSibling.classList.contains("education-search")')
-   page.screenshot(path=str(OUT/f'education-{name}.png'),full_page=True)
+   page.screenshot(path=str(OUT/f'education-{name}.png'),full_page=False)
    page.screenshot(path=str(OUT/f'landing-{name}.png'))
    page.locator('.module-tile[href="#atomic-physics"]').focus();page.keyboard.press('Enter');assert page.url.endswith('#atomic-physics')
    page.locator('#hydrogen-explorer').screenshot(path=str(OUT/f'explorer-{name}.png'))
@@ -43,7 +43,7 @@ def main():
   # Real linked glossary term has reciprocal lesson links.
   page.goto(ORIGIN+'/glossary/#microturbulence');expect(page.locator('#microturbulence a[href="/education/#stellar-spectroscopy"]')).to_be_visible()
   # No JS: complete lesson sequence and numerical reference survive.
-  ctx=b.new_context(java_script_enabled=False,viewport={'width':390,'height':844});fallback=ctx.new_page();fallback.goto(URL);expect(fallback.locator('#wavelength')).to_have_text('656.45 nm');assert fallback.locator('.lesson').count()==8;expect(fallback.locator('#transition-controls')).to_be_hidden();assert fallback.locator('a[href="/education/classroom-activity.txt"]').count()==1;fallback.screenshot(path=str(OUT/'no-js-mobile.png'),full_page=True);ctx.close()
+  ctx=b.new_context(java_script_enabled=False,viewport={'width':390,'height':844});fallback=ctx.new_page();fallback.goto(URL);expect(fallback.locator('#wavelength')).to_have_text('656.45 nm');assert fallback.locator('.lesson').count()==8;expect(fallback.locator('#transition-controls')).to_be_hidden();assert fallback.locator('a[href="/education/classroom-activity.txt"]').count()==1;fallback.screenshot(path=str(OUT/'no-js-mobile.png'),full_page=False);ctx.close()
   # Failed/invalid/empty JSON retains authored lessons and a usable static example.
   for kind in ['503','invalid','empty']:
    ctx=b.new_context();bad=ctx.new_page();bad.route('**/assets/data/education-*.json',lambda route:route.fulfill(status=503 if kind=='503' else 200,content_type='application/json',body='invalid' if kind=='invalid' else '{}'))

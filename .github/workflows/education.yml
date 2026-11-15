@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '22'
       - run: pip install playwright
-      - run: node --test tests/test_education_core.mjs
+      - run: node --test tests/test_education_core.mjs tests/test_education_models.mjs
       - run: python -m unittest discover -s tests -p test_education.py
       - run: python scripts/generate_education.py --check
       - run: python scripts/sync_education_navigation.py --check
@@ -29,8 +29,11 @@ jobs:
           python -m http.server 8523 --bind 127.0.0.1 &
           curl -fsSL https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.3/axe.min.js -o /tmp/axe.js
           python tests/browser_education.py http://127.0.0.1:8523 /tmp/axe.js
+          python tests/browser_education_interactives.py http://127.0.0.1:8523 /tmp/axe.js
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: education-browser-evidence
-          path: docs/qa/rya1379/
+          path: |
+            docs/qa/rya1379/
+            docs/qa/rya1379-rework/

@@ -1,0 +1,10 @@
+"educational_model","doppler"
+"assumptions","λobs/λrest = sqrt((1+β)/(1−β)), β=v/c. The approximation Δλ/λ ≈ v/c applies for |v| ≪ c; compare its error in the readout. Hypothetical reference lines at 499.7, 500.0 and 500.3 nm are not element identifications. Only longitudinal motion is modeled."
+"parameters","{""velocity"":30}"
+"sources","[{""title"":""NIST CODATA 2022 constants"",""url"":""https://physics.nist.gov/cuu/Constants/Table/allascii.txt""},{""title"":""NASA Exoplanet Archive: predicted observables and RV amplitude"",""url"":""https://exoplanetarchive.ipac.caltech.edu/docs/poet_calculations.html""}]"
+"provenance","{}"
+
+"rest_nm","observed_nm","velocity_km_s","linear_approximation_nm"
+"499.7","499.7500070957221","30","499.75000459351116"
+"500","500.0500371179929","30","500.05003461427975"
+"500.3","500.3500671402637","30","500.35006463504834"
