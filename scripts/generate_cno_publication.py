@@ -26,13 +26,21 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium', Cr='Chromium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Cr': ('Chromium is measured from neutral Cr I and ionized Cr II lines from the near-ultraviolet '
+           'to the near-infrared. The reference lines are the Cr I and Cr II lines Asplund et al. 2021 '
+           'used, with the oscillator strengths they adopted; a wider set of lines with laboratory '
+           'oscillator strengths and the Codex\'s own line selection are shown as separate products. '
+           'The visible lines agree with Asplund. The near-infrared Cr I lines all come from one multiplet '
+           'that the literature does not use, and they read about 0.5 dex high on every spectrum; they are '
+           'shown as measured while the cause is open. The near-ultraviolet result depends on which '
+           'version of the Kitt Peak atlas is used.'),
     'Ti': ('Titanium is measured from neutral Ti I and ionized Ti II lines from the near-ultraviolet '
            'to the near-infrared. The reference lines are the Ti I and Ti II lines Asplund et al. 2021 '
            'used, with the oscillator strengths they adopted; a wider set of lines with laboratory '
