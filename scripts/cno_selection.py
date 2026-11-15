@@ -147,8 +147,18 @@ def resolved_lines(p) -> int:
     return n
 
 
+#: RYA-1351: theoretical gf (no laboratory value, no published uncertainty) ranks after every
+#: laboratory-based grade and never takes an element's headline.
+THEORETICAL_GRADE = 'Theoretical Codex'
+
+
+def grade_rank(p):
+    g = p.get('grade')
+    return 0 if g == 'Reference Grade' else 2 if g == THEORETICAL_GRADE else 1
+
+
 def rank_key(p):
-    return (0 if p.get('grade') == 'Reference Grade' else 1,
+    return (grade_rank(p),
             treatment_rank(p),
             -resolved_lines(p),
             round(total_sigma(p), 4),
@@ -157,6 +167,11 @@ def rank_key(p):
 
 def eligible_for_headline(p):
     return str(p.get('selector') or '') not in REJECTED_SELECTORS
+
+
+def headline_candidate(p):
+    """May this product enter an element's headline value? Theoretical Codex never does."""
+    return eligible_for_headline(p) and p.get('grade') != THEORETICAL_GRADE
 
 
 def best_in_band(products, band):
@@ -176,7 +191,7 @@ FALLBACK_INSTRUMENTS = ('crires_plus', 'kpno_solar_atlas')
 def anchor_product(products, element=None):
     if headline_hold(products, element):
         return None
-    ref = [p for p in products if eligible_for_headline(p) and p.get('grade') == 'Reference Grade']
+    ref = [p for p in products if headline_candidate(p) and p.get('grade') == 'Reference Grade']
     hits = [p for p in ref if p.get('holding') == ANCHOR_HOLDING and p.get('band') == ANCHOR_BAND]
     if not hits:
         hits = [p for p in ref if p.get('instrument') in FALLBACK_INSTRUMENTS]
@@ -194,7 +209,7 @@ def headline(products, element=None):
     """
     if headline_hold(products, element):
         return None
-    rows = [p for p in products if eligible_for_headline(p)]
+    rows = [p for p in products if headline_candidate(p)]
     prim = PRIMARY_SELECTORS.get(element or (rows[0].get('element') if rows else None))
     if prim:
         rows = [p for p in rows if str(p.get('selector') or '') in prim] or rows
@@ -296,7 +311,7 @@ def asplund_headline(products, element):
         required = REQUIRED_FAMILY_SELECTORS.get(element)
         if required and (p.get('selector') != required or treatment_rank(p) not in (0, 2)):
             continue
-        if not eligible_for_headline(p) or not p.get('sigma_reported') and not total_sigma(p):
+        if not headline_candidate(p) or not p.get('sigma_reported') and not total_sigma(p):
             continue
         f = indicator_family(p)
         if f in ASPLUND_FAMILIES.get(element, ()):
@@ -358,7 +373,7 @@ def asplund_line_set(products, element):
         return None
     by_holding = {}
     for p in products:
-        if eligible_for_headline(p) and str(p.get('selector') or '') == sel and total_sigma(p):
+        if headline_candidate(p) and str(p.get('selector') or '') == sel and total_sigma(p):
             by_holding.setdefault(p.get('holding'), []).append(p)
     best = None
     for holding, ps in by_holding.items():
