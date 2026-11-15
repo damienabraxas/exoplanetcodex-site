@@ -1739,16 +1739,16 @@ window.SOLAR_REPORT = {
       "name": "Titanium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ti.json v1.343)",
+      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ti.json v1.685)",
       "asplund": 4.97,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/ti/",
       "primaryValue": {
-        "value": 4.945,
-        "sigmaTotal": 0.0653,
-        "lineCount": 80
+        "value": 4.961,
+        "sigmaTotal": 0.0658,
+        "lineCount": 81
       },
-      "delta": -0.025,
+      "delta": -0.009,
       "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
