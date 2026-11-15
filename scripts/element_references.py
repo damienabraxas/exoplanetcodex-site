@@ -30,7 +30,9 @@ ENGINE_A_GRID = 'amarsi2020_galah'
 #: Elements whose ENGINE-A grid is not the Amarsi 2020 GALAH one: (bibliography key, grid CSV,
 #: provenance file), as config/constants.py wires them in the science repo.
 ENGINE_A_GRIDS = {'Ti': ('mallinson2024', 'Ti_Mallinson2024_PySME.csv',
-                         'Ti_Mallinson2024_PySME.csv.prov.json')}
+                         'Ti_Mallinson2024_PySME.csv.prov.json'),
+                  'Cr': ('bergemann_cescutti2010', 'Cr_Bergemann2010_MPIA.csv',
+                         'Cr_Bergemann2010_MPIA.prov.json')}
 
 
 def reconcile_atomic(science, element, feed, audit):
@@ -121,6 +123,14 @@ def reconcile_atomic(science, element, feed, audit):
             # class C ...'), not by DOI; it is the raw Garz table, without Amarsi's renormalisation.
             if key is None and str(s).strip().upper().startswith('GARZ'):
                 key = 'garz1973'
+            # VALD/GES reference code PGBH = Pinnington et al. 1993 (1993CaJPh..71..470P), on
+            # Cr II lines only (science data/reference/heiter2021_ges/refs.tsv).
+            if key is None and str(s).strip() == 'PGBH' and element == 'Cr':
+                key = 'pinnington1993_cr2'
+            # VALD/GES code MFW = Martin, Fuhr & Wiese 1988 (J. Phys. Chem. Ref. Data 17, Suppl. 3),
+            # the Sc-through-Mn compilation; Fe-Ni is FMW (fuhr1988), so only Sc..Mn resolve here.
+            if key is None and str(s).strip() == 'MFW' and element in ('Sc', 'Ti', 'V', 'Cr', 'Mn'):
+                key = 'martin1988'
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]

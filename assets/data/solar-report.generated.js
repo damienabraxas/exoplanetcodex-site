@@ -1774,18 +1774,19 @@ window.SOLAR_REPORT = {
       "symbol": "Cr",
       "ion": "I",
       "name": "Chromium",
-      "status": "Curation owed",
+      "status": "Published",
       "tier": "",
-      "method": "EW: 7 line(s)",
+      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Cr.json v1.199)",
       "asplund": 5.62,
       "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/cr/",
       "primaryValue": {
-        "value": 6.022,
-        "sigmaTotal": null,
-        "lineCount": 7.0
+        "value": 5.684,
+        "sigmaTotal": 0.0483,
+        "lineCount": 124
       },
-      "delta": 0.402,
-      "statusDetail": "curation-owed"
+      "delta": 0.064,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 25,
