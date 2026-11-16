@@ -131,6 +131,12 @@ def reconcile_atomic(science, element, feed, audit):
             # the Sc-through-Mn compilation; Fe-Ni is FMW (fuhr1988), so only Sc..Mn resolve here.
             if key is None and str(s).strip() == 'MFW' and element in ('Sc', 'Ti', 'V', 'Cr', 'Mn'):
                 key = 'martin1988'
+            # The Theoretical Codex set CR_ELGUETA2026 records its gf delivery as 'VALD3'; the
+            # values are Kurucz 2016 calculations (science SOURCES.yaml gf_basis), so the gf is
+            # cited to Kurucz's database with VALD (Ryabchikova+2015) as the delivery lineage.
+            if key is None and str(s).strip() == 'VALD3' and sel == 'SET-CR_ELGUETA2026':
+                key = 'kurucz_online'
+                gf += [ref('ryabchikova2015')]
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]

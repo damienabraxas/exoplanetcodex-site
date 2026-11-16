@@ -46,7 +46,15 @@ CONTEXT = {
            'Sobeck et al. 2007 calibrated their infrared values with a separate check on exactly these '
            'lines and did not use them on the Sun. We show the products as measured until better '
            'laboratory values exist. The near-ultraviolet result depends on which '
-           'version of the Kitt Peak atlas is used.'),
+           'version of the Kitt Peak atlas is used. '
+           'Chromium is also the first element with Theoretical Codex products. Past 973 nm no '
+           'chromium line has a laboratory oscillator strength, so we measured the seven Cr I lines '
+           'that Elgueta et al. 2026 found reliable in the Sun\'s Y and J bands, using oscillator '
+           'strengths Kurucz calculated from atomic theory. They are shown as their own grade, '
+           'never mixed with the laboratory grades and never used for the headline. Their '
+           'uncertainty does not include the oscillator strengths, which have no published error, '
+           'and we saw how they compare with the Sun before adopting them, so this is not a '
+           'blind test.'),
     'Ti': ('Titanium is measured from neutral Ti I and ionized Ti II lines from the near-ultraviolet '
            'to the near-infrared. The reference lines are the Ti I and Ti II lines Asplund et al. 2021 '
            'used, with the oscillator strengths they adopted; a wider set of lines with laboratory '
@@ -284,7 +292,11 @@ def grades_section(element, products):
     for p in products:
         have[p.get('grade') or 'ungraded'].append(p)
     rows = ''
-    for g in ('Reference Grade', 'Codex Grade', 'Deep Grade'):
+    # RYA-1351: the theoretical grade is listed only where the element has one, so pages
+    # without it keep their three-grade table.
+    grades = ('Reference Grade', 'Codex Grade', 'Deep Grade') + (
+        ('Theoretical Codex',) if have.get('Theoretical Codex') else ())
+    for g in grades:
         ps = have.get(g, [])
         if ps:
             sets = sorted({lines_name(p) for p in ps})
@@ -294,7 +306,8 @@ def grades_section(element, products):
                     'outlier (see Excluded lines)' if g == 'Deep Grade' else 'none published for this element yet')
         rows += (f'<tr><th scope="row">{esc(g)}</th><td>{esc(GRADE_EXPLAINED[g])}</td>'
                  f'<td>{esc(what)}</td></tr>')
-    return ('<p class="product-section-intro">Every product is measured on one of three '
+    return ('<p class="product-section-intro">Every product is measured on one of '
+            f'{"four" if len(grades) == 4 else "three"} '
             'grades of spectral lines and the grades are never mixed in one number.</p>'
             '<div class="table-scroll"><table class="product-recipe"><thead><tr><th>Grade</th>'
             '<th>What it means</th><th>This element</th></tr></thead><tbody>'
@@ -442,6 +455,10 @@ GRADE_EXPLAINED = {
                    'paper\'s own stated error), between 5% and 60% deep',
     'Deep Grade': 'the same oscillator-strength rule on lines deeper than 60% -- stronger '
                   'lines, more sensitive to damping and the model atmosphere',
+    'Theoretical Codex': 'lines whose oscillator strength comes from atomic theory, calculated '
+                         'rather than measured in a laboratory and with no published '
+                         'uncertainty, adopted by name after review. Shown on their own and '
+                         'never used for the headline value',
 }
 GRADE_POOL = {'Codex Grade': 'GRADED', 'Deep Grade': 'DEEPGRADED'}
 #: Selector tokens for the Codex's own pools, in words.
