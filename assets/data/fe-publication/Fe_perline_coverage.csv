@@ -2,17 +2,17 @@ publication_id,ion,band,instrument,holding,tier,selector,route,treatment,A,n_lin
 Fe-000,II,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,1D-LTE,7.432,9,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-001,II,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-1D-LTE-gerber,7.419,9,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-002,II,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-mean3D-LTE-gerber-stagger,7.474,9,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-003,II,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,1D-LTE,7.456,23,False,"n_lines MISMATCH: product says 23, artifact(s) have 8",
-Fe-004,II,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,ENGINE-A,7.444,10,False,"n_lines MISMATCH: product says 10, artifact(s) have 2",
-Fe-005,II,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,synth-1D-LTE-gerber,7.457,23,False,"n_lines MISMATCH: product says 23, artifact(s) have 8",
-Fe-006,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,1D-LTE,7.398,145,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-007,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-A,7.552,3,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-008,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-1D-LTE-gerber,7.39,145,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-009,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-mean3D-LTE-gerber-stagger,7.453,141,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-010,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,1D-LTE,7.439,8,True,resolved,data/results/band_products/FeII_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_1D-LTE_lines.csv
-Fe-011,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-A,7.221,2,True,resolved,data/results/band_products/FeII_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_ENGINE-A_lines.csv
-Fe-012,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-1D-LTE-gerber,7.443,8,False,per-line count or median does not reproduce the live product,
-Fe-013,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-LTE-gerber-stagger,7.531,8,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-003,II,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,1D-LTE,7.347,23,True,resolved,data/results/band_products/FeII_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_DEEPGRADED_1D-LTE_lines.csv
+Fe-004,II,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,ENGINE-A,7.381,8,True,resolved,data/results/band_products/FeII_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_DEEPGRADED_ENGINE-A_lines.csv
+Fe-005,II,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,synth-1D-LTE-gerber,7.366,23,False,"n_lines MISMATCH: product says 23, artifact(s) have 8",
+Fe-006,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,1D-LTE,7.38,144,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-007,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-A,7.613,4,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-008,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-1D-LTE-gerber,7.386,144,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-009,II,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-mean3D-LTE-gerber-stagger,7.453,140,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-010,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,1D-LTE,7.476,8,True,resolved,data/results/band_products/FeII_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_1D-LTE_lines.csv
+Fe-011,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-A,7.277,2,True,resolved,data/results/band_products/FeII_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_ENGINE-A_lines.csv
+Fe-012,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-1D-LTE-gerber,7.489,8,False,per-line count or median does not reproduce the live product,
+Fe-013,II,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-LTE-gerber-stagger,7.591,8,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-014,II,VIS,kpno_solar_atlas,solar_kpno_kurucz2005_corrected,ALL,SET-FE_AGSS21,SYNTH,1D-LTE,7.46,6,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-015,II,VIS,kpno_solar_atlas,solar_kpno_kurucz2005_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-1D-LTE-gerber,7.453,6,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-016,II,VIS,kpno_solar_atlas,solar_kpno_kurucz2005_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-mean3D-LTE-gerber-stagger,7.516,6,False,no artifact on disk (band_products is gitignored; only force-added files are present),
@@ -113,32 +113,32 @@ Fe-110,I,NIR,kpno_solar_atlas,solar_kpno_molecfit_corrected,REFERENCE,REFERENCE,
 Fe-111,I,NIR,kpno_solar_atlas,solar_kpno_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-NLTE-gerber-stagger,7.577,20,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-112,I,VIS,harps,solar_harps_molecfit_corrected,ALL,ASPLUND_AGSS21,SYNTH,ENGINE-A-3DNLTE,7.4771,21,True,resolved from product provenance,data/results/rya1106/harps_molecfit/asplund_lines_per_line.csv
 Fe-113,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,1D-LTE,7.398,27,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-114,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,ENGINE-A,7.417,20,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-114,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,ENGINE-A,7.416,20,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-115,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,ENGINE-B-NLTE,7.452,27,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-116,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-1D-LTE-gerber,7.4,27,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-117,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-mean3D-LTE-gerber-stagger,7.48,27,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-118,I,VIS,harps,solar_harps_molecfit_corrected,ALL,SET-FE_AGSS21,SYNTH,synth-mean3D-NLTE-gerber-stagger,7.515,27,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-119,I,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED-LOCALRENORM,SYNTH,1D-LTE,7.339,109,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-120,I,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED-LOCALRENORM,SYNTH,ENGINE-A,7.35,105,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-121,I,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,1D-LTE,7.419,106,False,"n_lines MISMATCH: product says 106, artifact(s) have 109",
-Fe-122,I,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,ENGINE-A,7.429,102,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-121,I,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,1D-LTE,7.365,295,False,"n_lines MISMATCH: product says 295, artifact(s) have 109",
+Fe-122,I,VIS,harps,solar_harps_molecfit_corrected,DEEPGRADED,DEEPGRADED,SYNTH,ENGINE-A,7.375,284,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-123,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,PROFILEFIT,1D-LTE,7.498,6,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-124,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,PROFILEFIT,ENGINE-A,7.433,5,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-125,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,PROFILEFIT,ENGINE-B,7.431,5,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-126,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,1D-LTE,7.401,171,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_GRADED_1D-LTE_lines.csv
+Fe-126,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,1D-LTE,7.403,171,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_GRADED_1D-LTE_lines.csv
 Fe-127,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-A-3DNLTE,7.5124,50,True,resolved from product provenance,data/results/rya1095/harps/rya817_3dnlte_per_line.csv
-Fe-128,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-A,7.4,144,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_GRADED_ENGINE-A_lines.csv
-Fe-129,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-B-NLTE,7.454,171,False,"n_lines MISMATCH: product says 171, artifact(s) have 67",
-Fe-130,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-1D-LTE-gerber,7.403,171,False,"n_lines MISMATCH: product says 171, artifact(s) have 67",
-Fe-131,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-mean3D-LTE-gerber-stagger,7.499,171,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-132,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-mean3D-NLTE-gerber-stagger,7.538,171,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-133,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,1D-LTE,7.346,167,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_1D-LTE_lines.csv
+Fe-128,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-A,7.401,144,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_GRADED_ENGINE-A_lines.csv
+Fe-129,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,ENGINE-B-NLTE,7.459,171,False,"n_lines MISMATCH: product says 171, artifact(s) have 67",
+Fe-130,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-1D-LTE-gerber,7.411,171,False,"n_lines MISMATCH: product says 171, artifact(s) have 67",
+Fe-131,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-mean3D-LTE-gerber-stagger,7.501,171,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-132,I,VIS,harps,solar_harps_molecfit_corrected,GRADED,GRADED,SYNTH,synth-mean3D-NLTE-gerber-stagger,7.542,171,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-133,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,1D-LTE,7.358,167,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_1D-LTE_lines.csv
 Fe-134,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-A-3DNLTE,7.4996,100,False,per-line count or median does not reproduce the live product,
-Fe-135,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-A,7.346,157,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_ENGINE-A_lines.csv
-Fe-136,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-B-NLTE,7.398,167,False,"n_lines MISMATCH: product says 167, artifact(s) have 175",
-Fe-137,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-1D-LTE-gerber,7.352,167,False,"n_lines MISMATCH: product says 167, artifact(s) have 175",
-Fe-138,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-LTE-gerber-stagger,7.446,167,False,no artifact on disk (band_products is gitignored; only force-added files are present),
-Fe-139,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-NLTE-gerber-stagger,7.479,167,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-135,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-A,7.365,157,True,resolved,data/results/band_products/FeI_4200_6908_harps_solar_harps_molecfit_corrected_SYNTH_REFERENCE_ENGINE-A_lines.csv
+Fe-136,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,ENGINE-B-NLTE,7.413,167,False,"n_lines MISMATCH: product says 167, artifact(s) have 175",
+Fe-137,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-1D-LTE-gerber,7.363,167,False,"n_lines MISMATCH: product says 167, artifact(s) have 175",
+Fe-138,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-LTE-gerber-stagger,7.458,167,False,no artifact on disk (band_products is gitignored; only force-added files are present),
+Fe-139,I,VIS,harps,solar_harps_molecfit_corrected,REFERENCE,REFERENCE,SYNTH,synth-mean3D-NLTE-gerber-stagger,7.496,167,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-140,I,VIS,kpno_solar_atlas,solar_kpno_kurucz2005_corrected,ALL,ASPLUND_AGSS21,SYNTH,ENGINE-A-3DNLTE,7.4713,21,True,resolved from product provenance,data/results/rya1106/kpno_kurucz2005/asplund_lines_per_line.csv
 Fe-141,I,VIS,kpno_solar_atlas,solar_kpno_kurucz2005_corrected,ALL,SET-FE_AGSS21,SYNTH,1D-LTE,7.443,22,False,no artifact on disk (band_products is gitignored; only force-added files are present),
 Fe-142,I,VIS,kpno_solar_atlas,solar_kpno_kurucz2005_corrected,ALL,SET-FE_AGSS21,SYNTH,ENGINE-A,7.462,18,False,no artifact on disk (band_products is gitignored; only force-added files are present),
