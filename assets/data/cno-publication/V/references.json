@@ -1,0 +1,1215 @@
+{
+  "references": [
+    {
+      "id": "asplund2021",
+      "citation": "Asplund, M.; Amarsi, A. M.; Grevesse, N. (2021). The chemical make-up of the Sun: A 2020 vision. A&A 653, A141",
+      "doi": "10.1051/0004-6361/202140445",
+      "url": "https://doi.org/10.1051/0004-6361/202140445",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "asplund2021"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar V comparison literature; not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "lodders2025",
+      "citation": "Lodders, K.; Bergemann, M.; Palme, H. (2025). Solar System Elemental Abundances from the Solar Photosphere and CI-Chondrites. Space Science Reviews 221",
+      "doi": "10.1007/s11214-025-01146-w",
+      "url": "https://doi.org/10.1007/s11214-025-01146-w",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "lodders2025"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Solar V comparison literature; not an adopted Codex abundance."
+      ]
+    },
+    {
+      "id": "wood2014_v2",
+      "citation": "Wood, M. P.; Lawler, J. E.; Den Hartog, E. A.; Sneden, C.; Cowan, J. J. (2014). Improved V II log(gf) Values, Hyperfine Structure Constants, and Abundance Determinations in the Photospheres of the Sun and Metal-poor Star HD 84937. ApJS 214, 18",
+      "doi": "10.1088/0067-0049/214/2/18",
+      "url": "https://doi.org/10.1088/0067-0049/214/2/18",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "wood2014_v2"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    },
+    {
+      "id": "nist_asd",
+      "citation": "Kramida, A.; Ralchenko, Yu.; Reader, J.; NIST ASD Team (2024). NIST Atomic Spectra Database (version 5.11/5.12). National Institute of Standards and Technology, Gaithersburg, MD",
+      "doi": "10.18434/T4W30F",
+      "url": "https://doi.org/10.18434/T4W30F",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "nist_asd"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+        "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    },
+    {
+      "id": "gerber2023",
+      "citation": "Gerber, J. M.; Magg, E.; Plez, B.; Bergemann, M.; Heiter, U.; Olander, T.; Hoppe, R. (2023). Non-LTE radiative transfer with Turbospectrum. A&A 669, A43",
+      "doi": "10.1051/0004-6361/202243673",
+      "url": "https://doi.org/10.1051/0004-6361/202243673",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "gerber2023"
+        }
+      ],
+      "layers": [
+        "Model and grid sources"
+      ],
+      "roles": [
+        "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+      ]
+    },
+    {
+      "id": "scott2015",
+      "citation": "Scott, P.; Asplund, M.; Grevesse, N.; Bergemann, M.; Sauval, A. J. (2015). The elemental composition of the Sun. II. The iron group elements Sc to Ni. A&A 573, A26",
+      "doi": "10.1051/0004-6361/201424110",
+      "url": "https://doi.org/10.1051/0004-6361/201424110",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "scott2015"
+        }
+      ],
+      "layers": [
+        "Solar abundance and indicator analyses"
+      ],
+      "roles": [
+        "Published line set V_AGSS21 (the line selection)."
+      ]
+    },
+    {
+      "id": "lawler2014_v1",
+      "citation": "Lawler, J. E.; Wood, M. P.; Den Hartog, E. A.; Feigenson, T.; Sneden, C.; Cowan, J. J. (2014). Improved V I log(gf) Values and Abundance Determinations in the Photospheres of the Sun and Metal-poor Star HD 84937. ApJS 215, 20",
+      "doi": "10.1088/0067-0049/215/2/20",
+      "url": "https://doi.org/10.1088/0067-0049/215/2/20",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "lawler2014_v1"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    },
+    {
+      "id": "holmes2016_v1",
+      "citation": "Holmes, C. E.; Pickering, J. C.; Ruffoni, M. P.; Blackwell-Whitehead, R.; Nilsson, H.; Engström, L.; Hartman, H.; Lundberg, H.; Belmonte, M. T. (2016). Experimentally Measured Radiative Lifetimes and Oscillator Strengths in Neutral Vanadium. ApJS 224, 35",
+      "doi": "10.3847/0067-0049/224/2/35",
+      "url": "https://doi.org/10.3847/0067-0049/224/2/35",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "holmes2016_v1"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "subject": "element-context",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025"
+      ],
+      "claim": "Solar V comparison literature; not an adopted Codex abundance.",
+      "evidence": [
+        "data/refs/bibliography.csv"
+      ]
+    },
+    {
+      "subject": "V-products-4438624036cc",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014_v2",
+        "nist_asd"
+      ],
+      "claim": "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-4438624036cc",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-7e5d84c371bb",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014_v2"
+      ],
+      "claim": "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-7e5d84c371bb",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-4652c319d8bc",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014_v2",
+        "nist_asd"
+      ],
+      "claim": "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-4652c319d8bc",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-605419449d11",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014_v2"
+      ],
+      "claim": "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-605419449d11",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-31b072fcec59",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014_v2",
+        "nist_asd"
+      ],
+      "claim": "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-31b072fcec59",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-127e989eecca",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014_v2"
+      ],
+      "claim": "V II oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-127e989eecca",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-a3daa3263a48",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "scott2015"
+      ],
+      "claim": "Published line set V_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "V-products-a3daa3263a48",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-a3daa3263a48",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-17ccded86b4a",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "nist_asd"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-17ccded86b4a",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-1208d807c210",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-1208d807c210",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-5ad91009195c",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "scott2015"
+      ],
+      "claim": "Published line set V_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "V-products-5ad91009195c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-5ad91009195c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-5a2eca56e670",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "nist_asd"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-5a2eca56e670",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-77f0ce702c76",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-77f0ce702c76",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-ee419979428e",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "scott2015"
+      ],
+      "claim": "Published line set V_AGSS21 (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "V-products-ee419979428e",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-ee419979428e",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-8d0a1d7b00b7",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "nist_asd"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-8d0a1d7b00b7",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-9787e0500a04",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-9787e0500a04",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-9aac59334533",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "nist_asd"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-9aac59334533",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-410a1660b4c3",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-410a1660b4c3",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-f94ce11e5f83",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "nist_asd",
+        "holmes2016_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-f94ce11e5f83",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-51811ac7eee9",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "holmes2016_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-51811ac7eee9",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-f4b4bcc9644a",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1",
+        "nist_asd"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-f4b4bcc9644a",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "V-products-10cdac091bb4",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "lawler2014_v1"
+      ],
+      "claim": "V I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/V.json"
+      ]
+    },
+    {
+      "subject": "V-products-10cdac091bb4",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    }
+  ],
+  "product_sources": [
+    {
+      "publication_id": "V-products-4438624036cc",
+      "source_bucket": "products",
+      "source_index": 0,
+      "identity": {
+        "element": "V",
+        "ion": "II",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014_v2",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-7e5d84c371bb",
+      "source_bucket": "products",
+      "source_index": 1,
+      "identity": {
+        "element": "V",
+        "ion": "II",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014_v2",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-4652c319d8bc",
+      "source_bucket": "products",
+      "source_index": 2,
+      "identity": {
+        "element": "V",
+        "ion": "II",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014_v2",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-605419449d11",
+      "source_bucket": "products",
+      "source_index": 3,
+      "identity": {
+        "element": "V",
+        "ion": "II",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014_v2",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-31b072fcec59",
+      "source_bucket": "products",
+      "source_index": 4,
+      "identity": {
+        "element": "V",
+        "ion": "II",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014_v2",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-127e989eecca",
+      "source_bucket": "products",
+      "source_index": 5,
+      "identity": {
+        "element": "V",
+        "ion": "II",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014_v2",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-a3daa3263a48",
+      "source_bucket": "products",
+      "source_index": 6,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-V_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "scott2015",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-17ccded86b4a",
+      "source_bucket": "products",
+      "source_index": 7,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-1208d807c210",
+      "source_bucket": "products",
+      "source_index": 8,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-5ad91009195c",
+      "source_bucket": "products",
+      "source_index": 9,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-V_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "scott2015",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-5a2eca56e670",
+      "source_bucket": "products",
+      "source_index": 10,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-77f0ce702c76",
+      "source_bucket": "products",
+      "source_index": 11,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-ee419979428e",
+      "source_bucket": "products",
+      "source_index": 12,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-V_AGSS21",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "scott2015",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-8d0a1d7b00b7",
+      "source_bucket": "products",
+      "source_index": 13,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-9787e0500a04",
+      "source_bucket": "products",
+      "source_index": 14,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-9aac59334533",
+      "source_bucket": "products",
+      "source_index": 15,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-410a1660b4c3",
+      "source_bucket": "products",
+      "source_index": 16,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-f94ce11e5f83",
+      "source_bucket": "products",
+      "source_index": 17,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "nist_asd",
+        "holmes2016_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-51811ac7eee9",
+      "source_bucket": "products",
+      "source_index": 18,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "holmes2016_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-f4b4bcc9644a",
+      "source_bucket": "products",
+      "source_index": 19,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "V-products-10cdac091bb4",
+      "source_bucket": "products",
+      "source_index": 20,
+      "identity": {
+        "element": "V",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "lawler2014_v1",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    }
+  ],
+  "source_paths": [
+    "data/reference/line_sets/REGISTRY.csv",
+    "data/refs/bibliography.csv"
+  ],
+  "policy": "Sources resolved from the science repo records: line-set registry, the products' own gf sources, and the engine of each treatment."
+}

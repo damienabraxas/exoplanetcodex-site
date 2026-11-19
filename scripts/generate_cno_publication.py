@@ -26,13 +26,24 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium', Cr='Chromium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium', Cr='Chromium', V='Vanadium')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'V': ('Vanadium is measured from neutral V I and ionized V II lines in the visible and red. '
+          'Most vanadium lines are split into many closely spaced parts by the nucleus (hyperfine '
+          'structure), and the line lists carry every part, so each line is fitted as the whole group. '
+          'The reference lines are the V I lines Asplund et al. 2021 used; a wider set of lines with '
+          'laboratory oscillator strengths and the Codex\'s own line selection are shown as separate '
+          'products. The visible V I lines agree with Asplund. V II has only a handful of usable lines, '
+          'so it is a cross-check rather than the headline. The red lines measured on the IAG atlas read '
+          'about 0.1 dex higher than the same lines on Kitt Peak. In the infrared (CRIRES+) the vanadium '
+          'lines are only 1-3 percent deep and we could not measure them: the standard fit finds no line, '
+          'and a fit that also adjusts the continuum returns similar numbers where there is no vanadium '
+          'line at all, so no infrared product is published. The near-ultraviolet is held.'),
     'Cr': ('Chromium is measured from neutral Cr I and ionized Cr II lines from the near-ultraviolet '
            'to the near-infrared. The reference lines are the Cr I and Cr II lines Asplund et al. 2021 '
            'used, with the oscillator strengths they adopted; a wider set of lines with laboratory '
