@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "34eabffe0c41600cf4710503b04e06bf5aa97ad7",
-        "scienceGit": "33f090dfa0d8e87860b0b6dcf001748f8f3d50cd",
-        "generatedAt": "2026-11-17T14:07:45+00:00"
+        "scienceGit": "c48c43b8a2dc2d6b5f6e30f6f9f331bbd3736349",
+        "generatedAt": "2026-11-19T15:18:26+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1756,18 +1756,19 @@ window.SOLAR_REPORT = {
       "symbol": "V",
       "ion": "I",
       "name": "Vanadium",
-      "status": "Curation owed",
+      "status": "Published",
       "tier": "",
-      "method": "HFS synthesis LTE: V I 6 lines — NLTE-VOID (no model atom)",
+      "method": "harps VIS · REFERENCE · 1D-LTE (Reference Grade, V.json v1.23)",
       "asplund": 3.9,
       "measurementNote": "",
+      "appendixPath": "/systems/sol/elements/v/",
       "primaryValue": {
-        "value": 3.917,
-        "sigmaTotal": 0.029,
-        "lineCount": 6.0
+        "value": 3.934,
+        "sigmaTotal": 0.0794,
+        "lineCount": 181
       },
-      "delta": 0.017,
-      "statusDetail": "curation-owed"
+      "delta": 0.034,
+      "statusDetail": "published · reference grade · rya-587 budget"
     },
     {
       "atomicNumber": 24,
@@ -6235,7 +6236,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "78ab9eb06ee00fb359611e71edb3d0e4aa5ba093",
+    "gitCommit": "c48c43b8a2dc2d6b5f6e30f6f9f331bbd3736349",
     "productCommit": "7fdb8035823da14662e6ca185160731183b40f05",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-11-17T01:42:35+00:00"
