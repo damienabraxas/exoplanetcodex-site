@@ -245,12 +245,31 @@
       var missing = list.filter(function (s) { return !published(s); });
       return missing.length ? 'Waits for ' + missing.join(', ').replace(/, ([^,]*)$/, ' and $1') : 'Not yet computed';
     }
+    // [alpha/Fe] for the Sun. Against the Sun itself it is 0 by definition, so the card measures
+    // our values against Asplund, Amarsi & Grevesse (2021): each [X/Fe] = (A(X) - Asplund X) -
+    // (A(Fe) - Asplund Fe), then the plain average of the elements (the usual practice, e.g.
+    // Adibekyan et al. 2012). Iron is in every term, so its error is counted once:
+    // sigma = sqrt(sum(sigma_X^2) / n^2 + sigma_Fe^2).
+    function alphaFe(els) {
+      var feA = published('Fe');
+      var parts = els.map(published);
+      if (!feA || feA.ref == null || parts.some(function (p) { return !p || p.ref == null; })) return null;
+      var n = parts.length;
+      var mean = parts.reduce(function (s, p) { return s + (p.value - p.ref) - (feA.value - feA.ref); }, 0) / n;
+      var varX = parts.reduce(function (s, p) { return s + p.sigma * p.sigma; }, 0) / (n * n);
+      return { value: mean, sigma: Math.sqrt(varX + feA.sigma * feA.sigma) };
+    }
     [
       { label: 'Accepted [\u03b1/Fe]', els: ['Mg', 'Si', 'Ca', 'Ti'] },
       { label: 'Codex [\u03b1/Fe]', els: ['O', 'Mg', 'Si', 'S', 'Ca', 'Ti'] }
     ].forEach(function (a) {
-      ratioCards.push({ label: a.label, value: '\u2014', unit: 'dex \u00b7 ' + a.els.join(', '),
-                        sub: waitsFor(a.els), href: '/glossary/#alpha-enhancement' });
+      var r = alphaFe(a.els);
+      ratioCards.push(r ? {
+        label: a.label, value: signed(r.value), unit: 'dex \u00b7 ' + a.els.join(', '),
+        sub: '\u00b1 ' + r.sigma.toFixed(3) + ' \u00b7 against Asplund (2021), whose Sun is 0.00',
+        href: '/glossary/#alpha-enhancement'
+      } : { label: a.label, value: '\u2014', unit: 'dex \u00b7 ' + a.els.join(', '),
+            sub: waitsFor(a.els), href: '/glossary/#alpha-enhancement' });
     });
     ratioCards.push({ label: 'CHNOPS', value: '\u2014', unit: 'elements of life',
                       sub: waitsFor(['C', 'N', 'O', 'P', 'S']), href: '/glossary/#chnops' });
@@ -269,7 +288,7 @@
     ratioCards.forEach(function (c) { c.keepCase = true; });
     findingsRoot.innerHTML = tiles(cards) +
       '<p class="solar-kicker">Ratios for planets</p>' + tiles(ratioCards) +
-      '<p class="solar-table-note">Ratios of numbers of atoms, from the published values above. The reference is the same ratio from Asplund, Amarsi &amp; Grevesse (2021). Errors of the two elements are added as if independent.</p>' +
+      '<p class="solar-table-note">Ratios of numbers of atoms, from the published values above. The reference is the same ratio from Asplund, Amarsi &amp; Grevesse (2021). Errors of the two elements are added as if independent. [\u03b1/Fe] is the average of each element\u2019s [X/Fe] measured against Asplund, Amarsi &amp; Grevesse (2021); iron\u2019s error is counted once, because iron is in every term.</p>' +
       '<p class="solar-findings-more"><a href="#our-findings">See every element in the abundance table \u2192</a></p>';
   }
 
