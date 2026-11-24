@@ -460,5 +460,27 @@
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
+  },
+  {
+    "publication_id": "V-archive-816d8bf7946f",
+    "source_bucket": "archive",
+    "source_index": 0,
+    "identity": {
+      "element": "V",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-V_AGSS21",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "archive",
+    "quarantine_codes": [],
+    "visible": false,
+    "omission_reason": "archive: not a current admitted product"
   }
 ]
