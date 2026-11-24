@@ -1,16 +1,16 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "c48c43b8a2dc2d6b5f6e30f6f9f331bbd3736349",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/c48c43b8a2dc2d6b5f6e30f6f9f331bbd3736349",
-  "generated_at": "2026-11-19T08:06:43-07:00",
+  "source_commit": "4bfe16492fcc1333f84cd03ee228c8c445764111",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/4bfe16492fcc1333f84cd03ee228c8c445764111",
+  "generated_at": "2026-11-24T15:24:50-07:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.23",
-  "feed_updated_at": "2026-11-19T15:06:35Z",
-  "feed_sha256": "b3c514388a4f9e04303ffdc9761293f83e6f4b672ea15a5fc077fe6f9c6c2d49",
+  "feed_version": "1.24",
+  "feed_updated_at": "2026-11-24T21:58:42Z",
+  "feed_sha256": "9af74036cf29c0591de1e637b316bc2f4e24f96c1c897c8cddb508598fe2dad5",
   "source_sha256": {
-    "data/products/solar/V.json": "b3c514388a4f9e04303ffdc9761293f83e6f4b672ea15a5fc077fe6f9c6c2d49",
-    "data/refs/bibliography.csv": "4b7cc333db9f0a294997d67d764b861adf5c099173426fefd9ce27a77cc2db73",
+    "data/products/solar/V.json": "9af74036cf29c0591de1e637b316bc2f4e24f96c1c897c8cddb508598fe2dad5",
+    "data/refs/bibliography.csv": "b2db3edd926987af261a34fee86ee758df9cf6cdc9a532323da0dc5936803194",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "23247cbca5a46ceb34c878c0bb789f2c997ee81bbe4d8c90bc2645682196d4c7",
     "data/reference/gf_error_model.csv": "a0a4e9d67341b260d30f475170cc0294b0e2d2d8bc3f35c36373704ad72c0a01",
@@ -27,12 +27,13 @@
   "counts": {
     "products": 21,
     "quarantine": 0,
-    "archive": 0,
+    "archive": 1,
     "superseded": 0
   },
   "visible_products": 21,
   "dispositions": {
-    "products": 21
+    "products": 21,
+    "archive": 1
   },
   "highlight_selectors": [],
   "status": "products",

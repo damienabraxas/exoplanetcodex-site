@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "34eabffe0c41600cf4710503b04e06bf5aa97ad7",
-        "scienceGit": "c48c43b8a2dc2d6b5f6e30f6f9f331bbd3736349",
-        "generatedAt": "2026-11-19T15:18:26+00:00"
+        "scienceGit": "4bfe16492fcc1333f84cd03ee228c8c445764111",
+        "generatedAt": "2026-11-24T22:25:13+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1758,7 +1758,7 @@ window.SOLAR_REPORT = {
       "name": "Vanadium",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · REFERENCE · 1D-LTE (Reference Grade, V.json v1.23)",
+      "method": "harps VIS · REFERENCE · 1D-LTE (Reference Grade, V.json v1.24)",
       "asplund": 3.9,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/v/",
@@ -6236,7 +6236,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "c48c43b8a2dc2d6b5f6e30f6f9f331bbd3736349",
+    "gitCommit": "4bfe16492fcc1333f84cd03ee228c8c445764111",
     "productCommit": "7fdb8035823da14662e6ca185160731183b40f05",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-11-17T01:42:35+00:00"
