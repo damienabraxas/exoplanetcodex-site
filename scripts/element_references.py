@@ -137,6 +137,9 @@ def reconcile_atomic(science, element, feed, audit):
             if key is None and str(s).strip() == 'VALD3' and sel == 'SET-CR_ELGUETA2026':
                 key = 'kurucz_online'
                 gf += [ref('ryabchikova2015')]
+            # The GES v5 report maps K07 to Kurucz's calculated oscillator strengths.
+            if key is None and str(s).strip() == 'K07':
+                key = 'kurucz_online'
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]
