@@ -172,6 +172,13 @@ def reconcile_atomic(science, element, feed, audit):
                     'horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.')
             bind(subject, LAYER_ORDER[2], ['gerber2023', 'magic2013'], note,
                  ['pipeline/gerber_nlte.py'])
+        elif t in ('synth-1D-LTE-openmulti3d', 'synth-1D-NLTE-openmulti3d'):
+            keys.append(ref('gerber2023'))
+            note = ('Feed treatment: ' + t + '. Turbospectrum synthesis on the solar MARCS '
+                    'atmosphere, paired with the OpenMULTI3D 1D departure calculation.')
+            bind(subject, LAYER_ORDER[2], ['gerber2023'], note,
+                 ['pipeline/openmulti3d_nlte.py'])
+            paths.add('pipeline/openmulti3d_nlte.py')
         elif t == '1D-LTE':
             keys.append(ref('gerber2023'))
             note = 'Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.'
