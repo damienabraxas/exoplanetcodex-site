@@ -149,7 +149,8 @@
         "Solar abundance and indicator analyses"
       ],
       "roles": [
-        "Published line set SI_ELGUETA2026 (the line selection)."
+        "Published line set SI_ELGUETA2026 (the line selection).",
+        "Published line set SI_RYA1397_H (the line selection)."
       ]
     },
     {
@@ -186,6 +187,24 @@
       ],
       "roles": [
         "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
+      ]
+    },
+    {
+      "id": "kurucz_online",
+      "citation": "Kurucz, R. L. (2014). Robert L. Kurucz on-line database of observed and predicted atomic transitions. kurucz.harvard.edu",
+      "doi": "",
+      "url": "http://kurucz.harvard.edu/",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "kurucz_online"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "Si I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
       ]
     },
     {
@@ -577,10 +596,21 @@
       ]
     },
     {
-      "subject": "Si-products-83868b6649f2",
+      "subject": "Si-products-0a2d1d0acae3",
+      "layer": "Solar abundance and indicator analyses",
+      "reference_ids": [
+        "elgueta2026"
+      ],
+      "claim": "Published line set SI_RYA1397_H (the line selection).",
+      "evidence": [
+        "data/reference/line_sets/REGISTRY.csv"
+      ]
+    },
+    {
+      "subject": "Si-products-0a2d1d0acae3",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "pehlivanrhodin2024_si"
+        "kurucz_online"
       ],
       "claim": "Si I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -588,7 +618,7 @@
       ]
     },
     {
-      "subject": "Si-products-83868b6649f2",
+      "subject": "Si-products-0a2d1d0acae3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -599,7 +629,7 @@
       ]
     },
     {
-      "subject": "Si-products-4e3d20d18453",
+      "subject": "Si-products-d1f2d86f538f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -610,7 +640,29 @@
       ]
     },
     {
-      "subject": "Si-products-4e3d20d18453",
+      "subject": "Si-products-d1f2d86f538f",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Si-products-d4159790a87b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "pehlivanrhodin2024_si"
+      ],
+      "claim": "Si I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Si.json"
+      ]
+    },
+    {
+      "subject": "Si-products-d4159790a87b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -621,7 +673,7 @@
       ]
     },
     {
-      "subject": "Si-products-e5909f30041c",
+      "subject": "Si-products-eabf5dfd7c5f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si",
@@ -633,7 +685,7 @@
       ]
     },
     {
-      "subject": "Si-products-e5909f30041c",
+      "subject": "Si-products-eabf5dfd7c5f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -644,7 +696,7 @@
       ]
     },
     {
-      "subject": "Si-products-b3ab69cd715a",
+      "subject": "Si-products-92402a9f9b25",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si",
@@ -656,7 +708,7 @@
       ]
     },
     {
-      "subject": "Si-products-b3ab69cd715a",
+      "subject": "Si-products-92402a9f9b25",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -667,7 +719,7 @@
       ]
     },
     {
-      "subject": "Si-products-2c4a49bae319",
+      "subject": "Si-products-3be70e99c4ce",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -678,7 +730,7 @@
       ]
     },
     {
-      "subject": "Si-products-2c4a49bae319",
+      "subject": "Si-products-3be70e99c4ce",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -689,7 +741,7 @@
       ]
     },
     {
-      "subject": "Si-products-2c4a49bae319",
+      "subject": "Si-products-3be70e99c4ce",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -700,7 +752,7 @@
       ]
     },
     {
-      "subject": "Si-products-3fcf18c258ba",
+      "subject": "Si-products-f738c617d7f8",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -711,7 +763,7 @@
       ]
     },
     {
-      "subject": "Si-products-3fcf18c258ba",
+      "subject": "Si-products-f738c617d7f8",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -722,7 +774,7 @@
       ]
     },
     {
-      "subject": "Si-products-3fcf18c258ba",
+      "subject": "Si-products-f738c617d7f8",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -733,7 +785,7 @@
       ]
     },
     {
-      "subject": "Si-products-b3c6ecb92cd3",
+      "subject": "Si-products-3c48fe595341",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -744,7 +796,7 @@
       ]
     },
     {
-      "subject": "Si-products-b3c6ecb92cd3",
+      "subject": "Si-products-3c48fe595341",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -755,7 +807,7 @@
       ]
     },
     {
-      "subject": "Si-products-b3c6ecb92cd3",
+      "subject": "Si-products-3c48fe595341",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -766,7 +818,7 @@
       ]
     },
     {
-      "subject": "Si-products-ad080159c97e",
+      "subject": "Si-products-d203fa2b2242",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -777,7 +829,7 @@
       ]
     },
     {
-      "subject": "Si-products-ad080159c97e",
+      "subject": "Si-products-d203fa2b2242",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -788,7 +840,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f790841b86a",
+      "subject": "Si-products-3f620e043123",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -799,7 +851,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f790841b86a",
+      "subject": "Si-products-3f620e043123",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -810,7 +862,7 @@
       ]
     },
     {
-      "subject": "Si-products-fbf87a47d2fb",
+      "subject": "Si-products-089b072eabb8",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -821,7 +873,7 @@
       ]
     },
     {
-      "subject": "Si-products-fbf87a47d2fb",
+      "subject": "Si-products-089b072eabb8",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -832,7 +884,7 @@
       ]
     },
     {
-      "subject": "Si-products-c1bcbd9b9ec0",
+      "subject": "Si-products-ef8c30805df4",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -843,7 +895,7 @@
       ]
     },
     {
-      "subject": "Si-products-c1bcbd9b9ec0",
+      "subject": "Si-products-ef8c30805df4",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -854,7 +906,7 @@
       ]
     },
     {
-      "subject": "Si-products-153e9d83ac68",
+      "subject": "Si-products-f18a08af5519",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -865,7 +917,7 @@
       ]
     },
     {
-      "subject": "Si-products-153e9d83ac68",
+      "subject": "Si-products-f18a08af5519",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -876,7 +928,7 @@
       ]
     },
     {
-      "subject": "Si-products-153e9d83ac68",
+      "subject": "Si-products-f18a08af5519",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -887,7 +939,7 @@
       ]
     },
     {
-      "subject": "Si-products-3c32a05acba0",
+      "subject": "Si-products-5b767b7ba2de",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -898,7 +950,7 @@
       ]
     },
     {
-      "subject": "Si-products-3c32a05acba0",
+      "subject": "Si-products-5b767b7ba2de",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -909,7 +961,7 @@
       ]
     },
     {
-      "subject": "Si-products-3c32a05acba0",
+      "subject": "Si-products-5b767b7ba2de",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -920,7 +972,7 @@
       ]
     },
     {
-      "subject": "Si-products-d6010398e58a",
+      "subject": "Si-products-2dbcadf9aad1",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -931,7 +983,7 @@
       ]
     },
     {
-      "subject": "Si-products-d6010398e58a",
+      "subject": "Si-products-2dbcadf9aad1",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -942,7 +994,7 @@
       ]
     },
     {
-      "subject": "Si-products-d6010398e58a",
+      "subject": "Si-products-2dbcadf9aad1",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -953,7 +1005,7 @@
       ]
     },
     {
-      "subject": "Si-products-aa9e3a7485c1",
+      "subject": "Si-products-cc70970b5069",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -964,7 +1016,7 @@
       ]
     },
     {
-      "subject": "Si-products-aa9e3a7485c1",
+      "subject": "Si-products-cc70970b5069",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -975,7 +1027,7 @@
       ]
     },
     {
-      "subject": "Si-products-aa9e3a7485c1",
+      "subject": "Si-products-cc70970b5069",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -986,7 +1038,7 @@
       ]
     },
     {
-      "subject": "Si-products-07fb3d10f039",
+      "subject": "Si-products-ab4f1f34885d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -997,7 +1049,7 @@
       ]
     },
     {
-      "subject": "Si-products-07fb3d10f039",
+      "subject": "Si-products-ab4f1f34885d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1008,7 +1060,7 @@
       ]
     },
     {
-      "subject": "Si-products-1d17eaa1fe36",
+      "subject": "Si-products-1b75d364ad9b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1019,7 +1071,7 @@
       ]
     },
     {
-      "subject": "Si-products-1d17eaa1fe36",
+      "subject": "Si-products-1b75d364ad9b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1030,7 +1082,7 @@
       ]
     },
     {
-      "subject": "Si-products-fff5b3b19703",
+      "subject": "Si-products-d3a59c95c7d3",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -1041,7 +1093,7 @@
       ]
     },
     {
-      "subject": "Si-products-fff5b3b19703",
+      "subject": "Si-products-d3a59c95c7d3",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1052,7 +1104,7 @@
       ]
     },
     {
-      "subject": "Si-products-fff5b3b19703",
+      "subject": "Si-products-d3a59c95c7d3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1063,7 +1115,7 @@
       ]
     },
     {
-      "subject": "Si-products-bb2f4678ac4a",
+      "subject": "Si-products-18441587ad5f",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -1074,7 +1126,7 @@
       ]
     },
     {
-      "subject": "Si-products-bb2f4678ac4a",
+      "subject": "Si-products-18441587ad5f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1085,7 +1137,7 @@
       ]
     },
     {
-      "subject": "Si-products-bb2f4678ac4a",
+      "subject": "Si-products-18441587ad5f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1096,7 +1148,7 @@
       ]
     },
     {
-      "subject": "Si-products-1254152a3e1d",
+      "subject": "Si-products-14b4eeabc072",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1107,7 +1159,7 @@
       ]
     },
     {
-      "subject": "Si-products-1254152a3e1d",
+      "subject": "Si-products-14b4eeabc072",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1118,7 +1170,7 @@
       ]
     },
     {
-      "subject": "Si-products-1254152a3e1d",
+      "subject": "Si-products-14b4eeabc072",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1129,7 +1181,7 @@
       ]
     },
     {
-      "subject": "Si-products-fc0c7f3fdd87",
+      "subject": "Si-products-b3a08b4189b7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1140,7 +1192,7 @@
       ]
     },
     {
-      "subject": "Si-products-fc0c7f3fdd87",
+      "subject": "Si-products-b3a08b4189b7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1151,7 +1203,7 @@
       ]
     },
     {
-      "subject": "Si-products-dbc6e56c6748",
+      "subject": "Si-products-5dfbb88d1891",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1162,7 +1214,7 @@
       ]
     },
     {
-      "subject": "Si-products-dbc6e56c6748",
+      "subject": "Si-products-5dfbb88d1891",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1173,7 +1225,7 @@
       ]
     },
     {
-      "subject": "Si-products-b5727388eb1e",
+      "subject": "Si-products-a0280c339125",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1184,7 +1236,7 @@
       ]
     },
     {
-      "subject": "Si-products-b5727388eb1e",
+      "subject": "Si-products-a0280c339125",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1195,7 +1247,7 @@
       ]
     },
     {
-      "subject": "Si-products-b5727388eb1e",
+      "subject": "Si-products-a0280c339125",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1206,7 +1258,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f63065469b7",
+      "subject": "Si-products-9919e3f79664",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1217,7 +1269,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f63065469b7",
+      "subject": "Si-products-9919e3f79664",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1228,7 +1280,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f63065469b7",
+      "subject": "Si-products-9919e3f79664",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1239,7 +1291,7 @@
       ]
     },
     {
-      "subject": "Si-products-ed6a2068925c",
+      "subject": "Si-products-9c725ffa12bf",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1250,7 +1302,7 @@
       ]
     },
     {
-      "subject": "Si-products-ed6a2068925c",
+      "subject": "Si-products-9c725ffa12bf",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1261,7 +1313,7 @@
       ]
     },
     {
-      "subject": "Si-products-771b4c0aca06",
+      "subject": "Si-products-af704a526515",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1272,7 +1324,7 @@
       ]
     },
     {
-      "subject": "Si-products-771b4c0aca06",
+      "subject": "Si-products-af704a526515",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1283,7 +1335,7 @@
       ]
     },
     {
-      "subject": "Si-products-0c0ff2a52c28",
+      "subject": "Si-products-7c53d3feedea",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1294,7 +1346,7 @@
       ]
     },
     {
-      "subject": "Si-products-0c0ff2a52c28",
+      "subject": "Si-products-7c53d3feedea",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1305,7 +1357,7 @@
       ]
     },
     {
-      "subject": "Si-products-0c0ff2a52c28",
+      "subject": "Si-products-7c53d3feedea",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1316,7 +1368,7 @@
       ]
     },
     {
-      "subject": "Si-products-5b8d060cc69b",
+      "subject": "Si-products-0be651585759",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1327,7 +1379,7 @@
       ]
     },
     {
-      "subject": "Si-products-5b8d060cc69b",
+      "subject": "Si-products-0be651585759",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1338,7 +1390,7 @@
       ]
     },
     {
-      "subject": "Si-products-5b8d060cc69b",
+      "subject": "Si-products-0be651585759",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1349,7 +1401,7 @@
       ]
     },
     {
-      "subject": "Si-products-64e9c7ec5eff",
+      "subject": "Si-products-6f7d50f363e0",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1360,7 +1412,7 @@
       ]
     },
     {
-      "subject": "Si-products-64e9c7ec5eff",
+      "subject": "Si-products-6f7d50f363e0",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1371,7 +1423,7 @@
       ]
     },
     {
-      "subject": "Si-products-a9deb819e9d6",
+      "subject": "Si-products-f40211705973",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1382,7 +1434,7 @@
       ]
     },
     {
-      "subject": "Si-products-a9deb819e9d6",
+      "subject": "Si-products-f40211705973",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1393,7 +1445,7 @@
       ]
     },
     {
-      "subject": "Si-products-1cf235ed25e2",
+      "subject": "Si-products-5ceb28af8966",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -1404,7 +1456,7 @@
       ]
     },
     {
-      "subject": "Si-products-1cf235ed25e2",
+      "subject": "Si-products-5ceb28af8966",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1415,7 +1467,7 @@
       ]
     },
     {
-      "subject": "Si-products-1cf235ed25e2",
+      "subject": "Si-products-5ceb28af8966",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1426,7 +1478,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f73eeee5ec7",
+      "subject": "Si-products-cdc86fa8a4ca",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "deshmukh2022_si"
@@ -1437,7 +1489,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f73eeee5ec7",
+      "subject": "Si-products-cdc86fa8a4ca",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1448,7 +1500,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f73eeee5ec7",
+      "subject": "Si-products-cdc86fa8a4ca",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1459,7 +1511,7 @@
       ]
     },
     {
-      "subject": "Si-products-87cc2c806d35",
+      "subject": "Si-products-73706aa50345",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1470,7 +1522,7 @@
       ]
     },
     {
-      "subject": "Si-products-87cc2c806d35",
+      "subject": "Si-products-73706aa50345",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1481,7 +1533,7 @@
       ]
     },
     {
-      "subject": "Si-products-87cc2c806d35",
+      "subject": "Si-products-73706aa50345",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1492,7 +1544,7 @@
       ]
     },
     {
-      "subject": "Si-products-9ce6d851e54f",
+      "subject": "Si-products-fed077c6c3c2",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "elgueta2026"
@@ -1503,7 +1555,7 @@
       ]
     },
     {
-      "subject": "Si-products-9ce6d851e54f",
+      "subject": "Si-products-fed077c6c3c2",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1514,7 +1566,7 @@
       ]
     },
     {
-      "subject": "Si-products-9ce6d851e54f",
+      "subject": "Si-products-fed077c6c3c2",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1525,7 +1577,7 @@
       ]
     },
     {
-      "subject": "Si-products-917519bb8b08",
+      "subject": "Si-products-c02f58fe561a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1536,7 +1588,7 @@
       ]
     },
     {
-      "subject": "Si-products-917519bb8b08",
+      "subject": "Si-products-c02f58fe561a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1547,7 +1599,7 @@
       ]
     },
     {
-      "subject": "Si-products-d3e7a2d5806c",
+      "subject": "Si-products-530b1effbeb9",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1558,7 +1610,7 @@
       ]
     },
     {
-      "subject": "Si-products-d3e7a2d5806c",
+      "subject": "Si-products-530b1effbeb9",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1569,7 +1621,7 @@
       ]
     },
     {
-      "subject": "Si-products-26c33238276a",
+      "subject": "Si-products-249ff09f5785",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1580,7 +1632,7 @@
       ]
     },
     {
-      "subject": "Si-products-26c33238276a",
+      "subject": "Si-products-249ff09f5785",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1591,7 +1643,7 @@
       ]
     },
     {
-      "subject": "Si-products-f40b7f18aec7",
+      "subject": "Si-products-8d33d2a5bd03",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "pehlivanrhodin2024_si"
@@ -1602,7 +1654,7 @@
       ]
     },
     {
-      "subject": "Si-products-f40b7f18aec7",
+      "subject": "Si-products-8d33d2a5bd03",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1613,7 +1665,7 @@
       ]
     },
     {
-      "subject": "Si-products-399d79152258",
+      "subject": "Si-products-ad1516aa676a",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -1624,7 +1676,7 @@
       ]
     },
     {
-      "subject": "Si-products-399d79152258",
+      "subject": "Si-products-ad1516aa676a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1637,7 +1689,7 @@
       ]
     },
     {
-      "subject": "Si-products-399d79152258",
+      "subject": "Si-products-ad1516aa676a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1648,7 +1700,7 @@
       ]
     },
     {
-      "subject": "Si-products-e56a754ec56c",
+      "subject": "Si-products-f652a0e4af1a",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -1659,7 +1711,7 @@
       ]
     },
     {
-      "subject": "Si-products-e56a754ec56c",
+      "subject": "Si-products-f652a0e4af1a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1672,7 +1724,7 @@
       ]
     },
     {
-      "subject": "Si-products-e56a754ec56c",
+      "subject": "Si-products-f652a0e4af1a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -1684,7 +1736,7 @@
       ]
     },
     {
-      "subject": "Si-products-ba2021480936",
+      "subject": "Si-products-bf0ad65afcb6",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -1695,7 +1747,7 @@
       ]
     },
     {
-      "subject": "Si-products-ba2021480936",
+      "subject": "Si-products-bf0ad65afcb6",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1708,7 +1760,7 @@
       ]
     },
     {
-      "subject": "Si-products-ba2021480936",
+      "subject": "Si-products-bf0ad65afcb6",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1719,7 +1771,7 @@
       ]
     },
     {
-      "subject": "Si-products-c00d8a68c882",
+      "subject": "Si-products-35398cf9b7df",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1732,7 +1784,7 @@
       ]
     },
     {
-      "subject": "Si-products-c00d8a68c882",
+      "subject": "Si-products-35398cf9b7df",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1743,7 +1795,7 @@
       ]
     },
     {
-      "subject": "Si-products-8e0dd07f6984",
+      "subject": "Si-products-f4ff0126ae38",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1756,7 +1808,7 @@
       ]
     },
     {
-      "subject": "Si-products-8e0dd07f6984",
+      "subject": "Si-products-f4ff0126ae38",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -1768,7 +1820,7 @@
       ]
     },
     {
-      "subject": "Si-products-9d2425feeb2a",
+      "subject": "Si-products-af18cd470fc4",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1781,7 +1833,7 @@
       ]
     },
     {
-      "subject": "Si-products-9d2425feeb2a",
+      "subject": "Si-products-af18cd470fc4",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1792,7 +1844,7 @@
       ]
     },
     {
-      "subject": "Si-products-44d8adf7b692",
+      "subject": "Si-products-0a439944d341",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1805,7 +1857,7 @@
       ]
     },
     {
-      "subject": "Si-products-44d8adf7b692",
+      "subject": "Si-products-0a439944d341",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1816,7 +1868,7 @@
       ]
     },
     {
-      "subject": "Si-products-5724d945e6b8",
+      "subject": "Si-products-b829488bfb16",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1829,7 +1881,7 @@
       ]
     },
     {
-      "subject": "Si-products-5724d945e6b8",
+      "subject": "Si-products-b829488bfb16",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -1841,7 +1893,7 @@
       ]
     },
     {
-      "subject": "Si-products-32fad1920f54",
+      "subject": "Si-products-a5bf9ce6fe0e",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1854,7 +1906,7 @@
       ]
     },
     {
-      "subject": "Si-products-32fad1920f54",
+      "subject": "Si-products-a5bf9ce6fe0e",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1865,7 +1917,7 @@
       ]
     },
     {
-      "subject": "Si-products-86963d196c1b",
+      "subject": "Si-products-1df3b7c96665",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -1876,7 +1928,7 @@
       ]
     },
     {
-      "subject": "Si-products-86963d196c1b",
+      "subject": "Si-products-1df3b7c96665",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1889,7 +1941,7 @@
       ]
     },
     {
-      "subject": "Si-products-86963d196c1b",
+      "subject": "Si-products-1df3b7c96665",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1900,7 +1952,7 @@
       ]
     },
     {
-      "subject": "Si-products-b240a324cc32",
+      "subject": "Si-products-ce7dc55ce030",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -1911,7 +1963,7 @@
       ]
     },
     {
-      "subject": "Si-products-b240a324cc32",
+      "subject": "Si-products-ce7dc55ce030",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1924,7 +1976,7 @@
       ]
     },
     {
-      "subject": "Si-products-b240a324cc32",
+      "subject": "Si-products-ce7dc55ce030",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -1936,7 +1988,7 @@
       ]
     },
     {
-      "subject": "Si-products-7fc64a528c54",
+      "subject": "Si-products-2a66b7e29f25",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -1947,7 +1999,7 @@
       ]
     },
     {
-      "subject": "Si-products-7fc64a528c54",
+      "subject": "Si-products-2a66b7e29f25",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1960,7 +2012,7 @@
       ]
     },
     {
-      "subject": "Si-products-7fc64a528c54",
+      "subject": "Si-products-2a66b7e29f25",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -1971,7 +2023,7 @@
       ]
     },
     {
-      "subject": "Si-products-329cbcbeac77",
+      "subject": "Si-products-e030786e4193",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -1984,7 +2036,7 @@
       ]
     },
     {
-      "subject": "Si-products-329cbcbeac77",
+      "subject": "Si-products-e030786e4193",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -1995,7 +2047,7 @@
       ]
     },
     {
-      "subject": "Si-products-99784bfdea9f",
+      "subject": "Si-products-eddfb5337893",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2008,7 +2060,7 @@
       ]
     },
     {
-      "subject": "Si-products-99784bfdea9f",
+      "subject": "Si-products-eddfb5337893",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2020,7 +2072,7 @@
       ]
     },
     {
-      "subject": "Si-products-404ec2791d1e",
+      "subject": "Si-products-9bcbc5568341",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2033,7 +2085,7 @@
       ]
     },
     {
-      "subject": "Si-products-404ec2791d1e",
+      "subject": "Si-products-9bcbc5568341",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2044,7 +2096,7 @@
       ]
     },
     {
-      "subject": "Si-products-00341643fead",
+      "subject": "Si-products-201779679ed3",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2057,7 +2109,7 @@
       ]
     },
     {
-      "subject": "Si-products-00341643fead",
+      "subject": "Si-products-201779679ed3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2068,7 +2120,7 @@
       ]
     },
     {
-      "subject": "Si-products-4b3dba1395ae",
+      "subject": "Si-products-cbd46dd0690f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2081,7 +2133,7 @@
       ]
     },
     {
-      "subject": "Si-products-4b3dba1395ae",
+      "subject": "Si-products-cbd46dd0690f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2093,7 +2145,7 @@
       ]
     },
     {
-      "subject": "Si-products-e43dd39e0d59",
+      "subject": "Si-products-9d4dfb3b9709",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2106,7 +2158,7 @@
       ]
     },
     {
-      "subject": "Si-products-e43dd39e0d59",
+      "subject": "Si-products-9d4dfb3b9709",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2117,7 +2169,7 @@
       ]
     },
     {
-      "subject": "Si-products-39dc00c1a14f",
+      "subject": "Si-products-812a4ad35c4f",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2128,7 +2180,7 @@
       ]
     },
     {
-      "subject": "Si-products-39dc00c1a14f",
+      "subject": "Si-products-812a4ad35c4f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2141,7 +2193,7 @@
       ]
     },
     {
-      "subject": "Si-products-39dc00c1a14f",
+      "subject": "Si-products-812a4ad35c4f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2152,7 +2204,7 @@
       ]
     },
     {
-      "subject": "Si-products-cd8bc6507892",
+      "subject": "Si-products-2b94a6973886",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2163,7 +2215,7 @@
       ]
     },
     {
-      "subject": "Si-products-cd8bc6507892",
+      "subject": "Si-products-2b94a6973886",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2176,7 +2228,7 @@
       ]
     },
     {
-      "subject": "Si-products-cd8bc6507892",
+      "subject": "Si-products-2b94a6973886",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2188,7 +2240,7 @@
       ]
     },
     {
-      "subject": "Si-products-c7a79094da61",
+      "subject": "Si-products-3fa932a3ae63",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2199,7 +2251,7 @@
       ]
     },
     {
-      "subject": "Si-products-c7a79094da61",
+      "subject": "Si-products-3fa932a3ae63",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2212,7 +2264,7 @@
       ]
     },
     {
-      "subject": "Si-products-c7a79094da61",
+      "subject": "Si-products-3fa932a3ae63",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2223,7 +2275,7 @@
       ]
     },
     {
-      "subject": "Si-products-06bc587092cd",
+      "subject": "Si-products-a475214b221c",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2236,7 +2288,7 @@
       ]
     },
     {
-      "subject": "Si-products-06bc587092cd",
+      "subject": "Si-products-a475214b221c",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2247,7 +2299,7 @@
       ]
     },
     {
-      "subject": "Si-products-3763b5ead261",
+      "subject": "Si-products-bf334390d572",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2260,7 +2312,7 @@
       ]
     },
     {
-      "subject": "Si-products-3763b5ead261",
+      "subject": "Si-products-bf334390d572",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2272,7 +2324,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f16da367055",
+      "subject": "Si-products-c80e3f592aad",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2285,7 +2337,7 @@
       ]
     },
     {
-      "subject": "Si-products-8f16da367055",
+      "subject": "Si-products-c80e3f592aad",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2296,7 +2348,7 @@
       ]
     },
     {
-      "subject": "Si-products-a8bae74e1637",
+      "subject": "Si-products-4729f20eafbf",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2309,7 +2361,7 @@
       ]
     },
     {
-      "subject": "Si-products-a8bae74e1637",
+      "subject": "Si-products-4729f20eafbf",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2320,7 +2372,7 @@
       ]
     },
     {
-      "subject": "Si-products-e90f2ed95209",
+      "subject": "Si-products-d2f76d995b6f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2333,7 +2385,7 @@
       ]
     },
     {
-      "subject": "Si-products-e90f2ed95209",
+      "subject": "Si-products-d2f76d995b6f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2345,7 +2397,7 @@
       ]
     },
     {
-      "subject": "Si-products-79251de431b4",
+      "subject": "Si-products-7693f06cebcb",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2358,7 +2410,7 @@
       ]
     },
     {
-      "subject": "Si-products-79251de431b4",
+      "subject": "Si-products-7693f06cebcb",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2369,7 +2421,7 @@
       ]
     },
     {
-      "subject": "Si-products-b657c77ce6c1",
+      "subject": "Si-products-8a270cc94527",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2380,7 +2432,7 @@
       ]
     },
     {
-      "subject": "Si-products-b657c77ce6c1",
+      "subject": "Si-products-8a270cc94527",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2393,7 +2445,7 @@
       ]
     },
     {
-      "subject": "Si-products-b657c77ce6c1",
+      "subject": "Si-products-8a270cc94527",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2404,7 +2456,7 @@
       ]
     },
     {
-      "subject": "Si-products-97cb84e08024",
+      "subject": "Si-products-1b84a11d65aa",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2415,7 +2467,7 @@
       ]
     },
     {
-      "subject": "Si-products-97cb84e08024",
+      "subject": "Si-products-1b84a11d65aa",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2428,7 +2480,7 @@
       ]
     },
     {
-      "subject": "Si-products-97cb84e08024",
+      "subject": "Si-products-1b84a11d65aa",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2440,7 +2492,7 @@
       ]
     },
     {
-      "subject": "Si-products-a7cd9505fdba",
+      "subject": "Si-products-ef1d9ee63a59",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2451,7 +2503,7 @@
       ]
     },
     {
-      "subject": "Si-products-a7cd9505fdba",
+      "subject": "Si-products-ef1d9ee63a59",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2464,7 +2516,7 @@
       ]
     },
     {
-      "subject": "Si-products-a7cd9505fdba",
+      "subject": "Si-products-ef1d9ee63a59",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2475,7 +2527,7 @@
       ]
     },
     {
-      "subject": "Si-products-d073ae2a2257",
+      "subject": "Si-products-9ebc9febf743",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2490,7 +2542,7 @@
       ]
     },
     {
-      "subject": "Si-products-d073ae2a2257",
+      "subject": "Si-products-9ebc9febf743",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2501,7 +2553,7 @@
       ]
     },
     {
-      "subject": "Si-products-09760af0cf60",
+      "subject": "Si-products-2ba0caf3f075",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2514,7 +2566,7 @@
       ]
     },
     {
-      "subject": "Si-products-09760af0cf60",
+      "subject": "Si-products-2ba0caf3f075",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2526,7 +2578,7 @@
       ]
     },
     {
-      "subject": "Si-products-3d989c66efeb",
+      "subject": "Si-products-ffb0b033bab3",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2541,7 +2593,7 @@
       ]
     },
     {
-      "subject": "Si-products-3d989c66efeb",
+      "subject": "Si-products-ffb0b033bab3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2552,7 +2604,7 @@
       ]
     },
     {
-      "subject": "Si-products-6dbf4752431e",
+      "subject": "Si-products-af3698981cb9",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2565,7 +2617,7 @@
       ]
     },
     {
-      "subject": "Si-products-6dbf4752431e",
+      "subject": "Si-products-af3698981cb9",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2576,7 +2628,7 @@
       ]
     },
     {
-      "subject": "Si-products-65d308abd42b",
+      "subject": "Si-products-fb077c87d369",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2589,7 +2641,7 @@
       ]
     },
     {
-      "subject": "Si-products-65d308abd42b",
+      "subject": "Si-products-fb077c87d369",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2601,7 +2653,7 @@
       ]
     },
     {
-      "subject": "Si-products-eb98a2ca787c",
+      "subject": "Si-products-a6a0c08adfbb",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2614,7 +2666,7 @@
       ]
     },
     {
-      "subject": "Si-products-eb98a2ca787c",
+      "subject": "Si-products-a6a0c08adfbb",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2625,7 +2677,7 @@
       ]
     },
     {
-      "subject": "Si-products-c0f52cd2b939",
+      "subject": "Si-products-bd0112a34852",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2636,7 +2688,7 @@
       ]
     },
     {
-      "subject": "Si-products-c0f52cd2b939",
+      "subject": "Si-products-bd0112a34852",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2649,7 +2701,7 @@
       ]
     },
     {
-      "subject": "Si-products-c0f52cd2b939",
+      "subject": "Si-products-bd0112a34852",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2660,7 +2712,7 @@
       ]
     },
     {
-      "subject": "Si-products-e2d52b23cce2",
+      "subject": "Si-products-4f7fd0aea6dc",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2671,7 +2723,7 @@
       ]
     },
     {
-      "subject": "Si-products-e2d52b23cce2",
+      "subject": "Si-products-4f7fd0aea6dc",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2684,7 +2736,7 @@
       ]
     },
     {
-      "subject": "Si-products-e2d52b23cce2",
+      "subject": "Si-products-4f7fd0aea6dc",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2696,7 +2748,7 @@
       ]
     },
     {
-      "subject": "Si-products-e6d971e0b94c",
+      "subject": "Si-products-21a5c2084d7c",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2707,7 +2759,7 @@
       ]
     },
     {
-      "subject": "Si-products-e6d971e0b94c",
+      "subject": "Si-products-21a5c2084d7c",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2720,7 +2772,7 @@
       ]
     },
     {
-      "subject": "Si-products-e6d971e0b94c",
+      "subject": "Si-products-21a5c2084d7c",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2731,7 +2783,7 @@
       ]
     },
     {
-      "subject": "Si-products-0f3e0551bc3d",
+      "subject": "Si-products-e33022cad801",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2746,7 +2798,7 @@
       ]
     },
     {
-      "subject": "Si-products-0f3e0551bc3d",
+      "subject": "Si-products-e33022cad801",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2757,7 +2809,7 @@
       ]
     },
     {
-      "subject": "Si-products-570a2042f74e",
+      "subject": "Si-products-d7742f633779",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2770,7 +2822,7 @@
       ]
     },
     {
-      "subject": "Si-products-570a2042f74e",
+      "subject": "Si-products-d7742f633779",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2782,7 +2834,7 @@
       ]
     },
     {
-      "subject": "Si-products-7ffe29671e4d",
+      "subject": "Si-products-2da26f08921a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2797,7 +2849,7 @@
       ]
     },
     {
-      "subject": "Si-products-7ffe29671e4d",
+      "subject": "Si-products-2da26f08921a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2808,7 +2860,7 @@
       ]
     },
     {
-      "subject": "Si-products-f12901402645",
+      "subject": "Si-products-6bfebae8791f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2821,7 +2873,7 @@
       ]
     },
     {
-      "subject": "Si-products-f12901402645",
+      "subject": "Si-products-6bfebae8791f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2832,7 +2884,7 @@
       ]
     },
     {
-      "subject": "Si-products-475cbc839e72",
+      "subject": "Si-products-5e3e305c6da5",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2845,7 +2897,7 @@
       ]
     },
     {
-      "subject": "Si-products-475cbc839e72",
+      "subject": "Si-products-5e3e305c6da5",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2857,7 +2909,7 @@
       ]
     },
     {
-      "subject": "Si-products-24e55c1ecea5",
+      "subject": "Si-products-2cd1381c196a",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2870,7 +2922,7 @@
       ]
     },
     {
-      "subject": "Si-products-24e55c1ecea5",
+      "subject": "Si-products-2cd1381c196a",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2881,7 +2933,7 @@
       ]
     },
     {
-      "subject": "Si-products-91cdd1cf5623",
+      "subject": "Si-products-f860250be294",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2892,7 +2944,7 @@
       ]
     },
     {
-      "subject": "Si-products-91cdd1cf5623",
+      "subject": "Si-products-f860250be294",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2905,7 +2957,7 @@
       ]
     },
     {
-      "subject": "Si-products-91cdd1cf5623",
+      "subject": "Si-products-f860250be294",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -2916,7 +2968,7 @@
       ]
     },
     {
-      "subject": "Si-products-76551597a1d6",
+      "subject": "Si-products-f43ce57f41af",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2927,7 +2979,7 @@
       ]
     },
     {
-      "subject": "Si-products-76551597a1d6",
+      "subject": "Si-products-f43ce57f41af",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2940,7 +2992,7 @@
       ]
     },
     {
-      "subject": "Si-products-76551597a1d6",
+      "subject": "Si-products-f43ce57f41af",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -2952,7 +3004,7 @@
       ]
     },
     {
-      "subject": "Si-products-288b8030736c",
+      "subject": "Si-products-0c064f5e0eda",
       "layer": "Solar abundance and indicator analyses",
       "reference_ids": [
         "amarsi2017_si"
@@ -2963,7 +3015,7 @@
       ]
     },
     {
-      "subject": "Si-products-288b8030736c",
+      "subject": "Si-products-0c064f5e0eda",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -2976,7 +3028,7 @@
       ]
     },
     {
-      "subject": "Si-products-288b8030736c",
+      "subject": "Si-products-0c064f5e0eda",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -2987,7 +3039,7 @@
       ]
     },
     {
-      "subject": "Si-products-11510ddc4eb0",
+      "subject": "Si-products-2952f00b50b7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -3002,7 +3054,7 @@
       ]
     },
     {
-      "subject": "Si-products-11510ddc4eb0",
+      "subject": "Si-products-2952f00b50b7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -3013,7 +3065,7 @@
       ]
     },
     {
-      "subject": "Si-products-af09e5e283d3",
+      "subject": "Si-products-3c7d58f61b27",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -3026,7 +3078,7 @@
       ]
     },
     {
-      "subject": "Si-products-af09e5e283d3",
+      "subject": "Si-products-3c7d58f61b27",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -3038,7 +3090,7 @@
       ]
     },
     {
-      "subject": "Si-products-886285c645ec",
+      "subject": "Si-products-7f20fd2eb986",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -3053,7 +3105,7 @@
       ]
     },
     {
-      "subject": "Si-products-886285c645ec",
+      "subject": "Si-products-7f20fd2eb986",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -3064,7 +3116,7 @@
       ]
     },
     {
-      "subject": "Si-products-b1d5d2332406",
+      "subject": "Si-products-5364e118d46d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -3077,7 +3129,7 @@
       ]
     },
     {
-      "subject": "Si-products-b1d5d2332406",
+      "subject": "Si-products-5364e118d46d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -3088,7 +3140,7 @@
       ]
     },
     {
-      "subject": "Si-products-88d3364eaa70",
+      "subject": "Si-products-5ee3afd8ac06",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -3101,7 +3153,7 @@
       ]
     },
     {
-      "subject": "Si-products-88d3364eaa70",
+      "subject": "Si-products-5ee3afd8ac06",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2017_si"
@@ -3113,7 +3165,7 @@
       ]
     },
     {
-      "subject": "Si-products-99115adc8bd8",
+      "subject": "Si-products-72df42548ac9",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "amarsi2017_si",
@@ -3126,7 +3178,7 @@
       ]
     },
     {
-      "subject": "Si-products-99115adc8bd8",
+      "subject": "Si-products-72df42548ac9",
       "layer": "Model and grid sources",
       "reference_ids": [
         "amarsi2020_galah"
@@ -3524,7 +3576,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-83868b6649f2",
+      "publication_id": "Si-products-0a2d1d0acae3",
       "source_bucket": "products",
       "source_index": 12,
       "identity": {
@@ -3533,8 +3585,8 @@
         "band": "H",
         "instrument": "crires_plus",
         "holding": "solar_crires_plus_h_rya1232",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "tier": "ALL",
+        "selector": "SET-SI_RYA1397_H",
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -3543,13 +3595,14 @@
       "reference_ids": [
         "asplund2021",
         "lodders2025",
-        "pehlivanrhodin2024_si",
+        "elgueta2026",
+        "kurucz_online",
         "gerber2023"
       ],
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-4e3d20d18453",
+      "publication_id": "Si-products-d1f2d86f538f",
       "source_bucket": "products",
       "source_index": 13,
       "identity": {
@@ -3561,6 +3614,31 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-d4159790a87b",
+      "source_bucket": "products",
+      "source_index": 14,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "H",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_h_rya1232",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3574,33 +3652,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-e5909f30041c",
-      "source_bucket": "products",
-      "source_index": 14,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "K",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_k_rya1219",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "kelleher2008_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-b3ab69cd715a",
+      "publication_id": "Si-products-eabf5dfd7c5f",
       "source_bucket": "products",
       "source_index": 15,
       "identity": {
@@ -3612,6 +3664,32 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "kelleher2008_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-92402a9f9b25",
+      "source_bucket": "products",
+      "source_index": 16,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "K",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_k_rya1219",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3626,33 +3704,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-2c4a49bae319",
-      "source_bucket": "products",
-      "source_index": 16,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_j_rya1219",
-        "tier": "ALL",
-        "selector": "SET-SI_DESHMUKH2022",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "deshmukh2022_si",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-3fcf18c258ba",
+      "publication_id": "Si-products-3be70e99c4ce",
       "source_bucket": "products",
       "source_index": 17,
       "identity": {
@@ -3664,6 +3716,32 @@
         "tier": "ALL",
         "selector": "SET-SI_DESHMUKH2022",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "deshmukh2022_si",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-f738c617d7f8",
+      "source_bucket": "products",
+      "source_index": 18,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_j_rya1219",
+        "tier": "ALL",
+        "selector": "SET-SI_DESHMUKH2022",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3678,9 +3756,9 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-b3c6ecb92cd3",
+      "publication_id": "Si-products-3c48fe595341",
       "source_bucket": "products",
-      "source_index": 18,
+      "source_index": 19,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -3704,32 +3782,7 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-ad080159c97e",
-      "source_bucket": "products",
-      "source_index": 19,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_j_rya1219",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-8f790841b86a",
+      "publication_id": "Si-products-d203fa2b2242",
       "source_bucket": "products",
       "source_index": 20,
       "identity": {
@@ -3741,31 +3794,6 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Si-products-fbf87a47d2fb",
-      "source_bucket": "products",
-      "source_index": 21,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_j_rya1219",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
@@ -3779,7 +3807,32 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-c1bcbd9b9ec0",
+      "publication_id": "Si-products-3f620e043123",
+      "source_bucket": "products",
+      "source_index": 21,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_j_rya1219",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Si-products-089b072eabb8",
       "source_bucket": "products",
       "source_index": 22,
       "identity": {
@@ -3791,6 +3844,31 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-ef8c30805df4",
+      "source_bucket": "products",
+      "source_index": 23,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_j_rya1219",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3804,33 +3882,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-153e9d83ac68",
-      "source_bucket": "products",
-      "source_index": 23,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_y_rya794",
-        "tier": "ALL",
-        "selector": "SET-SI_DESHMUKH2022",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "deshmukh2022_si",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-3c32a05acba0",
+      "publication_id": "Si-products-f18a08af5519",
       "source_bucket": "products",
       "source_index": 24,
       "identity": {
@@ -3842,6 +3894,32 @@
         "tier": "ALL",
         "selector": "SET-SI_DESHMUKH2022",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "deshmukh2022_si",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-5b767b7ba2de",
+      "source_bucket": "products",
+      "source_index": 25,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_rya794",
+        "tier": "ALL",
+        "selector": "SET-SI_DESHMUKH2022",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3856,33 +3934,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-d6010398e58a",
-      "source_bucket": "products",
-      "source_index": 25,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_y_rya794",
-        "tier": "ALL",
-        "selector": "SET-SI_ELGUETA2026",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "elgueta2026",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-aa9e3a7485c1",
+      "publication_id": "Si-products-2dbcadf9aad1",
       "source_bucket": "products",
       "source_index": 26,
       "identity": {
@@ -3894,6 +3946,32 @@
         "tier": "ALL",
         "selector": "SET-SI_ELGUETA2026",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "elgueta2026",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-cc70970b5069",
+      "source_bucket": "products",
+      "source_index": 27,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_rya794",
+        "tier": "ALL",
+        "selector": "SET-SI_ELGUETA2026",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3908,32 +3986,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-07fb3d10f039",
-      "source_bucket": "products",
-      "source_index": 27,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_y_rya794",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-1d17eaa1fe36",
+      "publication_id": "Si-products-ab4f1f34885d",
       "source_bucket": "products",
       "source_index": 28,
       "identity": {
@@ -3945,6 +3998,31 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-1b75d364ad9b",
+      "source_bucket": "products",
+      "source_index": 29,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_rya794",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -3958,33 +4036,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-fff5b3b19703",
-      "source_bucket": "products",
-      "source_index": 29,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_y_wide_rya1054",
-        "tier": "ALL",
-        "selector": "SET-SI_DESHMUKH2022",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "deshmukh2022_si",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-bb2f4678ac4a",
+      "publication_id": "Si-products-d3a59c95c7d3",
       "source_bucket": "products",
       "source_index": 30,
       "identity": {
@@ -3996,6 +4048,32 @@
         "tier": "ALL",
         "selector": "SET-SI_DESHMUKH2022",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "deshmukh2022_si",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-18441587ad5f",
+      "source_bucket": "products",
+      "source_index": 31,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
+        "tier": "ALL",
+        "selector": "SET-SI_DESHMUKH2022",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4010,9 +4088,9 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-1254152a3e1d",
+      "publication_id": "Si-products-14b4eeabc072",
       "source_bucket": "products",
-      "source_index": 31,
+      "source_index": 32,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -4036,32 +4114,7 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-fc0c7f3fdd87",
-      "source_bucket": "products",
-      "source_index": 32,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "crires_plus",
-        "holding": "solar_crires_plus_y_wide_rya1054",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-dbc6e56c6748",
+      "publication_id": "Si-products-b3a08b4189b7",
       "source_bucket": "products",
       "source_index": 33,
       "identity": {
@@ -4073,6 +4126,31 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-5dfbb88d1891",
+      "source_bucket": "products",
+      "source_index": 34,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "crires_plus",
+        "holding": "solar_crires_plus_y_wide_rya1054",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4086,33 +4164,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-b5727388eb1e",
-      "source_bucket": "products",
-      "source_index": 34,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-SI_ELGUETA2026",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "elgueta2026",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-8f63065469b7",
+      "publication_id": "Si-products-a0280c339125",
       "source_bucket": "products",
       "source_index": 35,
       "identity": {
@@ -4124,6 +4176,32 @@
         "tier": "ALL",
         "selector": "SET-SI_ELGUETA2026",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "elgueta2026",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-9919e3f79664",
+      "source_bucket": "products",
+      "source_index": 36,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-SI_ELGUETA2026",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4138,32 +4216,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-ed6a2068925c",
-      "source_bucket": "products",
-      "source_index": 36,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-771b4c0aca06",
+      "publication_id": "Si-products-9c725ffa12bf",
       "source_bucket": "products",
       "source_index": 37,
       "identity": {
@@ -4175,6 +4228,31 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-af704a526515",
+      "source_bucket": "products",
+      "source_index": 38,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4188,33 +4266,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-0c0ff2a52c28",
-      "source_bucket": "products",
-      "source_index": 38,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_ELGUETA2026",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "elgueta2026",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-5b8d060cc69b",
+      "publication_id": "Si-products-7c53d3feedea",
       "source_bucket": "products",
       "source_index": 39,
       "identity": {
@@ -4226,6 +4278,32 @@
         "tier": "ALL",
         "selector": "SET-SI_ELGUETA2026",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "elgueta2026",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-0be651585759",
+      "source_bucket": "products",
+      "source_index": 40,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_ELGUETA2026",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4240,32 +4318,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-64e9c7ec5eff",
-      "source_bucket": "products",
-      "source_index": 40,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-a9deb819e9d6",
+      "publication_id": "Si-products-6f7d50f363e0",
       "source_bucket": "products",
       "source_index": 41,
       "identity": {
@@ -4277,6 +4330,31 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-f40211705973",
+      "source_bucket": "products",
+      "source_index": 42,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4290,33 +4368,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-1cf235ed25e2",
-      "source_bucket": "products",
-      "source_index": 42,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_DESHMUKH2022",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "deshmukh2022_si",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-8f73eeee5ec7",
+      "publication_id": "Si-products-5ceb28af8966",
       "source_bucket": "products",
       "source_index": 43,
       "identity": {
@@ -4328,6 +4380,32 @@
         "tier": "ALL",
         "selector": "SET-SI_DESHMUKH2022",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "deshmukh2022_si",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-cdc86fa8a4ca",
+      "source_bucket": "products",
+      "source_index": 44,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_DESHMUKH2022",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4342,33 +4420,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-87cc2c806d35",
-      "source_bucket": "products",
-      "source_index": 44,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_ELGUETA2026",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "elgueta2026",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-9ce6d851e54f",
+      "publication_id": "Si-products-73706aa50345",
       "source_bucket": "products",
       "source_index": 45,
       "identity": {
@@ -4380,6 +4432,32 @@
         "tier": "ALL",
         "selector": "SET-SI_ELGUETA2026",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "elgueta2026",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-fed077c6c3c2",
+      "source_bucket": "products",
+      "source_index": 46,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_ELGUETA2026",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4394,32 +4472,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-917519bb8b08",
-      "source_bucket": "products",
-      "source_index": 46,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-d3e7a2d5806c",
+      "publication_id": "Si-products-c02f58fe561a",
       "source_bucket": "products",
       "source_index": 47,
       "identity": {
@@ -4431,31 +4484,6 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "pehlivanrhodin2024_si",
-        "amarsi2020_galah"
-      ],
-      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
-    },
-    {
-      "publication_id": "Si-products-26c33238276a",
-      "source_bucket": "products",
-      "source_index": 48,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "NIR",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
@@ -4469,7 +4497,32 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-f40b7f18aec7",
+      "publication_id": "Si-products-530b1effbeb9",
+      "source_bucket": "products",
+      "source_index": 48,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-A",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "amarsi2020_galah"
+      ],
+      "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
+    },
+    {
+      "publication_id": "Si-products-249ff09f5785",
       "source_bucket": "products",
       "source_index": 49,
       "identity": {
@@ -4481,6 +4534,31 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-8d33d2a5bd03",
+      "source_bucket": "products",
+      "source_index": 50,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "NIR",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4494,34 +4572,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-399d79152258",
-      "source_bucket": "products",
-      "source_index": 50,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-e56a754ec56c",
+      "publication_id": "Si-products-ad1516aa676a",
       "source_bucket": "products",
       "source_index": 51,
       "identity": {
@@ -4533,7 +4584,7 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4542,12 +4593,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-ba2021480936",
+      "publication_id": "Si-products-f652a0e4af1a",
       "source_bucket": "products",
       "source_index": 52,
       "identity": {
@@ -4559,6 +4611,32 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-bf0ad65afcb6",
+      "source_bucket": "products",
+      "source_index": 53,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_AGSS21",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4574,34 +4652,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-c00d8a68c882",
-      "source_bucket": "products",
-      "source_index": 53,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-8e0dd07f6984",
+      "publication_id": "Si-products-35398cf9b7df",
       "source_bucket": "products",
       "source_index": 54,
       "identity": {
@@ -4613,7 +4664,7 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4622,12 +4673,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-9d2425feeb2a",
+      "publication_id": "Si-products-f4ff0126ae38",
       "source_bucket": "products",
       "source_index": 55,
       "identity": {
@@ -4639,6 +4691,32 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-af18cd470fc4",
+      "source_bucket": "products",
+      "source_index": 56,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4654,34 +4732,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-44d8adf7b692",
-      "source_bucket": "products",
-      "source_index": 56,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "harps",
-        "holding": "solar_harps_molecfit_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-5724d945e6b8",
+      "publication_id": "Si-products-0a439944d341",
       "source_bucket": "products",
       "source_index": 57,
       "identity": {
@@ -4693,6 +4744,33 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-b829488bfb16",
+      "source_bucket": "products",
+      "source_index": 58,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "harps",
+        "holding": "solar_harps_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
         "indicator": null
@@ -4707,9 +4785,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-32fad1920f54",
+      "publication_id": "Si-products-a5bf9ce6fe0e",
       "source_bucket": "products",
-      "source_index": 58,
+      "source_index": 59,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -4734,34 +4812,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-86963d196c1b",
-      "source_bucket": "products",
-      "source_index": 59,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-b240a324cc32",
+      "publication_id": "Si-products-1df3b7c96665",
       "source_bucket": "products",
       "source_index": 60,
       "identity": {
@@ -4773,7 +4824,7 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4782,12 +4833,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-7fc64a528c54",
+      "publication_id": "Si-products-ce7dc55ce030",
       "source_bucket": "products",
       "source_index": 61,
       "identity": {
@@ -4799,6 +4851,32 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-2a66b7e29f25",
+      "source_bucket": "products",
+      "source_index": 62,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_AGSS21",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4814,34 +4892,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-329cbcbeac77",
-      "source_bucket": "products",
-      "source_index": 62,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-99784bfdea9f",
+      "publication_id": "Si-products-e030786e4193",
       "source_bucket": "products",
       "source_index": 63,
       "identity": {
@@ -4853,7 +4904,7 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4862,12 +4913,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-404ec2791d1e",
+      "publication_id": "Si-products-eddfb5337893",
       "source_bucket": "products",
       "source_index": 64,
       "identity": {
@@ -4879,6 +4931,32 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-9bcbc5568341",
+      "source_bucket": "products",
+      "source_index": 65,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4894,34 +4972,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-00341643fead",
-      "source_bucket": "products",
-      "source_index": 65,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-4b3dba1395ae",
+      "publication_id": "Si-products-201779679ed3",
       "source_bucket": "products",
       "source_index": 66,
       "identity": {
@@ -4933,7 +4984,7 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -4942,12 +4993,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-e43dd39e0d59",
+      "publication_id": "Si-products-cbd46dd0690f",
       "source_bucket": "products",
       "source_index": 67,
       "identity": {
@@ -4959,6 +5011,32 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-9d4dfb3b9709",
+      "source_bucket": "products",
+      "source_index": 68,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -4974,34 +5052,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-39dc00c1a14f",
-      "source_bucket": "products",
-      "source_index": 68,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-cd8bc6507892",
+      "publication_id": "Si-products-812a4ad35c4f",
       "source_bucket": "products",
       "source_index": 69,
       "identity": {
@@ -5013,7 +5064,7 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -5022,12 +5073,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-c7a79094da61",
+      "publication_id": "Si-products-2b94a6973886",
       "source_bucket": "products",
       "source_index": 70,
       "identity": {
@@ -5039,6 +5091,32 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-3fa932a3ae63",
+      "source_bucket": "products",
+      "source_index": 71,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_AGSS21",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -5054,34 +5132,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-06bc587092cd",
-      "source_bucket": "products",
-      "source_index": 71,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-3763b5ead261",
+      "publication_id": "Si-products-a475214b221c",
       "source_bucket": "products",
       "source_index": 72,
       "identity": {
@@ -5093,7 +5144,7 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -5102,12 +5153,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-8f16da367055",
+      "publication_id": "Si-products-bf334390d572",
       "source_bucket": "products",
       "source_index": 73,
       "identity": {
@@ -5119,6 +5171,32 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-c80e3f592aad",
+      "source_bucket": "products",
+      "source_index": 74,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -5134,34 +5212,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-a8bae74e1637",
-      "source_bucket": "products",
-      "source_index": 74,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "VIS",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-e90f2ed95209",
+      "publication_id": "Si-products-4729f20eafbf",
       "source_bucket": "products",
       "source_index": 75,
       "identity": {
@@ -5173,6 +5224,33 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-d2f76d995b6f",
+      "source_bucket": "products",
+      "source_index": 76,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "VIS",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
         "indicator": null
@@ -5187,9 +5265,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-79251de431b4",
+      "publication_id": "Si-products-7693f06cebcb",
       "source_bucket": "products",
-      "source_index": 76,
+      "source_index": 77,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5214,34 +5292,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-b657c77ce6c1",
-      "source_bucket": "products",
-      "source_index": 77,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "ALL",
-        "selector": "SET-SI_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-97cb84e08024",
+      "publication_id": "Si-products-8a270cc94527",
       "source_bucket": "products",
       "source_index": 78,
       "identity": {
@@ -5253,7 +5304,7 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -5262,12 +5313,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-a7cd9505fdba",
+      "publication_id": "Si-products-1b84a11d65aa",
       "source_bucket": "products",
       "source_index": 79,
       "identity": {
@@ -5279,6 +5331,32 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-ef1d9ee63a59",
+      "source_bucket": "products",
+      "source_index": 80,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "ALL",
+        "selector": "SET-SI_AGSS21",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -5294,36 +5372,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-d073ae2a2257",
-      "source_bucket": "products",
-      "source_index": 80,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "kelleher2008_si",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-09760af0cf60",
+      "publication_id": "Si-products-9ebc9febf743",
       "source_bucket": "products",
       "source_index": 81,
       "identity": {
@@ -5335,7 +5384,7 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -5344,12 +5393,15 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "kelleher2008_si",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-3d989c66efeb",
+      "publication_id": "Si-products-2ba0caf3f075",
       "source_bucket": "products",
       "source_index": 82,
       "identity": {
@@ -5361,6 +5413,32 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-ffb0b033bab3",
+      "source_bucket": "products",
+      "source_index": 83,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -5378,34 +5456,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-6dbf4752431e",
-      "source_bucket": "products",
-      "source_index": 83,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-65d308abd42b",
+      "publication_id": "Si-products-af3698981cb9",
       "source_bucket": "products",
       "source_index": 84,
       "identity": {
@@ -5417,6 +5468,33 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-fb077c87d369",
+      "source_bucket": "products",
+      "source_index": 85,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
         "indicator": null
@@ -5431,9 +5509,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-eb98a2ca787c",
+      "publication_id": "Si-products-a6a0c08adfbb",
       "source_bucket": "products",
-      "source_index": 85,
+      "source_index": 86,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5458,34 +5536,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-c0f52cd2b939",
-      "source_bucket": "products",
-      "source_index": 86,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-e2d52b23cce2",
+      "publication_id": "Si-products-bd0112a34852",
       "source_bucket": "products",
       "source_index": 87,
       "identity": {
@@ -5497,7 +5548,7 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -5506,12 +5557,13 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-e6d971e0b94c",
+      "publication_id": "Si-products-4f7fd0aea6dc",
       "source_bucket": "products",
       "source_index": 88,
       "identity": {
@@ -5523,6 +5575,32 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-21a5c2084d7c",
+      "source_bucket": "products",
+      "source_index": 89,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_AGSS21",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -5538,36 +5616,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-0f3e0551bc3d",
-      "source_bucket": "products",
-      "source_index": 89,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "kelleher2008_si",
-        "pehlivanrhodin2024_si",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-570a2042f74e",
+      "publication_id": "Si-products-e33022cad801",
       "source_bucket": "products",
       "source_index": 90,
       "identity": {
@@ -5579,7 +5628,7 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
-        "treatment": "ENGINE-A-3DNLTE",
+        "treatment": "1D-LTE",
         "line_set": null,
         "indicator": null
       },
@@ -5588,12 +5637,15 @@
         "lodders2025",
         "amarsi2017_si",
         "garz1973",
-        "obrian1991"
+        "obrian1991",
+        "kelleher2008_si",
+        "pehlivanrhodin2024_si",
+        "gerber2023"
       ],
-      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-7ffe29671e4d",
+      "publication_id": "Si-products-d7742f633779",
       "source_bucket": "products",
       "source_index": 91,
       "identity": {
@@ -5605,6 +5657,32 @@
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
+        "treatment": "ENGINE-A-3DNLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991"
+      ],
+      "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
+    },
+    {
+      "publication_id": "Si-products-2da26f08921a",
+      "source_bucket": "products",
+      "source_index": 92,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
         "treatment": "ENGINE-A",
         "line_set": null,
         "indicator": null
@@ -5622,34 +5700,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-f12901402645",
-      "source_bucket": "products",
-      "source_index": 92,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
-        "tier": "REFERENCE",
-        "selector": "REFERENCE",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-475cbc839e72",
+      "publication_id": "Si-products-6bfebae8791f",
       "source_bucket": "products",
       "source_index": 93,
       "identity": {
@@ -5661,6 +5712,33 @@
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-5e3e305c6da5",
+      "source_bucket": "products",
+      "source_index": 94,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
         "indicator": null
@@ -5675,9 +5753,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-24e55c1ecea5",
+      "publication_id": "Si-products-2cd1381c196a",
       "source_bucket": "products",
-      "source_index": 94,
+      "source_index": 95,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5702,34 +5780,7 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-91cdd1cf5623",
-      "source_bucket": "products",
-      "source_index": 95,
-      "identity": {
-        "element": "Si",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "ALL",
-        "selector": "SET-SI_AGSS21",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "amarsi2017_si",
-        "garz1973",
-        "obrian1991",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Si-products-76551597a1d6",
+      "publication_id": "Si-products-f860250be294",
       "source_bucket": "products",
       "source_index": 96,
       "identity": {
@@ -5741,6 +5792,33 @@
         "tier": "ALL",
         "selector": "SET-SI_AGSS21",
         "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "amarsi2017_si",
+        "garz1973",
+        "obrian1991",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Si-products-f43ce57f41af",
+      "source_bucket": "products",
+      "source_index": 97,
+      "identity": {
+        "element": "Si",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "ALL",
+        "selector": "SET-SI_AGSS21",
+        "route": "SYNTH",
         "treatment": "ENGINE-A-3DNLTE",
         "line_set": null,
         "indicator": null
@@ -5755,9 +5833,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-288b8030736c",
+      "publication_id": "Si-products-0c064f5e0eda",
       "source_bucket": "products",
-      "source_index": 97,
+      "source_index": 98,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5782,9 +5860,9 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-11510ddc4eb0",
+      "publication_id": "Si-products-2952f00b50b7",
       "source_bucket": "products",
-      "source_index": 98,
+      "source_index": 99,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5811,9 +5889,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-af09e5e283d3",
+      "publication_id": "Si-products-3c7d58f61b27",
       "source_bucket": "products",
-      "source_index": 99,
+      "source_index": 100,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5837,9 +5915,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-886285c645ec",
+      "publication_id": "Si-products-7f20fd2eb986",
       "source_bucket": "products",
-      "source_index": 100,
+      "source_index": 101,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5866,9 +5944,9 @@
       "model_note": "Feed treatment: 1D NLTE, per-line correction from the Amarsi 2020 GALAH departure grid via PySME (data/nlte_grids/Si_Amarsi2020_PySME.csv)."
     },
     {
-      "publication_id": "Si-products-b1d5d2332406",
+      "publication_id": "Si-products-5364e118d46d",
       "source_bucket": "products",
-      "source_index": 101,
+      "source_index": 102,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5893,9 +5971,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Si-products-88d3364eaa70",
+      "publication_id": "Si-products-5ee3afd8ac06",
       "source_bucket": "products",
-      "source_index": 102,
+      "source_index": 103,
       "identity": {
         "element": "Si",
         "ion": "I",
@@ -5919,9 +5997,9 @@
       "model_note": "Cited solar abundance differences from the published model columns, applied additively to our LTE fits; not a new in-transfer 3D calculation. Baseline atmosphere: A_marcs_lte"
     },
     {
-      "publication_id": "Si-products-99115adc8bd8",
+      "publication_id": "Si-products-72df42548ac9",
       "source_bucket": "products",
-      "source_index": 103,
+      "source_index": 104,
       "identity": {
         "element": "Si",
         "ion": "I",

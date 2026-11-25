@@ -1629,7 +1629,7 @@ window.SOLAR_REPORT = {
       "name": "Silicon",
       "status": "Published",
       "tier": "",
-      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.580, Si II VIS 7.522, Si I red-optical 7.650 (Si.json v1.421)",
+      "method": "Asplund+2021 line set, 10 lines on kpno_solar_atlas: Si I VIS 7.580, Si II VIS 7.522, Si I red-optical 7.650 (Si.json v1.422)",
       "asplund": 7.51,
       "measurementNote": "",
       "appendixPath": "/systems/sol/elements/si/",
