@@ -26,13 +26,20 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('assets/data/cno-publication')
 AUDIT = 'data/audit/rya1214_cno_products/'
 IDENTITY = ('element', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'line_set', 'indicator')
-NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium', Cr='Chromium', V='Vanadium')
+NAMES = dict(C='Carbon', N='Nitrogen', O='Oxygen', Si='Silicon', Al='Aluminium', Mg='Magnesium', Na='Sodium', Ca='Calcium', Ti='Titanium', Cr='Chromium', V='Vanadium', Ni='Nickel')
 #: Elements measured on molecular indicators too; the rest are atomic-only (RYA-1233).
 CNO = ('C', 'N', 'O')
 #: Reader-facing instrument names. Unknown ids fall through unchanged rather than raising.
 LABELS = {'harps': 'HARPS', 'kpno_solar_atlas': 'Kitt Peak',
           'iag_fts_solar_atlas': 'IAG FTS', 'crires_plus': 'CRIRES+'}
 CONTEXT = {
+    'Ni': ('Solar nickel is measured from neutral Ni I lines and compared with ionized Ni II. '
+           'The optical Ni I products include laboratory oscillator strengths. The infrared '
+           'Ni I set uses the lines Elgueta et al. 2026 identified as reliable for Sun-like '
+           'stars and calculated oscillator strengths. The Ni II set uses calculated oscillator '
+           'strengths from Clear et al. 2026. Both sets are shown as Theoretical Codex. '
+           'The H-band result is sensitive to continuum placement. The nickel model atom '
+           'supports non-LTE line formation for Ni I.'),
     'V': ('Vanadium is measured from neutral V I and ionized V II lines in the visible and red. '
           'Most vanadium lines are split into many closely spaced parts by the nucleus (hyperfine '
           'structure), and the line lists carry every part, so each line is fitted as the whole group. '
