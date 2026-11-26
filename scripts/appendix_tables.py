@@ -79,7 +79,7 @@ def _fe_tables(body, products, ion):
             if p.get('telluric_state'):
                 provenance += '<small>' + escape(str(p['telluric_state'])) + '</small>'
             notes = escape(str(p.get('dominant_term') or 'budget not attached'))
-            notes += '<small>ξ ' + escape(str(p['xi_state'])) + '</small>'
+            notes += '<small>ξ ' + escape(str(p.get('xi_state') or 'unmeasured')) + '</small>'
             if p.get('sigma_reported_caveat'):
                 notes += '<small>' + escape(p['sigma_reported_caveat']) + '</small>'
             if p.get('adoption') == 'EXPERIMENTAL-NOT-ADOPTED':
