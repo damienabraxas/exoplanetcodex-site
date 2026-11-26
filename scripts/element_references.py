@@ -95,11 +95,12 @@ def reconcile_atomic(science, element, feed, audit):
         sel = str(p.get('selector') or '')
         m = re.match(r'SET-(.+)$', sel)
         if m:
-            k = set_key.get(m.group(1))
+            name = m.group(1).removesuffix('-FREECONT')
+            k = set_key.get(name)
             if not k:
-                raise ValueError(f'{subject}: line set {m.group(1)} has no registry bibliography_key')
+                raise ValueError(f'{subject}: line set {name} has no registry bibliography_key')
             keys.append(ref(k))
-            bind(subject, LAYER_ORDER[0], [k], f'Published line set {m.group(1)} (the line selection).', [SETS])
+            bind(subject, LAYER_ORDER[0], [k], f'Published line set {name} (the line selection).', [SETS])
         u = p.get('uncertainty')
         u = json.loads(u) if isinstance(u, str) else (u or {})
         td = next((c for c in u.get('components', []) if c.get('name') == 'transition_data'), {})
@@ -134,12 +135,20 @@ def reconcile_atomic(science, element, feed, audit):
             # The Theoretical Codex set CR_ELGUETA2026 records its gf delivery as 'VALD3'; the
             # values are Kurucz 2016 calculations (science SOURCES.yaml gf_basis), so the gf is
             # cited to Kurucz's database with VALD (Ryabchikova+2015) as the delivery lineage.
-            if key is None and str(s).strip() == 'VALD3' and sel == 'SET-CR_ELGUETA2026':
+            if key is None and str(s).strip() == 'VALD3' and sel.removesuffix('-FREECONT') in (
+                    'SET-CR_ELGUETA2026', 'SET-NI_ELGUETA2026'):
                 key = 'kurucz_online'
                 gf += [ref('ryabchikova2015')]
             # The GES v5 report maps K07 to Kurucz's calculated oscillator strengths.
-            if key is None and str(s).strip() == 'K07':
+            if key is None and str(s).strip() in ('K07', 'K08'):
                 key = 'kurucz_online'
+            if key is None and str(s).strip() == '2003ApJ...' and element == 'Ni' and sel == 'SET-NI_AGSS21':
+                bind(subject, LAYER_ORDER[1], [ref(set_key['NI_AGSS21'])],
+                     'Scott et al. list the same log gf for the 4811.98 Å feature. '
+                     'The truncated synthesis-list citation cannot identify its source.',
+                     ['data/reference/line_sets/ni_agss21_NiI.csv'])
+                paths.add('data/reference/line_sets/ni_agss21_NiI.csv')
+                continue
             if key is None:
                 raise ValueError(f'{subject}: gf source {s!r} is not in the bibliography')
             gf += [ref(key)] + [ref(x) for x in GF_LINEAGE.get(key, [])]
