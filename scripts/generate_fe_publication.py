@@ -57,7 +57,8 @@ VERSION = '1.0.0'
 #: Plain-language names for published-line-set selectors (site rule: no internal IDs). The
 #: same wording the C/N/O/Si/Al pages use (generate_cno_publication.INDICATOR_NAMES).
 SELECTOR_NAMES = {'SET-FE_AGSS21': 'Asplund et al. 2021 lines',
-                  'ASPLUND_AGSS21': 'Asplund et al. 2021 lines'}
+                  'ASPLUND_AGSS21': 'Asplund et al. 2021 lines',
+                  'SET-FE_RYA1397_REDOPT': 'Fe I 8293.513 Å supplemental line'}
 
 
 
@@ -154,6 +155,13 @@ def line_exports(science, products):
             candidate = science / p['provenance']['copied_to'].replace('_products.csv', '_per_line.csv')
             if candidate.is_file():
                 path, reason = str(candidate), 'resolved from product provenance'
+        if not path and p.get('selector') == 'SET-FE_RYA1397_REDOPT':
+            source = science / p['provenance']['copied_to']
+            suffix = f"_{p['treatment']}_lines.csv"
+            stem = source.name.removesuffix('_products.csv').removesuffix('_ENGINE-A')
+            candidate = source.with_name(stem + suffix)
+            if candidate.is_file():
+                path, reason = str(candidate), 'resolved from committed product sidecar'
         entry = {k: p.get(k) for k in ['publication_id', 'ion', 'band', 'instrument', 'holding', 'tier', 'selector', 'route', 'treatment', 'A', 'n_lines']}
         if path:
             df = read_csv(path)
@@ -344,7 +352,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     definitions = {
         'Reference Grade': 'An externally published reference line pool, using that reference’s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.',
         'Codex Grade': 'The vetted Codex pool of primary-laboratory oscillator strengths, restricted to lines at or below the adopted feature-depth gate.',
-        'Deep Grade': 'The corresponding laboratory-data pool above that depth gate. These stronger lines extend coverage but require particular care with saturation and blends.'}
+        'Deep Grade': 'The corresponding laboratory-data pool above that depth gate. These stronger lines extend coverage but require particular care with saturation and blends.',
+        'Ungraded': 'A supplemental line selection. For Fe I 8293.513 Å the adopted canonical strength carries no published uncertainty, and the full budget separately reports the measured telluric term.'}
     grades = list(dict.fromkeys(p['grade'] for p in own))
     if set(grades) - definitions.keys():
         raise ValueError('A new feed grade needs a sourced explanation')
@@ -363,7 +372,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     accessible = '<details><summary>Read all product values, including alternate line sets and experiments</summary><ul>'+''.join(
         f'<li data-product-id="{p["publication_id"]}"'+(' class="is-deep"' if p.get('grade') == 'Deep Grade' else '')+'>'
         f'{esc(label(p))} · {esc(p["holding"])} · {esc(selector_label(p))} · {esc(p["route"])} · {esc(p["treatment"])}: '
-        f'{p["A"]:.3f} ± {sig(p):.3f} (Asplund 2021 convention); n={p["n_lines"]}; ξ {esc(p["xi_state"])}'
+        f'{p["A"]:.3f} ± {sig(p):.3f} (Asplund 2021 convention); n={p["n_lines"]}; ξ {esc(p.get("xi_state") or "unmeasured")}'
         + (' · '+esc(p['sigma_reported_caveat']) if p.get('sigma_reported_caveat') else '')
         + (' · experimental, not adopted' if held(p) else '')+'</li>' for p in own)+'</ul></details>'
     body += accessible
