@@ -404,6 +404,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     # This semantic report is the single rendered body consumed by both exports.
     from element_appendix_pdf import make_report, render_pdf
     body = standardize_tables(body, own, 'Fe', ion)
+    selector = 'SET-FE_RYA1397_REDOPT'
+    body = body.replace(selector, esc(SELECTOR_NAMES[selector]))
     meta['table_renderer_sha256'] = TABLE_RENDERER_SHA256
     report = make_report(f'Solar Fe {ion} appendix', 'Sun', 'Fe', ion, body, meta, own)
     report['references'] = references
