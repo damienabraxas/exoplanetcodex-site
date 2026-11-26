@@ -139,6 +139,11 @@ def reconcile_atomic(science, element, feed, audit):
                     'SET-CR_ELGUETA2026', 'SET-NI_ELGUETA2026'):
                 key = 'kurucz_online'
                 gf += [ref('ryabchikova2015')]
+            # NI_CLEAR2026 synthesises Clear, Uylings & Raassen 2026's calculated gf in place of
+            # the canonical rows (science SOURCES.yaml: loggf column clear2026_loggf, "replaces
+            # Kurucz K03 (VALD3)"); the budget still names the replaced canonical tag 'VALD3'.
+            if key is None and str(s).strip() == 'VALD3' and sel == 'SET-NI_CLEAR2026':
+                key = 'clear2026_ni2'
             # The GES v5 report maps K07 to Kurucz's calculated oscillator strengths.
             if key is None and str(s).strip() in ('K07', 'K08'):
                 key = 'kurucz_online'

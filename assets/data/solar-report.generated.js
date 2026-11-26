@@ -139,7 +139,7 @@ window.SOLAR_REPORT = {
         "sigmaSys": 0.04409869786128866,
         "sigmaTotal": 0.0485050013200827,
         "lineCount": 21,
-        "sigmaBasis": "Fe.json v1.612 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
+        "sigmaBasis": "Fe.json v1.613 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
       },
       "secondary": {
         "value": 7.57,
@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "34eabffe0c41600cf4710503b04e06bf5aa97ad7",
-        "scienceGit": "d716966536d1d11f3f421108e139ae0ef33c3cf8",
-        "generatedAt": "2026-11-26T15:04:41+00:00"
+        "scienceGit": "008a3380133a0e3c598202009eb9e48e8282bf35",
+        "generatedAt": "2026-11-26T15:37:01+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1832,7 +1832,7 @@ window.SOLAR_REPORT = {
       "name": "Nickel",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ni.json v1.161)",
+      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ni.json v1.167)",
       "asplund": 6.2,
       "measurementNote": "",
       "primaryValue": {
@@ -6242,7 +6242,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "d716966536d1d11f3f421108e139ae0ef33c3cf8",
+    "gitCommit": "008a3380133a0e3c598202009eb9e48e8282bf35",
     "productCommit": "7fdb8035823da14662e6ca185160731183b40f05",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-11-17T01:42:35+00:00"
