@@ -58,7 +58,8 @@ VERSION = '1.0.0'
 #: same wording the C/N/O/Si/Al pages use (generate_cno_publication.INDICATOR_NAMES).
 SELECTOR_NAMES = {'SET-FE_AGSS21': 'Asplund et al. 2021 lines',
                   'ASPLUND_AGSS21': 'Asplund et al. 2021 lines',
-                  'SET-FE_RYA1397_REDOPT': 'Fe I 8293.513 Å supplemental line'}
+                  'SET-FE_RYA1397_REDOPT': 'Fe I 8293.513 Å supplemental line',
+                  'SET-FEII_RYA1397_7515': 'Fe II 7515.830 Å supplemental line'}
 
 
 
@@ -155,7 +156,7 @@ def line_exports(science, products):
             candidate = science / p['provenance']['copied_to'].replace('_products.csv', '_per_line.csv')
             if candidate.is_file():
                 path, reason = str(candidate), 'resolved from product provenance'
-        if not path and p.get('selector') == 'SET-FE_RYA1397_REDOPT':
+        if not path and p.get('selector') in ('SET-FE_RYA1397_REDOPT', 'SET-FEII_RYA1397_7515'):
             source = science / p['provenance']['copied_to']
             suffix = f"_{p['treatment']}_lines.csv"
             stem = source.name.removesuffix('_products.csv').removesuffix('_ENGINE-A')
@@ -353,7 +354,7 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
         'Reference Grade': 'An externally published reference line pool, using that reference’s line selection and oscillator strengths; the current Fe reference products use AGSS21. This is a provenance category, not a promise that every line has an individual primary-laboratory uncertainty.',
         'Codex Grade': 'The vetted Codex pool of primary-laboratory oscillator strengths, restricted to lines at or below the adopted feature-depth gate.',
         'Deep Grade': 'The corresponding laboratory-data pool above that depth gate. These stronger lines extend coverage but require particular care with saturation and blends.',
-        'Ungraded': 'A supplemental line selection. For Fe I 8293.513 Å the adopted canonical strength carries no published uncertainty, and the full budget separately reports the measured telluric term.'}
+        'Ungraded': 'A supplemental line selection. For the Fe I 8293.513 Å and Fe II 7515.830 Å products, the adopted strengths carry no published per-line uncertainty. The full budgets include measured telluric and microturbulence terms.'}
     grades = list(dict.fromkeys(p['grade'] for p in own))
     if set(grades) - definitions.keys():
         raise ValueError('A new feed grade needs a sourced explanation')
@@ -404,8 +405,8 @@ def render_page(ion, products, feed, meta, reference, records, coverage, plots, 
     # This semantic report is the single rendered body consumed by both exports.
     from element_appendix_pdf import make_report, render_pdf
     body = standardize_tables(body, own, 'Fe', ion)
-    selector = 'SET-FE_RYA1397_REDOPT'
-    body = body.replace(selector, esc(SELECTOR_NAMES[selector]))
+    for selector, label_text in SELECTOR_NAMES.items():
+        body = body.replace(selector, esc(label_text))
     meta['table_renderer_sha256'] = TABLE_RENDERER_SHA256
     report = make_report(f'Solar Fe {ion} appendix', 'Sun', 'Fe', ion, body, meta, own)
     report['references'] = references

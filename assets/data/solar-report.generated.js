@@ -139,7 +139,7 @@ window.SOLAR_REPORT = {
         "sigmaSys": 0.04409869786128866,
         "sigmaTotal": 0.0485050013200827,
         "lineCount": 21,
-        "sigmaBasis": "Fe.json v1.613 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
+        "sigmaBasis": "Fe.json v1.615 — solar_harps_molecfit_corrected, Reference Grade, Amarsi 3D-NLTE (RYA-850 primary)"
       },
       "secondary": {
         "value": 7.57,
@@ -1473,7 +1473,7 @@ window.SOLAR_REPORT = {
           "engine": "this page's products",
           "publishedLineCount": 3,
           "artifactLineCount": 0,
-          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 55 of the 55 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
+          "detail": "The per-line download is a projection of Fe.json (RYA-1229) and is CURRENT: it covers 55 of the 56 Fe II products the feed publishes, all of them on the SYNTH route. It carries no rows for the 3 treatments THIS page reports, because those are the RYA-880 re-derivation (FeII_3800_6910_kpno_solar_atlas_PROFILEFIT) and the feed publishes no Fe II PROFILEFIT product at all. Every number on this page comes from that band product directly, so nothing here is affected — but the download is not where to look for this page's per-line evidence."
         }
       ],
       "reproducibility": {
@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "34eabffe0c41600cf4710503b04e06bf5aa97ad7",
-        "scienceGit": "db6c775cecac03b168e8059847c15627f2c9b826",
-        "generatedAt": "2026-11-26T15:33:19+00:00"
+        "scienceGit": "46cbcd4a45b9e1e7ccaf1b82144a20e4a9abd8f4",
+        "generatedAt": "2026-11-26T21:49:11+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -6272,7 +6272,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "db6c775cecac03b168e8059847c15627f2c9b826",
+    "gitCommit": "46cbcd4a45b9e1e7ccaf1b82144a20e4a9abd8f4",
     "productCommit": "7fdb8035823da14662e6ca185160731183b40f05",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-11-17T01:42:35+00:00"
