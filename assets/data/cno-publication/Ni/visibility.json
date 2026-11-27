@@ -3960,7 +3960,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-4133a6b06231",
+    "publication_id": "Ni-products-2a77fdda6e97",
     "source_bucket": "products",
     "source_index": 180,
     "identity": {
@@ -3968,9 +3968,9 @@
       "ion": "I",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "1D-LTE",
       "line_set": null,
@@ -3982,7 +3982,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-83ade4cf74be",
+    "publication_id": "Ni-products-a7dbce8bd6a6",
     "source_bucket": "products",
     "source_index": 181,
     "identity": {
@@ -3990,9 +3990,9 @@
       "ion": "I",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "ENGINE-B-NLTE",
       "line_set": null,
@@ -4004,7 +4004,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c5d95dc3bc94",
+    "publication_id": "Ni-products-b0b348e4dbe9",
     "source_bucket": "products",
     "source_index": 182,
     "identity": {
@@ -4012,9 +4012,9 @@
       "ion": "I",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
@@ -4026,7 +4026,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-b32174619216",
+    "publication_id": "Ni-products-f04b4f264fda",
     "source_bucket": "products",
     "source_index": 183,
     "identity": {
@@ -4034,9 +4034,9 @@
       "ion": "I",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
@@ -4048,7 +4048,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c0d66abe6d5f",
+    "publication_id": "Ni-products-02b9ac4f9c28",
     "source_bucket": "products",
     "source_index": 184,
     "identity": {
@@ -4056,9 +4056,9 @@
       "ion": "I",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
       "route": "SYNTH",
       "treatment": "synth-1D-NLTE-openmulti3d",
       "line_set": null,
@@ -4070,7 +4070,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d3cd287d7014",
+    "publication_id": "Ni-products-e4d9bb1c3ce2",
     "source_bucket": "products",
     "source_index": 185,
     "identity": {
@@ -4078,6 +4078,160 @@
       "ion": "I",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-189de410f391",
+    "source_bucket": "products",
+    "source_index": 186,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-NLTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-07a656f58de7",
+    "source_bucket": "products",
+    "source_index": 187,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-ed50f2da93e7",
+    "source_bucket": "products",
+    "source_index": 188,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-B-NLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-795d141961fe",
+    "source_bucket": "products",
+    "source_index": 189,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-gerber",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-a39c9e6482b1",
+    "source_bucket": "products",
+    "source_index": 190,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-d1a4907a0650",
+    "source_bucket": "products",
+    "source_index": 191,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-0359b48a3466",
+    "source_bucket": "products",
+    "source_index": 192,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_molecfit_corrected",
       "tier": "GRADED",
       "selector": "GRADED",
@@ -4092,9 +4246,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-517b5c41e1b5",
+    "publication_id": "Ni-products-c8e790a996f9",
     "source_bucket": "products",
-    "source_index": 186,
+    "source_index": 193,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4114,169 +4268,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ab8589989c7b",
-    "source_bucket": "products",
-    "source_index": 187,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-8ba6a4d1b67a",
-    "source_bucket": "products",
-    "source_index": 188,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-a0bb070d56d8",
-    "source_bucket": "products",
-    "source_index": 189,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-da4ee6eeeacd",
-    "source_bucket": "products",
-    "source_index": 190,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-3fc71daa3348",
-    "source_bucket": "products",
-    "source_index": 191,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-452a20632e58",
-    "source_bucket": "products",
-    "source_index": 192,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-0abdeaf70200",
-    "source_bucket": "products",
-    "source_index": 193,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-mean3D-NLTE-gerber-stagger",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e5750834e1c6",
+    "publication_id": "Ni-products-495e76ab5c82",
     "source_bucket": "products",
     "source_index": 194,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4290,15 +4290,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f8834bd579f7",
+    "publication_id": "Ni-products-ac2199db26cf",
     "source_bucket": "products",
     "source_index": 195,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4312,15 +4312,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-79aa84da910c",
+    "publication_id": "Ni-products-9d67075facca",
     "source_bucket": "products",
     "source_index": 196,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4334,15 +4334,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-e0e78417317c",
+    "publication_id": "Ni-products-38cef9eb4cf0",
     "source_bucket": "products",
     "source_index": 197,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4356,15 +4356,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a888db0a16bf",
+    "publication_id": "Ni-products-47f1ef2f8c0f",
     "source_bucket": "products",
     "source_index": 198,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4378,15 +4378,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-4d34abe9e034",
+    "publication_id": "Ni-products-aa6176703679",
     "source_bucket": "products",
     "source_index": 199,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4400,15 +4400,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-8c182ed92c52",
+    "publication_id": "Ni-products-32a976517df6",
     "source_bucket": "products",
     "source_index": 200,
     "identity": {
       "element": "Ni",
       "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4422,15 +4422,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-fb1c914d4041",
+    "publication_id": "Ni-products-83eca45b97cf",
     "source_bucket": "products",
     "source_index": 201,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4444,15 +4444,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-5c7e40ae5d2b",
+    "publication_id": "Ni-products-b0a42bd7f689",
     "source_bucket": "products",
     "source_index": 202,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4466,15 +4466,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d96bf8300f69",
+    "publication_id": "Ni-products-68a2a4cf6de8",
     "source_bucket": "products",
     "source_index": 203,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4488,15 +4488,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f16cd5c81b88",
+    "publication_id": "Ni-products-fbf928a8ad25",
     "source_bucket": "products",
     "source_index": 204,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4510,15 +4510,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f61d863ffe25",
+    "publication_id": "Ni-products-7918d8842a86",
     "source_bucket": "products",
     "source_index": 205,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4532,15 +4532,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-37cb557b8a52",
+    "publication_id": "Ni-products-6cd428f94a42",
     "source_bucket": "products",
     "source_index": 206,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4554,15 +4554,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d760c0facd9d",
+    "publication_id": "Ni-products-bd41e3caf840",
     "source_bucket": "products",
     "source_index": 207,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
@@ -4576,15 +4576,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-700d7613ba6e",
+    "publication_id": "Ni-products-bcb32233a47f",
     "source_bucket": "products",
     "source_index": 208,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4598,15 +4598,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f58a99ceb961",
+    "publication_id": "Ni-products-e9d4e3305799",
     "source_bucket": "products",
     "source_index": 209,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4620,15 +4620,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-0cad9aa71d95",
+    "publication_id": "Ni-products-8b66defe35e4",
     "source_bucket": "products",
     "source_index": 210,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4642,15 +4642,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-b35bb6011d9c",
+    "publication_id": "Ni-products-ac22e51714e7",
     "source_bucket": "products",
     "source_index": 211,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4664,15 +4664,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-14830d718c0c",
+    "publication_id": "Ni-products-d9055d654c9e",
     "source_bucket": "products",
     "source_index": 212,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4686,15 +4686,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-64b1dc8f36f7",
+    "publication_id": "Ni-products-206a8927a04b",
     "source_bucket": "products",
     "source_index": 213,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4708,15 +4708,15 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-14bbdf9cb810",
+    "publication_id": "Ni-products-2d3efd062d17",
     "source_bucket": "products",
     "source_index": 214,
     "identity": {
       "element": "Ni",
       "ion": "I",
       "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
@@ -4730,7 +4730,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-941fa6d88b5a",
+    "publication_id": "Ni-products-1382602c3121",
     "source_bucket": "products",
     "source_index": 215,
     "identity": {
@@ -4738,6 +4738,314 @@
       "ion": "I",
       "band": "red-optical",
       "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-00586e62854d",
+    "source_bucket": "products",
+    "source_index": 216,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "ENGINE-B-NLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-6c9fab781871",
+    "source_bucket": "products",
+    "source_index": 217,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-gerber",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-6ad046f32ee4",
+    "source_bucket": "products",
+    "source_index": 218,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-79ea5e6314b3",
+    "source_bucket": "products",
+    "source_index": 219,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-ee5337f5fdad",
+    "source_bucket": "products",
+    "source_index": 220,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-39397e612499",
+    "source_bucket": "products",
+    "source_index": 221,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-NLTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-c3be41ce53a2",
+    "source_bucket": "products",
+    "source_index": 222,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-86d4a4b100ee",
+    "source_bucket": "products",
+    "source_index": 223,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "ENGINE-B-NLTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-606061d73114",
+    "source_bucket": "products",
+    "source_index": 224,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-gerber",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-13dbe57432dd",
+    "source_bucket": "products",
+    "source_index": 225,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-ec491f314c71",
+    "source_bucket": "products",
+    "source_index": 226,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-77d3fc5b1607",
+    "source_bucket": "products",
+    "source_index": 227,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-5f7bc273291b",
+    "source_bucket": "products",
+    "source_index": 228,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-NLTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-3ba8bbe03826",
+    "source_bucket": "products",
+    "source_index": 229,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
       "holding": "solar_kpno_molecfit_corrected",
       "tier": "GRADED",
       "selector": "GRADED",
@@ -4752,9 +5060,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a74d49379aa4",
+    "publication_id": "Ni-products-e342999e6385",
     "source_bucket": "products",
-    "source_index": 216,
+    "source_index": 230,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4774,9 +5082,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-cec081f6ad84",
+    "publication_id": "Ni-products-f7d8ae54d942",
     "source_bucket": "products",
-    "source_index": 217,
+    "source_index": 231,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4796,9 +5104,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-b999423af7a1",
+    "publication_id": "Ni-products-58da51fa999f",
     "source_bucket": "products",
-    "source_index": 218,
+    "source_index": 232,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4818,9 +5126,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-035367b01be5",
+    "publication_id": "Ni-products-4d2c340717ef",
     "source_bucket": "products",
-    "source_index": 219,
+    "source_index": 233,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4840,9 +5148,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-8dcbe0f7de8b",
+    "publication_id": "Ni-products-0bf91ca2ad2b",
     "source_bucket": "products",
-    "source_index": 220,
+    "source_index": 234,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4862,9 +5170,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3a9d800cced2",
+    "publication_id": "Ni-products-f4a6673cad78",
     "source_bucket": "products",
-    "source_index": 221,
+    "source_index": 235,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4884,9 +5192,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-296c0b810253",
+    "publication_id": "Ni-products-1f623e8bcc9b",
     "source_bucket": "products",
-    "source_index": 222,
+    "source_index": 236,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4906,9 +5214,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-aeedafd665db",
+    "publication_id": "Ni-products-d8da5e8607b0",
     "source_bucket": "products",
-    "source_index": 223,
+    "source_index": 237,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4928,9 +5236,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-197f99f3bfcc",
+    "publication_id": "Ni-products-349427516b52",
     "source_bucket": "products",
-    "source_index": 224,
+    "source_index": 238,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4950,9 +5258,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-afb1aa4bb2e4",
+    "publication_id": "Ni-products-41b90c2caa85",
     "source_bucket": "products",
-    "source_index": 225,
+    "source_index": 239,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4972,9 +5280,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c52f7852b69f",
+    "publication_id": "Ni-products-7a8f49b7efb3",
     "source_bucket": "products",
-    "source_index": 226,
+    "source_index": 240,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4994,9 +5302,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-dadcd244952c",
+    "publication_id": "Ni-products-13efead4ec6c",
     "source_bucket": "products",
-    "source_index": 227,
+    "source_index": 241,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5016,9 +5324,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a3a24a82efd6",
+    "publication_id": "Ni-products-3642c1f536cc",
     "source_bucket": "products",
-    "source_index": 228,
+    "source_index": 242,
     "identity": {
       "element": "Ni",
       "ion": "I",

@@ -1484,8 +1484,8 @@ window.SOLAR_REPORT = {
         "instrument": "NSO Kitt Peak solar flux atlas · 3800–6910 Å",
         "bandProductCommit": "74c1750a5856a19152b5e004f3eb7fc1614bcba1",
         "registryCommit": "34eabffe0c41600cf4710503b04e06bf5aa97ad7",
-        "scienceGit": "008a3380133a0e3c598202009eb9e48e8282bf35",
-        "generatedAt": "2026-11-26T15:37:01+00:00"
+        "scienceGit": "3a182bb50fed8a8aad1f0398895c451120d73988",
+        "generatedAt": "2026-11-27T02:41:09+00:00"
       },
       "downloadPath": "/assets/data/solar/FeII_perline.csv",
       "statusDetail": "arbiter · generated"
@@ -1832,7 +1832,7 @@ window.SOLAR_REPORT = {
       "name": "Nickel",
       "status": "Published",
       "tier": "",
-      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ni.json v1.167)",
+      "method": "harps VIS · REFERENCE · synth-mean3D-LTE-gerber-stagger (Reference Grade, Ni.json v1.181)",
       "asplund": 6.2,
       "measurementNote": "",
       "primaryValue": {
@@ -6242,7 +6242,7 @@ window.SOLAR_REPORT = {
     "version": "1.0.0",
     "sourceArtifact": "data/products/solar/Fe_perline.csv",
     "instrument": "Kitt Peak solar atlas + Solar gold v5",
-    "gitCommit": "008a3380133a0e3c598202009eb9e48e8282bf35",
+    "gitCommit": "3a182bb50fed8a8aad1f0398895c451120d73988",
     "productCommit": "7fdb8035823da14662e6ca185160731183b40f05",
     "goldVersion": "Fe_I=v5",
     "generatedAt": "2026-11-17T01:42:35+00:00"

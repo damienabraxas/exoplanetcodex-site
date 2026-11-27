@@ -208,6 +208,42 @@
       "roles": [
         "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
       ]
+    },
+    {
+      "id": "huber1980_ni1",
+      "citation": "Huber, M. C. E.; Sandeman, R. J. (1980). Oscillator Strengths of Ultraviolet Ni I Lines from Hook-Method and Absorption Measurements in a Furnace. A&A 86, 95",
+      "doi": "",
+      "url": "https://ui.adsabs.harvard.edu/abs/1980A&A....86...95H",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "huber1980_ni1"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
+    },
+    {
+      "id": "blackwell1989_ni1",
+      "citation": "Blackwell, D. E.; Booth, A. J.; Petford, A. D.; Laming, J. M. (1989). Measurement of relative oscillator strengths for Ni I. Transitions from levels a3F4-2 (0.00-0.27 eV), a3D3-1 (0.03-0.21 eV) and a1D2 (0.42 eV). MNRAS 236, 235",
+      "doi": "10.1093/mnras/236.2.235",
+      "url": "https://ui.adsabs.harvard.edu/abs/1989MNRAS.236..235B",
+      "evidence": [
+        {
+          "path": "data/refs/bibliography.csv",
+          "record": "blackwell1989_ni1"
+        }
+      ],
+      "layers": [
+        "Atomic data and gf authorities"
+      ],
+      "roles": [
+        "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage)."
+      ]
     }
   ],
   "bindings": [
@@ -5744,7 +5780,177 @@
       ]
     },
     {
-      "subject": "Ni-products-4133a6b06231",
+      "subject": "Ni-products-2a77fdda6e97",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-2a77fdda6e97",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-a7dbce8bd6a6",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-a7dbce8bd6a6",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-b0b348e4dbe9",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-b0b348e4dbe9",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-f04b4f264fda",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-f04b4f264fda",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation.",
+      "evidence": [
+        "pipeline/openmulti3d_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-02b9ac4f9c28",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-02b9ac4f9c28",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation.",
+      "evidence": [
+        "pipeline/openmulti3d_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-e4d9bb1c3ce2",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-e4d9bb1c3ce2",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-189de410f391",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-189de410f391",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-07a656f58de7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014",
@@ -5756,7 +5962,7 @@
       ]
     },
     {
-      "subject": "Ni-products-4133a6b06231",
+      "subject": "Ni-products-07a656f58de7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5767,7 +5973,7 @@
       ]
     },
     {
-      "subject": "Ni-products-83ade4cf74be",
+      "subject": "Ni-products-ed50f2da93e7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -5778,7 +5984,7 @@
       ]
     },
     {
-      "subject": "Ni-products-83ade4cf74be",
+      "subject": "Ni-products-ed50f2da93e7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5789,7 +5995,7 @@
       ]
     },
     {
-      "subject": "Ni-products-c5d95dc3bc94",
+      "subject": "Ni-products-795d141961fe",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -5800,7 +6006,7 @@
       ]
     },
     {
-      "subject": "Ni-products-c5d95dc3bc94",
+      "subject": "Ni-products-795d141961fe",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5811,7 +6017,7 @@
       ]
     },
     {
-      "subject": "Ni-products-b32174619216",
+      "subject": "Ni-products-a39c9e6482b1",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -5822,7 +6028,7 @@
       ]
     },
     {
-      "subject": "Ni-products-b32174619216",
+      "subject": "Ni-products-a39c9e6482b1",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5833,7 +6039,7 @@
       ]
     },
     {
-      "subject": "Ni-products-c0d66abe6d5f",
+      "subject": "Ni-products-d1a4907a0650",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014",
@@ -5845,7 +6051,7 @@
       ]
     },
     {
-      "subject": "Ni-products-c0d66abe6d5f",
+      "subject": "Ni-products-d1a4907a0650",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5856,7 +6062,7 @@
       ]
     },
     {
-      "subject": "Ni-products-d3cd287d7014",
+      "subject": "Ni-products-0359b48a3466",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014",
@@ -5868,7 +6074,7 @@
       ]
     },
     {
-      "subject": "Ni-products-d3cd287d7014",
+      "subject": "Ni-products-0359b48a3466",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -5880,7 +6086,7 @@
       ]
     },
     {
-      "subject": "Ni-products-517b5c41e1b5",
+      "subject": "Ni-products-c8e790a996f9",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014",
@@ -5892,7 +6098,7 @@
       ]
     },
     {
-      "subject": "Ni-products-517b5c41e1b5",
+      "subject": "Ni-products-c8e790a996f9",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -5904,10 +6110,12 @@
       ]
     },
     {
-      "subject": "Ni-products-ab8589989c7b",
+      "subject": "Ni-products-495e76ab5c82",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -5915,7 +6123,7 @@
       ]
     },
     {
-      "subject": "Ni-products-ab8589989c7b",
+      "subject": "Ni-products-495e76ab5c82",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5926,10 +6134,12 @@
       ]
     },
     {
-      "subject": "Ni-products-8ba6a4d1b67a",
+      "subject": "Ni-products-ac2199db26cf",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -5937,7 +6147,7 @@
       ]
     },
     {
-      "subject": "Ni-products-8ba6a4d1b67a",
+      "subject": "Ni-products-ac2199db26cf",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5948,10 +6158,12 @@
       ]
     },
     {
-      "subject": "Ni-products-a0bb070d56d8",
+      "subject": "Ni-products-9d67075facca",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -5959,7 +6171,7 @@
       ]
     },
     {
-      "subject": "Ni-products-a0bb070d56d8",
+      "subject": "Ni-products-9d67075facca",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5970,10 +6182,12 @@
       ]
     },
     {
-      "subject": "Ni-products-da4ee6eeeacd",
+      "subject": "Ni-products-38cef9eb4cf0",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -5981,7 +6195,7 @@
       ]
     },
     {
-      "subject": "Ni-products-da4ee6eeeacd",
+      "subject": "Ni-products-38cef9eb4cf0",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -5992,10 +6206,12 @@
       ]
     },
     {
-      "subject": "Ni-products-3fc71daa3348",
+      "subject": "Ni-products-47f1ef2f8c0f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -6003,7 +6219,7 @@
       ]
     },
     {
-      "subject": "Ni-products-3fc71daa3348",
+      "subject": "Ni-products-47f1ef2f8c0f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6014,10 +6230,12 @@
       ]
     },
     {
-      "subject": "Ni-products-452a20632e58",
+      "subject": "Ni-products-aa6176703679",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -6025,7 +6243,7 @@
       ]
     },
     {
-      "subject": "Ni-products-452a20632e58",
+      "subject": "Ni-products-aa6176703679",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6037,10 +6255,12 @@
       ]
     },
     {
-      "subject": "Ni-products-0abdeaf70200",
+      "subject": "Ni-products-32a976517df6",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
-        "wood2014"
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1"
       ],
       "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
       "evidence": [
@@ -6048,7 +6268,7 @@
       ]
     },
     {
-      "subject": "Ni-products-0abdeaf70200",
+      "subject": "Ni-products-32a976517df6",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6060,7 +6280,7 @@
       ]
     },
     {
-      "subject": "Ni-products-e5750834e1c6",
+      "subject": "Ni-products-83eca45b97cf",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6071,7 +6291,7 @@
       ]
     },
     {
-      "subject": "Ni-products-e5750834e1c6",
+      "subject": "Ni-products-83eca45b97cf",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6082,7 +6302,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f8834bd579f7",
+      "subject": "Ni-products-b0a42bd7f689",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6093,7 +6313,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f8834bd579f7",
+      "subject": "Ni-products-b0a42bd7f689",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6104,7 +6324,7 @@
       ]
     },
     {
-      "subject": "Ni-products-79aa84da910c",
+      "subject": "Ni-products-68a2a4cf6de8",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6115,7 +6335,7 @@
       ]
     },
     {
-      "subject": "Ni-products-79aa84da910c",
+      "subject": "Ni-products-68a2a4cf6de8",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6126,7 +6346,7 @@
       ]
     },
     {
-      "subject": "Ni-products-e0e78417317c",
+      "subject": "Ni-products-fbf928a8ad25",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6137,7 +6357,7 @@
       ]
     },
     {
-      "subject": "Ni-products-e0e78417317c",
+      "subject": "Ni-products-fbf928a8ad25",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6148,7 +6368,7 @@
       ]
     },
     {
-      "subject": "Ni-products-a888db0a16bf",
+      "subject": "Ni-products-7918d8842a86",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6159,7 +6379,7 @@
       ]
     },
     {
-      "subject": "Ni-products-a888db0a16bf",
+      "subject": "Ni-products-7918d8842a86",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6170,7 +6390,7 @@
       ]
     },
     {
-      "subject": "Ni-products-4d34abe9e034",
+      "subject": "Ni-products-6cd428f94a42",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6181,7 +6401,7 @@
       ]
     },
     {
-      "subject": "Ni-products-4d34abe9e034",
+      "subject": "Ni-products-6cd428f94a42",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6193,7 +6413,7 @@
       ]
     },
     {
-      "subject": "Ni-products-8c182ed92c52",
+      "subject": "Ni-products-bd41e3caf840",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6204,7 +6424,7 @@
       ]
     },
     {
-      "subject": "Ni-products-8c182ed92c52",
+      "subject": "Ni-products-bd41e3caf840",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6216,7 +6436,7 @@
       ]
     },
     {
-      "subject": "Ni-products-fb1c914d4041",
+      "subject": "Ni-products-bcb32233a47f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6227,7 +6447,7 @@
       ]
     },
     {
-      "subject": "Ni-products-fb1c914d4041",
+      "subject": "Ni-products-bcb32233a47f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6238,7 +6458,7 @@
       ]
     },
     {
-      "subject": "Ni-products-5c7e40ae5d2b",
+      "subject": "Ni-products-e9d4e3305799",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6249,7 +6469,7 @@
       ]
     },
     {
-      "subject": "Ni-products-5c7e40ae5d2b",
+      "subject": "Ni-products-e9d4e3305799",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6260,7 +6480,7 @@
       ]
     },
     {
-      "subject": "Ni-products-d96bf8300f69",
+      "subject": "Ni-products-8b66defe35e4",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6271,7 +6491,7 @@
       ]
     },
     {
-      "subject": "Ni-products-d96bf8300f69",
+      "subject": "Ni-products-8b66defe35e4",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6282,7 +6502,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f16cd5c81b88",
+      "subject": "Ni-products-ac22e51714e7",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6293,7 +6513,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f16cd5c81b88",
+      "subject": "Ni-products-ac22e51714e7",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6304,7 +6524,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f61d863ffe25",
+      "subject": "Ni-products-d9055d654c9e",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6315,7 +6535,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f61d863ffe25",
+      "subject": "Ni-products-d9055d654c9e",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6326,7 +6546,7 @@
       ]
     },
     {
-      "subject": "Ni-products-37cb557b8a52",
+      "subject": "Ni-products-206a8927a04b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6337,7 +6557,7 @@
       ]
     },
     {
-      "subject": "Ni-products-37cb557b8a52",
+      "subject": "Ni-products-206a8927a04b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6349,7 +6569,7 @@
       ]
     },
     {
-      "subject": "Ni-products-d760c0facd9d",
+      "subject": "Ni-products-2d3efd062d17",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6360,7 +6580,7 @@
       ]
     },
     {
-      "subject": "Ni-products-d760c0facd9d",
+      "subject": "Ni-products-2d3efd062d17",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6372,7 +6592,7 @@
       ]
     },
     {
-      "subject": "Ni-products-700d7613ba6e",
+      "subject": "Ni-products-1382602c3121",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6383,7 +6603,7 @@
       ]
     },
     {
-      "subject": "Ni-products-700d7613ba6e",
+      "subject": "Ni-products-1382602c3121",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6394,7 +6614,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f58a99ceb961",
+      "subject": "Ni-products-00586e62854d",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6405,7 +6625,7 @@
       ]
     },
     {
-      "subject": "Ni-products-f58a99ceb961",
+      "subject": "Ni-products-00586e62854d",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6416,7 +6636,7 @@
       ]
     },
     {
-      "subject": "Ni-products-0cad9aa71d95",
+      "subject": "Ni-products-6c9fab781871",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6427,7 +6647,7 @@
       ]
     },
     {
-      "subject": "Ni-products-0cad9aa71d95",
+      "subject": "Ni-products-6c9fab781871",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6438,7 +6658,7 @@
       ]
     },
     {
-      "subject": "Ni-products-b35bb6011d9c",
+      "subject": "Ni-products-6ad046f32ee4",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6449,7 +6669,7 @@
       ]
     },
     {
-      "subject": "Ni-products-b35bb6011d9c",
+      "subject": "Ni-products-6ad046f32ee4",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6460,7 +6680,7 @@
       ]
     },
     {
-      "subject": "Ni-products-14830d718c0c",
+      "subject": "Ni-products-79ea5e6314b3",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6471,7 +6691,7 @@
       ]
     },
     {
-      "subject": "Ni-products-14830d718c0c",
+      "subject": "Ni-products-79ea5e6314b3",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6482,7 +6702,7 @@
       ]
     },
     {
-      "subject": "Ni-products-64b1dc8f36f7",
+      "subject": "Ni-products-ee5337f5fdad",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6493,7 +6713,7 @@
       ]
     },
     {
-      "subject": "Ni-products-64b1dc8f36f7",
+      "subject": "Ni-products-ee5337f5fdad",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6505,7 +6725,7 @@
       ]
     },
     {
-      "subject": "Ni-products-14bbdf9cb810",
+      "subject": "Ni-products-39397e612499",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6516,7 +6736,7 @@
       ]
     },
     {
-      "subject": "Ni-products-14bbdf9cb810",
+      "subject": "Ni-products-39397e612499",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6528,7 +6748,7 @@
       ]
     },
     {
-      "subject": "Ni-products-941fa6d88b5a",
+      "subject": "Ni-products-c3be41ce53a2",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6539,7 +6759,7 @@
       ]
     },
     {
-      "subject": "Ni-products-941fa6d88b5a",
+      "subject": "Ni-products-c3be41ce53a2",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6550,7 +6770,7 @@
       ]
     },
     {
-      "subject": "Ni-products-a74d49379aa4",
+      "subject": "Ni-products-86d4a4b100ee",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6561,7 +6781,7 @@
       ]
     },
     {
-      "subject": "Ni-products-a74d49379aa4",
+      "subject": "Ni-products-86d4a4b100ee",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6572,7 +6792,7 @@
       ]
     },
     {
-      "subject": "Ni-products-cec081f6ad84",
+      "subject": "Ni-products-606061d73114",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6583,7 +6803,7 @@
       ]
     },
     {
-      "subject": "Ni-products-cec081f6ad84",
+      "subject": "Ni-products-606061d73114",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6594,7 +6814,7 @@
       ]
     },
     {
-      "subject": "Ni-products-b999423af7a1",
+      "subject": "Ni-products-13dbe57432dd",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6605,7 +6825,7 @@
       ]
     },
     {
-      "subject": "Ni-products-b999423af7a1",
+      "subject": "Ni-products-13dbe57432dd",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6616,7 +6836,7 @@
       ]
     },
     {
-      "subject": "Ni-products-035367b01be5",
+      "subject": "Ni-products-ec491f314c71",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6627,7 +6847,7 @@
       ]
     },
     {
-      "subject": "Ni-products-035367b01be5",
+      "subject": "Ni-products-ec491f314c71",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6638,7 +6858,7 @@
       ]
     },
     {
-      "subject": "Ni-products-8dcbe0f7de8b",
+      "subject": "Ni-products-77d3fc5b1607",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6649,7 +6869,7 @@
       ]
     },
     {
-      "subject": "Ni-products-8dcbe0f7de8b",
+      "subject": "Ni-products-77d3fc5b1607",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6661,7 +6881,7 @@
       ]
     },
     {
-      "subject": "Ni-products-3a9d800cced2",
+      "subject": "Ni-products-5f7bc273291b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6672,7 +6892,7 @@
       ]
     },
     {
-      "subject": "Ni-products-3a9d800cced2",
+      "subject": "Ni-products-5f7bc273291b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6684,7 +6904,7 @@
       ]
     },
     {
-      "subject": "Ni-products-296c0b810253",
+      "subject": "Ni-products-3ba8bbe03826",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6695,7 +6915,7 @@
       ]
     },
     {
-      "subject": "Ni-products-296c0b810253",
+      "subject": "Ni-products-3ba8bbe03826",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6706,7 +6926,7 @@
       ]
     },
     {
-      "subject": "Ni-products-aeedafd665db",
+      "subject": "Ni-products-e342999e6385",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6717,7 +6937,7 @@
       ]
     },
     {
-      "subject": "Ni-products-aeedafd665db",
+      "subject": "Ni-products-e342999e6385",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6728,7 +6948,7 @@
       ]
     },
     {
-      "subject": "Ni-products-197f99f3bfcc",
+      "subject": "Ni-products-f7d8ae54d942",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6739,7 +6959,7 @@
       ]
     },
     {
-      "subject": "Ni-products-197f99f3bfcc",
+      "subject": "Ni-products-f7d8ae54d942",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6750,7 +6970,7 @@
       ]
     },
     {
-      "subject": "Ni-products-afb1aa4bb2e4",
+      "subject": "Ni-products-58da51fa999f",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6761,7 +6981,7 @@
       ]
     },
     {
-      "subject": "Ni-products-afb1aa4bb2e4",
+      "subject": "Ni-products-58da51fa999f",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6772,7 +6992,7 @@
       ]
     },
     {
-      "subject": "Ni-products-c52f7852b69f",
+      "subject": "Ni-products-4d2c340717ef",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6783,7 +7003,7 @@
       ]
     },
     {
-      "subject": "Ni-products-c52f7852b69f",
+      "subject": "Ni-products-4d2c340717ef",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023"
@@ -6794,7 +7014,7 @@
       ]
     },
     {
-      "subject": "Ni-products-dadcd244952c",
+      "subject": "Ni-products-0bf91ca2ad2b",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6805,7 +7025,7 @@
       ]
     },
     {
-      "subject": "Ni-products-dadcd244952c",
+      "subject": "Ni-products-0bf91ca2ad2b",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -6817,7 +7037,7 @@
       ]
     },
     {
-      "subject": "Ni-products-a3a24a82efd6",
+      "subject": "Ni-products-f4a6673cad78",
       "layer": "Atomic data and gf authorities",
       "reference_ids": [
         "wood2014"
@@ -6828,7 +7048,163 @@
       ]
     },
     {
-      "subject": "Ni-products-a3a24a82efd6",
+      "subject": "Ni-products-f4a6673cad78",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-1f623e8bcc9b",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-1f623e8bcc9b",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed.",
+      "evidence": [
+        "pipeline/band_products.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-d8da5e8607b0",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-d8da5e8607b0",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-349427516b52",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-349427516b52",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-41b90c2caa85",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-41b90c2caa85",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation.",
+      "evidence": [
+        "pipeline/openmulti3d_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-7a8f49b7efb3",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-7a8f49b7efb3",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023"
+      ],
+      "claim": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation.",
+      "evidence": [
+        "pipeline/openmulti3d_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-13efead4ec6c",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-13efead4ec6c",
+      "layer": "Model and grid sources",
+      "reference_ids": [
+        "gerber2023",
+        "magic2013"
+      ],
+      "claim": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation.",
+      "evidence": [
+        "pipeline/gerber_nlte.py"
+      ]
+    },
+    {
+      "subject": "Ni-products-3642c1f536cc",
+      "layer": "Atomic data and gf authorities",
+      "reference_ids": [
+        "wood2014"
+      ],
+      "claim": "Ni I oscillator strengths of this pool, as the product's own uncertainty budget records them (with their lineage).",
+      "evidence": [
+        "data/products/solar/Ni.json"
+      ]
+    },
+    {
+      "subject": "Ni-products-3642c1f536cc",
       "layer": "Model and grid sources",
       "reference_ids": [
         "gerber2023",
@@ -11578,7 +11954,7 @@
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-4133a6b06231",
+      "publication_id": "Ni-products-2a77fdda6e97",
       "source_bucket": "products",
       "source_index": 180,
       "identity": {
@@ -11586,9 +11962,9 @@
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
         "route": "SYNTH",
         "treatment": "1D-LTE",
         "line_set": null,
@@ -11598,13 +11974,14 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
-        "nist_asd",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Ni-products-83ade4cf74be",
+      "publication_id": "Ni-products-a7dbce8bd6a6",
       "source_bucket": "products",
       "source_index": 181,
       "identity": {
@@ -11612,9 +11989,9 @@
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
         "route": "SYNTH",
         "treatment": "ENGINE-B-NLTE",
         "line_set": null,
@@ -11624,12 +12001,14 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-c5d95dc3bc94",
+      "publication_id": "Ni-products-b0b348e4dbe9",
       "source_bucket": "products",
       "source_index": 182,
       "identity": {
@@ -11637,9 +12016,9 @@
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
         "route": "SYNTH",
         "treatment": "synth-1D-LTE-gerber",
         "line_set": null,
@@ -11649,12 +12028,14 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-b32174619216",
+      "publication_id": "Ni-products-f04b4f264fda",
       "source_bucket": "products",
       "source_index": 183,
       "identity": {
@@ -11662,9 +12043,9 @@
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
         "route": "SYNTH",
         "treatment": "synth-1D-LTE-openmulti3d",
         "line_set": null,
@@ -11674,12 +12055,14 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-c0d66abe6d5f",
+      "publication_id": "Ni-products-02b9ac4f9c28",
       "source_bucket": "products",
       "source_index": 184,
       "identity": {
@@ -11687,9 +12070,9 @@
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_molecfit_corrected",
-        "tier": "GRADED",
-        "selector": "GRADED",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
         "route": "SYNTH",
         "treatment": "synth-1D-NLTE-openmulti3d",
         "line_set": null,
@@ -11699,13 +12082,14 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
-        "nist_asd",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-d3cd287d7014",
+      "publication_id": "Ni-products-e4d9bb1c3ce2",
       "source_bucket": "products",
       "source_index": 185,
       "identity": {
@@ -11713,6 +12097,189 @@
         "ion": "I",
         "band": "near-UV",
         "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ni-products-189de410f391",
+      "source_bucket": "products",
+      "source_index": 186,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ni-products-07a656f58de7",
+      "source_bucket": "products",
+      "source_index": 187,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Ni-products-ed50f2da93e7",
+      "source_bucket": "products",
+      "source_index": 188,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ni-products-795d141961fe",
+      "source_bucket": "products",
+      "source_index": 189,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ni-products-a39c9e6482b1",
+      "source_bucket": "products",
+      "source_index": 190,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-openmulti3d",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
+    },
+    {
+      "publication_id": "Ni-products-d1a4907a0650",
+      "source_bucket": "products",
+      "source_index": 191,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-NLTE-openmulti3d",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "nist_asd",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
+    },
+    {
+      "publication_id": "Ni-products-0359b48a3466",
+      "source_bucket": "products",
+      "source_index": 192,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
@@ -11732,9 +12299,9 @@
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-517b5c41e1b5",
+      "publication_id": "Ni-products-c8e790a996f9",
       "source_bucket": "products",
-      "source_index": 186,
+      "source_index": 193,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -11759,192 +12326,15 @@
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-ab8589989c7b",
-      "source_bucket": "products",
-      "source_index": 187,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "1D-LTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
-    },
-    {
-      "publication_id": "Ni-products-8ba6a4d1b67a",
-      "source_bucket": "products",
-      "source_index": 188,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "ENGINE-B-NLTE",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Ni-products-a0bb070d56d8",
-      "source_bucket": "products",
-      "source_index": 189,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-gerber",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
-    },
-    {
-      "publication_id": "Ni-products-da4ee6eeeacd",
-      "source_bucket": "products",
-      "source_index": 190,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-LTE-openmulti3d",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
-    },
-    {
-      "publication_id": "Ni-products-3fc71daa3348",
-      "source_bucket": "products",
-      "source_index": 191,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-1D-NLTE-openmulti3d",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023"
-      ],
-      "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
-    },
-    {
-      "publication_id": "Ni-products-452a20632e58",
-      "source_bucket": "products",
-      "source_index": 192,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-mean3D-LTE-gerber-stagger",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023",
-        "magic2013"
-      ],
-      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
-    },
-    {
-      "publication_id": "Ni-products-0abdeaf70200",
-      "source_bucket": "products",
-      "source_index": 193,
-      "identity": {
-        "element": "Ni",
-        "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
-        "tier": "GRADED",
-        "selector": "GRADED",
-        "route": "SYNTH",
-        "treatment": "synth-mean3D-NLTE-gerber-stagger",
-        "line_set": null,
-        "indicator": null
-      },
-      "reference_ids": [
-        "asplund2021",
-        "lodders2025",
-        "wood2014",
-        "gerber2023",
-        "magic2013"
-      ],
-      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
-    },
-    {
-      "publication_id": "Ni-products-e5750834e1c6",
+      "publication_id": "Ni-products-495e76ab5c82",
       "source_bucket": "products",
       "source_index": 194,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -11956,20 +12346,22 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Ni-products-f8834bd579f7",
+      "publication_id": "Ni-products-ac2199db26cf",
       "source_bucket": "products",
       "source_index": 195,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -11981,20 +12373,22 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-79aa84da910c",
+      "publication_id": "Ni-products-9d67075facca",
       "source_bucket": "products",
       "source_index": 196,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12006,20 +12400,22 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-e0e78417317c",
+      "publication_id": "Ni-products-38cef9eb4cf0",
       "source_bucket": "products",
       "source_index": 197,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12031,20 +12427,22 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-a888db0a16bf",
+      "publication_id": "Ni-products-47f1ef2f8c0f",
       "source_bucket": "products",
       "source_index": 198,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12056,20 +12454,22 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023"
       ],
       "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-4d34abe9e034",
+      "publication_id": "Ni-products-aa6176703679",
       "source_bucket": "products",
       "source_index": 199,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12081,21 +12481,23 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023",
         "magic2013"
       ],
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-8c182ed92c52",
+      "publication_id": "Ni-products-32a976517df6",
       "source_bucket": "products",
       "source_index": 200,
       "identity": {
         "element": "Ni",
         "ion": "I",
-        "band": "red-optical",
-        "instrument": "iag_fts_solar_atlas",
-        "holding": "solar_iag",
+        "band": "near-UV",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_molecfit_corrected",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12107,21 +12509,23 @@
         "asplund2021",
         "lodders2025",
         "wood2014",
+        "huber1980_ni1",
+        "blackwell1989_ni1",
         "gerber2023",
         "magic2013"
       ],
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-fb1c914d4041",
+      "publication_id": "Ni-products-83eca45b97cf",
       "source_bucket": "products",
       "source_index": 201,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12138,15 +12542,15 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Ni-products-5c7e40ae5d2b",
+      "publication_id": "Ni-products-b0a42bd7f689",
       "source_bucket": "products",
       "source_index": 202,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12163,15 +12567,15 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-d96bf8300f69",
+      "publication_id": "Ni-products-68a2a4cf6de8",
       "source_bucket": "products",
       "source_index": 203,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12188,15 +12592,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-f16cd5c81b88",
+      "publication_id": "Ni-products-fbf928a8ad25",
       "source_bucket": "products",
       "source_index": 204,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12213,15 +12617,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-f61d863ffe25",
+      "publication_id": "Ni-products-7918d8842a86",
       "source_bucket": "products",
       "source_index": 205,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12238,15 +12642,15 @@
       "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-37cb557b8a52",
+      "publication_id": "Ni-products-6cd428f94a42",
       "source_bucket": "products",
       "source_index": 206,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12264,15 +12668,15 @@
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-d760c0facd9d",
+      "publication_id": "Ni-products-bd41e3caf840",
       "source_bucket": "products",
       "source_index": 207,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "GRADED",
         "selector": "GRADED",
         "route": "SYNTH",
@@ -12290,15 +12694,15 @@
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-700d7613ba6e",
+      "publication_id": "Ni-products-bcb32233a47f",
       "source_bucket": "products",
       "source_index": 208,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12315,15 +12719,15 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Ni-products-f58a99ceb961",
+      "publication_id": "Ni-products-e9d4e3305799",
       "source_bucket": "products",
       "source_index": 209,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12340,15 +12744,15 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-0cad9aa71d95",
+      "publication_id": "Ni-products-8b66defe35e4",
       "source_bucket": "products",
       "source_index": 210,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12365,15 +12769,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-b35bb6011d9c",
+      "publication_id": "Ni-products-ac22e51714e7",
       "source_bucket": "products",
       "source_index": 211,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12390,15 +12794,15 @@
       "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-14830d718c0c",
+      "publication_id": "Ni-products-d9055d654c9e",
       "source_bucket": "products",
       "source_index": 212,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12415,15 +12819,15 @@
       "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-64b1dc8f36f7",
+      "publication_id": "Ni-products-206a8927a04b",
       "source_bucket": "products",
       "source_index": 213,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12441,15 +12845,15 @@
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-14bbdf9cb810",
+      "publication_id": "Ni-products-2d3efd062d17",
       "source_bucket": "products",
       "source_index": 214,
       "identity": {
         "element": "Ni",
         "ion": "I",
         "band": "red-optical",
-        "instrument": "kpno_solar_atlas",
-        "holding": "solar_kpno_kurucz2005_corrected",
+        "instrument": "iag_fts_solar_atlas",
+        "holding": "solar_iag",
         "tier": "REFERENCE",
         "selector": "REFERENCE",
         "route": "SYNTH",
@@ -12467,7 +12871,7 @@
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-941fa6d88b5a",
+      "publication_id": "Ni-products-1382602c3121",
       "source_bucket": "products",
       "source_index": 215,
       "identity": {
@@ -12475,6 +12879,360 @@
         "ion": "I",
         "band": "red-optical",
         "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Ni-products-00586e62854d",
+      "source_bucket": "products",
+      "source_index": 216,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ni-products-6c9fab781871",
+      "source_bucket": "products",
+      "source_index": 217,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ni-products-6ad046f32ee4",
+      "source_bucket": "products",
+      "source_index": 218,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-openmulti3d",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
+    },
+    {
+      "publication_id": "Ni-products-79ea5e6314b3",
+      "source_bucket": "products",
+      "source_index": 219,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-1D-NLTE-openmulti3d",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
+    },
+    {
+      "publication_id": "Ni-products-ee5337f5fdad",
+      "source_bucket": "products",
+      "source_index": 220,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ni-products-39397e612499",
+      "source_bucket": "products",
+      "source_index": 221,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "GRADED",
+        "selector": "GRADED",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ni-products-c3be41ce53a2",
+      "source_bucket": "products",
+      "source_index": 222,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "1D-LTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
+    },
+    {
+      "publication_id": "Ni-products-86d4a4b100ee",
+      "source_bucket": "products",
+      "source_index": 223,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "ENGINE-B-NLTE",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ni-products-606061d73114",
+      "source_bucket": "products",
+      "source_index": 224,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-gerber",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
+    },
+    {
+      "publication_id": "Ni-products-13dbe57432dd",
+      "source_bucket": "products",
+      "source_index": 225,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-1D-LTE-openmulti3d",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
+    },
+    {
+      "publication_id": "Ni-products-ec491f314c71",
+      "source_bucket": "products",
+      "source_index": 226,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-1D-NLTE-openmulti3d",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023"
+      ],
+      "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
+    },
+    {
+      "publication_id": "Ni-products-77d3fc5b1607",
+      "source_bucket": "products",
+      "source_index": 227,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-LTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ni-products-5f7bc273291b",
+      "source_bucket": "products",
+      "source_index": 228,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
+        "holding": "solar_kpno_kurucz2005_corrected",
+        "tier": "REFERENCE",
+        "selector": "REFERENCE",
+        "route": "SYNTH",
+        "treatment": "synth-mean3D-NLTE-gerber-stagger",
+        "line_set": null,
+        "indicator": null
+      },
+      "reference_ids": [
+        "asplund2021",
+        "lodders2025",
+        "wood2014",
+        "gerber2023",
+        "magic2013"
+      ],
+      "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
+    },
+    {
+      "publication_id": "Ni-products-3ba8bbe03826",
+      "source_bucket": "products",
+      "source_index": 229,
+      "identity": {
+        "element": "Ni",
+        "ion": "I",
+        "band": "red-optical",
+        "instrument": "kpno_solar_atlas",
         "holding": "solar_kpno_molecfit_corrected",
         "tier": "GRADED",
         "selector": "GRADED",
@@ -12492,9 +13250,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Ni-products-a74d49379aa4",
+      "publication_id": "Ni-products-e342999e6385",
       "source_bucket": "products",
-      "source_index": 216,
+      "source_index": 230,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12517,9 +13275,9 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-cec081f6ad84",
+      "publication_id": "Ni-products-f7d8ae54d942",
       "source_bucket": "products",
-      "source_index": 217,
+      "source_index": 231,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12542,9 +13300,9 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-b999423af7a1",
+      "publication_id": "Ni-products-58da51fa999f",
       "source_bucket": "products",
-      "source_index": 218,
+      "source_index": 232,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12567,9 +13325,9 @@
       "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-035367b01be5",
+      "publication_id": "Ni-products-4d2c340717ef",
       "source_bucket": "products",
-      "source_index": 219,
+      "source_index": 233,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12592,9 +13350,9 @@
       "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-8dcbe0f7de8b",
+      "publication_id": "Ni-products-0bf91ca2ad2b",
       "source_bucket": "products",
-      "source_index": 220,
+      "source_index": 234,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12618,9 +13376,9 @@
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-3a9d800cced2",
+      "publication_id": "Ni-products-f4a6673cad78",
       "source_bucket": "products",
-      "source_index": 221,
+      "source_index": 235,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12644,9 +13402,9 @@
       "model_note": "Feed treatment: synth-mean3D-NLTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-296c0b810253",
+      "publication_id": "Ni-products-1f623e8bcc9b",
       "source_bucket": "products",
-      "source_index": 222,
+      "source_index": 236,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12669,9 +13427,9 @@
       "model_note": "Feed treatment: 1D-LTE synthesis (Turbospectrum); no NLTE/3D correction claimed."
     },
     {
-      "publication_id": "Ni-products-aeedafd665db",
+      "publication_id": "Ni-products-d8da5e8607b0",
       "source_bucket": "products",
-      "source_index": 223,
+      "source_index": 237,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12694,9 +13452,9 @@
       "model_note": "Feed treatment: ENGINE-B-NLTE; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-197f99f3bfcc",
+      "publication_id": "Ni-products-349427516b52",
       "source_bucket": "products",
-      "source_index": 224,
+      "source_index": 238,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12719,9 +13477,9 @@
       "model_note": "Feed treatment: synth-1D-LTE-gerber; Turbospectrum on the registered Gerber deck. The product retains its own atmosphere and ion identity."
     },
     {
-      "publication_id": "Ni-products-afb1aa4bb2e4",
+      "publication_id": "Ni-products-41b90c2caa85",
       "source_bucket": "products",
-      "source_index": 225,
+      "source_index": 239,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12744,9 +13502,9 @@
       "model_note": "Feed treatment: synth-1D-LTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-c52f7852b69f",
+      "publication_id": "Ni-products-7a8f49b7efb3",
       "source_bucket": "products",
-      "source_index": 226,
+      "source_index": 240,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12769,9 +13527,9 @@
       "model_note": "Feed treatment: synth-1D-NLTE-openmulti3d. Turbospectrum synthesis on the solar MARCS atmosphere, paired with the OpenMULTI3D 1D departure calculation."
     },
     {
-      "publication_id": "Ni-products-dadcd244952c",
+      "publication_id": "Ni-products-13efead4ec6c",
       "source_bucket": "products",
-      "source_index": 227,
+      "source_index": 241,
       "identity": {
         "element": "Ni",
         "ion": "I",
@@ -12795,9 +13553,9 @@
       "model_note": "Feed treatment: synth-mean3D-LTE-gerber-stagger; Turbospectrum on the registered Gerber deck with the horizontally averaged 3D (<3D>) Stagger solar model; not a full 3D calculation."
     },
     {
-      "publication_id": "Ni-products-a3a24a82efd6",
+      "publication_id": "Ni-products-3642c1f536cc",
       "source_bucket": "products",
-      "source_index": 228,
+      "source_index": 242,
       "identity": {
         "element": "Ni",
         "ion": "I",
