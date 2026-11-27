@@ -66,7 +66,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7a2a13851b2f",
+    "publication_id": "Ni-products-d573c89327d9",
     "source_bucket": "products",
     "source_index": 3,
     "identity": {
@@ -74,21 +74,21 @@
       "ion": "II",
       "band": "near-UV",
       "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
+      "holding": "solar_kpno_kurucz2005_corrected",
       "tier": "ALL",
       "selector": "SET-NI_CLEAR2026",
       "route": "SYNTH",
-      "treatment": "1D-LTE",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "products",
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-bb07f6848a54",
+    "publication_id": "Ni-products-0e2810947309",
     "source_bucket": "products",
     "source_index": 4,
     "identity": {
@@ -100,6 +100,28 @@
       "tier": "ALL",
       "selector": "SET-NI_CLEAR2026",
       "route": "SYNTH",
+      "treatment": "1D-LTE",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-e4ad6c6bbfa4",
+    "source_bucket": "products",
+    "source_index": 5,
+    "identity": {
+      "element": "Ni",
+      "ion": "II",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_CLEAR2026",
+      "route": "SYNTH",
       "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
@@ -110,9 +132,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-337157fe3986",
+    "publication_id": "Ni-products-c8eaa5f9dd9f",
     "source_bucket": "products",
-    "source_index": 5,
+    "source_index": 6,
     "identity": {
       "element": "Ni",
       "ion": "II",
@@ -132,51 +154,29 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-fed62804169f",
-    "source_bucket": "products",
-    "source_index": 6,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1094",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-03feb890d1d0",
+    "publication_id": "Ni-products-f2a3f7d71bbe",
     "source_bucket": "products",
     "source_index": 7,
     "identity": {
       "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1094",
+      "ion": "II",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
       "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "selector": "SET-NI_CLEAR2026",
       "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "products",
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d126b41e8d25",
+    "publication_id": "Ni-products-e6b8d204b8f7",
     "source_bucket": "products",
     "source_index": 8,
     "identity": {
@@ -188,7 +188,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -198,7 +198,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-80eb971285d3",
+    "publication_id": "Ni-products-5b2e90f3aba5",
     "source_bucket": "products",
     "source_index": 9,
     "identity": {
@@ -210,7 +210,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -220,7 +220,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f67910caaeaf",
+    "publication_id": "Ni-products-fce0a1a0a561",
     "source_bucket": "products",
     "source_index": 10,
     "identity": {
@@ -232,7 +232,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -242,7 +242,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a038519533d8",
+    "publication_id": "Ni-products-e4058cc4fc7c",
     "source_bucket": "products",
     "source_index": 11,
     "identity": {
@@ -254,17 +254,17 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-bc095ad58556",
+    "publication_id": "Ni-products-0f0bb8fa10cb",
     "source_bucket": "products",
     "source_index": 12,
     "identity": {
@@ -276,6 +276,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-c5a2d9d3378f",
+    "source_bucket": "products",
+    "source_index": 13,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1094",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-f630cd038881",
+    "source_bucket": "products",
+    "source_index": 14,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1094",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -286,51 +330,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ec862eb80f41",
-    "source_bucket": "products",
-    "source_index": 13,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1094",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-8c8d08488bb1",
-    "source_bucket": "products",
-    "source_index": 14,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1094",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-76798355aa3c",
+    "publication_id": "Ni-products-8ddc0e85b085",
     "source_bucket": "products",
     "source_index": 15,
     "identity": {
@@ -342,7 +342,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -352,7 +352,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-94c085d0aade",
+    "publication_id": "Ni-products-c7dd87f9d96c",
     "source_bucket": "products",
     "source_index": 16,
     "identity": {
@@ -364,7 +364,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -374,7 +374,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7301c763c57d",
+    "publication_id": "Ni-products-222062adb892",
     "source_bucket": "products",
     "source_index": 17,
     "identity": {
@@ -386,7 +386,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -396,7 +396,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-251df0f50aac",
+    "publication_id": "Ni-products-9a78fa1952be",
     "source_bucket": "products",
     "source_index": 18,
     "identity": {
@@ -408,6 +408,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-58131a49dca6",
+    "source_bucket": "products",
+    "source_index": 19,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1094",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-72284b88c7ae",
+    "source_bucket": "products",
+    "source_index": 20,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1094",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -418,9 +462,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-71d8d5d57632",
+    "publication_id": "Ni-products-0a4d3d931e32",
     "source_bucket": "products",
-    "source_index": 19,
+    "source_index": 21,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -440,51 +484,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-b972628b8174",
-    "source_bucket": "products",
-    "source_index": 20,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1232",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-0e4cfb2295e7",
-    "source_bucket": "products",
-    "source_index": 21,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1232",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-39f71709258d",
+    "publication_id": "Ni-products-3d8a24a8ceed",
     "source_bucket": "products",
     "source_index": 22,
     "identity": {
@@ -496,7 +496,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -506,7 +506,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-15751f6e5f5d",
+    "publication_id": "Ni-products-62ade4b0a862",
     "source_bucket": "products",
     "source_index": 23,
     "identity": {
@@ -518,7 +518,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -528,7 +528,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-0522c4d07cec",
+    "publication_id": "Ni-products-abeb9c3a1b83",
     "source_bucket": "products",
     "source_index": 24,
     "identity": {
@@ -540,7 +540,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -550,7 +550,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-b939bef51d84",
+    "publication_id": "Ni-products-6006e944df40",
     "source_bucket": "products",
     "source_index": 25,
     "identity": {
@@ -562,17 +562,17 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3a95558e6497",
+    "publication_id": "Ni-products-072dbf18d545",
     "source_bucket": "products",
     "source_index": 26,
     "identity": {
@@ -584,6 +584,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-32cbabee86d7",
+    "source_bucket": "products",
+    "source_index": 27,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1232",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-864c0e395b44",
+    "source_bucket": "products",
+    "source_index": 28,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1232",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -594,51 +638,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a8f3e8d449e4",
-    "source_bucket": "products",
-    "source_index": 27,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1232",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-c0de9b10326b",
-    "source_bucket": "products",
-    "source_index": 28,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "H",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_h_rya1232",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-5d1e65824ef3",
+    "publication_id": "Ni-products-89a63518ed43",
     "source_bucket": "products",
     "source_index": 29,
     "identity": {
@@ -650,7 +650,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -660,7 +660,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-35a44d0f970a",
+    "publication_id": "Ni-products-20d3f9db6754",
     "source_bucket": "products",
     "source_index": 30,
     "identity": {
@@ -672,7 +672,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -682,7 +682,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-52774c461440",
+    "publication_id": "Ni-products-c6f702660ecf",
     "source_bucket": "products",
     "source_index": 31,
     "identity": {
@@ -694,7 +694,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -704,7 +704,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-e5f498fa01f6",
+    "publication_id": "Ni-products-650a1d3b73de",
     "source_bucket": "products",
     "source_index": 32,
     "identity": {
@@ -716,6 +716,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-82aba86e77de",
+    "source_bucket": "products",
+    "source_index": 33,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1232",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-29f044c3f8a9",
+    "source_bucket": "products",
+    "source_index": 34,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "H",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_h_rya1232",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -726,9 +770,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-16359e795be4",
+    "publication_id": "Ni-products-2a9dbb28faad",
     "source_bucket": "products",
-    "source_index": 33,
+    "source_index": 35,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -748,51 +792,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-01b5e71d3bf4",
-    "source_bucket": "products",
-    "source_index": 34,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-1e5e76f59835",
-    "source_bucket": "products",
-    "source_index": 35,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-f5d6baa376c1",
+    "publication_id": "Ni-products-ec3f10cf4d86",
     "source_bucket": "products",
     "source_index": 36,
     "identity": {
@@ -804,7 +804,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -814,7 +814,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c0118f09ffa9",
+    "publication_id": "Ni-products-f10fd7d6cf49",
     "source_bucket": "products",
     "source_index": 37,
     "identity": {
@@ -826,7 +826,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -836,7 +836,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ce86ff210fd2",
+    "publication_id": "Ni-products-013333a65721",
     "source_bucket": "products",
     "source_index": 38,
     "identity": {
@@ -848,7 +848,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -858,7 +858,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-51f3c10a052a",
+    "publication_id": "Ni-products-2b14f4ea8bfa",
     "source_bucket": "products",
     "source_index": 39,
     "identity": {
@@ -870,17 +870,17 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-027f5fc69fee",
+    "publication_id": "Ni-products-0411ebefee30",
     "source_bucket": "products",
     "source_index": 40,
     "identity": {
@@ -892,6 +892,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-996342fc5ed6",
+    "source_bucket": "products",
+    "source_index": 41,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_rya794",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-5cd88b032dc5",
+    "source_bucket": "products",
+    "source_index": 42,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_rya794",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -902,51 +946,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-20bfaa20a239",
-    "source_bucket": "products",
-    "source_index": 41,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e2f6c9d92be1",
-    "source_bucket": "products",
-    "source_index": 42,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_rya794",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-33cb998f99b2",
+    "publication_id": "Ni-products-4ebd5a8b474f",
     "source_bucket": "products",
     "source_index": 43,
     "identity": {
@@ -958,7 +958,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -968,7 +968,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7ac96837c3a7",
+    "publication_id": "Ni-products-0aae54fee903",
     "source_bucket": "products",
     "source_index": 44,
     "identity": {
@@ -980,7 +980,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -990,7 +990,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a3adece92c5f",
+    "publication_id": "Ni-products-83eddd377886",
     "source_bucket": "products",
     "source_index": 45,
     "identity": {
@@ -1002,7 +1002,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1012,7 +1012,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-6fd3a2284eda",
+    "publication_id": "Ni-products-8b120f09b1fe",
     "source_bucket": "products",
     "source_index": 46,
     "identity": {
@@ -1024,6 +1024,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-5d22cd6bfc49",
+    "source_bucket": "products",
+    "source_index": 47,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_rya794",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-35cd0641d3e9",
+    "source_bucket": "products",
+    "source_index": 48,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_rya794",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1034,9 +1078,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-9c2d61b2fc04",
+    "publication_id": "Ni-products-73b745f65a94",
     "source_bucket": "products",
-    "source_index": 47,
+    "source_index": 49,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -1056,51 +1100,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-bc255213a898",
-    "source_bucket": "products",
-    "source_index": 48,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-ca989fd1ad5a",
-    "source_bucket": "products",
-    "source_index": 49,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-ee01ce95ed1f",
+    "publication_id": "Ni-products-696b25925043",
     "source_bucket": "products",
     "source_index": 50,
     "identity": {
@@ -1112,7 +1112,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1122,7 +1122,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-0794b24a410d",
+    "publication_id": "Ni-products-f43722bfad2e",
     "source_bucket": "products",
     "source_index": 51,
     "identity": {
@@ -1134,7 +1134,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -1144,7 +1144,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d66107d7926b",
+    "publication_id": "Ni-products-459cdd21f29d",
     "source_bucket": "products",
     "source_index": 52,
     "identity": {
@@ -1156,7 +1156,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1166,7 +1166,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-73a479e6b2a8",
+    "publication_id": "Ni-products-c18ce4f44012",
     "source_bucket": "products",
     "source_index": 53,
     "identity": {
@@ -1178,17 +1178,17 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-078f31522c3e",
+    "publication_id": "Ni-products-0df3b4019d66",
     "source_bucket": "products",
     "source_index": 54,
     "identity": {
@@ -1200,6 +1200,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-3cc5487459af",
+    "source_bucket": "products",
+    "source_index": 55,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-893e763e8fd5",
+    "source_bucket": "products",
+    "source_index": 56,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1210,51 +1254,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-1f53e218d2a1",
-    "source_bucket": "products",
-    "source_index": 55,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-a3f6585c3d68",
-    "source_bucket": "products",
-    "source_index": 56,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "crires_plus",
-      "holding": "solar_crires_plus_y_wide_rya1054",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-66db2055c45f",
+    "publication_id": "Ni-products-d66eaaf8c39f",
     "source_bucket": "products",
     "source_index": 57,
     "identity": {
@@ -1266,7 +1266,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1276,7 +1276,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-cda3a72b7b5a",
+    "publication_id": "Ni-products-b3aee3b25731",
     "source_bucket": "products",
     "source_index": 58,
     "identity": {
@@ -1288,7 +1288,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -1298,7 +1298,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3a52d72f9fbe",
+    "publication_id": "Ni-products-cd0a8e228ea1",
     "source_bucket": "products",
     "source_index": 59,
     "identity": {
@@ -1310,7 +1310,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1320,7 +1320,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-11c8bb4f3e6b",
+    "publication_id": "Ni-products-a37b135f1aac",
     "source_bucket": "products",
     "source_index": 60,
     "identity": {
@@ -1332,6 +1332,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-0e330bdc4f60",
+    "source_bucket": "products",
+    "source_index": 61,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-edb1ede12407",
+    "source_bucket": "products",
+    "source_index": 62,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "crires_plus",
+      "holding": "solar_crires_plus_y_wide_rya1054",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1342,9 +1386,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-97420d7994b5",
+    "publication_id": "Ni-products-a2a8aea439b3",
     "source_bucket": "products",
-    "source_index": 61,
+    "source_index": 63,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -1364,51 +1408,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-afb60eb1ec09",
-    "source_bucket": "products",
-    "source_index": 62,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-a33898785515",
-    "source_bucket": "products",
-    "source_index": 63,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-73dcae876083",
+    "publication_id": "Ni-products-07ad27b307d8",
     "source_bucket": "products",
     "source_index": 64,
     "identity": {
@@ -1420,7 +1420,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1430,7 +1430,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-1efc0d084a96",
+    "publication_id": "Ni-products-ae16042b559d",
     "source_bucket": "products",
     "source_index": 65,
     "identity": {
@@ -1442,7 +1442,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -1452,7 +1452,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ee1d258f45b2",
+    "publication_id": "Ni-products-416a5850cdcc",
     "source_bucket": "products",
     "source_index": 66,
     "identity": {
@@ -1464,7 +1464,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1474,7 +1474,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-eebad90cdbcf",
+    "publication_id": "Ni-products-d52581603cbf",
     "source_bucket": "products",
     "source_index": 67,
     "identity": {
@@ -1486,17 +1486,17 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f59a5cd67b89",
+    "publication_id": "Ni-products-93a951429a22",
     "source_bucket": "products",
     "source_index": 68,
     "identity": {
@@ -1508,6 +1508,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-468fa687b67e",
+    "source_bucket": "products",
+    "source_index": 69,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-d2e830db6ae7",
+    "source_bucket": "products",
+    "source_index": 70,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1518,51 +1562,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-13685d38fc3e",
-    "source_bucket": "products",
-    "source_index": 69,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-64a7001a0682",
-    "source_bucket": "products",
-    "source_index": 70,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-74c6ec2bce66",
+    "publication_id": "Ni-products-483fed7dee8c",
     "source_bucket": "products",
     "source_index": 71,
     "identity": {
@@ -1574,7 +1574,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1584,7 +1584,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f49a0823a367",
+    "publication_id": "Ni-products-1c25a326f566",
     "source_bucket": "products",
     "source_index": 72,
     "identity": {
@@ -1596,7 +1596,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -1606,7 +1606,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-036ed3f08aeb",
+    "publication_id": "Ni-products-60e6e16e8d3a",
     "source_bucket": "products",
     "source_index": 73,
     "identity": {
@@ -1618,7 +1618,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1628,7 +1628,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-e1ef77dd6550",
+    "publication_id": "Ni-products-a6d07c43b7a5",
     "source_bucket": "products",
     "source_index": 74,
     "identity": {
@@ -1640,17 +1640,17 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-936c669dd7d3",
+    "publication_id": "Ni-products-962a0324238e",
     "source_bucket": "products",
     "source_index": 75,
     "identity": {
@@ -1662,6 +1662,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-f01821a856de",
+    "source_bucket": "products",
+    "source_index": 76,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-e060bcd9087a",
+    "source_bucket": "products",
+    "source_index": 77,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1672,51 +1716,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d5f18ec7fea3",
-    "source_bucket": "products",
-    "source_index": 76,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-abf649353d25",
-    "source_bucket": "products",
-    "source_index": 77,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026-FREECONT",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-6ba6623c77bf",
+    "publication_id": "Ni-products-2beff4c15bf4",
     "source_bucket": "products",
     "source_index": 78,
     "identity": {
@@ -1728,7 +1728,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1738,7 +1738,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c095bdd2edfb",
+    "publication_id": "Ni-products-bdfa58dd638f",
     "source_bucket": "products",
     "source_index": 79,
     "identity": {
@@ -1750,7 +1750,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -1760,7 +1760,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-aad657a1a603",
+    "publication_id": "Ni-products-f80900f6bb15",
     "source_bucket": "products",
     "source_index": 80,
     "identity": {
@@ -1772,7 +1772,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1782,7 +1782,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-563be5d36d34",
+    "publication_id": "Ni-products-32e049c96234",
     "source_bucket": "products",
     "source_index": 81,
     "identity": {
@@ -1794,6 +1794,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026-FREECONT",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-e4b93f458b90",
+    "source_bucket": "products",
+    "source_index": 82,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-823c6c6de235",
+    "source_bucket": "products",
+    "source_index": 83,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026-FREECONT",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1804,9 +1848,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-66f30c703dc6",
+    "publication_id": "Ni-products-e5df49c818a5",
     "source_bucket": "products",
-    "source_index": 82,
+    "source_index": 84,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -1826,51 +1870,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3106c20f39cd",
-    "source_bucket": "products",
-    "source_index": 83,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-6caec3812cfb",
-    "source_bucket": "products",
-    "source_index": 84,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "NIR",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_ELGUETA2026",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-5d39ba60a7a4",
+    "publication_id": "Ni-products-1d2fe2071ee4",
     "source_bucket": "products",
     "source_index": 85,
     "identity": {
@@ -1882,7 +1882,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -1892,7 +1892,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-86461116f85c",
+    "publication_id": "Ni-products-a77a12feab14",
     "source_bucket": "products",
     "source_index": 86,
     "identity": {
@@ -1904,7 +1904,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -1914,7 +1914,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-65ff4883caae",
+    "publication_id": "Ni-products-a724bf01d4b1",
     "source_bucket": "products",
     "source_index": 87,
     "identity": {
@@ -1926,7 +1926,7 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -1936,7 +1936,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-5867fd9a5ec0",
+    "publication_id": "Ni-products-2a9967dc65e9",
     "source_bucket": "products",
     "source_index": 88,
     "identity": {
@@ -1948,6 +1948,50 @@
       "tier": "ALL",
       "selector": "SET-NI_ELGUETA2026",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-b4c812d20242",
+    "source_bucket": "products",
+    "source_index": 89,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-23668ee6a826",
+    "source_bucket": "products",
+    "source_index": 90,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "NIR",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_ELGUETA2026",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -1958,9 +2002,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ed7f838c7b0b",
+    "publication_id": "Ni-products-4bd881ea3637",
     "source_bucket": "products",
-    "source_index": 89,
+    "source_index": 91,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -1980,51 +2024,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-98cf153f9ec5",
-    "source_bucket": "products",
-    "source_index": 90,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-6dce00998828",
-    "source_bucket": "products",
-    "source_index": 91,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-66a059af263b",
+    "publication_id": "Ni-products-78ef4920e66a",
     "source_bucket": "products",
     "source_index": 92,
     "identity": {
@@ -2036,7 +2036,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2046,7 +2046,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-4061e1f71818",
+    "publication_id": "Ni-products-9e25a54ab9bb",
     "source_bucket": "products",
     "source_index": 93,
     "identity": {
@@ -2058,7 +2058,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2068,7 +2068,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-4202e25348d8",
+    "publication_id": "Ni-products-ff4cc8cbfa4e",
     "source_bucket": "products",
     "source_index": 94,
     "identity": {
@@ -2080,7 +2080,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -2090,7 +2090,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-eadc191d8049",
+    "publication_id": "Ni-products-da9069048011",
     "source_bucket": "products",
     "source_index": 95,
     "identity": {
@@ -2102,17 +2102,17 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-fd6fb9249c1b",
+    "publication_id": "Ni-products-eb8e2331767e",
     "source_bucket": "products",
     "source_index": 96,
     "identity": {
@@ -2124,6 +2124,50 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-c88a82f86ea4",
+    "source_bucket": "products",
+    "source_index": 97,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_AGSS21",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-fe8ff08cc47a",
+    "source_bucket": "products",
+    "source_index": 98,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_AGSS21",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -2134,51 +2178,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ff2751585b63",
-    "source_bucket": "products",
-    "source_index": 97,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "DEEPGRADED",
-      "selector": "DEEPGRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e12aa2131e6f",
-    "source_bucket": "products",
-    "source_index": 98,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "DEEPGRADED",
-      "selector": "DEEPGRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-6edbb806c57d",
+    "publication_id": "Ni-products-44b43c7754f8",
     "source_bucket": "products",
     "source_index": 99,
     "identity": {
@@ -2190,7 +2190,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2200,7 +2200,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-547ce035920c",
+    "publication_id": "Ni-products-c58e9b8025ab",
     "source_bucket": "products",
     "source_index": 100,
     "identity": {
@@ -2212,7 +2212,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2222,7 +2222,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-769007253dae",
+    "publication_id": "Ni-products-9fffbcb67b39",
     "source_bucket": "products",
     "source_index": 101,
     "identity": {
@@ -2234,7 +2234,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -2244,7 +2244,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-353c91d9b6ed",
+    "publication_id": "Ni-products-654e4b7516d6",
     "source_bucket": "products",
     "source_index": 102,
     "identity": {
@@ -2256,17 +2256,17 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d90f42271607",
+    "publication_id": "Ni-products-4eccc6180bc3",
     "source_bucket": "products",
     "source_index": 103,
     "identity": {
@@ -2278,6 +2278,50 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-9f8554489ed7",
+    "source_bucket": "products",
+    "source_index": 104,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "DEEPGRADED",
+      "selector": "DEEPGRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-957117cf7626",
+    "source_bucket": "products",
+    "source_index": 105,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "DEEPGRADED",
+      "selector": "DEEPGRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -2288,51 +2332,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-24f642d0e345",
-    "source_bucket": "products",
-    "source_index": 104,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-d3c39c0cc255",
-    "source_bucket": "products",
-    "source_index": 105,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-aa53acb78b67",
+    "publication_id": "Ni-products-f008917074eb",
     "source_bucket": "products",
     "source_index": 106,
     "identity": {
@@ -2344,7 +2344,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2354,7 +2354,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3b417b86f8aa",
+    "publication_id": "Ni-products-9f020dcbccb7",
     "source_bucket": "products",
     "source_index": 107,
     "identity": {
@@ -2366,7 +2366,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2376,7 +2376,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-87fa2acb1997",
+    "publication_id": "Ni-products-b9506d0ff86c",
     "source_bucket": "products",
     "source_index": 108,
     "identity": {
@@ -2388,7 +2388,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -2398,7 +2398,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a83794a2a5da",
+    "publication_id": "Ni-products-def8c0f1d7e5",
     "source_bucket": "products",
     "source_index": 109,
     "identity": {
@@ -2410,17 +2410,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-5bf30b6b1046",
+    "publication_id": "Ni-products-0cb70693affc",
     "source_bucket": "products",
     "source_index": 110,
     "identity": {
@@ -2432,6 +2432,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-d13ca86f7a94",
+    "source_bucket": "products",
+    "source_index": 111,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-485ff9d911bf",
+    "source_bucket": "products",
+    "source_index": 112,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -2442,51 +2486,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-62f4aa900571",
-    "source_bucket": "products",
-    "source_index": 111,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-42e7d5c7b942",
-    "source_bucket": "products",
-    "source_index": 112,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "harps",
-      "holding": "solar_harps_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-eedba77924ea",
+    "publication_id": "Ni-products-1e8f6092204f",
     "source_bucket": "products",
     "source_index": 113,
     "identity": {
@@ -2498,7 +2498,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2508,7 +2508,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7e556d56cad1",
+    "publication_id": "Ni-products-397da7217db4",
     "source_bucket": "products",
     "source_index": 114,
     "identity": {
@@ -2520,7 +2520,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2530,7 +2530,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-bffefef3f368",
+    "publication_id": "Ni-products-4ce819079bd2",
     "source_bucket": "products",
     "source_index": 115,
     "identity": {
@@ -2542,7 +2542,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -2552,7 +2552,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-1c37f71876bc",
+    "publication_id": "Ni-products-191d32571d01",
     "source_bucket": "products",
     "source_index": 116,
     "identity": {
@@ -2564,6 +2564,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-d5e742604b74",
+    "source_bucket": "products",
+    "source_index": 117,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-c911c11e7451",
+    "source_bucket": "products",
+    "source_index": 118,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "harps",
+      "holding": "solar_harps_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -2574,9 +2618,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-de1b38d95151",
+    "publication_id": "Ni-products-2084379de144",
     "source_bucket": "products",
-    "source_index": 117,
+    "source_index": 119,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -2596,51 +2640,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-38ccab494380",
-    "source_bucket": "products",
-    "source_index": 118,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-c816df7291b6",
-    "source_bucket": "products",
-    "source_index": 119,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-41c49414fb82",
+    "publication_id": "Ni-products-161c73bd087d",
     "source_bucket": "products",
     "source_index": 120,
     "identity": {
@@ -2652,7 +2652,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2662,7 +2662,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d99061931b59",
+    "publication_id": "Ni-products-6d327f514569",
     "source_bucket": "products",
     "source_index": 121,
     "identity": {
@@ -2674,7 +2674,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2684,7 +2684,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-923a595823ac",
+    "publication_id": "Ni-products-4e88cfabc624",
     "source_bucket": "products",
     "source_index": 122,
     "identity": {
@@ -2696,7 +2696,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -2706,7 +2706,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-95c0161dbdfd",
+    "publication_id": "Ni-products-6ac7eb8092d9",
     "source_bucket": "products",
     "source_index": 123,
     "identity": {
@@ -2718,17 +2718,17 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7a23743d06b7",
+    "publication_id": "Ni-products-fbefac62b25e",
     "source_bucket": "products",
     "source_index": 124,
     "identity": {
@@ -2740,6 +2740,50 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-666ad6caa1b2",
+    "source_bucket": "products",
+    "source_index": 125,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_AGSS21",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-47784a127d7d",
+    "source_bucket": "products",
+    "source_index": 126,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_AGSS21",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -2750,51 +2794,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-382a516dc912",
-    "source_bucket": "products",
-    "source_index": 125,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "DEEPGRADED",
-      "selector": "DEEPGRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-925b048832cc",
-    "source_bucket": "products",
-    "source_index": 126,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "DEEPGRADED",
-      "selector": "DEEPGRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-a3dfab240c5e",
+    "publication_id": "Ni-products-63deee71bc2b",
     "source_bucket": "products",
     "source_index": 127,
     "identity": {
@@ -2806,7 +2806,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2816,7 +2816,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-2441fd54bfff",
+    "publication_id": "Ni-products-e9ab7b115246",
     "source_bucket": "products",
     "source_index": 128,
     "identity": {
@@ -2828,7 +2828,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2838,7 +2838,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3d5e130e63d5",
+    "publication_id": "Ni-products-110d7e938ef1",
     "source_bucket": "products",
     "source_index": 129,
     "identity": {
@@ -2850,7 +2850,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -2860,7 +2860,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f1845e21bf1b",
+    "publication_id": "Ni-products-997d26b7b2ca",
     "source_bucket": "products",
     "source_index": 130,
     "identity": {
@@ -2872,17 +2872,17 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c4eb0e61d6d0",
+    "publication_id": "Ni-products-993114f381ff",
     "source_bucket": "products",
     "source_index": 131,
     "identity": {
@@ -2894,6 +2894,50 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-b1d8e36e2896",
+    "source_bucket": "products",
+    "source_index": 132,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "DEEPGRADED",
+      "selector": "DEEPGRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-19a55ad9b83e",
+    "source_bucket": "products",
+    "source_index": 133,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "DEEPGRADED",
+      "selector": "DEEPGRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -2904,51 +2948,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a002c295a706",
-    "source_bucket": "products",
-    "source_index": 132,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e0848ebf8742",
-    "source_bucket": "products",
-    "source_index": 133,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-ff895ff318bf",
+    "publication_id": "Ni-products-d096e0f6ef65",
     "source_bucket": "products",
     "source_index": 134,
     "identity": {
@@ -2960,7 +2960,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -2970,7 +2970,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-95dd9a6c6c20",
+    "publication_id": "Ni-products-beba322d41eb",
     "source_bucket": "products",
     "source_index": 135,
     "identity": {
@@ -2982,7 +2982,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -2992,7 +2992,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-30a0e5dd2bcf",
+    "publication_id": "Ni-products-0decf976a8bd",
     "source_bucket": "products",
     "source_index": 136,
     "identity": {
@@ -3004,7 +3004,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3014,7 +3014,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-9ec58648ba46",
+    "publication_id": "Ni-products-c1ae29ad51c0",
     "source_bucket": "products",
     "source_index": 137,
     "identity": {
@@ -3026,17 +3026,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c2d64920c938",
+    "publication_id": "Ni-products-ba291caf03f0",
     "source_bucket": "products",
     "source_index": 138,
     "identity": {
@@ -3048,6 +3048,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-f8e66723bb21",
+    "source_bucket": "products",
+    "source_index": 139,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-cf9e721f6afb",
+    "source_bucket": "products",
+    "source_index": 140,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3058,51 +3102,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-48ff76c5b30f",
-    "source_bucket": "products",
-    "source_index": 139,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-b1b1ad1f7eda",
-    "source_bucket": "products",
-    "source_index": 140,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-c422096a6a03",
+    "publication_id": "Ni-products-58315beff595",
     "source_bucket": "products",
     "source_index": 141,
     "identity": {
@@ -3114,7 +3114,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -3124,7 +3124,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d458ec18c8a9",
+    "publication_id": "Ni-products-c11d995cb7bd",
     "source_bucket": "products",
     "source_index": 142,
     "identity": {
@@ -3136,7 +3136,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -3146,7 +3146,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-85091df36df6",
+    "publication_id": "Ni-products-32e551341089",
     "source_bucket": "products",
     "source_index": 143,
     "identity": {
@@ -3158,7 +3158,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3168,7 +3168,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3b28af91b7ed",
+    "publication_id": "Ni-products-d6faea650ce7",
     "source_bucket": "products",
     "source_index": 144,
     "identity": {
@@ -3180,17 +3180,17 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-fd3e7fd86f44",
+    "publication_id": "Ni-products-cd16b824b83a",
     "source_bucket": "products",
     "source_index": 145,
     "identity": {
@@ -3202,6 +3202,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-1dbe520a0470",
+    "source_bucket": "products",
+    "source_index": 146,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-296f46a8f4d8",
+    "source_bucket": "products",
+    "source_index": 147,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3212,51 +3256,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-513b4b4b4591",
-    "source_bucket": "products",
-    "source_index": 146,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-a6d69bcb67f2",
-    "source_bucket": "products",
-    "source_index": 147,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "ALL",
-      "selector": "SET-NI_AGSS21",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-1f19c96a00a2",
+    "publication_id": "Ni-products-f3cf797d9923",
     "source_bucket": "products",
     "source_index": 148,
     "identity": {
@@ -3268,7 +3268,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -3278,7 +3278,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-e49aff515cc1",
+    "publication_id": "Ni-products-2ab45e1a4f03",
     "source_bucket": "products",
     "source_index": 149,
     "identity": {
@@ -3290,7 +3290,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -3300,7 +3300,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7ba50923e133",
+    "publication_id": "Ni-products-ec7239b354d1",
     "source_bucket": "products",
     "source_index": 150,
     "identity": {
@@ -3312,7 +3312,7 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3322,7 +3322,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-64d4b7162e46",
+    "publication_id": "Ni-products-eae9eca02a91",
     "source_bucket": "products",
     "source_index": 151,
     "identity": {
@@ -3334,6 +3334,50 @@
       "tier": "ALL",
       "selector": "SET-NI_AGSS21",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-2e03b98efe4e",
+    "source_bucket": "products",
+    "source_index": 152,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_AGSS21",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-e019aa973739",
+    "source_bucket": "products",
+    "source_index": 153,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "ALL",
+      "selector": "SET-NI_AGSS21",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3344,9 +3388,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-94ae54abde31",
+    "publication_id": "Ni-products-fd19445c8f94",
     "source_bucket": "products",
-    "source_index": 152,
+    "source_index": 154,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -3366,51 +3410,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-91adcc9d5cfc",
-    "source_bucket": "products",
-    "source_index": 153,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "DEEPGRADED",
-      "selector": "DEEPGRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-b06e02e8a730",
-    "source_bucket": "products",
-    "source_index": 154,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "DEEPGRADED",
-      "selector": "DEEPGRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e53998297d68",
+    "publication_id": "Ni-products-5d34de8070af",
     "source_bucket": "products",
     "source_index": 155,
     "identity": {
@@ -3422,7 +3422,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -3432,7 +3432,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-8afc5f40fbb1",
+    "publication_id": "Ni-products-5124e68a463b",
     "source_bucket": "products",
     "source_index": 156,
     "identity": {
@@ -3444,7 +3444,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -3454,7 +3454,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-821f15ce11f9",
+    "publication_id": "Ni-products-db5bf6713ed9",
     "source_bucket": "products",
     "source_index": 157,
     "identity": {
@@ -3466,7 +3466,7 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3476,7 +3476,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-eb52f6ec1eb5",
+    "publication_id": "Ni-products-b1b2449aed3b",
     "source_bucket": "products",
     "source_index": 158,
     "identity": {
@@ -3488,6 +3488,50 @@
       "tier": "DEEPGRADED",
       "selector": "DEEPGRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-6f9a2ba032d6",
+    "source_bucket": "products",
+    "source_index": 159,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "DEEPGRADED",
+      "selector": "DEEPGRADED",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-c5b2cc914d0b",
+    "source_bucket": "products",
+    "source_index": 160,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "DEEPGRADED",
+      "selector": "DEEPGRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3498,9 +3542,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-0b845eaa2b05",
+    "publication_id": "Ni-products-31ce3d1b5cd2",
     "source_bucket": "products",
-    "source_index": 159,
+    "source_index": 161,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -3520,51 +3564,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-6ac1b0ce4d84",
-    "source_bucket": "products",
-    "source_index": 160,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-6c9eca581293",
-    "source_bucket": "products",
-    "source_index": 161,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e06d3d2b98ee",
+    "publication_id": "Ni-products-78453e4c63f2",
     "source_bucket": "products",
     "source_index": 162,
     "identity": {
@@ -3576,7 +3576,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -3586,7 +3586,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-657c643bda83",
+    "publication_id": "Ni-products-a86ca42b7141",
     "source_bucket": "products",
     "source_index": 163,
     "identity": {
@@ -3598,7 +3598,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -3608,7 +3608,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-2f5b7915b32d",
+    "publication_id": "Ni-products-f9dc591a2d05",
     "source_bucket": "products",
     "source_index": 164,
     "identity": {
@@ -3620,7 +3620,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3630,7 +3630,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-39db516bd284",
+    "publication_id": "Ni-products-1f20984ca55b",
     "source_bucket": "products",
     "source_index": 165,
     "identity": {
@@ -3642,17 +3642,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7e66a81cd3cc",
+    "publication_id": "Ni-products-78f72abafd2e",
     "source_bucket": "products",
     "source_index": 166,
     "identity": {
@@ -3664,6 +3664,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-b1745beacb5e",
+    "source_bucket": "products",
+    "source_index": 167,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-00ebabc62362",
+    "source_bucket": "products",
+    "source_index": 168,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3674,51 +3718,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-afe002bb56fd",
-    "source_bucket": "products",
-    "source_index": 167,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-89e973b4ac5e",
-    "source_bucket": "products",
-    "source_index": 168,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "VIS",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-13d588b787c3",
+    "publication_id": "Ni-products-e23d0f868217",
     "source_bucket": "products",
     "source_index": 169,
     "identity": {
@@ -3730,7 +3730,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -3740,7 +3740,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c6208ca9ec2a",
+    "publication_id": "Ni-products-9470d539294c",
     "source_bucket": "products",
     "source_index": 170,
     "identity": {
@@ -3752,7 +3752,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -3762,7 +3762,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7b8501be3156",
+    "publication_id": "Ni-products-c64a5abdfe83",
     "source_bucket": "products",
     "source_index": 171,
     "identity": {
@@ -3774,7 +3774,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3784,7 +3784,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-61c928759d47",
+    "publication_id": "Ni-products-83e477c76996",
     "source_bucket": "products",
     "source_index": 172,
     "identity": {
@@ -3796,6 +3796,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-6b661a1fe286",
+    "source_bucket": "products",
+    "source_index": 173,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-be9544905a57",
+    "source_bucket": "products",
+    "source_index": 174,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "VIS",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3806,9 +3850,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-6864351f2f7d",
+    "publication_id": "Ni-products-9d00d2de1553",
     "source_bucket": "products",
-    "source_index": 173,
+    "source_index": 175,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -3828,51 +3872,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7e580a40d263",
-    "source_bucket": "products",
-    "source_index": 174,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-46b0ae37cd4c",
-    "source_bucket": "products",
-    "source_index": 175,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e4b1d70cce6c",
+    "publication_id": "Ni-products-607be5db64ed",
     "source_bucket": "products",
     "source_index": 176,
     "identity": {
@@ -3884,7 +3884,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -3894,7 +3894,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-437d39124f91",
+    "publication_id": "Ni-products-3844d5a34bba",
     "source_bucket": "products",
     "source_index": 177,
     "identity": {
@@ -3906,7 +3906,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -3916,7 +3916,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3b0290414e00",
+    "publication_id": "Ni-products-969e0eb15008",
     "source_bucket": "products",
     "source_index": 178,
     "identity": {
@@ -3928,17 +3928,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-be00cb28f06e",
+    "publication_id": "Ni-products-8502855f3910",
     "source_bucket": "products",
     "source_index": 179,
     "identity": {
@@ -3950,6 +3950,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-150c3c3fb2f9",
+    "source_bucket": "products",
+    "source_index": 180,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-b1c0a6679ca1",
+    "source_bucket": "products",
+    "source_index": 181,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -3960,51 +4004,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-2a77fdda6e97",
-    "source_bucket": "products",
-    "source_index": 180,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-a7dbce8bd6a6",
-    "source_bucket": "products",
-    "source_index": 181,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-b0b348e4dbe9",
+    "publication_id": "Ni-products-11e35ea75c15",
     "source_bucket": "products",
     "source_index": 182,
     "identity": {
@@ -4016,7 +4016,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4026,7 +4026,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f04b4f264fda",
+    "publication_id": "Ni-products-22962ac53a7f",
     "source_bucket": "products",
     "source_index": 183,
     "identity": {
@@ -4038,7 +4038,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4048,7 +4048,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-02b9ac4f9c28",
+    "publication_id": "Ni-products-50c143c8c547",
     "source_bucket": "products",
     "source_index": 184,
     "identity": {
@@ -4060,7 +4060,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4070,7 +4070,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-e4d9bb1c3ce2",
+    "publication_id": "Ni-products-4fa46c4a4b97",
     "source_bucket": "products",
     "source_index": 185,
     "identity": {
@@ -4082,17 +4082,17 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-189de410f391",
+    "publication_id": "Ni-products-c117c8076c65",
     "source_bucket": "products",
     "source_index": 186,
     "identity": {
@@ -4104,6 +4104,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-be168a2c81d2",
+    "source_bucket": "products",
+    "source_index": 187,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-a3390dd9639f",
+    "source_bucket": "products",
+    "source_index": 188,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4114,51 +4158,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-07a656f58de7",
-    "source_bucket": "products",
-    "source_index": 187,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-ed50f2da93e7",
-    "source_bucket": "products",
-    "source_index": 188,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-795d141961fe",
+    "publication_id": "Ni-products-7a0065090bc2",
     "source_bucket": "products",
     "source_index": 189,
     "identity": {
@@ -4170,7 +4170,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4180,7 +4180,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-a39c9e6482b1",
+    "publication_id": "Ni-products-0731819a5294",
     "source_bucket": "products",
     "source_index": 190,
     "identity": {
@@ -4192,7 +4192,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4202,7 +4202,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d1a4907a0650",
+    "publication_id": "Ni-products-59df733e62d3",
     "source_bucket": "products",
     "source_index": 191,
     "identity": {
@@ -4214,7 +4214,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4224,7 +4224,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-0359b48a3466",
+    "publication_id": "Ni-products-4fbc57847db0",
     "source_bucket": "products",
     "source_index": 192,
     "identity": {
@@ -4236,17 +4236,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c8e790a996f9",
+    "publication_id": "Ni-products-3d47db7452d7",
     "source_bucket": "products",
     "source_index": 193,
     "identity": {
@@ -4258,6 +4258,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-87f457322966",
+    "source_bucket": "products",
+    "source_index": 194,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-8df92384b8c9",
+    "source_bucket": "products",
+    "source_index": 195,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4268,51 +4312,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-495e76ab5c82",
-    "source_bucket": "products",
-    "source_index": 194,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-ac2199db26cf",
-    "source_bucket": "products",
-    "source_index": 195,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "near-UV",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_molecfit_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-9d67075facca",
+    "publication_id": "Ni-products-d36d7424f14c",
     "source_bucket": "products",
     "source_index": 196,
     "identity": {
@@ -4324,7 +4324,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4334,7 +4334,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-38cef9eb4cf0",
+    "publication_id": "Ni-products-a77226677475",
     "source_bucket": "products",
     "source_index": 197,
     "identity": {
@@ -4346,7 +4346,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4356,7 +4356,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-47f1ef2f8c0f",
+    "publication_id": "Ni-products-1c58f5a26c05",
     "source_bucket": "products",
     "source_index": 198,
     "identity": {
@@ -4368,7 +4368,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4378,7 +4378,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-aa6176703679",
+    "publication_id": "Ni-products-c026a3ffc5c3",
     "source_bucket": "products",
     "source_index": 199,
     "identity": {
@@ -4390,6 +4390,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-055d82351c02",
+    "source_bucket": "products",
+    "source_index": 200,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-a3eaa9df04cf",
+    "source_bucket": "products",
+    "source_index": 201,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "near-UV",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_molecfit_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4400,9 +4444,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-32a976517df6",
+    "publication_id": "Ni-products-4041b05907f7",
     "source_bucket": "products",
-    "source_index": 200,
+    "source_index": 202,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4422,51 +4466,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-83eca45b97cf",
-    "source_bucket": "products",
-    "source_index": 201,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-b0a42bd7f689",
-    "source_bucket": "products",
-    "source_index": 202,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-68a2a4cf6de8",
+    "publication_id": "Ni-products-ce81f57af2f7",
     "source_bucket": "products",
     "source_index": 203,
     "identity": {
@@ -4478,7 +4478,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4488,7 +4488,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-fbf928a8ad25",
+    "publication_id": "Ni-products-5b7b6f595774",
     "source_bucket": "products",
     "source_index": 204,
     "identity": {
@@ -4500,7 +4500,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4510,7 +4510,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7918d8842a86",
+    "publication_id": "Ni-products-93bac0e26930",
     "source_bucket": "products",
     "source_index": 205,
     "identity": {
@@ -4522,7 +4522,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4532,7 +4532,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-6cd428f94a42",
+    "publication_id": "Ni-products-43a310471704",
     "source_bucket": "products",
     "source_index": 206,
     "identity": {
@@ -4544,17 +4544,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-bd41e3caf840",
+    "publication_id": "Ni-products-b2b3d0a5a80e",
     "source_bucket": "products",
     "source_index": 207,
     "identity": {
@@ -4566,6 +4566,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-5a0aea58fb26",
+    "source_bucket": "products",
+    "source_index": 208,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-b065e20990af",
+    "source_bucket": "products",
+    "source_index": 209,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4576,51 +4620,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-bcb32233a47f",
-    "source_bucket": "products",
-    "source_index": 208,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-e9d4e3305799",
-    "source_bucket": "products",
-    "source_index": 209,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "iag_fts_solar_atlas",
-      "holding": "solar_iag",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-8b66defe35e4",
+    "publication_id": "Ni-products-3929c0776e54",
     "source_bucket": "products",
     "source_index": 210,
     "identity": {
@@ -4632,7 +4632,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4642,7 +4642,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ac22e51714e7",
+    "publication_id": "Ni-products-059387e5c20d",
     "source_bucket": "products",
     "source_index": 211,
     "identity": {
@@ -4654,7 +4654,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4664,7 +4664,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d9055d654c9e",
+    "publication_id": "Ni-products-22d4f78fd6f3",
     "source_bucket": "products",
     "source_index": 212,
     "identity": {
@@ -4676,7 +4676,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4686,7 +4686,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-206a8927a04b",
+    "publication_id": "Ni-products-17406dfb1865",
     "source_bucket": "products",
     "source_index": 213,
     "identity": {
@@ -4698,6 +4698,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-e2d4057ea883",
+    "source_bucket": "products",
+    "source_index": 214,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-5d964abc37f2",
+    "source_bucket": "products",
+    "source_index": 215,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "iag_fts_solar_atlas",
+      "holding": "solar_iag",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4708,9 +4752,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-2d3efd062d17",
+    "publication_id": "Ni-products-c61c5c06aeb8",
     "source_bucket": "products",
-    "source_index": 214,
+    "source_index": 216,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -4730,51 +4774,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-1382602c3121",
-    "source_bucket": "products",
-    "source_index": 215,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-00586e62854d",
-    "source_bucket": "products",
-    "source_index": 216,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "GRADED",
-      "selector": "GRADED",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-6c9fab781871",
+    "publication_id": "Ni-products-5947ecf6af38",
     "source_bucket": "products",
     "source_index": 217,
     "identity": {
@@ -4786,7 +4786,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4796,7 +4796,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-6ad046f32ee4",
+    "publication_id": "Ni-products-f1ccc56a2487",
     "source_bucket": "products",
     "source_index": 218,
     "identity": {
@@ -4808,7 +4808,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4818,7 +4818,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-79ea5e6314b3",
+    "publication_id": "Ni-products-7ca979e47b43",
     "source_bucket": "products",
     "source_index": 219,
     "identity": {
@@ -4830,7 +4830,7 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4840,7 +4840,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ee5337f5fdad",
+    "publication_id": "Ni-products-28f3c5ace731",
     "source_bucket": "products",
     "source_index": 220,
     "identity": {
@@ -4852,17 +4852,17 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
-      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "treatment": "synth-1D-LTE-openmulti3d",
       "line_set": null,
       "indicator": null
     },
-    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "disposition": "products",
     "quarantine_codes": [],
     "visible": true,
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-39397e612499",
+    "publication_id": "Ni-products-78e865770511",
     "source_bucket": "products",
     "source_index": 221,
     "identity": {
@@ -4874,6 +4874,50 @@
       "tier": "GRADED",
       "selector": "GRADED",
       "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-c5ebabe77177",
+    "source_bucket": "products",
+    "source_index": 222,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
+      "treatment": "synth-mean3D-LTE-gerber-stagger",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "EXPERIMENTAL-NOT-ADOPTED",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-dc8174eb4601",
+    "source_bucket": "products",
+    "source_index": 223,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "GRADED",
+      "selector": "GRADED",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-NLTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -4884,51 +4928,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-c3be41ce53a2",
-    "source_bucket": "products",
-    "source_index": 222,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "1D-LTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-86d4a4b100ee",
-    "source_bucket": "products",
-    "source_index": 223,
-    "identity": {
-      "element": "Ni",
-      "ion": "I",
-      "band": "red-optical",
-      "instrument": "kpno_solar_atlas",
-      "holding": "solar_kpno_kurucz2005_corrected",
-      "tier": "REFERENCE",
-      "selector": "REFERENCE",
-      "route": "SYNTH",
-      "treatment": "ENGINE-B-NLTE",
-      "line_set": null,
-      "indicator": null
-    },
-    "disposition": "products",
-    "quarantine_codes": [],
-    "visible": true,
-    "omission_reason": ""
-  },
-  {
-    "publication_id": "Ni-products-606061d73114",
+    "publication_id": "Ni-products-29b6a1863a10",
     "source_bucket": "products",
     "source_index": 224,
     "identity": {
@@ -4940,7 +4940,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-gerber",
+      "treatment": "1D-LTE",
       "line_set": null,
       "indicator": null
     },
@@ -4950,7 +4950,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-13dbe57432dd",
+    "publication_id": "Ni-products-c36d954e940b",
     "source_bucket": "products",
     "source_index": 225,
     "identity": {
@@ -4962,7 +4962,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-LTE-openmulti3d",
+      "treatment": "ENGINE-B-NLTE",
       "line_set": null,
       "indicator": null
     },
@@ -4972,7 +4972,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-ec491f314c71",
+    "publication_id": "Ni-products-340eed0f0078",
     "source_bucket": "products",
     "source_index": 226,
     "identity": {
@@ -4984,7 +4984,7 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
-      "treatment": "synth-1D-NLTE-openmulti3d",
+      "treatment": "synth-1D-LTE-gerber",
       "line_set": null,
       "indicator": null
     },
@@ -4994,7 +4994,7 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-77d3fc5b1607",
+    "publication_id": "Ni-products-e0a0589e8ec9",
     "source_bucket": "products",
     "source_index": 227,
     "identity": {
@@ -5006,6 +5006,50 @@
       "tier": "REFERENCE",
       "selector": "REFERENCE",
       "route": "SYNTH",
+      "treatment": "synth-1D-LTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-0e3e604a536a",
+    "source_bucket": "products",
+    "source_index": 228,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
+      "treatment": "synth-1D-NLTE-openmulti3d",
+      "line_set": null,
+      "indicator": null
+    },
+    "disposition": "products",
+    "quarantine_codes": [],
+    "visible": true,
+    "omission_reason": ""
+  },
+  {
+    "publication_id": "Ni-products-49fce1b30de0",
+    "source_bucket": "products",
+    "source_index": 229,
+    "identity": {
+      "element": "Ni",
+      "ion": "I",
+      "band": "red-optical",
+      "instrument": "kpno_solar_atlas",
+      "holding": "solar_kpno_kurucz2005_corrected",
+      "tier": "REFERENCE",
+      "selector": "REFERENCE",
+      "route": "SYNTH",
       "treatment": "synth-mean3D-LTE-gerber-stagger",
       "line_set": null,
       "indicator": null
@@ -5016,9 +5060,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-5f7bc273291b",
+    "publication_id": "Ni-products-18fc669a2512",
     "source_bucket": "products",
-    "source_index": 228,
+    "source_index": 230,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5038,9 +5082,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3ba8bbe03826",
+    "publication_id": "Ni-products-594b3076f93d",
     "source_bucket": "products",
-    "source_index": 229,
+    "source_index": 231,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5060,9 +5104,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-e342999e6385",
+    "publication_id": "Ni-products-8ebe9d51a0a9",
     "source_bucket": "products",
-    "source_index": 230,
+    "source_index": 232,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5082,9 +5126,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f7d8ae54d942",
+    "publication_id": "Ni-products-229919bb875a",
     "source_bucket": "products",
-    "source_index": 231,
+    "source_index": 233,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5104,9 +5148,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-58da51fa999f",
+    "publication_id": "Ni-products-4a4427bf84d3",
     "source_bucket": "products",
-    "source_index": 232,
+    "source_index": 234,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5126,9 +5170,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-4d2c340717ef",
+    "publication_id": "Ni-products-e338de6d2d63",
     "source_bucket": "products",
-    "source_index": 233,
+    "source_index": 235,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5148,9 +5192,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-0bf91ca2ad2b",
+    "publication_id": "Ni-products-c600b612def3",
     "source_bucket": "products",
-    "source_index": 234,
+    "source_index": 236,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5170,9 +5214,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-f4a6673cad78",
+    "publication_id": "Ni-products-da1783d895a6",
     "source_bucket": "products",
-    "source_index": 235,
+    "source_index": 237,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5192,9 +5236,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-1f623e8bcc9b",
+    "publication_id": "Ni-products-f05321114b2e",
     "source_bucket": "products",
-    "source_index": 236,
+    "source_index": 238,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5214,9 +5258,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-d8da5e8607b0",
+    "publication_id": "Ni-products-8a6006e65d66",
     "source_bucket": "products",
-    "source_index": 237,
+    "source_index": 239,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5236,9 +5280,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-349427516b52",
+    "publication_id": "Ni-products-e5df3354f843",
     "source_bucket": "products",
-    "source_index": 238,
+    "source_index": 240,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5258,9 +5302,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-41b90c2caa85",
+    "publication_id": "Ni-products-e9099fcd8a8e",
     "source_bucket": "products",
-    "source_index": 239,
+    "source_index": 241,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5280,9 +5324,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-7a8f49b7efb3",
+    "publication_id": "Ni-products-f192c3252793",
     "source_bucket": "products",
-    "source_index": 240,
+    "source_index": 242,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5302,9 +5346,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-13efead4ec6c",
+    "publication_id": "Ni-products-125dd98bc507",
     "source_bucket": "products",
-    "source_index": 241,
+    "source_index": 243,
     "identity": {
       "element": "Ni",
       "ion": "I",
@@ -5324,9 +5368,9 @@
     "omission_reason": ""
   },
   {
-    "publication_id": "Ni-products-3642c1f536cc",
+    "publication_id": "Ni-products-ca2fc2f1b9c7",
     "source_bucket": "products",
-    "source_index": 242,
+    "source_index": 244,
     "identity": {
       "element": "Ni",
       "ion": "I",

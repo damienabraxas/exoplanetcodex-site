@@ -1,15 +1,15 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "3a182bb50fed8a8aad1f0398895c451120d73988",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/3a182bb50fed8a8aad1f0398895c451120d73988",
-  "generated_at": "2026-11-26T19:40:15-07:00",
+  "source_commit": "2016ffe111a552a494ea6749d010fa51009bafc6",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/2016ffe111a552a494ea6749d010fa51009bafc6",
+  "generated_at": "2026-11-27T05:21:32-07:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
-  "feed_version": "1.181",
-  "feed_updated_at": "2026-11-27T02:26:52Z",
-  "feed_sha256": "5a2fde54aa05628327e726b88db0533cdffb9ae00250574829cf949b36813950",
+  "feed_version": "1.183",
+  "feed_updated_at": "2026-11-27T12:21:18Z",
+  "feed_sha256": "a895904b0a40d11fef914885978e15e08e40ecf3d06638566e0ab94c73cebd93",
   "source_sha256": {
-    "data/products/solar/Ni.json": "5a2fde54aa05628327e726b88db0533cdffb9ae00250574829cf949b36813950",
+    "data/products/solar/Ni.json": "a895904b0a40d11fef914885978e15e08e40ecf3d06638566e0ab94c73cebd93",
     "data/refs/bibliography.csv": "2bd1012eabd6fc6cd257d5a6edcda026abc5d80e0055318450e4dd1d39fd1fa1",
     "data/catalog/holdings_manifest_registry.csv": "4498f11d539efa251eb50be8851ca45de2a96b4e0634f293df55d279c23be13d",
     "data/reference/line_sets/REGISTRY.csv": "11cdb60987d5d1e33be805c57c484c7da5cc4bca8aa716393d88605dfba6d2b4",
@@ -27,15 +27,15 @@
   "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
   "counts": {
-    "products": 243,
+    "products": 245,
     "quarantine": 1,
     "archive": 0,
     "superseded": 0
   },
-  "visible_products": 243,
+  "visible_products": 245,
   "dispositions": {
     "products": 175,
-    "EXPERIMENTAL-NOT-ADOPTED": 68,
+    "EXPERIMENTAL-NOT-ADOPTED": 70,
     "quarantine": 1
   },
   "highlight_selectors": [],
