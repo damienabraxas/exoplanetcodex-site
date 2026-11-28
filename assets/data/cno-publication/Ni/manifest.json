@@ -1,9 +1,9 @@
 {
   "generator": "scripts/generate_cno_publication.py",
   "version": "1.0.0",
-  "source_commit": "2016ffe111a552a494ea6749d010fa51009bafc6",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/2016ffe111a552a494ea6749d010fa51009bafc6",
-  "generated_at": "2026-11-27T05:21:32-07:00",
+  "source_commit": "2f87c57e774111a061ef63fa95e5fa1b0b7bdb1a",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/2f87c57e774111a061ef63fa95e5fa1b0b7bdb1a",
+  "generated_at": "2026-11-27T05:33:55-07:00",
   "timestamp_basis": "source commit timestamp (deterministic build)",
   "feed_version": "1.183",
   "feed_updated_at": "2026-11-27T12:21:18Z",
@@ -22,7 +22,7 @@
   "reference_resolver_sha256": "3503bd3745ae317c3704c0baa579068ab619075ec79562bed3ffa7a12fbd570d",
   "reference_supplement_sha256": "0001bf4e51cdfa30a8b457f437d83f5320b7c833756b322cefb2a3fb416a6d73",
   "reference_count": 13,
-  "template_sha256": "413d28ed35014c500ecb20a7fa4aba9396e4ba936eb3a821182d9905c2ac7e71",
+  "template_sha256": "a059d397bc5305c8dff7f340d7fcf2cfcd3eee1f2e88bae068d665620a1ffce3",
   "highlight_selectors_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
@@ -40,5 +40,5 @@
   },
   "highlight_selectors": [],
   "status": "products",
-  "table_renderer_sha256": "b7ecb0d093761b227e8d2884d62dbe54362254ee3df3ead9eed8445e4f4b58db"
+  "table_renderer_sha256": "23390d60a313b8edad8a906411f1dadee8448dc64acf18e35a49b287c163d349"
 }

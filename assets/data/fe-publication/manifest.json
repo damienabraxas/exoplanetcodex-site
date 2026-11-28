@@ -1,16 +1,16 @@
 {
   "generator": "scripts/generate_fe_publication.py",
   "version": "1.0.0",
-  "source_commit": "78ab9eb06ee00fb359611e71edb3d0e4aa5ba093",
-  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/78ab9eb06ee00fb359611e71edb3d0e4aa5ba093",
-  "generated_at": "2026-11-17T01:33:33+00:00",
-  "feed_version": "1.612",
-  "feed_sha256": "7be87dc3cf0bb9946c36520ba09a4bbb9f7a5d17cf708c5fcaaec3642a80474a",
-  "products": 242,
+  "source_commit": "46cbcd4a45b9e1e7ccaf1b82144a20e4a9abd8f4",
+  "source_url": "https://github.com/damienabraxas/exoplanetcodex/blob/46cbcd4a45b9e1e7ccaf1b82144a20e4a9abd8f4",
+  "generated_at": "2026-11-26T21:47:29+00:00",
+  "feed_version": "1.615",
+  "feed_sha256": "61f7466e276f9c256e15a6e6705e564371a30caf22ebbc215f0b422d658ad710",
+  "products": 245,
   "perline_rows": 1372,
-  "resolved_products": 23,
+  "resolved_products": 26,
   "held_products": 48,
-  "generator_sha256": "d869a95397c6eb8ef4bcf84d9dd7112e3030be164184c6d89167fa5e383078e5",
+  "generator_sha256": "81845549827bf2221088e215a973454c60555f1982ca721a51d32ad2e79635f5",
   "pdf_generator": "scripts/element_appendix_pdf.py",
   "pdf_generator_sha256": "be948cb041d498234ccead8280b5bdbe2526b4f776540f4e50093b985d9c5a22",
   "pdf_brand_sha256": "b8b854fc4bde7855b967369d62ac71a06e7580aa581a58c22832e43fe3ebb7f6",
@@ -26,5 +26,5 @@
     "data/results/rya1207/nearuv_molecular_lever.json",
     "data/products/solar/Fe.json"
   ],
-  "table_renderer_sha256": "b7ecb0d093761b227e8d2884d62dbe54362254ee3df3ead9eed8445e4f4b58db"
+  "table_renderer_sha256": "23390d60a313b8edad8a906411f1dadee8448dc64acf18e35a49b287c163d349"
 }
